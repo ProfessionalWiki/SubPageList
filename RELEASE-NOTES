@@ -1,0 +1,17 @@
+These are the release notes for the SubPageList extension.
+	
+Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:SubPageList
+Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/SubPageList/RELEASE-NOTES?view=co
+
+
+=== Version 0.1 ===
+201x-xx-xx
+
+* Copied the code of SubPageList3 and ...
+** Modified code to make use of Validator for parameter handling.
+** Rewrote most code of the SubPageList class.
+** Fixed namespace bug.
+** Fixed several minor layout issues.
+** Added alias file.
+** Added COPYING, INSTALL, README and RELEASE-NOTES.
+** Cleaned up and corrected formatting.

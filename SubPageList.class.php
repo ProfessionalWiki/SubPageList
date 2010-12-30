@@ -117,7 +117,7 @@ final class SubPageList extends ParserHook {
 	 * @return array
 	 */
 	protected function getDefaultParameters( $type ) {
-		return array( 'format', 'pathstyle', 'sortby', 'sort' );
+		return array( 'page', 'format', 'pathstyle', 'sortby', 'sort' );
 	}
 	
 	/**
@@ -331,12 +331,8 @@ final class SubPageList extends ParserHook {
 	 * @return string the parsed output
 	 */
 	protected function parse( $text ) {
-		wfProfileIn( __METHOD__ );
-		
 		$options = $this->parser->mOptions;
 		$output = $this->parser->parse( $text, $this->parser->mTitle, $options, true, false );
-		wfProfileOut( __METHOD__ );
-		
 		return $output->getText();
 	}	
 	

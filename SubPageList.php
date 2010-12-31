@@ -35,9 +35,9 @@ if ( ! defined( 'Validator_VERSION' ) ) {
 	die( '<b>Error:</b> You need to have <a href="http://www.mediawiki.org/wiki/Extension:Validator">Validator</a> installed in order to use <a href="http://www.mediawiki.org/wiki/Extension:SubPageList">SubPageList</a>.<br />' );
 }
 
-define( 'SPL_VERSION', '0.1 alpha' );
+define( 'SPL_VERSION', '0.1' );
 
-$wgExtensionCredits['other'][] = array(
+$wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'SubPageList',
 	'version' => SPL_VERSION,

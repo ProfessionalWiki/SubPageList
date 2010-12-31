@@ -13,4 +13,4 @@ SubPageList is a lightweight extension to display subpages.
   you can use to list subpages.
 * Backward compatible with the [[Extension:SubPageList3|SubPageList3 extension]].
 * Supports multiple parameters that enable you to customize the subpage list.
-
+* Full integration with the [[Extension:Validator|Validator extension]].

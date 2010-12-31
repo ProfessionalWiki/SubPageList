@@ -5,7 +5,7 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 
 
 === Version 0.1 ===
-201x-xx-xx
+2010-12-31
 
 * Copied the code of SubPageList3 and ...
 ** Modified code to make use of Validator for parameter handling.

@@ -64,11 +64,13 @@ final class SubPageList extends ParserHook {
 		$params['sort']->addCriteria( new CriterionInArray( 'asc', 'desc' ) );
 		$params['sort']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );
 		$params['sort']->setDefault( 'asc' );
+		$params['sort']->setDescription( wfMsg( 'spl-subpages-par-sort' ) );
 		
 		$params['sortby'] = new Parameter( 'sortby' );
 		$params['sortby']->addCriteria( new CriterionInArray( 'title', 'lastedit' ) );
 		$params['sortby']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );		
 		$params['sortby']->setDefault( 'title' );
+		$params['sortby']->setDescription( wfMsg( 'spl-subpages-par-sortby' ) );
 		
 		$params['format'] = new Parameter( 'format' );
 		$params['format']->addAliases( 'liststyle' );		
@@ -78,32 +80,38 @@ final class SubPageList extends ParserHook {
 			'list', 'bar'			
 		) );
 		$params['format']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );		
-		$params['format']->setDefault( 'ul' );		
+		$params['format']->setDefault( 'ul' );	
+		$params['format']->setDescription( wfMsg( 'spl-subpages-par-format' ) );	
 		
 		$params['page'] = new Parameter( 'page' );
 		$params['page']->addAliases( 'parent' );
 		$params['page']->setDefault( '' );
+		$params['page']->setDescription( wfMsg( 'spl-subpages-par-page' ) );
 		
 		$params['showpage'] = new Parameter( 'showpage', Parameter::TYPE_BOOLEAN );
 		$params['showpage']->addAliases( 'showparent' );
 		$params['showpage']->setDefault( 'no' );			
+		$params['showpage']->setDescription( wfMsg( 'spl-subpages-par-showpage' ) );
 		
 		$params['pathstyle'] = new Parameter( 'pathstyle' );
 		$params['pathstyle']->addAliases( 'showpath' );
-		$params['sortby']->addCriteria( new CriterionInArray(
+		$params['pathstyle']->addCriteria( new CriterionInArray(
 			'none', 'no',
 			'children', 'notparent',
 			'full'
 		) );
 		$params['pathstyle']->setDefault( 'none' );
 		$params['pathstyle']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );	
-
+		$params['pathstyle']->setDescription( wfMsg( 'spl-subpages-par-pathstyle' ) );
+		
 		$params['kidsonly'] = new Parameter( 'kidsonly', Parameter::TYPE_BOOLEAN );
 		$params['kidsonly']->setDefault( 'no' );
+		$params['kidsonly']->setDescription( wfMsg( 'spl-subpages-par-kidsonly' ) );
 		
 		$params['limit'] = new Parameter( 'limit', Parameter::TYPE_INTEGER );
 		$params['limit']->setDefault( 200 );
 		$params['limit']->addCriteria( new CriterionInRange( 1, 500 ) );			
+		$params['limit']->setDescription( wfMsg( 'spl-subpages-par-limit' ) );
 		
 		return $params;
 	}

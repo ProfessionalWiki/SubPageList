@@ -4,6 +4,12 @@ Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:SubPage
 Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/SubPageList/RELEASE-NOTES?view=co
 
 
+=== Version 0.2 ===
+2011-01-xx
+
+* Fixed bug in pathstyle and sortby parameters.
+* Added parameter descriptions.
+
 === Version 0.1 ===
 2010-12-31
 

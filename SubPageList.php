@@ -53,9 +53,9 @@ $wgExtensionCredits['parserhook'][] = array(
 
 $egSPLIP = dirname( __FILE__ );
 
-$wgExtensionMessagesFiles['SubPageList'] 			= $egSPLIP . '/SubPageList.i18n.php';
+$wgExtensionMessagesFiles['SubPageList'] = $egSPLIP . '/SubPageList.i18n.php';
 
-$wgAutoloadClasses['SubPageList']	 				= $egSPLIP . '/SubPageList.class.php';
+$wgAutoloadClasses['SubPageList'] = $egSPLIP . '/SubPageList.class.php';
 
 if ( version_compare( $wgVersion, '1.16alpha', '>=' ) ) {
 	$wgExtensionMessagesFiles['SubPageListMagic'] 	= $egSPLIP . '/SubPageList.i18n.magic.php';

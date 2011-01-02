@@ -20,3 +20,4 @@ $magicWords['en'] = array(
 	'splist' => array( 0, 'splist' ),
 	'subpages' => array( 0, 'subpages' ),
 );
+

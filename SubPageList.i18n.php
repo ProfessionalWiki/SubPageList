@@ -79,6 +79,12 @@ $messages['ia'] = array(
 	'spl-nosubpages' => '$1 non ha subpaginas a listar.',
 	'spl-subpages-par-sort' => 'Le direction in le qual ordinar le subpaginas.',
 	'spl-subpages-par-sortby' => 'Criterio secundo le qual ordinar le subpaginas.',
+	'spl-subpages-par-format' => 'Le lista de subpaginas pote esser presentate in plure formatos: listas a numeros (ol), listas a punctos (ul) e listas separate per commas (list).',
+	'spl-subpages-par-page' => 'Le pagina del qual presentar le subpaginas. Le predefinition es le pagina actual.',
+	'spl-subpages-par-showpage' => 'Indica si le pagina mesme debe figurar in le lista o non.',
+	'spl-subpages-par-pathstyle' => 'Le stilo del cammino pro subpaginas in le lista.',
+	'spl-subpages-par-kidsonly' => 'Permitte monstrar solmente subpaginas directe.',
+	'spl-subpages-par-limit' => 'Le numero maxime de paginas a listar.',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -140,5 +146,16 @@ $messages['ru'] = array(
 	'spl-subpages-par-pathstyle' => 'Стиль пути для подстраниц в списке.',
 	'spl-subpages-par-kidsonly' => 'Показывать только прямые подстраницы.',
 	'spl-subpages-par-limit' => 'Максимальное количество страниц в список.',
+);
+
+/** Ukrainian (Українська)
+ * @author Тест
+ */
+$messages['uk'] = array(
+	'spl-desc' => 'Додає тег <code><nowiki><splist /></nowiki></code>, який виводить список підсторінок',
+	'spl-nosubpages' => '$1 не має підсторінок для складання списку.',
+	'spl-subpages-par-sort' => 'Напрямок сортування.',
+	'spl-subpages-par-page' => 'Сторінка, для якої показати підсторінки. За умовчанням — поточна сторінка.',
+	'spl-subpages-par-limit' => 'Максимальна кількість сторінок у списку.',
 );
 

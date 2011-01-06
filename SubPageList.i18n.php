@@ -39,6 +39,15 @@ $messages['be-tarask'] = array(
 	'spl-nosubpages' => '$1 ня мае падстаронак.',
 );
 
+/** Bosnian (Bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'spl-desc' => 'Dodaje <code><nowiki><splist /></nowiki></code> oznaku koja vam omogućuje da pregledate podstranice',
+	'spl-nosubpages' => '$1 nema podstranica za prikaz.',
+	'spl-subpages-par-sort' => 'Smijer za redanje.',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */

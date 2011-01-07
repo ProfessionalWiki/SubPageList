@@ -141,6 +141,15 @@ $messages['mk'] = array(
 	'spl-subpages-par-limit' => 'Максималниот број на страници за наведување во списокот.',
 );
 
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'spl-desc' => "Voegt het label <code><nowiki><splist /></nowiki></code> toe dat het mogelijk maakt een lijst met subpagina's weer te geven",
+	'spl-subpages-par-sort' => 'De sorteervolgorde',
+	'spl-subpages-par-sortby' => "Hoe de subpagina's te sorteren.",
+);
+
 /** Russian (Русский)
  * @author Александр Сигачёв
  */
@@ -155,6 +164,13 @@ $messages['ru'] = array(
 	'spl-subpages-par-pathstyle' => 'Стиль пути для подстраниц в списке.',
 	'spl-subpages-par-kidsonly' => 'Показывать только прямые подстраницы.',
 	'spl-subpages-par-limit' => 'Максимальное количество страниц в список.',
+);
+
+/** Serbian Cyrillic ekavian (Српски (ћирилица))
+ * @author Rancher
+ */
+$messages['sr-ec'] = array(
+	'spl-subpages-par-limit' => 'Највећи број страница за приказивање.',
 );
 
 /** Ukrainian (Українська)

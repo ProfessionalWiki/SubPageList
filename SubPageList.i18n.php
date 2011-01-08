@@ -150,6 +150,22 @@ $messages['nl'] = array(
 	'spl-subpages-par-sortby' => "Hoe de subpagina's te sorteren.",
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Nghtwlkr
+ */
+$messages['no'] = array(
+	'spl-desc' => 'Legger til et <code><nowiki><splist /></nowiki></code>-element som lar deg liste opp undersider',
+	'spl-nosubpages' => '$1 har ingen undersider å liste opp.',
+	'spl-subpages-par-sort' => 'Retningen du vil sortere i.',
+	'spl-subpages-par-sortby' => 'Hva du vil sortere undersidene etter.',
+	'spl-subpages-par-format' => 'Undersidelisten kan vises i flere format. Nummererte lister (ol), punktlister (ul) og kommaseparerte lister (list).',
+	'spl-subpages-par-page' => 'Siden undersidene skal vises for. Standard er den gjeldende siden.',
+	'spl-subpages-par-showpage' => 'Indikerer om selve siden skal vises i listen eller ikke.',
+	'spl-subpages-par-pathstyle' => 'Stilen på banen for undersidene i listen.',
+	'spl-subpages-par-kidsonly' => 'Tillater kun å vise direkte undersider.',
+	'spl-subpages-par-limit' => 'Maksimum antall sider å liste opp.',
+);
+
 /** Russian (Русский)
  * @author Александр Сигачёв
  */

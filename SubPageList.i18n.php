@@ -116,11 +116,14 @@ $messages['id'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'spl-desc' => 'Setzt den <code><nowiki><splist /></nowiki></code>-Tag fir Ënnersäiten ze weisen derbäi',
 	'spl-nosubpages' => '$1 huet keng Ënnersäite fir ze weisen',
 	'spl-subpages-par-sort' => 'Reiefolleg wéi zortéiert soll ginn.',
 	'spl-subpages-par-sortby' => "Wourop d'Ënnersäiten zortéiert ginn:",
 	'spl-subpages-par-format' => 'D\'Lëscht vun den Ënnersäite kann a verschiddene Formater gewise ginn. Numeréiert Lëschten (ol), Lëschte mat Punkten (ul) oder "comma seperated" Lëschten (list).',
+	'spl-subpages-par-page' => "D'Säit fir déi Ënnersäite gewise solle ginn.als Standard ass dat déi aktuell Säit.",
 	'spl-subpages-par-showpage' => "Gëtt un ob d'Säit selwer an der Lëscht gewise soll ginn oder net.",
+	'spl-subpages-par-pathstyle' => 'Styl vum Wee (path) fir Ënnersäiten an der Lëscht.',
 	'spl-subpages-par-kidsonly' => 'Erlaabt fir nëmmen direkt Ënnersäiten ze weisen.',
 	'spl-subpages-par-limit' => "D'Maximalzuel vu Säiten déi gewise ginn.",
 );

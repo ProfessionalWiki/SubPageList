@@ -28,7 +28,7 @@ $messages['en'] = array(
 	'spl-subpages-par-showpage' => 'Indicates if the page itself should be shown in the list or not.',
 	'spl-subpages-par-pathstyle' => 'The style of the path for subpages in the list.',
 	'spl-subpages-par-kidsonly' => 'Allows showing only direct subpages.',
-	'spl-subpages-par-limit' => 'The max amount of pages to list.',
+	'spl-subpages-par-limit' => 'The maximum number of pages to list.',
 );
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))

@@ -39,6 +39,13 @@ $messages['be-tarask'] = array(
 	'spl-nosubpages' => '$1 ня мае падстаронак.',
 );
 
+/** Breton (Brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'spl-nosubpages' => "N'eus ispajenn ebet da rollañ evit $1",
+);
+
 /** Bosnian (Bosanski)
  * @author CERminator
  */
@@ -149,8 +156,15 @@ $messages['mk'] = array(
  */
 $messages['nl'] = array(
 	'spl-desc' => "Voegt het label <code><nowiki><splist /></nowiki></code> toe dat het mogelijk maakt een lijst met subpagina's weer te geven",
+	'spl-nosubpages' => "$1 heeft geen subpagina's.",
 	'spl-subpages-par-sort' => 'De sorteervolgorde',
 	'spl-subpages-par-sortby' => "Hoe de subpagina's te sorteren.",
+	'spl-subpages-par-format' => "De lijst met subpagina's kan op verschillende manieren weergegeven worden. Als genummerde lijst (ol), ongenummerde lijst (ul) en als door komma's gescheiden lijst (list).",
+	'spl-subpages-par-page' => "De pagina waarvoor subpagina's weergegeven moeten worden. Dit is standaard de huidige pagina.",
+	'spl-subpages-par-showpage' => 'Geeft aan of de pagina zelf weergegeven moet worden in de lijst of niet.',
+	'spl-subpages-par-pathstyle' => "De stijl van het pad voor subpagina's in de lijst.",
+	'spl-subpages-par-kidsonly' => "Maakt het mogelijk om alleen subpagina's van het eerste niveau weer te geven.",
+	'spl-subpages-par-limit' => "Het maximale aantal weer te geven pagina's.",
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -167,6 +181,22 @@ $messages['no'] = array(
 	'spl-subpages-par-pathstyle' => 'Stilen på banen for undersidene i listen.',
 	'spl-subpages-par-kidsonly' => 'Tillater kun å vise direkte undersider.',
 	'spl-subpages-par-limit' => 'Maksimum antall sider å liste opp.',
+);
+
+/** Portuguese (Português)
+ * @author Hamilton Abreu
+ */
+$messages['pt'] = array(
+	'spl-desc' => 'Acrescenta um elemento <code><nowiki><splist /></nowiki></code> que permite listar subpáginas',
+	'spl-nosubpages' => '$1 não tem subpáginas para listar.',
+	'spl-subpages-par-sort' => 'A direcção da ordenação.',
+	'spl-subpages-par-sortby' => 'O critério de ordenação.',
+	'spl-subpages-par-format' => 'A lista de subpáginas pode ser apresentada em vários formatos. Listas numeradas (ol), listas com marcadores (ul) e listas separadas por vírgulas (list).',
+	'spl-subpages-par-page' => 'A página que tem as subpáginas. Por omissão, será a página corrente.',
+	'spl-subpages-par-showpage' => 'Indica se a própria página deve ser mostrada na lista ou não.',
+	'spl-subpages-par-pathstyle' => 'O estilo do caminho para as subpáginas na lista.',
+	'spl-subpages-par-kidsonly' => 'Permite mostrar só subpáginas directas.',
+	'spl-subpages-par-limit' => 'O número máximo de páginas listadas.',
 );
 
 /** Russian (Русский)

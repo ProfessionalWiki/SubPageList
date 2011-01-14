@@ -31,12 +31,20 @@ $messages['en'] = array(
 	'spl-subpages-par-limit' => 'The maximum number of pages to list.',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+ * @author EugeneZelenko
+ * @author Jim-by
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
 	'spl-desc' => 'Дадае тэг <code><nowiki><splist /></nowiki></code>, які выводзіць сьпіс падстаронак',
 	'spl-nosubpages' => '$1 ня мае падстаронак.',
+	'spl-subpages-par-sort' => 'Напрамак сартаваньня.',
+	'spl-subpages-par-sortby' => 'Як сартаваць падстаронкі.',
+	'spl-subpages-par-format' => 'Сьпіс падстаронак можа быць паказаны ў некалькіх фарматах. Нумараваныя сьпісы (ol), маркіраваныя сьпісы (ul) і сьпісы падзеленыя коскамі (list).',
+	'spl-subpages-par-page' => 'Старонка для якой паказваць сьпіс падстаронак. Па змоўчваньні цяперашняя старонка.',
+	'spl-subpages-par-showpage' => 'Паказвае, ці павінна паказвацца старонка ў сьпісе.',
+	'spl-subpages-par-pathstyle' => 'Стыль шляху для падстаронак у сьпісе.',
 );
 
 /** Breton (Brezhoneg)

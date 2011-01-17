@@ -45,6 +45,8 @@ $messages['be-tarask'] = array(
 	'spl-subpages-par-page' => 'Старонка для якой паказваць сьпіс падстаронак. Па змоўчваньні цяперашняя старонка.',
 	'spl-subpages-par-showpage' => 'Паказвае, ці павінна паказвацца старонка ў сьпісе.',
 	'spl-subpages-par-pathstyle' => 'Стыль шляху для падстаронак у сьпісе.',
+	'spl-subpages-par-kidsonly' => 'Паказваць толькі прамыя падстаронкі.',
+	'spl-subpages-par-limit' => 'Максымальная колькасьць старонак для паказу.',
 );
 
 /** Breton (Brezhoneg)

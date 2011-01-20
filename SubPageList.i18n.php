@@ -97,6 +97,22 @@ $messages['fr'] = array(
 	'spl-subpages-par-limit' => 'La quantité maximale de pages à lister.',
 );
 
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'spl-desc' => 'Přidawa element code><nowiki><splist /></nowiki></code>, kotryž ći zmóžnja podstrony nalistować',
+	'spl-nosubpages' => '$1 nima podstrony.',
+	'spl-subpages-par-sort' => 'Sortěrowanski porjad.',
+	'spl-subpages-par-sortby' => 'Sortěrowanski kriterij podstronow',
+	'spl-subpages-par-format' => 'Lisćina podstronow hodźi so we wšelakich formatach zwobraznić, čisłowane lisćiny (ol), naličenja (ul) a lisćiny dźělene přez komu (lisćina).',
+	'spl-subpages-par-page' => 'Strona, za kotruž maja so podstrony pokazać. Standard je aktualna strona.',
+	'spl-subpages-par-showpage' => 'Podawa, hač strona sama měła so w lisćinje pokazać abo nic.',
+	'spl-subpages-par-pathstyle' => 'Stil šćežki za podstrony w lisćinje.',
+	'spl-subpages-par-kidsonly' => 'Móže  jenož direktne podstrony pokazać.',
+	'spl-subpages-par-limit' => 'Maksimalna ličba stronow, kotrež maja so nalsitować.',
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */

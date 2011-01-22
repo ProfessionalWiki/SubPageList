@@ -265,7 +265,7 @@ $messages['ru'] = array(
 	'spl-subpages-par-limit' => 'Максимальное количество страниц в список.',
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица))
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Rancher
  */
 $messages['sr-ec'] = array(

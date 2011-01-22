@@ -31,6 +31,13 @@ $messages['en'] = array(
 	'spl-subpages-par-limit' => 'The maximum number of pages to list.',
 );
 
+/** Message documentation (Message documentation)
+ * @author Purodha
+ */
+$messages['qqq'] = array(
+	'spl-subpages-par-format' => 'I believe, that the brackettet words should not be translated. --[[User:Purodha|Purodha Blissenbach]] 00:04, 21 January 2011 (UTC)',
+);
+
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
@@ -67,6 +74,7 @@ $messages['bs'] = array(
 
 /** German (Deutsch)
  * @author Kghbln
+ * @author Purodha
  */
 $messages['de'] = array(
 	'spl-desc' => 'Fügt das <code><nowiki><splist /></nowiki></code>-Tag zur Anzeige von Unterseiten hinzu',
@@ -75,7 +83,7 @@ $messages['de'] = array(
 	'spl-subpages-par-sortby' => 'Sortierkriterium der Unterseiten',
 	'spl-subpages-par-format' => 'Die Liste der Unterseiten kann in verschiedenen Formaten angezeigt werden, als nummerierte Liste (ol), als Aufzählung (ul) oder als kommagetrennte Liste (Liste).',
 	'spl-subpages-par-page' => 'Die Seite für welche die Unterseiten angezeigt werden sollen. Standardmäßig ist dies die aktuelle Seite.',
-	'spl-subpages-par-showpage' => 'Gibt an, ob diese Seite ebenso in der Liste der Unterseiten angezeigt werden soll oder nicht.',
+	'spl-subpages-par-showpage' => 'Gibt an, ob die Seite selbst in der Liste ihrer Unterseiten angezeigt werden soll oder nicht.',
 	'spl-subpages-par-pathstyle' => 'Anzeigestil für die Pfade in der Liste angezeigten Unterseiten',
 	'spl-subpages-par-kidsonly' => 'Ermöglicht ausschließlich die Anzeige der direkten Unterseiten.',
 	'spl-subpages-par-limit' => 'Die Höchstzahl der aufzulistenden Unterseiten.',
@@ -143,6 +151,22 @@ $messages['id'] = array(
 	'spl-subpages-par-pathstyle' => 'Gaya jalur subhalaman dalam daftar.',
 	'spl-subpages-par-kidsonly' => 'Hanya tampilkan subhalaman langsung.',
 	'spl-subpages-par-limit' => 'Jumlah halaman maks. yang ditampilkan.',
+);
+
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'spl-desc' => 'Deiht dä Befähl <code><nowiki><splist /></nowiki></code> en et Wiki, för Ongersigge aanzezeije.',
+	'spl-nosubpages' => 'De Sigg „$1“ hät kei Ongersigge zom Opleßte.',
+	'spl-subpages-par-sort' => 'Wieröm zoteet wääde sull.',
+	'spl-subpages-par-sortby' => 'Noh wat de Ongersigge zoteet wääde sulle.',
+	'spl-subpages-par-format' => 'De Leß met de Ongersigge kann ongerscheidlijje Jeschtalte han: met Nummere (ol) met Punkte (ul) un alles ein eine Reih met Kommas dozwesche (list)',
+	'spl-subpages-par-page' => 'De Sigg, woh de Ongersigge vun jezeich wääde sulle. Wam_mer nix säät, es dat de Sigg, di jraad jezeich weed.',
+	'spl-subpages-par-showpage' => 'Jitt aan, ov de Sigg selver och en dä Leß met dä iehre Ongersigge aanjezeisch wääde sull, udder nit.',
+	'spl-subpages-par-pathstyle' => 'Dä Stil vun de Aanzeije vun däm Pad vun de Ongersigge en dä Leß.',
+	'spl-subpages-par-kidsonly' => 'Määt et müjjelesch, bloß de diräkte Ongersigge opzeleßte.',
+	'spl-subpages-par-limit' => 'De jrüüßte Zahl Sigge för opzeleste.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)

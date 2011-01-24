@@ -5,8 +5,9 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 
 
 === Version 0.2 ===
-2011-01-xx
+2011-01-24
 
+* Fixed escaping issue when using the parser function.
 * Fixed bug in pathstyle and sortby parameters.
 * Added parameter descriptions.
 

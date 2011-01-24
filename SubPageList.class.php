@@ -342,6 +342,21 @@ final class SubPageList extends ParserHook {
 		$options = $this->parser->mOptions;
 		$output = $this->parser->parse( $text, $this->parser->mTitle, $options, true, false );
 		return $output->getText();
+	}
+
+	/**
+	 * Returns the parser function otpions.
+	 * @see ParserHook::getFunctionOptions
+	 * 
+	 * @since 0.2
+	 * 
+	 * @return array
+	 */
+	protected function getFunctionOptions() {
+		return array(
+			'noparse' => true,
+			'isHTML' => true
+		);
 	}	
 	
 }

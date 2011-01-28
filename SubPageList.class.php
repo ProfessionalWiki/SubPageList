@@ -301,7 +301,7 @@ final class SubPageList extends ParserHook {
 		foreach( $titles as $subPageTitle ) {
 			$level = substr_count( $subPageTitle->getFullText(), '/' ) - $parentLevel;	
 			
-			if ( $parameters['kidsonly'] || $level < 2 ) {
+			if ( !$parameters['kidsonly'] || $level < 2 ) {
 				
 				if ( $parameters['showpage'] ) {
 					$level++;

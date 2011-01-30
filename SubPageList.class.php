@@ -154,7 +154,7 @@ final class SubPageList extends ParserHook {
 			$list = "''" . wfMsg( 'spl-nosubpages', '[[' . $title->getFullText() . ']]' ) . "''\n";
 		}
 		
-		return '<div class="subpagelist">' . $this->parse( $list ) . '</div>';
+		return '<div class="subpagelist">' . $this->parseWikitext( $list ) . '</div>';
 	}	
 	
 	/**
@@ -329,19 +329,6 @@ final class SubPageList extends ParserHook {
 		}
 
 		return implode( $isSingleLine ? '' : "\n", $items );
-	}
-
-	/**
-	 * Wrapper function parse, call the other functions.
-	 * 
-	 * @param string $text the content
-	 * 
-	 * @return string the parsed output
-	 */
-	protected function parse( $text ) {
-		$options = $this->parser->mOptions;
-		$output = $this->parser->parse( $text, $this->parser->mTitle, $options, true, false );
-		return $output->getText();
 	}
 
 	/**

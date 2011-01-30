@@ -210,7 +210,7 @@ final class SubPageList extends ParserHook {
 		$conditions['page_is_redirect'] = 0;
 		
 		// TODO: this is rather resource heavy
-		$conditions[] = '`page_title` LIKE ' . $dbr->addQuotes( $dbr->escapeLike( $title->getDBkey() ) . '/%' );
+		$conditions[] = '`page_title` ' . $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString() );
 
 		$fields = array();
 		$fields[] = 'page_title';
@@ -218,7 +218,7 @@ final class SubPageList extends ParserHook {
 		
 		$res = $dbr->select( 'page', $fields, $conditions, __METHOD__, $options );
 
-		while( $row = $dbr->fetchObject( $res ) ) {
+		foreach( $res as $row ) {
 			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 			if( is_object( $title ) ) {
 				$titles[] = $title;

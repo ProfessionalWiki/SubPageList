@@ -139,10 +139,6 @@ final class SubPageList extends ParserHook {
 	 * @return string
 	 */
 	public function render( array $parameters ) {
-		global $wgContLang;
-		
-		$this->language = $wgContLang;		
-		
 		$title = $this->getTitle( $parameters );
 		
 		$pages = $this->getSubPages( $title, $parameters );

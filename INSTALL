@@ -18,7 +18,7 @@ The latest code can be obtained from trunk:
 
  svn checkout <nowiki>http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/SubPageList/</nowiki>
 
-SUbPageList requires [[Extension:Validator|Validator]] 0.4.2 or above in order to work. A compatible
+SubPageList requires [[Extension:Validator|Validator]] 0.4.2 or above in order to work. A compatible
 copy of Validator always comes bundled with the regular releases, and is automatically loaded by SubPageList,
 so you do not need to worry about it when using one of these. If you are getting the code from SVN, make
 sure you also get a copy of Validator ([[Extension:Validator#Download|see here for instructions]]).

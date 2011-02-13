@@ -150,7 +150,7 @@ final class SubPageList extends ParserHook {
 			$list = "''" . wfMsg( 'spl-nosubpages', '[[' . $title->getFullText() . ']]' ) . "''\n";
 		}
 		
-		return '<div class="subpagelist">' . $this->parseWikitext( $list ) . '</div>';
+		return "<div class='subpagelist'>\n" . $this->parseWikitext( $list ) . "\n</div>";
 	}	
 	
 	/**

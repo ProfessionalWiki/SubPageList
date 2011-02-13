@@ -4,6 +4,11 @@ Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:SubPage
 Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/SubPageList/RELEASE-NOTES?view=co
 
 
+=== Version 0.3 ===
+2011-0x-xx
+
+* Fix to display of the first list item.
+
 === Version 0.2 ===
 2011-01-24
 

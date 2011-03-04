@@ -5,9 +5,11 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 
 
 === Version 0.3 ===
-2011-0x-xx
+2011-03-xx
 
 * Fix to display of the first list item.
+* Fixed inverted behaviour of the kidsonly parameter.
+* Fixed query issue when using PostGres.
 
 === Version 0.2 ===
 2011-01-24

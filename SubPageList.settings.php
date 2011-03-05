@@ -20,3 +20,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
+# Automatically invalidate the cache of "base pages" when creating, moving or deleting a subpage?
+# This covers most cases where people expect automatisc refresh of the sub page list. 
+# However note that this will not update lists displaying subpages from pages different then themselves.
+$egSPLAutorefresh = false;

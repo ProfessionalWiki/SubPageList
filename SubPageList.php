@@ -69,20 +69,4 @@ $wgHooks['ArticleInsertComplete'][] = 'SPLHooks::onArticleInsertComplete';
 $wgHooks['ArticleDeleteComplete'][] = 'SPLHooks::onArticleDeleteComplete';
 $wgHooks['TitleMoveComplete'][] = 'SPLHooks::onTitleMoveComplete';
 
-$wgExtensionFunctions[] = 'efSPLSetup';
-
-/**
- * Initialization function.
- * 
- * @since 0.1
- */
-function efSPLSetup() {
-	global $wgVersion;
-	
-	// This function has been deprecated in 1.16, but needed for earlier versions.
-	if ( version_compare( $wgVersion, '1.16', '<' ) ) {
-		
-	}	
-}
-
 require_once 'SubPageList.settings.php';

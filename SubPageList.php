@@ -81,7 +81,7 @@ function efSPLSetup() {
 	
 	// This function has been deprecated in 1.16, but needed for earlier versions.
 	if ( version_compare( $wgVersion, '1.16', '<' ) ) {
-		wfLoadExtensionMessages( 'SubPageList' );
+		
 	}	
 }
 

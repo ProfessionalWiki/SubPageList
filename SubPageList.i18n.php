@@ -91,11 +91,12 @@ $messages['de'] = array(
 
 /** French (Français)
  * @author Sherbrooke
+ * @author Toliño
  */
 $messages['fr'] = array(
 	'spl-desc' => 'Ajoute une balise <nowiki><splist /></nowiki> qui permet de lister les sous-pages',
 	'spl-nosubpages' => "$1 n'a pas de sous-pages à lister.",
-	'spl-subpages-par-sort' => 'La direction de tri',
+	'spl-subpages-par-sort' => 'La direction de tri.',
 	'spl-subpages-par-sortby' => 'Trie des sous-pages selon.',
 	'spl-subpages-par-format' => 'La liste des sous-pages peut être affichée en différents formats : listes numérotées (ol), listes à puces (ul) ou listes séparées par des virgules (liste).',
 	'spl-subpages-par-page' => 'La page pour voir les sous-pages. Le défaut est la page courante.',
@@ -103,6 +104,22 @@ $messages['fr'] = array(
 	'spl-subpages-par-pathstyle' => 'Style du chemin des sous-pages dans la liste.',
 	'spl-subpages-par-kidsonly' => "Permet de n'afficher que les sous-pages immédiates.",
 	'spl-subpages-par-limit' => 'La quantité maximale de pages à lister.',
+);
+
+/** Galician (Galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'spl-desc' => 'Engade unha etiqueta <code><nowiki><splist /></nowiki></code> que permite poñer as subpáxinas nunha lista',
+	'spl-nosubpages' => '$1 non ten subpáxinas que poñer nunha lista.',
+	'spl-subpages-par-sort' => 'A dirección de ordenación.',
+	'spl-subpages-par-sortby' => 'O criterio de ordenación das subpáxinas.',
+	'spl-subpages-par-format' => 'A lista de subpáxinas pódese mostrar en varios formatos. Listas numeradas (ol), listas con asteriscos (ul) e listas separadas por comas (list).',
+	'spl-subpages-par-page' => 'A páxina na que mostrar as subpáxinas. A páxina actual é a predeterminada.',
+	'spl-subpages-par-showpage' => 'Indica se a páxina en si debería figurar ou non na lista.',
+	'spl-subpages-par-pathstyle' => 'O estilo da ruta de acceso ás subpáxinas da lista.',
+	'spl-subpages-par-kidsonly' => 'Permite mostrar só as subpáxinas directas.',
+	'spl-subpages-par-limit' => 'O número máximo de páxinas a poñer nunha lista.',
 );
 
 /** Upper Sorbian (Hornjoserbsce)

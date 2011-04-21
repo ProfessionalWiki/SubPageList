@@ -289,6 +289,22 @@ $messages['sr-ec'] = array(
 	'spl-subpages-par-limit' => 'Највећи број страница за приказивање.',
 );
 
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'spl-desc' => 'Nagdaragdag ng isang tatak na <code><nowiki><splist /></nowiki></code> na nagbibigay ng kakayahan sa iyo na magtala ng kabahaging mga pahina',
+	'spl-nosubpages' => 'Walang maitatalang kabahaging mga pahina ang $1.',
+	'spl-subpages-par-sort' => 'Ang patutunguhan kung saan gagawa ng paghihiwa-hiwalay.',
+	'spl-subpages-par-sortby' => 'Kung ano ang pagbabatayan ng paghihiwa-hiwalay ng kabahaging mga pahina.',
+	'spl-subpages-par-format' => 'Ang talaan ng kabahaging pahina ay maaaring ipakita sa pamamagitan ng ilang mga anyo. Mga talaang may bilang (ol), mga talaang may punglo at mga talaang pinaghihiwa-hiwalay ng kuwit (talaan).',
+	'spl-subpages-par-page' => 'Ang pahinang pagpapakitaan ng kabahaging mga pahina. Likas na nakatakdang pumunta sa pangkasalukuyang pahina.',
+	'spl-subpages-par-showpage' => 'Nagpapahiwatig kung ang pahina mismo ay dapat na ipakita sa loob ng talaan o hindi.',
+	'spl-subpages-par-pathstyle' => 'Ang estilo ng landas para sa kabahaging mga pahina sa loob ng talaan.',
+	'spl-subpages-par-kidsonly' => 'Nagpapahintulot na magpakita lamang ng tuwirang kabahaging mga pahina.',
+	'spl-subpages-par-limit' => 'Ang pinakamataas na bilang ng mga pahinang itatala.',
+);
+
 /** Ukrainian (Українська)
  * @author Тест
  */

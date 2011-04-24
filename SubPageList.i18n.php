@@ -122,6 +122,22 @@ $messages['gl'] = array(
 	'spl-subpages-par-limit' => 'O número máximo de páxinas a poñer nunha lista.',
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'spl-desc' => 'הוספת התג <code><nowiki><splist /></nowiki></code> ליצירת רשימת דפי־משנה',
+	'spl-nosubpages' => 'בדף $1 אין דפי משנה.',
+	'spl-subpages-par-sort' => 'באיזה כיוון למיין.',
+	'spl-subpages-par-sortby' => 'לפי מה למיין את דפי־המשנה.',
+	'spl-subpages-par-format' => 'רשימת דפי־המשנה יכולה להיות מוצגת במספר עיצובים. רשימה ממוספרת (ol), רשימת תבליטים (ul), ורשימה מופרדת בפסיקים (list).',
+	'spl-subpages-par-page' => 'על איזה דף להציג את דפי־המשנה. בררת המחדל: הדף הנוכחי.',
+	'spl-subpages-par-showpage' => 'מציין אם הדף עצמו צריך להיות מוצג ברשימה או לאו.',
+	'spl-subpages-par-pathstyle' => 'סגנון הנתיב אל דפי־המשנה ברשימה.',
+	'spl-subpages-par-kidsonly' => 'מאפשר להראות רק דפי־משנה ישירים.',
+	'spl-subpages-par-limit' => 'המספר המרבי של דפים להציג.',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */

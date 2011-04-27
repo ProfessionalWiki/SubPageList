@@ -266,6 +266,22 @@ $messages['no'] = array(
 	'spl-subpages-par-limit' => 'Maksimum antall sider å liste opp.',
 );
 
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'spl-desc' => 'A gionta un sìmbol <code><nowiki><splist /></nowiki></code> che at abìlita a listé le sot-pagine',
+	'spl-nosubpages' => "$1 a l'ha pa ëd sotpàgine da listé.",
+	'spl-subpages-par-sort' => 'La diression për ordiné.',
+	'spl-subpages-par-sortby' => 'Lòn da dovré për ordiné le pagine.',
+	'spl-subpages-par-format' => 'La lista ëd sotpagine a peul esse mostà an vàire formà. Liste numerà (ol), liste a pont (ul) e liste separà da vìrgola (list).',
+	'spl-subpages-par-page' => 'La pagina për mosté le sotpagine. Për default la pagina corenta.',
+	'spl-subpages-par-showpage' => 'A ìndica se la pagina midema a dovrìa esse mostà ant la lista o nò.',
+	'spl-subpages-par-pathstyle' => 'Lë stit dël përcors për le sotpagine ant la lista.',
+	'spl-subpages-par-kidsonly' => 'A përmëtt ëd mosté mach sotpagine direte.',
+	'spl-subpages-par-limit' => 'Ël nùmer màssim ëd pàgine da listé.',
+);
+
 /** Portuguese (Português)
  * @author Hamilton Abreu
  */

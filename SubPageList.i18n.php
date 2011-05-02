@@ -57,10 +57,20 @@ $messages['be-tarask'] = array(
 );
 
 /** Breton (Brezhoneg)
+ * @author Fulup
  * @author Y-M D
  */
 $messages['br'] = array(
+	'spl-desc' => 'Ouzhpennañ a ra ur valizenn  <code><nowiki><splist /></nowiki></code> a dalvez da rollañ an ispajennoù',
 	'spl-nosubpages' => "N'eus ispajenn ebet da rollañ evit $1",
+	'spl-subpages-par-sort' => 'Tu an urzhiañ.',
+	'spl-subpages-par-sortby' => 'Urzhiañ a ra ispajennoù dre.',
+	'spl-subpages-par-format' => 'Gallout a ra ar roll ispajennoù bezañ diskwelet dre furmadoù disheñvel : rolloù niverennet (ol), rolloù padennek (ul) pe rolloù dispartiet dre skejoù (roll).',
+	'spl-subpages-par-page' => 'Ar bajenn da welet an ispajennoù. Ar bajenn red eo an hini dre ziouer.',
+	'spl-subpages-par-showpage' => 'Merkañ a ra ha rankout a ra ar bajenn bezañ war ar roll pe get.',
+	'spl-subpages-par-pathstyle' => 'Stil hent ispajennoù ar roll.',
+	'spl-subpages-par-kidsonly' => 'Aotren a ra diskouez hepken an ispajennoù eeun',
+	'spl-subpages-par-limit' => 'Niver brasañ a bajennoù da rollañ.',
 );
 
 /** Bosnian (Bosanski)

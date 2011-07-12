@@ -19,7 +19,9 @@ $messages = array();
 $messages['en'] = array(
 	'spl-desc' => 'Adds a <code><nowiki><splist /></nowiki></code> tag that enables you to list subpages',
 
-	'spl-nosubpages' => '$1 has no subpages to list.',
+	'spl-nosubpages' => 'Page "$1" has no subpages to list.',
+	'spl-noparentpage' => 'Page "$1" does not exist.',
+	'spl-nopages' => 'Namespace "$1" does not have pages.',
 
 	'spl-subpages-par-sort' => 'The direction to sort in.',
 	'spl-subpages-par-sortby' => 'What to sort the subpages by.',
@@ -313,9 +315,11 @@ $messages['pt'] = array(
  */
 $messages['ru'] = array(
 	'spl-desc' => 'Добавляет тег <code><nowiki><splist></splist></nowiki></code>, выводящий список подстраниц',
-	'spl-nosubpages' => '$1 не имеет подстраниц.',
+	'spl-nosubpages' => 'Страница «$1» не имеет подстраниц.',
+	'spl-noparentpage' => 'Страница «$1» не существует.',
+	'spl-nopages' => 'Пространство имён  «$1» не содержит страниц.',
 	'spl-subpages-par-sort' => 'Направление сортировки.',
-	'spl-subpages-par-sortby' => 'По чему сортировать подстраницы.',
+	'spl-subpages-par-sortby' => 'Ключ сортировки: название (title) или дата последней правки (lastedit).',
 	'spl-subpages-par-format' => 'Список подстраниц может быть показан в нескольких форматах. Нумерованный список (ol), маркированный список (ul), список через запятые (list).',
 	'spl-subpages-par-page' => 'Страница для которой показывать список подстраниц. По умолчанию текущая страница.',
 	'spl-subpages-par-showpage' => 'Указывает, должна ли отображаться сама страница.',
@@ -357,4 +361,3 @@ $messages['uk'] = array(
 	'spl-subpages-par-page' => 'Сторінка, для якої показати підсторінки. За умовчанням — поточна сторінка.',
 	'spl-subpages-par-limit' => 'Максимальна кількість сторінок у списку.',
 );
-

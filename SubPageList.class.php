@@ -11,6 +11,7 @@
  * @licence GNU GPL v3 or later
  *
  * @author Jeroen De Dauw
+ * @author Van de Bugger
  * @author James McCormack (email: user "qedoc" at hotmail); preceding version Martin Schallnahs <myself@schaelle.de>, original Rob Church <robchur@gmail.com>
  * @copyright © 2008 James McCormack, preceding version Martin Schallnahs, original Rob Church
  */
@@ -68,20 +69,20 @@ final class SubPageList extends ParserHook {
 		
 		$params['sortby'] = new Parameter( 'sortby' );
 		$params['sortby']->addCriteria( new CriterionInArray( 'title', 'lastedit' ) );
-		$params['sortby']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );		
+		$params['sortby']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );
 		$params['sortby']->setDefault( 'title' );
 		$params['sortby']->setDescription( wfMsg( 'spl-subpages-par-sortby' ) );
 		
 		$params['format'] = new Parameter( 'format' );
-		$params['format']->addAliases( 'liststyle' );		
+		$params['format']->addAliases( 'liststyle' );
 		$params['format']->addCriteria( new CriterionInArray(
 			'ul', 'unordered',
 			'ol', 'ordered',
-			'list', 'bar'			
+			'list', 'bar'
 		) );
-		$params['format']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );		
-		$params['format']->setDefault( 'ul' );	
-		$params['format']->setDescription( wfMsg( 'spl-subpages-par-format' ) );	
+		$params['format']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );
+		$params['format']->setDefault( 'ul' );
+		$params['format']->setDescription( wfMsg( 'spl-subpages-par-format' ) );
 		
 		$params['page'] = new Parameter( 'page' );
 		$params['page']->addAliases( 'parent' );
@@ -90,18 +91,20 @@ final class SubPageList extends ParserHook {
 		
 		$params['showpage'] = new Parameter( 'showpage', Parameter::TYPE_BOOLEAN );
 		$params['showpage']->addAliases( 'showparent' );
-		$params['showpage']->setDefault( 'no' );			
+		$params['showpage']->setDefault( 'no' );
 		$params['showpage']->setDescription( wfMsg( 'spl-subpages-par-showpage' ) );
 		
 		$params['pathstyle'] = new Parameter( 'pathstyle' );
 		$params['pathstyle']->addAliases( 'showpath' );
 		$params['pathstyle']->addCriteria( new CriterionInArray(
 			'none', 'no',
-			'children', 'notparent',
-			'full'
+			'subpagename', 'children', 'notparent',
+			'pagename',
+			'full', 		// Deprecate? --vdb
+			'fullpagename'
 		) );
 		$params['pathstyle']->setDefault( 'none' );
-		$params['pathstyle']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );	
+		$params['pathstyle']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );
 		$params['pathstyle']->setDescription( wfMsg( 'spl-subpages-par-pathstyle' ) );
 		
 		$params['kidsonly'] = new Parameter( 'kidsonly', Parameter::TYPE_BOOLEAN );
@@ -110,8 +113,21 @@ final class SubPageList extends ParserHook {
 		
 		$params['limit'] = new Parameter( 'limit', Parameter::TYPE_INTEGER );
 		$params['limit']->setDefault( 200 );
-		$params['limit']->addCriteria( new CriterionInRange( 1, 500 ) );			
+		$params['limit']->addCriteria( new CriterionInRange( 1, 500 ) );
 		$params['limit']->setDescription( wfMsg( 'spl-subpages-par-limit' ) );
+
+		// TODO: Add description strings. --vdb
+		$params['element'] = new Parameter( 'element', Parameter::TYPE_STRING, 'div' );
+		$params['element']->addCriteria( new CriterionInArray( 'div', 'p', 'span' ) );
+		$params['class'] = new Parameter( 'class', Parameter::TYPE_STRING, 'subpagelist' );
+		$params['intro'] = new Parameter( 'intro', Parameter::TYPE_STRING, '' );
+		$params['outro'] = new Parameter( 'outro', Parameter::TYPE_STRING, '' );
+		$params['default'] = new Parameter( 'default', Parameter::TYPE_STRING, '' );
+		$params['separator'] = new Parameter( 'separator', Parameter::TYPE_STRING, '&#160;· ' );
+		$params['separator']->addAliases( 'sep' );
+		$params['template'] = new Parameter( 'template', Parameter::TYPE_STRING, '' );
+		$params['links'] = new Parameter( 'links', Parameter::TYPE_BOOLEAN, true );
+		$params['links']->addAliases( 'link' );
 		
 		return $params;
 	}
@@ -140,17 +156,65 @@ final class SubPageList extends ParserHook {
 	 */
 	public function render( array $parameters ) {
 		$title = $this->getTitle( $parameters );
-		
 		$pages = $this->getSubPages( $title, $parameters );
-		
+		// There is no need in encoding `$parameters['element']', because it is validated and can
+		// be only one of `span', `p', or `div'.
+		$element = $parameters['element'];
+		// Using `$parameters['class']' is dangerous and may be a security hole, because it may lead
+		// to incorrect (or malicious) HTML code. `encodeAttribute' solves the issue.
+		$class = Sanitizer::encodeAttribute( $parameters['class'] );
+		$open = "<$element class=\"$class\">";
+		$close = "</$element>";
+		$inlineList = ( $parameters['format'] == 'list' || $parameters['format'] == 'bar' );
+		$inlineText = ( $element == 'span' );
+		$list = '';
+
 		if ( count( $pages ) > 0 ) {
-			$list = $this->makeList( $title, $parameters, $pages );
+			$intro = $parameters['intro'];
+			$outro = $parameters['outro'];
+			if ( $inlineText && ! $inlineList ) {
+				if ( $intro !== '' ) {
+					$list .= $open . $intro . $close;
+				}
+				$list .=
+					"<div class=\"$class\">" .
+					$this->makeList( $title, $parameters, $pages ) .
+					"</div>";
+				if ( $outro !== "" ) {
+					$list .= $open . $outro . $close;
+				}
+			}
+			else {
+				$list =
+					$open . $intro . 
+					$this->makeList( $title, $parameters, $pages ) .
+					$outro . $close;
+			}
+			$list = $this->parseWikitext( $list );
 		}
 		else {
-			$list = "''" . wfMsg( 'spl-nosubpages', '[[' . $title->getFullText() . ']]' ) . "''\n";
+			$default = $parameters['default'];
+			if ( $default === "" ) {
+				if ( is_null( $title ) ) {
+					$list = "''" . wfMsg( 'spl-noparentpage', $parameters['page'] ) . "''";
+				}
+				elseif ( $title instanceof Title ) {
+					$list = "''" . wfMsg( 'spl-nosubpages', '[[' . $title->getFullText() . ']]' ) . "''";
+				}
+				else {
+					$list = "''" . wfMsg( 'spl-nopages', $parameters['page'] ) . "''";
+				}
+			}
+			elseif ( $default !== "-" ) {
+				$list = $default;
+			}
+			// Format element only if content is not empty. 
+			if ( $list !== "" ) {
+				$list = $open . $this->parseWikitext( $list ) . $close;
+			}
 		}
-		
-		return "<div class='subpagelist'>\n" . $this->parseWikitext( $list ) . "\n</div>";
+
+		return $list;
 	}	
 	
 	/**
@@ -160,23 +224,32 @@ final class SubPageList extends ParserHook {
 	 * 
 	 * @param array $parameters
 	 * 
-	 * @return Title
+	 * @return Instance of Title class — title of an existing page, or integer — index of an
+	 * existing namespace, or null otherwise.
 	 */
 	protected function getTitle( array $parameters ) {
-		$title = false;
+		global $wgContLang;
 		
-		if ( $parameters['page'] != '' ) {
-			$specifiedTitle = Title::newFromText( $parameters['page'] );
-			
-			if ( !is_null( $specifiedTitle ) && $specifiedTitle->exists() ) {
-				$title = $specifiedTitle;
+		$page = $parameters['page'];
+		$title = null;
+
+		if ( $page == '' ) {
+			$title = $this->parser->mTitle;
+		}
+		else {
+			$title = Title::newFromText( $page );
+			if ( is_null( $title ) ) {
+				// It is a wrog page name. Probably it is a namespace name?
+				$m = array();
+				if ( preg_match( '/^\s*(.*):\s*$/', $page, $m ) ) {
+					$title = $wgContLang->getNsIndex( $m[ 1 ] );
+				}
+			}
+			else if ( ! $title->exists() ) {
+				$title = null;
 			}
 		}
 		
-		if ( $title === false ) {
-			$title = $this->parser->mTitle;
-		}
-
 		return $title;
 	}
 
@@ -185,43 +258,62 @@ final class SubPageList extends ParserHook {
 	 * 
 	 * @since 0.1
 	 * 
-	 * @param Title $title
+	 * @param $title can be either an instance of Title class (title of an existing page), or number
+	 *        (index of an existing namespace) or null.
 	 * @param array $parameters
 	 * 
 	 * @return array of Title
 	 */
 	protected function getSubPages( Title $title, array $parameters ) {
 		$titles = array();
-		
-		$dbr = wfGetDB( DB_SLAVE );
-		
-		$options = array();
-		$options['ORDER BY'] = 
-			( $parameters['sortby'] == 'title' ? 'page_title' : 'page_touched' ) . ' ' .
-			( strtoupper( $parameters['sort'] ) );
-		$options['LIMIT'] = $parameters['limit'];
 
-		$conditions = array();
-		$conditions['page_namespace'] = $title->getNamespace(); // Don't let list cross namespaces.
-		$conditions['page_is_redirect'] = 0;
-		
-		// TODO: this is rather resource heavy
-		$conditions[] = 'page_title ' . $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString() );
+		if ( ! is_null( $title ) ) {
+			// TODO: Check whether subpages enabled?
+			$dbr = wfGetDB( DB_SLAVE );
+			
+			$options = array();
+			$options['ORDER BY'] = 
+				( $parameters['sortby'] == 'title' ? 'page_title' : 'page_touched' ) . ' ' .
+				( strtoupper( $parameters['sort'] ) );
+			$options['LIMIT'] = $parameters['limit'];
 
-		$fields = array();
-		$fields[] = 'page_title';
-		$fields[] = 'page_namespace';
-		
-		$res = $dbr->select( 'page', $fields, $conditions, __METHOD__, $options );
-
-		foreach( $res as $row ) {
-			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
-			if( is_object( $title ) ) {
-				$titles[] = $title;
+			$conditions = array();
+			$conditions['page_is_redirect'] = 0;
+			if ( $title instanceof Title ) {
+				$conditions['page_namespace'] = $title->getNamespace(); // Don't let list cross namespaces.
+				// TODO: this is rather resource heavy
+				$conditions[] = 'page_title ' . $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString() );
+				if ( $parameters['kidsonly'] ) {
+					$conditions[] = 'page_title NOT ' . $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString(), '/', $dbr->anyString() );
+				}
 			}
-		}		
-		
-		$dbr->freeResult( $res );
+			else {
+				$conditions['page_namespace'] = $title;
+				if ( $parameters['kidsonly'] ) {
+					// Request only root pages, not subpages.
+					$conditions[] = 'page_title NOT ' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() );
+				}
+			    else {
+					$conditions[] = 'page_title ' . $dbr->buildLike( $dbr->anyString() );
+				}
+			}
+
+			$fields = array();
+			$fields[] = 'page_title';
+			$fields[] = 'page_namespace';
+
+			$res = $dbr->select( 'page', $fields, $conditions, __METHOD__, $options );
+
+			foreach( $res as $row ) {
+				$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
+				if( is_object( $title ) ) {
+					$titles[] = $title;
+				}
+			}		
+			
+			$dbr->freeResult( $res );
+
+		}
 
 		return $titles;
 	}
@@ -229,25 +321,47 @@ final class SubPageList extends ParserHook {
 	/**
 	 * Creates one list item.
 	 *  
-	 * @param Title $title the title of a page
-	 * @param array $parameters
+	 * @param $fullName — Full name of page, including namespace (but excluding fragment).
+	 * @param $nsLen — Length of namespace name (including colon, if any).
+	 * @param $parentLen — Length of parent title (not including namespace but including slash).
 	 * 
 	 * @return string: wikitext for the list item
 	 */
-	protected function makeListItem( Title $title, array $parameters ) {
+	protected function makeListItem( $fullName, $nsLen, $parentLen, array $parameters ) {
 		switch( $parameters['pathstyle'] ) {
-			case 'none' : case 'no' : 
-				$linktitle = substr( strrchr( $title->getText(), "/" ), 1 );
+			case 'none' : case 'no' :
+				// Just a last item.
+				$slash = strrpos( $fullName, '/' );
+				if ( $slash ) {
+					$item = substr( $fullName, $slash + 1 );  // +1 to skip slash.
+				}
+				else {
+					$item = substr( $fullName, $nsLen ); 
+				}
 				break;
-			case 'children' : case 'notparent' : 
-				$linktitle = substr( strstr( $title->getText(), "/" ), 1 );
+			case 'subpagename' : case 'children' : case 'notparent' :
+				// Pagename starting from parent.
+				$item = substr( $fullName, $nsLen + $parentLen );
 				break;
-			case 'full' :
-				$linktitle = $title->getText();
+			case 'pagename' : case 'full' :
+				// Almost full (without namespace).
+				$item = substr( $fullName, $nsLen );
+				break;
+			case 'fullpagename' :
+				// Full name (including namespace).
+				$item = $fullName;
 				break;
 		}
 		
-		return ' [[' . $title->getFullText() . '|' . $linktitle . ']]';
+		if ( $parameters['links'] ) {
+			$item = "[[$fullName|$item]]";
+		}
+		
+		if ( $parameters['template'] !== '' ) {
+			$item = '{{' . $parameters['template'] . '|' . $item . '}}';
+		}
+		
+		return $item;
 	}
 
 	/**
@@ -262,69 +376,95 @@ final class SubPageList extends ParserHook {
 	 * @return string the whole list
 	 */
 	protected function makeList( Title $title, array $parameters, array $titles ) {
-		$token = '';
-		$isSingleLine = false;
-		
+		global $wgContLang;
+		$start = '';	// String to render once in the very beginning of each item.
+		$bullet = '';	// String to render between `$start' and item
+						// (may be rendered few times, depends on nesting level).
+		$sep = '';		// String to render between two items.
 		$items = array();
 		
 		switch ( $parameters['format'] ) {
 			case 'ol' : case 'ordered' :
-				$token = '#';
+				$start = "\n";
+				$bullet = '#';
 				break;
 			case 'ul' : case 'unordered' : 
-				$token = '*';
+				$start = "\n";
+				$bullet = '*';
 				break;
 			case 'list' : case 'bar' :
-				$isSingleLine = true;
-				$token = '&#160;· ';
+				$sep = $parameters['separator'];
 				break;
 		}
-		
-		if ( $parameters['showpage'] ) {
-			$item = '[[' . $title->getFullText() .'|'. $title->getText() .']]';
-			
-			if ( !$isSingleLine ) {
-				$item = $token . $item;
-			}
-			
-			$items[] = trim( $item );
+		// A kind of optimization: I do not want to run loop every time I need series of bullets.
+		// Let us intialize $bullets array so $bullets[$i] is a bullet repeated $i times.
+		$bullets = array();
+		$bullets[0] = $bullet;
+
+		// WARNING: It seems strlen and other sring functions operated with bytes, not characters.
+		// But it seems it is ok for UTF-8 encoding...
+
+		if ( $title instanceof Title ) {
+			$nsName = $title->getNsText();            // Namespace name.
+			$parentFull = $title->getPrefixedText();  // Including namespace.
+			$parentText = $title->getText();          // Not including namespace.
+			$parentSlashCount = substr_count( $parentFull, '/' );
 		}
-		
-		$parentLevel = substr_count( $title->getFullText(), '/' );
-		
-		$isFirst = true;
-		
-		foreach( $titles as $subPageTitle ) {
-			$level = substr_count( $subPageTitle->getFullText(), '/' ) - $parentLevel;	
-			
-			if ( !$parameters['kidsonly'] || $level < 2 ) {
-				
-				if ( $parameters['showpage'] ) {
-					$level++;
-				}
-				
-				$item = '';
-				
-				if( $isSingleLine ) {
-					if( $isFirst ) {
-						$item .= ': ';
-					}
-					else {
-						$item .= $token;
-					}
-				} else {
-					for ( $i = 0; $i < $level; $i++ ) {
-						$item .= $token;
-					}
-				}
-				
-				$items[] = trim( $item . $this->makeListItem( $subPageTitle, $parameters ) );
+		else {
+			$nsName = $wgContLang->getNsText( $title );
+			$parentFull = $nsName;
+			$parentText = '';
+			$parentSlashCount = -1;
+		}
+		// If prefix (namespace name) is not empty, count subsequent colon also.
+		$nsLen = strlen( $nsName );
+		if ( $nsLen > 0 ) {
+			++ $nsLen;
+		}
+		// If parent page name is not empty, count subsequent slash also.
+		$parentLen = strlen( $parentText );
+		if ( $parentLen > 0 ) {
+			++ $parentLen;
+		}
+		// Max nesting level. 
+		$maxLevel = ( $parameters['kidsonly'] ? 1 : 1000 );
+
+		if ( $parameters['showpage'] && $title instanceof Title ) {
+			// If parent should be shown, correct starting point:
+			$slash = strrpos( $parentText, "/" );
+			if ( $slash ) {
+				$parentLen = $slash + 1;
 			}
-			
-			$isFirst = false;
+			else {
+				$parentLen = 0;
+			}
+			-- $parentSlashCount;
+			++ $maxLevel;
+			// Render page itself as the very first item of the list.
+			$item =
+				$start . $bullet .
+				$this->makeListItem( $parentFull, $nsLen, $parentLen, $parameters );
+			$items[] = $item;
 		}
 
-		return implode( $isSingleLine ? '' : "\n", $items );
+		foreach( $titles as $pageTitle ) {
+			$pageFull = $pageTitle->getPrefixedText();
+			$level = substr_count( $pageFull, '/' ) - $parentSlashCount;
+			if ( $level <= $maxLevel ) {
+				$item = '';
+				if ( $bullet != '' ) {
+					// Make sure $bullets[ $level ] is properly initialized.
+					for ( $l = sizeof( $bullets ); $l <= $level; ++ $l ) {
+						$bullets[$l] = $bullets[$l - 1] . $bullet;
+					} 
+					$item .= $start . $bullets[ $level ];
+				}
+				$item .= $this->makeListItem( $pageFull, $nsLen, $parentLen, $parameters );
+				$items[] = $item; 
+			}
+		}
+
+		return implode( $sep, $items );
 	}
 
 	/**
@@ -340,6 +480,6 @@ final class SubPageList extends ParserHook {
 			'noparse' => true,
 			'isHTML' => true
 		);
-	}	
+	}
 	
 }

@@ -90,7 +90,9 @@ $messages['bs'] = array(
  */
 $messages['de'] = array(
 	'spl-desc' => 'Fügt das <code><nowiki><splist /></nowiki></code>-Tag zur Anzeige von Unterseiten hinzu',
-	'spl-nosubpages' => '$1 hat keine Unterseiten.',
+	'spl-nosubpages' => 'Seite „$1“ verfügt über keine auflistbaren Unterseiten.',
+	'spl-noparentpage' => 'Seite „$1“ ist nicht vorhanden.',
+	'spl-nopages' => 'Im Namensraum „$1“ befinden sich keine Seiten.',
 	'spl-subpages-par-sort' => 'Sortierreihenfolge der Unterseiten',
 	'spl-subpages-par-sortby' => 'Sortierkriterium der Unterseiten',
 	'spl-subpages-par-format' => 'Die Liste der Unterseiten kann in verschiedenen Formaten angezeigt werden, als nummerierte Liste (ol), als Aufzählung (ul) oder als kommagetrennte Liste (Liste).',
@@ -139,7 +141,7 @@ $messages['gl'] = array(
  */
 $messages['he'] = array(
 	'spl-desc' => 'הוספת התג <code><nowiki><splist /></nowiki></code> ליצירת רשימת דפי־משנה',
-	'spl-nosubpages' => 'בדף $1 אין דפי משנה.',
+	'spl-nosubpages' => 'לדף "$1" אין דפי משנה שאפשר להציג ברשימה.',
 	'spl-subpages-par-sort' => 'באיזה כיוון למיין.',
 	'spl-subpages-par-sortby' => 'לפי מה למיין את דפי־המשנה.',
 	'spl-subpages-par-format' => 'רשימת דפי־המשנה יכולה להיות מוצגת במספר עיצובים. רשימה ממוספרת (ol), רשימת תבליטים (ul), ורשימה מופרדת בפסיקים (list).',

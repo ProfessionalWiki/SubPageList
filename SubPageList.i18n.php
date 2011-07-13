@@ -173,7 +173,9 @@ $messages['hsb'] = array(
  */
 $messages['ia'] = array(
 	'spl-desc' => 'Adde un etiquetta <code><nowiki><splist /></nowiki></code> que permitte listar subpaginas',
-	'spl-nosubpages' => '$1 non ha subpaginas a listar.',
+	'spl-nosubpages' => 'Le pagina "$1" non ha subpaginas a listar.',
+	'spl-noparentpage' => 'Le pagina "$1" non existe.',
+	'spl-nopages' => 'Le spatio de nomines "$1" non ha paginas.',
 	'spl-subpages-par-sort' => 'Le direction in le qual ordinar le subpaginas.',
 	'spl-subpages-par-sortby' => 'Criterio secundo le qual ordinar le subpaginas.',
 	'spl-subpages-par-format' => 'Le lista de subpaginas pote esser presentate in plure formatos: listas a numeros (ol), listas a punctos (ul) e listas separate per commas (list).',
@@ -221,7 +223,9 @@ $messages['ksh'] = array(
  */
 $messages['lb'] = array(
 	'spl-desc' => 'Setzt den <code><nowiki><splist /></nowiki></code>-Tag fir Ënnersäiten ze weisen derbäi',
-	'spl-nosubpages' => '$1 huet keng Ënnersäite fir ze weisen',
+	'spl-nosubpages' => 'D\'Säit "$1" huet keng Ënnersäite fir ze weisen.',
+	'spl-noparentpage' => 'D\'Säit "$1" gëtt et net.',
+	'spl-nopages' => 'Am Nummraum "$1" gëtt et keng Säiten.',
 	'spl-subpages-par-sort' => 'Reiefolleg wéi zortéiert soll ginn.',
 	'spl-subpages-par-sortby' => "Wourop d'Ënnersäiten zortéiert ginn:",
 	'spl-subpages-par-format' => 'D\'Lëscht vun den Ënnersäite kann a verschiddene Formater gewise ginn. Numeréiert Lëschten (ol), Lëschte mat Punkten (ul) oder "comma seperated" Lëschten (list).',
@@ -237,7 +241,9 @@ $messages['lb'] = array(
  */
 $messages['mk'] = array(
 	'spl-desc' => 'Додава ознака <code><nowiki><splist /></nowiki></code> што овозможува наведување на потстраници во список',
-	'spl-nosubpages' => '$1 нема потстраници за наведување.',
+	'spl-nosubpages' => 'Страницата „$1“ нема потстраници за наведување.',
+	'spl-noparentpage' => 'Страницата „$1“ не постои.',
+	'spl-nopages' => 'Именскиот простор „$1“ нема страници.',
 	'spl-subpages-par-sort' => 'Насока на подредување.',
 	'spl-subpages-par-sortby' => 'По што да се подредат потстраниците.',
 	'spl-subpages-par-format' => 'Списокот на потстраници може да се прикаже во неколку формати: со редни броеви (ol), со потточки (ul) одделено со запирка (list).',
@@ -249,11 +255,14 @@ $messages['mk'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author SPQRobin
  * @author Siebrand
  */
 $messages['nl'] = array(
 	'spl-desc' => "Voegt het label <code><nowiki><splist /></nowiki></code> toe dat het mogelijk maakt een lijst met subpagina's weer te geven",
 	'spl-nosubpages' => "$1 heeft geen subpagina's.",
+	'spl-noparentpage' => 'Pagina "$1" bestaat niet.',
+	'spl-nopages' => 'Naamruimte "$1" heeft geen pagina\'s.',
 	'spl-subpages-par-sort' => 'De sorteervolgorde',
 	'spl-subpages-par-sortby' => "Hoe de subpagina's te sorteren.",
 	'spl-subpages-par-format' => "De lijst met subpagina's kan op verschillende manieren weergegeven worden. Als genummerde lijst (ol), ongenummerde lijst (ul) en als door komma's gescheiden lijst (list).",
@@ -301,7 +310,9 @@ $messages['pms'] = array(
  */
 $messages['pt'] = array(
 	'spl-desc' => 'Acrescenta um elemento <code><nowiki><splist /></nowiki></code> que permite listar subpáginas',
-	'spl-nosubpages' => '$1 não tem subpáginas para listar.',
+	'spl-nosubpages' => 'A página $1 não tem subpáginas para listar.',
+	'spl-noparentpage' => 'A página "$1" não existe.',
+	'spl-nopages' => 'O espaço nominal "$1" não tem páginas.',
 	'spl-subpages-par-sort' => 'A direcção da ordenação.',
 	'spl-subpages-par-sortby' => 'O critério de ordenação.',
 	'spl-subpages-par-format' => 'A lista de subpáginas pode ser apresentada em vários formatos. Listas numeradas (ol), listas com marcadores (ul) e listas separadas por vírgulas (list).',
@@ -363,3 +374,4 @@ $messages['uk'] = array(
 	'spl-subpages-par-page' => 'Сторінка, для якої показати підсторінки. За умовчанням — поточна сторінка.',
 	'spl-subpages-par-limit' => 'Максимальна кількість сторінок у списку.',
 );
+

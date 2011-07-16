@@ -260,7 +260,7 @@ $messages['mk'] = array(
  */
 $messages['nl'] = array(
 	'spl-desc' => "Voegt het label <code><nowiki><splist /></nowiki></code> toe dat het mogelijk maakt een lijst met subpagina's weer te geven",
-	'spl-nosubpages' => "$1 heeft geen subpagina's.",
+	'spl-nosubpages' => 'Pagina "$1" heeft geen subpagina\'s.',
 	'spl-noparentpage' => 'Pagina "$1" bestaat niet.',
 	'spl-nopages' => 'Naamruimte "$1" heeft geen pagina\'s.',
 	'spl-subpages-par-sort' => 'De sorteervolgorde',

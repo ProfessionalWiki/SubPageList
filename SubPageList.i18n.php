@@ -120,6 +120,15 @@ $messages['fr'] = array(
 	'spl-subpages-par-limit' => 'La quantité maximale de pages à lister.',
 );
 
+/** Franco-Provençal (Arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'spl-nosubpages' => 'Pâge « $1 » at gins de sot-pâge a ènumèrar.',
+	'spl-noparentpage' => 'Pâge « $1 » ègziste pas.',
+	'spl-subpages-par-sort' => 'La dirèccion de tri.',
+);
+
 /** Galician (Galego)
  * @author Toliño
  */

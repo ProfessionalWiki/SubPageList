@@ -104,12 +104,15 @@ $messages['de'] = array(
 );
 
 /** French (Français)
+ * @author Seb35
  * @author Sherbrooke
  * @author Toliño
  */
 $messages['fr'] = array(
 	'spl-desc' => 'Ajoute une balise <nowiki><splist /></nowiki> qui permet de lister les sous-pages',
-	'spl-nosubpages' => "$1 n'a pas de sous-pages à lister.",
+	'spl-nosubpages' => 'La page « $1 » n’a pas de sous-pages à lister.',
+	'spl-noparentpage' => 'La page « $1 » n’existe pas.',
+	'spl-nopages' => 'L’espace de nom « $1 » n’a pas de pages.',
 	'spl-subpages-par-sort' => 'La direction de tri.',
 	'spl-subpages-par-sortby' => 'Trie des sous-pages selon.',
 	'spl-subpages-par-format' => 'La liste des sous-pages peut être affichée en différents formats : listes numérotées (ol), listes à puces (ul) ou listes séparées par des virgules (liste).',
@@ -126,6 +129,7 @@ $messages['fr'] = array(
 $messages['frp'] = array(
 	'spl-nosubpages' => 'Pâge « $1 » at gins de sot-pâge a ènumèrar.',
 	'spl-noparentpage' => 'Pâge « $1 » ègziste pas.',
+	'spl-nopages' => 'L’èspâço de noms « $1 » contint gins de pâge.',
 	'spl-subpages-par-sort' => 'La dirèccion de tri.',
 );
 

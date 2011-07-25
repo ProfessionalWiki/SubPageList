@@ -19,10 +19,12 @@ final class SPLHooks {
 	 * 
 	 * @since 0.3
 	 * 
+	 * @param Article|WikiPage &$article WikiPage object since MW 1.18
+	 * 
 	 * @return true
 	 */
 	public static function onArticleInsertComplete(
-		Article &$article, User &$user, $text, $summary, $minoredit, 
+		&$article, User &$user, $text, $summary, $minoredit, 
 		$watchthis, $sectionanchor, &$flags, Revision $revision ) {
 			
 		self::invalidateBasePages( $article->getTitle() );

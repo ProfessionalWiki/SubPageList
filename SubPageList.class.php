@@ -470,7 +470,7 @@ final class SubPageList extends ParserHook {
 				if ( $bullet != '' ) {
 					// Make sure $bullets is long enough.
 					while ( strlen( $bullets ) < $level ) {
-						$bullets .= $bullets;
+						$bullets .= $bullet;
  					} 
  					
 					$item .= $start . substr( $bullets, 0, $level );

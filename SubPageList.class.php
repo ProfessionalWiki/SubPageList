@@ -116,18 +116,32 @@ final class SubPageList extends ParserHook {
 		$params['limit']->addCriteria( new CriterionInRange( 1, 500 ) );
 		$params['limit']->setDescription( wfMsg( 'spl-subpages-par-limit' ) );
 
-		// TODO: Add description strings. --vdb
 		$params['element'] = new Parameter( 'element', Parameter::TYPE_STRING, 'div' );
 		$params['element']->addCriteria( new CriterionInArray( 'div', 'p', 'span' ) );
+		$params['element']->setDescription( wfMsg( 'spl-subpages-par-element' ) );
+		
 		$params['class'] = new Parameter( 'class', Parameter::TYPE_STRING, 'subpagelist' );
+		$params['class']->setDescription( wfMsg( 'spl-subpages-par-class' ) );
+		
 		$params['intro'] = new Parameter( 'intro', Parameter::TYPE_STRING, '' );
+		$params['intro']->setDescription( wfMsg( 'spl-subpages-par-intro' ) );
+		
 		$params['outro'] = new Parameter( 'outro', Parameter::TYPE_STRING, '' );
+		$params['outro']->setDescription( wfMsg( 'spl-subpages-par-outro' ) );
+		
 		$params['default'] = new Parameter( 'default', Parameter::TYPE_STRING, '' );
+		$params['default']->setDescription( wfMsg( 'spl-subpages-par-default' ) );
+		
 		$params['separator'] = new Parameter( 'separator', Parameter::TYPE_STRING, '&#160;· ' );
 		$params['separator']->addAliases( 'sep' );
+		$params['separator']->setDescription( wfMsg( 'spl-subpages-par-separator' ) );
+		
 		$params['template'] = new Parameter( 'template', Parameter::TYPE_STRING, '' );
+		$params['template']->setDescription( wfMsg( 'spl-subpages-par-template' ) );
+		
 		$params['links'] = new Parameter( 'links', Parameter::TYPE_BOOLEAN, true );
 		$params['links']->addAliases( 'link' );
+		$params['links']->setDescription( wfMsg( 'spl-subpages-par-links' ) );
 		
 		return $params;
 	}
@@ -264,7 +278,7 @@ final class SubPageList extends ParserHook {
 	 * 
 	 * @return array of Title
 	 */
-	protected function getSubPages( Title $title, array $parameters ) {
+	protected function getSubPages( $title, array $parameters ) {
 		$titles = array();
 
 		if ( ! is_null( $title ) ) {
@@ -369,13 +383,14 @@ final class SubPageList extends ParserHook {
 	 *
 	 * @see SubPageList::makeListItem
 	 * 
-	 * @param Title $title
+	 * @param $title can be either an instance of Title class (title of an existing page), or number
+	 *        (index of an existing namespace) or null.
 	 * @param array $parameters
 	 * @param array $titles
 	 *  
 	 * @return string the whole list
 	 */
-	protected function makeList( Title $title, array $parameters, array $titles ) {
+	protected function makeList( $title, array $parameters, array $titles ) {
 		global $wgContLang;
 		$start = '';	// String to render once in the very beginning of each item.
 		$bullet = '';	// String to render between `$start' and item
@@ -396,10 +411,9 @@ final class SubPageList extends ParserHook {
 				$sep = $parameters['separator'];
 				break;
 		}
-		// A kind of optimization: I do not want to run loop every time I need series of bullets.
-		// Let us intialize $bullets array so $bullets[$i] is a bullet repeated $i times.
-		$bullets = array();
-		$bullets[0] = $bullet;
+		
+		// Let us have $bullets is a long enough series of bullets.
+		$bullets = $bullet;
 
 		// WARNING: It seems strlen and other sring functions operated with bytes, not characters.
 		// But it seems it is ok for UTF-8 encoding...
@@ -431,7 +445,7 @@ final class SubPageList extends ParserHook {
 
 		if ( $parameters['showpage'] && $title instanceof Title ) {
 			// If parent should be shown, correct starting point:
-			$slash = strrpos( $parentText, "/" );
+			$slash = strrpos( $parentText, '/' );
 			if ( $slash ) {
 				$parentLen = $slash + 1;
 			}
@@ -450,15 +464,18 @@ final class SubPageList extends ParserHook {
 		foreach( $titles as $pageTitle ) {
 			$pageFull = $pageTitle->getPrefixedText();
 			$level = substr_count( $pageFull, '/' ) - $parentSlashCount;
+			
 			if ( $level <= $maxLevel ) {
 				$item = '';
 				if ( $bullet != '' ) {
-					// Make sure $bullets[ $level ] is properly initialized.
-					for ( $l = sizeof( $bullets ); $l <= $level; ++ $l ) {
-						$bullets[$l] = $bullets[$l - 1] . $bullet;
-					} 
-					$item .= $start . $bullets[ $level ];
+					// Make sure $bullets is long enough.
+					while ( strlen( $bullets ) < $level ) {
+						$bullets .= $bullets;
+ 					} 
+ 					
+					$item .= $start . substr( $bullets, 0, $level );
 				}
+				
 				$item .= $this->makeListItem( $pageFull, $nsLen, $parentLen, $parameters );
 				$items[] = $item; 
 			}

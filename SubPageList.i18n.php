@@ -23,14 +23,22 @@ $messages['en'] = array(
 	'spl-noparentpage' => 'Page "$1" does not exist.',
 	'spl-nopages' => 'Namespace "$1" does not have pages.',
 
-	'spl-subpages-par-sort' => 'The direction to sort in.',
-	'spl-subpages-par-sortby' => 'What to sort the subpages by.',
-	'spl-subpages-par-format' => 'The subpage list can be displayed in several formats. Numbered lists (ol), bulleted lists (ul) and comma-separated lists (list).',
-	'spl-subpages-par-page' => 'The page to show the subpages for. Defaults to the current page.',
+	'spl-subpages-par-sort' => 'The direction to sort in. Allowed values: "asc" and "desc".',
+	'spl-subpages-par-sortby' => 'What to sort the subpages by. Allowed values: "title" or "lastedit".',
+	'spl-subpages-par-format' => 'The subpage list can be displayed in several formats. Allowed values: "ol" — ordered (numbered) list, "ul" — unordered (bulleted) lists, "list" plain lists (e. g. comma-separated list).',
+	'spl-subpages-par-page' => 'The page to show the subpages for, or namespace name (including trailing colon) to show pages in. Defaults to the current page.',
 	'spl-subpages-par-showpage' => 'Indicates if the page itself should be shown in the list or not.',
-	'spl-subpages-par-pathstyle' => 'The style of the path for subpages in the list.',
+	'spl-subpages-par-pathstyle' => 'The style of the path for subpages in the list. Allowed values: "fullpagename" — full page name (including namespace), "pagename" — page name (without namespace), "subpagename" — "relative" page name starting from the page we list subpages for, "none" — just the trailing part of the name after last slash.',
 	'spl-subpages-par-kidsonly' => 'Allows showing only direct subpages.',
 	'spl-subpages-par-limit' => 'The maximum number of pages to list.',
+	'spl-subpages-par-element' => 'The HTML element enclosing the list (including "intro" and "outro" or "default" texts). Allowed values: "div", "p", "span".',
+	'spl-subpages-par-class' => 'The value for "class" attribute of HTML element enclosing the list.',
+	'spl-subpages-par-intro' => 'The text to output before the list, if the list is not empty.',
+	'spl-subpages-par-outro' => 'The text to output after the list, if the list is not empty.',
+	'spl-subpages-par-default' => 'The text to output instead of the list, if the list is empty. If empty, error message will rendered (such as "Page has no subpages to list"). If dash ("-"), result will be completely empty.',
+	'spl-subpages-par-separator' => 'The text to output between two list items in case of "list" or "bar" formats. Has no effect in other formats.',
+	'spl-subpages-par-template' => 'The name of template. The template is applied to every item of the list. An item is passed as the first (unnamed) argument. Note that template does not cancel list formatting. Formatting ("ul", "ol", "list") is applied to the template\'s result.',
+	'spl-subpages-par-links' => 'If true, list items are rendered as links. If false, list items are rendered as plain text. The latter is especially helpful for passing items into templates for further processing.',
 );
 
 /** Message documentation (Message documentation)
@@ -338,20 +346,29 @@ $messages['pt'] = array(
 
 /** Russian (Русский)
  * @author Александр Сигачёв
+ * @author Van de Bugger
  */
 $messages['ru'] = array(
-	'spl-desc' => 'Добавляет тег <code><nowiki><splist></splist></nowiki></code>, выводящий список подстраниц',
+	'spl-desc' => 'Добавляет тег <code><nowiki><splist /></nowiki></code>, выводящий список подстраниц',
 	'spl-nosubpages' => 'Страница «$1» не имеет подстраниц.',
 	'spl-noparentpage' => 'Страница «$1» не существует.',
 	'spl-nopages' => 'Пространство имён  «$1» не содержит страниц.',
-	'spl-subpages-par-sort' => 'Направление сортировки.',
-	'spl-subpages-par-sortby' => 'Ключ сортировки: название (title) или дата последней правки (lastedit).',
-	'spl-subpages-par-format' => 'Список подстраниц может быть показан в нескольких форматах. Нумерованный список (ol), маркированный список (ul), список через запятые (list).',
-	'spl-subpages-par-page' => 'Страница для которой показывать список подстраниц. По умолчанию текущая страница.',
+	'spl-subpages-par-sort' => 'Направление сортировки. Допустимые значения: «asc» — сортировка по возрастанию, «desc» — по убыванию.',
+	'spl-subpages-par-sortby' => 'Ключ сортировки: «title» — сортировать по названию страниц, «lastedit» — по дате последней правки.',
+	'spl-subpages-par-format' => 'Список подстраниц может быть показан в нескольких форматах. Допустимые значения: «ol» — нумерованный список, «ul» — маркированный список, «list» — линейный список (например, через запятые).',
+	'spl-subpages-par-page' => 'Страница для которой показывать список подстраниц, или имя пространства имён (включая конечное двоеточие). По умолчанию текущая страница.',
 	'spl-subpages-par-showpage' => 'Указывает, должна ли отображаться сама страница.',
-	'spl-subpages-par-pathstyle' => 'Стиль пути для подстраниц в списке.',
+	'spl-subpages-par-pathstyle' => 'Стиль пути для подстраниц в списке. Допустимые значения: «fullpagename» — полное название страницы (включая пространство имён), "pagename" — имя страницы (полное но без пространства имён), "subpagename" — "относительное" имя страницы, начиная со страницы, для которой показывается список, "none" — только часть имени следующая за последней косой чертой.',
 	'spl-subpages-par-kidsonly' => 'Показывать только прямые подстраницы.',
 	'spl-subpages-par-limit' => 'Максимальное количество страниц в список.',
+	'spl-subpages-par-element' => 'Элемент HTML, включающий весь список (вместе с текстами «intro» и «outro» или «default»). Допустимые значения: «div», «p», «span».',
+	'spl-subpages-par-class' => 'Значение атрибута «class» элемента HTML.',
+	'spl-subpages-par-intro' => 'Текст для вывод перед списком, если список не пуст.',
+	'spl-subpages-par-outro' => 'Текст для вывода после списка, если список не пуст.',
+	'spl-subpages-par-default' => 'Текст для вывода вместо списка, если список пуст.',
+	'spl-subpages-par-separator' => 'Текст для вывода между двумя елементами списка для форматов "list" или "bar". Не имеет значения для других форматов.',
+	'spl-subpages-par-template' => 'Имя шаблона. Шаблон применяется к каждому елементу списка. Элемент передаётся в шаблон как первый (неименованный) аргумент. Заметьте, что шаблон не отменяет форматирование списка. Форматирование ("ul", "ol", "list") применяется к результатам шаблона.',
+	'spl-subpages-par-links' => 'Если истина, элементы списка выводятся я как ссылки. Если ложь, элементы списка выводятся как простой текст, это особенно удобно, если применяется совместно с шаблоном.',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)

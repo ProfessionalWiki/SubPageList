@@ -35,7 +35,7 @@ if ( ! defined( 'Validator_VERSION' ) ) {
 	die( '<b>Error:</b> You need to have <a href="http://www.mediawiki.org/wiki/Extension:Validator">Validator</a> installed in order to use <a href="http://www.mediawiki.org/wiki/Extension:SubPageList">SubPageList</a>.<br />' );
 }
 
-define( 'SPL_VERSION', '0.4 alpha' );
+define( 'SPL_VERSION', '0.4 RC' );
 
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
@@ -43,9 +43,7 @@ $wgExtensionCredits['parserhook'][] = array(
 	'version' => SPL_VERSION,
 	'author' => array(
 		'[http://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
-		'James McCormack',
-		'Martin Schallnahs',
-		'Rob Church. Based on [http://www.mediawiki.org/wiki/Extension:SubPageList3 SubPageList3].',
+		'Van de Bugger. Based on [http://www.mediawiki.org/wiki/Extension:SubPageList3 SubPageList3].',
 	),
 	'url' => 'http://www.mediawiki.org/wiki/Extension:SubPageList',
 	'descriptionmsg' => 'spl-desc'

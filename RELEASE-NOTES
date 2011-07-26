@@ -7,6 +7,9 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 === Version 0.3.1 ===
 2011-07-xx
 
+* Added parameters for better output control: element, class, intro,
+  outro, default, separator, template, links.
+* Added ability to list pages in a namespace.
 * Fixed compatibility with MediaWiki 1.18.
 
 === Version 0.3 ===

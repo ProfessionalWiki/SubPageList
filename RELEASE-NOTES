@@ -4,8 +4,8 @@ Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:SubPage
 Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/SubPageList/RELEASE-NOTES?view=co
 
 
-=== Version 0.3.1 ===
-2011-07-xx
+=== Version 0.4 ===
+2011-07-27
 
 * Added parameters for better output control: element, class, intro,
   outro, default, separator, template, links.

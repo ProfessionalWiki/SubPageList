@@ -25,7 +25,7 @@ $messages['en'] = array(
 
 	'spl-subpages-par-sort' => 'The direction to sort in. Allowed values: "asc" and "desc".',
 	'spl-subpages-par-sortby' => 'What to sort the subpages by. Allowed values: "title" or "lastedit".',
-	'spl-subpages-par-format' => 'The subpage list can be displayed in several formats. Allowed values: "ol" — ordered (numbered) list, "ul" — unordered (bulleted) lists, "list" plain lists (e. g. comma-separated list).',
+	'spl-subpages-par-format' => 'The subpage list can be displayed in several formats. Allowed values: "ol" — ordered (numbered) list, "ul" — unordered (bulleted) lists, "list" — plain lists (for example comma-separated list).',
 	'spl-subpages-par-page' => 'The page to show the subpages for, or namespace name (including trailing colon) to show pages in. Defaults to the current page.',
 	'spl-subpages-par-showpage' => 'Indicates if the page itself should be shown in the list or not.',
 	'spl-subpages-par-pathstyle' => 'The style of the path for subpages in the list. Allowed values: "fullpagename" — full page name (including namespace), "pagename" — page name (without namespace), "subpagename" — relative page name starting from the page we list subpages for, "none" — just the trailing part of the name after last slash.',

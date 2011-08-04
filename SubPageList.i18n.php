@@ -42,10 +42,12 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Hamilton Abreu
  * @author Purodha
  */
 $messages['qqq'] = array(
 	'spl-subpages-par-format' => 'I believe, that the brackettet words should not be translated. --[[User:Purodha|Purodha Blissenbach]] 00:04, 21 January 2011 (UTC)',
+	'spl-subpages-par-pathstyle' => 'The parameters "fullpagename", "pagename", "subpagename" and "none" should not be translated!',
 );
 
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
@@ -205,14 +207,20 @@ $messages['ia'] = array(
 	'spl-nosubpages' => 'Le pagina "$1" non ha subpaginas a listar.',
 	'spl-noparentpage' => 'Le pagina "$1" non existe.',
 	'spl-nopages' => 'Le spatio de nomines "$1" non ha paginas.',
-	'spl-subpages-par-sort' => 'Le direction in le qual ordinar le subpaginas.',
-	'spl-subpages-par-sortby' => 'Criterio secundo le qual ordinar le subpaginas.',
-	'spl-subpages-par-format' => 'Le lista de subpaginas pote esser presentate in plure formatos: listas a numeros (ol), listas a punctos (ul) e listas separate per commas (list).',
-	'spl-subpages-par-page' => 'Le pagina del qual presentar le subpaginas. Le predefinition es le pagina actual.',
+	'spl-subpages-par-sort' => 'Le direction in le qual ordinar. Valores permittite: "asc" e "desc".',
+	'spl-subpages-par-sortby' => 'Criterio secundo le qual ordinar le subpaginas. Valores permittite: "title" (titulo) o "lastedit" (ultime modification).',
+	'spl-subpages-par-format' => 'Le lista de subpaginas pote esser presentate in plure formatos. Valores permittite: "ol" — lista ordinate (con numeros), "ul" — lista non ordinate (con punctos), "list" — lista simple (p.ex. un lista separate per commas).',
+	'spl-subpages-par-page' => 'Le pagina del qual presentar le subpaginas, o le nomine del spatio de nomines (incluse le duo punctos final) del qual presentar le paginas. Le predefinition es le pagina actual.',
 	'spl-subpages-par-showpage' => 'Indica si le pagina mesme debe figurar in le lista o non.',
-	'spl-subpages-par-pathstyle' => 'Le stilo del cammino pro subpaginas in le lista.',
+	'spl-subpages-par-pathstyle' => 'Le stilo del cammino pro subpaginas in le lista. Valores permittite: "fullpagename" — nomine complete del pagina (incluse le spatio de nomines), "pagename" — nomine del pagina (sin spatio de nomines), "subpagename" — nomine relative del pagina, comenciante al pagina del qual nos lista le subpaginas, "none" — solmente le parte final del nomine post le ultime barra oblique.',
 	'spl-subpages-par-kidsonly' => 'Permitte monstrar solmente subpaginas directe.',
 	'spl-subpages-par-limit' => 'Le numero maxime de paginas a listar.',
+	'spl-subpages-par-element' => 'Le elemento HTML que circumfere le lista (incluse le textos "intro" e "outro" o "default"). Valores permittite: "div", "p", "span".',
+	'spl-subpages-par-class' => 'Le valor del attributo "class" del elemento HTML que circumfere le lista.',
+	'spl-subpages-par-intro' => 'Le texto a presentar ante le lista, si le lista non es vacue.',
+	'spl-subpages-par-outro' => 'Le texto a presentar post le lista, si le lista non es vacue.',
+	'spl-subpages-par-default' => 'Le texto a presentar in loco del lista, si le lista es vacue. Si vacue, un message de error essera rendite (como "Le pagina non ha subpaginas a listar"). Si es un lineetta ("-"), le resultato essera completemente vacue.',
+	'spl-subpages-par-separator' => 'Le texto a presentar inter duo elementos del lista in caso del formatos "list" o "bar". Non ha effecto in altere formatos.',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -260,7 +268,7 @@ $messages['lb'] = array(
 	'spl-subpages-par-format' => 'D\'Lëscht vun den Ënnersäite kann a verschiddene Formater gewise ginn. Erlaabte Wäerter: "ol" Numeréiert Lëschten, "ul" Lëschte mat Punkten, "list" ganz Lëschten (z. Bsp. "comma seperated" Lëscht).',
 	'spl-subpages-par-page' => "D'Säit fir déi Ënnersäite gewise solle ginn, oder Numm vum Nummraum (inklusiv den Doppelpunkt) an deem Säite solle gewise ginn. Als Standard ass dat déi aktuell Säit.",
 	'spl-subpages-par-showpage' => "Gëtt un ob d'Säit selwer an der Lëscht gewise soll ginn oder net.",
-	'spl-subpages-par-pathstyle' => 'Styl vum Wee (path) fir Ënnersäiten an der Lëscht. Erlaabte Wäerter: "fullpagename" - Kompletten Numm vun der Säit (inklusiv den Nummraum), "pagename" - Numm vun der säit (ouni Nummraum), "subpagename" - "relative"-Numm vun der Säit ugefaang vun de Säit fir déi mir Ënnersäiten opzielen, "none" -  just deen Deel vum Numm deen no dem lescht Slash kënnt.',
+	'spl-subpages-par-pathstyle' => 'Styl vum Wee (path) fir Ënnersäiten an der Lëscht. Erlaabte Wäerter: "fullpagename" - Kompletten Numm vun der Säit (inklusiv den Nummraum), "pagename" - Numm vun der säit (ouni Nummraum), "subpagename" - Relative Numm vun der Säit ugefaang vun de Säit fir déi mir Ënnersäiten opzielen, "none" -  just deen Deel vum Numm deen no dem lescht Slash kënnt.',
 	'spl-subpages-par-kidsonly' => 'Erlaabt fir nëmmen direkt Ënnersäiten ze weisen.',
 	'spl-subpages-par-limit' => "D'Maximalzuel vu Säiten déi gewise ginn.",
 );
@@ -278,7 +286,7 @@ $messages['mk'] = array(
 	'spl-subpages-par-format' => 'Списокот на потстраници може да се прикаже во неколку формати. Допуштени вредности: „ol“ — подреден список (со бројки), „ul“ — неподредени списоци (потточки), „list“ прости списоци (на пр. список одделем со запирки).',
 	'spl-subpages-par-page' => 'За која страница да се прикажат потстраниците, или називот на именскиот простор (вклучувајќи ги двете точки на крајот). По основно - тековната страница.',
 	'spl-subpages-par-showpage' => 'Назначува дали во списокот да се прикаже и самата страница.',
-	'spl-subpages-par-pathstyle' => 'Стилот на патеката за потстраниците во списокот. Допуштени вредности: „fullpagename“ — полно име на страницата (вклучувајќи го именскиот простор), „pagename“ — име на страницата (без именски простор), „subpagename“ — „релативно“ име на страницата почнувајќи од страницата за која наведуваме потстраници, „none“ — само последниот дел од името што се наоѓа по последната коса црта.',
+	'spl-subpages-par-pathstyle' => 'Стилот на патеката за потстраниците во списокот. Допуштени вредности: „fullpagename“ — полно име на страницата (вклучувајќи го именскиот простор), „pagename“ — име на страницата (без именски простор), „subpagename“ — релативно име на страницата почнувајќи од страницата за која наведуваме потстраници, „none“ — само последниот дел од името што се наоѓа по последната коса црта.',
 	'spl-subpages-par-kidsonly' => 'Овозможува приказ само на директни потстраници.',
 	'spl-subpages-par-limit' => 'Максималниот број на страници за наведување во списокот.',
 	'spl-subpages-par-element' => 'HTML-елементот што го опколува списокот (вклучувајќи ги текстовите во „intro“ и „outro“ или пак „default“). Допуштени вредности: „div“, „p“, „span“.',
@@ -292,6 +300,7 @@ $messages['mk'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author McDutchie
  * @author SPQRobin
  * @author Siebrand
  */
@@ -300,14 +309,19 @@ $messages['nl'] = array(
 	'spl-nosubpages' => 'Pagina "$1" heeft geen subpagina\'s.',
 	'spl-noparentpage' => 'Pagina "$1" bestaat niet.',
 	'spl-nopages' => 'Naamruimte "$1" heeft geen pagina\'s.',
-	'spl-subpages-par-sort' => 'De sorteervolgorde',
-	'spl-subpages-par-sortby' => "Hoe de subpagina's te sorteren.",
-	'spl-subpages-par-format' => "De lijst met subpagina's kan op verschillende manieren weergegeven worden. Als genummerde lijst (ol), ongenummerde lijst (ul) en als door komma's gescheiden lijst (list).",
-	'spl-subpages-par-page' => "De pagina waarvoor subpagina's weergegeven moeten worden. Dit is standaard de huidige pagina.",
+	'spl-subpages-par-sort' => 'De richting voor de sorteervolgorde. Toegestande waarden: "asc" (oplopend") en "desc" (aflopend).',
+	'spl-subpages-par-sortby' => 'Hoe de subpagina\'s te sorteren. Toegestane waarden: "title" (paginanaam) en "lastedit" (laatste bewerking).',
+	'spl-subpages-par-format' => 'De lijst met subpagina\'s kan op verschillende manieren weergegeven worden. Als genummerde lijst ("ol"), ongenummerde lijst ("ul") en als door komma\'s gescheiden lijst ("list"), bijvoorbeeld een door komma\'s gescheiden lijst.',
+	'spl-subpages-par-page' => "De pagina waarvoor subpagina's weergegeven moeten worden of een naamruimtenaam (inclusief de dubbele punt als achtervoegsel). Dit is standaard de huidige pagina.",
 	'spl-subpages-par-showpage' => 'Geeft aan of de pagina zelf weergegeven moet worden in de lijst of niet.',
-	'spl-subpages-par-pathstyle' => "De stijl van het pad voor subpagina's in de lijst.",
+	'spl-subpages-par-pathstyle' => 'De stijl van het pad voor subpagina\'s in de lijst. Toegestane waarden: "fullpagename": volledige paginanaam, inclusief naamruimte, "pagename": paginanaam zonder naamruimte, "subpagename": relatieve paginanaam vanaf de pagina waarvoor subpagina\'s worden weergegeven, "none": alleen het achtervoegsel van de naam na de laatste slash.',
 	'spl-subpages-par-kidsonly' => "Maakt het mogelijk om alleen subpagina's van het eerste niveau weer te geven.",
 	'spl-subpages-par-limit' => "Het maximale aantal weer te geven pagina's.",
+	'spl-subpages-par-element' => 'Het HTML-element dat de lijst omsluit (inclusief "intro" en "outro" of "default" teksten). Toegestane waarden: "div", "p", "span".',
+	'spl-subpages-par-class' => 'De waarde voor het "class"-attribuut van het HTML-element waarin de lijst is omsloten.',
+	'spl-subpages-par-intro' => 'De uit te voeren tekst vóór de lijst als de lijst niet leeg is.',
+	'spl-subpages-par-outro' => 'De uit te voeren tekst na de lijst, als de lijst niet leeg is.',
+	'spl-subpages-par-separator' => 'De uit te voeren tekst tussen twee lijstelementen voor een "list" (lijstweergave) of "bar" (balkweergave). Dit heeft geen effect op andere weergaven.',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -355,7 +369,7 @@ $messages['pt'] = array(
 	'spl-subpages-par-format' => 'A lista de subpáginas pode ser apresentada em vários formatos. Valores permitidos: "ol"— listas ordenadas (numeradas), "ul" — listas não ordenadas (com marcadores) e "list" — listas simples (por exemplo, lista separada por vírgulas).',
 	'spl-subpages-par-page' => 'A página cujas subpáginas serão mostradas, ou o nome do espaço nominal (incluindo o sinal de dois pontos) do qual mostrar as páginas. Por omissão, será a página corrente.',
 	'spl-subpages-par-showpage' => 'Indica se a própria página deve ser mostrada na lista ou não.',
-	'spl-subpages-par-pathstyle' => 'O estilo do caminho para as subpáginas na lista. Valores permitidos: "fullpagename" — nome completo da página (incluindo o espaço nominal), "pagename" — nome da página (sem o espaço nominal), "subpagename" — nome "relativo" da página, começando a partir da página cujas subpáginas vão ser mostradas e "none" — somente a parte do nome após a última barra "/".',
+	'spl-subpages-par-pathstyle' => 'O estilo do caminho para as subpáginas na lista. Valores permitidos: "fullpagename" — nome completo da página (incluindo o espaço nominal), "pagename" — nome da página (sem o espaço nominal), "subpagename" — nome relativo da página, começando a partir da página cujas subpáginas vão ser mostradas e "none" — somente a parte do nome após a última barra "/".',
 	'spl-subpages-par-kidsonly' => 'Permite mostrar só subpáginas directas.',
 	'spl-subpages-par-limit' => 'O número máximo de páginas listadas.',
 	'spl-subpages-par-element' => 'O elemento HTML que encapsula a lista (incluindo os textos "intro" e "outro" ou "default"). Valores permitidos: "div", "p" e "span".',

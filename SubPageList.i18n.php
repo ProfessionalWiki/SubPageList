@@ -157,6 +157,7 @@ $messages['frp'] = array(
 $messages['gl'] = array(
 	'spl-desc' => 'Engade unha etiqueta <code><nowiki><splist /></nowiki></code> que permite poñer as subpáxinas nunha lista',
 	'spl-nosubpages' => '$1 non ten subpáxinas que poñer nunha lista.',
+	'spl-noparentpage' => 'A páxina "$1" non existe.',
 	'spl-subpages-par-sort' => 'A dirección de ordenación.',
 	'spl-subpages-par-sortby' => 'O criterio de ordenación das subpáxinas.',
 	'spl-subpages-par-format' => 'A lista de subpáxinas pódese mostrar en varios formatos. Listas numeradas (ol), listas con asteriscos (ul) e listas separadas por comas (list).',
@@ -221,6 +222,8 @@ $messages['ia'] = array(
 	'spl-subpages-par-outro' => 'Le texto a presentar post le lista, si le lista non es vacue.',
 	'spl-subpages-par-default' => 'Le texto a presentar in loco del lista, si le lista es vacue. Si vacue, un message de error essera rendite (como "Le pagina non ha subpaginas a listar"). Si es un lineetta ("-"), le resultato essera completemente vacue.',
 	'spl-subpages-par-separator' => 'Le texto a presentar inter duo elementos del lista in caso del formatos "list" o "bar". Non ha effecto in altere formatos.',
+	'spl-subpages-par-template' => 'Le nomine del patrono. Le patrono es applicate a cata elemento del lista. Un elemento es passate como le prime argumento (sin nomine). Nota que le patrono non cancella le formatation del lista. Le formatation ("ul", "ol", "list") es applicate al resultato del patrono.',
+	'spl-subpages-par-links' => 'Si ver, le elementos del lista es rendite como ligamines. Si false, le elementos del lista es rendite como texto simple. Iste ultime option es particularmente utile pro passar elementos a in patronos pro ulterior processamento.',
 );
 
 /** Indonesian (Bahasa Indonesia)

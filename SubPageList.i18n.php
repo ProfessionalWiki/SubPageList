@@ -36,7 +36,7 @@ $messages['en'] = array(
 	'spl-subpages-par-intro' => 'The text to output before the list, if the list is not empty.',
 	'spl-subpages-par-outro' => 'The text to output after the list, if the list is not empty.',
 	'spl-subpages-par-default' => 'The text to output instead of the list, if the list is empty. If empty, error message will rendered (such as "Page has no subpages to list"). If dash ("-"), result will be completely empty.',
-	'spl-subpages-par-separator' => 'The text to output between two list items in case of "list" or "bar" formats. Has no effect in other formats.',
+	'spl-subpages-par-separator' => 'The text to output between two list items in case of "list" (and it\'s alias "bar") format. Has no effect in other formats.',
 	'spl-subpages-par-template' => 'The name of template. The template is applied to every item of the list. An item is passed as the first (unnamed) argument. Note that template does not cancel list formatting. Formatting ("ul", "ol", "list") is applied to the template\'s result.',
 	'spl-subpages-par-links' => 'If true, list items are rendered as links. If false, list items are rendered as plain text. The latter is especially helpful for passing items into templates for further processing.',
 );

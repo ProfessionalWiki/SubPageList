@@ -122,6 +122,7 @@ $messages['de'] = array(
 );
 
 /** French (Français)
+ * @author Hashar
  * @author Seb35
  * @author Sherbrooke
  * @author Toliño
@@ -139,6 +140,7 @@ $messages['fr'] = array(
 	'spl-subpages-par-pathstyle' => 'Style du chemin des sous-pages dans la liste.',
 	'spl-subpages-par-kidsonly' => "Permet de n'afficher que les sous-pages immédiates.",
 	'spl-subpages-par-limit' => 'La quantité maximale de pages à lister.',
+	'spl-subpages-par-class' => "La valeur pour l'attribut HTML « class » encadrant la liste.",
 );
 
 /** Franco-Provençal (Arpetan)
@@ -324,7 +326,10 @@ $messages['nl'] = array(
 	'spl-subpages-par-class' => 'De waarde voor het "class"-attribuut van het HTML-element waarin de lijst is omsloten.',
 	'spl-subpages-par-intro' => 'De uit te voeren tekst vóór de lijst als de lijst niet leeg is.',
 	'spl-subpages-par-outro' => 'De uit te voeren tekst na de lijst, als de lijst niet leeg is.',
+	'spl-subpages-par-default' => 'De weer te geven tekst in plaats van de lijst als de lijst leeg is. Als dit leeg is, wordt een foutmelding gegeven, zoals "Er zijn geen weer te geven subpagina\'s". Bij gebruik van het teken "-" is het resultaat volledig leeg.',
 	'spl-subpages-par-separator' => 'De uit te voeren tekst tussen twee lijstelementen voor een "list" (lijstweergave) of "bar" (balkweergave). Dit heeft geen effect op andere weergaven.',
+	'spl-subpages-par-template' => 'De naam van het sjabloon. Het sjabloon wordt toegepast op ieder element in de lijst. Een element wordt doorgegeven als het eerste (onbenoemde) argument. Let op dat het sjabloon de lijstopmaak niet verwijdert; de opmaak ("ul", "ol" of "list") wordt toegepast op het resultaat van het sjabloon.',
+	'spl-subpages-par-links' => 'Lijstelementen worden opgemaakt als verwijzingen als waar. Lijstelementen zijn platte tekst als onwaar. De laatste optie is handig bij het doorgeven van elementen aan sjablonen voor verdere verwerking.',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)

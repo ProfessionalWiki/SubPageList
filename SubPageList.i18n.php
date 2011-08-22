@@ -276,6 +276,10 @@ $messages['lb'] = array(
 	'spl-subpages-par-pathstyle' => 'Styl vum Wee (path) fir Ënnersäiten an der Lëscht. Erlaabte Wäerter: "fullpagename" - Kompletten Numm vun der Säit (inklusiv den Nummraum), "pagename" - Numm vun der säit (ouni Nummraum), "subpagename" - Relative Numm vun der Säit ugefaang vun de Säit fir déi mir Ënnersäiten opzielen, "none" -  just deen Deel vum Numm deen no dem lescht Slash kënnt.',
 	'spl-subpages-par-kidsonly' => 'Erlaabt fir nëmmen direkt Ënnersäiten ze weisen.',
 	'spl-subpages-par-limit' => "D'Maximalzuel vu Säiten déi gewise ginn.",
+	'spl-subpages-par-intro' => 'Den Text virun der Lëscht, wann se net eidel ass.',
+	'spl-subpages-par-outro' => 'Den Text hannert der Lëscht, wann se net eidel ass.',
+	'spl-subpages-par-default' => 'Den Text deen gewise amplaz vun der Lëscht gëtt, wann d\'Lëscht eidel ass. Wann se eidel ass, gëtt e Feeler-Message generéiert (esou wéi "D\'Säit huet keng Ënnersäiten"). Wann et e bindestrich ass ("-"), ass d\'Resultat komplett eidel.',
+	'spl-subpages-par-links' => "Wann et aktivéiert ass ginn d'Elementer vun der Lëscht als Linken duergestallt. Wann et net aktivéiert ass ginn d'Elementer vun der Lëscht als normalen Text duergestallt. Déi lescht Optioun ass besonnesch nëtzlech fir Elementer a Schablounen anzebannen an duerno weider ze verschaffen.",
 );
 
 /** Macedonian (Македонски)
@@ -349,18 +353,19 @@ $messages['no'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
 	'spl-desc' => 'A gionta un sìmbol <code><nowiki><splist /></nowiki></code> che at abìlita a listé le sot-pagine',
-	'spl-nosubpages' => "$1 a l'ha pa ëd sotpàgine da listé.",
-	'spl-subpages-par-sort' => 'La diression për ordiné.',
-	'spl-subpages-par-sortby' => 'Lòn da dovré për ordiné le pagine.',
-	'spl-subpages-par-format' => 'La lista ëd sotpagine a peul esse mostà an vàire formà. Liste numerà (ol), liste a pont (ul) e liste separà da vìrgola (list).',
-	'spl-subpages-par-page' => 'La pagina për mosté le sotpagine. Për default la pagina corenta.',
-	'spl-subpages-par-showpage' => 'A ìndica se la pagina midema a dovrìa esse mostà ant la lista o nò.',
-	'spl-subpages-par-pathstyle' => 'Lë stit dël përcors për le sotpagine ant la lista.',
-	'spl-subpages-par-kidsonly' => 'A përmëtt ëd mosté mach sotpagine direte.',
+	'spl-nosubpages' => "La pàgina $1 a l'ha gnun-e sot-pàgine da listé.",
+	'spl-subpages-par-sort' => 'La diression për ordiné. Valor përmëttù: «asc» e «desc».',
+	'spl-subpages-par-sortby' => 'Criteri për ordiné le pagine. Valor përmëttù :«tìtol» o «ùltima modìfica».',
+	'spl-subpages-par-format' => "La lista dle sot-pàgine a peul esse mostrà an vàire formà. Valor përmëttù: «ol» - lista ordinà (numerà), «ul» lista nen ordinà (a pont), «lista» - lista sempia (për esempi, lista separà da 'd vìrgole).",
+	'spl-subpages-par-page' => 'La pàgina dont smon-e le sot-pàgine. o lë spassi nominal. Për stàndard la pagina corenta.',
+	'spl-subpages-par-showpage' => 'A ìndica se la pagina midema a dev esse mostrà ant la lista o nò.',
+	'spl-subpages-par-pathstyle' => "Lë stit dël përcors për le sot-pàgine ant la lista. Valor përmëttù: «nòmcompletpàgina» - nòm complet ëd la pàgina (spassi nominal comprèis), «nòmpàgina» - nàm ëd la pàgina (sensa spassi nominal), «nòmsotpàgina» nòm relativ ëd la pàgina an ancaminand da la pàgina dont i smonoma le sot-pàgine, «gnun» - mach la part dël nòm apress l'ùltima bara.",
+	'spl-subpages-par-kidsonly' => 'A përmëtt ëd mostré mach le sot-pàgine direte.',
 	'spl-subpages-par-limit' => 'Ël nùmer màssim ëd pàgine da listé.',
 );
 

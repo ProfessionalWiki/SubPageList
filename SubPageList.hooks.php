@@ -38,9 +38,11 @@ final class SPLHooks {
 	 * 
 	 * @since 0.3
 	 * 
+	 * @param Article|WikiPage &$article WikiPage object since MW 1.18
+	 * 
 	 * @return true
 	 */
-	public static function onArticleDeleteComplete( Article &$article, User &$user, $reason, $id ) {
+	public static function onArticleDeleteComplete( &$article, User &$user, $reason, $id ) {
 		self::invalidateBasePages( $article->getTitle() );
 	    
 	    return true;

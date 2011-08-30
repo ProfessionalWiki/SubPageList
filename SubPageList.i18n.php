@@ -122,6 +122,7 @@ $messages['de'] = array(
 );
 
 /** French (Français)
+ * @author Gomoko
  * @author Hashar
  * @author Seb35
  * @author Sherbrooke
@@ -132,15 +133,22 @@ $messages['fr'] = array(
 	'spl-nosubpages' => 'La page « $1 » n’a pas de sous-pages à lister.',
 	'spl-noparentpage' => 'La page « $1 » n’existe pas.',
 	'spl-nopages' => 'L’espace de nom « $1 » n’a pas de pages.',
-	'spl-subpages-par-sort' => 'La direction de tri.',
-	'spl-subpages-par-sortby' => 'Trie des sous-pages selon.',
-	'spl-subpages-par-format' => 'La liste des sous-pages peut être affichée en différents formats : listes numérotées (ol), listes à puces (ul) ou listes séparées par des virgules (liste).',
-	'spl-subpages-par-page' => 'La page pour voir les sous-pages. Le défaut est la page courante.',
+	'spl-subpages-par-sort' => 'Le sens de tri. Valeurs permises: "asc" et "desc".',
+	'spl-subpages-par-sortby' => 'Selon quoi trier les sous-pages. Valeurs permises: "title" ou "lastedit".',
+	'spl-subpages-par-format' => 'La liste des sous-pages peut être affichée selon différents formats. Valeurs permises: "ol" - listes ordonnées (numérotées), "ul" - listes non ordonnées (à puces), "list" -  listes simples (par exemple liste séparée par des virgules).',
+	'spl-subpages-par-page' => "La page pour afficher les sous-pages, ou l'espace de nommage (y compris le deux-points final) dont les pages sont à afficher. Par défaut, la page courante.",
 	'spl-subpages-par-showpage' => 'Indique si la page elle-même doit figurer dans la liste ou non.',
-	'spl-subpages-par-pathstyle' => 'Style du chemin des sous-pages dans la liste.',
+	'spl-subpages-par-pathstyle' => 'Le style de chemin pour les sous-pages dans la liste. Valeurs permises: "fullpagename" - nom complet de la page (y compris l\'espace de noms), "pagename" - nom de la page (sans l\'espace de noms), "subpagename" - nom relatif de la page en démarrant de la page depuis laquelle nous listons les sous-pages, "none" - uniquement la dernière partie du nom, après le dernier slash.',
 	'spl-subpages-par-kidsonly' => "Permet de n'afficher que les sous-pages immédiates.",
 	'spl-subpages-par-limit' => 'La quantité maximale de pages à lister.',
+	'spl-subpages-par-element' => 'L\'élément HTML englobant la liste (y compris les textes "intro" et "outro" ou "default"). Valeurs permises: "div", "p", "span".',
 	'spl-subpages-par-class' => "La valeur pour l'attribut HTML « class » encadrant la liste.",
+	'spl-subpages-par-intro' => "Le texte à renvoyer avant la liste, si celle-ci n'est pas vide.",
+	'spl-subpages-par-outro' => "Le texte à renvoyer après la liste, si celle-ci n'est pas vide.",
+	'spl-subpages-par-default' => 'La texte à renvoyer à la place de la liste, si celle-ci est vide. S\'il est vide, un message d\'erreur sera renvoyé (comme "La page n\'a aucune sous-page à lister"). S\'il est mis à un tiret ("-"), le résultat sera complètement vide.',
+	'spl-subpages-par-separator' => 'Le texte à renvoyer entre deux éléments de la liste, dans le cas d\'un format "list" (et son alias "bar"). N\'a pas d\'effet dans les autres formats.',
+	'spl-subpages-par-template' => 'Le nom du modèle. Le modèle est appliqué à chaque élément de la liste. Un élément est passé comme premier argument (non nommé). Remarquez que le modèle n\'annule pas le formatage de la liste. Le formatage ("ul", "ol", "list") est appliqué au résultat du modèle.',
+	'spl-subpages-par-links' => "S'il est vrai, les éléments de liste sont rendus comme des liens. S'il est faux, les éléments de liste sont rendus comme du texte simple. Ce dernier est particulièrement utile pour passer des éléments dans les modèles pour un traitement ultérieur.",
 );
 
 /** Franco-Provençal (Arpetan)

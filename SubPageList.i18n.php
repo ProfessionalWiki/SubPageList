@@ -257,13 +257,19 @@ $messages['id'] = array(
  */
 $messages['ksh'] = array(
 	'spl-desc' => 'Deiht dä Befähl <code><nowiki><splist /></nowiki></code> en et Wiki, för Ongersigge aanzezeije.',
-	'spl-nosubpages' => 'De Sigg „$1“ hät kei Ongersigge zom Opleßte.',
+	'spl-nosubpages' => 'Di Sigg „$1“ hät kein Ongersigge zom Opleßte.',
+	'spl-noparentpage' => 'En Sigg „$1“ jidd_et nit.',
 	'spl-subpages-par-sort' => 'Wieröm zoteet wääde sull.',
 	'spl-subpages-par-sortby' => 'Noh wat de Ongersigge zoteet wääde sulle.',
 	'spl-subpages-par-format' => 'De Leß met de Ongersigge kann ongerscheidlijje Jeschtalte han: met Nummere (ol) met Punkte (ul) un alles ein eine Reih met Kommas dozwesche (list)',
 	'spl-subpages-par-page' => 'De Sigg, woh de Ongersigge vun jezeich wääde sulle. Wam_mer nix säät, es dat de Sigg, di jraad jezeich weed.',
 	'spl-subpages-par-showpage' => 'Jitt aan, ov de Sigg selver och en dä Leß met dä iehre Ongersigge aanjezeisch wääde sull, udder nit.',
-	'spl-subpages-par-pathstyle' => 'Dä Stil vun de Aanzeije vun däm Pad vun de Ongersigge en dä Leß.',
+	'spl-subpages-par-pathstyle' => 'Dä Stil vun de Aanzeije vun däm Pad vun de Ongersigge en dä Leß.
+Zohjelohße es:
+<code lang="en">fullpagename</code> — Dä janze Name vun dä Sigg mem Appachtemang.
+<code lang="en">pagename</code> — Dä janze Name vun dä Sigg der ohne et Appachtemang.
+<code lang="en">subpagename</code> — Bloß der Deil vum Name henger dä Sigg, woh mer Ongersigge vun opleste donn.
+<code lang="en">none</code> — Blos et Engk vum Name henger_em läzde schrääje Schtresch.',
 	'spl-subpages-par-kidsonly' => 'Määt et müjjelesch, bloß de diräkte Ongersigge opzeleßte.',
 	'spl-subpages-par-limit' => 'De jrüüßte Zahl Sigge för opzeleste.',
 );

@@ -169,7 +169,7 @@ $messages['frp'] = array(
 	'spl-nosubpages' => 'Pâge « $1 » at gins de sot-pâge a ènumèrar.',
 	'spl-noparentpage' => 'Pâge « $1 » ègziste pas.',
 	'spl-nopages' => 'L’èspâço de noms « $1 » contint gins de pâge.',
-	'spl-subpages-par-sort' => 'La dirèccion de tri.',
+	'spl-subpages-par-sort' => "La dirèccion de tri. Valors pèrmêses : « asc » (''crèssent'') et « desc » (''dècrèssent'').",
 );
 
 /** Galician (Galego)

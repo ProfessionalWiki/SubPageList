@@ -177,16 +177,25 @@ $messages['frp'] = array(
  */
 $messages['gl'] = array(
 	'spl-desc' => 'Engade unha etiqueta <code><nowiki><splist /></nowiki></code> que permite poñer as subpáxinas nunha lista',
-	'spl-nosubpages' => '$1 non ten subpáxinas que poñer nunha lista.',
+	'spl-nosubpages' => 'A páxina "$1" non ten subpáxinas que poñer nunha lista.',
 	'spl-noparentpage' => 'A páxina "$1" non existe.',
-	'spl-subpages-par-sort' => 'A dirección de ordenación.',
-	'spl-subpages-par-sortby' => 'O criterio de ordenación das subpáxinas.',
-	'spl-subpages-par-format' => 'A lista de subpáxinas pódese mostrar en varios formatos. Listas numeradas (ol), listas con asteriscos (ul) e listas separadas por comas (list).',
-	'spl-subpages-par-page' => 'A páxina na que mostrar as subpáxinas. A páxina actual é a predeterminada.',
+	'spl-nopages' => 'O espazo de nomes "$1" non ten páxinas.',
+	'spl-subpages-par-sort' => 'A dirección de ordenación. Valores permitidos: "asc" e "desc".',
+	'spl-subpages-par-sortby' => 'O criterio de ordenación das subpáxinas. Valores permitidos: "title" ou "lastedit"',
+	'spl-subpages-par-format' => 'A lista de subpáxinas pódese mostrar en varios formatos. Valores permitidos: "ol", listas ordenadas (numeradas); "ul", listas desordenadas (con asteriscos); e "list", listas simples (por exemplo, separadas por comas).',
+	'spl-subpages-par-page' => 'A páxina na que mostrar as subpáxinas ou o espazo de nomes (incluídos os dous puntos) no que mostrar as páxinas. A páxina actual é a predeterminada.',
 	'spl-subpages-par-showpage' => 'Indica se a páxina en si debería figurar ou non na lista.',
-	'spl-subpages-par-pathstyle' => 'O estilo da ruta de acceso ás subpáxinas da lista.',
+	'spl-subpages-par-pathstyle' => 'O estilo da ruta de acceso ás subpáxinas da lista. Valores permitidos: "fullpagename", nome completo da páxina (incluído o espazo de nomes); "pagename", nome da páxina (sen o espazo de nomes); "subpagename", nome relativo da páxina comezando a partir daquela da que se van poñer as subpáxinas nunha lista; e "none", unicamente a parte do nome despois da última barra inclinada.',
 	'spl-subpages-par-kidsonly' => 'Permite mostrar só as subpáxinas directas.',
 	'spl-subpages-par-limit' => 'O número máximo de páxinas a poñer nunha lista.',
+	'spl-subpages-par-element' => 'O elemento HTML que engloba a lista (incluíndo os textos "intro" e "outro" ou "default"). Valores permitidos: "div", "p" e "span".',
+	'spl-subpages-par-class' => 'O valor para o atributo "class" do elemento HTML que engloba a lista.',
+	'spl-subpages-par-intro' => 'O texto que mostrar antes da lista, se esta non está baleira.',
+	'spl-subpages-par-outro' => 'O texto que mostrar despois da lista, se esta non está baleira.',
+	'spl-subpages-par-default' => 'O texto que mostrar no canto da lista, se esta está baleira. Nesta caso, aparecerá unha mensaxe de erro (como "A páxina non ten subpáxinas que poñer nunha lista"). Se o valor fose un guión ("-"), o resultado sería completamente baleiro.',
+	'spl-subpages-par-separator' => 'O texto que mostrar entre dous elementos da lista en caso dun formato "list" (e o seu idéntico "bar"). Non ten efecto sobre outros formatos.',
+	'spl-subpages-par-template' => 'O nome do modelo. O modelo aplícase a cada elemento da lista. Un elemento é tratado como o primeiro argumento (sen nome). Nótese que o modelo non cancelar o formato da lista. O formato ("ul", "ol", "list") aplícase ao resultado do modelo.',
+	'spl-subpages-par-links' => 'Se fose verdadeiro, os elementos da lista preséntanse como ligazóns. En caso de ser falso, os elementos da lista móstranse como texto simple. Isto último é especialmente útil para presentar elementos nos modelos para procesalos posteriormente.',
 );
 
 /** Hebrew (עברית)

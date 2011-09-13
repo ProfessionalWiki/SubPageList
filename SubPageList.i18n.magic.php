@@ -26,6 +26,11 @@ $magicWords['ar'] = array(
 	'subpages' => array( 0, 'صفحات_فرعية' ),
 );
 
+/** Bulgarian (Български) */
+$magicWords['bg'] = array(
+	'subpages' => array( 0, 'подстраници' ),
+);
+
 /** Breton (Brezhoneg) */
 $magicWords['br'] = array(
 	'subpages' => array( 0, 'ispajennoù' ),
@@ -37,13 +42,23 @@ $magicWords['mk'] = array(
 	'subpages' => array( 0, 'потстраници' ),
 );
 
+/** Nedersaksisch (Nedersaksisch) */
+$magicWords['nds-nl'] = array(
+	'splist' => array( 0, 'splieste' ),
+);
+
 /** Dutch (Nederlands) */
 $magicWords['nl'] = array(
 	'splist' => array( 0, 'splijst' ),
 	'subpages' => array( 0, 'subpaginas', 'subpagina\'s' ),
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬) */
+/** Polish (Polski) */
+$magicWords['pl'] = array(
+	'subpages' => array( 0, 'podstrony' ),
+);
+
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬) */
 $magicWords['sr-ec'] = array(
 	'splist' => array( 0, 'подсписак', 'под_списак' ),
 	'subpages' => array( 0, 'подстранице', 'подстране' ),
@@ -51,5 +66,5 @@ $magicWords['sr-ec'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬) */
 $magicWords['zh-hans'] = array(
-	'subpages' => array( 0, '子页' ),
+	'subpages' => array( 0, '子页面' ),
 );

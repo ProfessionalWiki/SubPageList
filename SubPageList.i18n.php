@@ -58,9 +58,9 @@ $messages['qqq'] = array(
  */
 $messages['be-tarask'] = array(
 	'spl-desc' => 'Дадае тэг <code><nowiki><splist /></nowiki></code>, які выводзіць сьпіс падстаронак',
-	'spl-nosubpages' => 'Старонка $1 ня мае падстаронак для сьпісу.',
+	'spl-nosubpages' => 'Старонка «$1» ня мае падстаронак для сьпісу.',
 	'spl-noparentpage' => 'Старонка «$1» не існуе.',
-	'spl-nopages' => 'Прастора назваў "$1" ня ўтрымлівае старонак.',
+	'spl-nopages' => 'Прастора назваў «$1» ня ўтрымлівае старонак.',
 	'spl-subpages-par-sort' => 'Напрамак сартаваньня. Дапушчальныя значэньні: "asc" і "desc".',
 	'spl-subpages-par-sortby' => 'Ключ сартаваньня падстаронак. Дапушчальныя значэньні: "title" ці "lastedit".',
 	'spl-subpages-par-format' => 'Сьпіс падстаронак можа быць паказаны ў некалькіх фарматах. Дапушчальныя значэньні: "ol" — нумараваныя сьпісы, "ul" — маркіраваныя сьпісы і "list" — простыя сьпісы (напрыклад, падзеленыя коскамі).',
@@ -320,6 +320,7 @@ $messages['lb'] = array(
 	'spl-subpages-par-intro' => 'Den Text virun der Lëscht, wann se net eidel ass.',
 	'spl-subpages-par-outro' => 'Den Text hannert der Lëscht, wann se net eidel ass.',
 	'spl-subpages-par-default' => 'Den Text deen gewise amplaz vun der Lëscht gëtt, wann d\'Lëscht eidel ass. Wann se eidel ass, gëtt e Feeler-Message generéiert (esou wéi "D\'Säit huet keng Ënnersäiten"). Wann et e bindestrich ass ("-"), ass d\'Resultat komplett eidel.',
+	'spl-subpages-par-template' => 'Den Numm vun der Schabloun. D\'Schabloun gëtt fir all Element vun der Lëscht benotzt. Een Element gëtt als éischt (ongenannt) Argument un D\'Schabloun viruginn. Denkt drun datt d\'Schabloun de Format vun der Lëscht net ännert. D\'Formatéierung ("ul", "ol", "list") gëtt op d\'Resultat vun der Schabloun applizéiert.',
 	'spl-subpages-par-links' => "Wann et aktivéiert ass ginn d'Elementer vun der Lëscht als Linken duergestallt. Wann et net aktivéiert ass ginn d'Elementer vun der Lëscht als normalen Text duergestallt. Déi lescht Optioun ass besonnesch nëtzlech fir Elementer a Schablounen anzebannen an duerno weider ze verschaffen.",
 );
 

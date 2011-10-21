@@ -1,5 +1,7 @@
 <?php
 
+require_once( dirname( __FILE__ ) . '/SubPageBase.class.php' );
+
 /**
  * CLass to render the sub page list.
  * 
@@ -15,7 +17,7 @@
  * @author James McCormack (email: user "qedoc" at hotmail); preceding version Martin Schallnahs <myself@schaelle.de>, original Rob Church <robchur@gmail.com>
  * @copyright © 2008 James McCormack, preceding version Martin Schallnahs, original Rob Church
  */
-final class SubPageList extends ParserHook {
+final class SubPageList extends SubPageBase {
 	
 	/**
 	 * No LST in pre-5.3 PHP *sigh*.
@@ -169,7 +171,7 @@ final class SubPageList extends ParserHook {
 	 * @return string
 	 */
 	public function render( array $parameters ) {
-		$title = $this->getTitle( $parameters );
+		$title = $this->getTitle( $parameters['page'] );
 		$pages = $this->getSubPages( $title, $parameters );
 		// There is no need in encoding `$parameters['element']', because it is validated and can
 		// be only one of `span', `p', or `div'.
@@ -229,44 +231,8 @@ final class SubPageList extends ParserHook {
 		}
 
 		return $list;
-	}	
-	
-	/**
-	 * Returns the title for which subpages should be fetched.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param array $parameters
-	 * 
-	 * @return Instance of Title class — title of an existing page, or integer — index of an
-	 * existing namespace, or null otherwise.
-	 */
-	protected function getTitle( array $parameters ) {
-		global $wgContLang;
-		
-		$page = $parameters['page'];
-		$title = null;
-
-		if ( $page == '' ) {
-			$title = $this->parser->mTitle;
-		}
-		else {
-			$title = Title::newFromText( $page );
-			if ( is_null( $title ) ) {
-				// It is a wrog page name. Probably it is a namespace name?
-				$m = array();
-				if ( preg_match( '/^\s*(.*):\s*$/', $page, $m ) ) {
-					$title = $wgContLang->getNsIndex( $m[ 1 ] );
-				}
-			}
-			else if ( ! $title->exists() ) {
-				$title = null;
-			}
-		}
-		
-		return $title;
 	}
-
+	
 	/**
 	 * Returns the subpages for a page.
 	 * 
@@ -291,25 +257,9 @@ final class SubPageList extends ParserHook {
 				( strtoupper( $parameters['sort'] ) );
 			$options['LIMIT'] = $parameters['limit'];
 
-			$conditions = array();
-			$conditions['page_is_redirect'] = 0;
-			if ( $title instanceof Title ) {
-				$conditions['page_namespace'] = $title->getNamespace(); // Don't let list cross namespaces.
-				// TODO: this is rather resource heavy
-				$conditions[] = 'page_title ' . $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString() );
-				if ( $parameters['kidsonly'] ) {
-					$conditions[] = 'page_title NOT ' . $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString(), '/', $dbr->anyString() );
-				}
-			}
-			else {
-				$conditions['page_namespace'] = $title;
-				if ( $parameters['kidsonly'] ) {
-					// Request only root pages, not subpages.
-					$conditions[] = 'page_title NOT ' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() );
-				}
-			    else {
-					$conditions[] = 'page_title ' . $dbr->buildLike( $dbr->anyString() );
-				}
+			$conditions = $this->getConditions( $title, $parameters['kidsonly'] );
+			if ( is_null( $conditions ) ) {
+				return $titles;
 			}
 
 			$fields = array();
@@ -323,8 +273,8 @@ final class SubPageList extends ParserHook {
 				if( is_object( $title ) ) {
 					$titles[] = $title;
 				}
-			}		
-			
+			}
+
 			$dbr->freeResult( $res );
 
 		}

@@ -54,6 +54,7 @@ $egSPLIP = dirname( __FILE__ );
 $wgExtensionMessagesFiles['SubPageList'] = $egSPLIP . '/SubPageList.i18n.php';
 
 $wgAutoloadClasses['SubPageList'] = $egSPLIP . '/SubPageList.class.php';
+$wgAutoloadClasses['SubPageCount'] = $egSPLIP . '/SubPageCount.class.php';
 $wgAutoloadClasses['SPLHooks'] = $egSPLIP . '/SubPageList.hooks.php';
 
 if ( version_compare( $wgVersion, '1.16alpha', '>=' ) ) {
@@ -62,6 +63,8 @@ if ( version_compare( $wgVersion, '1.16alpha', '>=' ) ) {
 
 $wgHooks['ParserFirstCallInit'][] = 'SubPageList::staticInit';
 $wgHooks['LanguageGetMagic'][] = 'SubPageList::staticMagic';
+$wgHooks['ParserFirstCallInit'][] = 'SubPageCount::staticInit';
+$wgHooks['LanguageGetMagic'][] = 'SubPageCount::staticMagic';
 
 $wgHooks['ArticleInsertComplete'][] = 'SPLHooks::onArticleInsertComplete';
 $wgHooks['ArticleDeleteComplete'][] = 'SPLHooks::onArticleDeleteComplete';

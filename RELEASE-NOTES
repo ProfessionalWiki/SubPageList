@@ -8,6 +8,7 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 2011-xx-xx
 
 * Compatibility fix with MediaWiki 1.18 and later.
+* Added #subpagecount parser hook.
 
 === Version 0.4 ===
 2011-07-27

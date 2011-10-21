@@ -46,7 +46,7 @@ final class SubPageList extends SubPageBase {
 	 * @return string
 	 */
 	protected function getName() {
-		return array( 'subpages', 'splist' );
+		return array( 'subpages', 'splist', 'subpagelist' );
 	}
 	
 	/**

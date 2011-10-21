@@ -1,6 +1,4 @@
-<?php  // SubPageCount.php //
-
-require_once( dirname( __FILE__ ) . '/SubPageBase.class.php' );
+<?php 
 
 /**
  * CLass to render the sub page count.

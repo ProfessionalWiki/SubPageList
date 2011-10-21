@@ -53,6 +53,7 @@ $egSPLIP = dirname( __FILE__ );
 
 $wgExtensionMessagesFiles['SubPageList'] = $egSPLIP . '/SubPageList.i18n.php';
 
+$wgAutoloadClasses['SubPageBase'] = $egSPLIP . '/SubPageBase.class.php';
 $wgAutoloadClasses['SubPageList'] = $egSPLIP . '/SubPageList.class.php';
 $wgAutoloadClasses['SubPageCount'] = $egSPLIP . '/SubPageCount.class.php';
 $wgAutoloadClasses['SPLHooks'] = $egSPLIP . '/SubPageList.hooks.php';

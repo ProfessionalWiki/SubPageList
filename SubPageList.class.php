@@ -1,7 +1,5 @@
 <?php
 
-require_once( dirname( __FILE__ ) . '/SubPageBase.class.php' );
-
 /**
  * CLass to render the sub page list.
  * 

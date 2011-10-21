@@ -1,4 +1,4 @@
-<?php  // SubPageBase.php //
+<?php
 
 /**
  * Base class for classes `SubPageList' and `SubPageCount'. Contains code common for both
@@ -101,5 +101,3 @@ abstract class SubPageBase extends ParserHook {
 	} // getConditions
 
 } // class SubPageBase
-
-// end of file //

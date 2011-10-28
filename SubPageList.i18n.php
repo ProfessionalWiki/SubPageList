@@ -219,9 +219,9 @@ $messages['he'] = array(
  */
 $messages['hsb'] = array(
 	'spl-desc' => 'Přidawa element code><nowiki><splist /></nowiki></code>, kotryž ći zmóžnja podstrony nalistować',
-	'spl-nosubpages' => '$1 nima podstrony.',
-	'spl-subpages-par-sort' => 'Sortěrowanski porjad.',
-	'spl-subpages-par-sortby' => 'Sortěrowanski kriterij podstronow',
+	'spl-nosubpages' => 'Strona "$1" nima podstrony za lisćinu.',
+	'spl-subpages-par-sort' => 'Sortěrowanski porjad. Dowolene hódnoty: "asc" (postupowacy) a "desc" (spadowacy).',
+	'spl-subpages-par-sortby' => 'Sortěrowanski kriterij podstronow. Dowolene hódnoty: "title" (titul) abo "lastedit" (poslednja změna)',
 	'spl-subpages-par-format' => 'Lisćina podstronow hodźi so we wšelakich formatach zwobraznić, čisłowane lisćiny (ol), naličenja (ul) a lisćiny dźělene přez komu (lisćina).',
 	'spl-subpages-par-page' => 'Strona, za kotruž maja so podstrony pokazać. Standard je aktualna strona.',
 	'spl-subpages-par-showpage' => 'Podawa, hač strona sama měła so w lisćinje pokazać abo nic.',

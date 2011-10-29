@@ -222,10 +222,10 @@ $messages['hsb'] = array(
 	'spl-nosubpages' => 'Strona "$1" nima podstrony za lisćinu.',
 	'spl-subpages-par-sort' => 'Sortěrowanski porjad. Dowolene hódnoty: "asc" (postupowacy) a "desc" (spadowacy).',
 	'spl-subpages-par-sortby' => 'Sortěrowanski kriterij podstronow. Dowolene hódnoty: "title" (titul) abo "lastedit" (poslednja změna)',
-	'spl-subpages-par-format' => 'Lisćina podstronow hodźi so we wšelakich formatach zwobraznić, čisłowane lisćiny (ol), naličenja (ul) a lisćiny dźělene přez komu (lisćina).',
-	'spl-subpages-par-page' => 'Strona, za kotruž maja so podstrony pokazać. Standard je aktualna strona.',
+	'spl-subpages-par-format' => 'Lisćina podstronow hodźi so we wšelakich formatach zwobraznić. Dowolene hódnoty: "ol" - (čisłowana lisćina), "ul" - naličenje (nječisłowana lisćina), "list" - jednora lisćina (za na př. lisćinu z přez komu dźělenymi zapiskami).',
+	'spl-subpages-par-page' => 'Strona, za kotruž maja so podstrony pokazać, abo mjenowy rum (inkluziwnje dwudypka), w kotrymž strony maja so  pokazać. Standard je aktualna strona.',
 	'spl-subpages-par-showpage' => 'Podawa, hač strona sama měła so w lisćinje pokazać abo nic.',
-	'spl-subpages-par-pathstyle' => 'Stil šćežki za podstrony w lisćinje.',
+	'spl-subpages-par-pathstyle' => 'Stil šćežki za podstrony w lisćinje. Dowolene hódnoty: "fullpagename" — mjeno strony inkluziwnje mjenoweho ruma, "pagename" — mjeno strony bjez mjenoweho ruma, "subpagename" — relatiwne mjeno strony započinajo ze stronu, za kotruž so podstrony nalistuja, "none" — jenož tón dźěl mjena, kotryž poslednjej nakósnej smužce slěduje.',
 	'spl-subpages-par-kidsonly' => 'Móže  jenož direktne podstrony pokazać.',
 	'spl-subpages-par-limit' => 'Maksimalna ličba stronow, kotrež maja so nalsitować.',
 );
@@ -392,6 +392,13 @@ $messages['no'] = array(
 	'spl-subpages-par-pathstyle' => 'Stilen på banen for undersidene i listen.',
 	'spl-subpages-par-kidsonly' => 'Tillater kun å vise direkte undersider.',
 	'spl-subpages-par-limit' => 'Maksimum antall sider å liste opp.',
+);
+
+/** Polish (Polski)
+ * @author Woytecr
+ */
+$messages['pl'] = array(
+	'spl-desc' => 'Dodaje tag <code><nowiki><splist /></nowiki></code> pozwalający na wstawienie listy podstron',
 );
 
 /** Piedmontese (Piemontèis)

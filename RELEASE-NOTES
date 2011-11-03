@@ -9,6 +9,7 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 
 * Compatibility fix with MediaWiki 1.18 and later.
 * Added #subpagecount parser hook.
+* Fixed invalid HTML for ul and ol formats (bug 32131).
 
 === Version 0.4 ===
 2011-07-27

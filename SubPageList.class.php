@@ -344,16 +344,19 @@ final class SubPageList extends SubPageBase {
 		$bullet = '';	// String to render between `$start' and item
 						// (may be rendered few times, depends on nesting level).
 		$sep = '';		// String to render between two items.
+		$end = '';		// String to render once at the end of the last item.
 		$items = array();
 		
 		switch ( $parameters['format'] ) {
 			case 'ol' : case 'ordered' :
 				$start = "\n";
 				$bullet = '#';
+				$end = "\n";
 				break;
 			case 'ul' : case 'unordered' : 
 				$start = "\n";
 				$bullet = '*';
+				$end = "\n";
 				break;
 			case 'list' : case 'bar' :
 				$sep = $parameters['separator'];
@@ -429,7 +432,7 @@ final class SubPageList extends SubPageBase {
 			}
 		}
 
-		return implode( $sep, $items );
+		return count( $items ) > 0 ? implode( $sep, $items ) . $end : '';
 	}
 
 	/**

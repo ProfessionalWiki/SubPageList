@@ -85,7 +85,7 @@ $messages['be-tarask'] = array(
  */
 $messages['br'] = array(
 	'spl-desc' => 'Ouzhpennañ a ra ur valizenn  <code><nowiki><splist /></nowiki></code> a dalvez da rollañ an ispajennoù',
-	'spl-nosubpages' => "N'eus ispajenn ebet da rollañ evit $1",
+	'spl-nosubpages' => 'N\'eus ispajenn ebet da rollañ evit ar bajenn "$1".',
 	'spl-subpages-par-sort' => 'Tu an urzhiañ.',
 	'spl-subpages-par-sortby' => 'Urzhiañ a ra ispajennoù dre.',
 	'spl-subpages-par-format' => 'Gallout a ra ar roll ispajennoù bezañ diskwelet dre furmadoù disheñvel : rolloù niverennet (ol), rolloù padennek (ul) pe rolloù dispartiet dre skejoù (roll).',

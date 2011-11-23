@@ -472,7 +472,7 @@ $messages['ru'] = array(
 	'spl-subpages-par-links' => 'Если истина, элементы списка выводятся как ссылки. Если ложь, элементы списка выводятся как простой текст, это особенно удобно, если применяется совместно с шаблоном.',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Rancher
  */
 $messages['sr-ec'] = array(

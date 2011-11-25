@@ -43,7 +43,7 @@ abstract class SubPageBase extends ParserHook {
 				if ( preg_match( '/^\s*(.*):\s*$/', $page, $m ) ) {
 					$title = $wgContLang->getNsIndex( $m[ 1 ] );
 				}
-			} else if ( ! $title->exists() ) {
+			} elseif ( ! $title->exists() ) {
 				$title = null;
 			}
 		}

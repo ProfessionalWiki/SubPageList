@@ -45,7 +45,7 @@ $wgExtensionCredits['parserhook'][] = array(
 		'[http://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
 		'Van de Bugger. Based on [http://www.mediawiki.org/wiki/Extension:SubPageList3 SubPageList3].',
 	),
-	'url' => 'http://www.mediawiki.org/wiki/Extension:SubPageList',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:SubPageList',
 	'descriptionmsg' => 'spl-desc'
 );
 

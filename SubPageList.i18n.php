@@ -110,7 +110,7 @@ $messages['bs'] = array(
  * @author Purodha
  */
 $messages['de'] = array(
-	'spl-desc' => 'Fügt das <code><nowiki><splist /></nowiki></code>-Tag zur Anzeige von Unterseiten hinzu',
+	'spl-desc' => 'Ergänzt das Tag <code><nowiki><splist /></nowiki></code> zur Anzeige einer Liste von Unterseiten',
 	'spl-nosubpages' => 'Seite „$1“ verfügt über keine auflistbaren Unterseiten.',
 	'spl-noparentpage' => 'Seite „$1“ ist nicht vorhanden.',
 	'spl-nopages' => 'Im Namensraum „$1“ befinden sich keine Seiten.',

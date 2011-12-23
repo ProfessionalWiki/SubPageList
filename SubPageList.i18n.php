@@ -479,6 +479,11 @@ $messages['sr-ec'] = array(
 	'spl-subpages-par-limit' => 'Највећи број страница за приказивање.',
 );
 
+/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+$messages['sr-el'] = array(
+	'spl-subpages-par-limit' => 'Najveći broj stranica za prikazivanje.',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */

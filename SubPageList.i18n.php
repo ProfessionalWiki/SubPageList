@@ -350,6 +350,22 @@ $messages['mk'] = array(
 	'spl-subpages-par-links' => 'Ако е точно, ставките во списокот се прикажуваат како врски. Ако е неточно, тогаш ставките се прикажуваат како прост текст. Второспоменатото е особено корисно за доставка на ставки во шаблони за понатамошна обработка.',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Nghtwlkr
+ */
+$messages['nb'] = array(
+	'spl-desc' => 'Legger til et <code><nowiki><splist /></nowiki></code>-element som lar deg liste opp undersider',
+	'spl-nosubpages' => '$1 har ingen undersider å liste opp.',
+	'spl-subpages-par-sort' => 'Retningen du vil sortere i.',
+	'spl-subpages-par-sortby' => 'Hva du vil sortere undersidene etter.',
+	'spl-subpages-par-format' => 'Undersidelisten kan vises i flere format. Nummererte lister (ol), punktlister (ul) og kommaseparerte lister (list).',
+	'spl-subpages-par-page' => 'Siden undersidene skal vises for. Standard er den gjeldende siden.',
+	'spl-subpages-par-showpage' => 'Indikerer om selve siden skal vises i listen eller ikke.',
+	'spl-subpages-par-pathstyle' => 'Stilen på banen for undersidene i listen.',
+	'spl-subpages-par-kidsonly' => 'Tillater kun å vise direkte undersider.',
+	'spl-subpages-par-limit' => 'Maksimum antall sider å liste opp.',
+);
+
 /** Dutch (Nederlands)
  * @author McDutchie
  * @author SPQRobin
@@ -376,22 +392,6 @@ $messages['nl'] = array(
 	'spl-subpages-par-separator' => 'De uit te voeren tekst tussen twee lijstelementen voor een "list" (lijstweergave) of "bar" (balkweergave). Dit heeft geen effect op andere weergaven.',
 	'spl-subpages-par-template' => 'De naam van het sjabloon. Het sjabloon wordt toegepast op ieder element in de lijst. Een element wordt doorgegeven als het eerste (onbenoemde) argument. Let op dat het sjabloon de lijstopmaak niet verwijdert; de opmaak ("ul", "ol" of "list") wordt toegepast op het resultaat van het sjabloon.',
 	'spl-subpages-par-links' => 'Lijstelementen worden opgemaakt als verwijzingen als waar. Lijstelementen zijn platte tekst als onwaar. De laatste optie is handig bij het doorgeven van elementen aan sjablonen voor verdere verwerking.',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Nghtwlkr
- */
-$messages['nb'] = array(
-	'spl-desc' => 'Legger til et <code><nowiki><splist /></nowiki></code>-element som lar deg liste opp undersider',
-	'spl-nosubpages' => '$1 har ingen undersider å liste opp.',
-	'spl-subpages-par-sort' => 'Retningen du vil sortere i.',
-	'spl-subpages-par-sortby' => 'Hva du vil sortere undersidene etter.',
-	'spl-subpages-par-format' => 'Undersidelisten kan vises i flere format. Nummererte lister (ol), punktlister (ul) og kommaseparerte lister (list).',
-	'spl-subpages-par-page' => 'Siden undersidene skal vises for. Standard er den gjeldende siden.',
-	'spl-subpages-par-showpage' => 'Indikerer om selve siden skal vises i listen eller ikke.',
-	'spl-subpages-par-pathstyle' => 'Stilen på banen for undersidene i listen.',
-	'spl-subpages-par-kidsonly' => 'Tillater kun å vise direkte undersider.',
-	'spl-subpages-par-limit' => 'Maksimum antall sider å liste opp.',
 );
 
 /** Polish (Polski)

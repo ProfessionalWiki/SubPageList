@@ -12,9 +12,7 @@
 
 $magicWords = array();
 
-/** English
- * @author Jeroen De Dauw
- */
+/** English (English) */
 $magicWords['en'] = array(
 	'splist' => array( 0, 'splist' ),
 	'subpages' => array( 0, 'subpages' ),
@@ -34,6 +32,12 @@ $magicWords['bg'] = array(
 /** Breton (Brezhoneg) */
 $magicWords['br'] = array(
 	'subpages' => array( 0, 'ispajennoù' ),
+);
+
+/** German (Deutsch) */
+$magicWords['de'] = array(
+	'splist' => array( 0, 'unterseitenliste' ),
+	'subpages' => array( 0, 'unterseiten' ),
 );
 
 /** Macedonian (Македонски) */
@@ -62,6 +66,12 @@ $magicWords['pl'] = array(
 $magicWords['sr-ec'] = array(
 	'splist' => array( 0, 'подсписак', 'под_списак' ),
 	'subpages' => array( 0, 'подстранице', 'подстране' ),
+);
+
+/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+$magicWords['sr-el'] = array(
+	'splist' => array( 0, 'podspisak', 'pod_spisak' ),
+	'subpages' => array( 0, 'podstranice', 'podstrane' ),
 );
 
 /** Simplified Chinese (‪中文(简体)‬) */

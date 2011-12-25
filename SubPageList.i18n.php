@@ -381,7 +381,7 @@ $messages['nl'] = array(
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Nghtwlkr
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'spl-desc' => 'Legger til et <code><nowiki><splist /></nowiki></code>-element som lar deg liste opp undersider',
 	'spl-nosubpages' => '$1 har ingen undersider å liste opp.',
 	'spl-subpages-par-sort' => 'Retningen du vil sortere i.',

@@ -35,7 +35,7 @@ if ( ! defined( 'Validator_VERSION' ) ) {
 	die( '<b>Error:</b> You need to have <a href="http://www.mediawiki.org/wiki/Extension:Validator">Validator</a> installed in order to use <a href="http://www.mediawiki.org/wiki/Extension:SubPageList">SubPageList</a>.<br />' );
 }
 
-define( 'SPL_VERSION', '0.5 alpha' );
+define( 'SPL_VERSION', '0.5' );
 
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
@@ -52,15 +52,12 @@ $wgExtensionCredits['parserhook'][] = array(
 $egSPLIP = dirname( __FILE__ );
 
 $wgExtensionMessagesFiles['SubPageList'] = $egSPLIP . '/SubPageList.i18n.php';
+$wgExtensionMessagesFiles['SubPageListMagic'] = $egSPLIP . '/SubPageList.i18n.magic.php';
 
 $wgAutoloadClasses['SubPageBase'] = $egSPLIP . '/SubPageBase.class.php';
 $wgAutoloadClasses['SubPageList'] = $egSPLIP . '/SubPageList.class.php';
 $wgAutoloadClasses['SubPageCount'] = $egSPLIP . '/SubPageCount.class.php';
 $wgAutoloadClasses['SPLHooks'] = $egSPLIP . '/SubPageList.hooks.php';
-
-if ( version_compare( $wgVersion, '1.16alpha', '>=' ) ) {
-	$wgExtensionMessagesFiles['SubPageListMagic'] 	= $egSPLIP . '/SubPageList.i18n.magic.php';
-}
 
 $wgHooks['ParserFirstCallInit'][] = 'SubPageList::staticInit';
 $wgHooks['LanguageGetMagic'][] = 'SubPageList::staticMagic';

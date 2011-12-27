@@ -5,9 +5,10 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 
 
 === Version 0.5 ===
-2011-xx-xx
+2011-12-27
 
-* Compatibility fix with MediaWiki 1.18 and later.
+* Added compatibility with MediaWiki 1.18 and 1.19.
+* Dropped compatibility with MediaWiki 1.15.
 * Added #subpagecount parser hook.
 * Fixed invalid HTML for ul and ol formats (bug 32131).
 

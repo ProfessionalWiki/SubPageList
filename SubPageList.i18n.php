@@ -218,8 +218,10 @@ $messages['he'] = array(
  * @author Michawiki
  */
 $messages['hsb'] = array(
-	'spl-desc' => 'Přidawa element code><nowiki><splist /></nowiki></code>, kotryž ći zmóžnja podstrony nalistować',
+	'spl-desc' => 'Přidawa element <code><nowiki><splist /></nowiki></code>, kotryž ći zmóžnja podstrony nalistować',
 	'spl-nosubpages' => 'Strona "$1" nima podstrony za lisćinu.',
+	'spl-noparentpage' => 'Strona "$1" njeeksistuje',
+	'spl-nopages' => 'W mjenowym rumje "$1" strony njejsu.',
 	'spl-subpages-par-sort' => 'Sortěrowanski porjad. Dowolene hódnoty: "asc" (postupowacy) a "desc" (spadowacy).',
 	'spl-subpages-par-sortby' => 'Sortěrowanski kriterij podstronow. Dowolene hódnoty: "title" (titul) abo "lastedit" (poslednja změna)',
 	'spl-subpages-par-format' => 'Lisćina podstronow hodźi so we wšelakich formatach zwobraznić. Dowolene hódnoty: "ol" - (čisłowana lisćina), "ul" - naličenje (nječisłowana lisćina), "list" - jednora lisćina (za na př. lisćinu z přez komu dźělenymi zapiskami).',
@@ -228,6 +230,14 @@ $messages['hsb'] = array(
 	'spl-subpages-par-pathstyle' => 'Stil šćežki za podstrony w lisćinje. Dowolene hódnoty: "fullpagename" — mjeno strony inkluziwnje mjenoweho ruma, "pagename" — mjeno strony bjez mjenoweho ruma, "subpagename" — relatiwne mjeno strony započinajo ze stronu, za kotruž so podstrony nalistuja, "none" — jenož tón dźěl mjena, kotryž poslednjej nakósnej smužce slěduje.',
 	'spl-subpages-par-kidsonly' => 'Móže  jenož direktne podstrony pokazać.',
 	'spl-subpages-par-limit' => 'Maksimalna ličba stronow, kotrež maja so nalsitować.',
+	'spl-subpages-par-element' => 'HTML-element, kotryž ma lisćinu wopřijeć (inkluziwnje teksty "intro" a "outro" abo "standard"). Dowolene hódnoty: "div", "p", "span".',
+	'spl-subpages-par-class' => 'Hódnota atributa "class" HTML-elementa, kotryž lisćinu wopřijima.',
+	'spl-subpages-par-intro' => 'Tekst, kotryž ma so před lisćinu wudać, jeli lisćina prózdna njeje.',
+	'spl-subpages-par-outro' => 'Tekst, kotryž ma so po lisćinje wudać, jeli lisćina prózdna njeje.',
+	'spl-subpages-par-default' => 'Tekst, kotryž ma so město lisćiny wudać, jeli lisćina je prózdna. Jeli je prózdna, wuda so zmylkowa zdźělenka (na př. "Strona podstrony nima"). Jeli wjazawku ("-") wobsahuje, budźe wuslědk cyle pródzny.',
+	'spl-subpages-par-separator' => 'Tekst, kotryž ma so mjez dwěmaj lisćinowymaj zapiskomaj, jeli so format "list" (abo jeho alis "bar") wužiwa. To nima wuskutk na druhe formaty.',
+	'spl-subpages-par-template' => 'Mjeno předłohi. Předłoha nałožuje so na kóždy zapisk lisćiny. Zapisk přepodawa so jako prěni argument (bjez mjena). Wobkedźbuj, zo předłoha njepřetorhnje formatowanje lisćiny. Formatowanje ("ul", "ol", "list") nałožuje so na wuslědk předłohi.',
+	'spl-subpages-par-links' => 'Jeli zmóžnjene, lisćinowe zapiski zwobraznjeja so jako wotkazy. Jeli znjemóžnjene, lisćinowe zapiski zwobraznjeja so jako luty tekst. Druhi pad je wosebje wužitny za přepodawanje zapiskow do předłohow za dalše předźěłowanje.',
 );
 
 /** Interlingua (Interlingua)

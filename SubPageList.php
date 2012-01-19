@@ -60,9 +60,7 @@ $wgAutoloadClasses['SubPageCount'] = $egSPLIP . '/SubPageCount.class.php';
 $wgAutoloadClasses['SPLHooks'] = $egSPLIP . '/SubPageList.hooks.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'SubPageList::staticInit';
-$wgHooks['LanguageGetMagic'][] = 'SubPageList::staticMagic';
 $wgHooks['ParserFirstCallInit'][] = 'SubPageCount::staticInit';
-$wgHooks['LanguageGetMagic'][] = 'SubPageCount::staticMagic';
 
 $wgHooks['ArticleInsertComplete'][] = 'SPLHooks::onArticleInsertComplete';
 $wgHooks['ArticleDeleteComplete'][] = 'SPLHooks::onArticleDeleteComplete';

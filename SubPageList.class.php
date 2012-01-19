@@ -16,17 +16,6 @@
  * @copyright © 2008 James McCormack, preceding version Martin Schallnahs, original Rob Church
  */
 final class SubPageList extends SubPageBase {
-	
-	/**
-	 * No LST in pre-5.3 PHP *sigh*.
-	 * This is to be refactored as soon as php >=5.3 becomes acceptable.
-	 */
-	public static function staticMagic( array &$magicWords, $langCode ) {
-		$className = __CLASS__;
-		$instance = new $className();
-		return $instance->magic( $magicWords, $langCode );
-	}
-	
 	/**
 	 * No LST in pre-5.3 PHP *sigh*.
 	 * This is to be refactored as soon as php >=5.3 becomes acceptable.

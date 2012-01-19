@@ -16,6 +16,8 @@ $magicWords = array();
 $magicWords['en'] = array(
 	'splist' => array( 0, 'splist' ),
 	'subpages' => array( 0, 'subpages' ),
+	'subpagelist' => array( 0, 'subpagelist' ),
+	'subpagecount' => array( 0, 'subpagecount' ),
 );
 
 /** Arabic (العربية) */

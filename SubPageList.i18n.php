@@ -132,6 +132,32 @@ $messages['de'] = array(
 	'spl-subpages-par-links' => 'Sofern aktiviert werden die Listenelemente als Links dargestellt. Sofern deaktiviert, werden die Listenelement im Textformat ausgegeben. Letztere Einstellung ist besonders dann hilfreich, wenn man die Ausgabeergebnisse an die Vorlage zur weiteren Verarbeitung weitergibt.',
 );
 
+/** Spanish (Español)
+ * @author Armando-Martin
+ */
+$messages['es'] = array(
+	'spl-desc' => 'Añade una etiqueta <code><nowiki><splist /></nowiki></code> que le permite enumerar las subpáginas',
+	'spl-nosubpages' => 'La página "$1" no tiene ninguna subpágina en la lista.',
+	'spl-noparentpage' => 'La página "$1" no existe.',
+	'spl-nopages' => 'El espacio de nombres "$1" no tiene páginas.',
+	'spl-subpages-par-sort' => 'La dirección para la ordenación. Valores permitidos: "asc" y "desc".',
+	'spl-subpages-par-sortby' => 'Criterio de ordenación de las subpáginas. Valores permitidos: "title" o "lastedit"',
+	'spl-subpages-par-format' => 'La lista de subpáginas puede mostrarse en varios formatos. Valores permitidos: "ol" — lista ordenada (numerada), "ul" — listas desordenadas (con viñetas), "list" — listas simples (por ejemplo lista separada por comas).',
+	'spl-subpages-par-page' => 'La página en la que mostrar las subpáginas o el espacio de nombres (incluídos los dos puntos) en el que mostrar las páginas. La página actual es la predeterminada.',
+	'spl-subpages-par-showpage' => 'Indica si la propia página debe mostrarse en la lista o no.',
+	'spl-subpages-par-pathstyle' => 'El estilo de la ruta de acceso a las subpáginas en la lista. Valores permitidos: "fullpagename": nombre de página completo (incluido el espacio de nombres), "pagename" — nombre de la página (sin espacio de nombres), "subpagename" — nombre relativo de la página comenzando desde la página de la que vamos a citar sus subpáginas, "none" — sólo la parte final del nombre después de la última barra.',
+	'spl-subpages-par-kidsonly' => 'Permite mostrar sólo las subpáginas directas.',
+	'spl-subpages-par-limit' => 'El número máximo de páginas para enumerar.',
+	'spl-subpages-par-element' => 'El elemento HTML que engloba la lista (incluidos los textos "Intro" y "outro" o "default"). Valores permitidos: "div", "p", "span".',
+	'spl-subpages-par-class' => 'El valor del atributo "class" del elemento HTML que engloba la lista.',
+	'spl-subpages-par-intro' => 'El texto a mostrar antes de la lista, si la lista no está vacía.',
+	'spl-subpages-par-outro' => 'El texto a mostrar después de la lista, si la lista no está vacía.',
+	'spl-subpages-par-default' => 'El texto a mostrar en lugar de la lista, si la lista está vacía. Si está vacía, se procesará un mensaje de error (como "La página no tiene ninguna subpágina que enumerar"). Si el valor fuese un guión ("-"), el resultado estará completamente vacío.',
+	'spl-subpages-par-separator' => 'El texto a mostrar entre dos elementos de la lista en caso de que el formato fuese "list" (y su alias "bar"). No tiene ningún efecto en los otros formatos de lista.',
+	'spl-subpages-par-template' => 'El nombre de la plantilla. La plantilla se aplica a cada elemento de la lista. Un elemento es tratatdo como primer argumento (sin nombre). Tenga en cuenta que la plantilla no anula el formato de lista. El formato ("ul", "ol", "list") se aplica al resultado de la plantilla.',
+	'spl-subpages-par-links' => 'Si el valor fuese verdadero (true), los elementos de la lista se representan como enlaces. Si es falso (false), los elementos de la lista se procesan como texto sin formato. Este último caso es especialmente útil para pasar elementos a las plantillas para su posterior procesamiento.',
+);
+
 /** French (Français)
  * @author Gomoko
  * @author Hashar

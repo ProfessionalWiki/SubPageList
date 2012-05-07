@@ -3,15 +3,14 @@
 /**
  * Initialization file for the SubPageList extension.
  * 
- * Documentation:	 		http://www.mediawiki.org/wiki/Extension:SubPageList
- * Support					http://www.mediawiki.org/wiki/Extension_talk:SubPageList
- * Source code:             http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/SubPageList
+ * Documentation:	 		https://www.mediawiki.org/wiki/Extension:SubPageList
+ * Support					https://www.mediawiki.org/wiki/Extension_talk:SubPageList
+ * Source code:             https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/SubPageList.git
  *
  * @file SubPageList.php
  * @ingroup SubPageList
  *
  * @licence GNU GPL v3 or later
- *
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 
@@ -31,19 +30,19 @@ if ( !defined( 'Validator_VERSION' ) ) {
 }
 
 // Only initialize the extension when all dependencies are present.
-if ( ! defined( 'Validator_VERSION' ) ) {
+if ( !defined( 'Validator_VERSION' ) ) {
 	die( '<b>Error:</b> You need to have <a href="http://www.mediawiki.org/wiki/Extension:Validator">Validator</a> installed in order to use <a href="http://www.mediawiki.org/wiki/Extension:SubPageList">SubPageList</a>.<br />' );
 }
 
-define( 'SPL_VERSION', '0.5' );
+define( 'SPL_VERSION', '0.6 alpha' );
 
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'SubPageList',
 	'version' => SPL_VERSION,
 	'author' => array(
-		'[http://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
-		'Van de Bugger. Based on [http://www.mediawiki.org/wiki/Extension:SubPageList3 SubPageList3].',
+		'[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
+		'Van de Bugger. Based on [https://www.mediawiki.org/wiki/Extension:SubPageList3 SubPageList3].',
 	),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:SubPageList',
 	'descriptionmsg' => 'spl-desc'

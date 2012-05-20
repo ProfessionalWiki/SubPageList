@@ -386,6 +386,19 @@ $messages['mk'] = array(
 	'spl-subpages-par-links' => 'Ако е точно, ставките во списокот се прикажуваат како врски. Ако е неточно, тогаш ставките се прикажуваат како прост текст. Второспоменатото е особено корисно за доставка на ставки во шаблони за понатамошна обработка.',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'spl-desc' => 'Membubuh teg <code><nowiki><splist /></nowiki></code> yang membolehkan anda untuk melihat senarai sublaman',
+	'spl-nosubpages' => 'Laman "$1" tiada sublaman untuk disenaraikan.',
+	'spl-noparentpage' => 'Laman "$1" tidak wujud.',
+	'spl-nopages' => 'Ruang nama "$1" tiada laman.',
+	'spl-subpages-par-sort' => 'Arah isihan. Nilai-nilai yang dibenarkan: "asc" (menaik) dan "desc" (menurun).',
+	'spl-subpages-par-sortby' => 'Apa yang diikut untuk mengisih sublaman. Nilai-nilai yang dibenarkan: "title" (tajuk) atau "lastedit" (suntingan terakhir).',
+	'spl-subpages-par-format' => 'Senarai sublaman boleh dipaparkan dalam beberapa format. Nilai-nilai yang dibenarkan: "ol" — senarai tertib (bernombor), "ul" — senarai tak tertib (berbunga), "list" — senarai biasa (cth: senarai yang diasingkan dengan koma).',
+);
+
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Nghtwlkr
  */

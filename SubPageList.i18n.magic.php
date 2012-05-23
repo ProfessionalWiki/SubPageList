@@ -38,14 +38,18 @@ $magicWords['br'] = array(
 
 /** German (Deutsch) */
 $magicWords['de'] = array(
-	'splist' => array( 0, 'unterseitenliste' ),
+	'splist' => array( 0, 'usliste' ),
 	'subpages' => array( 0, 'unterseiten' ),
+	'subpagelist' => array( 0, 'unterseitenliste' ),
+	'subpagecount' => array( 0, 'unterseitenanzahl' ),
 );
 
 /** Macedonian (Македонски) */
 $magicWords['mk'] = array(
 	'splist' => array( 0, 'пссписок' ),
 	'subpages' => array( 0, 'потстраници' ),
+	'subpagelist' => array( 0, 'списокнапотстраници' ),
+	'subpagecount' => array( 0, 'бројнапотстраници' ),
 );
 
 /** Nedersaksisch (Nedersaksisch) */
@@ -57,6 +61,8 @@ $magicWords['nds-nl'] = array(
 $magicWords['nl'] = array(
 	'splist' => array( 0, 'splijst' ),
 	'subpages' => array( 0, 'subpaginas', 'subpagina\'s' ),
+	'subpagelist' => array( 0, 'subpaginalijst' ),
+	'subpagecount' => array( 0, 'pubpaginaaantal' ),
 );
 
 /** Polish (Polski) */

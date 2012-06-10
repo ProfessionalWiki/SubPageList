@@ -313,7 +313,7 @@ $messages['id'] = array(
  * @author Shirayuki
  */
 $messages['ja'] = array(
-	'spl-desc' => 'サブページの一覧を表示可能にする <code><nowiki><splist /></nowiki></code> タグを追加する',
+	'spl-desc' => '下位ページの一覧を表示できるようにする <code><nowiki><splist /></nowiki></code> タグを追加する',
 	'spl-nosubpages' => 'ページ「$1」には表示する下位ページがありません。',
 	'spl-noparentpage' => 'ページ「$1」は存在しません。',
 	'spl-nopages' => '名前空間 "$1" にはページはありません。',

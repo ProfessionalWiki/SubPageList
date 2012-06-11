@@ -26,12 +26,12 @@ $magicWords['ar'] = array(
 	'subpages' => array( 0, 'صفحات_فرعية' ),
 );
 
-/** Bulgarian (Български) */
+/** Bulgarian (български) */
 $magicWords['bg'] = array(
 	'subpages' => array( 0, 'подстраници' ),
 );
 
-/** Breton (Brezhoneg) */
+/** Breton (brezhoneg) */
 $magicWords['br'] = array(
 	'subpages' => array( 0, 'ispajennoù' ),
 );
@@ -44,7 +44,15 @@ $magicWords['de'] = array(
 	'subpagecount' => array( 0, 'unterseitenanzahl' ),
 );
 
-/** Macedonian (Македонски) */
+/** Korean (한국어) */
+$magicWords['ko'] = array(
+	'splist' => array( 0, 'sp목록' ),
+	'subpages' => array( 0, '하위문서' ),
+	'subpagelist' => array( 0, '하위문서목록' ),
+	'subpagecount' => array( 0, '하위문서갯수' ),
+);
+
+/** Macedonian (македонски) */
 $magicWords['mk'] = array(
 	'splist' => array( 0, 'пссписок' ),
 	'subpages' => array( 0, 'потстраници' ),
@@ -65,24 +73,24 @@ $magicWords['nl'] = array(
 	'subpagecount' => array( 0, 'pubpaginaaantal' ),
 );
 
-/** Polish (Polski) */
+/** Polish (polski) */
 $magicWords['pl'] = array(
 	'subpages' => array( 0, 'podstrony' ),
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬) */
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬) */
 $magicWords['sr-ec'] = array(
 	'splist' => array( 0, 'подсписак', 'под_списак' ),
 	'subpages' => array( 0, 'подстранице', 'подстране' ),
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+/** Serbian (Latin script) (‪srpski (latinica)‬) */
 $magicWords['sr-el'] = array(
 	'splist' => array( 0, 'podspisak', 'pod_spisak' ),
 	'subpages' => array( 0, 'podstranice', 'podstrane' ),
 );
 
-/** Simplified Chinese (‪中文(简体)‬) */
+/** Simplified Chinese (‪中文（简体）‬) */
 $magicWords['zh-hans'] = array(
 	'subpages' => array( 0, '子页面' ),
 );

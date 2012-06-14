@@ -79,7 +79,7 @@ $messages['be-tarask'] = array(
 	'spl-subpages-par-links' => 'Калі сапраўдна, элемэнты сьпісу выводзяцца як спасылкі. Калі несапраўдна, выводзяцца як звычайны тэкст. Апошняе асабліва зручна для перадачы элемэнтаў у шаблёны для далейшай апрацоўкі.',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fulup
  * @author Y-M D
  */
@@ -96,7 +96,7 @@ $messages['br'] = array(
 	'spl-subpages-par-limit' => 'Niver brasañ a bajennoù da rollañ.',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
@@ -132,7 +132,7 @@ $messages['de'] = array(
 	'spl-subpages-par-links' => 'Sofern aktiviert werden die Listenelemente als Links dargestellt. Sofern deaktiviert, werden die Listenelement im Textformat ausgegeben. Letztere Einstellung ist besonders dann hilfreich, wenn man die Ausgabeergebnisse an die Vorlage zur weiteren Verarbeitung weitergibt.',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  */
 $messages['es'] = array(
@@ -158,7 +158,7 @@ $messages['es'] = array(
 	'spl-subpages-par-links' => 'Si el valor fuese verdadero (true), los elementos de la lista se representan como enlaces. Si es falso (false), los elementos de la lista se procesan como texto sin formato. Este último caso es especialmente útil para pasar elementos a las plantillas para su posterior procesamiento.',
 );
 
-/** French (Français)
+/** French (français)
  * @author Gomoko
  * @author Hashar
  * @author Seb35
@@ -188,7 +188,7 @@ $messages['fr'] = array(
 	'spl-subpages-par-links' => "S'il est vrai, les éléments de liste sont rendus comme des liens. S'il est faux, les éléments de liste sont rendus comme du texte simple. Ce dernier est particulièrement utile pour passer des éléments dans les modèles pour un traitement ultérieur.",
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -266,7 +266,7 @@ $messages['hsb'] = array(
 	'spl-subpages-par-links' => 'Jeli zmóžnjene, lisćinowe zapiski zwobraznjeja so jako wotkazy. Jeli znjemóžnjene, lisćinowe zapiski zwobraznjeja so jako luty tekst. Druhi pad je wosebje wužitny za přepodawanje zapiskow do předłohow za dalše předźěłowanje.',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -364,7 +364,7 @@ $messages['lb'] = array(
 	'spl-subpages-par-links' => "Wann et aktivéiert ass ginn d'Elementer vun der Lëscht als Linken duergestallt. Wann et net aktivéiert ass ginn d'Elementer vun der Lëscht als normalen Text duergestallt. Déi lescht Optioun ass besonnesch nëtzlech fir Elementer a Schablounen anzebannen an duerno weider ze verschaffen.",
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -447,7 +447,7 @@ $messages['nl'] = array(
 	'spl-subpages-par-links' => 'Lijstelementen worden opgemaakt als verwijzingen als waar. Lijstelementen zijn platte tekst als onwaar. De laatste optie is handig bij het doorgeven van elementen aan sjablonen voor verdere verwerking.',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  * @author Woytecr
  */
@@ -491,7 +491,7 @@ $messages['pms'] = array(
 	'spl-subpages-par-limit' => 'Ël nùmer màssim ëd pàgine da listé.',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author Hamilton Abreu
  */
 $messages['pt'] = array(
@@ -517,7 +517,7 @@ $messages['pt'] = array(
 	'spl-subpages-par-links' => 'Se verdadeiro, as entradas da lista são apresentadas na forma de links. Se falso, as entradas da lista são apresentadas como texto simples. Esta última opção é especialmente útil para passar entradas a uma predefinição, para processamento posterior.',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Renessaince
  * @author Van de Bugger
  * @author Александр Сигачёв
@@ -545,14 +545,14 @@ $messages['ru'] = array(
 	'spl-subpages-par-links' => 'Если истина, элементы списка выводятся как ссылки. Если ложь, элементы списка выводятся как простой текст, это особенно удобно, если применяется совместно с шаблоном.',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Rancher
  */
 $messages['sr-ec'] = array(
 	'spl-subpages-par-limit' => 'Највећи број страница за приказивање.',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+/** Serbian (Latin script) (‪srpski (latinica)‬) */
 $messages['sr-el'] = array(
 	'spl-subpages-par-limit' => 'Najveći broj stranica za prikazivanje.',
 );
@@ -573,7 +573,7 @@ $messages['tl'] = array(
 	'spl-subpages-par-limit' => 'Ang pinakamataas na bilang ng mga pahinang itatala.',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author Renessaince
  * @author Тест
  */

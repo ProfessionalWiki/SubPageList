@@ -24,6 +24,8 @@ $magicWords['en'] = array(
 $magicWords['ar'] = array(
 	'splist' => array( 0, 'قائمة_صف' ),
 	'subpages' => array( 0, 'صفحات_فرعية' ),
+	'subpagelist' => array( 0, 'قائمة_صفحة_فرعية' ),
+	'subpagecount' => array( 0, 'عداد_صفحة_فرعية' ),
 );
 
 /** Bulgarian (български) */
@@ -42,6 +44,14 @@ $magicWords['de'] = array(
 	'subpages' => array( 0, 'unterseiten' ),
 	'subpagelist' => array( 0, 'unterseitenliste' ),
 	'subpagecount' => array( 0, 'unterseitenanzahl' ),
+);
+
+/** Zazaki (Zazaki) */
+$magicWords['diq'] = array(
+	'splist' => array( 0, 'listeybp' ),
+	'subpages' => array( 0, 'peleyêbıni' ),
+	'subpagelist' => array( 0, 'listeyêpelandêbınan' ),
+	'subpagecount' => array( 0, 'zerreypelandêbınan' ),
 );
 
 /** Korean (한국어) */

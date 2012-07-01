@@ -50,7 +50,7 @@ $messages['qqq'] = array(
 	'spl-subpages-par-pathstyle' => 'The parameters "fullpagename", "pagename", "subpagename" and "none" should not be translated!',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Renessaince
@@ -198,7 +198,7 @@ $messages['frp'] = array(
 	'spl-subpages-par-sort' => "La dirèccion de tri. Valors pèrmêses : « asc » (''crèssent'') et « desc » (''dècrèssent'').",
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -240,7 +240,7 @@ $messages['he'] = array(
 	'spl-subpages-par-limit' => 'המספר המרבי של דפים להציג.',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(

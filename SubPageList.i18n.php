@@ -308,6 +308,16 @@ $messages['id'] = array(
 	'spl-subpages-par-limit' => 'Jumlah halaman maks. yang ditampilkan.',
 );
 
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'spl-desc' => 'Aggiunge un tag <code><nowiki><splist /></nowiki></code> che consente di elencare le sottopagine',
+	'spl-nosubpages' => 'La pagina "$1" non ha alcuna sottopagina da elencare.',
+	'spl-noparentpage' => 'La pagina "$1" non esiste.',
+	'spl-nopages' => 'Il namespace "$1" non ha pagine.',
+);
+
 /** Japanese (日本語)
  * @author Schu
  * @author Shirayuki

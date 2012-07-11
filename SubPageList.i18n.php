@@ -413,7 +413,7 @@ $messages['ms'] = array(
 	'spl-subpages-par-format' => 'Senarai sublaman boleh dipaparkan dalam beberapa format. Nilai-nilai yang dibenarkan: "ol" — senarai tertib (bernombor), "ul" — senarai tak tertib (berbunga), "list" — senarai biasa (cth: senarai yang diasingkan dengan koma).',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(

@@ -105,6 +105,17 @@ $messages['bs'] = array(
 	'spl-subpages-par-sort' => 'Smijer za redanje.',
 );
 
+/** Czech (česky)
+ * @author Reaperman
+ */
+$messages['cs'] = array(
+	'spl-desc' => 'Přidává značku <code><nowiki><splist /></nowiki></code>, která umožňuje zobrazit seznam podstránek',
+	'spl-nosubpages' => 'Stránka „$1“ nemá žádné zobrazitelné podstránky.',
+	'spl-noparentpage' => 'Stránka „$1“ neexistuje.',
+	'spl-nopages' => 'Jmenný prostor „$1“ neobsahuje žádné stránky.',
+	'spl-subpages-par-limit' => 'Maximální počet zobrazovaných stránek.',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Purodha

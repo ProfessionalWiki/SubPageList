@@ -340,6 +340,13 @@ $messages['ja'] = array(
 	'spl-nopages' => '名前空間 "$1" にはページはありません。',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'spl-noparentpage' => 'გვერდი „$1“ არ არსებობს.',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
@@ -576,6 +583,13 @@ $messages['sr-ec'] = array(
 /** Serbian (Latin script) (‪srpski (latinica)‬) */
 $messages['sr-el'] = array(
 	'spl-subpages-par-limit' => 'Najveći broj stranica za prikazivanje.',
+);
+
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'spl-noparentpage' => '"$1" పేజీ లేనే లేదు.',
 );
 
 /** Tagalog (Tagalog)

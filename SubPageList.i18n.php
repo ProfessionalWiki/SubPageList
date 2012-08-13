@@ -431,6 +431,17 @@ $messages['ms'] = array(
 	'spl-subpages-par-format' => 'Senarai sublaman boleh dipaparkan dalam beberapa format. Nilai-nilai yang dibenarkan: "ol" — senarai tertib (bernombor), "ul" — senarai tak tertib (berbunga), "list" — senarai biasa (cth: senarai yang diasingkan dengan koma).',
 );
 
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'spl-desc' => 'Iżżid <code><nowiki><splist /></nowiki></code> li tippermetti l-elenkar tas-sottopaġni',
+	'spl-nosubpages' => 'Il-paġna "$1" m\'għandha l-ebda sottokategorija għal-lista.',
+	'spl-noparentpage' => 'Il-paġna "$1" ma teżistix.',
+	'spl-nopages' => 'L-ispazju tal-isem "$1" m\'għandux paġni.',
+	'spl-subpages-par-sort' => 'Id-direzzjoni kif tirranġahom. Valuri permessi: "asc" u "desc".',
+);
+
 /** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Nghtwlkr
  */

@@ -70,6 +70,13 @@ $magicWords['mk'] = array(
 	'subpagecount' => array( 0, 'бројнапотстраници' ),
 );
 
+/** Malayalam (മലയാളം) */
+$magicWords['ml'] = array(
+	'subpages' => array( 0, 'ഉപതാളുകൾ' ),
+	'subpagelist' => array( 0, 'ഉപതാളുകളുടെപട്ടിക' ),
+	'subpagecount' => array( 0, 'ഉപതാളുകളുടെയെണ്ണം' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $magicWords['nds-nl'] = array(
 	'splist' => array( 0, 'splieste' ),

@@ -429,6 +429,7 @@ $messages['ms'] = array(
 	'spl-subpages-par-sort' => 'Arah isihan. Nilai-nilai yang dibenarkan: "asc" (menaik) dan "desc" (menurun).',
 	'spl-subpages-par-sortby' => 'Apa yang diikut untuk mengisih sublaman. Nilai-nilai yang dibenarkan: "title" (tajuk) atau "lastedit" (suntingan terakhir).',
 	'spl-subpages-par-format' => 'Senarai sublaman boleh dipaparkan dalam beberapa format. Nilai-nilai yang dibenarkan: "ol" — senarai tertib (bernombor), "ul" — senarai tak tertib (berbunga), "list" — senarai biasa (cth: senarai yang diasingkan dengan koma).',
+	'spl-subpages-par-limit' => 'Bilangan halaman maksimum yang hendak disenaraikan.',
 );
 
 /** Maltese (Malti)

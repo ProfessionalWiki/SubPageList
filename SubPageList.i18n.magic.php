@@ -95,19 +95,19 @@ $magicWords['pl'] = array(
 	'subpages' => array( 0, 'podstrony' ),
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬) */
+/** Serbian (Cyrillic script) (српски (ћирилица)‎) */
 $magicWords['sr-ec'] = array(
 	'splist' => array( 0, 'подсписак', 'под_списак' ),
 	'subpages' => array( 0, 'подстранице', 'подстране' ),
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬) */
+/** Serbian (Latin script) (srpski (latinica)‎) */
 $magicWords['sr-el'] = array(
 	'splist' => array( 0, 'podspisak', 'pod_spisak' ),
 	'subpages' => array( 0, 'podstranice', 'podstrane' ),
 );
 
-/** Simplified Chinese (‪中文（简体）‬) */
+/** Simplified Chinese (中文（简体）‎) */
 $magicWords['zh-hans'] = array(
 	'subpages' => array( 0, '子页面' ),
 );

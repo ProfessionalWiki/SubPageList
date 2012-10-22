@@ -88,10 +88,10 @@ $messages['br'] = array(
 	'spl-nosubpages' => 'N\'eus ispajenn ebet da rollañ evit ar bajenn "$1".',
 	'spl-subpages-par-sort' => 'Tu an urzhiañ. Tu zo da lakaat an talvoudennoù : "krsk" ha "digrsk".',
 	'spl-subpages-par-sortby' => 'Penaos urzhiañ an ispajennoù dre. Talvoudennoù aotreet : "title\' pe "lastedit".',
-	'spl-subpages-par-format' => 'Gallout a ra ar roll ispajennoù bezañ diskwelet dre furmadoù disheñvel : rolloù niverennet (ol), rolloù padennek (ul) pe rolloù dispartiet dre skejoù (roll).',
-	'spl-subpages-par-page' => 'Ar bajenn da welet an ispajennoù. Ar bajenn red eo an hini dre ziouer.',
+	'spl-subpages-par-format' => 'Gallout a ra ar roll ispajennoù bezañ diskwelet dre furmadoù disheñvel : rolloù niverennet (ol), rolloù padennek (ul) pe rolloù dispartiet dre skejoù (roll).', # Fuzzy
+	'spl-subpages-par-page' => 'Ar bajenn da welet an ispajennoù. Ar bajenn red eo an hini dre ziouer.', # Fuzzy
 	'spl-subpages-par-showpage' => 'Merkañ a ra ha rankout a ra ar bajenn bezañ war ar roll pe get.',
-	'spl-subpages-par-pathstyle' => 'Stil hent ispajennoù ar roll.',
+	'spl-subpages-par-pathstyle' => 'Stil hent ispajennoù ar roll.', # Fuzzy
 	'spl-subpages-par-kidsonly' => 'Aotren a ra diskouez hepken an ispajennoù eeun',
 	'spl-subpages-par-limit' => 'Niver brasañ a bajennoù da rollañ.',
 );
@@ -101,8 +101,8 @@ $messages['br'] = array(
  */
 $messages['bs'] = array(
 	'spl-desc' => 'Dodaje <code><nowiki><splist /></nowiki></code> oznaku koja vam omogućuje da pregledate podstranice',
-	'spl-nosubpages' => '$1 nema podstranica za prikaz.',
-	'spl-subpages-par-sort' => 'Smijer za redanje.',
+	'spl-nosubpages' => '$1 nema podstranica za prikaz.', # Fuzzy
+	'spl-subpages-par-sort' => 'Smijer za redanje.', # Fuzzy
 );
 
 /** Czech (česky)
@@ -241,12 +241,12 @@ $messages['gl'] = array(
 $messages['he'] = array(
 	'spl-desc' => 'הוספת התג <code><nowiki><splist /></nowiki></code> ליצירת רשימת דפי־משנה',
 	'spl-nosubpages' => 'לדף "$1" אין דפי משנה שאפשר להציג ברשימה.',
-	'spl-subpages-par-sort' => 'באיזה כיוון למיין.',
-	'spl-subpages-par-sortby' => 'לפי מה למיין את דפי־המשנה.',
-	'spl-subpages-par-format' => 'רשימת דפי־המשנה יכולה להיות מוצגת במספר עיצובים. רשימה ממוספרת (ol), רשימת תבליטים (ul), ורשימה מופרדת בפסיקים (list).',
-	'spl-subpages-par-page' => 'על איזה דף להציג את דפי־המשנה. בררת המחדל: הדף הנוכחי.',
+	'spl-subpages-par-sort' => 'באיזה כיוון למיין.', # Fuzzy
+	'spl-subpages-par-sortby' => 'לפי מה למיין את דפי־המשנה.', # Fuzzy
+	'spl-subpages-par-format' => 'רשימת דפי־המשנה יכולה להיות מוצגת במספר עיצובים. רשימה ממוספרת (ol), רשימת תבליטים (ul), ורשימה מופרדת בפסיקים (list).', # Fuzzy
+	'spl-subpages-par-page' => 'על איזה דף להציג את דפי־המשנה. בררת המחדל: הדף הנוכחי.', # Fuzzy
 	'spl-subpages-par-showpage' => 'מציין אם הדף עצמו צריך להיות מוצג ברשימה או לאו.',
-	'spl-subpages-par-pathstyle' => 'סגנון הנתיב אל דפי־המשנה ברשימה.',
+	'spl-subpages-par-pathstyle' => 'סגנון הנתיב אל דפי־המשנה ברשימה.', # Fuzzy
 	'spl-subpages-par-kidsonly' => 'מאפשר להראות רק דפי־משנה ישירים.',
 	'spl-subpages-par-limit' => 'המספר המרבי של דפים להציג.',
 );
@@ -308,13 +308,13 @@ $messages['ia'] = array(
  */
 $messages['id'] = array(
 	'spl-desc' => 'Memberikan tag <code><nowiki><splist /></nowiki></code> yang memungkinkan Anda untuk melihat daftar subhalaman',
-	'spl-nosubpages' => '$1 tidak memiliki subhalaman untuk ditampilkan.',
-	'spl-subpages-par-sort' => 'Arah urutan.',
-	'spl-subpages-par-sortby' => 'Cara pengurutan subhalaman.',
-	'spl-subpages-par-format' => 'Daftar subhalaman dapat ditampilkan dalam berbagai format, yaitu daftar bernomor (ol), daftar butir (ul), dan daftar dipisahkan koma (list).',
-	'spl-subpages-par-page' => 'Halaman yang akan ditampilkan subhalamannya. Setelan bawaan: halaman saat ini.',
+	'spl-nosubpages' => '$1 tidak memiliki subhalaman untuk ditampilkan.', # Fuzzy
+	'spl-subpages-par-sort' => 'Arah urutan.', # Fuzzy
+	'spl-subpages-par-sortby' => 'Cara pengurutan subhalaman.', # Fuzzy
+	'spl-subpages-par-format' => 'Daftar subhalaman dapat ditampilkan dalam berbagai format, yaitu daftar bernomor (ol), daftar butir (ul), dan daftar dipisahkan koma (list).', # Fuzzy
+	'spl-subpages-par-page' => 'Halaman yang akan ditampilkan subhalamannya. Setelan bawaan: halaman saat ini.', # Fuzzy
 	'spl-subpages-par-showpage' => 'Menunjukkan apakah halaman itu sendiri harus ditampilkan atau tidak dalam daftar.',
-	'spl-subpages-par-pathstyle' => 'Gaya jalur subhalaman dalam daftar.',
+	'spl-subpages-par-pathstyle' => 'Gaya jalur subhalaman dalam daftar.', # Fuzzy
 	'spl-subpages-par-kidsonly' => 'Hanya tampilkan subhalaman langsung.',
 	'spl-subpages-par-limit' => 'Jumlah halaman maks. yang ditampilkan.',
 );
@@ -354,10 +354,10 @@ $messages['ksh'] = array(
 	'spl-desc' => 'Deiht dä Befähl <code><nowiki><splist /></nowiki></code> en et Wiki, för Ongersigge aanzezeije.',
 	'spl-nosubpages' => 'Di Sigg „$1“ hät kein Ongersigge zom Opleßte.',
 	'spl-noparentpage' => 'En Sigg „$1“ jidd_et nit.',
-	'spl-subpages-par-sort' => 'Wieröm zoteet wääde sull.',
-	'spl-subpages-par-sortby' => 'Noh wat de Ongersigge zoteet wääde sulle.',
-	'spl-subpages-par-format' => 'De Leß met de Ongersigge kann ongerscheidlijje Jeschtalte han: met Nummere (ol) met Punkte (ul) un alles ein eine Reih met Kommas dozwesche (list)',
-	'spl-subpages-par-page' => 'De Sigg, woh de Ongersigge vun jezeich wääde sulle. Wam_mer nix säät, es dat de Sigg, di jraad jezeich weed.',
+	'spl-subpages-par-sort' => 'Wieröm zoteet wääde sull.', # Fuzzy
+	'spl-subpages-par-sortby' => 'Noh wat de Ongersigge zoteet wääde sulle.', # Fuzzy
+	'spl-subpages-par-format' => 'De Leß met de Ongersigge kann ongerscheidlijje Jeschtalte han: met Nummere (ol) met Punkte (ul) un alles ein eine Reih met Kommas dozwesche (list)', # Fuzzy
+	'spl-subpages-par-page' => 'De Sigg, woh de Ongersigge vun jezeich wääde sulle. Wam_mer nix säät, es dat de Sigg, di jraad jezeich weed.', # Fuzzy
 	'spl-subpages-par-showpage' => 'Jitt aan, ov de Sigg selver och en dä Leß met dä iehre Ongersigge aanjezeisch wääde sull, udder nit.',
 	'spl-subpages-par-pathstyle' => 'Dä Stil vun de Aanzeije vun däm Pad vun de Ongersigge en dä Leß.
 Zohjelohße es:
@@ -448,13 +448,13 @@ $messages['mt'] = array(
  */
 $messages['nb'] = array(
 	'spl-desc' => 'Legger til et <code><nowiki><splist /></nowiki></code>-element som lar deg liste opp undersider',
-	'spl-nosubpages' => '$1 har ingen undersider å liste opp.',
-	'spl-subpages-par-sort' => 'Retningen du vil sortere i.',
-	'spl-subpages-par-sortby' => 'Hva du vil sortere undersidene etter.',
-	'spl-subpages-par-format' => 'Undersidelisten kan vises i flere format. Nummererte lister (ol), punktlister (ul) og kommaseparerte lister (list).',
-	'spl-subpages-par-page' => 'Siden undersidene skal vises for. Standard er den gjeldende siden.',
+	'spl-nosubpages' => '$1 har ingen undersider å liste opp.', # Fuzzy
+	'spl-subpages-par-sort' => 'Retningen du vil sortere i.', # Fuzzy
+	'spl-subpages-par-sortby' => 'Hva du vil sortere undersidene etter.', # Fuzzy
+	'spl-subpages-par-format' => 'Undersidelisten kan vises i flere format. Nummererte lister (ol), punktlister (ul) og kommaseparerte lister (list).', # Fuzzy
+	'spl-subpages-par-page' => 'Siden undersidene skal vises for. Standard er den gjeldende siden.', # Fuzzy
 	'spl-subpages-par-showpage' => 'Indikerer om selve siden skal vises i listen eller ikke.',
-	'spl-subpages-par-pathstyle' => 'Stilen på banen for undersidene i listen.',
+	'spl-subpages-par-pathstyle' => 'Stilen på banen for undersidene i listen.', # Fuzzy
 	'spl-subpages-par-kidsonly' => 'Tillater kun å vise direkte undersider.',
 	'spl-subpages-par-limit' => 'Maksimum antall sider å liste opp.',
 );
@@ -564,15 +564,15 @@ $messages['pt'] = array(
  */
 $messages['ru'] = array(
 	'spl-desc' => 'Добавляет тег <code><nowiki><splist /></nowiki></code>, выводящий список подстраниц',
-	'spl-nosubpages' => 'Страница «$1» не имеет подстраниц.',
+	'spl-nosubpages' => 'Страница «$1» не имеет подстраниц.', # Fuzzy
 	'spl-noparentpage' => 'Страница «$1» не существует.',
 	'spl-nopages' => 'Пространство имён  «$1» не содержит страниц.',
-	'spl-subpages-par-sort' => 'Направление сортировки. Допустимые значения: «asc» — сортировка по возрастанию, «desc» — по убыванию.',
-	'spl-subpages-par-sortby' => 'Ключ сортировки: «title» — сортировать по названию страниц, «lastedit» — по дате последней правки.',
-	'spl-subpages-par-format' => 'Список подстраниц может быть показан в нескольких форматах. Допустимые значения: «ol» — нумерованный список, «ul» — маркированный список, «list» — линейный список (например, через запятые).',
-	'spl-subpages-par-page' => 'Страница для которой показывать список подстраниц, или имя пространства имён (включая конечное двоеточие). По умолчанию текущая страница.',
+	'spl-subpages-par-sort' => 'Направление сортировки. Допустимые значения: «asc» — сортировка по возрастанию, «desc» — по убыванию.', # Fuzzy
+	'spl-subpages-par-sortby' => 'Ключ сортировки: «title» — сортировать по названию страниц, «lastedit» — по дате последней правки.', # Fuzzy
+	'spl-subpages-par-format' => 'Список подстраниц может быть показан в нескольких форматах. Допустимые значения: «ol» — нумерованный список, «ul» — маркированный список, «list» — линейный список (например, через запятые).', # Fuzzy
+	'spl-subpages-par-page' => 'Страница для которой показывать список подстраниц, или имя пространства имён (включая конечное двоеточие). По умолчанию текущая страница.', # Fuzzy
 	'spl-subpages-par-showpage' => 'Указывает, должна ли отображаться сама страница.',
-	'spl-subpages-par-pathstyle' => 'Стиль пути для подстраниц в списке. Допустимые значения: «fullpagename» — полное название страницы (включая пространство имён), "pagename" — имя страницы (полное но без пространства имён), "subpagename" — "относительное" имя страницы, начиная со страницы, для которой показывается список, "none" — только часть имени следующая за последней косой чертой.',
+	'spl-subpages-par-pathstyle' => 'Стиль пути для подстраниц в списке. Допустимые значения: «fullpagename» — полное название страницы (включая пространство имён), "pagename" — имя страницы (полное но без пространства имён), "subpagename" — "относительное" имя страницы, начиная со страницы, для которой показывается список, "none" — только часть имени следующая за последней косой чертой.', # Fuzzy
 	'spl-subpages-par-kidsonly' => 'Показывать только прямые подстраницы.',
 	'spl-subpages-par-limit' => 'Максимальное количество страниц в список.',
 	'spl-subpages-par-element' => 'Элемент HTML, включающий весь список (вместе с текстами «intro» и «outro» или «default»). Допустимые значения: «div», «p», «span».',
@@ -592,7 +592,8 @@ $messages['sr-ec'] = array(
 	'spl-subpages-par-limit' => 'Највећи број страница за приказивање.',
 );
 
-/** Serbian (Latin script) (srpski (latinica)‎) */
+/** Serbian (Latin script) (srpski (latinica)‎)
+ */
 $messages['sr-el'] = array(
 	'spl-subpages-par-limit' => 'Najveći broj stranica za prikazivanje.',
 );
@@ -638,7 +639,6 @@ $messages['uk'] = array(
 	'spl-desc' => 'Додає тег <code><nowiki><splist /></nowiki></code>, який виводить список підсторінок',
 	'spl-nosubpages' => 'Сторінка "$1" не має підсторінок для складання списку.',
 	'spl-subpages-par-sort' => 'Напрямок сортування. Допущальни значення: "asc" і "desc".',
-	'spl-subpages-par-page' => 'Сторінка, для якої показати підсторінки. За умовчанням — поточна сторінка.',
+	'spl-subpages-par-page' => 'Сторінка, для якої показати підсторінки. За умовчанням — поточна сторінка.', # Fuzzy
 	'spl-subpages-par-limit' => 'Максимальна кількість сторінок у списку.',
 );
-

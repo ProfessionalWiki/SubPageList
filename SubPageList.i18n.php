@@ -642,3 +642,15 @@ $messages['uk'] = array(
 	'spl-subpages-par-page' => 'Сторінка, для якої показати підсторінки. За умовчанням — поточна сторінка.', # Fuzzy
 	'spl-subpages-par-limit' => 'Максимальна кількість сторінок у списку.',
 );
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Yfdyh000
+ */
+$messages['zh-hans'] = array(
+	'spl-desc' => '添加 <code><nowiki><splist /></nowiki></code> 标签，让您能列出子页面',
+	'spl-nosubpages' => '页面“$1”没有子页面可列出。',
+	'spl-noparentpage' => '页面“$1”不存在。',
+	'spl-nopages' => '命名空间“$1”没有页面。',
+	'spl-subpages-par-sort' => '要排序的方向。允许的值：“asc”和“desc”。',
+	'spl-subpages-par-sortby' => '要按什么排序子页面。允许的值：“title”或“lastedit”。',
+);

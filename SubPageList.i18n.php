@@ -237,12 +237,13 @@ $messages['gl'] = array(
 
 /** Hebrew (עברית)
  * @author Amire80
+ * @author חיים
  */
 $messages['he'] = array(
 	'spl-desc' => 'הוספת התג <code><nowiki><splist /></nowiki></code> ליצירת רשימת דפי־משנה',
 	'spl-nosubpages' => 'לדף "$1" אין דפי משנה שאפשר להציג ברשימה.',
-	'spl-subpages-par-sort' => 'באיזה כיוון למיין.', # Fuzzy
-	'spl-subpages-par-sortby' => 'לפי מה למיין את דפי־המשנה.', # Fuzzy
+	'spl-subpages-par-sort' => 'לאיזה כיוון למיין. ערכים מותרים: "עולה", "יורד".',
+	'spl-subpages-par-sortby' => 'לפי מה למיין עמודי המשנה. ערכים מותרים: "כותרת" או "נערך לאחרונה".',
 	'spl-subpages-par-format' => 'רשימת דפי־המשנה יכולה להיות מוצגת במספר עיצובים. רשימה ממוספרת (ol), רשימת תבליטים (ul), ורשימה מופרדת בפסיקים (list).', # Fuzzy
 	'spl-subpages-par-page' => 'על איזה דף להציג את דפי־המשנה. בררת המחדל: הדף הנוכחי.', # Fuzzy
 	'spl-subpages-par-showpage' => 'מציין אם הדף עצמו צריך להיות מוצג ברשימה או לאו.',
@@ -370,6 +371,7 @@ Zohjelohße es:
 );
 
 /** Luxembourgish (Lëtzebuergesch)
+ * @author Les Meloures
  * @author Robby
  */
 $messages['lb'] = array(
@@ -377,12 +379,12 @@ $messages['lb'] = array(
 	'spl-nosubpages' => 'D\'Säit "$1" huet keng Ënnersäite fir ze weisen.',
 	'spl-noparentpage' => 'D\'Säit "$1" gëtt et net.',
 	'spl-nopages' => 'Am Nummraum "$1" gëtt et keng Säiten.',
-	'spl-subpages-par-sort' => 'Reiefolleg wéi zortéiert soll ginn. Erlaabte Wäerter: "asc" an "desc".',
-	'spl-subpages-par-sortby' => 'Wourop d\'Ënnersäiten zortéiert ginn. Erlaabte Wäerter: "titel" oder "lescht Ännerung".',
-	'spl-subpages-par-format' => 'D\'Lëscht vun den Ënnersäite kann a verschiddene Formater gewise ginn. Erlaabte Wäerter: "ol" Numeréiert Lëschten, "ul" Lëschte mat Punkten, "list" ganz Lëschten (z. Bsp. "comma seperated" Lëscht).',
+	'spl-subpages-par-sort' => 'Reiefolleg wéi zortéiert soll ginn. Erlaabt Wäerter: "asc" an "desc".',
+	'spl-subpages-par-sortby' => 'Wourop d\'Ënnersäiten zortéiert ginn. Erlaabt Wäerter: "titel" oder "lescht Ännerung".',
+	'spl-subpages-par-format' => 'D\'Lëscht vun den Ënnersäite kann a verschiddene Formater gewise ginn. Erlaabt Wäerter: "ol" Numeréiert Lëschten, "ul" Lëschte mat Punkten, "list" ganz Lëschten (z. Bsp. "comma seperated" Lëscht).',
 	'spl-subpages-par-page' => "D'Säit fir déi Ënnersäite gewise solle ginn, oder Numm vum Nummraum (inklusiv den Doppelpunkt) an deem Säite solle gewise ginn. Als Standard ass dat déi aktuell Säit.",
 	'spl-subpages-par-showpage' => "Gëtt un ob d'Säit selwer an der Lëscht gewise soll ginn oder net.",
-	'spl-subpages-par-pathstyle' => 'Styl vum Wee (path) fir Ënnersäiten an der Lëscht. Erlaabte Wäerter: "fullpagename" - Kompletten Numm vun der Säit (inklusiv den Nummraum), "pagename" - Numm vun der säit (ouni Nummraum), "subpagename" - Relative Numm vun der Säit ugefaang vun de Säit fir déi mir Ënnersäiten opzielen, "none" -  just deen Deel vum Numm deen no dem lescht Slash kënnt.',
+	'spl-subpages-par-pathstyle' => 'Styl vum Wee (path) fir Ënnersäiten an der Lëscht. Erlaabt Wäerter: "fullpagename" - Kompletten Numm vun der Säit (inklusiv den Nummraum), "pagename" - Numm vun der Säit (ouni Nummraum), "subpagename" - Relativen Numm vun der Säit ugefaang bei der Säit fir déi mir Ënnersäiten opzielen, "none" -  just deen Deel vum Numm deen no dem leschte Slash kënnt.',
 	'spl-subpages-par-kidsonly' => 'Erlaabt fir nëmmen direkt Ënnersäiten ze weisen.',
 	'spl-subpages-par-limit' => "D'Maximalzuel vu Säiten déi gewise ginn.",
 	'spl-subpages-par-intro' => 'Den Text virun der Lëscht, wann se net eidel ass.',

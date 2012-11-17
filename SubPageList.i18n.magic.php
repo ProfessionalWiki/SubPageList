@@ -54,6 +54,13 @@ $magicWords['diq'] = array(
 	'subpagecount' => array( 0, 'zerreypelandêbınan' ),
 );
 
+/** Italian (italiano) */
+$magicWords['it'] = array(
+	'subpages' => array( 0, 'sottopagine' ),
+	'subpagelist' => array( 0, 'elencosottopagine' ),
+	'subpagecount' => array( 0, 'contosottopagine' ),
+);
+
 /** Korean (한국어) */
 $magicWords['ko'] = array(
 	'splist' => array( 0, 'sp목록' ),

@@ -485,7 +485,7 @@ $messages['nl'] = array(
 	'spl-subpages-par-outro' => 'De uit te voeren tekst na de lijst, als de lijst niet leeg is.',
 	'spl-subpages-par-default' => 'De weer te geven tekst in plaats van de lijst als de lijst leeg is. Als dit leeg is, wordt een foutmelding gegeven, zoals "Er zijn geen weer te geven subpagina\'s". Bij gebruik van het teken "-" is het resultaat volledig leeg.',
 	'spl-subpages-par-separator' => 'De uit te voeren tekst tussen twee lijstelementen voor een "list" (lijstweergave) of "bar" (balkweergave). Dit heeft geen effect op andere weergaven.',
-	'spl-subpages-par-template' => 'De naam van het sjabloon. Het sjabloon wordt toegepast op ieder element in de lijst. Een element wordt doorgegeven als het eerste (onbenoemde) argument. Let op dat het sjabloon de lijstopmaak niet verwijdert; de opmaak ("ul", "ol" of "list") wordt toegepast op het resultaat van het sjabloon.',
+	'spl-subpages-par-template' => 'De naam van de sjabloon. De sjabloon wordt toegepast op ieder element in de lijst. Een element wordt doorgegeven als het eerste (onbenoemde) argument. Let op dat de sjabloon de lijstopmaak niet verwijdert; de opmaak ("ul", "ol" of "list") wordt toegepast op het resultaat van de sjabloon.',
 	'spl-subpages-par-links' => 'Lijstelementen worden opgemaakt als verwijzingen als waar. Lijstelementen zijn platte tekst als onwaar. De laatste optie is handig bij het doorgeven van elementen aan sjablonen voor verdere verwerking.',
 );
 

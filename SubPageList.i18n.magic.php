@@ -114,6 +114,11 @@ $magicWords['sr-el'] = array(
 	'subpages' => array( 0, 'podstranice', 'podstrane' ),
 );
 
+/** Urdu (اردو) */
+$magicWords['ur'] = array(
+	'subpages' => array( 0, 'ذیلی_صفحات' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $magicWords['zh-hans'] = array(
 	'subpages' => array( 0, '子页面' ),

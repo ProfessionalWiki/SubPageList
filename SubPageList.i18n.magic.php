@@ -123,3 +123,8 @@ $magicWords['ur'] = array(
 $magicWords['zh-hans'] = array(
 	'subpages' => array( 0, '子页面' ),
 );
+
+/** Traditional Chinese (中文（繁體）‎) */
+$magicWords['zh-hant'] = array(
+	'subpages' => array( 0, '子頁面' ),
+);

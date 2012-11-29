@@ -169,6 +169,14 @@ $messages['es'] = array(
 	'spl-subpages-par-links' => 'Si el valor fuese verdadero (true), los elementos de la lista se representan como enlaces. Si es falso (false), los elementos de la lista se procesan como texto sin formato. Este último caso es especialmente útil para pasar elementos a las plantillas para su posterior procesamiento.',
 );
 
+/** Finnish (suomi)
+ * @author Nedergard
+ */
+$messages['fi'] = array(
+	'spl-noparentpage' => 'Sivua ”$1” ei ole.',
+	'spl-nopages' => 'Nimiavaruudessa "$1" ei ole sivuja.',
+);
+
 /** French (français)
  * @author Gomoko
  * @author Hashar

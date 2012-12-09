@@ -344,9 +344,9 @@ $messages['it'] = array(
  */
 $messages['ja'] = array(
 	'spl-desc' => '下位ページの一覧を表示できるようにする <code><nowiki><splist /></nowiki></code> タグを追加する',
-	'spl-nosubpages' => 'ページ「$1」には表示する下位ページがありません。',
+	'spl-nosubpages' => 'ページ「$1」には列挙できる下位ページがありません。',
 	'spl-noparentpage' => 'ページ「$1」は存在しません。',
-	'spl-nopages' => '名前空間 "$1" にはページはありません。',
+	'spl-nopages' => '名前空間「$1」にはページはありません。',
 );
 
 /** Georgian (ქართული)

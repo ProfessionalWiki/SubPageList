@@ -642,12 +642,15 @@ $messages['tl'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Base
  * @author Renessaince
  * @author Тест
  */
 $messages['uk'] = array(
 	'spl-desc' => 'Додає тег <code><nowiki><splist /></nowiki></code>, який виводить список підсторінок',
 	'spl-nosubpages' => 'Сторінка "$1" не має підсторінок для складання списку.',
+	'spl-noparentpage' => 'Сторінка «$1» не існує.',
+	'spl-nopages' => 'У просторі назв «$1» немає сторінок.',
 	'spl-subpages-par-sort' => 'Напрямок сортування. Допущальни значення: "asc" і "desc".',
 	'spl-subpages-par-page' => 'Сторінка, для якої показати підсторінки. За умовчанням — поточна сторінка.', # Fuzzy
 	'spl-subpages-par-limit' => 'Максимальна кількість сторінок у списку.',

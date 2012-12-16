@@ -44,8 +44,10 @@ $messages['en'] = array(
 /** Message documentation (Message documentation)
  * @author Hamilton Abreu
  * @author Purodha
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
+	'spl-desc' => '{{desc|name=Sub Page List|url=http://www.mediawiki.org/wiki/Extension:SubPageList}}',
 	'spl-subpages-par-format' => 'I believe, that the brackettet words should not be translated. --[[User:Purodha|Purodha Blissenbach]] 00:04, 21 January 2011 (UTC)',
 	'spl-subpages-par-pathstyle' => 'The parameters "fullpagename", "pagename", "subpagename" and "none" should not be translated!',
 );

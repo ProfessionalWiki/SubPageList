@@ -173,10 +173,11 @@ $messages['es'] = array(
 
 /** Finnish (suomi)
  * @author Nedergard
+ * @author Nike
  */
 $messages['fi'] = array(
 	'spl-noparentpage' => 'Sivua ”$1” ei ole.',
-	'spl-nopages' => 'Nimiavaruudessa "$1" ei ole sivuja.',
+	'spl-nopages' => 'Nimiavaruudessa $1 ei ole sivuja.',
 );
 
 /** French (français)

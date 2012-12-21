@@ -48,8 +48,14 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'spl-desc' => '{{desc|name=Sub Page List|url=http://www.mediawiki.org/wiki/Extension:SubPageList}}',
-	'spl-subpages-par-format' => 'I believe, that the brackettet words should not be translated. --[[User:Purodha|Purodha Blissenbach]] 00:04, 21 January 2011 (UTC)',
+	'spl-subpages-par-sort' => '{{doc-important|Do not translate "asc" and "desc".}}',
+	'spl-subpages-par-sortby' => '{{doc-important|Do not translate "title" and "lastedit".}}',
+	'spl-subpages-par-format' => '{{doc-important|Do not translate "ol", "ul" and "list".}}',
 	'spl-subpages-par-pathstyle' => 'The parameters "fullpagename", "pagename", "subpagename" and "none" should not be translated!',
+	'spl-subpages-par-element' => '{{doc-important|Do not translate "intro", "outro", "default", "div", "p", and "span".}}',
+	'spl-subpages-par-class' => '{{doc-important|Do not translate "class".}}',
+	'spl-subpages-par-separator' => '{{doc-important|Do not translate "list" and "bar".}}',
+	'spl-subpages-par-template' => '{{doc-important|Do not translate "ul", "ol", and "list".}}',
 );
 
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
@@ -357,6 +363,29 @@ $messages['ja'] = array(
  */
 $messages['ka'] = array(
 	'spl-noparentpage' => 'გვერდი „$1“ არ არსებობს.',
+);
+
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'spl-desc' => '하위 문서를 나타내도록 하는 <code><nowiki><splist /></nowiki></code> 태그 추가',
+	'spl-nosubpages' => '"$1" 문서는 목록에 하위 문서가 없습니다.',
+	'spl-noparentpage' => '"$1" 문서가 존재하지 않습니다.',
+	'spl-nopages' => '"$1" 이름공간에 문서가 없습니다.',
+	'spl-subpages-par-sort' => '정렬할 방향입니다. 허용하는 값: "asc"와 "desc"입니다.',
+	'spl-subpages-par-sortby' => '하위 문서를 정렬할 기준입니다. 허용하는 값: "title"이나 "lastedit"입니다.',
+	'spl-subpages-par-format' => '하위 문서 목록은 여러 가지 형식으로 보여줄 수 있습니다. 허용하는 값: "ol" — 순서 있는(번호를 매긴) 목록, "ul" — 순서 없는(불릿으로 된) 목록, "list" — 일반 목록 (예를 들어 쉼표로 구분한 목록)입니다.',
+	'spl-subpages-par-page' => '문서를 보여줄 하위 문서나 이름공간 이름(뒤에 콜론 포함)을 보여줄 문서입니다. 현재 문서는 기본값입니다.',
+	'spl-subpages-par-showpage' => '문서 자체가 목록에 여부를 보여줘야 하는지 여부를 나타냅니다.',
+	'spl-subpages-par-pathstyle' => '목록에서 하위 문서에 대한 경로의 스타일입니다. 허용하는 값: "fullpagename" — (이름공간을 포함한) 전체 문서 이름, "pagename" — (이름공간 없는) 문서 이름, "subpagename" — 하위 문서를 나타낼 문서에서 시작하는 관련된 문서 이름, "none" — 그냥 마지막 슬래시 뒤에 이름의 일부의 끝입니다.',
+	'spl-subpages-par-kidsonly' => '직접 하위 문서만 보여줄 수 있습니다.',
+	'spl-subpages-par-limit' => '나타낼 문서의 최대 수입니다.',
+	'spl-subpages-par-element' => '목록을 둘러싼 ("intro"와 "outro" 또는 "default" 텍스트를 포함하는) HTML 요소입니다. 허용하는 값: "div", "p", "span"입니다.',
+	'spl-subpages-par-class' => '목록을 둘러싼 HTML 요소의 "class" 속성에 대한 값입니다.',
+	'spl-subpages-par-intro' => '목록이 비어 있지 않다면 목록 앞에 출력할 텍스트입니다.',
+	'spl-subpages-par-outro' => '목록이 비어 있지 않다면 목록 뒤에 출력할 텍스트입니다.',
+	'spl-subpages-par-default' => '목록이 비어 있다면 목록 대신 출력할 텍스트입니다. 비어 있다면 ("문서는 나타낼 하위 문서가 없습니다"와 같이) 오류 메시지가 나타납니다. 대시("-")로 입력하면 결과는 완전히 비어있게 됩니다.',
 );
 
 /** Colognian (Ripoarisch)

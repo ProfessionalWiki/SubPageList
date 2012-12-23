@@ -699,3 +699,10 @@ $messages['zh-hans'] = array(
 	'spl-subpages-par-sort' => '要排序的方向。允许的值：“asc”和“desc”。',
 	'spl-subpages-par-sortby' => '要按什么排序子页面。允许的值：“title”或“lastedit”。',
 );
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Shirayuki
+ */
+$messages['zh-hant'] = array(
+	'spl-noparentpage' => '頁面"$1"不存在。',
+);

@@ -565,6 +565,8 @@ $messages['pl'] = array(
 $messages['pms'] = array(
 	'spl-desc' => 'A gionta un sìmbol <code><nowiki><splist /></nowiki></code> che at abìlita a listé le sot-pagine',
 	'spl-nosubpages' => "La pàgina $1 a l'ha gnun-e sot-pàgine da listé.",
+	'spl-noparentpage' => 'La pàgina "$1" a esist pa.',
+	'spl-nopages' => 'Lë spassi nominal "$1" a l\'ha gnun-e pagine.',
 	'spl-subpages-par-sort' => 'La diression për ordiné. Valor përmëttù: «asc» e «desc».',
 	'spl-subpages-par-sortby' => 'Criteri për ordiné le pagine. Valor përmëttù :«tìtol» o «ùltima modìfica».',
 	'spl-subpages-par-format' => "La lista dle sot-pàgine a peul esse mostrà an vàire formà. Valor përmëttù: «ol» - lista ordinà (numerà), «ul» lista nen ordinà (a pont), «lista» - lista sempia (për esempi, lista separà da 'd vìrgole).",
@@ -573,6 +575,14 @@ $messages['pms'] = array(
 	'spl-subpages-par-pathstyle' => "Lë stit dël përcors për le sot-pàgine ant la lista. Valor përmëttù: «nòmcompletpàgina» - nòm complet ëd la pàgina (spassi nominal comprèis), «nòmpàgina» - nàm ëd la pàgina (sensa spassi nominal), «nòmsotpàgina» nòm relativ ëd la pàgina an ancaminand da la pàgina dont i smonoma le sot-pàgine, «gnun» - mach la part dël nòm apress l'ùltima bara.",
 	'spl-subpages-par-kidsonly' => 'A përmëtt ëd mostré mach le sot-pàgine direte.',
 	'spl-subpages-par-limit' => 'Ël nùmer màssim ëd pàgine da listé.',
+	'spl-subpages-par-element' => 'L\'element HTML ch\'a comprend la lista (test comprendent "intro" e "outro" o "default"). Valor përmëttù: "div", "p", "span".',
+	'spl-subpages-par-class' => 'Ël valor për l\'atribù "class" ëd l\'element HTML sarant la lista.',
+	'spl-subpages-par-intro' => "Ël test da stampé prima dla lista, se la lista a l'é pa veuida.",
+	'spl-subpages-par-outro' => "Ël test da stampé d'apress dla lista, se la lista a l'é pa veuida.",
+	'spl-subpages-par-default' => 'Ël test da stampé nopà dla lista, se la lista a l\'é veuida. Se veuida, un mËssagi d\'eror a sarà stampà (tal com "La pagina a l\'ha pa dle sot-pagine da listé"). Se tratin ("-"), l\'arzultà a sarà completament veuid.',
+	'spl-subpages-par-separator' => 'Ël test da stampé tra doi element dla lista an cas ëd formà "list" (e sò alias "bar"). A l\'ha pa efet an àutri formà.',
+	'spl-subpages-par-template' => 'Ël nòm dlë stamp. Lë stamp a l\'é aplicà a minca element dla lista. N\'element a l\'é passà com prim (sensa nòm) argoment. Nòta che lë stamp a scansela pa la formatassion dla lista. La formatassion ("ul", "ol", "list") a l\'é aplicà a l\'arzultà dlë stamp.',
+	'spl-subpages-par-links' => "Se ver, j'element dla lista a son stampà com colegament. Se fàuss, j'element dla lista a son stampà com test normal. L'ùltim a l'é dzortut ùtil për passé element ant jë stamp për àutr tratament.",
 );
 
 /** Portuguese (português)

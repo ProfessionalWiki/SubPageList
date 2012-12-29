@@ -45,13 +45,14 @@ $messages['en'] = array(
  * @author Hamilton Abreu
  * @author Purodha
  * @author Shirayuki
+ * @author 아라
  */
 $messages['qqq'] = array(
 	'spl-desc' => '{{desc|name=Sub Page List|url=http://www.mediawiki.org/wiki/Extension:SubPageList}}',
 	'spl-subpages-par-sort' => '{{doc-important|Do not translate "asc" and "desc".}}',
 	'spl-subpages-par-sortby' => '{{doc-important|Do not translate "title" and "lastedit".}}',
 	'spl-subpages-par-format' => '{{doc-important|Do not translate "ol", "ul" and "list".}}',
-	'spl-subpages-par-pathstyle' => 'The parameters "fullpagename", "pagename", "subpagename" and "none" should not be translated!',
+	'spl-subpages-par-pathstyle' => '{{doc-important|The parameters "fullpagename", "pagename", "subpagename" and "none" should not be translated!}}',
 	'spl-subpages-par-element' => '{{doc-important|Do not translate "intro", "outro", "default", "div", "p", and "span".}}',
 	'spl-subpages-par-class' => '{{doc-important|Do not translate "class".}}',
 	'spl-subpages-par-separator' => '{{doc-important|Do not translate "list" and "bar".}}',

@@ -389,6 +389,9 @@ $messages['ko'] = array(
 	'spl-subpages-par-intro' => '목록이 비어 있지 않다면 목록 앞에 출력할 텍스트입니다.',
 	'spl-subpages-par-outro' => '목록이 비어 있지 않다면 목록 뒤에 출력할 텍스트입니다.',
 	'spl-subpages-par-default' => '목록이 비어 있다면 목록 대신 출력할 텍스트입니다. 비어 있다면 ("문서는 나타낼 하위 문서가 없습니다"와 같이) 오류 메시지가 나타납니다. 대시("-")로 입력하면 결과는 완전히 비어있게 됩니다.',
+	'spl-subpages-par-separator' => '"list"(별명 "bar") 형식일 때 목록 항목 두 개 사이에 출력할 텍스트입니다. 다른 형식에는 영향이 없습니다.',
+	'spl-subpages-par-template' => '틀 이름입니다. 틀은 목록의 모든 항목에 적용됩니다. 항목은 (이름 없는) 첫 인수로 전달합니다. 해당 틀은 목록 형식을 취소하지 않음을 참고하세요. 형식("ul", "ol", "list")은 틀의 결과에 적용됩니다.',
+	'spl-subpages-par-links' => '사실(true)이면 목록 항목은 링크로 표시합니다. 거짓(false)이면 목록 항목은 일반 텍스트로 표시합니다. 후자는 더 많이 처리하기 위해 틀에 항목을 건너 뛰는 데 특히 도움이 됩니다.',
 );
 
 /** Colognian (Ripoarisch)
@@ -468,13 +471,25 @@ $messages['mk'] = array(
  */
 $messages['ms'] = array(
 	'spl-desc' => 'Membubuh teg <code><nowiki><splist /></nowiki></code> yang membolehkan anda untuk melihat senarai sublaman',
-	'spl-nosubpages' => 'Laman "$1" tiada sublaman untuk disenaraikan.',
-	'spl-noparentpage' => 'Laman "$1" tidak wujud.',
-	'spl-nopages' => 'Ruang nama "$1" tiada laman.',
+	'spl-nosubpages' => 'Halaman "$1" tidak menyenaraikan sebarang subhalaman.',
+	'spl-noparentpage' => 'Halaman "$1" tidak wujud.',
+	'spl-nopages' => 'Ruang nama "$1" tiada halaman.',
 	'spl-subpages-par-sort' => 'Arah isihan. Nilai-nilai yang dibenarkan: "asc" (menaik) dan "desc" (menurun).',
 	'spl-subpages-par-sortby' => 'Apa yang diikut untuk mengisih sublaman. Nilai-nilai yang dibenarkan: "title" (tajuk) atau "lastedit" (suntingan terakhir).',
 	'spl-subpages-par-format' => 'Senarai sublaman boleh dipaparkan dalam beberapa format. Nilai-nilai yang dibenarkan: "ol" — senarai tertib (bernombor), "ul" — senarai tak tertib (berbunga), "list" — senarai biasa (cth: senarai yang diasingkan dengan koma).',
+	'spl-subpages-par-page' => 'Halaman untuk memaparkan subhalaman, atau ruang nama (diikuti oleh tanda titik bertindih) untuk memaparkan halaman. Yang azali adalah halaman semasa.',
+	'spl-subpages-par-showpage' => 'Menandakan sama ada halaman itu harus dipaparkan dalam senarai atau tidak.',
+	'spl-subpages-par-pathstyle' => 'Gaya laluan untuk subhalaman-subhalaman dalam senarai. Nilai-nilai yang dibenarkan: "fullpagename" — nama penuh halaman (termasuk ruang nama), "pagename" — nama halaman (tanpa ruang nama), "subpagename" — nama halaman relatif yang bermula dari halaman untuk kita senaraikan subhalaman, "none" — hanya ekor nama selepas tanda condong terakhir.',
+	'spl-subpages-par-kidsonly' => 'Membenarkan paparan subhalaman langsung sahaja.',
 	'spl-subpages-par-limit' => 'Bilangan halaman maksimum yang hendak disenaraikan.',
+	'spl-subpages-par-element' => 'Elemen HTML yang memagari senarai (termasuk "intro" dan "outro" atau "default"). Nilai-nilai yang dibenarkan: "div", "p", "span".',
+	'spl-subpages-par-class' => 'Nilai untuk atribut "class" pada elemen-elemen HTML yang memagari senarai.',
+	'spl-subpages-par-intro' => 'Teks yang hendak disiarkan sebelum senarai, jika senarai tidak kosong.',
+	'spl-subpages-par-outro' => 'Teks yang hendak disiarkan selepas senarai, jika senarai tidak kosong.',
+	'spl-subpages-par-default' => 'Teks yang hendak disiarkan sebagai ganti senarai jika senarai itu kosong. Jika kosong, maka terpaparnya mesej ralat (seperti "Halaman ini tidak menyenaraikan sebarang subhalaman.") Jika tanda sengkang ("-"), hasilnya kosong sama sekali.',
+	'spl-subpages-par-separator' => 'Teks yang hendak disiarkan di antara dua perkara senarai seandainya terdapat format "list" (atau "bar"). Tiada kesan pada format-format lain.',
+	'spl-subpages-par-template' => 'Nama templat. Templat diterapkan pada setiap perkara dalam senarai. Satu perkara diserahkan sebagai hujah pertama (yang tanpa nama). Ingat, templat ini tidak membatalkan formatan senarai. Formatan ("ul", "ol", "list") diterapkan pada hasil templat.',
+	'spl-subpages-par-links' => 'Jika benar, perkara-perkara dalam senarai dipaparkan sebagai pautan. Jika palsu, perkara-perkara dalam senarai dipaparkan sebagai teks biasa. Yang palsu berguna khususnya untuk menyerahkan perkara-perkara ke dalam templat untuk pemprosesan selanjutnya.',
 );
 
 /** Maltese (Malti)
@@ -638,6 +653,13 @@ $messages['ru'] = array(
 	'spl-subpages-par-separator' => 'Текст для вывода между двумя элементами списка для форматов "list" или "bar". Не имеет значения для других форматов.',
 	'spl-subpages-par-template' => 'Имя шаблона. Шаблон применяется к каждому элементу списка. Элемент передаётся в шаблон как первый (неименованный) аргумент. Заметьте, что шаблон не отменяет форматирование списка. Форматирование ("ul", "ol", "list") применяется к результатам шаблона.',
 	'spl-subpages-par-links' => 'Если истина, элементы списка выводятся как ссылки. Если ложь, элементы списка выводятся как простой текст, это особенно удобно, если применяется совместно с шаблоном.',
+);
+
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'spl-noparentpage' => '"$1" පිටුව නොපවතී.',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)

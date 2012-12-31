@@ -544,7 +544,7 @@ $messages['nl'] = array(
 	'spl-subpages-par-default' => 'De weer te geven tekst in plaats van de lijst als de lijst leeg is. Als dit leeg is, wordt een foutmelding gegeven, zoals "Er zijn geen weer te geven subpagina\'s". Bij gebruik van het teken "-" is het resultaat volledig leeg.',
 	'spl-subpages-par-separator' => 'De uit te voeren tekst tussen twee lijstelementen voor een "list" (lijstweergave) of "bar" (balkweergave). Dit heeft geen effect op andere weergaven.',
 	'spl-subpages-par-template' => 'De naam van de sjabloon. De sjabloon wordt toegepast op ieder element in de lijst. Een element wordt doorgegeven als het eerste (onbenoemde) argument. Let op dat de sjabloon de lijstopmaak niet verwijdert; de opmaak ("ul", "ol" of "list") wordt toegepast op het resultaat van de sjabloon.',
-	'spl-subpages-par-links' => 'Lijstelementen worden opgemaakt als verwijzingen als waar. Lijstelementen zijn platte tekst als onwaar. De laatste optie is handig bij het doorgeven van elementen aan sjablonen voor verdere verwerking.',
+	'spl-subpages-par-links' => 'Lijstelementen worden opgemaakt als koppelingen als waar. Lijstelementen zijn platte tekst als onwaar. De laatste optie is handig bij het doorgeven van elementen aan sjablonen voor verdere verwerking.',
 );
 
 /** Polish (polski)
@@ -659,7 +659,13 @@ $messages['ru'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
+	'spl-desc' => 'උපපිටු ලැයිස්තුගත කිරීමට සක්‍රිය වන <code><nowiki><splist /></nowiki></code> ටැගය එක් කරයි',
+	'spl-nosubpages' => '"$1" සතුව ලැයිස්තුගත කිරීමට උපපිටු නැත.',
 	'spl-noparentpage' => '"$1" පිටුව නොපවතී.',
+	'spl-nopages' => '"$1" නාමඅවකාශය සතුව පිටු නොමැත.',
+	'spl-subpages-par-limit' => 'ලැයිස්තුගත කල යුතු උපරිම පිටු ගණන.',
+	'spl-subpages-par-intro' => 'ලැයිස්තුව හිස් නොවේ නම්, ලැයිස්තුවට පෙර ප්‍රතිදානය කල යුතු පෙළ.',
+	'spl-subpages-par-outro' => 'ලැයිස්තුව හිස් නොවේ නම්, ලැයිස්තුවෙන් පසු ප්‍රතිදානය කල යුතු පෙළ.',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)

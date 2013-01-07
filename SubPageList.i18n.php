@@ -594,11 +594,11 @@ $messages['pms'] = array(
 	'spl-subpages-par-element' => 'L\'element HTML ch\'a comprend la lista (test comprendent "intro" e "outro" o "default"). Valor përmëttù: "div", "p", "span".',
 	'spl-subpages-par-class' => "Ël valor për l'atribù «class» ëd l'element HTML ch'a anquadra la lista.",
 	'spl-subpages-par-intro' => "Ël test da stampé prima dla lista, se la lista a l'é pa veuida.",
-	'spl-subpages-par-outro' => "Ël test da stampé d'apress dla lista, se la lista a l'é pa veuida.",
-	'spl-subpages-par-default' => 'Ël test da stampé nopà dla lista, se la lista a l\'é veuida. Se veuida, un mËssagi d\'eror a sarà stampà (tal com "La pagina a l\'ha pa dle sot-pagine da listé"). Se tratin ("-"), l\'arzultà a sarà completament veuid.',
-	'spl-subpages-par-separator' => 'Ël test da stampé tra doi element dla lista an cas ëd formà "list" (e sò alias "bar"). A l\'ha pa efet an àutri formà.',
-	'spl-subpages-par-template' => 'Ël nòm dlë stamp. Lë stamp a l\'é aplicà a minca element dla lista. N\'element a l\'é passà com prim (sensa nòm) argoment. Nòta che lë stamp a scansela pa la formatassion dla lista. La formatassion ("ul", "ol", "list") a l\'é aplicà a l\'arzultà dlë stamp.',
-	'spl-subpages-par-links' => "Se ver, j'element dla lista a son stampà com colegament. Se fàuss, j'element dla lista a son stampà com test normal. L'ùltim a l'é dzortut ùtil për passé element ant jë stamp për àutr tratament.",
+	'spl-subpages-par-outro' => "Ël test da stampé apress dla lista, se la lista a l'é pa veuida.",
+	'spl-subpages-par-default' => "Ël test da stampé an leu dla lista, se la lista a l'é veuida. Se veuida, un mëssagi d'eror a sarà stampà (coma «La pàgina a l'ha gnun-e sot-pàgine da listé»). Se a-i é tratin («-»), l'arzultà a sarà completament veuid.",
+	'spl-subpages-par-separator' => "Ël test da stampé tra doi element dla lista an cas ëd formà «list» (e sò alias «bar»). A l'ha pa d'efet ant j'àutri formà.",
+	'spl-subpages-par-template' => "Ël nòm dlë stamp. Lë stamp a l'é aplicà a minca element dla lista. N'element a l'é passà com prim argoment (sensa nòm). Ch'a nòta che lë stamp a scancela pa ël formà dla lista. Ël formà («ul», «ol», «list») a l'é aplicà a l'arzultà dlë stamp.",
+	'spl-subpages-par-links' => "S'a l'é ver, j'element dla lista a son stampà com dle liure. S'a l'é fàuss, j'element dla lista a son stampà com test normal. L'ùltim a l'é dzortut ùtil për passé dj'element ant jë stamp për n'àutr tratament.",
 );
 
 /** Portuguese (português)

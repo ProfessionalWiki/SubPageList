@@ -8,7 +8,7 @@
  * @file SubPageCount.class.php
  * @ingroup SPL
  *
- * @licence GNU GPL v3 or later
+ * @licence GNU GPL v2+
  *
  * @author Jeroen De Dauw
  * @author Van de Bugger

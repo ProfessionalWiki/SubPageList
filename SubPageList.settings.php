@@ -11,7 +11,7 @@
  * @file SubPageList.settings.php
  * @ingroup SPL
  *
- * @licence GNU GPL v3 or later
+ * @licence GNU GPL v2+
  *
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */

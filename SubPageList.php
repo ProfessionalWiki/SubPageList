@@ -7,7 +7,7 @@
  * Support					https://www.mediawiki.org/wiki/Extension_talk:SubPageList
  * Source code:             https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/SubPageList.git
  *
- * @file SubPageList.php
+ * @file
  * @ingroup SubPageList
  *
  * @licence GNU GPL v3 or later
@@ -15,7 +15,7 @@
  */
 
 /**
- * This documenation group collects source code files belonging to SubPageList.
+ * This documentation group collects source code files belonging to SubPageList.
  *
  * @defgroup SPL SubPageList
  */
@@ -30,11 +30,12 @@ if ( !defined( 'Validator_VERSION' ) ) {
 }
 
 // Only initialize the extension when all dependencies are present.
-if ( !defined( 'Validator_VERSION' ) ) {
-	die( '<b>Error:</b> You need to have <a href="http://www.mediawiki.org/wiki/Extension:Validator">Validator</a> installed in order to use <a href="http://www.mediawiki.org/wiki/Extension:SubPageList">SubPageList</a>.<br />' );
+if ( !defined( 'ParamProcessor_VERSION' ) ) {
+	die( '<b>Error:</b> You need to have <a href="http://www.mediawiki.org/wiki/Extension:Validator">Validator (ParamProcessor)</a> 1.0 or later installed in order to use <a href="http://www.mediawiki.org/wiki/Extension:SubPageList">SubPageList</a>.<br />' );
 }
 
-define( 'SPL_VERSION', '0.6 alpha' );
+
+define( 'SPL_VERSION', '1.0 alpha' );
 
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,

@@ -6,7 +6,7 @@
  *
  * @since 0.6
  *
- * @file SubPageCount.class.php
+ * @file
  * @ingroup SPL
  *
  * @licence GNU GPL v2+
@@ -25,7 +25,7 @@ abstract class SubPageBase extends ParserHook {
 	 *
 	 * @param string $page — Name of page.
 	 *
-	 * @return Instance of Title class — title of an existing page, or integer — index of an
+	 * @return Title class — title of an existing page, or integer — index of an
 	 * existing namespace, or null otherwise.
 	 */
 	protected function getTitle( $page ) {

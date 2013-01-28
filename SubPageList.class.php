@@ -5,7 +5,7 @@
  * 
  * @since 0.1
  * 
- * @file SubPageList.class.php
+ * @file
  * @ingroup SPL
  * 
  * @licence GNU GPL v2+

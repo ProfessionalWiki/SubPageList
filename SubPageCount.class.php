@@ -5,7 +5,7 @@
  *
  * @since 0.6
  *
- * @file SubPageCount.class.php
+ * @file
  * @ingroup SPL
  *
  * @licence GNU GPL v2+
@@ -113,5 +113,3 @@ final class SubPageCount extends SubPageBase {
 	} // render
 
 }
-
-// end of file //

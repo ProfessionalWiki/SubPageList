@@ -3,7 +3,7 @@
 /**
  * Internationalization file for the SubPageList extension.
  *
- * @file SubPageList.i18n.php
+ * @file
  * @ingroup SPL
  *
  * @licence GNU GPL v2+

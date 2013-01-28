@@ -5,7 +5,7 @@
  * 
  * @since 0.3
  * 
- * @file SubPageList.hooks.php
+ * @file
  * @ingroup SubPageList
  * 
  * @licence GNU GPL v3
@@ -15,13 +15,13 @@ final class SPLHooks {
 	
 	/**
 	 * Occurs after a new article has been created.
-	 * https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Manual:Hooks/ArticleInsertComplete
+	 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleInsertComplete
 	 * 
 	 * @since 0.3
 	 * 
 	 * @param Article|WikiPage &$article WikiPage object since MW 1.18
 	 * 
-	 * @return true
+	 * @return boolean true
 	 */
 	public static function onArticleInsertComplete(
 		&$article, User &$user, $text, $summary, $minoredit, 
@@ -34,13 +34,13 @@ final class SPLHooks {
 	
 	/**
 	 * Occurs after the delete article request has been processed.
-	 * https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Manual:Hooks/ArticleDeleteComplete
+	 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDeleteComplete
 	 * 
 	 * @since 0.3
 	 * 
 	 * @param Article|WikiPage &$article WikiPage object since MW 1.18
 	 * 
-	 * @return true
+	 * @return boolean true
 	 */
 	public static function onArticleDeleteComplete( &$article, User &$user, $reason, $id ) {
 		self::invalidateBasePages( $article->getTitle() );
@@ -50,11 +50,11 @@ final class SPLHooks {
 
 	/**
 	 * Occurs whenever a request to move an article is completed.
-	 * https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Manual:Hooks/TitleMoveComplete
+	 * https://www.mediawiki.org/wiki/Manual:Hooks/TitleMoveComplete
 	 * 
 	 * @since 0.3
 	 * 
-	 * @return true
+	 * @return boolean true
 	 */
 	public static function onTitleMoveComplete( Title &$title, Title &$newtitle, User &$user, $oldid, $newid ) {
 		self::invalidateBasePages( $title );

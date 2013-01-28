@@ -84,7 +84,7 @@ $magicWords['ml'] = array(
 	'subpagecount' => array( 0, 'ഉപതാളുകളുടെയെണ്ണം' ),
 );
 
-/** Nedersaksies (Nedersaksies) */
+/** Low Saxon (Netherlands) (Nedersaksies) */
 $magicWords['nds-nl'] = array(
 	'splist' => array( 0, 'splieste' ),
 );

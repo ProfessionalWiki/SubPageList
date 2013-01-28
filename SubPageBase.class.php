@@ -14,7 +14,6 @@
  * @author Jeroen De Dauw
  * @author Van de Bugger
  * @author James McCormack (email: user "qedoc" at hotmail); preceding version Martin Schallnahs <myself@schaelle.de>, original Rob Church <robchur@gmail.com>
- * @copyright © 2008 James McCormack, preceding version Martin Schallnahs, original Rob Church
  */
 abstract class SubPageBase extends ParserHook {
 
@@ -37,9 +36,11 @@ abstract class SubPageBase extends ParserHook {
 			$title = $this->parser->mTitle;
 		} else {
 			$title = Title::newFromText( $page );
+
 			if ( is_null( $title ) ) {
-				// It is a wrog page name. Probably it is a namespace name?
+				// It is a wrong page name. Probably it is a namespace name?
 				$m = array();
+
 				if ( preg_match( '/^\s*(.*):\s*$/', $page, $m ) ) {
 					$title = $wgContLang->getNsIndex( $m[ 1 ] );
 				}
@@ -69,9 +70,11 @@ abstract class SubPageBase extends ParserHook {
 			// Just in case. If `getTitle' returns `null' it means page does not exist.
 			return null;
 		}
+
 		$dbr = wfGetDB( DB_SLAVE );
 		$conditions = array();
 		$conditions['page_is_redirect'] = 0;
+
 		if ( $title instanceof Title ) {
 			if ( ! MWNamespace::hasSubpages( $title->getNamespace() ) ) {
 				// Subpages are not enabled in this namespace. If we return empty array such a
@@ -79,9 +82,11 @@ abstract class SubPageBase extends ParserHook {
 				// result is not valid.
 				return null;
 			}
+
 			$conditions['page_namespace'] = $title->getNamespace(); // Don't let list cross namespaces.
 			// TODO: this is rather resource heavy
 			$conditions[] = 'page_title ' . $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString() );
+
 			if ( $kidsOnly ) {
 				$conditions[] = 'page_title NOT ' . $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString(), '/', $dbr->anyString() );
 			}
@@ -98,6 +103,6 @@ abstract class SubPageBase extends ParserHook {
 			}
 		}
 		return $conditions;
-	} // getConditions
+	}
 
-} // class SubPageBase
+}

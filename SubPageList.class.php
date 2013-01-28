@@ -13,7 +13,6 @@
  * @author Jeroen De Dauw
  * @author Van de Bugger
  * @author James McCormack (email: user "qedoc" at hotmail); preceding version Martin Schallnahs <myself@schaelle.de>, original Rob Church <robchur@gmail.com>
- * @copyright © 2008 James McCormack, preceding version Martin Schallnahs, original Rob Church
  */
 final class SubPageList extends SubPageBase {
 	/**

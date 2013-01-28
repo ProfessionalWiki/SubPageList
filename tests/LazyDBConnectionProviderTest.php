@@ -2,6 +2,7 @@
 
 namespace SubPageList\Test;
 use SubPageList\LazyDBConnectionProvider;
+use SubPageList\DBConnectionProvider;
 
 /**
  * Unit tests for DataType implementations.
@@ -48,7 +49,33 @@ class LazyDBConnectionProviderTest extends \MediaWikiTestCase {
 	 * @param int $dbId
 	 */
 	public function testConstructor( $dbId ) {
-		$connProvider = new LazyDBConnectionProvider( $dbId );
+		new LazyDBConnectionProvider( $dbId );
+
+		$this->assertTrue( true );
+	}
+
+	public function instanceProvider() {
+		$instances = array();
+
+		$instances[] = new LazyDBConnectionProvider( DB_MASTER );
+		$instances[] = new LazyDBConnectionProvider( DB_SLAVE );
+
+		return $this->arrayWrap( $instances );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @param DBConnectionProvider $connProvider
+	 */
+	public function testGetConnection( DBConnectionProvider $connProvider ) {
+		$connection = $connProvider->getConnection();
+
+		$this->assertInstanceOf( 'DatabaseBase', $connection );
+
+		$this->assertTrue( $connection === $connProvider->getConnection() );
+
+		$connProvider->releaseConnection();
 
 		$this->assertInstanceOf( 'DatabaseBase', $connProvider->getConnection() );
 	}

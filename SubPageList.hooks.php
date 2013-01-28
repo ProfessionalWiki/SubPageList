@@ -102,34 +102,4 @@ final class SPLHooks {
 		}
 	}
 	
-	/**
-	 * Returns a title iterator with all the subpages of the base page
-	 * for the provided title. This will include the provided title itself,
-	 * unless the provided title is a base page.
-	 * 
-	 * @since 0.3
-	 * 
-	 * @param string $baseTitle
-	 * @param integer $ns
-	 * 
-	 * @return TitleArray
-	 */
-	protected static function getBaseSubPages( $baseTitle, $ns ) {
-		$dbr = wfGetDB( DB_SLAVE );
-		
-		$titleArray = TitleArray::newFromResult(
-			$dbr->select( 'page',
-				array( 'page_id', 'page_namespace', 'page_title', 'page_is_redirect' ),
-				array(
-					'page_namespace' => $ns, 
-					'page_title' => $dbr->buildLike( $baseTitle . '/', $dbr->anyString() )
-				),
-				__METHOD__,
-				array( 'LIMIT' => 500 )
-			)
-		);
-		
-		return $titleArray;
-	}
-	
 }

@@ -4,7 +4,9 @@ namespace SubPageList;
 use DatabaseBase;
 
 /**
- * Interface for database connection providers.
+ * Interface for objects that can invalidate the caches affected by a
+ * change to a page name relevant for subpage listing of this page, it's
+ * parents and it's children.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,23 +31,11 @@ use DatabaseBase;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-interface DBConnectionProvider {
+interface CacheInvalidator {
 
 	/**
-	 * Returns the database connection.
-	 * Initialization of this connection is done if it was not already initialized.
-	 *
-	 * @since 1.0
-	 *
-	 * @return DatabaseBase
-	 */
-	public function getConnection();
-
-	/**
-	 * Releases the connection if doing so makes any sense resource wise.
-	 *
 	 * @since 1.0
 	 */
-	public function releaseConnection();
+	public function invalidateCaches();
 
 }

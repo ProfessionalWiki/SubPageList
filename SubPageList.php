@@ -52,6 +52,7 @@ if ( !defined( 'ParamProcessor_VERSION' ) ) {
 
 define( 'SPL_VERSION', '1.0 alpha' );
 
+
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'SubPageList',
@@ -64,15 +65,21 @@ $wgExtensionCredits['parserhook'][] = array(
 	'descriptionmsg' => 'spl-desc'
 );
 
-$egSPLIP = dirname( __FILE__ );
 
-$wgExtensionMessagesFiles['SubPageList'] = $egSPLIP . '/SubPageList.i18n.php';
-$wgExtensionMessagesFiles['SubPageListMagic'] = $egSPLIP . '/SubPageList.i18n.magic.php';
+$wgExtensionMessagesFiles['SubPageList'] = __DIR__ . '/SubPageList.i18n.php';
+$wgExtensionMessagesFiles['SubPageListMagic'] = __DIR__ . '/SubPageList.i18n.magic.php';
 
-$wgAutoloadClasses['SubPageBase'] = $egSPLIP . '/SubPageBase.class.php';
-$wgAutoloadClasses['SubPageList'] = $egSPLIP . '/SubPageList.class.php';
-$wgAutoloadClasses['SubPageCount'] = $egSPLIP . '/SubPageCount.class.php';
-$wgAutoloadClasses['SPLHooks'] = $egSPLIP . '/SubPageList.hooks.php';
+
+$wgAutoloadClasses['SubPageBase'] = __DIR__ . '/SubPageBase.class.php';
+$wgAutoloadClasses['SubPageList'] = __DIR__ . '/SubPageList.class.php';
+$wgAutoloadClasses['SubPageCount'] = __DIR__ . '/SubPageCount.class.php';
+$wgAutoloadClasses['SPLHooks'] = __DIR__ . '/SubPageList.hooks.php';
+
+$wgAutoloadClasses['SubPageList\DBConnectionProvider'] = __DIR__ . '/includes/DBConnectionProvider.php';
+$wgAutoloadClasses['SubPageList\LazyDBConnectionProvider'] = __DIR__ . '/includes/LazyDBConnectionProvider.php';
+$wgAutoloadClasses['SubPageList\SimpleSubPageFinder'] = __DIR__ . '/includes/SimpleSubPageFinder.php';
+$wgAutoloadClasses['SubPageList\SubPageFinder'] = __DIR__ . '/includes/SubPageFinder.php';
+
 
 $wgHooks['ParserFirstCallInit'][] = 'SubPageList::staticInit';
 $wgHooks['ParserFirstCallInit'][] = 'SubPageCount::staticInit';
@@ -80,5 +87,31 @@ $wgHooks['ParserFirstCallInit'][] = 'SubPageCount::staticInit';
 $wgHooks['ArticleInsertComplete'][] = 'SPLHooks::onArticleInsertComplete';
 $wgHooks['ArticleDeleteComplete'][] = 'SPLHooks::onArticleDeleteComplete';
 $wgHooks['TitleMoveComplete'][] = 'SPLHooks::onTitleMoveComplete';
+
+/**
+ * Hook to add PHPUnit test cases.
+ * @see https://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
+ *
+ * @since 1.0
+ *
+ * @param array $files
+ *
+ * @return boolean
+ */
+$wgHooks['UnitTestsList'][]	= function( array &$files ) {
+	// @codeCoverageIgnoreStart
+	$testFiles = array(
+		'LazyDBConnectionProvider',
+		'SimpleSubPageFinder',
+	);
+
+	foreach ( $testFiles as $file ) {
+		$files[] = __DIR__ . '/tests/' . $file . 'Test.php';
+	}
+
+	return true;
+	// @codeCoverageIgnoreEnd
+};
+
 
 require_once 'SubPageList.settings.php';

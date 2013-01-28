@@ -1,7 +1,7 @@
 <?php
 
 namespace SubPageList;
-use DatabaseBase;
+use Title;
 
 /**
  * Interface for objects that can invalidate the caches affected by a
@@ -35,7 +35,9 @@ interface CacheInvalidator {
 
 	/**
 	 * @since 1.0
+	 *
+	 * @param Title $title
 	 */
-	public function invalidateCaches();
+	public function invalidateCaches( Title $title );
 
 }

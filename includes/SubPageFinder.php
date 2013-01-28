@@ -36,7 +36,7 @@ interface SubPageFinder {
 	 *
 	 * @param Title $title
 	 *
-	 * @return TitleArray
+	 * @return Title[]
 	 */
 	public function getSubPagesFor( Title $title );
 

@@ -54,17 +54,9 @@ class SimpleSubPageFinder implements SubPageFinder {
 	 *
 	 * @param Title $title
 	 *
-	 * @return Title[]|TitleArray
+	 * @return Title[]
 	 */
 	public function getSubPagesFor( Title $title ) {
-		$slashPosition = strpos( $title->getDBkey(), '/' );
-
-		if ( $slashPosition === false ) {
-			return array();
-		}
-
-		$baseTitleText = substr( $title->getDBkey(), 0, $slashPosition );
-
 		$dbr = $this->connectionProvider->getConnection();
 
 		$titleArray = TitleArray::newFromResult(
@@ -72,14 +64,14 @@ class SimpleSubPageFinder implements SubPageFinder {
 				array( 'page_id', 'page_namespace', 'page_title', 'page_is_redirect' ),
 				array(
 					'page_namespace' => $title->getNamespace(),
-					'page_title' => $dbr->buildLike( $baseTitleText . '/', $dbr->anyString() )
+					'page_title' => $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString() )
 				),
 				__METHOD__,
 				array( 'LIMIT' => 500 )
 			)
 		);
 
-		return $titleArray;
+		return iterator_to_array( $titleArray );
 	}
 
 }

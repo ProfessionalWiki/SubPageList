@@ -62,7 +62,11 @@ class SimpleSubPageFinderTest extends \MediaWikiTestCase {
 
 		$pages = $finder->getSubPagesFor( $title );
 
-		$this->assertTrue( is_array( $pages ) || $pages instanceof \TitleArray );
+		$this->assertInternalType( 'array', $pages );
+
+		foreach ( $pages as $page ) {
+			$this->assertInstanceOf( 'Title', $page );
+		}
 	}
 
 }

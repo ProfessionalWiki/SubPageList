@@ -73,7 +73,6 @@ $wgExtensionMessagesFiles['SubPageListMagic'] = __DIR__ . '/SubPageList.i18n.mag
 $wgAutoloadClasses['SubPageBase'] = __DIR__ . '/SubPageBase.class.php';
 $wgAutoloadClasses['SubPageList'] = __DIR__ . '/SubPageList.class.php';
 $wgAutoloadClasses['SubPageCount'] = __DIR__ . '/SubPageCount.class.php';
-$wgAutoloadClasses['SPLHooks'] = __DIR__ . '/SubPageList.hooks.php';
 
 $wgAutoloadClasses['SubPageList\DBConnectionProvider'] = __DIR__ . '/includes/DBConnectionProvider.php';
 $wgAutoloadClasses['SubPageList\LazyDBConnectionProvider'] = __DIR__ . '/includes/LazyDBConnectionProvider.php';
@@ -84,9 +83,58 @@ $wgAutoloadClasses['SubPageList\SubPageFinder'] = __DIR__ . '/includes/SubPageFi
 $wgHooks['ParserFirstCallInit'][] = 'SubPageList::staticInit';
 $wgHooks['ParserFirstCallInit'][] = 'SubPageCount::staticInit';
 
-$wgHooks['ArticleInsertComplete'][] = 'SPLHooks::onArticleInsertComplete';
-$wgHooks['ArticleDeleteComplete'][] = 'SPLHooks::onArticleDeleteComplete';
-$wgHooks['TitleMoveComplete'][] = 'SPLHooks::onTitleMoveComplete';
+/**
+ * Occurs after a new article has been created.
+ * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleInsertComplete
+ *
+ * @param WikiPage $article
+ * @param User $user
+ * @param $text
+ * @param $summary
+ * @param $minoredit
+ * @param $watchthis
+ * @param $sectionanchor
+ * @param $flags
+ * @param Revision $revision
+ */
+$wgHooks['ArticleInsertComplete'][] = function( WikiPage $article, User &$user, $text, $summary, $minoredit,
+												$watchthis, $sectionanchor, &$flags, Revision $revision ) {
+
+	if ( $GLOBALS['egSPLAutorefresh'] ) {
+		// TODO $article->getTitle()
+	}
+};
+
+/**
+ * Occurs after the delete article request has been processed.
+ * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDeleteComplete
+ *
+ * @param $article
+ * @param User $user
+ * @param $reason
+ * @param $id
+ */
+$wgHooks['ArticleDeleteComplete'][] = function( &$article, User &$user, $reason, $id ) {
+	// TODO $article->getTitle()
+};
+
+/**
+ * Occurs whenever a request to move an article is completed.
+ * https://www.mediawiki.org/wiki/Manual:Hooks/TitleMoveComplete
+ *
+ * @param Title $title
+ * @param Title $newtitle
+ * @param User $user
+ * @param $oldid
+ * @param $newid
+ */
+$wgHooks['TitleMoveComplete'][] = function( Title &$title, Title &$newtitle, User &$user, $oldid, $newid ) {
+
+	// TODO
+//	self::invalidateBasePages( $title );
+//	self::invalidateBasePages( $newtitle );
+
+};
 
 /**
  * Hook to add PHPUnit test cases.

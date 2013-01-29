@@ -4,10 +4,12 @@ Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:SubPage
 Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/SubPageList/RELEASE-NOTES?view=co
 
 
-=== Version 0.6 ===
+=== Version 1.0 ===
 (dev)
 
-*
+* Changed minimum MediaWiki version to 1.19.
+* Changed minimum PHP version to 5.3.
+* Changed minimum Validator version to 1.0.
 
 === Version 0.5 ===
 2011-12-27

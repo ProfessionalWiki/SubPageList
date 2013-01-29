@@ -1,12 +1,10 @@
 <?php
 
 namespace SubPageList\Test;
-use SubPageList\SimpleSubPageFinder;
-use SubPageList\SubPageFinder;
-use Title;
+use SubPageList\Settings;
 
 /**
- * Tests for the SubPageList\SimpleSubPageFinder class.
+ * Tests for the SubPageList\Settings class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,44 +27,36 @@ use Title;
  * @ingroup SPLTest
  *
  * @group SubPageList
- * @group Database
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SimpleSubPageFinderTest extends \MediaWikiTestCase {
+class SettingsTest extends \MediaWikiTestCase {
 
-	/**
-	 * @return SubPageFinder
-	 */
-	public function newInstance() {
-		return new SimpleSubPageFinder( new \SubPageList\LazyDBConnectionProvider( DB_SLAVE ) );
-	}
+	public function constructorProvider() {
+		$settingArrays = array(
+			array(),
+			array( 'foo' => 'bar' ),
+			array( 'foo' => 'bar', 'baz' => 'BAH' ),
+			array( '~[,,_,,]:3' => array( 9001, 4.2 ) ),
+		);
 
-	public function titleProvider() {
-		$titles = array();
-
-		$titles[] = Title::newMainPage();
-		$titles[] = Title::newFromText( 'ohi there i do not exist nyan nyan nyan' );
-
-		return $this->arrayWrap( $titles );
+		return $this->arrayWrap( $settingArrays );
 	}
 
 	/**
-	 * @dataProvider titleProvider
+	 * @dataProvider constructorProvider
 	 *
-	 * @param Title $title
+	 * @param array $settings
 	 */
-	public function testGetSubPagesFor( Title $title ) {
-		$finder = $this->newInstance();
+	public function testConstructor( array $settings ) {
+		$settingsObject = new Settings( $settings );
 
-		$pages = $finder->getSubPagesFor( $title );
-
-		$this->assertInternalType( 'array', $pages );
-
-		foreach ( $pages as $page ) {
-			$this->assertInstanceOf( 'Title', $page );
+		foreach ( $settings as $name => $value ) {
+			$this->assertEquals( $value, $settingsObject->get( $name ) );
 		}
+
+		$this->assertTrue( true );
 	}
 
 }

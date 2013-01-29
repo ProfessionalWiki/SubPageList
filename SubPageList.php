@@ -180,6 +180,7 @@ call_user_func( function() {
 			// @codeCoverageIgnoreStart
 			$testFiles = array(
 				'LazyDBConnectionProvider',
+				'Settings',
 				'SimpleSubPageFinder',
 			);
 

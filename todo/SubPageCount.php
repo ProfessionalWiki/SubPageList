@@ -5,15 +5,14 @@
  *
  * @since 0.6
  *
- * @file SubPageCount.class.php
+ * @file
  * @ingroup SPL
  *
- * @licence GNU GPL v3 or later
+ * @licence GNU GPL v2+
  *
  * @author Jeroen De Dauw
  * @author Van de Bugger
  * @author James McCormack (email: user "qedoc" at hotmail); preceding version Martin Schallnahs <myself@schaelle.de>, original Rob Church <robchur@gmail.com>
- * @copyright © 2008 James McCormack, preceding version Martin Schallnahs, original Rob Church
  */
 final class SubPageCount extends SubPageBase {
 	/**
@@ -47,19 +46,19 @@ final class SubPageCount extends SubPageBase {
 	 */
 	protected function getParameterInfo( $type ) {
 		$params = array();
-		$params['page'] = new Parameter(
-			'page',
-			Parameter::TYPE_STRING,
-			'',
-			array( 'parent' )    // Aliases.
+
+		$params['page'] = array(
+			'default' => '',
+			'aliases' => 'parent',
+			'message' => 'spl-subpages-par-page',
 		);
-		$params['page']->setMessage( 'spl-subpages-par-page' );
-		$params['kidsonly'] = new Parameter(
-			'kidsonly',
-			Parameter::TYPE_BOOLEAN,
-			'no'
+
+		$params['kidsonly'] = array(
+			'type' => 'boolean',
+			'default' => false,
+			'message' => 'spl-subpages-par-kidsonly',
 		);
-		$params['kidsonly']->setMessage( 'spl-subpages-par-kidsonly' );
+
 		return $params;
 	}
 
@@ -110,8 +109,6 @@ final class SubPageCount extends SubPageBase {
 		$row = $dbr->fetchRow( $res );
 		$count = ( isset( $row['rowcount'] ) ? $row['rowcount'] : 0 );
 		return $count;
-	} // render
+	}
 
 }
-
-// end of file //

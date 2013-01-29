@@ -5,15 +5,14 @@
  * 
  * @since 0.1
  * 
- * @file SubPageList.class.php
+ * @file
  * @ingroup SPL
  * 
- * @licence GNU GPL v3 or later
+ * @licence GNU GPL v2+
  *
  * @author Jeroen De Dauw
  * @author Van de Bugger
  * @author James McCormack (email: user "qedoc" at hotmail); preceding version Martin Schallnahs <myself@schaelle.de>, original Rob Church <robchur@gmail.com>
- * @copyright © 2008 James McCormack, preceding version Martin Schallnahs, original Rob Church
  */
 final class SubPageList extends SubPageBase {
 	/**
@@ -48,90 +47,106 @@ final class SubPageList extends SubPageBase {
 	 */
 	protected function getParameterInfo( $type ) {
 		$params = array();
-		
-		$params['sort'] = new Parameter( 'sort' );
-		$params['sort']->addAliases( 'order' );
-		$params['sort']->addCriteria( new CriterionInArray( 'asc', 'desc' ) );
-		$params['sort']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );
-		$params['sort']->setDefault( 'asc' );
-		$params['sort']->setDescription( wfMsg( 'spl-subpages-par-sort' ) );
-		
-		$params['sortby'] = new Parameter( 'sortby' );
-		$params['sortby']->addCriteria( new CriterionInArray( 'title', 'lastedit' ) );
-		$params['sortby']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );
-		$params['sortby']->setDefault( 'title' );
-		$params['sortby']->setDescription( wfMsg( 'spl-subpages-par-sortby' ) );
-		
-		$params['format'] = new Parameter( 'format' );
-		$params['format']->addAliases( 'liststyle' );
-		$params['format']->addCriteria( new CriterionInArray(
-			'ul', 'unordered',
-			'ol', 'ordered',
-			'list', 'bar'
-		) );
-		$params['format']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );
-		$params['format']->setDefault( 'ul' );
-		$params['format']->setDescription( wfMsg( 'spl-subpages-par-format' ) );
-		
-		$params['page'] = new Parameter( 'page' );
-		$params['page']->addAliases( 'parent' );
-		$params['page']->setDefault( '' );
-		$params['page']->setDescription( wfMsg( 'spl-subpages-par-page' ) );
-		
-		$params['showpage'] = new Parameter( 'showpage', Parameter::TYPE_BOOLEAN );
-		$params['showpage']->addAliases( 'showparent' );
-		$params['showpage']->setDefault( 'no' );
-		$params['showpage']->setDescription( wfMsg( 'spl-subpages-par-showpage' ) );
-		
-		$params['pathstyle'] = new Parameter( 'pathstyle' );
-		$params['pathstyle']->addAliases( 'showpath' );
-		$params['pathstyle']->addCriteria( new CriterionInArray(
-			'none', 'no',
-			'subpagename', 'children', 'notparent',
-			'pagename',
-			'full', 		// Deprecate? --vdb
-			'fullpagename'
-		) );
-		$params['pathstyle']->setDefault( 'none' );
-		$params['pathstyle']->addManipulations( new ParamManipulationFunctions( 'strtolower' ) );
-		$params['pathstyle']->setDescription( wfMsg( 'spl-subpages-par-pathstyle' ) );
-		
-		$params['kidsonly'] = new Parameter( 'kidsonly', Parameter::TYPE_BOOLEAN );
-		$params['kidsonly']->setDefault( 'no' );
-		$params['kidsonly']->setDescription( wfMsg( 'spl-subpages-par-kidsonly' ) );
-		
-		$params['limit'] = new Parameter( 'limit', Parameter::TYPE_INTEGER );
-		$params['limit']->setDefault( 200 );
-		$params['limit']->addCriteria( new CriterionInRange( 1, 500 ) );
-		$params['limit']->setDescription( wfMsg( 'spl-subpages-par-limit' ) );
 
-		$params['element'] = new Parameter( 'element', Parameter::TYPE_STRING, 'div' );
-		$params['element']->addCriteria( new CriterionInArray( 'div', 'p', 'span' ) );
-		$params['element']->setDescription( wfMsg( 'spl-subpages-par-element' ) );
-		
-		$params['class'] = new Parameter( 'class', Parameter::TYPE_STRING, 'subpagelist' );
-		$params['class']->setDescription( wfMsg( 'spl-subpages-par-class' ) );
-		
-		$params['intro'] = new Parameter( 'intro', Parameter::TYPE_STRING, '' );
-		$params['intro']->setDescription( wfMsg( 'spl-subpages-par-intro' ) );
-		
-		$params['outro'] = new Parameter( 'outro', Parameter::TYPE_STRING, '' );
-		$params['outro']->setDescription( wfMsg( 'spl-subpages-par-outro' ) );
-		
-		$params['default'] = new Parameter( 'default', Parameter::TYPE_STRING, '' );
-		$params['default']->setDescription( wfMsg( 'spl-subpages-par-default' ) );
-		
-		$params['separator'] = new Parameter( 'separator', Parameter::TYPE_STRING, '&#160;· ' );
-		$params['separator']->addAliases( 'sep' );
-		$params['separator']->setDescription( wfMsg( 'spl-subpages-par-separator' ) );
-		
-		$params['template'] = new Parameter( 'template', Parameter::TYPE_STRING, '' );
-		$params['template']->setDescription( wfMsg( 'spl-subpages-par-template' ) );
-		
-		$params['links'] = new Parameter( 'links', Parameter::TYPE_BOOLEAN, true );
-		$params['links']->addAliases( 'link' );
-		$params['links']->setDescription( wfMsg( 'spl-subpages-par-links' ) );
-		
+		$params['sort'] = array(
+			'aliases' => 'order',
+			'values' => array( 'asc', 'desc' ),
+			'tolower' => true,
+			'default' => 'asc',
+		);
+
+		$params['sortby'] = array(
+			'values' => array( 'title', 'lastedit' ),
+			'tolower' => true,
+			'default' => 'title',
+		);
+
+		$params['format'] = array(
+			'aliases' => 'liststyle',
+			'values' => array(
+				'ul', 'unordered',
+				'ol', 'ordered',
+				'list', 'bar'
+			),
+			'tolower' => true,
+			'default' => 'ul',
+		);
+
+		$params['page'] = array(
+			'aliases' => 'parent',
+			'default' => '',
+		);
+
+		$params['showpage'] = array(
+			'type' => 'boolean',
+			'aliases' => 'showparent',
+			'default' => false,
+		);
+
+		$params['pathstyle'] = array(
+			'aliases' => 'showpath',
+			'values' => array(
+				'none', 'no',
+				'subpagename', 'children', 'notparent',
+				'pagename',
+				'full', 		// Deprecate? --vdb
+				'fullpagename'
+			),
+			'tolower' => true,
+			'default' => 'none',
+		);
+
+		$params['kidsonly'] = array(
+			'type' => 'boolean',
+			'default' => false,
+		);
+
+		$params['links'] = array(
+			'type' => 'boolean',
+			'aliases' => 'link',
+			'default' => true,
+		);
+
+		$params['limit'] = array(
+			'type' => 'integer',
+			'default' => 200,
+			'range' => array( 1, 500 ),
+		);
+
+		$params['element'] = array(
+			'default' => 'div',
+			'aliases' => array( 'div', 'p', 'span' ),
+		);
+
+		$params['class'] = array(
+			'default' => 'subpagelist',
+		);
+
+		$params['intro'] = array(
+			'default' => '',
+		);
+
+		$params['outro'] = array(
+			'default' => '',
+		);
+
+		$params['default'] = array(
+			'default' => '',
+		);
+
+		$params['separator'] = array(
+			'aliases' => 'sep',
+			'default' => '&#160;· ',
+		);
+
+		$params['template'] = array(
+			'default' => '',
+		);
+
+		foreach ( $params as $name => &$param ) {
+			$param['message'] = 'spl-subpages-par-' . $name;
+		}
+
 		return $params;
 	}
 	

@@ -7,9 +7,16 @@ Latest version of the release notes: https://gerrit.wikimedia.org/r/gitweb?p=med
 === Version 1.0 ===
 (dev)
 
-* Changed minimum MediaWiki version to 1.19.
-* Changed minimum PHP version to 5.3.
-* Changed minimum Validator version to 1.0.
+; Compatibility changes
+
+* Changed MediaWiki compatibility from MW 1.17-1.19 to 1.19-1.21.
+* Changed PHP compatibility from 5.2.x and 5.3.x to 5.3.x and 5.4.x.
+* Changed Validator compatibility from 0.4.x to 1.0.x.
+
+; Internal improvements
+
+* Redesign of most of the code
+* Added various PHPUnit tests
 
 === Version 0.5 ===
 2011-12-27

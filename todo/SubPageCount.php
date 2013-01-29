@@ -46,19 +46,19 @@ final class SubPageCount extends SubPageBase {
 	 */
 	protected function getParameterInfo( $type ) {
 		$params = array();
-		$params['page'] = new Parameter(
-			'page',
-			Parameter::TYPE_STRING,
-			'',
-			array( 'parent' )    // Aliases.
+
+		$params['page'] = array(
+			'default' => '',
+			'aliases' => 'parent',
+			'message' => 'spl-subpages-par-page',
 		);
-		$params['page']->setMessage( 'spl-subpages-par-page' );
-		$params['kidsonly'] = new Parameter(
-			'kidsonly',
-			Parameter::TYPE_BOOLEAN,
-			'no'
+
+		$params['kidsonly'] = array(
+			'type' => 'boolean',
+			'default' => false,
+			'message' => 'spl-subpages-par-kidsonly',
 		);
-		$params['kidsonly']->setMessage( 'spl-subpages-par-kidsonly' );
+
 		return $params;
 	}
 

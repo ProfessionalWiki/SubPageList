@@ -48,23 +48,20 @@ final class SubPageList extends SubPageBase {
 	protected function getParameterInfo( $type ) {
 		$params = array();
 
-		$params[] = array(
-			'name' => 'sort',
+		$params['sort'] = array(
 			'aliases' => 'order',
 			'values' => array( 'asc', 'desc' ),
 			'tolower' => true,
 			'default' => 'asc',
 		);
 
-		$params[] = array(
-			'name' => 'sortby',
+		$params['sortby'] = array(
 			'values' => array( 'title', 'lastedit' ),
 			'tolower' => true,
 			'default' => 'title',
 		);
 
-		$params[] = array(
-			'name' => 'format',
+		$params['format'] = array(
 			'aliases' => 'liststyle',
 			'values' => array(
 				'ul', 'unordered',
@@ -75,21 +72,18 @@ final class SubPageList extends SubPageBase {
 			'default' => 'ul',
 		);
 
-		$params[] = array(
-			'name' => 'page',
+		$params['page'] = array(
 			'aliases' => 'parent',
 			'default' => '',
 		);
 
-		$params[] = array(
+		$params['showpage'] = array(
 			'type' => 'boolean',
-			'name' => 'showpage',
 			'aliases' => 'showparent',
 			'default' => false,
 		);
 
-		$params[] = array(
-			'name' => 'pathstyle',
+		$params['pathstyle'] = array(
 			'aliases' => 'showpath',
 			'values' => array(
 				'none', 'no',
@@ -102,65 +96,55 @@ final class SubPageList extends SubPageBase {
 			'default' => 'none',
 		);
 
-		$params[] = array(
+		$params['kidsonly'] = array(
 			'type' => 'boolean',
-			'name' => 'kidsonly',
 			'default' => false,
 		);
 
-		$params[] = array(
+		$params['links'] = array(
 			'type' => 'boolean',
-			'name' => 'links',
 			'aliases' => 'link',
 			'default' => true,
 		);
 
-		$params[] = array(
+		$params['limit'] = array(
 			'type' => 'integer',
-			'name' => 'limit',
 			'default' => 200,
 			'range' => array( 1, 500 ),
 		);
 
-		$params[] = array(
-			'name' => 'element',
+		$params['element'] = array(
 			'default' => 'div',
 			'aliases' => array( 'div', 'p', 'span' ),
 		);
 
-		$params[] = array(
-			'name' => 'class',
+		$params['class'] = array(
 			'default' => 'subpagelist',
 		);
 
-		$params[] = array(
-			'name' => 'intro',
+		$params['intro'] = array(
 			'default' => '',
 		);
 
-		$params[] = array(
-			'name' => 'outro',
+		$params['outro'] = array(
 			'default' => '',
 		);
 
-		$params[] = array(
-			'name' => 'default',
+		$params['default'] = array(
 			'default' => '',
 		);
 
-		$params[] = array(
-			'name' => 'separator',
+		$params['separator'] = array(
 			'aliases' => 'sep',
 			'default' => '&#160;· ',
 		);
 
-		$params[] = array(
-			'name' => 'template',
+		$params['template'] = array(
 			'default' => '',
 		);
 
-		foreach ( $params as &$param ) {
-			$param['message'] = 'spl-subpages-par-' . $param['name'];
+		foreach ( $params as $name => &$param ) {
+			$param['message'] = 'spl-subpages-par-' . $name;
 		}
 
 		return $params;

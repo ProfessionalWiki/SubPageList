@@ -179,6 +179,7 @@ call_user_func( function() {
 		$wgHooks['UnitTestsList'][]	= function( array &$files ) {
 			// @codeCoverageIgnoreStart
 			$testFiles = array(
+				'Extension',
 				'LazyDBConnectionProvider',
 				'Settings',
 				'SimpleSubPageFinder',

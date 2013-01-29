@@ -75,9 +75,9 @@ call_user_func( function() {
 	$wgExtensionMessagesFiles['SubPageListMagic'] = __DIR__ . '/SubPageList.i18n.magic.php';
 
 
-	$wgAutoloadClasses['SubPageBase'] = __DIR__ . '/SubPageBase.class.php';
-	$wgAutoloadClasses['SubPageList'] = __DIR__ . '/SubPageList.class.php';
-	$wgAutoloadClasses['SubPageCount'] = __DIR__ . '/SubPageCount.class.php';
+	$wgAutoloadClasses['SubPageBase'] = __DIR__ . '/todo/SubPageBase.php';
+	$wgAutoloadClasses['SubPageList'] = __DIR__ . '/todo/SubPageList.php';
+	$wgAutoloadClasses['SubPageCount'] = __DIR__ . '/todo/SubPageCount.php';
 
 	$wgAutoloadClasses['SubPageList\CacheInvalidator'] = __DIR__ . '/includes/CacheInvalidator.php';
 	$wgAutoloadClasses['SubPageList\DBConnectionProvider'] = __DIR__ . '/includes/DBConnectionProvider.php';
@@ -100,18 +100,6 @@ call_user_func( function() {
 		/**
 		 * Occurs after a new article has been created.
 		 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleInsertComplete
-		 *
-		 * @param WikiPage $article
-		 * @param User $user
-		 * @param $text
-		 * @param $summary
-		 * @param $minorEdit
-		 * @param $watchThis
-		 * @param $sectionAnchor
-		 * @param $flags
-		 * @param Revision $revision
-		 *
-		 * @return boolean
 		 */
 		$wgHooks['ArticleInsertComplete'][]
 			= function( WikiPage $article, User &$user, $text, $summary, $minorEdit,
@@ -127,13 +115,6 @@ call_user_func( function() {
 		/**
 		 * Occurs after the delete article request has been processed.
 		 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDeleteComplete
-		 *
-		 * @param $article
-		 * @param User $user
-		 * @param $reason
-		 * @param $id
-		 *
-		 * @return boolean
 		 */
 		$wgHooks['ArticleDeleteComplete'][] = function( &$article, User &$user, $reason, $id ) use ( $extension ) {
 			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
@@ -146,14 +127,6 @@ call_user_func( function() {
 		/**
 		 * Occurs whenever a request to move an article is completed.
 		 * https://www.mediawiki.org/wiki/Manual:Hooks/TitleMoveComplete
-		 *
-		 * @param Title $title
-		 * @param Title $newTitle
-		 * @param User $user
-		 * @param $oldId
-		 * @param $newId
-		 *
-		 * @return boolean
 		 */
 		$wgHooks['TitleMoveComplete'][] = function( Title &$title, Title &$newTitle, User &$user, $oldId, $newId ) use ( $extension ) {
 			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {

@@ -2,4 +2,4 @@
 host=gerrit.wikimedia.org
 port=29418
 project=mediawiki/extensions/SubPageList.git
-defaultbranch=1.0.x
+defaultbranch=master

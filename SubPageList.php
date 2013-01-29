@@ -35,6 +35,8 @@
  * @defgroup SPL SubPageList
  */
 
+use SubPageList\Settings;
+
 if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
@@ -53,113 +55,144 @@ if ( !defined( 'ParamProcessor_VERSION' ) ) {
 define( 'SPL_VERSION', '1.0 alpha' );
 
 
-$wgExtensionCredits['parserhook'][] = array(
-	'path' => __FILE__,
-	'name' => 'SubPageList',
-	'version' => SPL_VERSION,
-	'author' => array(
-		'[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
-		'Van de Bugger. Based on [https://www.mediawiki.org/wiki/Extension:SubPageList3 SubPageList3].',
-	),
-	'url' => 'https://www.mediawiki.org/wiki/Extension:SubPageList',
-	'descriptionmsg' => 'spl-desc'
-);
+call_user_func( function() {
+	global $wgExtensionCredits, $wgExtensionMessagesFiles, $wgAutoloadClasses, $wgExtensionFunctions;
 
-
-$wgExtensionMessagesFiles['SubPageList'] = __DIR__ . '/SubPageList.i18n.php';
-$wgExtensionMessagesFiles['SubPageListMagic'] = __DIR__ . '/SubPageList.i18n.magic.php';
-
-
-$wgAutoloadClasses['SubPageBase'] = __DIR__ . '/SubPageBase.class.php';
-$wgAutoloadClasses['SubPageList'] = __DIR__ . '/SubPageList.class.php';
-$wgAutoloadClasses['SubPageCount'] = __DIR__ . '/SubPageCount.class.php';
-
-$wgAutoloadClasses['SubPageList\DBConnectionProvider'] = __DIR__ . '/includes/DBConnectionProvider.php';
-$wgAutoloadClasses['SubPageList\LazyDBConnectionProvider'] = __DIR__ . '/includes/LazyDBConnectionProvider.php';
-$wgAutoloadClasses['SubPageList\SimpleSubPageFinder'] = __DIR__ . '/includes/SimpleSubPageFinder.php';
-$wgAutoloadClasses['SubPageList\SubPageFinder'] = __DIR__ . '/includes/SubPageFinder.php';
-
-
-$wgHooks['ParserFirstCallInit'][] = 'SubPageList::staticInit';
-$wgHooks['ParserFirstCallInit'][] = 'SubPageCount::staticInit';
-
-/**
- * Occurs after a new article has been created.
- * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleInsertComplete
- *
- * @param WikiPage $article
- * @param User $user
- * @param $text
- * @param $summary
- * @param $minoredit
- * @param $watchthis
- * @param $sectionanchor
- * @param $flags
- * @param Revision $revision
- */
-$wgHooks['ArticleInsertComplete'][] = function( WikiPage $article, User &$user, $text, $summary, $minoredit,
-												$watchthis, $sectionanchor, &$flags, Revision $revision ) {
-
-	if ( $GLOBALS['egSPLAutorefresh'] ) {
-		// TODO $article->getTitle()
-	}
-};
-
-/**
- * Occurs after the delete article request has been processed.
- * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDeleteComplete
- *
- * @param $article
- * @param User $user
- * @param $reason
- * @param $id
- */
-$wgHooks['ArticleDeleteComplete'][] = function( &$article, User &$user, $reason, $id ) {
-	// TODO $article->getTitle()
-};
-
-/**
- * Occurs whenever a request to move an article is completed.
- * https://www.mediawiki.org/wiki/Manual:Hooks/TitleMoveComplete
- *
- * @param Title $title
- * @param Title $newtitle
- * @param User $user
- * @param $oldid
- * @param $newid
- */
-$wgHooks['TitleMoveComplete'][] = function( Title &$title, Title &$newtitle, User &$user, $oldid, $newid ) {
-
-	// TODO
-//	self::invalidateBasePages( $title );
-//	self::invalidateBasePages( $newtitle );
-
-};
-
-/**
- * Hook to add PHPUnit test cases.
- * @see https://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
- *
- * @since 1.0
- *
- * @param array $files
- *
- * @return boolean
- */
-$wgHooks['UnitTestsList'][]	= function( array &$files ) {
-	// @codeCoverageIgnoreStart
-	$testFiles = array(
-		'LazyDBConnectionProvider',
-		'SimpleSubPageFinder',
+	$wgExtensionCredits['parserhook'][] = array(
+		'path' => __FILE__,
+		'name' => 'SubPageList',
+		'version' => SPL_VERSION,
+		'author' => array(
+			'[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
+			'Van de Bugger. Based on [https://www.mediawiki.org/wiki/Extension:SubPageList3 SubPageList3].',
+		),
+		'url' => 'https://www.mediawiki.org/wiki/Extension:SubPageList',
+		'descriptionmsg' => 'spl-desc'
 	);
 
-	foreach ( $testFiles as $file ) {
-		$files[] = __DIR__ . '/tests/' . $file . 'Test.php';
-	}
 
-	return true;
-	// @codeCoverageIgnoreEnd
-};
+	$wgExtensionMessagesFiles['SubPageList'] = __DIR__ . '/SubPageList.i18n.php';
+	$wgExtensionMessagesFiles['SubPageListMagic'] = __DIR__ . '/SubPageList.i18n.magic.php';
 
+
+	$wgAutoloadClasses['SubPageBase'] = __DIR__ . '/SubPageBase.class.php';
+	$wgAutoloadClasses['SubPageList'] = __DIR__ . '/SubPageList.class.php';
+	$wgAutoloadClasses['SubPageCount'] = __DIR__ . '/SubPageCount.class.php';
+
+	$wgAutoloadClasses['SubPageList\CacheInvalidator'] = __DIR__ . '/includes/CacheInvalidator.php';
+	$wgAutoloadClasses['SubPageList\DBConnectionProvider'] = __DIR__ . '/includes/DBConnectionProvider.php';
+	$wgAutoloadClasses['SubPageList\Extension'] = __DIR__ . '/includes/Extension.php';
+	$wgAutoloadClasses['SubPageList\LazyDBConnectionProvider'] = __DIR__ . '/includes/LazyDBConnectionProvider.php';
+	$wgAutoloadClasses['SubPageList\Settings'] = __DIR__ . '/includes/Settings.php';
+	$wgAutoloadClasses['SubPageList\SimpleCacheInvalidator'] = __DIR__ . '/includes/SimpleCacheInvalidator.php';
+	$wgAutoloadClasses['SubPageList\SimpleSubPageFinder'] = __DIR__ . '/includes/SimpleSubPageFinder.php';
+	$wgAutoloadClasses['SubPageList\SubPageFinder'] = __DIR__ . '/includes/SubPageFinder.php';
+
+
+	$wgExtensionFunctions[] = function() {
+		global $wgHooks;
+
+		$wgHooks['ParserFirstCallInit'][] = 'SubPageList::staticInit';
+		$wgHooks['ParserFirstCallInit'][] = 'SubPageCount::staticInit';
+
+		$extension = new \SubPageList\Extension( Settings::newFromGlobals( $GLOBALS ) );
+
+		/**
+		 * Occurs after a new article has been created.
+		 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleInsertComplete
+		 *
+		 * @param WikiPage $article
+		 * @param User $user
+		 * @param $text
+		 * @param $summary
+		 * @param $minorEdit
+		 * @param $watchThis
+		 * @param $sectionAnchor
+		 * @param $flags
+		 * @param Revision $revision
+		 *
+		 * @return boolean
+		 */
+		$wgHooks['ArticleInsertComplete'][]
+			= function( WikiPage $article, User &$user, $text, $summary, $minorEdit,
+						$watchThis, $sectionAnchor, &$flags, Revision $revision ) use ( $extension ) {
+
+			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
+				$extension->getCacheInvalidator()->invalidateCaches( $article->getTitle() );
+			}
+
+			return true;
+		};
+
+		/**
+		 * Occurs after the delete article request has been processed.
+		 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDeleteComplete
+		 *
+		 * @param $article
+		 * @param User $user
+		 * @param $reason
+		 * @param $id
+		 *
+		 * @return boolean
+		 */
+		$wgHooks['ArticleDeleteComplete'][] = function( &$article, User &$user, $reason, $id ) use ( $extension ) {
+			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
+				$extension->getCacheInvalidator()->invalidateCaches( $article->getTitle() );
+			}
+
+			return true;
+		};
+
+		/**
+		 * Occurs whenever a request to move an article is completed.
+		 * https://www.mediawiki.org/wiki/Manual:Hooks/TitleMoveComplete
+		 *
+		 * @param Title $title
+		 * @param Title $newTitle
+		 * @param User $user
+		 * @param $oldId
+		 * @param $newId
+		 *
+		 * @return boolean
+		 */
+		$wgHooks['TitleMoveComplete'][] = function( Title &$title, Title &$newTitle, User &$user, $oldId, $newId ) use ( $extension ) {
+			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
+				$invalidator = $extension->getCacheInvalidator();
+
+				$invalidator->invalidateCaches( $title );
+				$invalidator->invalidateCaches( $newTitle );
+			}
+
+			return true;
+		};
+
+		/**
+		 * Hook to add PHPUnit test cases.
+		 * @see https://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
+		 *
+		 * @since 1.0
+		 *
+		 * @param array $files
+		 *
+		 * @return boolean
+		 */
+		$wgHooks['UnitTestsList'][]	= function( array &$files ) {
+			// @codeCoverageIgnoreStart
+			$testFiles = array(
+				'LazyDBConnectionProvider',
+				'SimpleSubPageFinder',
+			);
+
+			foreach ( $testFiles as $file ) {
+				$files[] = __DIR__ . '/tests/' . $file . 'Test.php';
+			}
+
+			return true;
+			// @codeCoverageIgnoreEnd
+		};
+
+	};
+
+} );
 
 require_once 'SubPageList.settings.php';

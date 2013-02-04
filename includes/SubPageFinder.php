@@ -32,6 +32,10 @@ use Title, TitleArray;
 interface SubPageFinder {
 
 	/**
+	 * Returns the subpages of the given page as an array of Title.
+	 * The result is not ordered, is a flat list (rather then a hierarchy)
+	 * and does not contain the provided page itself.
+	 *
 	 * @since 1.0
 	 *
 	 * @param Title $title

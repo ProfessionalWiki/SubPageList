@@ -2,6 +2,9 @@
 
 namespace SubPageList;
 
+/**
+ * Main extension class, acts as dependency injection container look-alike.
+ */
 class Extension {
 
 	/**
@@ -30,7 +33,14 @@ class Extension {
 	 * @return CacheInvalidator
 	 */
 	public function getCacheInvalidator() {
-		return new SimpleCacheInvalidator( new SimpleSubPageFinder( $this->getSlaveConnectionProvider() ) );
+		return new SimpleCacheInvalidator( $this->getSubPageFinder() );
+	}
+
+	/**
+	 * @return SimpleSubPageFinder
+	 */
+	public function getSubPageFinder() {
+		return new SimpleSubPageFinder( $this->getSlaveConnectionProvider() );
 	}
 
 	/**
@@ -40,6 +50,52 @@ class Extension {
 	 */
 	public function getSettings() {
 		return $this->settings;
+	}
+
+	/**
+	 * @since 1.0
+	 *
+	 * @return SubPageCounter
+	 */
+	public function getSubPageCounter() {
+		return new SimpleSubPageFinder();
+	}
+
+	/**
+	 * @since 1.0
+	 *
+	 * @return TitleFactory
+	 */
+	public function getTitleFactory() {
+		return new TitleFactory();
+	}
+
+	/**
+	 * @since 1.0
+	 *
+	 * @return ParserFunctionRunner
+	 */
+	public function getCountFunctionHandler() {
+		$definition = new ParserFunctionDefinition(
+			'subpagecount',
+			array(
+				'page' => array(
+					'default' => '',
+					'aliases' => 'parent',
+					'message' => 'spl-subpages-par-page',
+				),
+				'kidsonly' => array(
+					'type' => 'boolean',
+					'default' => false,
+					'message' => 'spl-subpages-par-kidsonly',
+				),
+			),
+			'page'
+		);
+
+		$handler = new SubPageCount( $this->getSubPageCounter(), $this->getTitleFactory() );
+
+		return new ParserFunctionRunner( $definition, $handler );
 	}
 
 }

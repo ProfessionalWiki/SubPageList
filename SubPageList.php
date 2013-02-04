@@ -92,10 +92,25 @@ call_user_func( function() {
 	$wgExtensionFunctions[] = function() {
 		global $wgHooks;
 
-		$wgHooks['ParserFirstCallInit'][] = 'SubPageList::staticInit';
+		$wgHooks[''][] = '';
 		$wgHooks['ParserFirstCallInit'][] = 'SubPageCount::staticInit';
 
 		$extension = new \SubPageList\Extension( Settings::newFromGlobals( $GLOBALS ) );
+
+		/**
+		 * Called when the parser initialises for the first time.
+		 * https://www.mediawiki.org/wiki/Manual:Hooks/ParserFirstCallInit
+		 */
+		$wgHooks['ParserFirstCallInit'][] = function( Parser &$parser ) use ( $extension ) {
+			// TODO
+			SubPageList::staticInit( $parser );
+
+			$countHandler = $extension->getCountFunctionHandler();
+
+
+
+			return true;
+		};
 
 		/**
 		 * Occurs after a new article has been created.

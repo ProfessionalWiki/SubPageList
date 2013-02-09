@@ -366,6 +366,7 @@ $messages['ja'] = array(
  */
 $messages['ka'] = array(
 	'spl-noparentpage' => 'გვერდი „$1“ არ არსებობს.',
+	'spl-subpages-par-limit' => 'სიაში გვერდების მაქსიმალური რაოდენობა.',
 );
 
 /** Korean (한국어)

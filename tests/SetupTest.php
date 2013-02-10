@@ -1,12 +1,11 @@
 <?php
 
 namespace SubPageList\Test;
-use SubPageList\SimpleSubPageFinder;
-use SubPageList\SubPageFinder;
-use Title;
+use SubPageList\Setup;
+use SubPageList\Extension;
 
 /**
- * Tests for the SubPageList\SimpleSubPageFinder class.
+ * Tests for the SubPageList\Setup class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,43 +28,36 @@ use Title;
  * @ingroup SPLTest
  *
  * @group SubPageList
- * @group Database
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SimpleSubPageFinderTest extends SubPageListTestCase {
+class SetupTest extends SubPageListTestCase {
 
-	/**
-	 * @return SubPageFinder
-	 */
-	public function newInstance() {
-		return new SimpleSubPageFinder( new \SubPageList\LazyDBConnectionProvider( DB_SLAVE ) );
-	}
+	public function testRun() {
+		$extension = $this->newExtension();
 
-	public function titleProvider() {
-		$titles = array();
+		$hookLists = array(
+			'ParserFirstCallInit' => array(),
+			'ArticleInsertComplete' => array(),
+			'ArticleDeleteComplete' => array(),
+			'TitleMoveComplete' => array(),
+			'UnitTestsList' => array(),
+		);
 
-		$titles[] = Title::newMainPage();
-		$titles[] = Title::newFromText( 'ohi there i do not exist nyan nyan nyan' );
+		$setup = new Setup(
+			$extension,
+			$hookLists
+		);
 
-		return $this->arrayWrap( $titles );
-	}
+		$setup->run();
 
-	/**
-	 * @dataProvider titleProvider
-	 *
-	 * @param Title $title
-	 */
-	public function testGetSubPagesFor( Title $title ) {
-		$finder = $this->newInstance();
+		foreach ( $hookLists as $hookName => $hookList ) {
+			$this->assertEquals( 1, count( $hookList ), "one hook handler need to be added to '$hookName'" );
 
-		$pages = $finder->getSubPagesFor( $title );
+			$hook = reset( $hookList );
 
-		$this->assertInternalType( 'array', $pages );
-
-		foreach ( $pages as $page ) {
-			$this->assertInstanceOf( 'Title', $page );
+			$this->assertInternalType( 'callable', $hook );
 		}
 	}
 

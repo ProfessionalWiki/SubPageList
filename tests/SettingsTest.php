@@ -31,7 +31,7 @@ use SubPageList\Settings;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SettingsTest extends \MediaWikiTestCase {
+class SettingsTest extends SubPageListTestCase {
 
 	public function constructorProvider() {
 		$settingArrays = array(

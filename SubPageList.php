@@ -101,6 +101,11 @@ call_user_func( function() {
 	$wgAutoloadClasses['SubPageList\SubPageFinder'] 			= __DIR__ . '/includes/SubPageFinder.php';
 	$wgAutoloadClasses['SubPageList\TitleFactory'] 				= __DIR__ . '/includes/TitleFactory.php';
 
+	
+	if ( defined( 'MW_PHPUNIT_TEST' ) ) {
+		$wgAutoloadClasses['SubPageList\Test\SubPageListTestCase'] = __DIR__ . '/tests/SubPageListTestCase.php';
+	}
+
 
 	$wgExtensionFunctions[] = function() {
 		global $wgHooks;

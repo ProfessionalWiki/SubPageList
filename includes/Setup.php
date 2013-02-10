@@ -139,6 +139,7 @@ class Setup {
 				'Extension',
 				'LazyDBConnectionProvider',
 				'Settings',
+				'Setup',
 				'SimpleSubPageFinder',
 			);
 

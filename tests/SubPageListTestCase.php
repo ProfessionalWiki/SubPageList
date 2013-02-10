@@ -1,12 +1,9 @@
 <?php
 
 namespace SubPageList\Test;
-use SubPageList\SimpleSubPageFinder;
-use SubPageList\SubPageFinder;
-use Title;
 
 /**
- * Tests for the SubPageList\SimpleSubPageFinder class.
+ * Base test case for the tests of the SubPageList extension.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,44 +26,19 @@ use Title;
  * @ingroup SPLTest
  *
  * @group SubPageList
- * @group Database
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SimpleSubPageFinderTest extends SubPageListTestCase {
+class SubPageListTestCase extends \MediaWikiTestCase {
 
 	/**
-	 * @return SubPageFinder
-	 */
-	public function newInstance() {
-		return new SimpleSubPageFinder( new \SubPageList\LazyDBConnectionProvider( DB_SLAVE ) );
-	}
-
-	public function titleProvider() {
-		$titles = array();
-
-		$titles[] = Title::newMainPage();
-		$titles[] = Title::newFromText( 'ohi there i do not exist nyan nyan nyan' );
-
-		return $this->arrayWrap( $titles );
-	}
-
-	/**
-	 * @dataProvider titleProvider
+	 * @since 1.0
 	 *
-	 * @param Title $title
+	 * @return \SubPageList\Extension
 	 */
-	public function testGetSubPagesFor( Title $title ) {
-		$finder = $this->newInstance();
-
-		$pages = $finder->getSubPagesFor( $title );
-
-		$this->assertInternalType( 'array', $pages );
-
-		foreach ( $pages as $page ) {
-			$this->assertInstanceOf( 'Title', $page );
-		}
+	protected function newExtension() {
+		return new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
 	}
 
 }

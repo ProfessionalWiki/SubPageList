@@ -4,7 +4,7 @@ namespace SubPageList;
 use Title;
 
 /**
- * Interface for subpage counters.
+ * Turns a flat list of Title objects into a sub page hierarchy of Page objects.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,18 +29,19 @@ use Title;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-interface SubPageCounter {
+class PageHierarchyCreator {
 
 	/**
-	 * Returns the number of subpages.
-	 * This does not include the page itself.
+	 * @param Title[] $titles
 	 *
-	 * @since 1.0
-	 *
-	 * @param Title $title
-	 *
-	 * @return integer
+	 * @return Page[]
 	 */
-	public function countSubPages( Title $title );
+	public function createHierarchy( array $titles ) {
+		$pages = array();
+
+		// TODO
+
+		return $pages;
+	}
 
 }

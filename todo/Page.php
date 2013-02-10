@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 namespace SubPageList;
-use ParserHooks\HookHandler;
+use Title;
 
 /**
- * Handler for the subpagecount parser hook.
+ * Represents a node in a sub page hierarchy.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,62 +29,49 @@ use ParserHooks\HookHandler;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SubPageCount implements HookHandler {
+class Page {
 
 	/**
 	 * @since 1.0
 	 *
-	 * @var SubPageCounter
+	 * @var Title
 	 */
-	protected $counter;
+	protected $title;
 
 	/**
 	 * @since 1.0
 	 *
-	 * @var TitleFactory
+	 * @var Page[]
 	 */
-	protected $titleFactory;
+	protected $children;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 1.0
 	 *
-	 * @param SubPageCounter $counter
-	 * @param TitleFactory $titleFactory
+	 * @param Title $title
+	 * @param Page[] $children
 	 */
-	public function setCounter( SubPageCounter $counter, TitleFactory $titleFactory ) {
-		$this->counter = $counter;
-		$this->titleFactory = $titleFactory;
+	public function __construct( Title $title, array $children ) {
+		$this->title = $title;
+		$this->children = $children;
 	}
 
-
 	/**
-	 * @see HookHandler::handle
-	 *
 	 * @since 1.0
 	 *
-	 * @param \Parser $parser
-	 * @param \ParamProcessor\ProcessingResult $result
-	 *
-	 * @return string
+	 * @return Title
 	 */
-	public function handle( \Parser $parser, \ParamProcessor\ProcessingResult $result ) {
-		if ( $result->hasFatal() ) {
-			// TODO:
-			return 'FATAL';
-		}
+	public function getTitle() {
+		return $this->title;
+	}
 
-		$count = 0;
-
-		$parameters = $result->getParameters();
-		$title = $this->titleFactory->newFromText( $parameters['page'] );
-
-		if ( $title !== null ) {
-			$count = $this->counter->countSubPages( $title );
-		}
-
-		return $parser->getTargetLanguage()->formatNum( $count );
+	/**
+	 * @since 1.0
+	 *
+	 * @return Page[]
+	 */
+	public function getSubPages() {
+		return $this->children;
 	}
 
 }

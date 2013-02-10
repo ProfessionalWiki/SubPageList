@@ -64,7 +64,7 @@ define( 'SPL_VERSION', '1.0 alpha' );
 
 
 call_user_func( function() {
-	global $wgExtensionCredits, $wgExtensionMessagesFiles, $wgAutoloadClasses, $wgExtensionFunctions, $wgHooks;
+	global $wgExtensionCredits, $wgExtensionMessagesFiles, $wgAutoloadClasses, $wgExtensionFunctions;
 
 	$wgExtensionCredits['parserhook'][] = array(
 		'path' => __FILE__,
@@ -98,11 +98,14 @@ call_user_func( function() {
 	$wgAutoloadClasses['SubPageList\SubPageFinder'] 			= __DIR__ . '/includes/SubPageFinder.php';
 
 
-	$extension = new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
+	$wgExtensionFunctions[] = function() {
+		global $wgHooks;
 
-	$extensionSetup = new \SubPageList\Setup( $extension, $wgHooks );
+		$extension = new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
+		$extensionSetup = new \SubPageList\Setup( $extension, $wgHooks );
 
-	$wgExtensionFunctions[] = array( $extensionSetup, 'run' );
+		$extensionSetup->run();
+	};
 
 } );
 

@@ -50,10 +50,11 @@ class Setup {
 	 *
 	 * @since 1.0
 	 *
+	 * @param Extension $extension
 	 * @param array $hooks
 	 */
 	public function __construct( Extension $extension, array &$hooks ) {
-		$this->hooks = $hooks;
+		$this->hooks =& $hooks;
 		$this->extension = $extension;
 	}
 
@@ -142,7 +143,7 @@ class Setup {
 			);
 
 			foreach ( $testFiles as $file ) {
-				$files[] = __DIR__ . '/tests/' . $file . 'Test.php';
+				$files[] = __DIR__ . '/../tests/' . $file . 'Test.php';
 			}
 
 			return true;

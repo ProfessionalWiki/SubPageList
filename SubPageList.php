@@ -96,6 +96,10 @@ call_user_func( function() {
 	$wgAutoloadClasses['SubPageList\SimpleCacheInvalidator'] 	= __DIR__ . '/includes/SimpleCacheInvalidator.php';
 	$wgAutoloadClasses['SubPageList\SimpleSubPageFinder'] 		= __DIR__ . '/includes/SimpleSubPageFinder.php';
 	$wgAutoloadClasses['SubPageList\SubPageFinder'] 			= __DIR__ . '/includes/SubPageFinder.php';
+	$wgAutoloadClasses['SubPageList\SubPageCount'] 				= __DIR__ . '/includes/SubPageCount.php';
+	$wgAutoloadClasses['SubPageList\SubPageCounter'] 			= __DIR__ . '/includes/SubPageCounter.php';
+	$wgAutoloadClasses['SubPageList\SubPageFinder'] 			= __DIR__ . '/includes/SubPageFinder.php';
+	$wgAutoloadClasses['SubPageList\TitleFactory'] 				= __DIR__ . '/includes/TitleFactory.php';
 
 
 	$wgExtensionFunctions[] = function() {

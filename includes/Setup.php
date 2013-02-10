@@ -4,7 +4,7 @@ namespace SubPageList;
 use Parser, WikiPage, User, Revision, Title;
 
 /**
- * Interface for subpage finders.
+ * Object containing the logic to set up the SupPageList extension.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

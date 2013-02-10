@@ -71,6 +71,8 @@ class SimpleSubPageFinder implements SubPageFinder {
 			)
 		);
 
+		$this->connectionProvider->releaseConnection();
+
 		return iterator_to_array( $titleArray );
 	}
 

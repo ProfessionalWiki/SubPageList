@@ -2,7 +2,6 @@
 
 namespace SubPageList\Test;
 use SubPageList\Setup;
-use SubPageList\Extension;
 
 /**
  * Tests for the SubPageList\Setup class.

@@ -2,7 +2,7 @@
 
 namespace SubPageList;
 
-class SubPageCount implements ParserFunctionHandler {
+class SubPageCount implements \ParserHooks\HookHandler {
 
 	/**
 	 * @var SubPageCounter
@@ -30,7 +30,7 @@ class SubPageCount implements ParserFunctionHandler {
 	 *
 	 * @return string
 	 */
-	public function handle( \Parser $parser, ProcessingResult $result ) {
+	public function handle( \Parser $parser, \ParamProcessor\ProcessingResult $result ) {
 		if ( $result->hasFatal() ) {
 			// TODO:
 			return 'FATAL';

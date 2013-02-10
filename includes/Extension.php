@@ -73,10 +73,10 @@ class Extension {
 	/**
 	 * @since 1.0
 	 *
-	 * @return ParserFunctionRunner
+	 * @return \ParserHooks\FunctionRunner
 	 */
 	public function getCountFunctionHandler() {
-		$definition = new ParserFunctionDefinition(
+		$definition = new \ParserHooks\HookDefinition(
 			'subpagecount',
 			array(
 				'page' => array(
@@ -95,7 +95,18 @@ class Extension {
 
 		$handler = new SubPageCount( $this->getSubPageCounter(), $this->getTitleFactory() );
 
-		return new ParserFunctionRunner( $definition, $handler );
+		return new \ParserHooks\FunctionRunner( $definition, $handler );
+	}
+
+	/**
+	 * @since 0.1
+	 *
+	 * @param \Parser $parser
+	 *
+	 * @return \ParserHooks\HookRegistrationer
+	 */
+	public function getHookRegistrationer( \Parser &$parser ) {
+		return new \ParserHooks\HookRegistrationer( $parser );
 	}
 
 }

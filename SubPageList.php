@@ -35,8 +35,6 @@
  * @defgroup SPL SubPageList
  */
 
-use SubPageList\Settings;
-
 if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
@@ -56,7 +54,7 @@ define( 'SPL_VERSION', '1.0 alpha' );
 
 
 call_user_func( function() {
-	global $wgExtensionCredits, $wgExtensionMessagesFiles, $wgAutoloadClasses, $wgExtensionFunctions;
+	global $wgExtensionCredits, $wgExtensionMessagesFiles, $wgAutoloadClasses, $wgExtensionFunctions, $wgHooks;
 
 	$wgExtensionCredits['parserhook'][] = array(
 		'path' => __FILE__,
@@ -84,104 +82,17 @@ call_user_func( function() {
 	$wgAutoloadClasses['SubPageList\Extension'] 				= __DIR__ . '/includes/Extension.php';
 	$wgAutoloadClasses['SubPageList\LazyDBConnectionProvider'] 	= __DIR__ . '/includes/LazyDBConnectionProvider.php';
 	$wgAutoloadClasses['SubPageList\Settings'] 					= __DIR__ . '/includes/Settings.php';
+	$wgAutoloadClasses['SubPageList\Setup'] 					= __DIR__ . '/includes/Setup.php';
 	$wgAutoloadClasses['SubPageList\SimpleCacheInvalidator'] 	= __DIR__ . '/includes/SimpleCacheInvalidator.php';
 	$wgAutoloadClasses['SubPageList\SimpleSubPageFinder'] 		= __DIR__ . '/includes/SimpleSubPageFinder.php';
 	$wgAutoloadClasses['SubPageList\SubPageFinder'] 			= __DIR__ . '/includes/SubPageFinder.php';
 
 
-	$wgExtensionFunctions[] = function() {
-		global $wgHooks;
+	$extension = new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
 
-		$wgHooks[''][] = '';
-		$wgHooks['ParserFirstCallInit'][] = 'SubPageCount::staticInit';
+	$extensionSetup = new \SubPageList\Setup( $extension, $wgHooks );
 
-		$extension = new \SubPageList\Extension( Settings::newFromGlobals( $GLOBALS ) );
-
-		/**
-		 * Called when the parser initialises for the first time.
-		 * https://www.mediawiki.org/wiki/Manual:Hooks/ParserFirstCallInit
-		 */
-		$wgHooks['ParserFirstCallInit'][] = function( Parser &$parser ) use ( $extension ) {
-			// TODO
-			SubPageList::staticInit( $parser );
-
-			$countHandler = $extension->getCountFunctionHandler();
-
-
-
-			return true;
-		};
-
-		/**
-		 * Occurs after a new article has been created.
-		 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleInsertComplete
-		 */
-		$wgHooks['ArticleInsertComplete'][]
-			= function( WikiPage $article, User &$user, $text, $summary, $minorEdit,
-						$watchThis, $sectionAnchor, &$flags, Revision $revision ) use ( $extension ) {
-
-			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
-				$extension->getCacheInvalidator()->invalidateCaches( $article->getTitle() );
-			}
-
-			return true;
-		};
-
-		/**
-		 * Occurs after the delete article request has been processed.
-		 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDeleteComplete
-		 */
-		$wgHooks['ArticleDeleteComplete'][] = function( &$article, User &$user, $reason, $id ) use ( $extension ) {
-			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
-				$extension->getCacheInvalidator()->invalidateCaches( $article->getTitle() );
-			}
-
-			return true;
-		};
-
-		/**
-		 * Occurs whenever a request to move an article is completed.
-		 * https://www.mediawiki.org/wiki/Manual:Hooks/TitleMoveComplete
-		 */
-		$wgHooks['TitleMoveComplete'][] = function( Title &$title, Title &$newTitle, User &$user, $oldId, $newId ) use ( $extension ) {
-			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
-				$invalidator = $extension->getCacheInvalidator();
-
-				$invalidator->invalidateCaches( $title );
-				$invalidator->invalidateCaches( $newTitle );
-			}
-
-			return true;
-		};
-
-		/**
-		 * Hook to add PHPUnit test cases.
-		 * @see https://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
-		 *
-		 * @since 1.0
-		 *
-		 * @param array $files
-		 *
-		 * @return boolean
-		 */
-		$wgHooks['UnitTestsList'][]	= function( array &$files ) {
-			// @codeCoverageIgnoreStart
-			$testFiles = array(
-				'Extension',
-				'LazyDBConnectionProvider',
-				'Settings',
-				'SimpleSubPageFinder',
-			);
-
-			foreach ( $testFiles as $file ) {
-				$files[] = __DIR__ . '/tests/' . $file . 'Test.php';
-			}
-
-			return true;
-			// @codeCoverageIgnoreEnd
-		};
-
-	};
+	$wgExtensionFunctions[] = array( $extensionSetup, 'run' );
 
 } );
 

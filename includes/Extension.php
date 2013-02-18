@@ -133,10 +133,10 @@ class Extension {
 	 *
 	 * @param \Parser $parser
 	 *
-	 * @return \ParserHooks\HookRegistrationer
+	 * @return \ParserHooks\HookRegistrant
 	 */
-	public function getHookRegistrationer( \Parser &$parser ) {
-		return new \ParserHooks\HookRegistrationer( $parser );
+	public function getHookRegistrant( \Parser &$parser ) {
+		return new \ParserHooks\HookRegistrant( $parser );
 	}
 
 }

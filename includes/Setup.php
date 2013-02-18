@@ -71,13 +71,11 @@ class Setup {
 		 * https://www.mediawiki.org/wiki/Manual:Hooks/ParserFirstCallInit
 		 */
 		$this->hooks['ParserFirstCallInit'][] = function( Parser &$parser ) use ( $extension ) {
-			$hookRegistrationer = $extension->getHookRegistrationer( $parser );
+			$hookRegistrant = $extension->getHookRegistrant( $parser );
 
 			$countHandler = $extension->getCountFunctionHandler();
 
-			$hookRegistrationer->registerFunction( $countHandler );
-
-			// TODO: build & register list handler
+			$hookRegistrant->registerFunction( $countHandler );
 
 			return true;
 		};

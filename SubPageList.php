@@ -82,26 +82,10 @@ call_user_func( function() {
 	$wgExtensionMessagesFiles['SubPageList'] = __DIR__ . '/SubPageList.i18n.php';
 	$wgExtensionMessagesFiles['SubPageListMagic'] = __DIR__ . '/SubPageList.i18n.magic.php';
 
+	foreach ( include( __DIR__ . '/SubPageList.classes.php' ) as $class => $file ) {
+		$wgAutoloadClasses[$class] = __DIR__ . '/' . $file;
+	}
 
-	$wgAutoloadClasses['SubPageBase'] = __DIR__ . '/todo/SubPageBase.php';
-	$wgAutoloadClasses['SubPageList'] = __DIR__ . '/todo/SubPageList.php';
-	$wgAutoloadClasses['SubPageCount'] = __DIR__ . '/todo/SubPageCount.php';
-
-	$wgAutoloadClasses['SubPageList\CacheInvalidator'] 			= __DIR__ . '/includes/CacheInvalidator.php';
-	$wgAutoloadClasses['SubPageList\DBConnectionProvider'] 		= __DIR__ . '/includes/DBConnectionProvider.php';
-	$wgAutoloadClasses['SubPageList\Extension'] 				= __DIR__ . '/includes/Extension.php';
-	$wgAutoloadClasses['SubPageList\LazyDBConnectionProvider'] 	= __DIR__ . '/includes/LazyDBConnectionProvider.php';
-	$wgAutoloadClasses['SubPageList\Settings'] 					= __DIR__ . '/includes/Settings.php';
-	$wgAutoloadClasses['SubPageList\Setup'] 					= __DIR__ . '/includes/Setup.php';
-	$wgAutoloadClasses['SubPageList\SimpleCacheInvalidator'] 	= __DIR__ . '/includes/SimpleCacheInvalidator.php';
-	$wgAutoloadClasses['SubPageList\SimpleSubPageFinder'] 		= __DIR__ . '/includes/SimpleSubPageFinder.php';
-	$wgAutoloadClasses['SubPageList\SubPageFinder'] 			= __DIR__ . '/includes/SubPageFinder.php';
-	$wgAutoloadClasses['SubPageList\SubPageCount'] 				= __DIR__ . '/includes/SubPageCount.php';
-	$wgAutoloadClasses['SubPageList\SubPageCounter'] 			= __DIR__ . '/includes/SubPageCounter.php';
-	$wgAutoloadClasses['SubPageList\SubPageFinder'] 			= __DIR__ . '/includes/SubPageFinder.php';
-	$wgAutoloadClasses['SubPageList\TitleFactory'] 				= __DIR__ . '/includes/TitleFactory.php';
-
-	
 	if ( defined( 'MW_PHPUNIT_TEST' ) ) {
 		$wgAutoloadClasses['SubPageList\Test\SubPageListTestCase'] = __DIR__ . '/tests/SubPageListTestCase.php';
 	}

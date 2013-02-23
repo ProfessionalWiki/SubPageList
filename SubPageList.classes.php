@@ -6,7 +6,7 @@
  * @since 1.0
  *
  * @file
- * @ingroup SubPageList
+ * @ingroup SPL
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

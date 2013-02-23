@@ -1,7 +1,9 @@
 <?php
 
 namespace SubPageList;
-use Title, TitleArray;
+
+use Title;
+use TitleArray;
 
 /**
  * Interface for subpage finders.

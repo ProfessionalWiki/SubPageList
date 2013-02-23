@@ -1,6 +1,7 @@
 <?php
 
 namespace SubPageList;
+
 use DatabaseBase;
 
 /**

@@ -1,7 +1,9 @@
 <?php
 
 namespace SubPageList;
-use Title, TitleArray;
+
+use Title;
+use TitleArray;
 
 /**
  * Simple subpage finder and counter that uses a like query

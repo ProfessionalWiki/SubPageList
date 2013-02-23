@@ -1,7 +1,12 @@
 <?php
 
 namespace SubPageList;
-use Parser, WikiPage, User, Revision, Title;
+
+use Parser;
+use WikiPage;
+use User;
+use Revision;
+use Title;
 
 /**
  * Object containing the logic to set up the SupPageList extension.

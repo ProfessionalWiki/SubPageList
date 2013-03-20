@@ -49,6 +49,21 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'spl-desc' => '{{desc|name=Sub Page List|url=http://www.mediawiki.org/wiki/Extension:SubPageList}}',
+	'spl-nosubpages' => 'Parameters:
+* $1 - page title (with link)
+See also:
+* {{msg-mw|Spl-noparentpage}}
+* {{msg-mw|Spl-nopages}}',
+	'spl-noparentpage' => 'Parameters:
+* $1 - page title
+See also:
+* {{msg-mw|Spl-nosubpages}}
+* {{msg-mw|Spl-nopages}}',
+	'spl-nopages' => 'Parameters:
+* $1 - namespace name
+See also:
+* {{msg-mw|Spl-noparentpage}}
+* {{msg-mw|Spl-nosubpages}}',
 	'spl-subpages-par-sort' => '{{doc-important|Do not translate "asc" and "desc".}}',
 	'spl-subpages-par-sortby' => '{{doc-important|Do not translate "title" and "lastedit".}}',
 	'spl-subpages-par-format' => '{{doc-important|Do not translate "ol", "ul" and "list".}}',

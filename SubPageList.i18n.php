@@ -769,6 +769,8 @@ $messages['zh-hans'] = array(
 	'spl-nopages' => '命名空间“$1”没有页面。',
 	'spl-subpages-par-sort' => '要排序的方向。允许的值：“asc”和“desc”。',
 	'spl-subpages-par-sortby' => '要按什么排序子页面。允许的值：“title”或“lastedit”。',
+	'spl-subpages-par-kidsonly' => '允许显示仅直接的子页面。',
+	'spl-subpages-par-limit' => '列出页面的最大数量。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)

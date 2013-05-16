@@ -643,6 +643,14 @@ $messages['pt'] = array(
 	'spl-subpages-par-links' => 'Se verdadeiro, as entradas da lista são apresentadas na forma de links. Se falso, as entradas da lista são apresentadas como texto simples. Esta última opção é especialmente útil para passar entradas a uma predefinição, para processamento posterior.',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'spl-noparentpage' => '\'A pàgene "$1" non g\'esiste.',
+	'spl-nopages' => '\'U namespace "$1" non ge tène pàggene.',
+);
+
 /** Russian (русский)
  * @author Renessaince
  * @author Van de Bugger

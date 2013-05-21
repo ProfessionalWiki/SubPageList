@@ -417,10 +417,11 @@ $messages['ksh'] = array(
 	'spl-desc' => 'Deiht dä Befähl <code><nowiki><splist /></nowiki></code> en et Wiki, för Ongersigge aanzezeije.',
 	'spl-nosubpages' => 'Di Sigg „$1“ hät kein Ongersigge zom Opleßte.',
 	'spl-noparentpage' => 'En Sigg „$1“ jidd_et nit.',
-	'spl-subpages-par-sort' => 'Wieröm zoteet wääde sull.', # Fuzzy
-	'spl-subpages-par-sortby' => 'Noh wat de Ongersigge zoteet wääde sulle.', # Fuzzy
-	'spl-subpages-par-format' => 'De Leß met de Ongersigge kann ongerscheidlijje Jeschtalte han: met Nummere (ol) met Punkte (ul) un alles ein eine Reih met Kommas dozwesche (list)', # Fuzzy
-	'spl-subpages-par-page' => 'De Sigg, woh de Ongersigge vun jezeich wääde sulle. Wam_mer nix säät, es dat de Sigg, di jraad jezeich weed.', # Fuzzy
+	'spl-nopages' => 'Dat Appachtemang „$1“ hät kein Sigge.',
+	'spl-subpages-par-sort' => 'Wieröm zoteet wääde sull, mer kann <code lang="en">asc</code> för opwääds un <code lang="en">desc</code> för retuurwääds aanjävve.',
+	'spl-subpages-par-sortby' => 'Noh wat de Ongersigge zoteet wääde sulle, mer kann <code lang="en">title</code> för der Tittel un <code lang="en">lastedit</code> för et Dattum un de Zig vun de läzde Änderong aanjävve.',
+	'spl-subpages-par-format' => '!De Leß met de Ongersigge kann ongerscheidlijje Jeschtalte han: met Nummere (<code>ol</code>) met Punkte (<code>ul</code>) un alles ein eine Reih met Kommas dozwesche (<code>list</code>)',
+	'spl-subpages-par-page' => 'De Sigg, woh de Ongersigge vun jezeich wääde sulle. Wam_mer nix säät, es dat de Sigg, di jraad jezeich weed. Wann ene Dubbelpungk aam Ängk es, ess-et an Appachtemang un däm sing Sigge wääde jezeisch.',
 	'spl-subpages-par-showpage' => 'Jitt aan, ov de Sigg selver och en dä Leß met dä iehre Ongersigge aanjezeisch wääde sull, udder nit.',
 	'spl-subpages-par-pathstyle' => 'Dä Stil vun de Aanzeije vun däm Pad vun de Ongersigge en dä Leß.
 Zohjelohße es:
@@ -430,6 +431,10 @@ Zohjelohße es:
 <code lang="en">none</code> — Blos et Engk vum Name henger_em läzde schrääje Schtresch.',
 	'spl-subpages-par-kidsonly' => 'Määt et müjjelesch, bloß de diräkte Ongersigge opzeleßte.',
 	'spl-subpages-par-limit' => 'De jrüüßte Zahl Sigge för opzeleste.',
+	'spl-subpages-par-class' => 'Dä Wäät för dat „<code lang="en">class</code>“-Attribut vun däm <i lang="en">HTML</i>-Elemänt, woh di Leß dren es.',
+	'spl-subpages-par-intro' => 'Der Täx vör der Leß, wann se nit läddesch es',
+	'spl-subpages-par-outro' => 'Der Täx henger der Leß, wann se nit läddesch es',
+	'spl-subpages-par-separator' => 'Dä Täx, dä zwesche zwei Endrääsch en de Leß ußjejovve wääde sull. Wann et Fommaat nit <code>list</code> es, deiht dat heh nix.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)

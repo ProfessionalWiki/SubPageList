@@ -652,8 +652,10 @@ $messages['pt'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'spl-nosubpages' => '\'A pàgene "$1" non ge tène sottopàggene da elengà.',
 	'spl-noparentpage' => '\'A pàgene "$1" non g\'esiste.',
 	'spl-nopages' => '\'U namespace "$1" non ge tène pàggene.',
+	'spl-subpages-par-limit' => "'U massime numere de pàggene da elengà.",
 );
 
 /** Russian (русский)

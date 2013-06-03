@@ -524,7 +524,7 @@ $messages['mt'] = array(
 	'spl-subpages-par-sort' => 'Id-direzzjoni kif tirranġahom. Valuri permessi: "asc" u "desc".',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(

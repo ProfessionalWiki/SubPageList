@@ -77,7 +77,7 @@ class SubPageCount implements HookHandler {
 		$count = 0;
 
 		$parameters = $result->getParameters();
-		$title = $this->titleFactory->newFromText( $parameters['page'] );
+		$title = $this->titleFactory->newFromText( $parameters['page']->getValue() );
 
 		if ( $title !== null ) {
 			$count = $this->counter->countSubPages( $title );

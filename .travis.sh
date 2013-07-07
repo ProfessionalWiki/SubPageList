@@ -12,7 +12,7 @@ cd ../phase3/extensions
 mkdir SubPageList
 
 cd -
-cp * ../phase3/extensions/SubPageList
+cp -r * ../phase3/extensions/SubPageList
 
 cd ../phase3
 

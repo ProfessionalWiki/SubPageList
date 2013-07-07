@@ -1,10 +1,11 @@
 <?php
 
-namespace SubPageList;
-use Title;
+namespace SubPageList\Tests\Phpunit;
+
+use SubPageList\Settings;
 
 /**
- * Represents a node in a sub page hierarchy.
+ * @covers SubPageList\Settings
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,57 +22,48 @@ use Title;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
+ * @file
  * @since 1.0
  *
- * @file
- * @ingroup SPL
+ * @ingroup SubPageListTest
+ *
+ * @group SubPageList
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class Page {
+class SettingsTest extends \PHPUnit_Framework_TestCase {
 
 	/**
-	 * @since 1.0
+	 * @dataProvider constructorProvider
 	 *
-	 * @var Title
+	 * @param array $settings
 	 */
-	protected $title;
+	public function testConstructor( array $settings ) {
+		$settingsObject = new Settings( $settings );
 
-	/**
-	 * @since 1.0
-	 *
-	 * @var Page[]
-	 */
-	protected $children;
+		foreach ( $settings as $name => $value ) {
+			$this->assertEquals( $value, $settingsObject->get( $name ) );
+		}
 
-	/**
-	 * @since 1.0
-	 *
-	 * @param Title $title
-	 * @param Page[] $children
-	 */
-	public function __construct( Title $title, array $children ) {
-		$this->title = $title;
-		$this->children = $children;
+		$this->assertTrue( true );
 	}
 
-	/**
-	 * @since 1.0
-	 *
-	 * @return Title
-	 */
-	public function getTitle() {
-		return $this->title;
-	}
+	public function constructorProvider() {
+		$settingArrays = array(
+			array(),
+			array( 'foo' => 'bar' ),
+			array( 'foo' => 'bar', 'baz' => 'BAH' ),
+			array( '~[,,_,,]:3' => array( 9001, 4.2 ) ),
+		);
 
-	/**
-	 * @since 1.0
-	 *
-	 * @return Page[]
-	 */
-	public function getSubPages() {
-		return $this->children;
+		$argLists = array();
+
+		foreach ( $settingArrays as $settingArray ) {
+			$argLists[] = array( $settingArray );
+		}
+
+		return $argLists;
 	}
 
 }

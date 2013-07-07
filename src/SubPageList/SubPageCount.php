@@ -25,7 +25,7 @@ use ParserHooks\HookHandler;
  * @since 1.0
  *
  * @file
- * @ingroup SPL
+ * @ingroup SubPageList
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

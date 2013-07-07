@@ -1,6 +1,6 @@
 <?php
 
-namespace SubPageList\Tests;
+namespace SubPageList\Tests\Phpunit;
 
 use SubPageList\SimpleSubPageFinder;
 use SubPageList\SubPageFinder;
@@ -27,7 +27,7 @@ use Title;
  * @file
  * @since 1.0
  *
- * @ingroup SPLTest
+ * @ingroup SubPageListTest
  *
  * @group SubPageList
  * @group Database

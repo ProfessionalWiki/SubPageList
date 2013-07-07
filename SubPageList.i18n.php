@@ -4,7 +4,7 @@
  * Internationalization file for the SubPageList extension.
  *
  * @file
- * @ingroup SPL
+ * @ingroup SubPageList
  *
  * @licence GNU GPL v2+
  *

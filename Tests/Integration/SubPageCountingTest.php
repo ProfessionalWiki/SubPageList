@@ -6,7 +6,7 @@ use SubPageList\SubPageCount;
 
 /**
  * @file
- * @ingroup SPLTest
+ * @ingroup SubPageListTest
  * @group SubPageList
  *
  * @licence GNU GPL v2+
@@ -15,7 +15,7 @@ use SubPageList\SubPageCount;
 class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
 
 	public function testCanCount() {
-		$counter = new SubPageCount();
+		//$counter = new SubPageCount();
 
 		//$counter->setCounter(  );
 

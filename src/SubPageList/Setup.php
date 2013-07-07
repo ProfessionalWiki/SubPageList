@@ -32,7 +32,7 @@ use Title;
  * @since 1.0
  *
  * @file
- * @ingroup SPL
+ * @ingroup SubPageList
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -147,7 +147,7 @@ class Setup {
 		 * @return boolean
 		 */
 		$this->hooks['UnitTestsList'][]	= function( array &$files ) use ( $rootDirectory ) {
-			$directoryIterator = new RecursiveDirectoryIterator( $rootDirectory . '/tests/' );
+			$directoryIterator = new RecursiveDirectoryIterator( $rootDirectory . '/Tests/' );
 
 			/**
 			 * @var SplFileInfo $fileInfo

@@ -32,7 +32,7 @@
 /**
  * This documentation group collects source code files belonging to SubPageList.
  *
- * @defgroup SPL SubPageList
+ * @defgroup SubPageList SubPageList
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) {

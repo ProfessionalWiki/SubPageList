@@ -1,10 +1,11 @@
 <?php
 
 namespace SubPageList;
+
 use Title;
 
 /**
- * Turns a flat list of Title objects into a sub page hierarchy of Page objects.
+ * Represents a node in a sub page hierarchy.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,24 +25,54 @@ use Title;
  * @since 1.0
  *
  * @file
- * @ingroup SPL
+ * @ingroup SubPageList
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PageHierarchyCreator {
+class Page {
 
 	/**
-	 * @param Title[] $titles
+	 * @since 1.0
+	 *
+	 * @var Title
+	 */
+	protected $title;
+
+	/**
+	 * @since 1.0
+	 *
+	 * @var Page[]
+	 */
+	protected $children;
+
+	/**
+	 * @since 1.0
+	 *
+	 * @param Title $title
+	 * @param Page[] $children
+	 */
+	public function __construct( Title $title, array $children ) {
+		$this->title = $title;
+		$this->children = $children;
+	}
+
+	/**
+	 * @since 1.0
+	 *
+	 * @return Title
+	 */
+	public function getTitle() {
+		return $this->title;
+	}
+
+	/**
+	 * @since 1.0
 	 *
 	 * @return Page[]
 	 */
-	public function createHierarchy( array $titles ) {
-		$pages = array();
-
-		// TODO
-
-		return $pages;
+	public function getSubPages() {
+		return $this->children;
 	}
 
 }

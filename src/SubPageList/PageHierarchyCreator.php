@@ -3,10 +3,9 @@
 namespace SubPageList;
 
 use Title;
-use TitleArray;
 
 /**
- * Interface for subpage finders.
+ * Turns a flat list of Title objects into a sub page hierarchy of Page objects.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,19 +30,19 @@ use TitleArray;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-interface SubPageFinder {
+class PageHierarchyCreator {
 
 	/**
-	 * Returns the subpages of the given page as an array of Title.
-	 * The result is not ordered, is a flat list (rather then a hierarchy)
-	 * and does not contain the provided page itself.
+	 * @param Title[] $titles
 	 *
-	 * @since 1.0
-	 *
-	 * @param Title $title
-	 *
-	 * @return Title[]
+	 * @return Page[]
 	 */
-	public function getSubPagesFor( Title $title );
+	public function createHierarchy( array $titles ) {
+		$pages = array();
+
+		// TODO
+
+		return $pages;
+	}
 
 }

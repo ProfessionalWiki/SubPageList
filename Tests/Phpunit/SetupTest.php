@@ -1,11 +1,11 @@
 <?php
 
-namespace SubPageList\Tests;
+namespace SubPageList\Tests\Phpunit;
 
-use SubPageList\Settings;
+use SubPageList\Setup;
 
 /**
- * @covers SubPageList\Settings
+ * @covers SubPageList\Setup
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,45 +25,45 @@ use SubPageList\Settings;
  * @file
  * @since 1.0
  *
- * @ingroup SPLTest
+ * @ingroup SubPageListTest
  *
  * @group SubPageList
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SettingsTest extends \PHPUnit_Framework_TestCase {
+class SetupTest extends \PHPUnit_Framework_TestCase {
 
-	/**
-	 * @dataProvider constructorProvider
-	 *
-	 * @param array $settings
-	 */
-	public function testConstructor( array $settings ) {
-		$settingsObject = new Settings( $settings );
+	public function testRun() {
+		$extension = $this->newExtension();
 
-		foreach ( $settings as $name => $value ) {
-			$this->assertEquals( $value, $settingsObject->get( $name ) );
-		}
-
-		$this->assertTrue( true );
-	}
-
-	public function constructorProvider() {
-		$settingArrays = array(
-			array(),
-			array( 'foo' => 'bar' ),
-			array( 'foo' => 'bar', 'baz' => 'BAH' ),
-			array( '~[,,_,,]:3' => array( 9001, 4.2 ) ),
+		$hookLists = array(
+			'ParserFirstCallInit' => array(),
+			'ArticleInsertComplete' => array(),
+			'ArticleDeleteComplete' => array(),
+			'TitleMoveComplete' => array(),
+			'UnitTestsList' => array(),
 		);
 
-		$argLists = array();
+		$setup = new Setup(
+			$extension,
+			$hookLists,
+			__DIR__ . '/..'
+		);
 
-		foreach ( $settingArrays as $settingArray ) {
-			$argLists[] = array( $settingArray );
+		$setup->run();
+
+		foreach ( $hookLists as $hookName => $hookList ) {
+			$this->assertEquals( 1, count( $hookList ), "one hook handler need to be added to '$hookName'" );
+
+			$hook = reset( $hookList );
+
+			$this->assertInternalType( 'callable', $hook );
 		}
+	}
 
-		return $argLists;
+	protected function newExtension() {
+		return new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
 	}
 
 }

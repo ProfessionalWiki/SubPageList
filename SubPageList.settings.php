@@ -9,7 +9,7 @@
  * and placing it in LocalSettings.php, AFTER the inclusion of SubPageList.
  *
  * @file
- * @ingroup SPL
+ * @ingroup SubPageList
  *
  * @licence GNU GPL v2+
  *

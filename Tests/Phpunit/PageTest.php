@@ -21,8 +21,8 @@ class PageTest extends \PHPUnit_Framework_TestCase {
 	public function testConstructSetsFields() {
 		$title = $this->getMock( 'Title' );
 		$children = array(
-			$this->getMock( 'Title' ),
-			$this->getMock( 'Title' )
+			new Page( $this->getMock( 'Title' ) ),
+			new Page( $this->getMock( 'Title' ) )
 		);
 
 		$page = new Page( $title, $children );

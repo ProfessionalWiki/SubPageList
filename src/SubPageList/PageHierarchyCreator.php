@@ -34,6 +34,11 @@ use Title;
 class PageHierarchyCreator {
 
 	/**
+	 * @var Page[]
+	 */
+	protected $pages;
+
+	/**
 	 * @param Title[] $titles
 	 *
 	 * @return Page[]
@@ -41,13 +46,32 @@ class PageHierarchyCreator {
 	public function createHierarchy( array $titles ) {
 		$this->assertAreTitles( $titles );
 
-		$pages = array();
+		$this->pages = array();
 
 		foreach ( $titles as $title ) {
-			$pages[] = new Page( $title, array() );
+			$this->addTitle( $title );
 		}
 
-		return $pages;
+		return $this->pages;
+	}
+
+	protected function addTitle( Title $title ) {
+		$page = new Page( $title, array() );
+
+		$parentTitle = $this->getParentTitle( $title );
+
+		if ( $parentTitle === '' ) {
+			$this->pages[$title->getFullText()] = $page;
+		}
+		else {
+			$this->pages[$parentTitle]->addSubPage( $page );
+		}
+	}
+
+	protected function getParentTitle( Title $title ) {
+		$titleParts = explode( '/', $title->getFullText() );
+		array_pop( $titleParts );
+		return implode( $titleParts );
 	}
 
 	protected function assertAreTitles( array $titles ) {

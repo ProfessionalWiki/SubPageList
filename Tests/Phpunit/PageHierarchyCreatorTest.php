@@ -27,7 +27,6 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 
 	public function testEmptyListResultsInEmptyList() {
 		$hierarchyCreator = new PageHierarchyCreator();
-
 		$hierarchy = $hierarchyCreator->createHierarchy( array() );
 
 		$this->assertInternalType( 'array', $hierarchy );
@@ -47,27 +46,36 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function newMockTitle( $pageName ) {
-		return $this->getMock( 'Title' );
+		$title = $this->getMock( 'Title' );
+
+		$title->expects( $this->any() )
+			->method( 'getFullText' )
+			->will( $this->returnValue( $pageName ) );
+
+		return $title;
 	}
 
 	public function testListWithOneTitleResultsInOnePage() {
 		$title = $this->newMockTitle( 'SomePage' );
 
 		$hierarchyCreator = new PageHierarchyCreator();
-
 		$hierarchy = $hierarchyCreator->createHierarchy( array( $title ) );
 
-		$this->assertInternalType( 'array', $hierarchy );
-		$this->assertCount( 1, $hierarchy );
-		$this->assertContainsOnlyInstancesOf( 'SubPageList\Page', $hierarchy );
+		$this->assertPageCount( 1, $hierarchy );
 
 		/**
-		 * @var Page
+		 * @var Page $page
 		 */
 		$page = reset( $hierarchy );
 
 		$this->assertEquals( $title, $page->getTitle() );
 		$this->assertEquals( array(), $page->getSubPages() );
+	}
+
+	protected function assertPageCount( $expectedCount, $hierarchy ) {
+		$this->assertInternalType( 'array', $hierarchy );
+		$this->assertCount( $expectedCount, $hierarchy );
+		$this->assertContainsOnlyInstancesOf( 'SubPageList\Page', $hierarchy );
 	}
 
 	public function testMultipleTopLevelTitlesStayOnTopLevel() {
@@ -78,7 +86,6 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		);
 
 		$hierarchyCreator = new PageHierarchyCreator();
-
 		$hierarchy = $hierarchyCreator->createHierarchy( $titles );
 
 		$this->assertTopLevelTitlesEqual( $titles, $hierarchy );
@@ -89,8 +96,6 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	 * @param Page[] $actualPages
 	 */
 	protected function assertTopLevelTitlesEqual( array $expectedTitles, array $actualPages ) {
-		$this->assertSameSize( $expectedTitles, $actualPages );
-
 		$actualTitles = array();
 
 		foreach ( $actualPages as $actualPage ) {
@@ -98,6 +103,24 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		}
 
 		$this->assertEquals( $expectedTitles, $actualTitles );
+	}
+
+	public function testPageAndSubPageResultInPageWithChild() {
+		$topLevelPage = $this->newMockTitle( 'SomePage' );
+		$childPage = $this->newMockTitle( 'SomePage/ChildPage' );
+
+		$hierarchyCreator = new PageHierarchyCreator();
+		$hierarchy = $hierarchyCreator->createHierarchy( array( $topLevelPage, $childPage ) );
+
+		$this->assertPageCount( 1, $hierarchy );
+
+		/**
+		 * @var Page $page
+		 */
+		$page = reset( $hierarchy );
+
+		$this->assertEquals( $topLevelPage, $page->getTitle() );
+		$this->assertEquals( array( new Page( $childPage ) ), $page->getSubPages() );
 	}
 
 }

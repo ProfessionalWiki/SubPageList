@@ -44,17 +44,20 @@ class Page {
 	 *
 	 * @var Page[]
 	 */
-	protected $children;
+	protected $subPages = array();
 
 	/**
 	 * @since 1.0
 	 *
 	 * @param Title $title
-	 * @param Page[] $children
+	 * @param Page[] $subPages
 	 */
-	public function __construct( Title $title, array $children ) {
+	public function __construct( Title $title, array $subPages = array() ) {
 		$this->title = $title;
-		$this->children = $children;
+
+		foreach ( $subPages as $subPage ) {
+			$this->addSubPage( $subPage );
+		}
 	}
 
 	/**
@@ -72,7 +75,16 @@ class Page {
 	 * @return Page[]
 	 */
 	public function getSubPages() {
-		return $this->children;
+		return $this->subPages;
+	}
+
+	/**
+	 * @since 0.1
+	 *
+	 * @param Page $page
+	 */
+	public function addSubPage( Page $page ) {
+		$this->subPages[] = $page;
 	}
 
 }

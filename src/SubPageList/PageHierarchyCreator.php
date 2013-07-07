@@ -43,7 +43,9 @@ class PageHierarchyCreator {
 
 		$pages = array();
 
-		// TODO
+		foreach ( $titles as $title ) {
+			$pages[] = new Page( $title, array() );
+		}
 
 		return $pages;
 	}

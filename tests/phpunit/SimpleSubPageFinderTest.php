@@ -64,10 +64,7 @@ class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
 		$pages = $finder->getSubPagesFor( $title );
 
 		$this->assertInternalType( 'array', $pages );
-
-		foreach ( $pages as $page ) {
-			$this->assertInstanceOf( 'Title', $page );
-		}
+		$this->assertContainsOnlyInstancesOf( 'Title', $pages );
 	}
 
 }

@@ -6,7 +6,15 @@ cd ..
 
 git clone https://gerrit.wikimedia.org/r/p/mediawiki/core.git phase3 --depth 1
 
-cd phase3
+cd -
+cd ../phase3/extensions
+
+mkdir SubPageList
+
+cd -
+cp * ../phase3/extensions/SubPageList
+
+cd ../phase3
 
 mysql -e 'create database its_a_mw;'
 php maintenance/install.php --dbtype $DBTYPE --dbuser root --dbname its_a_mw --dbpath $(pwd) --pass nyan TravisWiki admin

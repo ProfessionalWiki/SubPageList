@@ -1,6 +1,6 @@
 <?php
 
-namespace SubPageList\Test;
+namespace SubPageList\Tests;
 
 use SubPageList\SimpleSubPageFinder;
 use SubPageList\SubPageFinder;

@@ -71,6 +71,30 @@ if ( !defined( 'ParserHooks_VERSION' ) ) {
 	throw new Exception( 'You need to have ParserHooks 0.1 or later installed in order to use SubPageList' );
 }
 
+// @codeCoverageIgnoreStart
+spl_autoload_register( function ( $className ) {
+	$className = ltrim( $className, '\\' );
+	$fileName = '';
+	$namespace = '';
+
+	if ( $lastNsPos = strripos( $className, '\\') ) {
+		$namespace = substr( $className, 0, $lastNsPos );
+		$className = substr( $className, $lastNsPos + 1 );
+		$fileName  = str_replace( '\\', '/', $namespace ) . '/';
+	}
+
+	$fileName .= str_replace( '_', '/', $className ) . '.php';
+
+	$namespaceSegments = explode( '\\', $namespace );
+
+	if ( $namespaceSegments[0] === 'SubPageList' ) {
+		if ( count( $namespaceSegments ) === 1 || $namespaceSegments[1] !== 'Tests' ) {
+			require_once __DIR__ . '/src/' . $fileName;
+		}
+	}
+} );
+// @codeCoverageIgnoreEnd
+
 call_user_func( function() {
 	global $wgExtensionCredits, $wgExtensionMessagesFiles, $wgAutoloadClasses, $wgExtensionFunctions;
 

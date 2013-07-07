@@ -1,6 +1,7 @@
 <?php
 
-namespace SubPageList\Test;
+namespace SubPageList\Tests;
+
 use SubPageList\Extension;
 use SubPageList\Settings;
 

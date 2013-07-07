@@ -1,11 +1,12 @@
 <?php
 
 namespace SubPageList\Test;
+
 use SubPageList\LazyDBConnectionProvider;
 use SubPageList\DBConnectionProvider;
 
 /**
- * Tests for the SubPageList\LazyDBConnectionProvider class.
+ * @covers SubPageList\LazyDBConnectionProvider
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,16 +33,7 @@ use SubPageList\DBConnectionProvider;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class LazyDBConnectionProviderTest extends \MediaWikiTestCase {
-
-	public function constructorProvider() {
-		$dbIds = array(
-			DB_MASTER,
-			DB_SLAVE,
-		);
-
-		return $this->arrayWrap( $dbIds );
-	}
+class LazyDBConnectionProviderTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @dataProvider constructorProvider
@@ -54,13 +46,13 @@ class LazyDBConnectionProviderTest extends \MediaWikiTestCase {
 		$this->assertTrue( true );
 	}
 
-	public function instanceProvider() {
-		$instances = array();
+	public function constructorProvider() {
+		$argLists = array(
+			array( DB_MASTER ),
+			array( DB_SLAVE ),
+		);
 
-		$instances[] = new LazyDBConnectionProvider( DB_MASTER );
-		$instances[] = new LazyDBConnectionProvider( DB_SLAVE );
-
-		return $this->arrayWrap( $instances );
+		return $argLists;
 	}
 
 	/**
@@ -78,6 +70,15 @@ class LazyDBConnectionProviderTest extends \MediaWikiTestCase {
 		$connProvider->releaseConnection();
 
 		$this->assertInstanceOf( 'DatabaseBase', $connProvider->getConnection() );
+	}
+
+	public function instanceProvider() {
+		$argLists = array();
+
+		$argLists[] = array( new LazyDBConnectionProvider( DB_MASTER ) );
+		$argLists[] = array( new LazyDBConnectionProvider( DB_SLAVE ) );
+
+		return $argLists;
 	}
 
 }

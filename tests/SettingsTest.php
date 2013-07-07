@@ -1,10 +1,11 @@
 <?php
 
 namespace SubPageList\Test;
+
 use SubPageList\Settings;
 
 /**
- * Tests for the SubPageList\Settings class.
+ * @covers SubPageList\Settings
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,18 +32,7 @@ use SubPageList\Settings;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SettingsTest extends SubPageListTestCase {
-
-	public function constructorProvider() {
-		$settingArrays = array(
-			array(),
-			array( 'foo' => 'bar' ),
-			array( 'foo' => 'bar', 'baz' => 'BAH' ),
-			array( '~[,,_,,]:3' => array( 9001, 4.2 ) ),
-		);
-
-		return $this->arrayWrap( $settingArrays );
-	}
+class SettingsTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @dataProvider constructorProvider
@@ -57,6 +47,23 @@ class SettingsTest extends SubPageListTestCase {
 		}
 
 		$this->assertTrue( true );
+	}
+
+	public function constructorProvider() {
+		$settingArrays = array(
+			array(),
+			array( 'foo' => 'bar' ),
+			array( 'foo' => 'bar', 'baz' => 'BAH' ),
+			array( '~[,,_,,]:3' => array( 9001, 4.2 ) ),
+		);
+
+		$argLists = array();
+
+		foreach ( $settingArrays as $settingArray ) {
+			$argLists[] = array( $settingArray );
+		}
+
+		return $argLists;
 	}
 
 }

@@ -32,15 +32,7 @@ use SubPageList\Settings;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ExtensionTest extends SubPageListTestCase {
-
-	public function constructorProvider() {
-		$settingArrays = array(
-			Settings::newFromGlobals( $GLOBALS )
-		);
-
-		return $this->arrayWrap( $settingArrays );
-	}
+class ExtensionTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @dataProvider constructorProvider
@@ -53,12 +45,12 @@ class ExtensionTest extends SubPageListTestCase {
 		$this->assertEquals( $settings, $extension->getSettings() );
 	}
 
-	public function instanceProvider() {
-		$instances = array();
+	public function constructorProvider() {
+		$argLists = array(
+			array( Settings::newFromGlobals( $GLOBALS ) )
+		);
 
-		$instances[] = new Extension( Settings::newFromGlobals( $GLOBALS ) );
-
-		return $this->arrayWrap( $instances );
+		return $argLists;
 	}
 
 	/**
@@ -68,6 +60,14 @@ class ExtensionTest extends SubPageListTestCase {
 	 */
 	public function testGetSlaveConnectionProvider( Extension $extension ) {
 		$this->assertInstanceOf( 'SubPageList\DBConnectionProvider', $extension->getSlaveConnectionProvider() );
+	}
+
+	public function instanceProvider() {
+		$argLists = array();
+
+		$argLists[] = array( new Extension( Settings::newFromGlobals( $GLOBALS ) ) );
+
+		return $argLists;
 	}
 
 	/**

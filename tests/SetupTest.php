@@ -1,10 +1,11 @@
 <?php
 
 namespace SubPageList\Test;
+
 use SubPageList\Setup;
 
 /**
- * Tests for the SubPageList\Setup class.
+ * @covers SubPageList\Setup
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +32,7 @@ use SubPageList\Setup;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SetupTest extends SubPageListTestCase {
+class SetupTest extends \PHPUnit_Framework_TestCase {
 
 	public function testRun() {
 		$extension = $this->newExtension();
@@ -58,6 +59,10 @@ class SetupTest extends SubPageListTestCase {
 
 			$this->assertInternalType( 'callable', $hook );
 		}
+	}
+
+	protected function newExtension() {
+		return new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
 	}
 
 }

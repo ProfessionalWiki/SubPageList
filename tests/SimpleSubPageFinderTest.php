@@ -1,12 +1,13 @@
 <?php
 
 namespace SubPageList\Test;
+
 use SubPageList\SimpleSubPageFinder;
 use SubPageList\SubPageFinder;
 use Title;
 
 /**
- * Tests for the SubPageList\SimpleSubPageFinder class.
+ * @covers SubPageList\SimpleSubPageFinder
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +35,7 @@ use Title;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SimpleSubPageFinderTest extends SubPageListTestCase {
+class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @return SubPageFinder
@@ -44,12 +45,12 @@ class SimpleSubPageFinderTest extends SubPageListTestCase {
 	}
 
 	public function titleProvider() {
-		$titles = array();
+		$argLists = array();
 
-		$titles[] = Title::newMainPage();
-		$titles[] = Title::newFromText( 'ohi there i do not exist nyan nyan nyan' );
+		$argLists[] = array( Title::newMainPage() );
+		$argLists[] = array( Title::newFromText( 'ohi there i do not exist nyan nyan nyan' ) );
 
-		return $this->arrayWrap( $titles );
+		return $argLists;
 	}
 
 	/**

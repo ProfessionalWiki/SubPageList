@@ -2,9 +2,10 @@
 
 namespace SubPageList\Tests\Phpunit;
 
-use Title;
+use SubPageList\TitleFactory;
 use SubPageList\Page;
 use SubPageList\PageHierarchyCreator;
+use Title;
 
 /**
  * @covers SubPageList\PageHierarchyCreator
@@ -21,12 +22,26 @@ use SubPageList\PageHierarchyCreator;
 class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 
 	public function testCanConstruct() {
-		new PageHierarchyCreator();
+		$this->newPageHierarchyCreator();
 		$this->assertTrue( true );
 	}
 
+	protected function newPageHierarchyCreator() {
+		$factory = $this->getMock( 'SubPageList\TitleFactory' );
+
+		$titleBuilder = array( $this, 'newMockTitle' );
+
+		$factory->expects( $this->any() )
+			->method( 'newFromText' )
+			->will( $this->returnCallback( function( $titleText ) use ( $titleBuilder ) {
+				return call_user_func( $titleBuilder, $titleText );
+			} ) );
+
+		return new PageHierarchyCreator( $factory );
+	}
+
 	public function testEmptyListResultsInEmptyList() {
-		$hierarchyCreator = new PageHierarchyCreator();
+		$hierarchyCreator = $this->newPageHierarchyCreator();
 		$hierarchy = $hierarchyCreator->createHierarchy( array() );
 
 		$this->assertInternalType( 'array', $hierarchy );
@@ -34,7 +49,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCanOnlyPassInTitleObjects() {
-		$hierarchyCreator = new PageHierarchyCreator();
+		$hierarchyCreator = $this->newPageHierarchyCreator();
 
 		$this->setExpectedException( 'InvalidArgumentException' );
 
@@ -58,7 +73,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	public function testListWithOneTitleResultsInOnePage() {
 		$title = $this->newMockTitle( 'SomePage' );
 
-		$hierarchyCreator = new PageHierarchyCreator();
+		$hierarchyCreator = $this->newPageHierarchyCreator();
 		$hierarchy = $hierarchyCreator->createHierarchy( array( $title ) );
 
 		$this->assertPageCount( 1, $hierarchy );
@@ -85,7 +100,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 			$this->newMockTitle( 'OhiThere' ),
 		);
 
-		$hierarchyCreator = new PageHierarchyCreator();
+		$hierarchyCreator = $this->newPageHierarchyCreator();
 		$hierarchy = $hierarchyCreator->createHierarchy( $titles );
 
 		$this->assertTopLevelTitlesEqual( $titles, $hierarchy );
@@ -109,9 +124,18 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$topLevelPage = $this->newMockTitle( 'SomePage' );
 		$childPage = $this->newMockTitle( 'SomePage/ChildPage' );
 
-		$hierarchyCreator = new PageHierarchyCreator();
+		$hierarchyCreator = $this->newPageHierarchyCreator();
+
 		$hierarchy = $hierarchyCreator->createHierarchy( array( $topLevelPage, $childPage ) );
 
+		$this->assertHasParentAndChild( $topLevelPage, $childPage, $hierarchy );
+
+		$hierarchy = $hierarchyCreator->createHierarchy( array( $childPage, $topLevelPage ) );
+
+		$this->assertHasParentAndChild( $topLevelPage, $childPage, $hierarchy );
+	}
+
+	protected function assertHasParentAndChild( $topLevelPage, $childPage, array $hierarchy ) {
 		$this->assertPageCount( 1, $hierarchy );
 
 		/**

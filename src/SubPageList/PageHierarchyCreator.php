@@ -39,6 +39,15 @@ class PageHierarchyCreator {
 	protected $pages;
 
 	/**
+	 * @var TitleFactory
+	 */
+	protected $titleFactory;
+
+	public function __construct( TitleFactory $titleFactory ) {
+		$this->titleFactory = $titleFactory;
+	}
+
+	/**
 	 * @param Title[] $titles
 	 *
 	 * @return Page[]
@@ -57,21 +66,78 @@ class PageHierarchyCreator {
 
 	protected function addTitle( Title $title ) {
 		$page = new Page( $title, array() );
+		$titleText = $this->getTextForTitle( $title );
 
-		$parentTitle = $this->getParentTitle( $title );
+		$parentTitle = $this->getParentTitle( $titleText );
 
 		if ( $parentTitle === '' ) {
-			$this->pages[$title->getFullText()] = $page;
+			$this->addTopLevelPage( $titleText, $page );
 		}
 		else {
-			$this->pages[$parentTitle]->addSubPage( $page );
+			$this->createParents( $titleText );
+			$this->addSubPage( $parentTitle, $page );
 		}
 	}
 
-	protected function getParentTitle( Title $title ) {
-		$titleParts = explode( '/', $title->getFullText() );
+	protected function getTextForTitle( Title $title ) {
+		return $title->getFullText();
+	}
+
+	protected function addTopLevelPage( $titleText, Page $page ) {
+		if ( !array_key_exists( $titleText, $this->pages ) ) {
+			$this->pages[$titleText] = $page;
+		}
+	}
+
+	/**
+	 * @param string $parentTitle
+	 * @param Page $page
+	 */
+	protected function addSubPage( $parentTitle, Page $page ) {
+		$this->pages[$parentTitle]->addSubPage( $page );
+	}
+
+	protected function createParents( $pageTitle ) {
+		$titleParts = $this->getTitleParts( $pageTitle );
 		array_pop( $titleParts );
-		return implode( $titleParts );
+
+		if ( empty( $titleParts ) ) {
+			return;
+		}
+
+		$topLevelPage =  array_shift( $titleParts );
+
+		$this->addTopLevelPage( $topLevelPage, $this->newPageFromText( $topLevelPage ) );
+
+		$previousParts = array( $topLevelPage );
+
+		foreach ( $titleParts as $titlePart ) {
+			$parentTitle = $this->titleTextFromParts( $previousParts );
+
+			$previousParts[] = $titlePart;
+
+			$pageTitle = $this->titleTextFromParts( $previousParts );
+
+			$this->addSubPage( $parentTitle, $this->newPageFromText( $pageTitle ) );
+		}
+	}
+
+	protected function newPageFromText( $titleText ) {
+		return new Page( $this->titleFactory->newFromText( $titleText ) );
+	}
+
+	protected function getTitleParts( $titleText ) {
+		return explode( '/', $titleText );
+	}
+
+	protected function titleTextFromParts( array $titleParts ) {
+		return implode( '/', $titleParts );
+	}
+
+	protected function getParentTitle( $titleText ) {
+		$titleParts = $this->getTitleParts($titleText );
+		array_pop( $titleParts );
+		return $this->titleTextFromParts( $titleParts );
 	}
 
 	protected function assertAreTitles( array $titles ) {

@@ -2,6 +2,7 @@
 
 namespace SubPageList\Tests\Phpunit;
 
+use Title;
 use SubPageList\Page;
 use SubPageList\PageHierarchyCreator;
 
@@ -39,14 +40,18 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$this->setExpectedException( 'InvalidArgumentException' );
 
 		$hierarchyCreator->createHierarchy( array(
-			$this->getMock( 'Title' ),
+			$this->newMockTitle( 'SomePage' ),
 			42,
-			$this->getMock( 'Title' )
+			$this->newMockTitle( 'OtherPage' )
 		) );
 	}
 
+	protected function newMockTitle( $pageName ) {
+		return $this->getMock( 'Title' );
+	}
+
 	public function testListWithOneTitleResultsInOnePage() {
-		$title = $this->getMock( 'Title' );
+		$title = $this->newMockTitle( 'SomePage' );
 
 		$hierarchyCreator = new PageHierarchyCreator();
 
@@ -65,6 +70,34 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals( array(), $page->getSubPages() );
 	}
 
+	public function testMultipleTopLevelTitlesStayOnTopLevel() {
+		$titles = array(
+			$this->newMockTitle( 'SomePage' ),
+			$this->newMockTitle( 'OtherPage' ),
+			$this->newMockTitle( 'OhiThere' ),
+		);
 
+		$hierarchyCreator = new PageHierarchyCreator();
+
+		$hierarchy = $hierarchyCreator->createHierarchy( $titles );
+
+		$this->assertTopLevelTitlesEqual( $titles, $hierarchy );
+	}
+
+	/**
+	 * @param Title[] $expectedTitles
+	 * @param Page[] $actualPages
+	 */
+	protected function assertTopLevelTitlesEqual( array $expectedTitles, array $actualPages ) {
+		$this->assertSameSize( $expectedTitles, $actualPages );
+
+		$actualTitles = array();
+
+		foreach ( $actualPages as $actualPage ) {
+			$actualTitles[] = $actualPage->getTitle();
+		}
+
+		$this->assertEquals( $expectedTitles, $actualTitles );
+	}
 
 }

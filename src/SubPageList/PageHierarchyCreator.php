@@ -2,6 +2,7 @@
 
 namespace SubPageList;
 
+use InvalidArgumentException;
 use Title;
 
 /**
@@ -38,11 +39,21 @@ class PageHierarchyCreator {
 	 * @return Page[]
 	 */
 	public function createHierarchy( array $titles ) {
+		$this->assertAreTitles( $titles );
+
 		$pages = array();
 
 		// TODO
 
 		return $pages;
+	}
+
+	protected function assertAreTitles( array $titles ) {
+		foreach ( $titles as $title ) {
+			if ( !( $title instanceof Title ) ) {
+				throw new InvalidArgumentException( 'All elements must be of instance Title' );
+			}
+		}
 	}
 
 }

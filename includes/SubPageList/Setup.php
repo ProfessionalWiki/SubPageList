@@ -3,6 +3,9 @@
 namespace SubPageList;
 
 use Parser;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
+use SplFileInfo;
 use WikiPage;
 use User;
 use Revision;
@@ -37,7 +40,7 @@ use Title;
 class Setup {
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var Extension
 	 */
@@ -46,21 +49,26 @@ class Setup {
 	/**
 	 * @since 1.0
 	 *
-	 * @var array
+	 * @var array[]
 	 */
 	protected $hooks;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 1.0
 	 *
+	 * @var string
+	 */
+	protected $rootDirectory;
+
+	/**
 	 * @param Extension $extension
 	 * @param array $hooks
+	 * @param string $rootDirectory
 	 */
-	public function __construct( Extension $extension, array &$hooks ) {
+	public function __construct( Extension $extension, array &$hooks, $rootDirectory ) {
 		$this->hooks =& $hooks;
 		$this->extension = $extension;
+		$this->rootDirectory = $rootDirectory;
 	}
 
 	/**
@@ -70,6 +78,7 @@ class Setup {
 	 */
 	public function run() {
 		$extension = $this->extension;
+		$rootDirectory = $this->rootDirectory;
 
 		/**
 		 * Called when the parser initialises for the first time.
@@ -137,17 +146,16 @@ class Setup {
 		 *
 		 * @return boolean
 		 */
-		$this->hooks['UnitTestsList'][]	= function( array &$files ) {
-			$testFiles = array(
-				'Extension',
-				'LazyDBConnectionProvider',
-				'Settings',
-				'Setup',
-				'SimpleSubPageFinder',
-			);
+		$this->hooks['UnitTestsList'][]	= function( array &$files ) use ( $rootDirectory ) {
+			$directoryIterator = new RecursiveDirectoryIterator( $rootDirectory . '/tests/' );
 
-			foreach ( $testFiles as $file ) {
-				$files[] = __DIR__ . '/../../tests/' . $file . 'Test.php';
+			/**
+			 * @var SplFileInfo $fileInfo
+			 */
+			foreach ( new RecursiveIteratorIterator( $directoryIterator ) as $fileInfo ) {
+				if ( substr( $fileInfo->getFilename(), -8 ) === 'Test.php' ) {
+					$files[] = $fileInfo->getPathname();
+				}
 			}
 
 			return true;

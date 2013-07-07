@@ -47,7 +47,8 @@ class SetupTest extends \PHPUnit_Framework_TestCase {
 
 		$setup = new Setup(
 			$extension,
-			$hookLists
+			$hookLists,
+			__DIR__ . '/..'
 		);
 
 		$setup->run();

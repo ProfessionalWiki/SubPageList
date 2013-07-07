@@ -95,7 +95,7 @@ call_user_func( function() {
 		global $wgHooks;
 
 		$extension = new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
-		$extensionSetup = new \SubPageList\Setup( $extension, $wgHooks );
+		$extensionSetup = new \SubPageList\Setup( $extension, $wgHooks, __DIR__ );
 
 		$extensionSetup->run();
 	};

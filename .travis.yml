@@ -17,7 +17,7 @@ matrix:
 before_script: bash .travis.sh
 
 script:
-  - pphunit -c ../phase3/extensions/SubPageList/phpunit.xml.dist
+  - phpunit -c ../phase3/extensions/SubPageList/phpunit.xml.dist
 
 notifications:
   email:

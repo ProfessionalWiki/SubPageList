@@ -32,7 +32,7 @@ $messages['en'] = array(
 	'spl-subpages-par-kidsonly' => 'Allows showing only direct subpages.',
 	'spl-subpages-par-limit' => 'The maximum number of pages to list.',
 	'spl-subpages-par-element' => 'The HTML element enclosing the list (including "intro" and "outro" or "default" texts). Allowed values: "div", "p", "span".',
-	'spl-subpages-par-class' => 'The value for "class" attribute of HTML element enclosing the list.',
+	'spl-subpages-par-class' => 'The value for "class" attribute of the HTML element enclosing the list.',
 	'spl-subpages-par-intro' => 'The text to output before the list, if the list is not empty.',
 	'spl-subpages-par-outro' => 'The text to output after the list, if the list is not empty.',
 	'spl-subpages-par-default' => 'The text to output instead of the list, if the list is empty. If empty, error message will rendered (such as "Page has no subpages to list"). If dash ("-"), result will be completely empty.',
@@ -49,6 +49,21 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'spl-desc' => '{{desc|name=Sub Page List|url=http://www.mediawiki.org/wiki/Extension:SubPageList}}',
+	'spl-nosubpages' => 'Parameters:
+* $1 - page title (with link)
+See also:
+* {{msg-mw|Spl-noparentpage}}
+* {{msg-mw|Spl-nopages}}',
+	'spl-noparentpage' => 'Parameters:
+* $1 - page title
+See also:
+* {{msg-mw|Spl-nosubpages}}
+* {{msg-mw|Spl-nopages}}',
+	'spl-nopages' => 'Parameters:
+* $1 - namespace name
+See also:
+* {{msg-mw|Spl-noparentpage}}
+* {{msg-mw|Spl-nosubpages}}',
 	'spl-subpages-par-sort' => '{{doc-important|Do not translate "asc" and "desc".}}',
 	'spl-subpages-par-sortby' => '{{doc-important|Do not translate "title" and "lastedit".}}',
 	'spl-subpages-par-format' => '{{doc-important|Do not translate "ol", "ul" and "list".}}',
@@ -57,6 +72,32 @@ $messages['qqq'] = array(
 	'spl-subpages-par-class' => '{{doc-important|Do not translate "class".}}',
 	'spl-subpages-par-separator' => '{{doc-important|Do not translate "list" and "bar".}}',
 	'spl-subpages-par-template' => '{{doc-important|Do not translate "ul", "ol", and "list".}}',
+);
+
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'spl-desc' => 'Amiesta una etiqueta <code><nowiki><splist /></nowiki></code> que permite facer una llista de subpáxines',
+	'spl-nosubpages' => "La páxina «$1» nun tien páxines secundaries qu'amosar.",
+	'spl-noparentpage' => 'La páxina «$1» nun esiste.',
+	'spl-nopages' => "L'espaciu de nomes «$1» nun tien páxines.",
+	'spl-subpages-par-sort' => 'La direición d\'ordenación. Valores permitíos: "asc" y "desc".',
+	'spl-subpages-par-sortby' => 'Criteriu pa ordenar les subpáxines. Valores permitíos: "title" o "lastedit".',
+	'spl-subpages-par-format' => 'La llista de subpáxines pue amosase\'n dellos formatos. Valores permitíos: "ol" — llista ordenada (numberada), "ul" — llistes desordenaes (con viñetes), "list" — llistes simples (por exemplu llista separada por comas).',
+	'spl-subpages-par-page' => "La páxina de la qu'amosar les subpáxines o'l nome del espaciu de nomes (incluyendo los dos puntos finales) del qu'amosar les páxines. La predeterminada ye la páxina actual.",
+	'spl-subpages-par-showpage' => "Indica si la propia páxina tien d'apaecer na llista o non.",
+	'spl-subpages-par-pathstyle' => 'L\'estilu del camín de les subpáxines de la llista. Valores permitíos: "fullpagename": nome completu de la páxina (incluyendo espaciu de nomes), "pagename" — nome de la páxina (ensin espaciu de nomes), "subpagename" — nome relativu de la páxina comenzando dende la páxina pa la que vamos a facer la llista de subpáxines, "none" — sólo la parte final del nome dempués de la última barra.',
+	'spl-subpages-par-kidsonly' => 'Permite ver sólo les subpáxines direutes.',
+	'spl-subpages-par-limit' => 'El númberu máximu de páxines a poner na llista.',
+	'spl-subpages-par-element' => 'L\'elementu HTML que rodea la llista (incluyendo los testos "intro" y "outro" o "default"). Valores permitíos: "div", "p", "span".',
+	'spl-subpages-par-class' => 'El valor pal atributu "class" del elementu HTML que rodea la llista.',
+	'spl-subpages-par-intro' => 'El testu a poner antes de la llista, si la llista nun ta balera.',
+	'spl-subpages-par-outro' => 'El testu a poner dempués de la llista, si la llista nun ta balera.',
+	'spl-subpages-par-default' => 'El testu a poner en llugar de la llista, si la llista ta balera. Si ta balera, apaecerá esti mensaxe d\'error (como "La páxina nun tien nenguna subpáxina que poner na llista"). Si ye un guión ("-"), el resultáu tará en blanco dafechu.',
+	'spl-subpages-par-separator' => 'El testu a amosar ente dos elementos de la llista nel casu del formatu "list" (ya\'l so alcuñu "bar"). Nun tien efeutu colos demás formatos.',
+	'spl-subpages-par-template' => 'El nome de la plantía. La plantía aplicase a cada elementu de la llista. Un elementu pasase como primer argumentu (ensin nome). Tenga en cuenta que la plantía nun anula\'l formatu de la llista. El formatu ("ul", "ol", "list") aplicase al resultáu de la plantía.',
+	'spl-subpages-par-links' => 'Si ye verdadero, los elementos de la llista veránse como enllaces. Si ye falso, los elementos de la llista veránse como testu planu. Lo último ye especialmente útil para pasar los elementos a les plantíes pa procesalos posteriormente.',
 );
 
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
@@ -402,10 +443,11 @@ $messages['ksh'] = array(
 	'spl-desc' => 'Deiht dä Befähl <code><nowiki><splist /></nowiki></code> en et Wiki, för Ongersigge aanzezeije.',
 	'spl-nosubpages' => 'Di Sigg „$1“ hät kein Ongersigge zom Opleßte.',
 	'spl-noparentpage' => 'En Sigg „$1“ jidd_et nit.',
-	'spl-subpages-par-sort' => 'Wieröm zoteet wääde sull.', # Fuzzy
-	'spl-subpages-par-sortby' => 'Noh wat de Ongersigge zoteet wääde sulle.', # Fuzzy
-	'spl-subpages-par-format' => 'De Leß met de Ongersigge kann ongerscheidlijje Jeschtalte han: met Nummere (ol) met Punkte (ul) un alles ein eine Reih met Kommas dozwesche (list)', # Fuzzy
-	'spl-subpages-par-page' => 'De Sigg, woh de Ongersigge vun jezeich wääde sulle. Wam_mer nix säät, es dat de Sigg, di jraad jezeich weed.', # Fuzzy
+	'spl-nopages' => 'Dat Appachtemang „$1“ hät kein Sigge.',
+	'spl-subpages-par-sort' => 'Wieröm zoteet wääde sull, mer kann <code lang="en">asc</code> för opwääds un <code lang="en">desc</code> för retuurwääds aanjävve.',
+	'spl-subpages-par-sortby' => 'Noh wat de Ongersigge zoteet wääde sulle, mer kann <code lang="en">title</code> för der Tittel un <code lang="en">lastedit</code> för et Dattum un de Zig vun de läzde Änderong aanjävve.',
+	'spl-subpages-par-format' => '!De Leß met de Ongersigge kann ongerscheidlijje Jeschtalte han: met Nummere (<code>ol</code>) met Punkte (<code>ul</code>) un alles ein eine Reih met Kommas dozwesche (<code>list</code>)',
+	'spl-subpages-par-page' => 'De Sigg, woh de Ongersigge vun jezeich wääde sulle. Wam_mer nix säät, es dat de Sigg, di jraad jezeich weed. Wann ene Dubbelpungk aam Ängk es, ess-et an Appachtemang un däm sing Sigge wääde jezeisch.',
 	'spl-subpages-par-showpage' => 'Jitt aan, ov de Sigg selver och en dä Leß met dä iehre Ongersigge aanjezeisch wääde sull, udder nit.',
 	'spl-subpages-par-pathstyle' => 'Dä Stil vun de Aanzeije vun däm Pad vun de Ongersigge en dä Leß.
 Zohjelohße es:
@@ -415,6 +457,10 @@ Zohjelohße es:
 <code lang="en">none</code> — Blos et Engk vum Name henger_em läzde schrääje Schtresch.',
 	'spl-subpages-par-kidsonly' => 'Määt et müjjelesch, bloß de diräkte Ongersigge opzeleßte.',
 	'spl-subpages-par-limit' => 'De jrüüßte Zahl Sigge för opzeleste.',
+	'spl-subpages-par-class' => 'Dä Wäät för dat „<code lang="en">class</code>“-Attribut vun däm <i lang="en">HTML</i>-Elemänt, woh di Leß dren es.',
+	'spl-subpages-par-intro' => 'Der Täx vör der Leß, wann se nit läddesch es',
+	'spl-subpages-par-outro' => 'Der Täx henger der Leß, wann se nit läddesch es',
+	'spl-subpages-par-separator' => 'Dä Täx, dä zwesche zwei Endrääsch en de Leß ußjejovve wääde sull. Wann et Fommaat nit <code>list</code> es, deiht dat heh nix.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -504,7 +550,7 @@ $messages['mt'] = array(
 	'spl-subpages-par-sort' => 'Id-direzzjoni kif tirranġahom. Valuri permessi: "asc" u "desc".',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
@@ -626,6 +672,16 @@ $messages['pt'] = array(
 	'spl-subpages-par-separator' => 'O texto a apresentar entre duas entradas da lista no caso dos formatos "list" ou "bar". Não tem efeito nos outros formatos.',
 	'spl-subpages-par-template' => 'O nome da predefinição. A predefinição é aplicada a cada entrada da lista. Uma entrada é passada como o primeiro argumento (anónimo). Note que a predefinição não cancela a formatação da lista. A formatação ("ul", "ol", ou "list") é aplicada ao resultado da predefinição.',
 	'spl-subpages-par-links' => 'Se verdadeiro, as entradas da lista são apresentadas na forma de links. Se falso, as entradas da lista são apresentadas como texto simples. Esta última opção é especialmente útil para passar entradas a uma predefinição, para processamento posterior.',
+);
+
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'spl-nosubpages' => '\'A pàgene "$1" non ge tène sottopàggene da elengà.',
+	'spl-noparentpage' => '\'A pàgene "$1" non g\'esiste.',
+	'spl-nopages' => '\'U namespace "$1" non ge tène pàggene.',
+	'spl-subpages-par-limit' => "'U massime numere de pàggene da elengà.",
 );
 
 /** Russian (русский)
@@ -754,6 +810,8 @@ $messages['zh-hans'] = array(
 	'spl-nopages' => '命名空间“$1”没有页面。',
 	'spl-subpages-par-sort' => '要排序的方向。允许的值：“asc”和“desc”。',
 	'spl-subpages-par-sortby' => '要按什么排序子页面。允许的值：“title”或“lastedit”。',
+	'spl-subpages-par-kidsonly' => '允许显示仅直接的子页面。',
+	'spl-subpages-par-limit' => '列出页面的最大数量。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)

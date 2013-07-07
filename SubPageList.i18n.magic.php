@@ -69,6 +69,11 @@ $magicWords['ko'] = array(
 	'subpagecount' => array( 0, '하위문서갯수' ),
 );
 
+/** Kurdish (Latin script) (Kurdî (latînî)‎) */
+$magicWords['ku-latn'] = array(
+	'subpages' => array( 0, 'binrûpel' ),
+);
+
 /** Macedonian (македонски) */
 $magicWords['mk'] = array(
 	'splist' => array( 0, 'пссписок' ),

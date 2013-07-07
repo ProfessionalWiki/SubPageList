@@ -39,29 +39,37 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-// Attempt to include the Validator extension if that hasn't been done yet, since it's required for SubPageList to work.
-if ( !defined( 'Validator_VERSION' ) ) {
-	@include_once( dirname( __FILE__ ) . '/../Validator/Validator.php' );
+if ( defined( 'SPL_VERSION' ) ) {
+	// Do not initialize more then once.
+	return;
 }
 
-// Attempt to include the ParserHooks extension if that hasn't been done yet, since it's required for SubPageList to work.
-if ( !defined( 'ParserHooks_VERSION' ) ) {
-	@include_once( dirname( __FILE__ ) . '/../ParserHooks/ParserHooks.php' );
+define( 'SPL_VERSION', '1.0 alpha' );
+
+// Include the composer autoloader if it is present.
+if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
+	include_once( __DIR__ . '/vendor/autoload.php' );
+}
+
+// Attempt to include the ParamProcessor lib if that has not been loaded yet.
+if ( !defined( 'ParamProcessor_VERSION' ) && file_exists( __DIR__ . '/../Validator/Validator.php' ) ) {
+	include_once( __DIR__ . '/../Validator/Validator.php' );
+}
+
+// Attempt to include the ParserHooks lib if that has not been loaded yet.
+if ( !defined( 'ParserHooks_VERSION' ) && file_exists( __DIR__ . '/../ParserHooks/ParserHooks.php' ) ) {
+	include_once( __DIR__ . '/../ParserHooks/ParserHooks.php' );
 }
 
 // Only initialize the extension when all dependencies are present.
 if ( !defined( 'ParamProcessor_VERSION' ) ) {
-	die( '<b>Error:</b> You need to have <a href="http://www.mediawiki.org/wiki/Extension:Validator">Validator (ParamProcessor)</a> 1.0 or later installed in order to use <a href="http://www.mediawiki.org/wiki/Extension:SubPageList">SubPageList</a>.<br />' );
+	throw new Exception( 'You need to have ParamProcessor (Validator) 1.0 or later installed in order to use SubPageList' );
 }
 
 // Only initialize the extension when all dependencies are present.
 if ( !defined( 'ParserHooks_VERSION' ) ) {
-	die( '<b>Error:</b> You need to have <a href="http://www.mediawiki.org/wiki/Extension:ParserHooks">ParserHooks</a> 0.1 or later installed in order to use <a href="http://www.mediawiki.org/wiki/Extension:SubPageList">SubPageList</a>.<br />' );
+	throw new Exception( 'You need to have ParserHooks 0.1 or later installed in order to use SubPageList' );
 }
-
-
-define( 'SPL_VERSION', '1.0 alpha' );
-
 
 call_user_func( function() {
 	global $wgExtensionCredits, $wgExtensionMessagesFiles, $wgAutoloadClasses, $wgExtensionFunctions;

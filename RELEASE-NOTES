@@ -1,7 +1,6 @@
 These are the release notes for the SubPageList extension.
 	
 Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:SubPageList
-Latest version of the release notes: https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/SubPageList.git;a=blob;f=RELEASE-NOTES
 
 
 === Version 1.0 ===
@@ -9,14 +8,22 @@ Latest version of the release notes: https://gerrit.wikimedia.org/r/gitweb?p=med
 
 ; Compatibility changes
 
-* Changed MediaWiki compatibility from MW 1.17-1.19 to 1.19-1.21.
-* Changed PHP compatibility from 5.2.x and 5.3.x to 5.3.x and 5.4.x.
+* Changed MediaWiki compatibility from MW 1.17-1.19 to MW >= 1.19
+* Changed PHP compatibility from 5.2.x to PHP >= 5.3.
 * Changed Validator compatibility from 0.4.x to 1.0.x.
+* New dependency: ParserHooks 0.1 or later.
 
 ; Internal improvements
 
 * Redesign of most of the code
 * Added various PHPUnit tests
+* Replaced manual class registration by a PST-0 style autoloader
+
+; Infrastructure
+
+* Extension now installable via composer
+* Unit tests can now be run using phpunit.xml.dist
+* Tests now run on TravisCI
 
 === Version 0.5 ===
 2011-12-27

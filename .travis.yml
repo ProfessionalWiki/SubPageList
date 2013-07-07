@@ -16,7 +16,11 @@ matrix:
 
 before_script: bash .travis.sh
 
-script: cd ../phase3/extensions/SubPageList ; phpunit
+script:
+  - cd ../phase3/extensions/SubPageList
+  - pwd
+  - ls -lap
+  - phpunit
 
 notifications:
   email:

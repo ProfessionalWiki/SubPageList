@@ -12,7 +12,7 @@ mysql -e 'create database its_a_mw;'
 php maintenance/install.php --dbtype $DBTYPE --dbuser root --dbname its_a_mw --dbpath $(pwd) --pass nyan TravisWiki admin
 
 cd extensions
-composer create-project wikibase/query:dev-master WikibaseQuery --keep-vcs
+git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git --depth 1
 
 cd ..
 echo 'require_once( __DIR__ . "/extensions/WikibaseQuery/WikibaseQuery.php" );' >> LocalSettings.php

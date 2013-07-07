@@ -47,14 +47,12 @@ class SubPageCount implements HookHandler {
 	protected $titleFactory;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 1.0
 	 *
 	 * @param SubPageCounter $counter
 	 * @param TitleFactory $titleFactory
 	 */
-	public function setCounter( SubPageCounter $counter, TitleFactory $titleFactory ) {
+	public function __construct( SubPageCounter $counter, TitleFactory $titleFactory ) {
 		$this->counter = $counter;
 		$this->titleFactory = $titleFactory;
 	}

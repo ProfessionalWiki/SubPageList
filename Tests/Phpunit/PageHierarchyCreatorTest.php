@@ -60,7 +60,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		) );
 	}
 
-	protected function newMockTitle( $pageName ) {
+	public function newMockTitle( $pageName ) {
 		$title = $this->getMock( 'Title' );
 
 		$title->expects( $this->any() )

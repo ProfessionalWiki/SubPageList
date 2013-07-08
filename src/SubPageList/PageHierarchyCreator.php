@@ -34,9 +34,18 @@ use Title;
 class PageHierarchyCreator {
 
 	/**
+	 * Top level pages.
+	 *
 	 * @var Page[]
 	 */
 	protected $pages;
+
+	/**
+	 * All pages, indexed by title text.
+	 *
+	 * @var Page[]
+	 */
+	protected $allPages;
 
 	/**
 	 * @var TitleFactory
@@ -56,6 +65,7 @@ class PageHierarchyCreator {
 		$this->assertAreTitles( $titles );
 
 		$this->pages = array();
+		$this->allPages = array();
 
 		foreach ( $titles as $title ) {
 			$this->addTitle( $title );
@@ -75,7 +85,7 @@ class PageHierarchyCreator {
 		}
 		else {
 			$this->createParents( $titleText );
-			$this->addSubPage( $parentTitle, $page );
+			$this->addSubPage( $parentTitle, $titleText, $page );
 		}
 	}
 
@@ -83,18 +93,31 @@ class PageHierarchyCreator {
 		return $title->getFullText();
 	}
 
+	/**
+	 * @param string $titleText
+	 * @param Page $page Page is expected to not have any subpages
+	 */
 	protected function addTopLevelPage( $titleText, Page $page ) {
-		if ( !array_key_exists( $titleText, $this->pages ) ) {
-			$this->pages[$titleText] = $page;
+		if ( !array_key_exists( $titleText, $this->allPages ) ) {
+			$this->pages[] = $page;
+			$this->allPages[$titleText] = $page;
 		}
 	}
 
 	/**
 	 * @param string $parentTitle
-	 * @param Page $page
+	 * @param string $pageTitle
+	 * @param Page $page Page is expected to not have any subpages
 	 */
-	protected function addSubPage( $parentTitle, Page $page ) {
-		$this->pages[$parentTitle]->addSubPage( $page );
+	protected function addSubPage( $parentTitle, $pageTitle, Page $page ) {
+		if ( !array_key_exists( $pageTitle, $this->allPages ) ) {
+			$this->allPages[$parentTitle]->addSubPage( $page );
+			$this->allPages[$pageTitle] = $page;
+		}
+	}
+
+	protected function addToPageIndex( $titleText, Page $page ) {
+		$this->allPages[$titleText] = $page;
 	}
 
 	protected function createParents( $pageTitle ) {
@@ -118,7 +141,7 @@ class PageHierarchyCreator {
 
 			$pageTitle = $this->titleTextFromParts( $previousParts );
 
-			$this->addSubPage( $parentTitle, $this->newPageFromText( $pageTitle ) );
+			$this->addSubPage( $parentTitle, $pageTitle, $this->newPageFromText( $pageTitle ) );
 		}
 	}
 

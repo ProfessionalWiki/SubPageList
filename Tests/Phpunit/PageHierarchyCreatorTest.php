@@ -147,4 +147,117 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals( array( new Page( $childPage ) ), $page->getSubPages() );
 	}
 
+	public function testInBetweenPagesAreCreated() {
+		$topLevelPage = $this->newMockTitle( 'SomePage' );
+		$grandGrandChildPage = $this->newMockTitle( 'SomePage/ChildPage/GrandChildPage/HipsterPage' );
+
+		$hierarchyCreator = $this->newPageHierarchyCreator();
+		$hierarchy = $hierarchyCreator->createHierarchy( array( $topLevelPage, $grandGrandChildPage ) );
+
+		$this->assertEquals(
+			array(
+				new Page(
+					$this->newMockTitle( 'SomePage' ),
+					array(
+						new Page(
+							$this->newMockTitle( 'SomePage/ChildPage' ),
+							array(
+								new Page(
+									$this->newMockTitle( 'SomePage/ChildPage/GrandChildPage' ),
+									array(
+										new Page(
+											$this->newMockTitle( 'SomePage/ChildPage/GrandChildPage/HipsterPage' )
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+			),
+			$hierarchy
+		);
+	}
+
+	public function testTopLevelPageGetsCreatedForSubPage() {
+		$grandChildPage = $this->newMockTitle( 'SomePage/ChildPage/GrandChildPage' );
+
+		$hierarchyCreator = $this->newPageHierarchyCreator();
+		$hierarchy = $hierarchyCreator->createHierarchy( array( $grandChildPage ) );
+
+		$this->assertEquals(
+			array(
+				new Page(
+					$this->newMockTitle( 'SomePage' ),
+					array(
+						new Page(
+							$this->newMockTitle( 'SomePage/ChildPage' ),
+							array(
+								new Page(
+									$this->newMockTitle( 'SomePage/ChildPage/GrandChildPage' )
+								)
+							)
+						)
+					)
+				)
+			),
+			$hierarchy
+		);
+	}
+
+	public function testMultipleChildrenForSameTopLevelPage() {
+		$pages[] = $this->newMockTitle( 'SomePage/Child0/GrandChild00' );
+
+		$pages[] = $this->newMockTitle( 'SomePage/Child1/GrandChild10' );
+		$pages[] = $this->newMockTitle( 'SomePage/Child1/GrandChild11' );
+
+		$pages[] = $this->newMockTitle( 'SomePage/Child2/GrandChild20' );
+		$pages[] = $this->newMockTitle( 'SomePage/Child2' );
+		$pages[] = $this->newMockTitle( 'SomePage/Child2/GrandChild21' );
+
+		$hierarchyCreator = $this->newPageHierarchyCreator();
+		$hierarchy = $hierarchyCreator->createHierarchy( $pages );
+
+		$this->assertEquals(
+			array(
+				new Page(
+					$this->newMockTitle( 'SomePage' ),
+					array(
+						new Page(
+							$this->newMockTitle( 'SomePage/Child0' ),
+							array(
+								new Page(
+									$this->newMockTitle( 'SomePage/Child0/GrandChild00' )
+								)
+							)
+						),
+						new Page(
+							$this->newMockTitle( 'SomePage/Child1' ),
+							array(
+								new Page(
+									$this->newMockTitle( 'SomePage/Child0/GrandChild10' )
+								),
+								new Page(
+									$this->newMockTitle( 'SomePage/Child0/GrandChild11' )
+								)
+							)
+						),
+						new Page(
+							$this->newMockTitle( 'SomePage/Child2' ),
+							array(
+								new Page(
+									$this->newMockTitle( 'SomePage/Child0/GrandChild20' )
+								),
+								new Page(
+									$this->newMockTitle( 'SomePage/Child0/GrandChild21' )
+								)
+							)
+						)
+					)
+				)
+			),
+			$hierarchy
+		);
+	}
+
 }

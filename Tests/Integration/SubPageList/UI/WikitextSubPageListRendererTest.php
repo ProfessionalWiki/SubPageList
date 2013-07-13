@@ -16,14 +16,12 @@ use Title;
  */
 class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
-	public function testCanRender() {
+	public function testCanRenderMainPage() {
 		$renderer = new WikitextSubPageListRenderer();
 
 		$text = $renderer->render( new Page( Title::newMainPage() ) );
 
 		$this->assertInternalType( 'string', $text );
-
-		echo $text;
 	}
 
 }

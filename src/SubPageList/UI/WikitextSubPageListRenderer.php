@@ -23,15 +23,31 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	 * @return string
 	 */
 	public function render( Page $page ) {
+		return $this->renderPage( $page );
+	}
+
+	protected function renderPage( Page $page ) {
 		$wikiText = '';
 
 		$wikiText .= $this->getTextForPage( $page );
+		$wikiText .= "\n";
+		$wikiText .= $this->renderSubPages( $page );
 
 		return $wikiText;
 	}
 
 	protected function getTextForPage( Page $page ) {
 		return $page->getTitle()->getFullText();
+	}
+
+	protected function renderSubPages( Page $page ) {
+		$texts = array();
+
+		foreach ( $page->getSubPages() as $subPage ) {
+			$texts[] = $this->render( $subPage );
+		}
+
+		return implode( "\n", $texts );
 	}
 
 	/**

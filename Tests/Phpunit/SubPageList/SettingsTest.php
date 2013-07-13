@@ -1,12 +1,11 @@
 <?php
 
-namespace SubPageList\Tests\Phpunit;
+namespace Tests\Phpunit\SubPageList;
 
-use SubPageList\LazyDBConnectionProvider;
-use SubPageList\DBConnectionProvider;
+use SubPageList\Settings;
 
 /**
- * @covers SubPageList\LazyDBConnectionProvider
+ * @covers SubPageList\Settings
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,50 +32,36 @@ use SubPageList\DBConnectionProvider;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class LazyDBConnectionProviderTest extends \PHPUnit_Framework_TestCase {
+class SettingsTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @dataProvider constructorProvider
 	 *
-	 * @param int $dbId
+	 * @param array $settings
 	 */
-	public function testConstructor( $dbId ) {
-		new LazyDBConnectionProvider( $dbId );
+	public function testConstructor( array $settings ) {
+		$settingsObject = new Settings( $settings );
+
+		foreach ( $settings as $name => $value ) {
+			$this->assertEquals( $value, $settingsObject->get( $name ) );
+		}
 
 		$this->assertTrue( true );
 	}
 
 	public function constructorProvider() {
-		$argLists = array(
-			array( DB_MASTER ),
-			array( DB_SLAVE ),
+		$settingArrays = array(
+			array(),
+			array( 'foo' => 'bar' ),
+			array( 'foo' => 'bar', 'baz' => 'BAH' ),
+			array( '~[,,_,,]:3' => array( 9001, 4.2 ) ),
 		);
 
-		return $argLists;
-	}
-
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @param DBConnectionProvider $connProvider
-	 */
-	public function testGetConnection( DBConnectionProvider $connProvider ) {
-		$connection = $connProvider->getConnection();
-
-		$this->assertInstanceOf( 'DatabaseBase', $connection );
-
-		$this->assertTrue( $connection === $connProvider->getConnection() );
-
-		$connProvider->releaseConnection();
-
-		$this->assertInstanceOf( 'DatabaseBase', $connProvider->getConnection() );
-	}
-
-	public function instanceProvider() {
 		$argLists = array();
 
-		$argLists[] = array( new LazyDBConnectionProvider( DB_MASTER ) );
-		$argLists[] = array( new LazyDBConnectionProvider( DB_SLAVE ) );
+		foreach ( $settingArrays as $settingArray ) {
+			$argLists[] = array( $settingArray );
+		}
 
 		return $argLists;
 	}

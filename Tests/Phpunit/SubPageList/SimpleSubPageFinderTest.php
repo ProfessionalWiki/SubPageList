@@ -1,11 +1,13 @@
 <?php
 
-namespace SubPageList\Tests\Phpunit;
+namespace Tests\Phpunit\SubPageList;
 
-use SubPageList\Settings;
+use SubPageList\SimpleSubPageFinder;
+use SubPageList\SubPageFinder;
+use Title;
 
 /**
- * @covers SubPageList\Settings
+ * @covers SubPageList\SimpleSubPageFinder
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,42 +30,41 @@ use SubPageList\Settings;
  * @ingroup SubPageListTest
  *
  * @group SubPageList
+ * @group Database
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SettingsTest extends \PHPUnit_Framework_TestCase {
+class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
 
 	/**
-	 * @dataProvider constructorProvider
-	 *
-	 * @param array $settings
+	 * @return SubPageFinder
 	 */
-	public function testConstructor( array $settings ) {
-		$settingsObject = new Settings( $settings );
-
-		foreach ( $settings as $name => $value ) {
-			$this->assertEquals( $value, $settingsObject->get( $name ) );
-		}
-
-		$this->assertTrue( true );
+	public function newInstance() {
+		return new SimpleSubPageFinder( new \SubPageList\LazyDBConnectionProvider( DB_SLAVE ) );
 	}
 
-	public function constructorProvider() {
-		$settingArrays = array(
-			array(),
-			array( 'foo' => 'bar' ),
-			array( 'foo' => 'bar', 'baz' => 'BAH' ),
-			array( '~[,,_,,]:3' => array( 9001, 4.2 ) ),
-		);
-
+	public function titleProvider() {
 		$argLists = array();
 
-		foreach ( $settingArrays as $settingArray ) {
-			$argLists[] = array( $settingArray );
-		}
+		$argLists[] = array( Title::newMainPage() );
+		$argLists[] = array( Title::newFromText( 'ohi there i do not exist nyan nyan nyan' ) );
 
 		return $argLists;
+	}
+
+	/**
+	 * @dataProvider titleProvider
+	 *
+	 * @param Title $title
+	 */
+	public function testGetSubPagesFor( Title $title ) {
+		$finder = $this->newInstance();
+
+		$pages = $finder->getSubPagesFor( $title );
+
+		$this->assertInternalType( 'array', $pages );
+		$this->assertContainsOnlyInstancesOf( 'Title', $pages );
 	}
 
 }

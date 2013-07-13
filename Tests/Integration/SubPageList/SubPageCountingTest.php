@@ -1,6 +1,6 @@
 <?php
 
-namespace SubPageList\Integration;
+namespace Tests\Integration\SubPageList;
 
 use SubPageList\SubPageCount;
 

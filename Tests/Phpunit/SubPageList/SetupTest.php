@@ -1,6 +1,6 @@
 <?php
 
-namespace SubPageList\Tests\Phpunit;
+namespace Tests\Phpunit\SubPageList;
 
 use SubPageList\Setup;
 

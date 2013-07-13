@@ -1,12 +1,12 @@
 <?php
 
-namespace SubPageList\Tests\Phpunit;
+namespace Tests\Phpunit\SubPageList;
 
-use SubPageList\Extension;
-use SubPageList\Settings;
+use SubPageList\LazyDBConnectionProvider;
+use SubPageList\DBConnectionProvider;
 
 /**
- * Tests for the SubPageList\Extension class.
+ * @covers SubPageList\LazyDBConnectionProvider
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,22 +33,23 @@ use SubPageList\Settings;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ExtensionTest extends \PHPUnit_Framework_TestCase {
+class LazyDBConnectionProviderTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @dataProvider constructorProvider
 	 *
-	 * @param Settings $settings
+	 * @param int $dbId
 	 */
-	public function testConstructor( Settings $settings ) {
-		$extension = new Extension( $settings );
+	public function testConstructor( $dbId ) {
+		new LazyDBConnectionProvider( $dbId );
 
-		$this->assertEquals( $settings, $extension->getSettings() );
+		$this->assertTrue( true );
 	}
 
 	public function constructorProvider() {
 		$argLists = array(
-			array( Settings::newFromGlobals( $GLOBALS ) )
+			array( DB_MASTER ),
+			array( DB_SLAVE ),
 		);
 
 		return $argLists;
@@ -57,27 +58,27 @@ class ExtensionTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @param Extension $extension
+	 * @param DBConnectionProvider $connProvider
 	 */
-	public function testGetSlaveConnectionProvider( Extension $extension ) {
-		$this->assertInstanceOf( 'SubPageList\DBConnectionProvider', $extension->getSlaveConnectionProvider() );
+	public function testGetConnection( DBConnectionProvider $connProvider ) {
+		$connection = $connProvider->getConnection();
+
+		$this->assertInstanceOf( 'DatabaseBase', $connection );
+
+		$this->assertTrue( $connection === $connProvider->getConnection() );
+
+		$connProvider->releaseConnection();
+
+		$this->assertInstanceOf( 'DatabaseBase', $connProvider->getConnection() );
 	}
 
 	public function instanceProvider() {
 		$argLists = array();
 
-		$argLists[] = array( new Extension( Settings::newFromGlobals( $GLOBALS ) ) );
+		$argLists[] = array( new LazyDBConnectionProvider( DB_MASTER ) );
+		$argLists[] = array( new LazyDBConnectionProvider( DB_SLAVE ) );
 
 		return $argLists;
-	}
-
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @param Extension $extension
-	 */
-	public function testGetCacheInvalidator( Extension $extension ) {
-		$this->assertInstanceOf( 'SubPageList\CacheInvalidator', $extension->getCacheInvalidator() );
 	}
 
 }

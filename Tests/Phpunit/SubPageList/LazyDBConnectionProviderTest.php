@@ -2,8 +2,8 @@
 
 namespace Tests\Phpunit\SubPageList;
 
-use SubPageList\LazyDBConnectionProvider;
 use SubPageList\DBConnectionProvider;
+use SubPageList\LazyDBConnectionProvider;
 
 /**
  * @covers SubPageList\LazyDBConnectionProvider

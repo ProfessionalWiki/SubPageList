@@ -2,9 +2,9 @@
 
 namespace SubPageList;
 
+use ParamProcessor\ProcessingResult;
 use Parser;
 use ParserHooks\HookHandler;
-use ParamProcessor\ProcessingResult;
 use SubPageList\UI\SubPageListRenderer;
 use Title;
 

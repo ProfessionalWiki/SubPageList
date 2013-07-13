@@ -5,11 +5,11 @@ namespace SubPageList;
 use Parser;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
-use SplFileInfo;
-use WikiPage;
-use User;
 use Revision;
+use SplFileInfo;
 use Title;
+use User;
+use WikiPage;
 
 /**
  * Object containing the logic to set up the SupPageList extension.
@@ -87,9 +87,8 @@ class Setup {
 		$this->hooks['ParserFirstCallInit'][] = function( Parser &$parser ) use ( $extension ) {
 			$hookRegistrant = $extension->getHookRegistrant( $parser );
 
-			$countHandler = $extension->getCountFunctionHandler();
-
-			$hookRegistrant->registerFunction( $countHandler );
+			$hookRegistrant->registerFunction( $extension->getCountFunctionHandler() );
+			$hookRegistrant->registerFunction( $extension->getListFunctionHandler() );
 
 			return true;
 		};

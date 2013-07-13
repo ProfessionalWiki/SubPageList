@@ -2,7 +2,6 @@
 
 namespace Tests\Phpunit\SubPageList;
 
-use SubPageList\TitleFactory;
 use SubPageList\Page;
 use SubPageList\PageHierarchyCreator;
 use Title;

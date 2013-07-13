@@ -2,9 +2,9 @@
 
 namespace SubPageList;
 
+use ParamProcessor\ProcessingResult;
 use Parser;
 use ParserHooks\HookHandler;
-use ParamProcessor\ProcessingResult;
 
 /**
  * Handler for the subpagecount parser hook.
@@ -53,7 +53,7 @@ class SubPageCount implements HookHandler {
 	 *
 	 * @return string
 	 */
-	public function handle( Parser $parser, \ParamProcessor\ProcessingResult $result ) {
+	public function handle( Parser $parser, ProcessingResult $result ) {
 		if ( $result->hasFatal() ) {
 			// TODO:
 			return 'FATAL';

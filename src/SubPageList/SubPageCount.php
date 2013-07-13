@@ -18,26 +18,9 @@ use ParserHooks\HookHandler;
  */
 class SubPageCount implements HookHandler {
 
-	/**
-	 * @since 1.0
-	 *
-	 * @var SubPageCounter
-	 */
 	protected $counter;
-
-	/**
-	 * @since 1.0
-	 *
-	 * @var TitleFactory
-	 */
 	protected $titleFactory;
 
-	/**
-	 * @since 1.0
-	 *
-	 * @param SubPageCounter $counter
-	 * @param TitleFactory $titleFactory
-	 */
 	public function __construct( SubPageCounter $counter, TitleFactory $titleFactory ) {
 		$this->counter = $counter;
 		$this->titleFactory = $titleFactory;

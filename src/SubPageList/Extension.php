@@ -2,26 +2,16 @@
 
 namespace SubPageList;
 
+use Parser;
+use ParserHooks\FunctionRunner;
+use ParserHooks\HookDefinition;
+use ParserHooks\HookRegistrant;
+use SubPageList\UI\WikitextSubPageListRenderer;
+
 /**
  * Main extension class, acts as dependency injection container look-alike.
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
- * http://www.gnu.org/copyleft/gpl.html
- *
  * @since 1.0
- *
  * @file
  * @ingroup SubPageList
  *
@@ -39,6 +29,15 @@ class Extension {
 
 	public function __construct( Settings $settings ) {
 		$this->settings = $settings;
+	}
+
+	/**
+	 * @since 1.0
+	 *
+	 * @return Settings
+	 */
+	public function getSettings() {
+		return $this->settings;
 	}
 
 	/**
@@ -64,15 +63,6 @@ class Extension {
 	 */
 	public function getSubPageFinder() {
 		return new SimpleSubPageFinder( $this->getSlaveConnectionProvider() );
-	}
-
-	/**
-	 * @since 1.0
-	 *
-	 * @return Settings
-	 */
-	public function getSettings() {
-		return $this->settings;
 	}
 
 	/**
@@ -105,10 +95,42 @@ class Extension {
 	/**
 	 * @since 1.0
 	 *
-	 * @return \ParserHooks\FunctionRunner
+	 * @return SubPageList
+	 */
+	public function getSubPageList() {
+		return new SubPageList(
+			$this->getSubPageFinder(),
+			$this->getPageHierarchyCreator(),
+			$this->newSubPageListRenderer(),
+			$this->getTitleFactory()
+		);
+	}
+
+	/**
+	 * @since 1.0
+	 *
+	 * @return PageHierarchyCreator
+	 */
+	public function getPageHierarchyCreator() {
+		return new PageHierarchyCreator( $this->getTitleFactory() );
+	}
+
+	/**
+	 * @since 1.0
+	 *
+	 * @return WikitextSubPageListRenderer
+	 */
+	public function newSubPageListRenderer() {
+		return new WikitextSubPageListRenderer();
+	}
+
+	/**
+	 * @since 1.0
+	 *
+	 * @return FunctionRunner
 	 */
 	public function getCountFunctionHandler() {
-		$definition = new \ParserHooks\HookDefinition(
+		$definition = new HookDefinition(
 			'subpagecount',
 			array(
 				'page' => array(
@@ -125,18 +147,40 @@ class Extension {
 			'page'
 		);
 
-		return new \ParserHooks\FunctionRunner( $definition, $this->getSubPageCount() );
+		return new FunctionRunner( $definition, $this->getSubPageCount() );
+	}
+
+	/**
+	 * @since 1.0
+	 *
+	 * @return FunctionRunner
+	 */
+	public function getListFunctionHandler() {
+		$definition = new HookDefinition(
+			'subpagelist',
+			array(
+				'page' => array(
+					'default' => '',
+					'aliases' => 'parent',
+					'message' => 'spl-subpages-par-page',
+				),
+				// TODO
+			),
+			'page'
+		);
+
+		return new FunctionRunner( $definition, $this->getSubPageList() );
 	}
 
 	/**
 	 * @since 0.1
 	 *
-	 * @param \Parser $parser
+	 * @param Parser $parser
 	 *
-	 * @return \ParserHooks\HookRegistrant
+	 * @return HookRegistrant
 	 */
-	public function getHookRegistrant( \Parser &$parser ) {
-		return new \ParserHooks\HookRegistrant( $parser );
+	public function getHookRegistrant( Parser &$parser ) {
+		return new HookRegistrant( $parser );
 	}
 
 }

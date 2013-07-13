@@ -4,7 +4,9 @@ namespace Tests\Phpunit\SubPageList;
 
 use ParamProcessor\ProcessedParam;
 use ParamProcessor\ProcessingResult;
+use SubPageList\Page;
 use SubPageList\SubPageList;
+use SubPageList\TitleFactory;
 
 /**
  * @covers SubPageList\SubPageList
@@ -20,12 +22,48 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 
 	public function testSubPageListHook() {
 		$titleText = 'FooBarPage';
+		$renderResult = 'ohi there!';
 
-		$subPageList = new SubPageList();
+		$subPageList = $this->newSubPageList( $titleText, $renderResult );
 
 		$renderedList = $this->getRenderedList( $subPageList, $titleText );
 
 		$this->assertInternalType( 'string', $renderedList );
+		$this->assertEquals( $renderResult, $renderedList );
+	}
+
+	protected function newSubPageList( $titleText, $renderResult ) {
+		$title = \Title::newFromText( $titleText );
+		$page = new Page( $title );
+
+		$finder = $this->getMock( 'SubPageList\SubPageFinder' );
+
+		$finder->expects( $this->once() )
+			->method( 'getSubPagesFor' )
+			->with( $this->equalTo( $titleText ) )
+			->will( $this->returnValue( array( $title ) ) );
+
+		$hierarchyCreator = $this->getMockBuilder( 'SubPageList\PageHierarchyCreator' )
+			->disableOriginalConstructor()->getMock();
+
+		$hierarchyCreator->expects( $this->once() )
+			->method( 'createHierarchy' )
+			->with( $this->equalTo( array( $title ) ) )
+			->will( $this->returnValue( array( $page ) ) );
+
+		$renderer = $this->getMock( 'SubPageList\UI\SubPageListRenderer' );
+
+		$renderer->expects( $this->once() )
+			->method( 'render' )
+			->with( $this->equalTo( $page ) )
+			->will( $this->returnValue( $renderResult ) );
+
+		return new SubPageList(
+			$finder,
+			$hierarchyCreator,
+			$renderer,
+			new TitleFactory()
+		);
 	}
 
 	protected function getRenderedList( SubPageList $subPageList, $titleText ) {

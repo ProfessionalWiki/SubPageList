@@ -5,6 +5,8 @@ namespace SubPageList;
 use Parser;
 use ParserHooks\HookHandler;
 use ParamProcessor\ProcessingResult;
+use SubPageList\UI\SubPageListRenderer;
+use Title;
 
 /**
  * Handler for the subpagelist parser hook.
@@ -18,12 +20,18 @@ use ParamProcessor\ProcessingResult;
  */
 class SubPageList implements HookHandler {
 
-	/**
-	 * @since 1.0
-	 *
-	 */
-	public function __construct(  ) {
+	protected $subPageFinder;
+	protected $pageHierarchyCreator;
+	protected $subPageListRenderer;
+	protected $titleFactory;
 
+	public function __construct( SubPageFinder $finder, PageHierarchyCreator $hierarchyCreator,
+		SubPageListRenderer $renderer, TitleFactory $titleFactory ) {
+
+		$this->subPageFinder = $finder;
+		$this->pageHierarchyCreator = $hierarchyCreator;
+		$this->subPageListRenderer = $renderer;
+		$this->titleFactory = $titleFactory;
 	}
 
 	/**
@@ -42,7 +50,28 @@ class SubPageList implements HookHandler {
 			return 'FATAL';
 		}
 
+		$parameters = $result->getParameters();
+		$title = $this->titleFactory->newFromText( $parameters['page']->getValue() );
+
+		if ( $title !== null ) {
+			return $this->renderSubPages( $title, $parameters );
+		}
+
 		return '';
+	}
+
+	protected function renderSubPages( Title $title, array $parameters ) {
+		$subPageTitles = $this->subPageFinder->getSubPagesFor( $title );
+
+		$pageHierarchy = $this->pageHierarchyCreator->createHierarchy( $subPageTitles );
+
+		if ( count( $pageHierarchy ) !== 1 ) {
+			throw new \LogicException( 'Expected only one top level page' );
+		}
+
+		$topLevelPage = reset( $pageHierarchy );
+
+		return $this->subPageListRenderer->render( $topLevelPage );
 	}
 
 }

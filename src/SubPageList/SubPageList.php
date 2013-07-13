@@ -18,7 +18,6 @@ use ParamProcessor\ProcessingResult;
  */
 class SubPageList implements HookHandler {
 
-
 	/**
 	 * @since 1.0
 	 *

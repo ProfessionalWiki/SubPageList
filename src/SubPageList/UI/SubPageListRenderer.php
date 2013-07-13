@@ -2,9 +2,11 @@
 
 namespace SubPageList\UI;
 
+use SubPageList\Page;
+
 /**
  * @file
- * @since 0.1
+ * @since 1.0
  * @ingroup SubPageList
  *
  * @licence GNU GPL v2+
@@ -13,8 +15,10 @@ namespace SubPageList\UI;
 interface SubPageListRenderer {
 
 	/**
+	 * @param Page $page
+	 *
 	 * @return string
 	 */
-	public function render();
+	public function render( Page $page );
 
 }

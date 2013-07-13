@@ -41,7 +41,7 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 		$finder->expects( $this->once() )
 			->method( 'getSubPagesFor' )
 			->with( $this->equalTo( $titleText ) )
-			->will( $this->returnValue( array( $title ) ) );
+			->will( $this->returnValue( array() ) );
 
 		$hierarchyCreator = $this->getMockBuilder( 'SubPageList\PageHierarchyCreator' )
 			->disableOriginalConstructor()->getMock();

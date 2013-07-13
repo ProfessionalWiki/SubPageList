@@ -151,7 +151,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 
 		$conditions = array(
 			'page_namespace' => $title->getNamespace(),
-			'page_title' => $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString() )
+			'page_title'  . $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString() )
 		);
 
 		if ( !$this->options[self::OPT_INCLUDE_REDIRECTS] ) {

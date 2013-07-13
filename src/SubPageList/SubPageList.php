@@ -51,27 +51,31 @@ class SubPageList implements HookHandler {
 		}
 
 		$parameters = $result->getParameters();
-		$title = $this->titleFactory->newFromText( $parameters['page']->getValue() );
+
+		$titleText = $parameters['page']->getValue();
+		$title = $this->titleFactory->newFromText( $titleText );
 
 		if ( $title !== null ) {
 			return $this->renderSubPages( $title, $parameters );
 		}
 
-		return '';
+		return "\"$titleText\" has no sub pages."; // TODO
 	}
 
 	protected function renderSubPages( Title $title, array $parameters ) {
 		$subPageTitles = $this->subPageFinder->getSubPagesFor( $title );
+		$subPageTitles[] = $title;
 
 		$pageHierarchy = $this->pageHierarchyCreator->createHierarchy( $subPageTitles );
 
 		if ( count( $pageHierarchy ) !== 1 ) {
-			throw new \LogicException( 'Expected only one top level page' );
+			throw new \LogicException( 'Expected exactly one top level page' );
 		}
 
 		$topLevelPage = reset( $pageHierarchy );
 
-		return $this->subPageListRenderer->render( $topLevelPage );
+		$result = $this->subPageListRenderer->render( $topLevelPage );
+		return $result;
 	}
 
 }

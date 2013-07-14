@@ -54,6 +54,14 @@ $magicWords['diq'] = array(
 	'subpagecount' => array( 0, 'zerreypelandêbınan' ),
 );
 
+/** French (français) */
+$magicWords['fr'] = array(
+	'splist' => array( 0, 'listesp' ),
+	'subpages' => array( 0, 'souspages' ),
+	'subpagelist' => array( 0, 'listesouspages' ),
+	'subpagecount' => array( 0, 'nbsouspages' ),
+);
+
 /** Italian (italiano) */
 $magicWords['it'] = array(
 	'subpages' => array( 0, 'sottopagine' ),

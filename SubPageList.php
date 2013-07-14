@@ -5,7 +5,6 @@
  * 
  * Documentation:	 		https://www.mediawiki.org/wiki/Extension:SubPageList
  * Support					https://www.mediawiki.org/wiki/Extension_talk:SubPageList
- * Source code:             https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/SubPageList.git
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

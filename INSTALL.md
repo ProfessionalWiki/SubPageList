@@ -3,8 +3,8 @@ Installation of the SubPageList MediaWiki extension
 
 SubPageList has the following dependencies:
 
-* [SimpleCache](https://github.com/JeroenDeDauw/SimpleCache) 1.0 or later
-* [FileFetcher](https://github.com/JeroenDeDauw/FileFetcher) 1.0 or later
+* [ParamProcessor](https://www.mediawiki.org/wiki/Extension:ParamProcessor) 1.0 or later
+* [ParserHooks](https://github.com/wikimedia/mediawiki-extensions-ParserHooks/blob/master/README.md) 1.0 or later
 * [MediaWiki](https://www.mediawiki.org/) 1.16 or later
 
 And nothing else.

@@ -15,6 +15,12 @@ use SubPageList\Page;
  */
 class WikitextSubPageListRenderer implements SubPageListRenderer {
 
+	protected $hierarchyRenderer;
+
+	public function __construct( HierarchyRenderingBehaviour $hierarchyRenderer ) {
+		$this->hierarchyRenderer = $hierarchyRenderer;
+	}
+
 	/**
 	 * @see SubPageListRenderer::render
 	 *
@@ -23,44 +29,7 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	 * @return string
 	 */
 	public function render( Page $page ) {
-		return $this->renderPage( $page, 0 );
-	}
-
-	protected function renderPage( Page $page, $indentationLevel ) {
-		$wikiText = '';
-
-		$wikiText .= $this->getTextForPage( $page, $indentationLevel );
-		$wikiText .= "\n";
-		$wikiText .= $this->renderSubPages( $page, $indentationLevel + 1 );
-
-		return $wikiText;
-	}
-
-	protected function getTextForPage( Page $page, $indentationLevel ) {
-		$lineContent = $this->buildLineContent( $page );
-		return $this->getIndentedLine( $lineContent, $indentationLevel );
-	}
-
-	protected function buildLineContent( Page $page ) {
-		return '[[' . $page->getTitle()->getFullText() . '|' . $page->getTitle()->getFullText() . ']]';
-	}
-
-	protected function getIndentedLine( $lineContent, $indentationLevel ) {
-		if ( $indentationLevel > 0 ) {
-			$lineContent = str_repeat( '*', $indentationLevel ) . ' ' . $lineContent;
-		}
-
-		return $lineContent;
-	}
-
-	protected function renderSubPages( Page $page, $indentationLevel ) {
-		$texts = array();
-
-		foreach ( $page->getSubPages() as $subPage ) {
-			$texts[] = $this->renderPage( $subPage, $indentationLevel );
-		}
-
-		return implode( '', $texts );
+		return $this->hierarchyRenderer->renderHierarchy( $page );
 	}
 
 }

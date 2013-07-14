@@ -17,11 +17,22 @@ use Title;
 class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public function testCanRenderMainPage() {
-		$renderer = new WikitextSubPageListRenderer();
+		$page = new Page( Title::newMainPage() );
+		$hierarchyRendering = 'foo bar baz';
 
-		$text = $renderer->render( new Page( Title::newMainPage() ) );
+		$hierarchyRenderer = $this->getMock( 'SubPageList\UI\HierarchyRenderingBehaviour' );
+
+		$hierarchyRenderer->expects( $this->once() )
+			->method( 'renderHierarchy' )
+			->with( $this->equalTo( $page ) )
+			->will( $this->returnValue( $hierarchyRendering ) );
+
+		$renderer = new WikitextSubPageListRenderer( $hierarchyRenderer );
+
+		$text = $renderer->render( $page );
 
 		$this->assertInternalType( 'string', $text );
+		$this->assertEquals( $hierarchyRendering, $text );
 	}
 
 }

@@ -15,6 +15,12 @@ use SubPageList\Page;
 interface SubPageListRenderer {
 
 	/**
+	 * Render a representation of the page and its sub pages.
+	 *
+	 * This might or might not include the top level page.
+	 * This might or might not include additional things
+	 * such as headers and footers.
+	 *
 	 * @param Page $page
 	 *
 	 * @return string

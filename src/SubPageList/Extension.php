@@ -9,7 +9,7 @@ use ParserHooks\HookRegistrant;
 use SubPageList\UI\WikitextSubPageListRenderer;
 
 /**
- * Main extension class, acts as dependency injection container look-alike.
+ * Top level factory for the SubPageList extension.
  *
  * @since 1.0
  * @file
@@ -156,17 +156,116 @@ class Extension {
 	 * @return FunctionRunner
 	 */
 	public function getListFunctionHandler() {
+		$params = array();
+
+		$params['sort'] = array(
+			'aliases' => 'order',
+			'values' => array( 'asc', 'desc' ),
+			'tolower' => true,
+			'default' => 'asc',
+		);
+
+		$params['sortby'] = array(
+			'values' => array( 'title', 'lastedit' ),
+			'tolower' => true,
+			'default' => 'title',
+		);
+
+		$params['format'] = array(
+			'aliases' => 'liststyle',
+			'values' => array(
+				'ul', 'unordered',
+				'ol', 'ordered',
+				'list', 'bar'
+			),
+			'tolower' => true,
+			'default' => 'ul',
+		);
+
+		$params['page'] = array(
+			'aliases' => 'parent',
+			'default' => '',
+		);
+
+		$params['showpage'] = array(
+			'type' => 'boolean',
+			'aliases' => 'showparent',
+			'default' => false,
+		);
+
+		$params['pathstyle'] = array(
+			'aliases' => 'showpath',
+			'values' => array(
+				'none', 'no',
+				'subpagename', 'children', 'notparent',
+				'pagename',
+				'full', 		// Deprecate? --vdb
+				'fullpagename'
+			),
+			'tolower' => true,
+			'default' => 'none',
+		);
+
+		$params['kidsonly'] = array(
+			'type' => 'boolean',
+			'default' => false,
+		);
+
+		$params['links'] = array(
+			'type' => 'boolean',
+			'aliases' => 'link',
+			'default' => true,
+		);
+
+		$params['limit'] = array(
+			'type' => 'integer',
+			'default' => 200,
+			'range' => array( 1, 500 ),
+		);
+
+		$params['element'] = array(
+			'default' => 'div',
+			'aliases' => array( 'div', 'p', 'span' ),
+		);
+
+		$params['class'] = array(
+			'default' => 'subpagelist',
+		);
+
+		$params['intro'] = array(
+			'default' => '',
+		);
+
+		$params['outro'] = array(
+			'default' => '',
+		);
+
+		$params['default'] = array(
+			'default' => '',
+		);
+
+		$params['separator'] = array(
+			'aliases' => 'sep',
+			'default' => '&#160;· ',
+		);
+
+		$params['template'] = array(
+			'default' => '',
+		);
+
+		// Give grep a chance to find the usages:
+		// spl-subpages-par-sort, spl-subpages-par-sortby, spl-subpages-par-format, spl-subpages-par-page,
+		// spl-subpages-par-showpage, spl-subpages-par-pathstyle, spl-subpages-par-kidsonly, spl-subpages-par-limit,
+		// spl-subpages-par-element, spl-subpages-par-class, spl-subpages-par-intro, spl-subpages-par-outro,
+		// spl-subpages-par-default, spl-subpages-par-separator, spl-subpages-par-template, spl-subpages-par-links
+		foreach ( $params as $name => &$param ) {
+			$param['message'] = 'spl-subpages-par-' . $name;
+		}
+
 		$definition = new HookDefinition(
 			'subpagelist',
-			array(
-				'page' => array(
-					'default' => '',
-					'aliases' => 'parent',
-					'message' => 'spl-subpages-par-page',
-				),
-				// TODO
-			),
-			'page'
+			$params,
+			array( 'page', 'format', 'pathstyle', 'sortby', 'sort' )
 		);
 
 		return new FunctionRunner( $definition, $this->getSubPageList() );

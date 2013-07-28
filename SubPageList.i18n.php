@@ -650,19 +650,20 @@ $messages['pms'] = array(
 
 /** Portuguese (português)
  * @author Hamilton Abreu
+ * @author Luckas
  */
 $messages['pt'] = array(
 	'spl-desc' => 'Acrescenta um elemento <code><nowiki><splist /></nowiki></code> que permite listar subpáginas',
 	'spl-nosubpages' => 'A página $1 não tem subpáginas para listar.',
 	'spl-noparentpage' => 'A página "$1" não existe.',
 	'spl-nopages' => 'O espaço nominal "$1" não tem páginas.',
-	'spl-subpages-par-sort' => 'A direcção da ordenação. Valores permitidos: "asc" e "desc".',
+	'spl-subpages-par-sort' => 'A direção da ordenação. Valores permitidos: "asc" e "desc".',
 	'spl-subpages-par-sortby' => 'O critério de ordenação. Valores permitidos: "title" (titulo) ou "lastedit" (última edição).',
 	'spl-subpages-par-format' => 'A lista de subpáginas pode ser apresentada em vários formatos. Valores permitidos: "ol"— listas ordenadas (numeradas), "ul" — listas não ordenadas (com marcadores) e "list" — listas simples (por exemplo, lista separada por vírgulas).',
 	'spl-subpages-par-page' => 'A página cujas subpáginas serão mostradas, ou o nome do espaço nominal (incluindo o sinal de dois pontos) do qual mostrar as páginas. Por omissão, será a página corrente.',
 	'spl-subpages-par-showpage' => 'Indica se a própria página deve ser mostrada na lista ou não.',
 	'spl-subpages-par-pathstyle' => 'O estilo do caminho para as subpáginas na lista. Valores permitidos: "fullpagename" — nome completo da página (incluindo o espaço nominal), "pagename" — nome da página (sem o espaço nominal), "subpagename" — nome relativo da página, começando a partir da página cujas subpáginas vão ser mostradas e "none" — somente a parte do nome após a última barra "/".',
-	'spl-subpages-par-kidsonly' => 'Permite mostrar só subpáginas directas.',
+	'spl-subpages-par-kidsonly' => 'Permite mostrar só subpáginas diretas.',
 	'spl-subpages-par-limit' => 'O número máximo de páginas listadas.',
 	'spl-subpages-par-element' => 'O elemento HTML que encapsula a lista (incluindo os textos "intro" e "outro" ou "default"). Valores permitidos: "div", "p" e "span".',
 	'spl-subpages-par-class' => 'O valor do atributo "class" do elemento HTML que encapsula a lista.',

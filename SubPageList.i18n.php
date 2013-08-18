@@ -435,7 +435,7 @@ $messages['ka'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'spl-desc' => '하위 문서를 나타내도록 하는 <code><nowiki><splist /></nowiki></code> 태그 추가',
+	'spl-desc' => '하위 문서를 나타내도록 하는 <code><nowiki><splist /></nowiki></code> 태그를 추가합니다',
 	'spl-nosubpages' => '"$1" 문서는 목록에 하위 문서가 없습니다.',
 	'spl-noparentpage' => '"$1" 문서가 존재하지 않습니다.',
 	'spl-nopages' => '"$1" 이름공간에 문서가 없습니다.',

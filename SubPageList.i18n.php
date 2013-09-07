@@ -615,6 +615,16 @@ $messages['nl'] = array(
 	'spl-subpages-par-links' => 'Lijstelementen worden opgemaakt als koppelingen als waar. Lijstelementen zijn platte tekst als onwaar. De laatste optie is handig bij het doorgeven van elementen aan sjablonen voor verdere verwerking.',
 );
 
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'spl-desc' => 'Apond una balisa <nowiki><splist /></nowiki> que permet de far la lista de las sospaginas',
+	'spl-nosubpages' => 'La pagina « $1 » a pas cap de sospaginas de listar.',
+	'spl-noparentpage' => 'La pagina « $1 » existís pas.',
+	'spl-nopages' => 'L’espaci de nom « $1 » a pas cap de paginas.',
+);
+
 /** Polish (polski)
  * @author BeginaFelicysym
  * @author Woytecr

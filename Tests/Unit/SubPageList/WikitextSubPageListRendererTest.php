@@ -29,7 +29,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 		$renderer = new WikitextSubPageListRenderer( $hierarchyRenderer );
 
-		$text = $renderer->render( $page );
+		$text = $renderer->render( $page, array( 'intro' => '' ) ); // TODO
 
 		$this->assertInternalType( 'string', $text );
 		$this->assertEquals( $hierarchyRendering, $text );

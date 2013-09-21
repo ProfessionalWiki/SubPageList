@@ -60,9 +60,15 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function assertCreatesList( array $params, $listText ) {
+		$functionParams = array();
+
+		foreach ( $params as $name => $value ) {
+			$functionParams[] = $name . '=' . $value;
+		}
+
 		$this->assertEquals(
 			$listText,
-			$this->getListForParams( $params )
+			$this->getListForParams( $functionParams )
 		);
 	}
 
@@ -104,14 +110,26 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	public function testListForWithHeader() {
+	/**
+	 * @dataProvider textProvider
+	 */
+	public function testListForWithHeader( $introText ) {
 		$this->assertCreatesList(
 			array(
 				'page' => 'TempSPLTest:AAA',
-				'intro' => 'intro',
+				'intro' => $introText,
 			),
-			"[[TempSPLTest:AAA|TempSPLTest:AAA]]\n"
-		); // TODO
+			$introText . "[[TempSPLTest:AAA|TempSPLTest:AAA]]\n"
+		);
+	}
+
+	public function textProvider() {
+		return array(
+			array( '' ),
+			array( 'a' ),
+			array( '0' ),
+			array( '~=[,,_,,]:3' ),
+		);
 	}
 
 }

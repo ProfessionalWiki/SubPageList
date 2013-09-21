@@ -2,11 +2,13 @@
 
 namespace SubPageList;
 
+use LogicException;
 use ParamProcessor\ProcessingResult;
 use Parser;
 use ParserHooks\HookHandler;
 use SubPageList\UI\SubPageListRenderer;
 use Title;
+use ParamProcessor\ProcessedParam;
 
 /**
  * Handler for the subpagelist parser hook.
@@ -60,6 +62,13 @@ class SubPageList implements HookHandler {
 		return "\"$titleText\" has no sub pages."; // TODO
 	}
 
+	/**
+	 * @param Title $title
+	 * @param ProcessedParam[] $parameters
+	 *
+	 * @return string
+	 * @throws LogicException
+	 */
 	protected function renderSubPages( Title $title, array $parameters ) {
 		$subPageTitles = $this->subPageFinder->getSubPagesFor( $title );
 		$subPageTitles[] = $title;
@@ -67,13 +76,30 @@ class SubPageList implements HookHandler {
 		$pageHierarchy = $this->pageHierarchyCreator->createHierarchy( $subPageTitles );
 
 		if ( count( $pageHierarchy ) !== 1 ) {
-			throw new \LogicException( 'Expected exactly one top level page' );
+			throw new LogicException( 'Expected exactly one top level page' );
 		}
 
 		$topLevelPage = reset( $pageHierarchy );
 
-		$result = $this->subPageListRenderer->render( $topLevelPage, $parameters );
-		return $result;
+		return $this->subPageListRenderer->render(
+			$topLevelPage,
+			$this->paramsToOptions( $parameters )
+		);
+	}
+
+	/**
+	 * @param ProcessedParam[] $parameters
+	 *
+	 * @return array
+	 */
+	protected function paramsToOptions( array $parameters ) {
+		$options = array();
+
+		foreach ( $parameters as $parameter ) {
+			$options[$parameter->getName()] = $parameter->getValue();
+		}
+
+		return $options;
 	}
 
 }

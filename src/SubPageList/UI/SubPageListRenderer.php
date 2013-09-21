@@ -19,10 +19,16 @@ interface SubPageListRenderer {
 	 * This might or might not include additional things
 	 * such as headers and footers.
 	 *
+	 * The $options parameter is an array containing string
+	 * keys that are option names. The values are mixed.
+	 * The interface does not define which options can be,
+	 * or should be, supported by the implementing class.
+	 *
 	 * @param Page $page
+	 * @param array $options
 	 *
 	 * @return string
 	 */
-	public function render( Page $page );
+	public function render( Page $page, array $options );
 
 }

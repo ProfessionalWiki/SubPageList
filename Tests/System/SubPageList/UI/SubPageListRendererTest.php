@@ -14,17 +14,21 @@ use Title;
 class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	protected static $pages = array(
-		'TempSPLTest:AAA',
-		'TempSPLTest:AAA/Root0',
-		'TempSPLTest:AAA/Root1/Sub1-0',
-		'TempSPLTest:AAA/Root2/Sub2-0',
-		'TempSPLTest:AAA/Root2/Sub2-1',
-		'TempSPLTest:AAA/Root2/Sub2-2',
-		'TempSPLTest:AAA/Root2/Sub2-2/SubSub2-2-0',
-		'TempSPLTest:AAA/Root2/Sub2-3',
+//		'TempSPLTest:AAA',
+//		'TempSPLTest:AAA/Root0',
+//		'TempSPLTest:AAA/Root1/Sub1-0',
+//		'TempSPLTest:AAA/Root2/Sub2-0',
+//		'TempSPLTest:AAA/Root2/Sub2-1',
+//		'TempSPLTest:AAA/Root2/Sub2-2',
+//		'TempSPLTest:AAA/Root2/Sub2-2/SubSub2-2-0',
+//		'TempSPLTest:AAA/Root2/Sub2-3',
 
 		'TempSPLTest:BBB/Root0',
 		'TempSPLTest:BBB/Root1',
+
+		'TempSPLTest:CCC',
+
+		'TempSPLTest:DDD/Sub',
 	);
 
 	/**
@@ -46,6 +50,19 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		}
 	}
 
+	protected function assertCreatesList( array $params, $listText ) {
+		$this->assertEquals(
+			$listText,
+			$this->getListForParams( $params )
+		);
+	}
+
+	protected function getListForParams( array $params ) {
+		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
+
+		return $extension->getListFunctionRunner()->run( $GLOBALS['wgParser'], $params );
+	}
+
 	public static function tearDownAfterClass() {
 		foreach ( self::$titles as $title ) {
 			$page = new \WikiPage( $title );
@@ -60,17 +77,29 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	protected function assertCreatesList( array $params, $listText ) {
-		$this->assertEquals(
-			$listText,
-			$this->getListForParams( $params )
+	public function testListForExistingPage() {
+		$this->assertCreatesList(
+			array( 'page' => 'TempSPLTest:CCC' ),
+			"[[TempSPLTest:CCC|TempSPLTest:CCC]]\n"
 		);
 	}
 
-	protected function getListForParams( array $params ) {
-		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
+	public function testListSubPagePageWithParent() {
+		$this->assertCreatesList(
+			array( 'page' => 'TempSPLTest:DDD/Sub' ),
+			'[[TempSPLTest:DDD|TempSPLTest:DDD]]
+* [[TempSPLTest:DDD/Sub|TempSPLTest:DDD/Sub]]
+'
+		);
+	}
 
-		return $extension->getListFunctionRunner()->run( $GLOBALS['wgParser'], $params );
+	public function testListPageWithSub() {
+		$this->assertCreatesList(
+			array( 'page' => 'TempSPLTest:DDD' ),
+			'[[TempSPLTest:DDD|TempSPLTest:DDD]]
+* [[TempSPLTest:DDD/Sub|TempSPLTest:DDD/Sub]]
+'
+		);
 	}
 
 }

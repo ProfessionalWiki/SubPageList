@@ -68,8 +68,13 @@ See also:
 	'spl-subpages-par-sortby' => '{{doc-important|Do not translate "title" and "lastedit".}}',
 	'spl-subpages-par-format' => '{{doc-important|Do not translate "ol", "ul" and "list".}}',
 	'spl-subpages-par-pathstyle' => '{{doc-important|The parameters "fullpagename", "pagename", "subpagename" and "none" should not be translated!}}',
+	'spl-subpages-par-kidsonly' => 'Used as description for a boolean parameter.',
 	'spl-subpages-par-element' => '{{doc-important|Do not translate "intro", "outro", "default", "div", "p", and "span".}}',
 	'spl-subpages-par-class' => '{{doc-important|Do not translate "class".}}',
+	'spl-subpages-par-intro' => 'See also:
+* {{msg-mw|Spl-subpages-par-outro}}',
+	'spl-subpages-par-outro' => 'See also:
+* {{msg-mw|Spl-subpages-par-intro}}',
 	'spl-subpages-par-separator' => '{{doc-important|Do not translate "list" and "bar".}}',
 	'spl-subpages-par-template' => '{{doc-important|Do not translate "ul", "ol", and "list".}}',
 );
@@ -400,6 +405,22 @@ $messages['ja'] = array(
 	'spl-nosubpages' => 'ページ「$1」には列挙できる下位ページがありません。',
 	'spl-noparentpage' => 'ページ「$1」は存在しません。',
 	'spl-nopages' => '名前空間「$1」にはページはありません。',
+	'spl-subpages-par-sort' => '並べ替えの順序です。使用できる値:「asc」、「desc」',
+	'spl-subpages-par-sortby' => '下位ページの並べ替えの基準です。使用できる値:「title」「lastedit」',
+	'spl-subpages-par-format' => '下位ページは複数の形式で出力できます。使用できる値:「ol」(番号付きリスト)、「ul」(番号なしリスト)、「list」(プレーンなリスト (例: カンマ区切り))',
+	'spl-subpages-par-page' => '下位ページを表示するページ、またはページを表示する名前空間名 (末尾のコロンを含む) です。既定は現在のページです。',
+	'spl-subpages-par-showpage' => 'そのページ自身を一覧に含めるかどうかを指定します。',
+	'spl-subpages-par-pathstyle' => '一覧での下位ページのパスのスタイルです。使用できる値:「fullpagename」(完全なページ名 (名前空間を含む))、「pagename」(ページ名 (名前空間を含まない))、「subpagename」(列挙を開始したページからの相対ページ名)、「none」(最後のスラッシュの後の部分のみ)',
+	'spl-subpages-par-kidsonly' => '直接の下位ページのみを表示できるようにします。',
+	'spl-subpages-par-limit' => 'ページを列挙する件数の最大値です。',
+	'spl-subpages-par-element' => '一覧を囲む HTML 要素 (「intro」「outro」「default」のテキストを含む) です。使用できる値:「div」「p」「span」',
+	'spl-subpages-par-class' => '一覧を囲む HTML 要素の「class」属性の値です。',
+	'spl-subpages-par-intro' => '一覧が空ではない場合に、一覧の前に出力するテキストです。',
+	'spl-subpages-par-outro' => '一覧が空ではない場合に、一覧の後に出力するテキストです。',
+	'spl-subpages-par-default' => '一覧が空の場合にその代わりに出力するテキストです。空にした場合は、エラーメッセージ (例:「ページには列挙できる下位ページがありません」) を出力します。ダッシュ (-) を指定した場合は、まったく何も出力しません。',
+	'spl-subpages-par-separator' => '「list」形式 (およびその別名「bar」形式) の場合に、一覧の各項目の間に出力するテキストです。他の形式の場合には影響しません。',
+	'spl-subpages-par-template' => 'テンプレート名です。指定したテンプレートは一覧の各項目に適用されます。テンプレートの最初の (無名の) 引数として、項目が渡されます。テンプレートは一覧の形式をキャンセルしない、ということにご注意ください。テンプレートの出力に対して、一覧の形式 (「ol」「ol」「list」) が適用されます。',
+	'spl-subpages-par-links' => 'true にすると一覧の項目はリンクとして出力され、false にするとテキスト形式で出力されます。後者は特に、出力した項目をさらにテンプレートに渡す際に役立ちます。',
 );
 
 /** Georgian (ქართული)
@@ -414,7 +435,7 @@ $messages['ka'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'spl-desc' => '하위 문서를 나타내도록 하는 <code><nowiki><splist /></nowiki></code> 태그 추가',
+	'spl-desc' => '하위 문서를 나타내도록 하는 <code><nowiki><splist /></nowiki></code> 태그를 추가합니다',
 	'spl-nosubpages' => '"$1" 문서는 목록에 하위 문서가 없습니다.',
 	'spl-noparentpage' => '"$1" 문서가 존재하지 않습니다.',
 	'spl-nopages' => '"$1" 이름공간에 문서가 없습니다.',
@@ -427,7 +448,7 @@ $messages['ko'] = array(
 	'spl-subpages-par-kidsonly' => '직접 하위 문서만 보여줄 수 있습니다.',
 	'spl-subpages-par-limit' => '나타낼 문서의 최대 수입니다.',
 	'spl-subpages-par-element' => '목록을 둘러싼 ("intro"와 "outro" 또는 "default" 텍스트를 포함하는) HTML 요소입니다. 허용하는 값: "div", "p", "span"입니다.',
-	'spl-subpages-par-class' => '목록을 둘러싼 HTML 요소의 "class" 속성에 대한 값입니다.',
+	'spl-subpages-par-class' => '목록을 둘러싼 HTML 요소의 "class" 특성에 대한 값입니다.',
 	'spl-subpages-par-intro' => '목록이 비어 있지 않다면 목록 앞에 출력할 텍스트입니다.',
 	'spl-subpages-par-outro' => '목록이 비어 있지 않다면 목록 뒤에 출력할 텍스트입니다.',
 	'spl-subpages-par-default' => '목록이 비어 있다면 목록 대신 출력할 텍스트입니다. 비어 있다면 ("문서는 나타낼 하위 문서가 없습니다"와 같이) 오류 메시지가 나타납니다. 대시("-")로 입력하면 결과는 완전히 비어있게 됩니다.',
@@ -594,6 +615,16 @@ $messages['nl'] = array(
 	'spl-subpages-par-links' => 'Lijstelementen worden opgemaakt als koppelingen als waar. Lijstelementen zijn platte tekst als onwaar. De laatste optie is handig bij het doorgeven van elementen aan sjablonen voor verdere verwerking.',
 );
 
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'spl-desc' => 'Apond una balisa <nowiki><splist /></nowiki> que permet de far la lista de las sospaginas',
+	'spl-nosubpages' => 'La pagina « $1 » a pas cap de sospaginas de listar.',
+	'spl-noparentpage' => 'La pagina « $1 » existís pas.',
+	'spl-nopages' => 'L’espaci de nom « $1 » a pas cap de paginas.',
+);
+
 /** Polish (polski)
  * @author BeginaFelicysym
  * @author Woytecr
@@ -650,19 +681,20 @@ $messages['pms'] = array(
 
 /** Portuguese (português)
  * @author Hamilton Abreu
+ * @author Luckas
  */
 $messages['pt'] = array(
 	'spl-desc' => 'Acrescenta um elemento <code><nowiki><splist /></nowiki></code> que permite listar subpáginas',
 	'spl-nosubpages' => 'A página $1 não tem subpáginas para listar.',
 	'spl-noparentpage' => 'A página "$1" não existe.',
 	'spl-nopages' => 'O espaço nominal "$1" não tem páginas.',
-	'spl-subpages-par-sort' => 'A direcção da ordenação. Valores permitidos: "asc" e "desc".',
+	'spl-subpages-par-sort' => 'A direção da ordenação. Valores permitidos: "asc" e "desc".',
 	'spl-subpages-par-sortby' => 'O critério de ordenação. Valores permitidos: "title" (titulo) ou "lastedit" (última edição).',
 	'spl-subpages-par-format' => 'A lista de subpáginas pode ser apresentada em vários formatos. Valores permitidos: "ol"— listas ordenadas (numeradas), "ul" — listas não ordenadas (com marcadores) e "list" — listas simples (por exemplo, lista separada por vírgulas).',
 	'spl-subpages-par-page' => 'A página cujas subpáginas serão mostradas, ou o nome do espaço nominal (incluindo o sinal de dois pontos) do qual mostrar as páginas. Por omissão, será a página corrente.',
 	'spl-subpages-par-showpage' => 'Indica se a própria página deve ser mostrada na lista ou não.',
 	'spl-subpages-par-pathstyle' => 'O estilo do caminho para as subpáginas na lista. Valores permitidos: "fullpagename" — nome completo da página (incluindo o espaço nominal), "pagename" — nome da página (sem o espaço nominal), "subpagename" — nome relativo da página, começando a partir da página cujas subpáginas vão ser mostradas e "none" — somente a parte do nome após a última barra "/".',
-	'spl-subpages-par-kidsonly' => 'Permite mostrar só subpáginas directas.',
+	'spl-subpages-par-kidsonly' => 'Permite mostrar só subpáginas diretas.',
 	'spl-subpages-par-limit' => 'O número máximo de páginas listadas.',
 	'spl-subpages-par-element' => 'O elemento HTML que encapsula a lista (incluindo os textos "intro" e "outro" ou "default"). Valores permitidos: "div", "p" e "span".',
 	'spl-subpages-par-class' => 'O valor do atributo "class" do elemento HTML que encapsula a lista.',

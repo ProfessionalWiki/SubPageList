@@ -1,11 +1,12 @@
 <?php
 
-namespace Tests\Phpunit\SubPageList;
+namespace Tests\Unit\SubPageList;
 
+use SubPageList\Extension;
 use SubPageList\Settings;
 
 /**
- * @covers SubPageList\Settings
+ * Tests for the SubPageList\Extension class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,38 +33,51 @@ use SubPageList\Settings;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SettingsTest extends \PHPUnit_Framework_TestCase {
+class ExtensionTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @dataProvider constructorProvider
 	 *
-	 * @param array $settings
+	 * @param Settings $settings
 	 */
-	public function testConstructor( array $settings ) {
-		$settingsObject = new Settings( $settings );
+	public function testConstructor( Settings $settings ) {
+		$extension = new Extension( $settings );
 
-		foreach ( $settings as $name => $value ) {
-			$this->assertEquals( $value, $settingsObject->get( $name ) );
-		}
-
-		$this->assertTrue( true );
+		$this->assertEquals( $settings, $extension->getSettings() );
 	}
 
 	public function constructorProvider() {
-		$settingArrays = array(
-			array(),
-			array( 'foo' => 'bar' ),
-			array( 'foo' => 'bar', 'baz' => 'BAH' ),
-			array( '~[,,_,,]:3' => array( 9001, 4.2 ) ),
+		$argLists = array(
+			array( Settings::newFromGlobals( $GLOBALS ) )
 		);
 
+		return $argLists;
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @param Extension $extension
+	 */
+	public function testGetSlaveConnectionProvider( Extension $extension ) {
+		$this->assertInstanceOf( 'SubPageList\DBConnectionProvider', $extension->getSlaveConnectionProvider() );
+	}
+
+	public function instanceProvider() {
 		$argLists = array();
 
-		foreach ( $settingArrays as $settingArray ) {
-			$argLists[] = array( $settingArray );
-		}
+		$argLists[] = array( new Extension( Settings::newFromGlobals( $GLOBALS ) ) );
 
 		return $argLists;
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @param Extension $extension
+	 */
+	public function testGetCacheInvalidator( Extension $extension ) {
+		$this->assertInstanceOf( 'SubPageList\CacheInvalidator', $extension->getCacheInvalidator() );
 	}
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Integration\SubPageList\UI;
+namespace Tests\System\SubPageList\UI;
 
 use SubPageList\Page;
 use SubPageList\UI\WikitextSubPageListRenderer;

@@ -1,13 +1,11 @@
 <?php
 
-namespace Tests\Phpunit\SubPageList;
+namespace Tests\Unit\SubPageList;
 
-use SubPageList\SimpleSubPageFinder;
-use SubPageList\SubPageFinder;
-use Title;
+use SubPageList\Setup;
 
 /**
- * @covers SubPageList\SimpleSubPageFinder
+ * @covers SubPageList\Setup
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,41 +28,42 @@ use Title;
  * @ingroup SubPageListTest
  *
  * @group SubPageList
- * @group Database
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
+class SetupTest extends \PHPUnit_Framework_TestCase {
 
-	/**
-	 * @return SubPageFinder
-	 */
-	public function newInstance() {
-		return new SimpleSubPageFinder( new \SubPageList\LazyDBConnectionProvider( DB_SLAVE ) );
+	public function testRun() {
+		$extension = $this->newExtension();
+
+		$hookLists = array(
+			'ParserFirstCallInit' => array(),
+			'ArticleInsertComplete' => array(),
+			'ArticleDeleteComplete' => array(),
+			'TitleMoveComplete' => array(),
+			'UnitTestsList' => array(),
+		);
+
+		$setup = new Setup(
+			$extension,
+			$hookLists,
+			__DIR__ . '/..'
+		);
+
+		$setup->run();
+
+		foreach ( $hookLists as $hookName => $hookList ) {
+			$this->assertEquals( 1, count( $hookList ), "one hook handler need to be added to '$hookName'" );
+
+			$hook = reset( $hookList );
+
+			$this->assertInternalType( 'callable', $hook );
+		}
 	}
 
-	public function titleProvider() {
-		$argLists = array();
-
-		$argLists[] = array( Title::newMainPage() );
-		$argLists[] = array( Title::newFromText( 'ohi there i do not exist nyan nyan nyan' ) );
-
-		return $argLists;
-	}
-
-	/**
-	 * @dataProvider titleProvider
-	 *
-	 * @param Title $title
-	 */
-	public function testGetSubPagesFor( Title $title ) {
-		$finder = $this->newInstance();
-
-		$pages = $finder->getSubPagesFor( $title );
-
-		$this->assertInternalType( 'array', $pages );
-		$this->assertContainsOnlyInstancesOf( 'Title', $pages );
+	protected function newExtension() {
+		return new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
 	}
 
 }

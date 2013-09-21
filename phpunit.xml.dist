@@ -13,11 +13,11 @@
          strict="true"
          verbose="true">
     <testsuites>
-        <testsuite name="SubPageList">
-            <directory>Tests/Phpunit</directory>
+        <testsuite name="SubPageListFast">
+            <directory>Tests/Unit</directory>
         </testsuite>
-        <testsuite name="SubPageListIntegration">
-            <directory>Tests/Integration</directory>
+        <testsuite name="SubPageListSlow">
+            <directory>Tests/System</directory>
         </testsuite>
     </testsuites>
 </phpunit>

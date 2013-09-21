@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Phpunit\SubPageList;
+namespace Tests\Unit\SubPageList;
 
-use SubPageList\Setup;
+use SubPageList\Settings;
 
 /**
- * @covers SubPageList\Setup
+ * @covers SubPageList\Settings
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,38 +32,38 @@ use SubPageList\Setup;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SetupTest extends \PHPUnit_Framework_TestCase {
+class SettingsTest extends \PHPUnit_Framework_TestCase {
 
-	public function testRun() {
-		$extension = $this->newExtension();
+	/**
+	 * @dataProvider constructorProvider
+	 *
+	 * @param array $settings
+	 */
+	public function testConstructor( array $settings ) {
+		$settingsObject = new Settings( $settings );
 
-		$hookLists = array(
-			'ParserFirstCallInit' => array(),
-			'ArticleInsertComplete' => array(),
-			'ArticleDeleteComplete' => array(),
-			'TitleMoveComplete' => array(),
-			'UnitTestsList' => array(),
-		);
-
-		$setup = new Setup(
-			$extension,
-			$hookLists,
-			__DIR__ . '/..'
-		);
-
-		$setup->run();
-
-		foreach ( $hookLists as $hookName => $hookList ) {
-			$this->assertEquals( 1, count( $hookList ), "one hook handler need to be added to '$hookName'" );
-
-			$hook = reset( $hookList );
-
-			$this->assertInternalType( 'callable', $hook );
+		foreach ( $settings as $name => $value ) {
+			$this->assertEquals( $value, $settingsObject->get( $name ) );
 		}
+
+		$this->assertTrue( true );
 	}
 
-	protected function newExtension() {
-		return new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
+	public function constructorProvider() {
+		$settingArrays = array(
+			array(),
+			array( 'foo' => 'bar' ),
+			array( 'foo' => 'bar', 'baz' => 'BAH' ),
+			array( '~[,,_,,]:3' => array( 9001, 4.2 ) ),
+		);
+
+		$argLists = array();
+
+		foreach ( $settingArrays as $settingArray ) {
+			$argLists[] = array( $settingArray );
+		}
+
+		return $argLists;
 	}
 
 }

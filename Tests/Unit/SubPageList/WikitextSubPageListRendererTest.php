@@ -7,7 +7,10 @@ use SubPageList\UI\WikitextSubPageListRenderer;
 use Title;
 
 /**
+ * @covers SubPageList\UI\WikitextSubPageListRenderer
+ *
  * @group SubPageList
+ *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */

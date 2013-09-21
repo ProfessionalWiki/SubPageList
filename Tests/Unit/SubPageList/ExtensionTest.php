@@ -6,7 +6,7 @@ use SubPageList\Extension;
 use SubPageList\Settings;
 
 /**
- * Tests for the SubPageList\Extension class.
+ * @covers SubPageList\Extension
  *
  * @file
  * @since 1.0

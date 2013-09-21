@@ -92,6 +92,7 @@ $magicWords['mk'] = array(
 
 /** Malayalam (മലയാളം) */
 $magicWords['ml'] = array(
+	'splist' => array( 0, 'ഉപതാൾപട്ടിക' ),
 	'subpages' => array( 0, 'ഉപതാളുകൾ' ),
 	'subpagelist' => array( 0, 'ഉപതാളുകളുടെപട്ടിക' ),
 	'subpagecount' => array( 0, 'ഉപതാളുകളുടെയെണ്ണം' ),

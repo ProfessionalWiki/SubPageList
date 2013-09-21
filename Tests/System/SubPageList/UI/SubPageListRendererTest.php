@@ -2,12 +2,8 @@
 
 namespace Tests\System\SubPageList\UI;
 
-use ParamProcessor\ProcessingResult;
-use ParserHooks\FunctionRunner;
 use SubPageList\Extension;
-use SubPageList\Page;
 use SubPageList\Settings;
-use SubPageList\UI\WikitextSubPageListRenderer;
 use Title;
 
 /**

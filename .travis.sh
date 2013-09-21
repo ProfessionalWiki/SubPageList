@@ -4,7 +4,8 @@ set -x
 
 cd ..
 
-git clone https://gerrit.wikimedia.org/r/p/mediawiki/core.git phase3 --depth 1
+git clone https://gerrit.wikimedia.org/r/p/mediawiki/core.git phase3
+git checkout $MW
 
 cd -
 cd ../phase3/extensions

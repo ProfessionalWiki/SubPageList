@@ -9,11 +9,6 @@ use Title;
 /**
  * @covers SubPageList\SimpleSubPageFinder
  *
- * @file
- * @since 1.0
- *
- * @ingroup SubPageListTest
- *
  * @group SubPageList
  * @group Database
  *

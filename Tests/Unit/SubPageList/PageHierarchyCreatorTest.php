@@ -9,10 +9,6 @@ use Title;
 /**
  * @covers SubPageList\PageHierarchyCreator
  *
- * @file
- * @since 0.1
- *
- * @ingroup SubPageList
  * @group SubPageList
  *
  * @licence GNU GPL v2+

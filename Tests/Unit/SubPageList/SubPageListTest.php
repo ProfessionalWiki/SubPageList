@@ -11,8 +11,6 @@ use SubPageList\TitleFactory;
 /**
  * @covers SubPageList\SubPageList
  *
- * @file
- * @ingroup SubPageList
  * @group SubPageList
  *
  * @licence GNU GPL v2+

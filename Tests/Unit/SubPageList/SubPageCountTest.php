@@ -10,8 +10,6 @@ use SubPageList\TitleFactory;
 /**
  * @covers SubPageList\SubPageCount
  *
- * @file
- * @ingroup SubPageList
  * @group SubPageList
  *
  * @licence GNU GPL v2+

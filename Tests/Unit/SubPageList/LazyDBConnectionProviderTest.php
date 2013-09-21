@@ -8,11 +8,6 @@ use SubPageList\LazyDBConnectionProvider;
 /**
  * @covers SubPageList\LazyDBConnectionProvider
  *
- * @file
- * @since 1.0
- *
- * @ingroup SubPageListTest
- *
  * @group SubPageList
  *
  * @licence GNU GPL v2+

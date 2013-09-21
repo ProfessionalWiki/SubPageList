@@ -7,10 +7,6 @@ use SubPageList\Page;
 /**
  * @covers SubPageList\Page
  *
- * @file
- * @since 0.1
- *
- * @ingroup SubPageList
  * @group SubPageList
  *
  * @licence GNU GPL v2+

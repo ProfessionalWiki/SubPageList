@@ -7,11 +7,6 @@ use SubPageList\Setup;
 /**
  * @covers SubPageList\Setup
  *
- * @file
- * @since 1.0
- *
- * @ingroup SubPageListTest
- *
  * @group SubPageList
  *
  * @licence GNU GPL v2+

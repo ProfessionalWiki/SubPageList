@@ -2,7 +2,11 @@
 
 namespace Tests\System\SubPageList\UI;
 
+use ParamProcessor\ProcessingResult;
+use ParserHooks\FunctionRunner;
+use SubPageList\Extension;
 use SubPageList\Page;
+use SubPageList\Settings;
 use SubPageList\UI\WikitextSubPageListRenderer;
 use Title;
 
@@ -14,7 +18,17 @@ use Title;
 class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	protected static $pages = array(
-		'TempSPLTest:FirstRoot'
+		'TempSPLTest:AAA',
+		'TempSPLTest:AAA/Root0',
+		'TempSPLTest:AAA/Root1/Sub1-0',
+		'TempSPLTest:AAA/Root2/Sub2-0',
+		'TempSPLTest:AAA/Root2/Sub2-1',
+		'TempSPLTest:AAA/Root2/Sub2-2',
+		'TempSPLTest:AAA/Root2/Sub2-2/SubSub2-2-0',
+		'TempSPLTest:AAA/Root2/Sub2-3',
+
+		'TempSPLTest:BBB/Root0',
+		'TempSPLTest:BBB/Root1',
 	);
 
 	/**
@@ -43,27 +57,24 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		}
 	}
 
-	public function testCanRenderMainPage() {
-//		$page = new Page( Title::newMainPage() );
-//		$hierarchyRendering = 'foo bar baz';
-//
-//		$hierarchyRenderer = $this->getMock( 'SubPageList\UI\HierarchyRenderingBehaviour' );
-//
-//		$hierarchyRenderer->expects( $this->once() )
-//			->method( 'renderHierarchy' )
-//			->with( $this->equalTo( $page ) )
-//			->will( $this->returnValue( $hierarchyRendering ) );
-//
-//		$renderer = new WikitextSubPageListRenderer( $hierarchyRenderer );
-//
-//		$text = $renderer->render( $page );
-//
-//		$this->assertInternalType( 'string', $text );
-//		$this->assertEquals( $hierarchyRendering, $text );
+	public function testListForNonExistingPage() {
+		$this->assertCreatesList(
+			array( 'page' => 'TempSPLTest:ZZZ' ),
+			"[[TempSPLTest:ZZZ|TempSPLTest:ZZZ]]\n"
+		);
+	}
 
-		foreach ( self::$titles as $title ) {
-			$this->assertTrue( $title->exists() );
-		}
+	protected function assertCreatesList( array $params, $listText ) {
+		$this->assertEquals(
+			$listText,
+			$this->getListForParams( $params )
+		);
+	}
+
+	protected function getListForParams( array $params ) {
+		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
+
+		return $extension->getListFunctionRunner()->run( $GLOBALS['wgParser'], $params );
 	}
 
 }

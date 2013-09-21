@@ -129,7 +129,7 @@ class Extension {
 	 *
 	 * @return FunctionRunner
 	 */
-	public function getCountFunctionHandler() {
+	public function getCountFunctionRunner() {
 		$definition = new HookDefinition(
 			'subpagecount',
 			array(
@@ -155,7 +155,7 @@ class Extension {
 	 *
 	 * @return FunctionRunner
 	 */
-	public function getListFunctionHandler() {
+	public function getListFunctionRunner() {
 		$params = array();
 
 		$params['sort'] = array(

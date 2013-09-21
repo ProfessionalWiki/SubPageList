@@ -69,8 +69,8 @@ class Setup {
 		$this->hooks['ParserFirstCallInit'][] = function( Parser &$parser ) use ( $extension ) {
 			$hookRegistrant = $extension->getHookRegistrant( $parser );
 
-			$hookRegistrant->registerFunction( $extension->getCountFunctionHandler() );
-			$hookRegistrant->registerFunction( $extension->getListFunctionHandler() );
+			$hookRegistrant->registerFunction( $extension->getCountFunctionRunner() );
+			$hookRegistrant->registerFunction( $extension->getListFunctionRunner() );
 
 			return true;
 		};

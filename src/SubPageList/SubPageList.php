@@ -72,7 +72,7 @@ class SubPageList implements HookHandler {
 
 		$topLevelPage = reset( $pageHierarchy );
 
-		$result = $this->subPageListRenderer->render( $topLevelPage );
+		$result = $this->subPageListRenderer->render( $topLevelPage, $parameters );
 		return $result;
 	}
 

@@ -107,10 +107,11 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	public function testListForWithHeader() {
 		$this->assertCreatesList(
 			array(
-				'page' => 'TempSPLTest:AAA'
+				'page' => 'TempSPLTest:AAA',
+				'intro' => 'intro',
 			),
 			"[[TempSPLTest:AAA|TempSPLTest:AAA]]\n"
-		);
+		); // TODO
 	}
 
 }

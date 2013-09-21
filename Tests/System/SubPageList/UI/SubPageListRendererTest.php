@@ -14,21 +14,24 @@ use Title;
 class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	protected static $pages = array(
-//		'TempSPLTest:AAA',
-//		'TempSPLTest:AAA/Root0',
-//		'TempSPLTest:AAA/Root1/Sub1-0',
-//		'TempSPLTest:AAA/Root2/Sub2-0',
-//		'TempSPLTest:AAA/Root2/Sub2-1',
-//		'TempSPLTest:AAA/Root2/Sub2-2',
-//		'TempSPLTest:AAA/Root2/Sub2-2/SubSub2-2-0',
-//		'TempSPLTest:AAA/Root2/Sub2-3',
+//		'TempSPLTest:QQQ',
+//		'TempSPLTest:QQQ/Root0',
+//		'TempSPLTest:QQQ/Root1/Sub1-0',
+//		'TempSPLTest:QQQ/Root2/Sub2-0',
+//		'TempSPLTest:QQQ/Root2/Sub2-1',
+//		'TempSPLTest:QQQ/Root2/Sub2-2',
+//		'TempSPLTest:QQQ/Root2/Sub2-2/SubSub2-2-0',
+//		'TempSPLTest:QQQ/Root2/Sub2-3',
 
-		'TempSPLTest:BBB/Root0',
-		'TempSPLTest:BBB/Root1',
+		// A page with no sub pages
+		'TempSPLTest:AAA',
 
-		'TempSPLTest:CCC',
+		// A page with one sub page
+		'TempSPLTest:BBB',
+		'TempSPLTest:BBB/Sub',
 
-		'TempSPLTest:DDD/Sub',
+		// A sub page with no parent
+		'TempSPLTest:CCC/Sub',
 	);
 
 	/**
@@ -78,26 +81,35 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public function testListForExistingPage() {
 		$this->assertCreatesList(
-			array( 'page' => 'TempSPLTest:CCC' ),
-			"[[TempSPLTest:CCC|TempSPLTest:CCC]]\n"
+			array( 'page' => 'TempSPLTest:AAA' ),
+			"[[TempSPLTest:AAA|TempSPLTest:AAA]]\n"
 		);
 	}
 
 	public function testListSubPagePageWithParent() {
 		$this->assertCreatesList(
-			array( 'page' => 'TempSPLTest:DDD/Sub' ),
-			'[[TempSPLTest:DDD|TempSPLTest:DDD]]
-* [[TempSPLTest:DDD/Sub|TempSPLTest:DDD/Sub]]
+			array( 'page' => 'TempSPLTest:CCC/Sub' ),
+			'[[TempSPLTest:CCC|TempSPLTest:CCC]]
+* [[TempSPLTest:CCC/Sub|TempSPLTest:CCC/Sub]]
 '
 		);
 	}
 
 	public function testListPageWithSub() {
 		$this->assertCreatesList(
-			array( 'page' => 'TempSPLTest:DDD' ),
-			'[[TempSPLTest:DDD|TempSPLTest:DDD]]
-* [[TempSPLTest:DDD/Sub|TempSPLTest:DDD/Sub]]
+			array( 'page' => 'TempSPLTest:CCC' ),
+			'[[TempSPLTest:CCC|TempSPLTest:CCC]]
+* [[TempSPLTest:CCC/Sub|TempSPLTest:CCC/Sub]]
 '
+		);
+	}
+
+	public function testListForWithHeader() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'TempSPLTest:AAA'
+			),
+			"[[TempSPLTest:AAA|TempSPLTest:AAA]]\n"
 		);
 	}
 
@@ -109,7 +121,7 @@ class PageCreator {
 		$page = new \WikiPage( $title );
 
 		$pageContent = 'Content of ' . $title->getFullText();
-		$editMessage = 'SPL integration test: create page';
+		$editMessage = 'SPL system test: create page';
 
 		if ( class_exists( 'WikitextContent' ) ) {
 			$page->doEditContent(
@@ -128,7 +140,7 @@ class PageDeleter {
 
 	public function deletePage( Title $title ) {
 		$page = new \WikiPage( $title );
-		$page->doDeleteArticle( 'SPL integration test: delete page' );
+		$page->doDeleteArticle( 'SPL system test: delete page' );
 	}
 
 }

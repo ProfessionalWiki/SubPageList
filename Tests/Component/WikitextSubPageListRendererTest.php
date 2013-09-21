@@ -1,14 +1,12 @@
 <?php
 
-namespace Tests\Unit\SubPageList;
+namespace Tests\Component\SubPageList;
 
 use SubPageList\Page;
 use SubPageList\UI\WikitextSubPageListRenderer;
 use Title;
 
 /**
- * @covers SubPageList\UI\WikitextSubPageListRenderer
- *
  * @group SubPageList
  *
  * @licence GNU GPL v2+

@@ -15,6 +15,7 @@
     <testsuites>
         <testsuite name="SubPageListFast">
             <directory>Tests/Unit</directory>
+            <directory>Tests/Component</directory>
         </testsuite>
         <testsuite name="SubPageListSlow">
             <directory>Tests/System</directory>

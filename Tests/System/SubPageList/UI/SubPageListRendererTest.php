@@ -37,16 +37,22 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	protected static $titles;
 
 	public static function setUpBeforeClass() {
+		$pageCreator = new PageCreator();
+
 		foreach ( self::$pages as $pageName ) {
 			$title = Title::newFromText( $pageName );
 
-			$page = new \WikiPage( $title );
-			$page->doEditContent(
-				new \WikitextContent( 'Content of ' . $pageName ),
-				'SPL integration test: create page'
-			);
-
 			self::$titles[] = $title;
+
+			$pageCreator->createPage( $title );
+		}
+	}
+
+	public static function tearDownAfterClass() {
+		$pageDeleter = new PageDeleter();
+
+		foreach ( self::$titles as $title ) {
+			$pageDeleter->deletePage( $title );
 		}
 	}
 
@@ -61,13 +67,6 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
 
 		return $extension->getListFunctionRunner()->run( $GLOBALS['wgParser'], $params );
-	}
-
-	public static function tearDownAfterClass() {
-		foreach ( self::$titles as $title ) {
-			$page = new \WikiPage( $title );
-			$page->doDeleteArticle( 'SPL integration test: delete page' );
-		}
 	}
 
 	public function testListForNonExistingPage() {
@@ -100,6 +99,36 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 * [[TempSPLTest:DDD/Sub|TempSPLTest:DDD/Sub]]
 '
 		);
+	}
+
+}
+
+class PageCreator {
+
+	public function createPage( Title $title ) {
+		$page = new \WikiPage( $title );
+
+		$pageContent = 'Content of ' . $title->getFullText();
+		$editMessage = 'SPL integration test: create page';
+
+		if ( class_exists( 'WikitextContent' ) ) {
+			$page->doEditContent(
+				new \WikitextContent( $pageContent ),
+				$editMessage
+			);
+		}
+		else {
+			$page->doEdit( $pageContent, $editMessage );
+		}
+	}
+
+}
+
+class PageDeleter {
+
+	public function deletePage( Title $title ) {
+		$page = new \WikiPage( $title );
+		$page->doDeleteArticle( 'SPL integration test: delete page' );
 	}
 
 }

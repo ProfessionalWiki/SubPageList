@@ -1,16 +1,13 @@
 <?php
 
-namespace Tests\Integration\SubPageList\UI;
+namespace Tests\Phpunit\SubPageList;
 
 use SubPageList\Page;
 use SubPageList\UI\WikitextSubPageListRenderer;
 use Title;
 
 /**
- * @file
- * @ingroup SubPageList
  * @group SubPageList
- *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */

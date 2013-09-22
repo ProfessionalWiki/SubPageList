@@ -19,7 +19,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider titleTextProvider
 	 */
-	public function testRenderHierarchy( $titleText ) {
+	public function testRenderHierarchyWithNoSubPages( $titleText ) {
 		$this->assertRendersHierarchy(
 			new Page( Title::newFromText( $titleText ) ),
 			$titleText . "\n"
@@ -52,6 +52,22 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 			} ) );
 
 		 return new TreeListRenderer( $pageRenderer );
+	}
+
+	public function testRenderHierarchyWithSubPages() {
+		$this->assertRendersHierarchy(
+			new Page(
+				Title::newFromText( 'AAA' ),
+				array(
+					new Page( Title::newFromText( 'CCC' ) ),
+					new Page( Title::newFromText( 'BBB' ) ),
+				)
+			),
+			'AAA
+* BBB
+* CCC
+'
+		);
 	}
 
 }

@@ -55,11 +55,27 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	protected function renderSubPages( Page $page, $indentationLevel ) {
 		$texts = array();
 
-		foreach ( $page->getSubPages() as $subPage ) {
+		foreach ( $this->getSortedSubPages( $page->getSubPages() ) as $subPage ) {
 			$texts[] = $this->renderPage( $subPage, $indentationLevel );
 		}
 
 		return implode( '', $texts );
+	}
+
+	/**
+	 * @param Page[] $subPages
+	 *
+	 * @return Page[]
+	 */
+	protected function getSortedSubPages( array $subPages ) {
+		usort(
+			$subPages,
+			function( Page $a, Page $b ) {
+				return $a->getTitle()->getFullText() > $b->getTitle()->getFullText();
+			}
+		);
+
+		return $subPages;
 	}
 
 }

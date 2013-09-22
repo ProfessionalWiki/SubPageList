@@ -126,6 +126,44 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	public function testListInvalidPageName() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'TempSPLTest:Invalid|Title',
+			),
+			'Error: invalid title provided'
+		);
+	}
+
+	public function testDefaultDefaultingBehaviour() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'TempSPLTest:DoesNotExist',
+			),
+			'"TempSPLTest:DoesNotExist" has no sub pages.'
+		);
+	}
+
+	public function testSpecifiedDefaultingBehaviour() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'TempSPLTest:DoesNotExist',
+				'default' => '~=[,,_,,]:3'
+			),
+			'~=[,,_,,]:3'
+		);
+	}
+
+	public function testNullDefaultingBehaviour() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'TempSPLTest:DoesNotExist',
+				'default' => '-'
+			),
+			''
+		);
+	}
+
 }
 
 class PageCreator {

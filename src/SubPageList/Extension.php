@@ -161,7 +161,7 @@ class Extension {
 
 		$params['page'] = array(
 			'aliases' => 'parent',
-			'default' => '',
+			'default' => '', // TODO: have handling code default to current when empty
 		);
 
 		$params['showpage'] = array(
@@ -184,6 +184,17 @@ class Extension {
 		$params['outro'] = array(
 			'default' => '',
 		);
+
+		$params['links'] = array(
+			'type' => 'boolean',
+			'aliases' => 'link',
+			'default' => true,
+		);
+
+		$params['default'] = array(
+			'default' => '',
+		);
+
 
 		$params['format'] = array(
 			'aliases' => 'liststyle',
@@ -214,12 +225,6 @@ class Extension {
 			'default' => false,
 		);
 
-		$params['links'] = array(
-			'type' => 'boolean',
-			'aliases' => 'link',
-			'default' => true,
-		);
-
 		$params['limit'] = array(
 			'type' => 'integer',
 			'default' => 200,
@@ -233,10 +238,6 @@ class Extension {
 
 		$params['class'] = array(
 			'default' => 'subpagelist',
-		);
-
-		$params['default'] = array(
-			'default' => '',
 		);
 
 		$params['separator'] = array(

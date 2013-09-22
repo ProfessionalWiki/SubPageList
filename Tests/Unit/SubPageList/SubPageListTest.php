@@ -69,7 +69,9 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 
 		$processingResult = new ProcessingResult(
 			array(
-				'page' => new ProcessedParam( 'page', $titleText, false )
+				'page' => new ProcessedParam( 'page', $titleText, false ),
+				'showpage' => new ProcessedParam( 'showpage', true, false ),
+				'default' => new ProcessedParam( 'default', '', true ),
 			),
 			array()
 		);

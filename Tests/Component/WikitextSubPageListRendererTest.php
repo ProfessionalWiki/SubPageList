@@ -7,8 +7,6 @@ use ParserHooks\HookDefinition;
 use SubPageList\Extension;
 use SubPageList\Page;
 use SubPageList\Settings;
-use SubPageList\UI\LinkingPageRenderer;
-use SubPageList\UI\TreeListRenderer;
 use SubPageList\UI\WikitextSubPageListRenderer;
 use Title;
 

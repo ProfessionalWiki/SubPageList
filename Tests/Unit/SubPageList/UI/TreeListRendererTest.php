@@ -36,16 +36,17 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	protected function getDefaultOptions() {
 		return array(
-			// TODO
+			'sort' => 'asc',
 		);
 	}
 
-	protected function assertRendersHierarchy( Page $page, $expected, $message = '' ) {
+	protected function assertRendersHierarchy( Page $page, $expected, array $options = array() ) {
 		$listRender = $this->newListRenderer();
 
-		$actual = $listRender->renderHierarchy( $page, $this->getDefaultOptions() );
+		$options = array_merge( $this->getDefaultOptions(), $options );
+		$actual = $listRender->renderHierarchy( $page, $options );
 
-		$this->assertEquals( $expected, $actual, $message );
+		$this->assertEquals( $expected, $actual );
 	}
 
 	protected function newListRenderer() {
@@ -73,6 +74,25 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 * BBB
 * CCC
 '
+		);
+	}
+
+	public function testRenderHierarchyWithDescSort() {
+		$this->assertRendersHierarchy(
+			new Page(
+				Title::newFromText( 'AAA' ),
+				array(
+					new Page( Title::newFromText( 'CCC' ) ),
+					new Page( Title::newFromText( 'BBB' ) ),
+					new Page( Title::newFromText( 'DDD' ) ),
+				)
+			),
+			'AAA
+* DDD
+* CCC
+* BBB
+',
+			array( 'sort' => 'desc' )
 		);
 	}
 

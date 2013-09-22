@@ -3,12 +3,12 @@
 namespace SubPageList;
 
 use LogicException;
+use ParamProcessor\ProcessedParam;
 use ParamProcessor\ProcessingResult;
 use Parser;
 use ParserHooks\HookHandler;
 use SubPageList\UI\SubPageListRenderer;
 use Title;
-use ParamProcessor\ProcessedParam;
 
 /**
  * Handler for the subpagelist parser hook.
@@ -112,6 +112,12 @@ class SubPageList implements HookHandler {
 		);
 	}
 
+	/**
+	 * @param string $titleText
+	 * @param string $default
+	 *
+	 * @return string
+	 */
 	protected function getDefault( $titleText, $default ) {
 		if ( $default === '' ) {
 			return "\"$titleText\" has no sub pages."; // TODO

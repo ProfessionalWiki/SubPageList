@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\SubPageList\UI;
 
-use Title;
 use SubPageList\Page;
 use SubPageList\UI\TreeListRenderer;
+use Title;
 
 /**
  * @covers SubPageList\UI\TreeListRenderer

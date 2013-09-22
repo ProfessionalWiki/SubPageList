@@ -72,12 +72,18 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	 * @return Page[]
 	 */
 	protected function getSortedSubPages( array $subPages ) {
-		$sortAscending = $this->options['sort'] === 'asc';
+		$sortDescending = $this->options['sort'] === 'desc';
 
 		usort(
 			$subPages,
-			function( Page $a, Page $b ) use ( $sortAscending ) {
-				return $sortAscending xor $a->getTitle()->getFullText() < $b->getTitle()->getFullText();
+			function( Page $a, Page $b ) use ( $sortDescending ) {
+				$returnValue = strcmp( $a->getTitle()->getFullText(), $b->getTitle()->getFullText() );
+
+				if ( $sortDescending ) {
+					$returnValue *= -1;
+				}
+
+				return $returnValue;
 			}
 		);
 

@@ -51,7 +51,7 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	}
 
 	protected function getTextForPage( Page $page, $indentationLevel ) {
-		$lineContent = $this->pageRenderer->renderPage( $page, $this->options );
+		$lineContent = $this->pageRenderer->renderPage( $page );
 		return $this->getIndentedLine( $lineContent, $indentationLevel );
 	}
 

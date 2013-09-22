@@ -16,11 +16,10 @@ class LinkingPageRenderer extends PageRenderingBehaviour {
 	 * @see PageRenderingBehaviour::renderPage
 	 *
 	 * @param Page $page
-	 * @param array $options
 	 *
 	 * @return string
 	 */
-	public function renderPage( Page $page, array $options ) {
+	public function renderPage( Page $page ) {
 		return '[[' . $page->getTitle()->getFullText() . '|' . $page->getTitle()->getFullText() . ']]';
 	}
 

@@ -6,7 +6,7 @@ use Parser;
 use ParserHooks\FunctionRunner;
 use ParserHooks\HookDefinition;
 use ParserHooks\HookRegistrant;
-use SubPageList\UI\LinkingPageRenderer;
+use SubPageList\UI\PageRenderer\LinkingPageRenderer;
 use SubPageList\UI\SubPageListRenderer;
 use SubPageList\UI\TreeListRenderer;
 use SubPageList\UI\WikitextSubPageListRenderer;

@@ -1,6 +1,6 @@
 <?php
 
-namespace SubPageList\UI;
+namespace SubPageList\UI\PageRenderer;
 
 use SubPageList\Page;
 
@@ -10,7 +10,7 @@ use SubPageList\Page;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class PageRenderingBehaviour {
+abstract class PageRenderer {
 
 	/**
 	 * Render the representation for a page.

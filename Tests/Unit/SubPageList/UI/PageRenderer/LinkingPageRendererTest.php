@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Unit\SubPageList\UI;
+namespace Tests\Unit\SubPageList\UI\PageRenderer;
 
 use SubPageList\Page;
-use SubPageList\UI\LinkingPageRenderer;
+use SubPageList\UI\PageRenderer\LinkingPageRenderer;
 use Title;
 
 /**

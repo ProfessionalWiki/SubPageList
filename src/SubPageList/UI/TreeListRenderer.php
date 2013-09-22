@@ -3,6 +3,7 @@
 namespace SubPageList\UI;
 
 use SubPageList\Page;
+use SubPageList\UI\PageRenderer\PageRenderer;
 
 /**
  * @since 1.0
@@ -16,7 +17,7 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 
 	protected $options;
 
-	public function __construct( PageRenderingBehaviour $pageRenderer ) {
+	public function __construct( PageRenderer $pageRenderer ) {
 		$this->pageRenderer = $pageRenderer;
 	}
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace SubPageList\UI;
+namespace SubPageList\UI\PageRenderer;
 
 use SubPageList\Page;
 
@@ -10,10 +10,10 @@ use SubPageList\Page;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class LinkingPageRenderer extends PageRenderingBehaviour {
+class LinkingPageRenderer extends PageRenderer {
 
 	/**
-	 * @see PageRenderingBehaviour::renderPage
+	 * @see PageRenderer::renderPage
 	 *
 	 * @param Page $page
 	 *

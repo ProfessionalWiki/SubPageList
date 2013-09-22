@@ -62,7 +62,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function newListRenderer() {
-		$pageRenderer = $this->getMock( 'SubPageList\UI\PageRenderingBehaviour' );
+		$pageRenderer = $this->getMock( 'SubPageList\UI\PageRenderer\PageRenderer' );
 
 		$pageRenderer->expects( $this->any() )
 			->method( 'renderPage' )

@@ -35,12 +35,17 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 
 		$this->addHeader();
 		$this->addPageHierarchy( $page );
+		$this->addFooter();
 
 		return $this->text;
 	}
 
 	protected function addHeader() {
 		$this->text .= $this->options['intro'];
+	}
+
+	protected function addFooter() {
+		$this->text .= $this->options['outro'];
 	}
 
 	protected function addPageHierarchy( Page $page ) {

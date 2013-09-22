@@ -128,4 +128,17 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	/**
+	 * @dataProvider textProvider
+	 */
+	public function testListForWithFooter( $outroText ) {
+		$this->assertCreatesList(
+			array(
+				'page' => 'AAA',
+				'outro' => $outroText,
+			),
+			"[[AAA|AAA]]\n" . $outroText
+		);
+	}
+
 }

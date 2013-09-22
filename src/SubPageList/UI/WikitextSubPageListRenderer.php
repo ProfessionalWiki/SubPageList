@@ -4,6 +4,7 @@ namespace SubPageList\UI;
 
 use SubPageList\Page;
 use SubPageList\UI\PageRenderer\LinkingPageRenderer;
+use SubPageList\UI\PageRenderer\PlainPageRenderer;
 
 /**
  * @since 1.0
@@ -53,7 +54,11 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	}
 
 	protected function newPageRenderer() {
-		return new LinkingPageRenderer();
+		if ( $this->options['links'] ) {
+			return new LinkingPageRenderer();
+		}
+
+		return new PlainPageRenderer();
 	}
 
 }

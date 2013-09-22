@@ -53,7 +53,15 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	protected function getDefaultOptions() {
+		return array(
+
+		);
+	}
+
 	protected function assertCreatesList( array $params, $listText ) {
+		$params = array_merge( $this->getDefaultOptions(), $params );
+
 		$this->assertEquals(
 			$listText,
 			$this->getListForParams( $params )
@@ -115,7 +123,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider textProvider
 	 */
-	public function testListForWithHeader( $introText ) {
+	public function testListWithHeader( $introText ) {
 		$this->assertCreatesList(
 			array(
 				'page' => 'AAA',
@@ -138,7 +146,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider textProvider
 	 */
-	public function testListForWithFooter( $outroText ) {
+	public function testListWithFooter( $outroText ) {
 		$this->assertCreatesList(
 			array(
 				'page' => 'AAA',
@@ -146,6 +154,16 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'showpage' => 'yes',
 			),
 			"[[AAA|AAA]]\n" . $outroText
+		);
+	}
+
+	public function testListWithoutLinks() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'BBB',
+				'links' => 'no',
+			),
+			"* BBB/Sub\n"
 		);
 	}
 

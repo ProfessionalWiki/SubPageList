@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\SubPageList\UI;
 
+use SubPageList\AlphabeticPageSorter;
 use SubPageList\Page;
 use SubPageList\UI\TreeListRenderer;
 use Title;
@@ -53,15 +54,16 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function assertRendersHierarchy( Page $page, $expected, array $options = array() ) {
-		$listRender = $this->newListRenderer();
-
 		$options = array_merge( $this->getDefaultOptions(), $options );
+
+		$listRender = $this->newListRenderer( $options['showpage'], $options['sort'] );
+
 		$actual = $listRender->renderHierarchy( $page, $options );
 
 		$this->assertEquals( $expected, $actual );
 	}
 
-	protected function newListRenderer() {
+	protected function newListRenderer( $showPage, $sort ) {
 		$pageRenderer = $this->getMock( 'SubPageList\UI\PageRenderer\PageRenderer' );
 
 		$pageRenderer->expects( $this->any() )
@@ -70,7 +72,11 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 				return $page->getTitle()->getFullText();
 			} ) );
 
-		 return new TreeListRenderer( $pageRenderer );
+		 return new TreeListRenderer(
+			 $pageRenderer,
+			 new AlphabeticPageSorter( $sort ),
+			 $showPage
+		 );
 	}
 
 	public function testRenderHierarchyWithSubPages() {

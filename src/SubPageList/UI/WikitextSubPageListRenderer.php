@@ -3,6 +3,7 @@
 namespace SubPageList\UI;
 
 use Html;
+use SubPageList\AlphabeticPageSorter;
 use SubPageList\Page;
 use SubPageList\UI\PageRenderer\LinkingPageRenderer;
 use SubPageList\UI\PageRenderer\PlainPageRenderer;
@@ -51,7 +52,11 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 
 	// TODO: this construction logic does not really fit into this class, split off
 	protected function newTreeListRenderer() {
-		return new TreeListRenderer( $this->newPageRenderer() );
+		return new TreeListRenderer(
+			$this->newPageRenderer(),
+			$this->newPageSorter(),
+			$this->options['showpage']
+		);
 	}
 
 	protected function newPageRenderer() {
@@ -60,6 +65,10 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		}
 
 		return new PlainPageRenderer();
+	}
+
+	protected function newPageSorter() {
+		return new AlphabeticPageSorter( $this->options['sort'] );
 	}
 
 	protected function wrapInElement( $text ) {

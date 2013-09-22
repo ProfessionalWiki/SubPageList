@@ -3,6 +3,7 @@
 namespace SubPageList\UI;
 
 use SubPageList\Page;
+use SubPageList\PageSorter;
 use SubPageList\UI\PageRenderer\PageRenderer;
 
 /**
@@ -13,24 +14,27 @@ use SubPageList\UI\PageRenderer\PageRenderer;
  */
 class TreeListRenderer extends HierarchyRenderingBehaviour {
 
+	const SHOW_TOP_PAGE = true;
+	const HIDE_TOP_PAGE = false;
+
 	protected $pageRenderer;
+	protected $pageSorter;
+	protected $showTopLevelPage;
 
-	protected $options;
-
-	public function __construct( PageRenderer $pageRenderer ) {
+	public function __construct( PageRenderer $pageRenderer, PageSorter $pageSorter, $showPage = self::SHOW_TOP_PAGE ) {
 		$this->pageRenderer = $pageRenderer;
+		$this->pageSorter = $pageSorter;
+		$this->showTopLevelPage = $showPage;
 	}
 
 	/**
 	 * @see HierarchyRenderingBehaviour::renderHierarchy
 	 *
 	 * @param Page $page
-	 * @param array $options
 	 *
 	 * @return string
 	 */
-	public function renderHierarchy( Page $page, array $options ) {
-		$this->options = $options;
+	public function renderHierarchy( Page $page ) {
 		return $this->renderPage( $page, 0 );
 	}
 
@@ -48,7 +52,7 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	}
 
 	protected function shouldShowPage( $indentationLevel ) {
-		return $indentationLevel !== 0 || $this->options['showpage'];
+		return $indentationLevel !== 0 || $this->showTopLevelPage;
 	}
 
 	protected function getTextForPage( Page $page, $indentationLevel ) {
@@ -67,35 +71,11 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	protected function renderSubPages( Page $page, $indentationLevel ) {
 		$texts = array();
 
-		foreach ( $this->getSortedSubPages( $page->getSubPages() ) as $subPage ) {
+		foreach ( $this->pageSorter->getSortedPages( $page->getSubPages() ) as $subPage ) {
 			$texts[] = $this->renderPage( $subPage, $indentationLevel );
 		}
 
 		return implode( '', $texts );
-	}
-
-	/**
-	 * @param Page[] $subPages
-	 *
-	 * @return Page[]
-	 */
-	protected function getSortedSubPages( array $subPages ) {
-		$sortDescending = $this->options['sort'] === 'desc';
-
-		usort(
-			$subPages,
-			function( Page $a, Page $b ) use ( $sortDescending ) {
-				$returnValue = strcmp( $a->getTitle()->getFullText(), $b->getTitle()->getFullText() );
-
-				if ( $sortDescending ) {
-					$returnValue *= -1;
-				}
-
-				return $returnValue;
-			}
-		);
-
-		return $subPages;
 	}
 
 }

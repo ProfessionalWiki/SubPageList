@@ -6,6 +6,10 @@ Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:SubPage
 === Version 1.0 ===
 (dev)
 
+; Dropped features
+
+* sortby parameter
+
 ; Compatibility changes
 
 * Changed MediaWiki compatibility from MW 1.17-1.19 to MW >= 1.19

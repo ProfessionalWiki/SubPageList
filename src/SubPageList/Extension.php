@@ -166,12 +166,6 @@ class Extension {
 			'default' => 'asc',
 		);
 
-		$params['sortby'] = array(
-			'values' => array( 'title', 'lastedit' ),
-			'tolower' => true,
-			'default' => 'title',
-		);
-
 		$params['format'] = array(
 			'aliases' => 'liststyle',
 			'values' => array(

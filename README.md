@@ -1,4 +1,5 @@
 [![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-SubPageList.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList)
+[![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-SubPageList/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-SubPageList?branch=master)
 
 SubPageList
 ===========

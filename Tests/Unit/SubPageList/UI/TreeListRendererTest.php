@@ -34,10 +34,16 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	protected function getDefaultOptions() {
+		return array(
+			// TODO
+		);
+	}
+
 	protected function assertRendersHierarchy( Page $page, $expected, $message = '' ) {
 		$listRender = $this->newListRenderer();
 
-		$actual = $listRender->renderHierarchy( $page );
+		$actual = $listRender->renderHierarchy( $page, $this->getDefaultOptions() );
 
 		$this->assertEquals( $expected, $actual, $message );
 	}

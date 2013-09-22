@@ -49,7 +49,7 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	}
 
 	protected function addPageHierarchy( Page $page ) {
-		$this->text .= $this->hierarchyRenderer->renderHierarchy( $page );
+		$this->text .= $this->hierarchyRenderer->renderHierarchy( $page, $this->options );
 	}
 
 }

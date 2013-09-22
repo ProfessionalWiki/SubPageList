@@ -14,6 +14,8 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 
 	protected $pageRenderer;
 
+	protected $options;
+
 	public function __construct( PageRenderingBehaviour $pageRenderer ) {
 		$this->pageRenderer = $pageRenderer;
 	}
@@ -22,10 +24,12 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	 * @see HierarchyRenderingBehaviour::renderHierarchy
 	 *
 	 * @param Page $page
+	 * @param array $options
 	 *
 	 * @return string
 	 */
-	public function renderHierarchy( Page $page ) {
+	public function renderHierarchy( Page $page, array $options ) {
+		$this->options = $options;
 		return $this->renderPage( $page, 0 );
 	}
 
@@ -40,7 +44,7 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	}
 
 	protected function getTextForPage( Page $page, $indentationLevel ) {
-		$lineContent = $this->pageRenderer->renderPage( $page );
+		$lineContent = $this->pageRenderer->renderPage( $page, $this->options );
 		return $this->getIndentedLine( $lineContent, $indentationLevel );
 	}
 

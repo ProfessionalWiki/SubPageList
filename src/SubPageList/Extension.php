@@ -159,7 +159,7 @@ class Extension {
 
 		$params['page'] = array(
 			'aliases' => 'parent',
-			'default' => '', // TODO: have handling code default to current when empty
+			'default' => '',
 		);
 
 		$params['showpage'] = array(
@@ -199,6 +199,17 @@ class Extension {
 			'range' => array( 1, 500 ),
 		);
 
+		$params['element'] = array(
+			'default' => 'div',
+			'aliases' => array( 'div', 'p', 'span' ),
+		);
+
+		$params['class'] = array(
+			'default' => 'subpagelist',
+		);
+
+
+		// TODO: re-implement support for below parameters
 
 
 		$params['format'] = array(
@@ -228,15 +239,6 @@ class Extension {
 		$params['kidsonly'] = array(
 			'type' => 'boolean',
 			'default' => false,
-		);
-
-		$params['element'] = array(
-			'default' => 'div',
-			'aliases' => array( 'div', 'p', 'span' ),
-		);
-
-		$params['class'] = array(
-			'default' => 'subpagelist',
 		);
 
 		$params['separator'] = array(

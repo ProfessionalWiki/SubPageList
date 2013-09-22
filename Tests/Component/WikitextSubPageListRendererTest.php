@@ -104,7 +104,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'page' => 'AAA',
 				'showpage' => 'yes',
 			),
-			"[[AAA|AAA]]\n"
+			'<div class="subpagelist">' . "[[AAA|AAA]]\n</div>"
 		);
 	}
 
@@ -114,9 +114,9 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'page' => 'BBB',
 				'showpage' => 'yes',
 			),
-			'[[BBB|BBB]]
+			'<div class="subpagelist">[[BBB|BBB]]
 * [[BBB/Sub|BBB/Sub]]
-'
+</div>'
 		);
 	}
 
@@ -130,7 +130,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'intro' => $introText,
 				'showpage' => 'yes',
 			),
-			$introText . "[[AAA|AAA]]\n"
+			'<div class="subpagelist">' .$introText . "[[AAA|AAA]]\n</div>"
 		);
 	}
 
@@ -153,7 +153,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'outro' => $outroText,
 				'showpage' => 'yes',
 			),
-			"[[AAA|AAA]]\n" . $outroText
+			'<div class="subpagelist">' ."[[AAA|AAA]]\n" . $outroText . '</div>'
 		);
 	}
 
@@ -163,7 +163,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'page' => 'BBB',
 				'links' => 'no',
 			),
-			"* BBB/Sub\n"
+			'<div class="subpagelist">' ."* BBB/Sub\n</div>"
 		);
 	}
 

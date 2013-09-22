@@ -2,6 +2,7 @@
 
 namespace SubPageList\UI;
 
+use Html;
 use SubPageList\Page;
 use SubPageList\UI\PageRenderer\LinkingPageRenderer;
 use SubPageList\UI\PageRenderer\PlainPageRenderer;
@@ -33,7 +34,7 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		$this->addPageHierarchy( $page );
 		$this->addFooter();
 
-		return $this->text;
+		return $this->wrapInElement( $this->text );
 	}
 
 	protected function addHeader() {
@@ -59,6 +60,16 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		}
 
 		return new PlainPageRenderer();
+	}
+
+	protected function wrapInElement( $text ) {
+		return Html::element(
+			$this->options['element'],
+			array(
+				'class' => $this->options['class']
+			),
+			$text
+		);
 	}
 
 }

@@ -64,6 +64,13 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	protected function assertCreatesListWithWrap( array $params, $listText ) {
+		$this->assertCreatesList(
+			$params,
+			'<div class="subpagelist">' . $listText . '</div>'
+		);
+	}
+
 	protected function getListForParams( array $params ) {
 		$functionParams = array();
 
@@ -81,7 +88,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testListForNonExistingPage() {
-		$this->assertCreatesList(
+		$this->assertCreatesListWithWrap(
 			array(
 				'page' => 'TempSPLTest:ZZZ',
 				'showpage' => 'yes',
@@ -91,7 +98,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testListForExistingPage() {
-		$this->assertCreatesList(
+		$this->assertCreatesListWithWrap(
 			array(
 				'page' => 'TempSPLTest:AAA',
 				'showpage' => 'yes',
@@ -101,7 +108,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testListSubPagePageWithParent() {
-		$this->assertCreatesList(
+		$this->assertCreatesListWithWrap(
 			array(
 				'page' => 'TempSPLTest:CCC/Sub',
 				'showpage' => 'yes',
@@ -113,7 +120,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testListPageWithSub() {
-		$this->assertCreatesList(
+		$this->assertCreatesListWithWrap(
 			array(
 				'page' => 'TempSPLTest:CCC',
 				'showpage' => 'yes',
@@ -127,7 +134,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	public function testListForWithHeader() {
 		$introText = '~=[,,_,,]:3';
 
-		$this->assertCreatesList(
+		$this->assertCreatesListWithWrap(
 			array(
 				'page' => 'TempSPLTest:AAA',
 				'intro' => $introText,
@@ -176,7 +183,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testListWithMultipleSubPages() {
-		$this->assertCreatesList(
+		$this->assertCreatesListWithWrap(
 			array(
 				'page' => 'TempSPLTest:DDD',
 			),

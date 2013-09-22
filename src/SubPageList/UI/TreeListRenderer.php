@@ -36,11 +36,18 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	protected function renderPage( Page $page, $indentationLevel ) {
 		$wikiText = '';
 
-		$wikiText .= $this->getTextForPage( $page, $indentationLevel );
-		$wikiText .= "\n";
+		if ( $this->shouldShowPage( $indentationLevel ) ) {
+			$wikiText .= $this->getTextForPage( $page, $indentationLevel );
+			$wikiText .= "\n";
+		}
+
 		$wikiText .= $this->renderSubPages( $page, $indentationLevel + 1 );
 
 		return $wikiText;
+	}
+
+	protected function shouldShowPage( $indentationLevel ) {
+		return $indentationLevel !== 0 || $this->options['showpage'];
 	}
 
 	protected function getTextForPage( Page $page, $indentationLevel ) {

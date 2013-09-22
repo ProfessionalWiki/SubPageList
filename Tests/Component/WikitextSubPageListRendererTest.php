@@ -92,14 +92,20 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public function testListForOnePage() {
 		$this->assertCreatesList(
-			array( 'page' => 'AAA' ),
+			array(
+				'page' => 'AAA',
+				'showpage' => 'yes',
+			),
 			"[[AAA|AAA]]\n"
 		);
 	}
 
 	public function testListForOnePageWithOneSub() {
 		$this->assertCreatesList(
-			array( 'page' => 'BBB' ),
+			array(
+				'page' => 'BBB',
+				'showpage' => 'yes',
+			),
 			'[[BBB|BBB]]
 * [[BBB/Sub|BBB/Sub]]
 '
@@ -114,6 +120,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			array(
 				'page' => 'AAA',
 				'intro' => $introText,
+				'showpage' => 'yes',
 			),
 			$introText . "[[AAA|AAA]]\n"
 		);
@@ -136,6 +143,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			array(
 				'page' => 'AAA',
 				'outro' => $outroText,
+				'showpage' => 'yes',
 			),
 			"[[AAA|AAA]]\n" . $outroText
 		);

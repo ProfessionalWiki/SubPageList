@@ -159,11 +159,30 @@ class Extension {
 	public function getListFunctionRunner() {
 		$params = array();
 
+		$params['page'] = array(
+			'aliases' => 'parent',
+			'default' => '',
+		);
+
+		$params['showpage'] = array(
+			'type' => 'boolean',
+			'aliases' => 'showparent',
+			'default' => false,
+		);
+
 		$params['sort'] = array(
 			'aliases' => 'order',
 			'values' => array( 'asc', 'desc' ),
 			'tolower' => true,
 			'default' => 'asc',
+		);
+
+		$params['intro'] = array(
+			'default' => '',
+		);
+
+		$params['outro'] = array(
+			'default' => '',
 		);
 
 		$params['format'] = array(
@@ -175,17 +194,6 @@ class Extension {
 			),
 			'tolower' => true,
 			'default' => 'ul',
-		);
-
-		$params['page'] = array(
-			'aliases' => 'parent',
-			'default' => '',
-		);
-
-		$params['showpage'] = array(
-			'type' => 'boolean',
-			'aliases' => 'showparent',
-			'default' => false,
 		);
 
 		$params['pathstyle'] = array(
@@ -225,14 +233,6 @@ class Extension {
 
 		$params['class'] = array(
 			'default' => 'subpagelist',
-		);
-
-		$params['intro'] = array(
-			'default' => '',
-		);
-
-		$params['outro'] = array(
-			'default' => '',
 		);
 
 		$params['default'] = array(

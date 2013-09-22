@@ -24,7 +24,6 @@ $messages['en'] = array(
 	'spl-nopages' => 'Namespace "$1" does not have pages.',
 
 	'spl-subpages-par-sort' => 'The direction to sort in. Allowed values: "asc" and "desc".',
-	'spl-subpages-par-sortby' => 'What to sort the subpages by. Allowed values: "title" or "lastedit".',
 	'spl-subpages-par-format' => 'The subpage list can be displayed in several formats. Allowed values: "ol" — ordered (numbered) list, "ul" — unordered (bulleted) lists, "list" — plain lists (for example comma-separated list).',
 	'spl-subpages-par-page' => 'The page to show the subpages for, or namespace name (including trailing colon) to show pages in. Defaults to the current page.',
 	'spl-subpages-par-showpage' => 'Indicates if the page itself should be shown in the list or not.',
@@ -65,7 +64,6 @@ See also:
 * {{msg-mw|Spl-noparentpage}}
 * {{msg-mw|Spl-nosubpages}}',
 	'spl-subpages-par-sort' => '{{doc-important|Do not translate "asc" and "desc".}}',
-	'spl-subpages-par-sortby' => '{{doc-important|Do not translate "title" and "lastedit".}}',
 	'spl-subpages-par-format' => '{{doc-important|Do not translate "ol", "ul" and "list".}}',
 	'spl-subpages-par-pathstyle' => '{{doc-important|The parameters "fullpagename", "pagename", "subpagename" and "none" should not be translated!}}',
 	'spl-subpages-par-kidsonly' => 'Used as description for a boolean parameter.',

@@ -47,7 +47,7 @@ class SubPageList implements HookHandler {
 	public function handle( Parser $parser, ProcessingResult $result ) {
 		if ( $result->hasFatal() ) {
 			// TODO:
-			return 'FATAL';
+			return 'Error: invalid input into subPageList function';
 		}
 
 		$parameters = $result->getParameters();

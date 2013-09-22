@@ -2,6 +2,7 @@
 
 namespace SubPageList;
 
+use InvalidArgumentException;
 use Title;
 use TitleArray;
 
@@ -27,5 +28,23 @@ interface SubPageFinder {
 	 * @return Title[]
 	 */
 	public function getSubPagesFor( Title $title );
+
+	/**
+	 * @since 1.0
+	 *
+	 * @param int $limit
+	 *
+	 * @throws InvalidArgumentException
+	 */
+	public function setLimit( $limit );
+
+	/**
+	 * @since 1.0
+	 *
+	 * @param int $offset
+	 *
+	 * @throws InvalidArgumentException
+	 */
+	public function setOffset( $offset );
 
 }

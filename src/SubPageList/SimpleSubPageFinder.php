@@ -2,6 +2,7 @@
 
 namespace SubPageList;
 
+use InvalidArgumentException;
 use Title;
 use TitleArray;
 
@@ -50,13 +51,45 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	}
 
 	/**
-	 * @since 1.0
-	 *
 	 * @param string $option
 	 * @param mixed $value
 	 */
-	public function setOption( $option, $value ) {
+	protected function setOption( $option, $value ) {
 		$this->options[$option] = $value;
+	}
+
+	/**
+	 * @see SubPageFinder::setLimit
+	 *
+	 * @since 1.0
+	 *
+	 * @param int $limit
+	 *
+	 * @throws InvalidArgumentException
+	 */
+	public function setLimit( $limit ) {
+		if ( !is_int( $limit ) || $limit < 1 ) {
+			throw new InvalidArgumentException( '$limit needs to be an int bigger than 0' );
+		}
+
+		$this->setOffset( self::OPT_LIMIT, $limit );
+	}
+
+	/**
+	 * @see SubPageFinder::setOffset
+	 *
+	 * @since 1.0
+	 *
+	 * @param int $offset
+	 *
+	 * @throws InvalidArgumentException
+	 */
+	public function setOffset( $offset ) {
+		if ( !is_int( $offset ) || $offset < 0 ) {
+			throw new InvalidArgumentException( '$limit needs to be a positive int' );
+		}
+
+		$this->setOffset( self::OPT_OFFSET, $offset );
 	}
 
 	/**

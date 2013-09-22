@@ -122,7 +122,7 @@ class Extension {
 	 * @return SubPageListRenderer
 	 */
 	public function newSubPageListRenderer() {
-		return new WikitextSubPageListRenderer( new TreeListRenderer( new LinkingPageRenderer() ) );
+		return new WikitextSubPageListRenderer();
 	}
 
 	/**

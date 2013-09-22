@@ -3,6 +3,7 @@
 namespace SubPageList\UI;
 
 use SubPageList\Page;
+use SubPageList\UI\PageRenderer\LinkingPageRenderer;
 
 /**
  * @since 1.0
@@ -12,14 +13,8 @@ use SubPageList\Page;
  */
 class WikitextSubPageListRenderer implements SubPageListRenderer {
 
-	protected $hierarchyRenderer;
-
 	protected $options;
 	protected $text;
-
-	public function __construct( HierarchyRenderingBehaviour $hierarchyRenderer ) {
-		$this->hierarchyRenderer = $hierarchyRenderer;
-	}
 
 	/**
 	 * @see SubPageListRenderer::render
@@ -49,7 +44,16 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	}
 
 	protected function addPageHierarchy( Page $page ) {
-		$this->text .= $this->hierarchyRenderer->renderHierarchy( $page, $this->options );
+		$this->text .= $this->newTreeListRenderer()->renderHierarchy( $page, $this->options );
+	}
+
+	// TODO: this construction logic does not really fit into this class, split off
+	protected function newTreeListRenderer() {
+		return new TreeListRenderer( $this->newPageRenderer() );
+	}
+
+	protected function newPageRenderer() {
+		return new LinkingPageRenderer();
 	}
 
 }

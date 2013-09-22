@@ -193,6 +193,13 @@ class Extension {
 			'default' => '',
 		);
 
+		$params['limit'] = array(
+			'type' => 'integer',
+			'default' => 200,
+			'range' => array( 1, 500 ),
+		);
+
+
 
 		$params['format'] = array(
 			'aliases' => 'liststyle',
@@ -221,12 +228,6 @@ class Extension {
 		$params['kidsonly'] = array(
 			'type' => 'boolean',
 			'default' => false,
-		);
-
-		$params['limit'] = array(
-			'type' => 'integer',
-			'default' => 200,
-			'range' => array( 1, 500 ),
 		);
 
 		$params['element'] = array(

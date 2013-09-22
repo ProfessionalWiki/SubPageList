@@ -72,7 +72,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 			throw new InvalidArgumentException( '$limit needs to be an int bigger than 0' );
 		}
 
-		$this->setOffset( self::OPT_LIMIT, $limit );
+		$this->setOption( self::OPT_LIMIT, $limit );
 	}
 
 	/**
@@ -89,7 +89,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 			throw new InvalidArgumentException( '$limit needs to be a positive int' );
 		}
 
-		$this->setOffset( self::OPT_OFFSET, $offset );
+		$this->setOption( self::OPT_OFFSET, $offset );
 	}
 
 	/**

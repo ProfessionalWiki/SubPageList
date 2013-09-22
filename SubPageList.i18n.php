@@ -3,11 +3,7 @@
 /**
  * Internationalization file for the SubPageList extension.
  *
- * @file
- * @ingroup SubPageList
- *
  * @licence GNU GPL v2+
- *
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 
@@ -29,7 +25,7 @@ $messages['en'] = array(
 	'spl-subpages-par-showpage' => 'Indicates if the page itself should be shown in the list or not.',
 	'spl-subpages-par-pathstyle' => 'The style of the path for subpages in the list. Allowed values: "fullpagename" — full page name (including namespace), "pagename" — page name (without namespace), "subpagename" — relative page name starting from the page we list subpages for, "none" — just the trailing part of the name after last slash.',
 	'spl-subpages-par-kidsonly' => 'Allows showing only direct subpages.',
-	'spl-subpages-par-limit' => 'The maximum number of pages to list.',
+	'spl-subpages-par-limit' => 'The maximum number of pages to list. Fewer pages might be listed even when more are available if filtering by other parameters is applied.',
 	'spl-subpages-par-element' => 'The HTML element enclosing the list (including "intro" and "outro" or "default" texts). Allowed values: "div", "p", "span".',
 	'spl-subpages-par-class' => 'The value for "class" attribute of the HTML element enclosing the list.',
 	'spl-subpages-par-intro' => 'The text to output before the list, if the list is not empty.',

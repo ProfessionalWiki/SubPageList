@@ -64,12 +64,12 @@ class SubPageList implements HookHandler {
 
 	/**
 	 * @param Title $title
-	 * @param ProcessedParam[] $parameters
+	 * @param array $parameters
 	 *
 	 * @return string
 	 */
 	protected function renderForTitle( Title $title, array $parameters ) {
-		$topLevelPage = $this->getPageHierarchy( $title );
+		$topLevelPage = $this->getPageHierarchy( $title, $parameters['limit'] );
 
 		if ( $this->shouldUseDefault( $topLevelPage, $parameters['showpage'] ) ) {
 			return $this->getDefault( $parameters['page'], $parameters['default'] );
@@ -81,11 +81,15 @@ class SubPageList implements HookHandler {
 
 	/**
 	 * @param Title $title
+	 * @param int $limit
+	 * @param int $offset
 	 *
 	 * @return Page
 	 * @throws LogicException
 	 */
-	protected function getPageHierarchy( Title $title ) {
+	protected function getPageHierarchy( Title $title, $limit ) {
+		$this->subPageFinder->setLimit( $limit );
+
 		$subPageTitles = $this->subPageFinder->getSubPagesFor( $title );
 		$subPageTitles[] = $title;
 

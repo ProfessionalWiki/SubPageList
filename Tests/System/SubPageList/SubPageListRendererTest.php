@@ -23,6 +23,13 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 		// A sub page with no parent
 		'TempSPLTest:CCC/Sub',
+
+		// A page with several sub pages
+		'TempSPLTest:DDD',
+		'TempSPLTest:DDD/Sub0',
+		'TempSPLTest:DDD/Sub1',
+		'TempSPLTest:DDD/Sub2',
+		'TempSPLTest:DDD/Sub2/Sub',
 	);
 
 	/**
@@ -51,19 +58,23 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function assertCreatesList( array $params, $listText ) {
+		$this->assertEquals(
+			$listText,
+			$this->getListForParams( $params )
+		);
+	}
+
+	protected function getListForParams( array $params ) {
 		$functionParams = array();
 
 		foreach ( $params as $name => $value ) {
 			$functionParams[] = $name . '=' . $value;
 		}
 
-		$this->assertEquals(
-			$listText,
-			$this->getListForParams( $functionParams )
-		);
+		return $this->getListForRawParams( $functionParams );
 	}
 
-	protected function getListForParams( array $params ) {
+	protected function getListForRawParams( array $params ) {
 		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
 
 		return $extension->getListFunctionRunner()->run( $GLOBALS['wgParser'], $params );
@@ -161,6 +172,44 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'default' => '-'
 			),
 			''
+		);
+	}
+
+	public function testListWithMultipleSubPages() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'TempSPLTest:DDD',
+			),
+			'* [[TempSPLTest:DDD/Sub0|TempSPLTest:DDD/Sub0]]
+* [[TempSPLTest:DDD/Sub1|TempSPLTest:DDD/Sub1]]
+* [[TempSPLTest:DDD/Sub2|TempSPLTest:DDD/Sub2]]
+** [[TempSPLTest:DDD/Sub2/Sub|TempSPLTest:DDD/Sub2/Sub]]
+'
+		);
+	}
+
+	/**
+	 * @dataProvider limitProvider
+	 */
+	public function testLimitIsApplied( $limit ) {
+		$list = $this->getListForParams(
+			array(
+				'page' => 'TempSPLTest:DDD',
+				'limit' => (string)$limit,
+			)
+		);
+
+		$this->assertEquals(
+			$limit,
+			substr_count( $list, '*' )
+		);
+	}
+
+	public function limitProvider() {
+		return array(
+			array( 1 ),
+			array( 2 ),
+			array( 3 ),
 		);
 	}
 

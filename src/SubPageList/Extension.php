@@ -7,6 +7,7 @@ use ParserHooks\FunctionRunner;
 use ParserHooks\HookDefinition;
 use ParserHooks\HookRegistrant;
 use SubPageList\UI\LinkingPageRenderer;
+use SubPageList\UI\SubPageListRenderer;
 use SubPageList\UI\TreeListRenderer;
 use SubPageList\UI\WikitextSubPageListRenderer;
 
@@ -118,7 +119,7 @@ class Extension {
 	/**
 	 * @since 1.0
 	 *
-	 * @return WikitextSubPageListRenderer
+	 * @return SubPageListRenderer
 	 */
 	public function newSubPageListRenderer() {
 		return new WikitextSubPageListRenderer( new TreeListRenderer( new LinkingPageRenderer() ) );

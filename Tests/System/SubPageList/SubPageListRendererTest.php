@@ -14,15 +14,6 @@ use Title;
 class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	protected static $pages = array(
-//		'TempSPLTest:QQQ',
-//		'TempSPLTest:QQQ/Root0',
-//		'TempSPLTest:QQQ/Root1/Sub1-0',
-//		'TempSPLTest:QQQ/Root2/Sub2-0',
-//		'TempSPLTest:QQQ/Root2/Sub2-1',
-//		'TempSPLTest:QQQ/Root2/Sub2-2',
-//		'TempSPLTest:QQQ/Root2/Sub2-2/SubSub2-2-0',
-//		'TempSPLTest:QQQ/Root2/Sub2-3',
-
 		// A page with no sub pages
 		'TempSPLTest:AAA',
 
@@ -110,25 +101,15 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	/**
-	 * @dataProvider textProvider
-	 */
-	public function testListForWithHeader( $introText ) {
+	public function testListForWithHeader() {
+		$introText = '~=[,,_,,]:3';
+
 		$this->assertCreatesList(
 			array(
 				'page' => 'TempSPLTest:AAA',
 				'intro' => $introText,
 			),
 			$introText . "[[TempSPLTest:AAA|TempSPLTest:AAA]]\n"
-		);
-	}
-
-	public function textProvider() {
-		return array(
-			array( '' ),
-			array( 'a' ),
-			array( '0' ),
-			array( '~=[,,_,,]:3' ),
 		);
 	}
 

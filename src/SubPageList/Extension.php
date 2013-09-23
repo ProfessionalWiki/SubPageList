@@ -257,7 +257,7 @@ class Extension {
 		}
 
 		$definition = new HookDefinition(
-			'subpagelist',
+			array( 'subpagelist', 'splist', 'subpages' ),
 			$params,
 			array( 'page', 'format', 'pathstyle', 'sortby', 'sort' )
 		);

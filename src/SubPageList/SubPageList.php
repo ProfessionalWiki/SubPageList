@@ -90,7 +90,6 @@ class SubPageList implements HookHandler {
 	/**
 	 * @param Title $title
 	 * @param int $limit
-	 * @param int $offset
 	 *
 	 * @return Page
 	 * @throws LogicException

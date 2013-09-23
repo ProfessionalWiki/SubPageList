@@ -11,4 +11,6 @@
 
 require_once( __DIR__ . '/evilMediaWikiBootstrap.php' );
 
+$wgNamespacesWithSubpages[NS_MAIN] = true;
+
 require_once( __DIR__ . '/../SubPageList.php' );

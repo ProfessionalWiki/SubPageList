@@ -213,7 +213,7 @@ class Extension {
 			'values' => array(
 				'ul', 'unordered',
 				'ol', 'ordered',
-//				'list', 'bar' // TODO: support these two
+//				'list', 'bar' // TODO: re-implement support for these two
 			),
 			'tolower' => true,
 			'default' => 'ul',
@@ -237,16 +237,15 @@ class Extension {
 			'default' => false,
 		);
 
-		// TODO: re-implement support for below parameters
+		$params['template'] = array(
+			'default' => '',
+		);
 
+		// TODO: re-implement support
 //		$params['separator'] = array(
 //			'aliases' => 'sep',
 //			'default' => '&#160;· ',
 //		);
-
-		$params['template'] = array(
-			'default' => '',
-		);
 
 		// Give grep a chance to find the usages:
 		// spl-subpages-par-sort, spl-subpages-par-sortby, spl-subpages-par-format, spl-subpages-par-page,

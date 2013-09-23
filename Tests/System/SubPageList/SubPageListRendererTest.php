@@ -233,6 +233,32 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	public function testListWithoutLinks() {
+		$this->assertCreatesListWithWrap(
+			array(
+				'page' => 'TempSPLTest:CCC',
+				'showpage' => 'yes',
+				'links' => 'no',
+			),
+			'TempSPLTest:CCC
+* TempSPLTest:CCC/Sub
+'
+		);
+	}
+
+	public function testListWithTemplate() {
+		$this->assertCreatesListWithWrap(
+			array(
+				'page' => 'TempSPLTest:CCC',
+				'showpage' => 'yes',
+				'template' => 'MyTemplate',
+			),
+			'{{MyTemplate|TempSPLTest:CCC}}
+* {{MyTemplate|TempSPLTest:CCC/Sub}}
+'
+		);
+	}
+
 }
 
 class PageCreator {

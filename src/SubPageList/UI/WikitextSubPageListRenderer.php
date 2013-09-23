@@ -7,6 +7,7 @@ use SubPageList\AlphabeticPageSorter;
 use SubPageList\Page;
 use SubPageList\UI\PageRenderer\LinkingPageRenderer;
 use SubPageList\UI\PageRenderer\PlainPageRenderer;
+use SubPageList\UI\PageRenderer\TemplatePageRenderer;
 
 /**
  * @since 1.0
@@ -70,7 +71,10 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	protected function newPageRenderer() {
 		$renderer = new PlainPageRenderer( $this->getPathStyle() );
 
-		if ( $this->options['links'] ) {
+		if ( $this->options['template'] !== '' ) {
+			$renderer = new TemplatePageRenderer( $renderer, $this->options['template'] );
+		}
+		else if ( $this->options['links'] ) {
 			$renderer = new LinkingPageRenderer( $renderer );
 		}
 

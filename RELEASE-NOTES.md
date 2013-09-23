@@ -4,29 +4,28 @@ These are the release notes for the [SubPageList extension](README.md).
 
 ## Version 1.0 (dev)
 
-#### Changes
+#### Functional changes
 
-* Changed pathstyle value "subpagename" to only render the last sub page part
-* All pages that have children in the result will now be discovered, even if they do not exist
-
-#### Dropped features
-
-* sortby parameter
-* Dropped "bar" and "list" support as values for the format parameter
-    * Dropped separator parameter support
+* Changed pathstyle value "subpagename" to only render the last sub page part.
+* All pages that have children in the result will now be discovered, even if they do not exist.
+* Dropped sortby parameter.
+* Dropped "bar" and "list" support as values for the format parameter.
+    * Dropped separator parameter support.
 
 #### Compatibility changes
 
 * Changed MediaWiki compatibility from MW 1.17-1.19 to MW >= 1.19
-* Changed PHP compatibility from 5.2.x to PHP >= 5.3.
+* Dropped support for PHP 5.2, added support for PHP 5.3, 5.4 and 5.5.
 * Changed Validator compatibility from 0.4.x to 1.0.x.
-* New dependency: ParserHooks 0.1 or later.
+* New dependency: ParserHooks 1.1 or later.
 
 #### Internal improvements
 
-* Redesign of most of the code
-* Added various PHPUnit tests
-* Replaced manual class registration by a PST-0 style autoloader
+* Rewrote extension from transaction script style to domain model style.
+* Added unit, component and system tests, covering (nearly) all behaviour.
+* Made code compliant with
+[PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md)
+and use PSR-0 based autoloading.
 
 #### Infrastructure
 

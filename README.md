@@ -1,16 +1,14 @@
-[![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-SubPageList.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList)
-[![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-SubPageList/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-SubPageList?branch=master)
-
-SubPageList
-===========
+# SubPageList
 
 SubPageList is a lightweight extension to display lists of subpages.
 
 The [extension page on mediawiki.org](https://www.mediawiki.org/wiki/Extension:SubPageList)
 contains the documentation and examples for this extension.
 
-Features
---------
+[![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-SubPageList.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList)
+[![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-SubPageList/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-SubPageList?branch=master)
+
+## Features
 
 * Adds a <code>splist</code> or <code>subpagelist</code> parser hook that
   you can use to list subpages.
@@ -18,8 +16,7 @@ Features
 * Supports multiple parameters that enable you to customize the subpage list.
 * Full integration with the [ParamProcessor extension](https://www.mediawiki.org/wiki/Extension:ParamProcessor).
 
-Links
------
+## Links
 
 * [Canonical git repo](https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git)
 * [SubPageList on Packagist](https://packagist.org/packages/mediawiki/sub-page-list)

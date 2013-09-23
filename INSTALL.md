@@ -4,7 +4,7 @@ Installation of the SubPageList MediaWiki extension
 SubPageList has the following dependencies:
 
 * [ParamProcessor](https://www.mediawiki.org/wiki/Extension:ParamProcessor) 1.0 or later
-* [ParserHooks](https://github.com/wikimedia/mediawiki-extensions-ParserHooks/blob/master/README.md) 1.0 or later
+* [ParserHooks](https://github.com/wikimedia/mediawiki-extensions-ParserHooks/blob/master/README.md) 1.1 or later
 * [MediaWiki](https://www.mediawiki.org/) 1.16 or later
 
 And nothing else.

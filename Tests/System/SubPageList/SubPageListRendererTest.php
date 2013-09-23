@@ -116,7 +116,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'showpage' => 'yes',
 			),
 			'[[TempSPLTest:CCC|TempSPLTest:CCC]]
-* [[TempSPLTest:CCC/Sub|TempSPLTest:CCC/Sub]]'
+* [[TempSPLTest:CCC/Sub|Sub]]'
 		);
 	}
 
@@ -127,7 +127,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'showpage' => 'yes',
 			),
 			'[[TempSPLTest:CCC|TempSPLTest:CCC]]
-* [[TempSPLTest:CCC/Sub|TempSPLTest:CCC/Sub]]'
+* [[TempSPLTest:CCC/Sub|Sub]]'
 		);
 	}
 
@@ -187,10 +187,10 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			array(
 				'page' => 'TempSPLTest:DDD',
 			),
-			'* [[TempSPLTest:DDD/Sub0|TempSPLTest:DDD/Sub0]]
-* [[TempSPLTest:DDD/Sub1|TempSPLTest:DDD/Sub1]]
-* [[TempSPLTest:DDD/Sub2|TempSPLTest:DDD/Sub2]]
-** [[TempSPLTest:DDD/Sub2/Sub|TempSPLTest:DDD/Sub2/Sub]]'
+			'* [[TempSPLTest:DDD/Sub0|Sub0]]
+* [[TempSPLTest:DDD/Sub1|Sub1]]
+* [[TempSPLTest:DDD/Sub2|Sub2]]
+** [[TempSPLTest:DDD/Sub2/Sub|Sub]]'
 		);
 	}
 
@@ -225,9 +225,9 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'page' => 'TempSPLTest:DDD',
 				'kidsonly' => 'yes',
 			),
-			'* [[TempSPLTest:DDD/Sub0|TempSPLTest:DDD/Sub0]]
-* [[TempSPLTest:DDD/Sub1|TempSPLTest:DDD/Sub1]]
-* [[TempSPLTest:DDD/Sub2|TempSPLTest:DDD/Sub2]]'
+			'* [[TempSPLTest:DDD/Sub0|Sub0]]
+* [[TempSPLTest:DDD/Sub1|Sub1]]
+* [[TempSPLTest:DDD/Sub2|Sub2]]'
 		);
 	}
 
@@ -239,7 +239,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'links' => 'no',
 			),
 			'TempSPLTest:CCC
-* TempSPLTest:CCC/Sub'
+* Sub'
 		);
 	}
 
@@ -247,6 +247,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		$this->assertCreatesListWithWrap(
 			array(
 				'page' => 'TempSPLTest:CCC',
+				'pathstyle' => 'full',
 				'showpage' => 'yes',
 				'template' => 'MyTemplate',
 			),
@@ -262,6 +263,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		$this->assertCreatesListWithWrap(
 			array(
 				'showpage' => 'yes',
+				'pathstyle' => 'full',
 			),
 			'[[TempSPLTest:ZZZ|TempSPLTest:ZZZ]]
 * [[TempSPLTest:ZZZ/ABC|TempSPLTest:ZZZ/ABC]]'

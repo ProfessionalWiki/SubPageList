@@ -8,7 +8,6 @@ Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:SubPage
 
 ; Changes
 
-* Changed default of pathstyle parameter from "none" to "full"
 * Changed pathstyle value "subpagename" to only render the last sub page part
 * All pages that have children in the result will now be discovered, even if they do not exist
 

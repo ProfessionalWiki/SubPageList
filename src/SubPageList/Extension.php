@@ -229,7 +229,7 @@ class Extension {
 				'fullpagename'
 			),
 			'tolower' => true,
-			'default' => 'full',
+			'default' => 'subpagename',
 		);
 
 		$params['kidsonly'] = array(

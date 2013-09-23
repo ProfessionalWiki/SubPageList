@@ -116,7 +116,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			),
 			'<div class="subpagelist">
 [[BBB|BBB]]
-* [[BBB/Sub|BBB/Sub]]
+* [[BBB/Sub|Sub]]
 </div>'
 		);
 	}
@@ -163,7 +163,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'page' => 'BBB',
 				'links' => 'no',
 			),
-			'<div class="subpagelist">' ."\n* BBB/Sub\n</div>"
+			'<div class="subpagelist">' ."\n* Sub\n</div>"
 		);
 	}
 

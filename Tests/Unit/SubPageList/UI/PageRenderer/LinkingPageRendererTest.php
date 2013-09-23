@@ -19,8 +19,8 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider renderProvider
 	 */
-	public function testRenderPage( Page $page, $expected ) {
-		$renderer = new LinkingPageRenderer();
+	public function testRenderPage( Page $page, $pathStyle, $expected ) {
+		$renderer = new LinkingPageRenderer( $pathStyle );
 
 		$actual = $renderer->renderPage( $page );
 
@@ -31,16 +31,66 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 		return array(
 			array(
 				new Page( Title::newFromText( 'AAA' ) ),
-				'[[AAA|AAA]]'
+				LinkingPageRenderer::PATH_FULL,
+				'[[AAA|AAA]]',
+			),
+			array(
+				new Page( Title::newFromText( 'AAA/BBB' ) ),
+				LinkingPageRenderer::PATH_FULL,
+				'[[AAA/BBB|AAA/BBB]]',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar' ) ),
-				'[[Foo:Bar|Foo:Bar]]'
+				LinkingPageRenderer::PATH_FULL,
+				'[[Foo:Bar|Foo:Bar]]',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
-				'[[Foo:Bar/Baz|Foo:Bar/Baz]]'
-			)
+				LinkingPageRenderer::PATH_FULL,
+				'[[Foo:Bar/Baz|Foo:Bar/Baz]]',
+			),
+
+			array(
+				new Page( Title::newFromText( 'AAA' ) ),
+				LinkingPageRenderer::PATH_NONE,
+				'[[AAA|AAA]]',
+			),
+			array(
+				new Page( Title::newFromText( 'AAA/BBB' ) ),
+				LinkingPageRenderer::PATH_NONE,
+				'[[AAA/BBB|BBB]]',
+			),
+			array(
+				new Page( Title::newFromText( 'Foo:Bar' ) ),
+				LinkingPageRenderer::PATH_NONE,
+				'[[Foo:Bar|Bar]]',
+			),
+			array(
+				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
+				LinkingPageRenderer::PATH_NONE,
+				'[[Foo:Bar/Baz|Baz]]',
+			),
+
+			array(
+				new Page( Title::newFromText( 'AAA' ) ),
+				LinkingPageRenderer::PATH_NO_NS,
+				'[[AAA|AAA]]',
+			),
+			array(
+				new Page( Title::newFromText( 'AAA/BBB' ) ),
+				LinkingPageRenderer::PATH_FULL,
+				'[[AAA/BBB|AAA/BBB]]',
+			),
+			array(
+				new Page( Title::newFromText( 'Foo:Bar' ) ),
+				LinkingPageRenderer::PATH_NO_NS,
+				'[[Foo:Bar|Bar]]',
+			),
+			array(
+				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
+				LinkingPageRenderer::PATH_NO_NS,
+				'[[Foo:Bar/Baz|Bar/Baz]]',
+			),
 		);
 	}
 

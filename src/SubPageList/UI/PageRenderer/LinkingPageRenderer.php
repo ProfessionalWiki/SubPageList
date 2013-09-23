@@ -3,6 +3,7 @@
 namespace SubPageList\UI\PageRenderer;
 
 use SubPageList\Page;
+use Title;
 
 /**
  * @since 1.0
@@ -12,6 +13,16 @@ use SubPageList\Page;
  */
 class LinkingPageRenderer extends PageRenderer {
 
+	const PATH_FULL = 'full'; // Namespace:Foo/Bar/Baz
+	const PATH_NO_NS = 'noNs'; // Foo/Bar/Baz
+	const PATH_NONE = 'none'; // Baz
+
+	private $pathStyle;
+
+	public function __construct( $pathStyle = self::PATH_FULL ) {
+		$this->pathStyle = $pathStyle;
+	}
+
 	/**
 	 * @see PageRenderer::renderPage
 	 *
@@ -20,7 +31,35 @@ class LinkingPageRenderer extends PageRenderer {
 	 * @return string
 	 */
 	public function renderPage( Page $page ) {
-		return '[[' . $page->getTitle()->getFullText() . '|' . $page->getTitle()->getFullText() . ']]';
+		return '[[' . $page->getTitle()->getFullText() . '|' . $this->getLinkText( $page ) . ']]';
+	}
+
+	protected function getLinkText( Page $page ) {
+		$title = $page->getTitle();
+
+		if ( $this->pathStyle === self::PATH_NONE ) {
+			return $this->getBaseText( $title );
+		}
+
+		if ( $this->pathStyle === self::PATH_NO_NS ) {
+			return $this->stripNs( $title->getFullText() );
+		}
+
+		return $title->getFullText();
+	}
+
+	protected function getBaseText( Title $title ) {
+		return $this->stripNs( $title->getSubpageText() );
+	}
+
+	protected function stripNs( $text ) {
+		$namespacePosition = strpos( $text, ':' );
+
+		if ( $namespacePosition !== false ) {
+			$text = substr( $text, $namespacePosition + 1 );
+		}
+
+		return $text;
 	}
 
 }

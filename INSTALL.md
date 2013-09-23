@@ -23,7 +23,7 @@ Depending on your situation, pick one of the following approaches:
 directory and type "composer install". This will install all dependencies of SubPageList.
 
 2. If you want to get SubPageList and all of its dependencies, use
-"composer create-package jeroen-de-dauw/mediawiki-github".
+"composer create-package mediawiki/sub-page-list".
 
 For more information on using Composer, see [using composer](http://getcomposer.org/doc/01-basic-usage.md).
 

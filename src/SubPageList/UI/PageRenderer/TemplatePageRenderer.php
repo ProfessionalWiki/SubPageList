@@ -10,12 +10,14 @@ use SubPageList\Page;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class LinkingPageRenderer extends PageRenderer {
+class TemplatePageRenderer extends PageRenderer {
 
 	private $textRenderer;
+	private $templateName;
 
-	public function __construct( PageRenderer $textRenderer ) {
+	public function __construct( PageRenderer $textRenderer, $templateName ) {
 		$this->textRenderer = $textRenderer;
+		$this->templateName = $templateName;
 	}
 
 	/**
@@ -26,10 +28,10 @@ class LinkingPageRenderer extends PageRenderer {
 	 * @return string
 	 */
 	public function renderPage( Page $page ) {
-		return '[[' . $page->getTitle()->getFullText() . '|' . $this->getLinkText( $page ) . ']]';
+		return '{{' . $this->templateName . '|' . $this->getTitleText( $page ) . '}}';
 	}
 
-	protected function getLinkText( Page $page ) {
+	protected function getTitleText( Page $page ) {
 		return $this->textRenderer->renderPage( $page );
 	}
 

@@ -7,7 +7,7 @@ use SubPageList\UI\PageRenderer\PlainPageRenderer;
 use Title;
 
 /**
- * @covers SubPageList\UI\PlainPageRenderer
+ * @covers SubPageList\UI\PageRenderer\PlainPageRenderer
  *
  * @group SubPageList
  *

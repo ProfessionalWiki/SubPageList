@@ -3,25 +3,28 @@
 namespace Tests\Unit\SubPageList\UI\PageRenderer;
 
 use SubPageList\Page;
-use SubPageList\UI\PageRenderer\LinkingPageRenderer;
+use SubPageList\UI\PageRenderer\TemplatePageRenderer;
 use SubPageList\UI\PageRenderer\PlainPageRenderer;
 use Title;
 
 /**
- * @covers SubPageList\UI\PageRenderer\LinkingPageRenderer
+ * @covers SubPageList\UI\PageRenderer\TemplatePageRenderer
  *
  * @group SubPageList
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
+class TemplatePageRendererTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @dataProvider renderProvider
 	 */
-	public function testRenderPage( Page $page, $expected ) {
-		$renderer = new LinkingPageRenderer( new PlainPageRenderer( PlainPageRenderer::PATH_NONE ) );
+	public function testRenderPage( Page $page, $templateName, $expected ) {
+		$renderer = new TemplatePageRenderer(
+			new PlainPageRenderer( PlainPageRenderer::PATH_FULL ),
+			$templateName
+		);
 
 		$actual = $renderer->renderPage( $page );
 
@@ -32,19 +35,23 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 		return array(
 			array(
 				new Page( Title::newFromText( 'AAA' ) ),
-				'[[AAA|AAA]]',
+				'MyTemplate',
+				'{{MyTemplate|AAA}}',
 			),
 			array(
 				new Page( Title::newFromText( 'AAA/BBB' ) ),
-				'[[AAA/BBB|BBB]]',
+				'MyTemplate',
+				'{{MyTemplate|AAA/BBB}}',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar' ) ),
-				'[[Foo:Bar|Bar]]',
+				'MyTemplate',
+				'{{MyTemplate|Foo:Bar}}',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
-				'[[Foo:Bar/Baz|Baz]]',
+				'MyTemplate',
+				'{{MyTemplate|Foo:Bar/Baz}}',
 			),
 		);
 	}

@@ -66,10 +66,10 @@ using different PHP versions, different MediaWiki versions and both MySQL and SQ
 ## Version 0.1 (2010-12-31)
 
 * Copied the code of SubPageList3 and ...
-** Modified code to make use of Validator for parameter handling.
-** Rewrote most code of the SubPageList class.
-** Fixed namespace bug.
-** Fixed several minor layout issues.
-** Added alias file.
-** Added COPYING, INSTALL, README and RELEASE-NOTES.
-** Cleaned up and corrected formatting.
+    * Modified code to make use of Validator for parameter handling.
+    * Rewrote most code of the SubPageList class.
+    * Fixed namespace bug.
+    * Fixed several minor layout issues.
+    * Added alias file.
+    * Added COPYING, INSTALL, README and RELEASE-NOTES.
+    * Cleaned up and corrected formatting.

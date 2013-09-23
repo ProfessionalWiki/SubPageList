@@ -7,6 +7,10 @@ contains the documentation and examples for this extension.
 
 [![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-SubPageList.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList)
 [![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-SubPageList/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-SubPageList?branch=master)
+[![Dependency Status](https://www.versioneye.com/package/php--mediawiki--sub-page-list/badge.png)](https://www.versioneye.com/package/php--mediawiki--sub-page-list)
+
+On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-page-list/version.png)](https://packagist.org/packages/mediawiki/sub-page-list)
+[![Download count](https://poser.pugx.org/mediawiki/sub-page-list/d/total.png)](https://packagist.org/packages/mediawiki/sub-page-list)
 
 ## Features
 

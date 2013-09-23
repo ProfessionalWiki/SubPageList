@@ -55,7 +55,9 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		return new TreeListRenderer(
 			$this->newPageRenderer(),
 			$this->newPageSorter(),
-			$this->options['showpage']
+			array(
+				TreeListRenderer::OPT_SHOW_TOP_PAGE => $this->options['showpage'],
+			)
 		);
 	}
 

@@ -14,17 +14,26 @@ use SubPageList\UI\PageRenderer\PageRenderer;
  */
 class TreeListRenderer extends HierarchyRenderingBehaviour {
 
-	const SHOW_TOP_PAGE = true;
-	const HIDE_TOP_PAGE = false;
+	const OPT_SHOW_TOP_PAGE = 'topPage';
+	const OPT_FORMAT = 'format';
+
+	const FORMAT_OL = 'ol';
+	const FORMAT_UL = 'ul';
 
 	protected $pageRenderer;
 	protected $pageSorter;
-	protected $showTopLevelPage;
 
-	public function __construct( PageRenderer $pageRenderer, PageSorter $pageSorter, $showPage = self::SHOW_TOP_PAGE ) {
+	public function __construct( PageRenderer $pageRenderer, PageSorter $pageSorter, array $options = array() ) {
 		$this->pageRenderer = $pageRenderer;
 		$this->pageSorter = $pageSorter;
-		$this->showTopLevelPage = $showPage;
+
+		$this->options = array_merge(
+			array(
+				self::OPT_SHOW_TOP_PAGE => true,
+				self::OPT_FORMAT => self::FORMAT_UL,
+			),
+			$options
+		);
 	}
 
 	/**
@@ -52,7 +61,7 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	}
 
 	protected function shouldShowPage( $indentationLevel ) {
-		return $indentationLevel !== 0 || $this->showTopLevelPage;
+		return $indentationLevel !== 0 || $this->options[self::OPT_SHOW_TOP_PAGE];
 	}
 
 	protected function getTextForPage( Page $page, $indentationLevel ) {

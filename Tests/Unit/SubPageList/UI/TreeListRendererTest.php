@@ -75,7 +75,9 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 		 return new TreeListRenderer(
 			 $pageRenderer,
 			 new AlphabeticPageSorter( $sort ),
-			 $showPage
+			 array(
+				 TreeListRenderer::OPT_SHOW_TOP_PAGE => $showPage,
+			 )
 		 );
 	}
 

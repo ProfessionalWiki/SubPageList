@@ -208,10 +208,6 @@ class Extension {
 			'default' => 'subpagelist',
 		);
 
-
-		// TODO: re-implement support for below parameters
-
-
 		$params['format'] = array(
 			'aliases' => 'liststyle',
 			'values' => array(
@@ -222,6 +218,12 @@ class Extension {
 			'tolower' => true,
 			'default' => 'ul',
 		);
+
+
+		// TODO: re-implement support for below parameters
+
+
+
 
 		$params['pathstyle'] = array(
 			'aliases' => 'showpath',

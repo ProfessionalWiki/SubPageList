@@ -38,15 +38,17 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	protected static $titles;
 
 	public static function setUpBeforeClass() {
-		$pageCreator = new PageCreator();
-
 		foreach ( self::$pages as $pageName ) {
-			$title = Title::newFromText( $pageName );
-
-			self::$titles[] = $title;
-
-			$pageCreator->createPage( $title );
+			self::createPage( $pageName );
 		}
+	}
+
+	public static function createPage( $titleText ) {
+		$title = Title::newFromText( $titleText );
+		self::$titles[] = $title;
+
+		$pageCreator = new PageCreator();
+		$pageCreator->createPage( $title );
 	}
 
 	public static function tearDownAfterClass() {
@@ -255,6 +257,20 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			),
 			'{{MyTemplate|TempSPLTest:CCC}}
 * {{MyTemplate|TempSPLTest:CCC/Sub}}
+'
+		);
+	}
+
+	public function testPageDefaulting() {
+		self::createPage( 'TempSPLTest:ZZZ/ABC' );
+		self::createPage( 'TempSPLTest:ZZZ' );
+
+		$this->assertCreatesListWithWrap(
+			array(
+				'showpage' => 'yes',
+			),
+			'[[TempSPLTest:ZZZ|TempSPLTest:ZZZ]]
+* [[TempSPLTest:ZZZ/ABC|TempSPLTest:ZZZ/ABC]]
 '
 		);
 	}

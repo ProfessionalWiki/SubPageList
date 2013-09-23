@@ -52,14 +52,22 @@ class SubPageList implements HookHandler {
 
 		$parameters = $this->paramsToOptions( $result->getParameters() );
 
-		$titleText = $parameters['page'];
-		$title = $this->titleFactory->newFromText( $titleText );
+		$title = $this->getTitle( $parser, $parameters['page'] );
 
 		if ( $title !== null ) {
 			return $this->renderForTitle( $title, $parameters );
 		}
 
 		return 'Error: invalid title provided'; // TODO (might want to use a title param...)
+	}
+
+	protected function getTitle( Parser $parser, $pageName ) {
+		if ( $pageName === '' ) {
+			return $parser->getTitle();
+		}
+		else {
+			return $this->titleFactory->newFromText( $pageName );
+		}
 	}
 
 	/**

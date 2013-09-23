@@ -67,7 +67,7 @@ if ( !defined( 'ParamProcessor_VERSION' ) ) {
 
 // Only initialize the extension when all dependencies are present.
 if ( !defined( 'ParserHooks_VERSION' ) ) {
-	throw new Exception( 'You need to have ParserHooks 0.1 or later installed in order to use SubPageList' );
+	throw new Exception( 'You need to have ParserHooks 1.1 or later installed in order to use SubPageList' );
 }
 
 // @codeCoverageIgnoreStart

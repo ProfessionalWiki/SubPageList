@@ -69,7 +69,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	protected function assertCreatesListWithWrap( array $params, $listText ) {
 		$this->assertCreatesList(
 			$params,
-			'<div class="subpagelist">' . $listText . '</div>'
+			'<div class="subpagelist">' . "\n" . $listText . "\n" . '</div>'
 		);
 	}
 
@@ -95,7 +95,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'page' => 'TempSPLTest:ZZZ',
 				'showpage' => 'yes',
 			),
-			"[[TempSPLTest:ZZZ|TempSPLTest:ZZZ]]\n"
+			"[[TempSPLTest:ZZZ|TempSPLTest:ZZZ]]"
 		);
 	}
 
@@ -105,7 +105,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'page' => 'TempSPLTest:AAA',
 				'showpage' => 'yes',
 			),
-			"[[TempSPLTest:AAA|TempSPLTest:AAA]]\n"
+			"[[TempSPLTest:AAA|TempSPLTest:AAA]]"
 		);
 	}
 
@@ -116,8 +116,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'showpage' => 'yes',
 			),
 			'[[TempSPLTest:CCC|TempSPLTest:CCC]]
-* [[TempSPLTest:CCC/Sub|TempSPLTest:CCC/Sub]]
-'
+* [[TempSPLTest:CCC/Sub|TempSPLTest:CCC/Sub]]'
 		);
 	}
 
@@ -128,8 +127,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'showpage' => 'yes',
 			),
 			'[[TempSPLTest:CCC|TempSPLTest:CCC]]
-* [[TempSPLTest:CCC/Sub|TempSPLTest:CCC/Sub]]
-'
+* [[TempSPLTest:CCC/Sub|TempSPLTest:CCC/Sub]]'
 		);
 	}
 
@@ -142,7 +140,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'intro' => $introText,
 				'showpage' => 'yes',
 			),
-			$introText . "[[TempSPLTest:AAA|TempSPLTest:AAA]]\n"
+			$introText . "\n[[TempSPLTest:AAA|TempSPLTest:AAA]]"
 		);
 	}
 
@@ -192,8 +190,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			'* [[TempSPLTest:DDD/Sub0|TempSPLTest:DDD/Sub0]]
 * [[TempSPLTest:DDD/Sub1|TempSPLTest:DDD/Sub1]]
 * [[TempSPLTest:DDD/Sub2|TempSPLTest:DDD/Sub2]]
-** [[TempSPLTest:DDD/Sub2/Sub|TempSPLTest:DDD/Sub2/Sub]]
-'
+** [[TempSPLTest:DDD/Sub2/Sub|TempSPLTest:DDD/Sub2/Sub]]'
 		);
 	}
 
@@ -230,8 +227,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			),
 			'* [[TempSPLTest:DDD/Sub0|TempSPLTest:DDD/Sub0]]
 * [[TempSPLTest:DDD/Sub1|TempSPLTest:DDD/Sub1]]
-* [[TempSPLTest:DDD/Sub2|TempSPLTest:DDD/Sub2]]
-'
+* [[TempSPLTest:DDD/Sub2|TempSPLTest:DDD/Sub2]]'
 		);
 	}
 
@@ -243,8 +239,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'links' => 'no',
 			),
 			'TempSPLTest:CCC
-* TempSPLTest:CCC/Sub
-'
+* TempSPLTest:CCC/Sub'
 		);
 	}
 
@@ -256,8 +251,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'template' => 'MyTemplate',
 			),
 			'{{MyTemplate|TempSPLTest:CCC}}
-* {{MyTemplate|TempSPLTest:CCC/Sub}}
-'
+* {{MyTemplate|TempSPLTest:CCC/Sub}}'
 		);
 	}
 
@@ -270,8 +264,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'showpage' => 'yes',
 			),
 			'[[TempSPLTest:ZZZ|TempSPLTest:ZZZ]]
-* [[TempSPLTest:ZZZ/ABC|TempSPLTest:ZZZ/ABC]]
-'
+* [[TempSPLTest:ZZZ/ABC|TempSPLTest:ZZZ/ABC]]'
 		);
 	}
 

@@ -44,7 +44,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 	public function testRenderHierarchyWithNoSubPagesShowingPageItself( $titleText ) {
 		$this->assertRendersHierarchy(
 			new Page( Title::newFromText( $titleText ) ),
-			$titleText . "\n"
+			$titleText
 		);
 	}
 
@@ -85,8 +85,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 			),
 			'AAA
 * BBB
-* CCC
-'
+* CCC'
 		);
 	}
 
@@ -103,8 +102,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 			'AAA
 * DDD
 * CCC
-* BBB
-',
+* BBB',
 			array( 'sort' => 'desc' )
 		);
 	}
@@ -120,8 +118,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 			),
 			'AAA
 # BBB
-# CCC
-',
+# CCC',
 			array(
 				TreeListRenderer::OPT_FORMAT => TreeListRenderer::FORMAT_OL
 			)
@@ -158,8 +155,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 ** 222
 * CCC
 * DDD
-** 333
-'
+** 333'
 		);
 	}
 
@@ -190,8 +186,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 			'AAA
 * BBB
 * CCC
-* DDD
-',
+* DDD',
 			array(
 				TreeListRenderer::OPT_MAX_DEPTH => 1
 			)

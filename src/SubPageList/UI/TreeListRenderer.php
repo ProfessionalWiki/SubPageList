@@ -52,11 +52,12 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	}
 
 	protected function renderPage( Page $page, $indentationLevel ) {
-		$wikiText = $this->getTextForPageItself( $page, $indentationLevel );
+		$wikiText = array();
 
-		$wikiText .= $this->getTextForSubPages( $page, $indentationLevel );
+		$wikiText[] = $this->getTextForPageItself( $page, $indentationLevel );
+		$wikiText[] = $this->getTextForSubPages( $page, $indentationLevel );
 
-		return $wikiText;
+		return trim( implode( "\n", $wikiText ) );
 	}
 
 	protected function getTextForPageItself( Page $page, $indentationLevel ) {
@@ -64,7 +65,6 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 
 		if ( $this->shouldShowPage( $indentationLevel ) ) {
 			$wikiText .= $this->getTextForPage( $page, $indentationLevel );
-			$wikiText .= "\n";
 		}
 
 		return $wikiText;
@@ -119,7 +119,7 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 			$texts[] = $this->renderPage( $subPage, $indentationLevel );
 		}
 
-		return implode( '', $texts );
+		return implode( "\n", $texts );
 	}
 
 }

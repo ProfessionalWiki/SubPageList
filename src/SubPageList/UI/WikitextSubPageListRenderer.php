@@ -40,11 +40,15 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	}
 
 	protected function addHeader() {
-		$this->text .= $this->options['intro'];
+		if ( $this->options['intro'] !== '' ) {
+			$this->text .= $this->options['intro'] . "\n";
+		}
 	}
 
 	protected function addFooter() {
-		$this->text .= $this->options['outro'];
+		if ( $this->options['outro'] !== '' ) {
+			$this->text .= "\n". $this->options['outro'];
+		}
 	}
 
 	protected function addPageHierarchy( Page $page ) {
@@ -109,7 +113,7 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 			array(
 				'class' => $this->options['class']
 			),
-			$text
+			"\n" . $text . "\n"
 		);
 	}
 

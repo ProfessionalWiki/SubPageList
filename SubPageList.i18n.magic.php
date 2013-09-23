@@ -3,7 +3,7 @@
  * Internationalization file for magic words in the SubPageList extension.
  *
  * @file
- * @ingroup SubPageList
+ * @ingroup SPL
  *
  * @licence GNU GPL v2+
  *

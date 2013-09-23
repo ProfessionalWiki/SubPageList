@@ -26,9 +26,7 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 		$basicRenderer->expects( $this->once() )
 			->method( 'renderPage' )
 			->with( $this->equalTo( $page ) )
-			->will( $this->returnCallback( function( Page $page ) {
-				return $page->getTitle()->getSubpageText();
-			} ) );
+			->will( $this->returnValue( 'Ohi' ) );
 
 		$renderer = new LinkingPageRenderer( $basicRenderer );
 
@@ -41,19 +39,19 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 		return array(
 			array(
 				new Page( Title::newFromText( 'AAA' ) ),
-				'[[AAA|AAA]]',
+				'[[AAA|Ohi]]',
 			),
 			array(
 				new Page( Title::newFromText( 'AAA/BBB' ) ),
-				'[[AAA/BBB|BBB]]',
+				'[[AAA/BBB|Ohi]]',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar' ) ),
-				'[[Foo:Bar|Foo:Bar]]',
+				'[[Foo:Bar|Ohi]]',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
-				'[[Foo:Bar/Baz|Baz]]',
+				'[[Foo:Bar/Baz|Ohi]]',
 			),
 		);
 	}

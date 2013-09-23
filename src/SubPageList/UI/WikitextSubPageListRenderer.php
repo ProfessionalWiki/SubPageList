@@ -52,12 +52,18 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 
 	// TODO: this construction logic does not really fit into this class, split off
 	protected function newTreeListRenderer() {
+		$options = array(
+			TreeListRenderer::OPT_SHOW_TOP_PAGE => $this->options['showpage'],
+		);
+
+		if ( $this->options['kidsonly'] ) {
+			$options[TreeListRenderer::OPT_MAX_DEPTH] = 1;
+		}
+
 		return new TreeListRenderer(
 			$this->newPageRenderer(),
 			$this->newPageSorter(),
-			array(
-				TreeListRenderer::OPT_SHOW_TOP_PAGE => $this->options['showpage'],
-			)
+			$options
 		);
 	}
 

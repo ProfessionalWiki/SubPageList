@@ -220,6 +220,19 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	public function testKidsOnly() {
+		$this->assertCreatesListWithWrap(
+			array(
+				'page' => 'TempSPLTest:DDD',
+				'kidsonly' => 'yes',
+			),
+			'* [[TempSPLTest:DDD/Sub0|TempSPLTest:DDD/Sub0]]
+* [[TempSPLTest:DDD/Sub1|TempSPLTest:DDD/Sub1]]
+* [[TempSPLTest:DDD/Sub2|TempSPLTest:DDD/Sub2]]
+'
+		);
+	}
+
 }
 
 class PageCreator {

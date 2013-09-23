@@ -26,9 +26,7 @@ class TemplatePageRendererTest extends \PHPUnit_Framework_TestCase {
 		$basicRenderer->expects( $this->once() )
 			->method( 'renderPage' )
 			->with( $this->equalTo( $page ) )
-			->will( $this->returnCallback( function( Page $page ) {
-				return $page->getTitle()->getFullText();
-			} ) );
+			->will( $this->returnValue( 'Ohi' ) );
 
 		$renderer = new TemplatePageRenderer(
 			$basicRenderer,
@@ -45,22 +43,22 @@ class TemplatePageRendererTest extends \PHPUnit_Framework_TestCase {
 			array(
 				new Page( Title::newFromText( 'AAA' ) ),
 				'MyTemplate',
-				'{{MyTemplate|AAA}}',
+				'{{MyTemplate|Ohi}}',
 			),
 			array(
 				new Page( Title::newFromText( 'AAA/BBB' ) ),
 				'MyTemplate',
-				'{{MyTemplate|AAA/BBB}}',
+				'{{MyTemplate|Ohi}}',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar' ) ),
 				'MyTemplate',
-				'{{MyTemplate|Foo:Bar}}',
+				'{{MyTemplate|Ohi}}',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
 				'MyTemplate',
-				'{{MyTemplate|Foo:Bar/Baz}}',
+				'{{MyTemplate|Ohi}}',
 			),
 		);
 	}

@@ -71,10 +71,20 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 
 	protected function getIndentedLine( $lineContent, $indentationLevel ) {
 		if ( $indentationLevel > 0 ) {
-			$lineContent = str_repeat( '*', $indentationLevel ) . ' ' . $lineContent;
+			$char = $this->getIndentCharacter();
+			$lineContent = str_repeat( $char, $indentationLevel ) . ' ' . $lineContent;
 		}
 
 		return $lineContent;
+	}
+
+	protected function getIndentCharacter() {
+		$chars = array(
+			self::FORMAT_OL => '#',
+			self::FORMAT_UL => '*',
+		);
+
+		return $chars[$this->options[self::OPT_FORMAT]];
 	}
 
 	protected function renderSubPages( Page $page, $indentationLevel ) {

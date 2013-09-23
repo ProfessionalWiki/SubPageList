@@ -213,7 +213,7 @@ class Extension {
 			'values' => array(
 				'ul', 'unordered',
 				'ol', 'ordered',
-				'list', 'bar'
+				'list', 'bar' // TODO: support these two
 			),
 			'tolower' => true,
 			'default' => 'ul',

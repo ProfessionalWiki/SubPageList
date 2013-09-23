@@ -23,7 +23,10 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 	public function testRenderHierarchyWithNoSubPages( $titleText ) {
 		$this->assertRendersHierarchy(
 			new Page( Title::newFromText( $titleText ) ),
-			''
+			'',
+			array(
+				TreeListRenderer::OPT_SHOW_TOP_PAGE => false
+			)
 		);
 	}
 
@@ -41,29 +44,19 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 	public function testRenderHierarchyWithNoSubPagesShowingPageItself( $titleText ) {
 		$this->assertRendersHierarchy(
 			new Page( Title::newFromText( $titleText ) ),
-			$titleText . "\n",
-			array( 'showpage' => true )
-		);
-	}
-
-	protected function getDefaultOptions() {
-		return array(
-			'sort' => 'asc',
-			'showpage' => false
+			$titleText . "\n"
 		);
 	}
 
 	protected function assertRendersHierarchy( Page $page, $expected, array $options = array() ) {
-		$options = array_merge( $this->getDefaultOptions(), $options );
+		$listRender = $this->newListRenderer( $options );
 
-		$listRender = $this->newListRenderer( $options['showpage'], $options['sort'] );
-
-		$actual = $listRender->renderHierarchy( $page, $options );
+		$actual = $listRender->renderHierarchy( $page );
 
 		$this->assertEquals( $expected, $actual );
 	}
 
-	protected function newListRenderer( $showPage, $sort ) {
+	protected function newListRenderer( array $options ) {
 		$pageRenderer = $this->getMock( 'SubPageList\UI\PageRenderer\PageRenderer' );
 
 		$pageRenderer->expects( $this->any() )
@@ -72,12 +65,12 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 				return $page->getTitle()->getFullText();
 			} ) );
 
+		$sort = array_key_exists( 'sort', $options ) ? $options['sort'] : 'asc';
+
 		 return new TreeListRenderer(
 			 $pageRenderer,
 			 new AlphabeticPageSorter( $sort ),
-			 array(
-				 TreeListRenderer::OPT_SHOW_TOP_PAGE => $showPage,
-			 )
+			 $options
 		 );
 	}
 
@@ -90,7 +83,8 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 					new Page( Title::newFromText( 'BBB' ) ),
 				)
 			),
-			'* BBB
+			'AAA
+* BBB
 * CCC
 '
 		);
@@ -106,11 +100,31 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 					new Page( Title::newFromText( 'DDD' ) ),
 				)
 			),
-			'* DDD
+			'AAA
+* DDD
 * CCC
 * BBB
 ',
 			array( 'sort' => 'desc' )
+		);
+	}
+
+	public function testRenderAsOrderedList() {
+		$this->assertRendersHierarchy(
+			new Page(
+				Title::newFromText( 'AAA' ),
+				array(
+					new Page( Title::newFromText( 'CCC' ) ),
+					new Page( Title::newFromText( 'BBB' ) ),
+				)
+			),
+			'AAA
+# BBB
+# CCC
+',
+			array(
+				TreeListRenderer::OPT_FORMAT => TreeListRenderer::FORMAT_OL
+			)
 		);
 	}
 

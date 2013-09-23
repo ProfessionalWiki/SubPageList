@@ -213,7 +213,7 @@ class Extension {
 			'values' => array(
 				'ul', 'unordered',
 				'ol', 'ordered',
-				'list', 'bar' // TODO: support these two
+//				'list', 'bar' // TODO: support these two
 			),
 			'tolower' => true,
 			'default' => 'ul',
@@ -240,10 +240,10 @@ class Extension {
 			'default' => false,
 		);
 
-		$params['separator'] = array(
-			'aliases' => 'sep',
-			'default' => '&#160;· ',
-		);
+//		$params['separator'] = array(
+//			'aliases' => 'sep',
+//			'default' => '&#160;· ',
+//		);
 
 		$params['template'] = array(
 			'default' => '',

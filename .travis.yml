@@ -21,6 +21,9 @@ before_script: bash .travis.sh
 script:
   - cd ../phase3/extensions/SubPageList ; phpunit
 
+after_success:
+  - php vendor/bin/coveralls -v
+
 notifications:
   email:
     recipients:

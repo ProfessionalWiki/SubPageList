@@ -16,6 +16,7 @@ class LinkingPageRenderer extends PageRenderer {
 	const PATH_FULL = 'full'; // Namespace:Foo/Bar/Baz
 	const PATH_NO_NS = 'noNs'; // Foo/Bar/Baz
 	const PATH_NONE = 'none'; // Baz
+	const PATH_SUB_PAGE = 'subPage'; //
 
 	private $pathStyle;
 
@@ -43,6 +44,10 @@ class LinkingPageRenderer extends PageRenderer {
 
 		if ( $this->pathStyle === self::PATH_NO_NS ) {
 			return $this->stripNs( $title->getFullText() );
+		}
+
+		if ( $this->pathStyle === self::PATH_SUB_PAGE ) {
+			return $title->getSubpageText();
 		}
 
 		return $title->getFullText();

@@ -50,6 +50,7 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 				'[[Foo:Bar/Baz|Foo:Bar/Baz]]',
 			),
 
+
 			array(
 				new Page( Title::newFromText( 'AAA' ) ),
 				LinkingPageRenderer::PATH_NONE,
@@ -71,6 +72,7 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 				'[[Foo:Bar/Baz|Baz]]',
 			),
 
+
 			array(
 				new Page( Title::newFromText( 'AAA' ) ),
 				LinkingPageRenderer::PATH_NO_NS,
@@ -90,6 +92,28 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
 				LinkingPageRenderer::PATH_NO_NS,
 				'[[Foo:Bar/Baz|Bar/Baz]]',
+			),
+
+
+			array(
+				new Page( Title::newFromText( 'AAA' ) ),
+				LinkingPageRenderer::PATH_SUB_PAGE,
+				'[[AAA|AAA]]',
+			),
+			array(
+				new Page( Title::newFromText( 'AAA/BBB' ) ),
+				LinkingPageRenderer::PATH_SUB_PAGE,
+				'[[AAA/BBB|BBB]]',
+			),
+			array(
+				new Page( Title::newFromText( 'Foo:Bar' ) ),
+				LinkingPageRenderer::PATH_SUB_PAGE,
+				'[[Foo:Bar|Foo:Bar]]',
+			),
+			array(
+				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
+				LinkingPageRenderer::PATH_SUB_PAGE,
+				'[[Foo:Bar/Baz|Baz]]',
 			),
 		);
 	}

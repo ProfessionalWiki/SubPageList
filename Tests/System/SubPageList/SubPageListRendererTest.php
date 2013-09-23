@@ -2,6 +2,7 @@
 
 namespace Tests\System\SubPageList;
 
+use ParserHooks\FunctionRunner;
 use SubPageList\Extension;
 use SubPageList\Settings;
 use Title;
@@ -86,7 +87,14 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	protected function getListForRawParams( array $params ) {
 		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
 
-		return $extension->getListFunctionRunner()->run( $GLOBALS['wgParser'], $params );
+		$functionRunner = new FunctionRunner(
+			$extension->getListHookDefinition(),
+			$extension->getListHookHandler()
+		);
+
+		$result = $functionRunner->run( $GLOBALS['wgParser'], $params );
+
+		return reset( $result );
 	}
 
 	public function testListForNonExistingPage() {

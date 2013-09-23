@@ -5,6 +5,7 @@ namespace SubPageList;
 use Parser;
 use ParserHooks\FunctionRunner;
 use ParserHooks\HookDefinition;
+use ParserHooks\HookHandler;
 use ParserHooks\HookRegistrant;
 use SubPageList\UI\SubPageListRenderer;
 use SubPageList\UI\WikitextSubPageListRenderer;
@@ -85,18 +86,18 @@ class Extension {
 	/**
 	 * @since 1.0
 	 *
-	 * @return SubPageCount
+	 * @return HookHandler
 	 */
-	public function getSubPageCount() {
+	public function getCountHookHandler() {
 		return new SubPageCount( $this->getSubPageCounter(), $this->getTitleFactory() );
 	}
 
 	/**
 	 * @since 1.0
 	 *
-	 * @return SubPageList
+	 * @return HookHandler
 	 */
-	public function getSubPageList() {
+	public function getListHookHandler() {
 		return new SubPageList(
 			$this->getSubPageFinder(),
 			$this->getPageHierarchyCreator(),
@@ -126,10 +127,10 @@ class Extension {
 	/**
 	 * @since 1.0
 	 *
-	 * @return FunctionRunner
+	 * @return HookDefinition
 	 */
-	public function getCountFunctionRunner() {
-		$definition = new HookDefinition(
+	public function getCountHookDefinition() {
+		return new HookDefinition(
 			'subpagecount',
 			array(
 				'page' => array(
@@ -145,16 +146,14 @@ class Extension {
 			),
 			'page'
 		);
-
-		return new FunctionRunner( $definition, $this->getSubPageCount() );
 	}
 
 	/**
 	 * @since 1.0
 	 *
-	 * @return FunctionRunner
+	 * @return HookDefinition
 	 */
-	public function getListFunctionRunner() {
+	public function getListHookDefinition() {
 		$params = array();
 
 		$params['page'] = array(
@@ -256,13 +255,11 @@ class Extension {
 			$param['message'] = 'spl-subpages-par-' . $name;
 		}
 
-		$definition = new HookDefinition(
+		return new HookDefinition(
 			array( 'subpagelist', 'splist', 'subpages' ),
 			$params,
 			array( 'page', 'format', 'pathstyle', 'sortby', 'sort' )
 		);
-
-		return new FunctionRunner( $definition, $this->getSubPageList() );
 	}
 
 	/**

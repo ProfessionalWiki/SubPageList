@@ -71,7 +71,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	protected function getListForParams( array $rawParams ) {
 		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
 
-		$definition = $extension->getListFunctionRunner()->getDefinition();
+		$definition = $extension->getListHookDefinition();
 
 		$params = $this->getProcessedParams( $definition, $rawParams );
 

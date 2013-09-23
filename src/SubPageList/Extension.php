@@ -219,24 +219,21 @@ class Extension {
 			'default' => 'ul',
 		);
 
-
-		// TODO: re-implement support for below parameters
-
-
-
-
 		$params['pathstyle'] = array(
 			'aliases' => 'showpath',
 			'values' => array(
 				'none', 'no',
 				'subpagename', 'children', 'notparent',
 				'pagename',
-				'full', 		// Deprecate? --vdb
+				'full',
 				'fullpagename'
 			),
 			'tolower' => true,
-			'default' => 'none',
+			'default' => 'full',
 		);
+
+
+		// TODO: re-implement support for below parameters
 
 		$params['kidsonly'] = array(
 			'type' => 'boolean',

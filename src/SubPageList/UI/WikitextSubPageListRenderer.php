@@ -62,11 +62,31 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	}
 
 	protected function newPageRenderer() {
+		$renderer = new PlainPageRenderer( $this->getPathStyle() );
+
 		if ( $this->options['links'] ) {
-			return new LinkingPageRenderer();
+			$renderer = new LinkingPageRenderer( $renderer );
 		}
 
-		return new PlainPageRenderer();
+		return $renderer;
+	}
+
+	protected function getPathStyle() {
+		$styles = array(
+			'none' => PlainPageRenderer::PATH_NONE,
+			'no' => PlainPageRenderer::PATH_NONE,
+
+			'subpagename' => PlainPageRenderer::PATH_SUB_PAGE,
+			'children' => PlainPageRenderer::PATH_SUB_PAGE,
+			'notparent' => PlainPageRenderer::PATH_SUB_PAGE,
+
+			'full' => PlainPageRenderer::PATH_FULL,
+			'fullpagename' => PlainPageRenderer::PATH_FULL,
+
+			'pagename' => PlainPageRenderer::PATH_NO_NS,
+		);
+
+		return $styles[$this->options['pathstyle']];
 	}
 
 	protected function newPageSorter() {

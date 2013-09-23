@@ -20,6 +20,13 @@ On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-pag
 * Supports multiple parameters that enable you to customize the subpage list.
 * Full integration with the [ParamProcessor extension](https://www.mediawiki.org/wiki/Extension:ParamProcessor).
 
+### User manual
+
+* [Installation](INSTALL.md)
+* [Configuration](CONFIGURATION.md)
+* [Release notes](RELEASE-NOTES.md)
+* [Usage documentation](https://www.mediawiki.org/wiki/Extension:SubPageList)
+
 ## Links
 
 * [Canonical git repo](https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git)

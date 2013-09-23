@@ -13,7 +13,7 @@ These are the release notes for the [SubPageList extension](README.md).
 
 * sortby parameter
 * Dropped "bar" and "list" support as values for the format parameter
-** Dropped separator parameter support
+    * Dropped separator parameter support
 
 #### Compatibility changes
 

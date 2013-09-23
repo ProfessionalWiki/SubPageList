@@ -21,7 +21,16 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider renderProvider
 	 */
 	public function testRenderPage( Page $page, $expected ) {
-		$renderer = new LinkingPageRenderer( new PlainPageRenderer( PlainPageRenderer::PATH_NONE ) );
+		$basicRenderer = $this->getMock( 'SubPageList\UI\PageRenderer\PageRenderer' );
+
+		$basicRenderer->expects( $this->once() )
+			->method( 'renderPage' )
+			->with( $this->equalTo( $page ) )
+			->will( $this->returnCallback( function( Page $page ) {
+				return $page->getTitle()->getSubpageText();
+			} ) );
+
+		$renderer = new LinkingPageRenderer( $basicRenderer );
 
 		$actual = $renderer->renderPage( $page );
 
@@ -40,7 +49,7 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar' ) ),
-				'[[Foo:Bar|Bar]]',
+				'[[Foo:Bar|Foo:Bar]]',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),

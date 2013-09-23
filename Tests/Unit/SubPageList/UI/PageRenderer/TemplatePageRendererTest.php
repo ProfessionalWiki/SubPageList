@@ -21,8 +21,17 @@ class TemplatePageRendererTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider renderProvider
 	 */
 	public function testRenderPage( Page $page, $templateName, $expected ) {
+		$basicRenderer = $this->getMock( 'SubPageList\UI\PageRenderer\PageRenderer' );
+
+		$basicRenderer->expects( $this->once() )
+			->method( 'renderPage' )
+			->with( $this->equalTo( $page ) )
+			->will( $this->returnCallback( function( Page $page ) {
+				return $page->getTitle()->getFullText();
+			} ) );
+
 		$renderer = new TemplatePageRenderer(
-			new PlainPageRenderer( PlainPageRenderer::PATH_FULL ),
+			$basicRenderer,
 			$templateName
 		);
 

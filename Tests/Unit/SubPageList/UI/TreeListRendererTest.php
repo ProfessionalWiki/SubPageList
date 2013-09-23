@@ -128,4 +128,74 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	public function testRenderHierarchyWithManySubPages() {
+		$this->assertRendersHierarchy(
+			new Page(
+				Title::newFromText( 'AAA' ),
+				array(
+					new Page(
+						Title::newFromText( 'BBB' ),
+						array(
+							new Page( Title::newFromText( '111' ) ),
+							new Page( Title::newFromText( '222' ) ),
+						)
+					),
+					new Page(
+						Title::newFromText( 'CCC' ),
+						array()
+					),
+					new Page(
+						Title::newFromText( 'DDD' ),
+						array(
+							new Page( Title::newFromText( '333' ) ),
+						)
+					),
+				)
+			),
+			'AAA
+* BBB
+** 111
+** 222
+* CCC
+* DDD
+** 333
+'
+		);
+	}
+
+	public function testRenderHierarchyWithDepthLimit() {
+		$this->assertRendersHierarchy(
+			new Page(
+				Title::newFromText( 'AAA' ),
+				array(
+					new Page(
+						Title::newFromText( 'BBB' ),
+						array(
+							new Page( Title::newFromText( '111' ) ),
+							new Page( Title::newFromText( '222' ) ),
+						)
+					),
+					new Page(
+						Title::newFromText( 'CCC' ),
+						array()
+					),
+					new Page(
+						Title::newFromText( 'DDD' ),
+						array(
+							new Page( Title::newFromText( '333' ) ),
+						)
+					),
+				)
+			),
+			'AAA
+* BBB
+* CCC
+* DDD
+',
+			array(
+				TreeListRenderer::OPT_MAX_DEPTH => 1
+			)
+		);
+	}
+
 }

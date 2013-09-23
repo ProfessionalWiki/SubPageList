@@ -16,9 +16,12 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 
 	const OPT_SHOW_TOP_PAGE = 'topPage';
 	const OPT_FORMAT = 'format';
+	const OPT_MAX_DEPTH = 'maxIndent';
 
 	const FORMAT_OL = 'ol';
 	const FORMAT_UL = 'ul';
+
+	const NO_LIMIT = 'noLimit';
 
 	protected $pageRenderer;
 	protected $pageSorter;
@@ -31,6 +34,7 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 			array(
 				self::OPT_SHOW_TOP_PAGE => true,
 				self::OPT_FORMAT => self::FORMAT_UL,
+				self::OPT_MAX_DEPTH => self::NO_LIMIT,
 			),
 			$options
 		);
@@ -48,6 +52,14 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	}
 
 	protected function renderPage( Page $page, $indentationLevel ) {
+		$wikiText = $this->getTextForPageItself( $page, $indentationLevel );
+
+		$wikiText .= $this->getTextForSubPages( $page, $indentationLevel );
+
+		return $wikiText;
+	}
+
+	protected function getTextForPageItself( Page $page, $indentationLevel ) {
 		$wikiText = '';
 
 		if ( $this->shouldShowPage( $indentationLevel ) ) {
@@ -55,13 +67,26 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 			$wikiText .= "\n";
 		}
 
-		$wikiText .= $this->renderSubPages( $page, $indentationLevel + 1 );
-
 		return $wikiText;
 	}
 
 	protected function shouldShowPage( $indentationLevel ) {
 		return $indentationLevel !== 0 || $this->options[self::OPT_SHOW_TOP_PAGE];
+	}
+
+	protected function getTextForSubPages( Page $page, $indentationLevel ) {
+		$indentationLevel++;
+
+		if ( $this->shouldShowSubPages( $indentationLevel ) ) {
+			return $this->renderSubPages( $page, $indentationLevel );
+		}
+
+		return '';
+	}
+
+	protected function shouldShowSubPages( $indentationLevel ) {
+		$maxDepth = $this->options[self::OPT_MAX_DEPTH];
+		return $maxDepth === self::NO_LIMIT || $indentationLevel <= $maxDepth;
 	}
 
 	protected function getTextForPage( Page $page, $indentationLevel ) {

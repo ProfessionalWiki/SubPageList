@@ -232,13 +232,12 @@ class Extension {
 			'default' => 'full',
 		);
 
-
-		// TODO: re-implement support for below parameters
-
 		$params['kidsonly'] = array(
 			'type' => 'boolean',
 			'default' => false,
 		);
+
+		// TODO: re-implement support for below parameters
 
 //		$params['separator'] = array(
 //			'aliases' => 'sep',

@@ -1,6 +1,5 @@
-These are the release notes for the SubPageList extension.
+These are the release notes for the [SubPageList extension](README.md).
 	
-Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:SubPageList
 
 
 ## Version 1.0 (dev)

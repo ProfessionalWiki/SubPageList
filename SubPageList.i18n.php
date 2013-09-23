@@ -3,7 +3,11 @@
 /**
  * Internationalization file for the SubPageList extension.
  *
+ * @file
+ * @ingroup SPL
+ *
  * @licence GNU GPL v2+
+ *
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 
@@ -20,12 +24,13 @@ $messages['en'] = array(
 	'spl-nopages' => 'Namespace "$1" does not have pages.',
 
 	'spl-subpages-par-sort' => 'The direction to sort in. Allowed values: "asc" and "desc".',
+	'spl-subpages-par-sortby' => 'What to sort the subpages by. Allowed values: "title" or "lastedit".',
 	'spl-subpages-par-format' => 'The subpage list can be displayed in several formats. Allowed values: "ol" — ordered (numbered) list, "ul" — unordered (bulleted) lists, "list" — plain lists (for example comma-separated list).',
 	'spl-subpages-par-page' => 'The page to show the subpages for, or namespace name (including trailing colon) to show pages in. Defaults to the current page.',
 	'spl-subpages-par-showpage' => 'Indicates if the page itself should be shown in the list or not.',
 	'spl-subpages-par-pathstyle' => 'The style of the path for subpages in the list. Allowed values: "fullpagename" — full page name (including namespace), "pagename" — page name (without namespace), "subpagename" — relative page name starting from the page we list subpages for, "none" — just the trailing part of the name after last slash.',
 	'spl-subpages-par-kidsonly' => 'Allows showing only direct subpages.',
-	'spl-subpages-par-limit' => 'The maximum number of sub pages to retrieve. The limit does not include the page itself. Usage of kidsonly can reduce the result set size even if more results are available. Non-existing pages might be added to fill in holes in the tree.',
+	'spl-subpages-par-limit' => 'The maximum number of pages to list.',
 	'spl-subpages-par-element' => 'The HTML element enclosing the list (including "intro" and "outro" or "default" texts). Allowed values: "div", "p", "span".',
 	'spl-subpages-par-class' => 'The value for "class" attribute of the HTML element enclosing the list.',
 	'spl-subpages-par-intro' => 'The text to output before the list, if the list is not empty.',
@@ -60,6 +65,7 @@ See also:
 * {{msg-mw|Spl-noparentpage}}
 * {{msg-mw|Spl-nosubpages}}',
 	'spl-subpages-par-sort' => '{{doc-important|Do not translate "asc" and "desc".}}',
+	'spl-subpages-par-sortby' => '{{doc-important|Do not translate "title" and "lastedit".}}',
 	'spl-subpages-par-format' => '{{doc-important|Do not translate "ol", "ul" and "list".}}',
 	'spl-subpages-par-pathstyle' => '{{doc-important|The parameters "fullpagename", "pagename", "subpagename" and "none" should not be translated!}}',
 	'spl-subpages-par-kidsonly' => 'Used as description for a boolean parameter.',

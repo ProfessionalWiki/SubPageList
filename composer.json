@@ -26,11 +26,12 @@
 	"require": {
 		"php": ">=5.3.0",
 		"mediawiki/parser-hooks": ">=1.1@dev",
-		"param-processor/param-processor": "dev-master@dev"
+		"param-processor/param-processor": "dev-master"
 	},
 	"require-dev": {
 		"satooshi/php-coveralls": "dev-master"
 	},
+	"minimum-stability": "dev",
 	"autoload": {
 		"files" : [
 			"SubPageList.php"

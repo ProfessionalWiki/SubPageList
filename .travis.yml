@@ -19,7 +19,7 @@ matrix:
 before_script: bash .travis.sh
 
 script:
-  - cd ../phase3/extensions/SubPageList ; phpunit
+  - cd ../phase3/extensions/SubPageList ; phpunit --coverage-clover build/logs/clover.xml
 
 after_success:
   - php vendor/bin/coveralls -v

@@ -3,7 +3,7 @@
 /**
  * PHPUnit bootstrap file for the SubPageList extension.
  *
- * @since 0.1
+ * @since 1.0
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

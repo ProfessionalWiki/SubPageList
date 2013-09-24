@@ -16,7 +16,8 @@ Installation with Composer
 --------------------------
 
 The standard and recommended way to install SubPageList is with [Composer](http://getcomposer.org).
-If you do not have Composer yet, you first need to install it, or get the composer.phar file.
+If you do not have Composer yet, you first need to install it, or
+[get the composer.phar file](http://getcomposer.org/composer.phar).
 
 Depending on your situation, pick one of the following approaches:
 

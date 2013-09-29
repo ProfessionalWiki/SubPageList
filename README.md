@@ -1,7 +1,5 @@
 # SubPageList
 
-<div style="float: right"><img src="doc/subpagelist.png" /></div>
-
 SubPageList is a MediaWiki extension to display lists of subpages.
 
 [![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-SubPageList.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList)
@@ -43,3 +41,5 @@ View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList
 * [SubPageList on TravisCI](https://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList/builds)
 * [SubPageList on Scrutinizer CI](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/)
 * [Canonical git repo](https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git)
+
+<img src="doc/subpagelist.png" />

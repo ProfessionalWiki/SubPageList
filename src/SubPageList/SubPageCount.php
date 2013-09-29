@@ -37,7 +37,7 @@ class SubPageCount implements HookHandler {
 	public function handle( Parser $parser, ProcessingResult $result ) {
 		if ( $result->hasFatal() ) {
 			// TODO:
-			return 'FATAL';
+			return 'Invalid input. Cannot calculate sub page count.';
 		}
 
 		$count = 0;

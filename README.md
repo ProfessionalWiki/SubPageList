@@ -2,14 +2,6 @@
 
 SubPageList is a MediaWiki extension to display lists of subpages.
 
-[![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-SubPageList.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList)
-[![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-SubPageList/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-SubPageList?branch=master)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/badges/quality-score.png?s=0f3771f631a554ae32994ece2c0094c4520b267b)](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/)
-[![Dependency Status](https://www.versioneye.com/package/php--mediawiki--sub-page-list/badge.png)](https://www.versioneye.com/package/php--mediawiki--sub-page-list)
-
-On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-page-list/version.png)](https://packagist.org/packages/mediawiki/sub-page-list)
-[![Download count](https://poser.pugx.org/mediawiki/sub-page-list/d/total.png)](https://packagist.org/packages/mediawiki/sub-page-list)
-
 ## Features
 
 * Adds a <code>subpages</code> parser hook that you can use to list subpages.
@@ -28,11 +20,19 @@ View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList
 * [Usage instructions](https://www.mediawiki.org/wiki/Extension:SubPageList#Usage_instructions)
 * [Examples](https://www.mediawiki.org/wiki/Extension:SubPageList#Examples)
 
-## Project updates
+## Project status
 
-* [SubPageList posts on Jeroens blog](http://www.bn2vs.com/blog/tag/subpagelist/)
-* [Proposed code changes](https://gerrit.wikimedia.org/r/#/q/status:open+project:mediawiki/extensions/SubPageList,n,z)
+[![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-SubPageList.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList)
+[![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-SubPageList/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-SubPageList?branch=master)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/badges/quality-score.png?s=0f3771f631a554ae32994ece2c0094c4520b267b)](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/)
+[![Dependency Status](https://www.versioneye.com/package/php--mediawiki--sub-page-list/badge.png)](https://www.versioneye.com/package/php--mediawiki--sub-page-list)
+
+On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-page-list/version.png)](https://packagist.org/packages/mediawiki/sub-page-list)
+[![Download count](https://poser.pugx.org/mediawiki/sub-page-list/d/total.png)](https://packagist.org/packages/mediawiki/sub-page-list)
+
 * [Latest merged code changes](https://git.wikimedia.org/log/mediawiki%2Fextensions%2FSubPageList.git)
+* [Proposed code changes](https://gerrit.wikimedia.org/r/#/q/status:open+project:mediawiki/extensions/SubPageList,n,z)
+* [SubPageList posts on Jeroens blog](http://www.bn2vs.com/blog/tag/subpagelist/)
 
 ## Further links
 

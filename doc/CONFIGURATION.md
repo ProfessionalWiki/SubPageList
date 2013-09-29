@@ -1,6 +1,6 @@
 # SubPageList Configuration
 
-These are the configuration instructions for the [SubPageList extension](README.md).
+These are the configuration instructions for the [SubPageList extension](../README.md).
 
 Configuration of SubPageList is done by adding simple PHP statements to your [[Manual:LocalSettings.php|LocalSettings.php]]
 file. These statements need to be placed AFTER the inclusion of SubPageList. The options are listed below and their default

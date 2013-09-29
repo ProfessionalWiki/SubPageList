@@ -1,6 +1,6 @@
 # SubPageList installation
 
-These are the installation instructions for the [SubPageList extension](README.md).
+These are the installation instructions for the [SubPageList extension](../README.md).
 
 SubPageList has the following dependencies:
 

@@ -1,6 +1,4 @@
-These are the release notes for the [SubPageList extension](README.md).
-	
-
+These are the release notes for the [SubPageList extension](../README.md).
 
 ## Version 1.0 (dev)
 

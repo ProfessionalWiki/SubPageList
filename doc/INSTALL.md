@@ -4,9 +4,9 @@ These are the installation instructions for the [SubPageList extension](../READM
 
 SubPageList has the following dependencies:
 
+* [MediaWiki](https://www.mediawiki.org/) 1.16 or later
 * [ParamProcessor](https://www.mediawiki.org/wiki/Extension:ParamProcessor) 1.0 or later
 * [ParserHooks](https://github.com/wikimedia/mediawiki-extensions-ParserHooks/blob/master/README.md) 1.1 or later
-* [MediaWiki](https://www.mediawiki.org/) 1.16 or later
 
 And nothing else.
 
@@ -15,9 +15,11 @@ It also requires PHP 5.3 or above to run.
 ## Manual installation
 
 First you need to get the code. This can be done either by downloading a tarball,
-or by cloning the git repository. If you clone the git repo, you must take care
-to also get the code of all dependencies (listed above). Tarballs already include
-those dependencies.
+or by cloning the git repository.
+
+If you clone the git repo, you must take care to also get the code of all dependencies.
+The direct dependencies are listed above, though they themselves can have further dependencies.
+Tarballs already include all dependencies.
 
 Once you got the code, place the "SubPageList" directory, and the directories of
 the dependencies in your MediaWiki "extensions" directory.
@@ -48,7 +50,6 @@ For more information on using Composer, see [using composer](http://getcomposer.
 The entry point of SubPageList is SubPageList.php. Including this file
 takes care of autoloading and defining the version constant of this component.
 
-Configuration
--------------
+## Configuration
 
 After you are done with installing, it is time to [update your configuration](CONFIGURATION.md).

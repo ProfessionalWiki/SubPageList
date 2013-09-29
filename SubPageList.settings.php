@@ -2,7 +2,8 @@
 
 /**
  * File defining the settings for the SubPageList extension.
- * More info can be found at https://www.mediawiki.org/wiki/Extension:SubPageList#Settings
+ * More info can be found at
+ * https://github.com/wikimedia/mediawiki-extensions-SubPageList/blob/master/doc/CONFIGURATION.md
  *
  *                          NOTICE:
  * Changing one of these settings can be done by copying or cutting it,
@@ -26,5 +27,3 @@ call_user_func( function() {
 	$egSPLAutorefresh = false;
 
 } );
-
-

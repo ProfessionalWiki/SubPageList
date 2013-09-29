@@ -21,6 +21,8 @@ On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-pag
 
 View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList.
 
+<img src="doc/subpagelist.png" />
+
 ### User manual
 
 * [Installation](doc/INSTALL.md)
@@ -28,8 +30,16 @@ View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList
 * [Usage instructions](https://www.mediawiki.org/wiki/Extension:SubPageList#Usage_instructions)
 * [Examples](https://www.mediawiki.org/wiki/Extension:SubPageList#Examples)
 
-## Links
+## Project updates
 
-* [Canonical git repo](https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git)
+* [SubPageList posts on Jeroens blog](http://www.bn2vs.com/blog/tag/subpagelist/)
+* [Proposed code changes](https://gerrit.wikimedia.org/r/#/q/status:open+project:mediawiki/extensions/SubPageList,n,z)
+* [Latest merged code changes](https://git.wikimedia.org/log/mediawiki%2Fextensions%2FSubPageList.git)
+
+## Further links
+
 * [SubPageList on Packagist](https://packagist.org/packages/mediawiki/sub-page-list)
-* [Latest version of the readme file](https://github.com/wikimedia/mediawiki-extensions-SubPageList/blob/master/README.md)
+* [SubPageList on Ohloh](https://www.ohloh.net/p/subpagelist)
+* [SubPageList on TravisCI](https://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList/builds)
+* [SubPageList on Scrutinizer CI](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/)
+* [Canonical git repo](https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git)

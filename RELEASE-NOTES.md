@@ -6,6 +6,7 @@ These are the release notes for the [SubPageList extension](README.md).
 
 #### Functional changes
 
+* Added subpages aliases for the subpagelist parser hook.
 * Changed pathstyle value "subpagename" to only render the last sub page part.
 * All pages that have children in the result will now be discovered, even if they do not exist.
 * Dropped sortby parameter.
@@ -16,12 +17,16 @@ These are the release notes for the [SubPageList extension](README.md).
 
 * Changed MediaWiki compatibility from MW 1.17-1.19 to MW >= 1.19
 * Dropped support for PHP 5.2, added support for PHP 5.3, 5.4 and 5.5.
-* Changed Validator compatibility from 0.4.x to 1.0.x.
+* Changed Validator compatibility from 0.4.x to 1.x.
 * New dependency: ParserHooks 1.1 or later.
 
 #### Internal improvements
 
 * Rewrote extension from transaction script style to domain model style.
+    * Data access, domain logic, application logic and presentation code have been separated.
+    * Polymorphism is used instead of switches to allow for multiple behaviours.
+    * Complete inversion of control, no use of globals or static outside of main
+    * Abstracted away from some badly designed MediaWiki "interfaces".
 * Added unit, component and system tests, covering (nearly) all behaviour.
 * Made code compliant with
 [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md)
@@ -29,11 +34,12 @@ and use PSR-0 based autoloading.
 
 #### Infrastructure
 
-* Extension now be installed using [Composer](http://getcomposer.org)
-* Unit tests can now be run using phpunit.xml.dist
-* Tests now run [on TravisCI](https://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList)
+* Extension now be installed using [Composer](http://getcomposer.org).
+* Unit tests can now be run using phpunit.xml.dist.
+* Tests now run [on TravisCI](https://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList).
 using different PHP versions, different MediaWiki versions and both MySQL and SQLite.
-* Code coverage reports are generated on coveralls.io
+* Code coverage reports are generated on coveralls.io.
+* Code quality reports are generated on Scrutinizer CI.
 
 ## Version 0.5 (2011-12-27)
 

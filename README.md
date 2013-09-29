@@ -14,11 +14,12 @@ On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-pag
 
 ## Features
 
-* Adds a <code>splist</code> or <code>subpagelist</code> parser hook that
-  you can use to list subpages.
+* Adds a <code>subpages</code> parser hook that you can use to list subpages.
 * Backward compatible with the [SubPageList3 extension](https://www.mediawiki.org/wiki/Extension:SubPageList3).
-* Supports multiple parameters that enable you to customize the subpage list.
-* Full integration with the [ParamProcessor extension](https://www.mediawiki.org/wiki/Extension:ParamProcessor).
+* Supports various parameters that enable you to customize the subpage list both in content and in layout.
+* Adds a <code>subpagecount</code> parser hook for counting the number of subpages.
+* Fully tested codebase (thus a minimal amount of bugs and little chance of regressions in the future).
+* Flexible internal API that allows developers to easily add in new behaviour.
 
 ### User manual
 

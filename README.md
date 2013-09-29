@@ -40,6 +40,7 @@ On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-pag
 * [SubPageList on Ohloh](https://www.ohloh.net/p/subpagelist)
 * [SubPageList on TravisCI](https://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList/builds)
 * [SubPageList on Scrutinizer CI](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/)
+* [SubPageList on WikiApiary](http://wikiapiary.com/wiki/Extension:SubPageList)
 * [Canonical git repo](https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git)
 
 <img src="doc/subpagelist.png" />

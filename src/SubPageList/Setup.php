@@ -59,8 +59,13 @@ class Setup {
 	 * @since 1.0
 	 */
 	public function run() {
+		$this->registerParserHooks();
+		$this->registerCacheInvalidator();
+		$this->registerUnitTests();
+	}
+
+	protected function registerParserHooks() {
 		$extension = $this->extension;
-		$rootDirectory = $this->rootDirectory;
 
 		/**
 		 * Called when the parser initialises for the first time.
@@ -91,6 +96,10 @@ class Setup {
 
 			return true;
 		};
+	}
+
+	protected function registerCacheInvalidator() {
+		$extension = $this->extension;
 
 		/**
 		 * Occurs after a new article has been created.
@@ -98,7 +107,7 @@ class Setup {
 		 */
 		$this->hooks['ArticleInsertComplete'][]
 			= function( WikiPage $article, User &$user, $text, $summary, $minorEdit,
-						$watchThis, $sectionAnchor, &$flags, Revision $revision ) use ( $extension ) {
+			$watchThis, $sectionAnchor, &$flags, Revision $revision ) use ( $extension ) {
 
 			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
 				$extension->getCacheInvalidator()->invalidateCaches( $article->getTitle() );
@@ -133,6 +142,10 @@ class Setup {
 
 			return true;
 		};
+	}
+
+	protected function registerUnitTests() {
+		$rootDirectory = $this->rootDirectory;
 
 		/**
 		 * Hook to add PHPUnit test cases.

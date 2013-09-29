@@ -12,10 +12,26 @@ And nothing else.
 
 It also requires PHP 5.3 or above to run.
 
-Installation with Composer
---------------------------
+## Manual installation
 
-The standard and recommended way to install SubPageList is with [Composer](http://getcomposer.org).
+First you need to get the code. This can be done either by downloading a tarball,
+or by cloning the git repository. If you clone the git repo, you must take care
+to also get the code of all dependencies (listed above). Tarballs already include
+those dependencies.
+
+Once you got the code, place the "SubPageList" directory, and the directories of
+the dependencies in your MediaWiki "extensions" directory.
+
+The only remaining step is to include SubPageList in your LocalSettings.php file:
+
+    require_once( "$IP/extensions/SubPageList/SubPageList.php" );
+
+You do not need to include the dependencies yourself (though you can), as they
+will be automatically loaded.
+
+## Installation with Composer
+
+You can install SubPageList is with [Composer](http://getcomposer.org).
 If you do not have Composer yet, you first need to install it, or
 [get the composer.phar file](http://getcomposer.org/composer.phar).
 
@@ -31,17 +47,6 @@ For more information on using Composer, see [using composer](http://getcomposer.
 
 The entry point of SubPageList is SubPageList.php. Including this file
 takes care of autoloading and defining the version constant of this component.
-
-Installation without composer
------------------------------
-
-If you install without composer, simply include the entry point file. You are then
-responsible for loading all dependencies of this component before including the
-entry point, and can do this in whatever way you see fit.
-
-For instance, you can include this in your LocalSettings.php file:
-
-  require_once( "$IP/extensions/SubPageList/SubPageList.php" );
 
 Configuration
 -------------

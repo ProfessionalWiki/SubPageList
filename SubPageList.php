@@ -3,35 +3,11 @@
 /**
  * Initialization file for the SubPageList extension.
  * 
- * Documentation:	 		https://www.mediawiki.org/wiki/Extension:SubPageList
- * Support					https://www.mediawiki.org/wiki/Extension_talk:SubPageList
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
- * http://www.gnu.org/copyleft/gpl.html
- *
- * @file
- * @ingroup SubPageList
+ * Documentation: https://github.com/wikimedia/mediawiki-extensions-SubPageList/blob/master/README.md
+ * Support https://www.mediawiki.org/wiki/Extension_talk:SubPageList
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
- */
-
-/**
- * This documentation group collects source code files belonging to SubPageList.
- *
- * @defgroup SubPageList SubPageList
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) {
@@ -43,7 +19,7 @@ if ( defined( 'SPL_VERSION' ) ) {
 	return;
 }
 
-define( 'SPL_VERSION', '1.0 beta' );
+define( 'SPL_VERSION', '1.0 RC' );
 
 // Include the composer autoloader if it is present.
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
@@ -95,7 +71,7 @@ spl_autoload_register( function ( $className ) {
 // @codeCoverageIgnoreEnd
 
 call_user_func( function() {
-	global $wgExtensionCredits, $wgExtensionMessagesFiles, $wgAutoloadClasses, $wgExtensionFunctions;
+	global $wgExtensionCredits, $wgExtensionMessagesFiles, $wgExtensionFunctions;
 
 	$wgExtensionCredits['parserhook'][] = array(
 		'path' => __FILE__,
@@ -103,24 +79,13 @@ call_user_func( function() {
 		'version' => SPL_VERSION,
 		'author' => array(
 			'[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
-			'Van de Bugger. Based on [https://www.mediawiki.org/wiki/Extension:SubPageList3 SubPageList3].',
 		),
 		'url' => 'https://www.mediawiki.org/wiki/Extension:SubPageList',
 		'descriptionmsg' => 'spl-desc'
 	);
 
-
 	$wgExtensionMessagesFiles['SubPageList'] = __DIR__ . '/SubPageList.i18n.php';
 	$wgExtensionMessagesFiles['SubPageListMagic'] = __DIR__ . '/SubPageList.i18n.magic.php';
-
-	foreach ( include( __DIR__ . '/SubPageList.classes.php' ) as $class => $file ) {
-		$wgAutoloadClasses[$class] = __DIR__ . '/' . $file;
-	}
-
-	if ( defined( 'MW_PHPUNIT_TEST' ) ) {
-		$wgAutoloadClasses['SubPageList\Test\SubPageListTestCase'] = __DIR__ . '/tests/SubPageListTestCase.php';
-	}
-
 
 	$wgExtensionFunctions[] = function() {
 		global $wgHooks;

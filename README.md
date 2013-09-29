@@ -1,5 +1,9 @@
 # SubPageList
 
+<p align="right">
+  <img src="doc/subpagelist.png" />
+</p>
+
 SubPageList is a [MediaWiki](https://www.mediawiki.org) extension to display lists of subpages.
 
 Features:
@@ -42,5 +46,3 @@ On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-pag
 * [SubPageList on Scrutinizer CI](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/)
 * [SubPageList on WikiApiary](http://wikiapiary.com/wiki/Extension:SubPageList)
 * [Canonical git repo](https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git)
-
-<img src="doc/subpagelist.png" />

@@ -1,6 +1,6 @@
 # SubPageList
 
-<img src="doc/subpagelist.png" style="float:right;" />
+<div style="float: right"> <img src="doc/subpagelist.png" /></div>
 
 SubPageList is a lightweight extension to display lists of subpages.
 

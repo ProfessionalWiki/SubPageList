@@ -1,6 +1,6 @@
 # SubPageList
 
-<div style="float: right">![Screenshot](doc/subpagelist.png)</div>
+<div style="float: right"><img src="doc/subpagelist.png" /></div>
 
 SubPageList is a MediaWiki extension to display lists of subpages.
 

@@ -1,5 +1,7 @@
 # SubPageList
 
+<img src="doc/subpagelist.png" style="float:right;" />
+
 SubPageList is a lightweight extension to display lists of subpages.
 
 [![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-SubPageList.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList)
@@ -20,8 +22,6 @@ On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-pag
 * Flexible internal API that allows developers to easily add in new behaviour.
 
 View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList.
-
-<img src="doc/subpagelist.png" />
 
 ### User manual
 

@@ -27,15 +27,6 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public static function setUpBeforeClass() {
 		self::$pages = array(
-//		'TempSPLTest:QQQ',
-//		'TempSPLTest:QQQ/Root0',
-//		'TempSPLTest:QQQ/Root1/Sub1-0',
-//		'TempSPLTest:QQQ/Root2/Sub2-0',
-//		'TempSPLTest:QQQ/Root2/Sub2-1',
-//		'TempSPLTest:QQQ/Root2/Sub2-2',
-//		'TempSPLTest:QQQ/Root2/Sub2-2/SubSub2-2-0',
-//		'TempSPLTest:QQQ/Root2/Sub2-3',
-
 			// A page with no sub pages
 			'AAA' => new Page(
 				Title::newFromText( 'AAA' )
@@ -53,15 +44,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	protected function getDefaultOptions() {
-		return array(
-
-		);
-	}
-
 	protected function assertCreatesList( array $params, $listText ) {
-		$params = array_merge( $this->getDefaultOptions(), $params );
-
 		$this->assertEquals(
 			$listText,
 			$this->getListForParams( $params )
@@ -177,6 +160,21 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			'<div class="subpagelist">
 [[BBB|BBB]]
 # [[BBB/Sub|Sub]]
+</div>'
+		);
+	}
+
+	public function testListWithTemplate() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'BBB',
+				'showpage' => 'yes',
+				'format' => 'ol',
+				'template' => 'foo',
+			),
+			'<div class="subpagelist">
+{{foo|BBB}}
+# {{foo|Sub}}
 </div>'
 		);
 	}

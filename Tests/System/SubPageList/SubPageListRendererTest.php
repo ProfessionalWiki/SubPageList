@@ -152,6 +152,21 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	public function testListForWithHeaderAndFooter() {
+		$introText = '~=[,,_,,]:3';
+		$outroText = 'in your test';
+
+		$this->assertCreatesListWithWrap(
+			array(
+				'page' => 'TempSPLTest:AAA',
+				'intro' => $introText,
+				'outro' => $outroText,
+				'showpage' => 'yes',
+			),
+			$introText . "\n[[TempSPLTest:AAA|TempSPLTest:AAA]]\n" . $outroText
+		);
+	}
+
 	public function testListInvalidPageName() {
 		$this->assertCreatesList(
 			array(

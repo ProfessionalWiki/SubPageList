@@ -6,9 +6,7 @@ SubPageList has the following dependencies:
 
 * [MediaWiki](https://www.mediawiki.org/) 1.16 or later
 * [ParamProcessor](https://www.mediawiki.org/wiki/Extension:ParamProcessor) 1.0 or later
-* [ParserHooks](https://github.com/wikimedia/mediawiki-extensions-ParserHooks/blob/master/README.md) 1.1 or later
-
-And nothing else.
+* [ParserHooks](https://github.com/wikimedia/mediawiki-extensions-ParserHooks/blob/master/README.md) 1.2 or later
 
 It also requires PHP 5.3 or above to run.
 
@@ -28,8 +26,7 @@ The only remaining step is to include SubPageList in your LocalSettings.php file
 
     require_once( "$IP/extensions/SubPageList/SubPageList.php" );
 
-You do not need to include the dependencies yourself (though you can), as they
-will be automatically loaded.
+You do not need to include the dependencies yourself, as they will be automatically loaded.
 
 ## Installation with Composer
 

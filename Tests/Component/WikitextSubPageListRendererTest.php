@@ -167,4 +167,18 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	public function testListWithOlFormat() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'BBB',
+				'showpage' => 'yes',
+				'format' => 'ol',
+			),
+			'<div class="subpagelist">
+[[BBB|BBB]]
+# [[BBB/Sub|Sub]]
+</div>'
+		);
+	}
+
 }

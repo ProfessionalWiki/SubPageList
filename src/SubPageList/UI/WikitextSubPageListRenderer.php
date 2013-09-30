@@ -65,6 +65,10 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 			$options[TreeListRenderer::OPT_MAX_DEPTH] = 1;
 		}
 
+		if ( $this->options['format'] === 'ol' ) {
+			$options[TreeListRenderer::OPT_FORMAT] = TreeListRenderer::FORMAT_OL;
+		}
+
 		return new TreeListRenderer(
 			$this->newPageRenderer(),
 			$this->newPageSorter(),

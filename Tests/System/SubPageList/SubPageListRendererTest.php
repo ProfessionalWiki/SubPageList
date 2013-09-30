@@ -92,7 +92,13 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			$extension->getListHookHandler()
 		);
 
-		$result = $functionRunner->run( $GLOBALS['wgParser'], $params );
+		$frame = $this->getMock( 'PPFrame' );
+
+		$frame->expects( $this->exactly( count( $params ) ) )
+			->method( 'expand' )
+			->will( $this->returnArgument( 0 ) );
+
+		$result = $functionRunner->run( $GLOBALS['wgParser'], $params, $frame );
 
 		return reset( $result );
 	}

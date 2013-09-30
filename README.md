@@ -41,6 +41,7 @@ On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-pag
 * [SubPageList on TravisCI](https://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList/builds)
 * [SubPageList on Scrutinizer CI](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/)
 * [SubPageList on WikiApiary](http://wikiapiary.com/wiki/Extension:SubPageList)
+* [Open issues](https://bugzilla.wikimedia.org/buglist.cgi?list_id=237423&query_format=advanced&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=PATCH_TO_REVIEW&bug_status=REOPENED&component=SubPageList&product=MediaWiki%20extensions)
 * [Canonical git repo](https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git)
 
 <img src="doc/subpagelist.png" />

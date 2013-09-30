@@ -25,7 +25,7 @@
 	},
 	"require": {
 		"php": ">=5.3.0",
-		"mediawiki/parser-hooks": ">=1.1",
+		"mediawiki/parser-hooks": ">=1.2",
 		"param-processor/param-processor": "dev-master"
 	},
 	"require-dev": {

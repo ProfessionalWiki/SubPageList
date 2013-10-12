@@ -487,6 +487,7 @@ Zohjelohße es:
 /** Luxembourgish (Lëtzebuergesch)
  * @author Les Meloures
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'spl-desc' => 'Setzt den <code><nowiki><splist /></nowiki></code>-Tag fir Ënnersäiten ze weisen derbäi',
@@ -502,7 +503,7 @@ $messages['lb'] = array(
 	'spl-subpages-par-kidsonly' => 'Erlaabt fir nëmmen direkt Ënnersäiten ze weisen.',
 	'spl-subpages-par-limit' => "D'Maximalzuel vu Säiten déi gewise ginn.",
 	'spl-subpages-par-intro' => 'Den Text virun der Lëscht, wann se net eidel ass.',
-	'spl-subpages-par-outro' => 'Den Text hannert der Lëscht, wann se net eidel ass.',
+	'spl-subpages-par-outro' => 'Den Text hanner der Lëscht, wa se net eidel ass.',
 	'spl-subpages-par-default' => 'Den Text deen gewise amplaz vun der Lëscht gëtt, wann d\'Lëscht eidel ass. Wann se eidel ass, gëtt e Feeler-Message generéiert (esou wéi "D\'Säit huet keng Ënnersäiten"). Wann et e bindestrich ass ("-"), ass d\'Resultat komplett eidel.',
 	'spl-subpages-par-template' => 'Den Numm vun der Schabloun. D\'Schabloun gëtt fir all Element vun der Lëscht benotzt. Een Element gëtt als éischt (ongenannt) Argument un D\'Schabloun viruginn. Denkt drun datt d\'Schabloun de Format vun der Lëscht net ännert. D\'Formatéierung ("ul", "ol", "list") gëtt op d\'Resultat vun der Schabloun applizéiert.',
 	'spl-subpages-par-links' => "Wann et aktivéiert ass ginn d'Elementer vun der Lëscht als Linken duergestallt. Wann et net aktivéiert ass ginn d'Elementer vun der Lëscht als normalen Text duergestallt. Déi lescht Optioun ass besonnesch nëtzlech fir Elementer a Schablounen anzebannen an duerno weider ze verschaffen.",

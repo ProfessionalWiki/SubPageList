@@ -10,6 +10,19 @@ SubPageList has the following dependencies:
 
 It also requires PHP 5.3 or above to run.
 
+## Download
+
+The simplest way to get SubPageList and the libraries it needs is by getting
+[one of the tarballs](https://code.google.com/p/subpagelist/downloads/list).
+
+You can also use Git to get SubPageList:
+
+    git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git
+
+Note that you then also need to get the required libraries yourself. The same
+is true when getting one of the [tarballs that only contain SubPageList]
+(https://github.com/wikimedia/mediawiki-extensions-SubPageList/releases).
+
 ## Manual installation
 
 First you need to get the code. This can be done either by downloading a tarball,

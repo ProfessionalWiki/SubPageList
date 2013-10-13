@@ -43,7 +43,7 @@ You do not need to include the dependencies yourself, as they will be automatica
 
 ## Installation with Composer
 
-You can install SubPageList is with [Composer](http://getcomposer.org).
+You can install SubPageList with [Composer](http://getcomposer.org).
 If you do not have Composer yet, you first need to install it, or
 [get the composer.phar file](http://getcomposer.org/composer.phar).
 

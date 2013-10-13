@@ -158,4 +158,19 @@ TODO
 
 ## Counting subpages
 
-TODO
+You have the choice to either use the tag extension <code>&lt;subpagecount /></code>
+or use the parser function <code>{{#subpagecount: }}</code>. These take the
+same parameters and behave identically.
+
+The only parameter is <code>page</code>, which defaults to the current page.
+
+The page itself is not included in the subpage count. So if the page has no subpages,
+the count will be 0.
+
+Counting the subpages of the current page:
+
+{{#subpagecount:}}
+
+Counting the subpages of page "MyAwesomePage":
+
+{{#subpagecount:MyAwesomePage}}

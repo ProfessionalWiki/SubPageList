@@ -135,6 +135,19 @@ Parameter name: class
 
 Class of the wrapping HTML element. Default: <code>subpagelist</code>
 
+#### Limiting the result set
+
+Parameter name: limit
+
+This parameter specifies the limit used by the query that finds the subpages.
+It should be a whole number between 1 and 500, bounds included. The default
+is 200.
+
+The size of the actual list might be a bit above the upper bound, as non-existing
+pages in the subpage tree get added to it. It might also be lower then the upper
+bound even when there are more pages then the specified limit, as certain parameters
+(ie "kidsonly") omit pages from the result set.
+
 ### Default parameters
 
 When using the parser function, a number of parameters can be provided without
@@ -154,7 +167,32 @@ then using the named equivalent <code>&lt;subpagelist page="YourPageName" /></co
  
 ### Examples
 
-TODO
+Listing the subpages of the current page using default settings:
+
+    {{#subpages:}}
+
+Listing subpages for page "MyAwesomePage":
+
+    {{#subpages:MyAwesomePage}}
+
+Listing subpages using an ordered list:
+
+    {{#subpages:format=ol}}
+
+Full page names that are not linked:
+
+    {{#subpages:pathstyle=full|links=no}}
+
+Adding a header and a footer:
+
+    {{#subpages:into=Awesome subpages below!|outro=Now go add some more!}}
+
+Using a template to format the page names:
+
+    {{#subpages:template=MyAwesomeTemplate}}
+
+
+    On Template:MyAwesomeTemplate: A subpage called {{{1}}}
 
 ## Counting subpages
 

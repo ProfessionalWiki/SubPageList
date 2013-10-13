@@ -15,10 +15,8 @@ View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList
 
 ### User manual
 
-* [Installation](doc/INSTALL.md)
-* [Configuration](doc/CONFIGURATION.md)
-* [Usage instructions](https://www.mediawiki.org/wiki/Extension:SubPageList#Usage_instructions)
-* [Examples](https://www.mediawiki.org/wiki/Extension:SubPageList#Examples)
+* [Installation and configuration](doc/INSTALL.md)
+* [Usage instructions and examples](doc/USAGE.md)
 
 ## Project status
 

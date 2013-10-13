@@ -16,7 +16,7 @@ Parameter name: page
 
 The page to show the subpages for. Defaults to the current page.
 
-#### Format
+#### List format
 
 Parameter name: format
 
@@ -35,18 +35,29 @@ Parameter name: pathstyle
 		<th colspan="3">Supported values</th>
 	</tr>
 	<tr>
-		<th>Value</th>
-		<th>Full page name</th>
-		<th>Displayed name</th>
+		<th>Format</th>
+		<th>Input: Namespace:Foo/Bar/Baz</th>
+		<th>Input: Namespace:Title</th>
 	</tr>
 	<tr>
 		<td>full</td>
-		<td></td>
-		<td></td>
+		<td>Namespace:Foo/Bar/Baz</td>
+		<td>Namespace:Title</td>
+	</tr>
+	<tr>
+		<td>nons</td>
+		<td>Foo/Bar/Baz</td>
+		<td>Title</td>
+	</tr>
+	<tr>
+		<td>subpage</td>
+		<td>Baz</td>
+		<td>Namespace:Title</td>
+	</tr>
+	<tr>
+		<td>none</td>
+		<td>Baz</td>
+		<td>Title</td>
 	</tr>
 </table>
-Supported values:
-<code>full</code>, ie Namespace:Foo/Bar/Baz
-<code>nons</code>, ie Foo/Bar/Baz
-<code>subpage</code>, Baz
-<code>none</code>, ie
+

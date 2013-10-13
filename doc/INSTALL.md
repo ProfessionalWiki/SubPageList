@@ -85,7 +85,7 @@ $egSPLAutorefresh = true;
 
 MediaWiki itself has some support for subpages, which causes back links
 to be displayed on subpages to their parent pages. To enable this you
-need to set [[Manual:$wgNamespacesWithSubpages|wgNamespacesWithSubpages]],
+need to set [$wgNamespacesWithSubpages](https://www.mediawiki.org/wiki/Manual:$wgNamespacesWithSubpages),
 which is a per namespace setting, like shown below:
 
 $wgNamespacesWithSubpages[NS_MAIN] = 1;

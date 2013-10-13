@@ -40,16 +40,29 @@ class SubPageCount implements HookHandler {
 			return 'Invalid input. Cannot calculate sub page count.';
 		}
 
-		$count = 0;
-
-		$parameters = $result->getParameters();
-		$title = $this->titleFactory->newFromText( $parameters['page']->getValue() );
-
-		if ( $title !== null ) {
-			$count = $this->counter->countSubPages( $title );
-		}
+		$count = $this->getSubPageCount( $parser, $result );
 
 		return $parser->getTargetLanguage()->formatNum( $count );
+	}
+
+	protected function getSubPageCount( Parser $parser, ProcessingResult $result ) {
+		$parameters = $result->getParameters();
+		$title = $this->getTitle( $parser, $parameters['page']->getValue() );
+
+		if ( $title === null ) {
+			return 0;
+		}
+
+		return $this->counter->countSubPages( $title );
+	}
+
+	protected function getTitle( Parser $parser, $pageName ) {
+		if ( $pageName === '' ) {
+			return $parser->getTitle();
+		}
+		else {
+			return $this->titleFactory->newFromText( $pageName );
+		}
 	}
 
 }

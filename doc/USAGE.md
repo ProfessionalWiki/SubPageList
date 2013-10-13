@@ -45,12 +45,12 @@ Parameter name: pathstyle
 		<td>Namespace:Title</td>
 	</tr>
 	<tr>
-		<th>nons</th>
+		<th>pagename</th>
 		<td>Foo/Bar/Baz</td>
 		<td>Title</td>
 	</tr>
 	<tr>
-		<th>subpage</th>
+		<th>subpagename</th>
 		<td>Baz</td>
 		<td>Namespace:Title</td>
 	</tr>

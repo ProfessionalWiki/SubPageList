@@ -191,8 +191,7 @@ Using a template to format the page names:
 
     {{#subpages:template=MyAwesomeTemplate}}
 
-
-    On Template:MyAwesomeTemplate: A subpage called {{{1}}}
+Where Template:MyAwesomeTemplate contains: A subpage called {{{1}}}
 
 ## Counting subpages
 

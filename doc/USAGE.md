@@ -169,8 +169,8 @@ the count will be 0.
 
 Counting the subpages of the current page:
 
-{{#subpagecount:}}
+    {{#subpagecount:}}
 
 Counting the subpages of page "MyAwesomePage":
 
-{{#subpagecount:MyAwesomePage}}
+    {{#subpagecount:MyAwesomePage}}

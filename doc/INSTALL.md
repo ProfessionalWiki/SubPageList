@@ -64,11 +64,13 @@ takes care of autoloading and defining the version constant of this component.
 
 After you are done with installing, it is time to update your configuration.
 
-Configuration of SubPageList is done by adding simple PHP statements to your [[Manual:LocalSettings.php|LocalSettings.php]]
-file. These statements need to be placed AFTER the inclusion of SubPageList. The options are listed below and their default
-is set in the SubPageList settings file.
-You should NOT modify the settings file, but can have a look at it to get an idea of how to use the
-settings, in case the below descriptions do not suffice.
+Configuration of SubPageList is done by adding simple PHP statements to your
+[LocalSettings.php](https://www.mediawiki.org/wiki/Manual:LocalSettings.php)
+file. These statements need to be placed AFTER the inclusion of SubPageList.
+The options are listed below and their default is set in the SubPageList
+settings file. You should NOT modify the settings file, but can have a look
+at it to get an idea of how to use the settings, in case the below descriptions
+do not suffice.
 
 ### Automatic refresh
 

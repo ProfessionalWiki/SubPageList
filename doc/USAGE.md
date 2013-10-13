@@ -31,7 +31,7 @@ Default: <code>ul</code>
 Parameter name: pathstyle
 
 <table>
-	<tr colspan=3>
+	<tr colspan="3">
 		<th>Supported values</th>
 	</tr>
 	<tr>

@@ -102,14 +102,55 @@ Parameter name: showpage
 This parameter indicates if the page itself should be displayed as part of the list.
 The allowed values are <code>yes</code> and <code>no</code>. The default is <code>no</code>.
 
+#### Only direct subpages
+
+Parameter name: kidsonly
+
+This parameter indicates if only direct children of the page should be included in the list.
+The allowed values are <code>yes</code> and <code>no</code>. The default is <code>no</code>.
+
+#### Template
+
+Parameter name: template
+
+Allows specifying a MediaWiki template to format the page names with. The template gets a
+single unnamed parameter which is the page name. The format of the page name depends on the
+<code>pathstyle</code> parameter.
+
+#### Wrapping HTML element
+
+Parameter name: element
+
+Allowed values:
+
+* div
+* p
+* span
+ 
+Default: div
+
+#### HTML element CSS class
+
+Parameter name: class
+
+Class of the wrapping HTML element. Default: <code>subpagelist</code>
+
 ### Default parameters
 
-TODO
+When using the parser function, a number of parameters can be provided without
+specying their name. Those parameters are listed below, in order:
 
 * page
 * format
 * pathstyle
 * sort
+ 
+This means you can do <code>{{#subpages:YourPageName|ol}}</code>
+instead of <code>{{#subpages:page=YourPageName|format=ol}}</code>.
+
+When using the tag extension, one can specify the name of the page to use by putting
+it in between tags: <code>&lt;subpagelist>YourPageName&lt;subpagelist></code> rather
+then using the named equivalent <code>&lt;subpagelist page="YourPageName" /></code>.
  
 ### Examples
 

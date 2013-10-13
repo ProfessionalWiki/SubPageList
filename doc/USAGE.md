@@ -4,7 +4,7 @@ These are the usage instructions for the [SubPageList extension](../README.md).
 
 ## Listing subpages
 
-You have the choice to either use the tag extension <code><subpages /></code>
+You have the choice to either use the tag extension <code>&lt;subpages /></code>
 or use the parser function <code>{{#subpages: }}</code>. These take the
 same parameters and behave identically.
 

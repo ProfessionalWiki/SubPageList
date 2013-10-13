@@ -21,8 +21,9 @@ The page to show the subpages for. Defaults to the current page.
 Parameter name: format
 
 Supported values:
-<code>ol</code> for ordered lists (those with numbers),
-<code>ul</code> for unordered lists (those with bullets).
+
+* <code>ol</code> for ordered lists (those with numbers)
+* <code>ul</code> for unordered lists (those with bullets)
 
 Default: <code>ul</code>
 

@@ -138,11 +138,6 @@ class Extension {
 					'aliases' => 'parent',
 					'message' => 'spl-subpages-par-page',
 				),
-				'kidsonly' => array(
-					'type' => 'boolean',
-					'default' => false,
-					'message' => 'spl-subpages-par-kidsonly',
-				),
 			),
 			'page'
 		);

@@ -10,6 +10,7 @@ These are the release notes for the [SubPageList extension](../README.md).
 * Dropped sortby parameter.
 * Dropped "bar" and "list" support as values for the format parameter.
     * Dropped separator parameter support.
+* Dropped "kidsonly" parameter for #subpagecount. This parser function now only counts children.
 
 #### Compatibility changes
 

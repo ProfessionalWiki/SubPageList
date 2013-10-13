@@ -28,7 +28,7 @@ class TemplatePageRenderer extends PageRenderer {
 	 * @return string
 	 */
 	public function renderPage( Page $page ) {
-		return '{{' . $this->templateName . '|' . $this->getTitleText( $page ) . '}}';
+		return '{{' . $this-> templateName . '|' . $this->getTitleText( $page ) . '}}';
 	}
 
 	protected function getTitleText( Page $page ) {

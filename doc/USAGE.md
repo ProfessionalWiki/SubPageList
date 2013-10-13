@@ -70,6 +70,38 @@ Parameter name: sort
 Alphabetic sorting order of the pages. The allowed values are <code>asc</code> for ascending (A first)
 and <code>desc</code> for descending (Z first). The default is <code>asc</code>.
 
+#### Header and footer
+
+Header parameter name: intro
+
+Footer parameter name: outro
+
+These parameters allow you to specify content to be placed before and after the list of sub pages.
+This context can be simple wikitext. Footer and header are displayed within the same HTML element
+(div, span, etc) the list itself is located in. They are also only shown if the list itself is shown.
+This means header and footer will not be displayed if the list is empty.
+
+#### Fallback value (default)
+
+Parameter name: default
+
+This parameter allows you to specify contents to display when the sub page list is empty. This could
+be a message such as "There are no sub pages to list".
+
+#### Link pages
+
+Parameter name: links
+
+This parameter specifies if the pages in the list should be links. The allowed values
+are <code>yes</code> and <code>no</code>. The default is <code>yes</code>.
+
+#### Displaying the page itself
+
+Parameter name: showpage
+
+This parameter indicates if the page itself should be displayed as part of the list.
+The allowed values are <code>yes</code> and <code>no</code>. The default is <code>no</code>.
+
 ### Default parameters
 
 TODO

@@ -40,22 +40,22 @@ Parameter name: pathstyle
 		<th>Input: Namespace:Title</th>
 	</tr>
 	<tr>
-		<td>full</td>
+		<th>full</th>
 		<td>Namespace:Foo/Bar/Baz</td>
 		<td>Namespace:Title</td>
 	</tr>
 	<tr>
-		<td>nons</td>
+		<th>nons</th>
 		<td>Foo/Bar/Baz</td>
 		<td>Title</td>
 	</tr>
 	<tr>
-		<td>subpage</td>
+		<th>subpage</th>
 		<td>Baz</td>
 		<td>Namespace:Title</td>
 	</tr>
 	<tr>
-		<td>none</td>
+		<th>none</th>
 		<td>Baz</td>
 		<td>Title</td>
 	</tr>

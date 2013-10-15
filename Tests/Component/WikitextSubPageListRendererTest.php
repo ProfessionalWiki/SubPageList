@@ -179,4 +179,15 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	public function testCannotUseScriptElement() {
+		$badElement = 'script';
+
+		$this->setExpectedException( 'RuntimeException' );
+
+		$this->getListForParams( array(
+			'page' => 'BBB',
+			'element'=> $badElement,
+		) );
+	}
+
 }

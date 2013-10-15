@@ -10,6 +10,19 @@ SubPageList has the following dependencies:
 
 It also requires PHP 5.3 or above to run.
 
+## Download
+
+The simplest way to get SubPageList and the libraries it needs is by getting
+[one of the tarballs](https://code.google.com/p/subpagelist/downloads/list).
+
+You can also use Git to get SubPageList:
+
+    git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git
+
+Note that you then also need to get the required libraries yourself. The same
+is true when getting one of the [tarballs that only contain SubPageList]
+(https://github.com/wikimedia/mediawiki-extensions-SubPageList/releases).
+
 ## Manual installation
 
 First you need to get the code. This can be done either by downloading a tarball,
@@ -30,7 +43,7 @@ You do not need to include the dependencies yourself, as they will be automatica
 
 ## Installation with Composer
 
-You can install SubPageList is with [Composer](http://getcomposer.org).
+You can install SubPageList with [Composer](http://getcomposer.org).
 If you do not have Composer yet, you first need to install it, or
 [get the composer.phar file](http://getcomposer.org/composer.phar).
 
@@ -51,11 +64,13 @@ takes care of autoloading and defining the version constant of this component.
 
 After you are done with installing, it is time to update your configuration.
 
-Configuration of SubPageList is done by adding simple PHP statements to your [[Manual:LocalSettings.php|LocalSettings.php]]
-file. These statements need to be placed AFTER the inclusion of SubPageList. The options are listed below and their default
-is set in the SubPageList settings file.
-You should NOT modify the settings file, but can have a look at it to get an idea of how to use the
-settings, in case the below descriptions do not suffice.
+Configuration of SubPageList is done by adding simple PHP statements to your
+[LocalSettings.php](https://www.mediawiki.org/wiki/Manual:LocalSettings.php)
+file. These statements need to be placed AFTER the inclusion of SubPageList.
+The options are listed below and their default is set in the SubPageList
+settings file. You should NOT modify the settings file, but can have a look
+at it to get an idea of how to use the settings, in case the below descriptions
+do not suffice.
 
 ### Automatic refresh
 
@@ -70,7 +85,7 @@ $egSPLAutorefresh = true;
 
 MediaWiki itself has some support for subpages, which causes back links
 to be displayed on subpages to their parent pages. To enable this you
-need to set [[Manual:$wgNamespacesWithSubpages|wgNamespacesWithSubpages]],
+need to set [$wgNamespacesWithSubpages](https://www.mediawiki.org/wiki/Manual:$wgNamespacesWithSubpages),
 which is a per namespace setting, like shown below:
 
 $wgNamespacesWithSubpages[NS_MAIN] = 1;

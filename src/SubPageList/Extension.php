@@ -71,7 +71,7 @@ class Extension {
 	 * @return SubPageCounter
 	 */
 	public function getSubPageCounter() {
-		return new SimpleSubPageFinder();
+		return new SimpleSubPageFinder( $this->getSlaveConnectionProvider() );
 	}
 
 	/**
@@ -137,11 +137,6 @@ class Extension {
 					'default' => '',
 					'aliases' => 'parent',
 					'message' => 'spl-subpages-par-page',
-				),
-				'kidsonly' => array(
-					'type' => 'boolean',
-					'default' => false,
-					'message' => 'spl-subpages-par-kidsonly',
 				),
 			),
 			'page'

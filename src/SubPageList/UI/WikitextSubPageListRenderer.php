@@ -3,6 +3,7 @@
 namespace SubPageList\UI;
 
 use Html;
+use RuntimeException;
 use SubPageList\AlphabeticPageSorter;
 use SubPageList\Page;
 use SubPageList\UI\PageRenderer\LinkingPageRenderer;
@@ -112,6 +113,8 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	}
 
 	protected function wrapInElement( $text ) {
+		$this->assertElementIsAllowed();
+
 		return Html::element(
 			$this->options['element'],
 			array(
@@ -119,6 +122,20 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 			),
 			"\n" . $text . "\n"
 		);
+	}
+
+	protected function assertElementIsAllowed() {
+		$allowedElements = array(
+			'p',
+			'div',
+			'span'
+		);
+
+		if ( !in_array( $this->options['element'], $allowedElements ) ) {
+			throw new RuntimeException(
+				'Got an unsupported value for the element option: ' . $this->options['element']
+			);
+		}
 	}
 
 }

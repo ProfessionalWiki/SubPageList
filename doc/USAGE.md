@@ -21,8 +21,9 @@ The page to show the subpages for. Defaults to the current page.
 Parameter name: format
 
 Supported values:
-<code>ol</code> for ordered lists (those with numbers),
-<code>ul</code> for unordered lists (those with bullets).
+
+* <code>ol</code> for ordered lists (those with numbers)
+* <code>ul</code> for unordered lists (those with bullets)
 
 Default: <code>ul</code>
 
@@ -32,14 +33,16 @@ Parameter name: pathstyle
 
 This parameter controls how page titles are displayed in the list. The default is <code>subpagename</code>.
 
+The below table demonstrates how two different titles are formatted for each of the supported values.
+
 <table>
 	<tr>
 		<th colspan="3">Supported values</th>
 	</tr>
 	<tr>
-		<th>Format</th>
-		<th>Title: Namespace:Foo/Bar/Baz</th>
-		<th>Title: Namespace:Title</th>
+		<th>Value</th>
+		<th>Namespace:Foo/Bar/Baz</th>
+		<th>Namespace:Title</th>
 	</tr>
 	<tr>
 		<th>full</th>

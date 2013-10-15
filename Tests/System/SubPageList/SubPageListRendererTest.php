@@ -300,33 +300,3 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 }
-
-class PageCreator {
-
-	public function createPage( Title $title ) {
-		$page = new \WikiPage( $title );
-
-		$pageContent = 'Content of ' . $title->getFullText();
-		$editMessage = 'SPL system test: create page';
-
-		if ( class_exists( 'WikitextContent' ) ) {
-			$page->doEditContent(
-				new \WikitextContent( $pageContent ),
-				$editMessage
-			);
-		}
-		else {
-			$page->doEdit( $pageContent, $editMessage );
-		}
-	}
-
-}
-
-class PageDeleter {
-
-	public function deletePage( Title $title ) {
-		$page = new \WikiPage( $title );
-		$page->doDeleteArticle( 'SPL system test: delete page' );
-	}
-
-}

@@ -24,7 +24,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	/**
 	 * @since 1.0
 	 *
-	 * @var null|DBConnectionProvider
+	 * @var DBConnectionProvider
 	 */
 	protected $connectionProvider;
 
@@ -38,9 +38,9 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	/**
 	 * @since 1.0
 	 *
-	 * @param DBConnectionProvider|null $connectionProvider
+	 * @param DBConnectionProvider $connectionProvider
 	 */
-	public function __construct( DBConnectionProvider $connectionProvider = null ) {
+	public function __construct( DBConnectionProvider $connectionProvider ) {
 		$this->connectionProvider = $connectionProvider;
 
 		$this->options = array(

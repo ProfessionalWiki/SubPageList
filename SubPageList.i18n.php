@@ -772,6 +772,16 @@ $messages['sr-el'] = array(
 	'spl-subpages-par-limit' => 'Najveći broj stranica za prikazivanje.',
 );
 
+/** Swedish (svenska)
+ * @author Jopparn
+ */
+$messages['sv'] = array(
+	'spl-nosubpages' => 'Sidan " $1 " saknar undersidor att lista.',
+	'spl-noparentpage' => 'Sidan "$1" finns inte.',
+	'spl-nopages' => 'Namnrymden "$1" har inga sidor.',
+	'spl-subpages-par-limit' => 'Det maximala antalet sidor att lista.',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */

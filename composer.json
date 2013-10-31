@@ -1,6 +1,6 @@
 {
 	"name": "mediawiki/sub-page-list",
-	"type": "library",
+	"type": "mediawiki-extension",
 	"description": "SubPageList is a lightweight extension to display lists of subpages",
 	"keywords": [
 		"MediaWiki",

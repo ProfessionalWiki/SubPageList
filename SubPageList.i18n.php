@@ -17,7 +17,7 @@ $messages = array();
  * @author Jeroen De Dauw
  */
 $messages['en'] = array(
-	'spl-desc' => 'Adds a <code><nowiki><splist /></nowiki></code> tag that enables you to list subpages',
+	'spl-desc' => 'Allows to list and count subpages',
 
 	'spl-nosubpages' => 'Page "$1" has no subpages to list.',
 	'spl-noparentpage' => 'Page "$1" does not exist.',

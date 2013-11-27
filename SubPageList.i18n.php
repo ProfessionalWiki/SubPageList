@@ -173,10 +173,11 @@ $messages['cs'] = array(
 
 /** German (Deutsch)
  * @author Kghbln
+ * @author Metalhead64
  * @author Purodha
  */
 $messages['de'] = array(
-	'spl-desc' => 'Ergänzt das Tag <code><nowiki><splist /></nowiki></code> zur Anzeige einer Liste von Unterseiten',
+	'spl-desc' => 'Ermöglicht das Auflisten und Zählen von Unterseiten',
 	'spl-nosubpages' => 'Seite „$1“ verfügt über keine auflistbaren Unterseiten.',
 	'spl-noparentpage' => 'Seite „$1“ ist nicht vorhanden.',
 	'spl-nopages' => 'Im Namensraum „$1“ befinden sich keine Seiten.',
@@ -401,7 +402,7 @@ $messages['it'] = array(
  * @author Shirayuki
  */
 $messages['ja'] = array(
-	'spl-desc' => '下位ページの一覧を表示できるようにする <code><nowiki><splist /></nowiki></code> タグを追加する',
+	'spl-desc' => '下位ページを列挙してその件数を表示できるようにする',
 	'spl-nosubpages' => 'ページ「$1」には列挙できる下位ページがありません。',
 	'spl-noparentpage' => 'ページ「$1」は存在しません。',
 	'spl-nopages' => '名前空間「$1」にはページはありません。',

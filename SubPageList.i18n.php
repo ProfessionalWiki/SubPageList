@@ -242,7 +242,7 @@ $messages['fi'] = array(
  * @author Toliño
  */
 $messages['fr'] = array(
-	'spl-desc' => 'Ajoute une balise <nowiki><splist /></nowiki> qui permet de lister les sous-pages',
+	'spl-desc' => 'Permet de lister et compter les sous-pages',
 	'spl-nosubpages' => 'La page « $1 » n’a pas de sous-pages à lister.',
 	'spl-noparentpage' => 'La page « $1 » n’existe pas.',
 	'spl-nopages' => 'L’espace de nom « $1 » n’a pas de pages.',
@@ -817,13 +817,14 @@ $messages['tl'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Andriykopanytsia
  * @author Base
  * @author Renessaince
  * @author Ата
  * @author Тест
  */
 $messages['uk'] = array(
-	'spl-desc' => 'Додає тег <code><nowiki><splist /></nowiki></code>, який виводить список підсторінок',
+	'spl-desc' => 'Дозволяє заносити у список та рахувати підсторінки',
 	'spl-nosubpages' => 'Сторінка "$1" не має підсторінок для складання списку.',
 	'spl-noparentpage' => 'Сторінка «$1» не існує.',
 	'spl-nopages' => 'У просторі назв «$1» немає сторінок.',

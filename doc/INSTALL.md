@@ -18,13 +18,13 @@ These are the installation and configuration instructions for the [SubPageList e
 		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/master">master</a></td>
 	</tr>
 	<tr>
-		<th>SPL 1.0</th>
+		<th>SPL 1.0.0</th>
 		<td>Stable release</td>
 		<td>2013-10-13</td>
 		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.0">1.0</a></td>
 	</tr>
 	<tr>
-		<th>SPL 0.5</th>
+		<th>SPL 0.5.0</th>
 		<td>Legacy release</td>
 		<td>2011-12-27</td>
 		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/0.5">0.5</a></td>
@@ -42,18 +42,18 @@ These are the installation and configuration instructions for the [SubPageList e
 	</tr>
 	<tr>
 		<th>SPL 1.1.x</th>
-		<td>5.3.2 - 5.5.x</td>
+		<td>5.3.0 - 5.5.x</td>
 		<td>1.19 - 1.23</td>
 		<td>Required</td>
 	</tr>
 	<tr>
-		<th>SPL 1.0</th>
+		<th>SPL 1.0.0</th>
 		<td>5.3.0 - 5.5.x</td>
 		<td>1.19 - 1.23</td>
 		<td>Supported</td>
 	</tr>
 	<tr>
-		<th>SPL 0.5</th>
+		<th>SPL 0.5.0</th>
 		<td>5.2.0 - 5.5.x</td>
 		<td>1.16 - 1.19</td>
 		<td>Not supported</td>
@@ -79,13 +79,13 @@ work with more recent versions of PHP and MediaWiki, though this is not guarante
 		<td>Unknown</td>
 	</tr>
 	<tr>
-		<th>SPL 1.0</th>
+		<th>SPL 1.0.0</th>
 		<td>Full support</td>
 		<td>Full support</td>
 		<td>Unknown</td>
 	</tr>
 	<tr>
-		<th>SPL 0.5</th>
+		<th>SPL 0.5.0</th>
 		<td>Full support</td>
 		<td>Unknown</td>
 		<td>Unknown</td>

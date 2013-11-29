@@ -92,6 +92,8 @@ work with more recent versions of PHP and MediaWiki, though this is not guarante
 	</tr>
 </table>
 
+Other databases supported by MediaWiki might work as well, though this is not guaranteed.
+
 ## Download and installation
 
 The recommended way to download and install SubPageList is with [Composer](http://getcomposer.org) using

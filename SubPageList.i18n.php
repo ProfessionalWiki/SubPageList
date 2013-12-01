@@ -491,7 +491,7 @@ Zohjelohße es:
  * @author Soued031
  */
 $messages['lb'] = array(
-	'spl-desc' => 'Setzt den <code><nowiki><splist /></nowiki></code>-Tag fir Ënnersäiten ze weisen derbäi',
+	'spl-desc' => 'Erlaabt et Ënnersäiten ze weisen an ze zielen',
 	'spl-nosubpages' => 'D\'Säit "$1" huet keng Ënnersäite fir ze weisen.',
 	'spl-noparentpage' => 'D\'Säit "$1" gëtt et net.',
 	'spl-nopages' => 'Am Nummraum "$1" gëtt et keng Säiten.',
@@ -514,7 +514,7 @@ $messages['lb'] = array(
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
-	'spl-desc' => 'Додава ознака <code><nowiki><splist /></nowiki></code> што овозможува наведување на потстраници во список',
+	'spl-desc' => 'Овозможува испишување и броење на страници',
 	'spl-nosubpages' => 'Страницата „$1“ нема потстраници за наведување.',
 	'spl-noparentpage' => 'Страницата „$1“ не постои.',
 	'spl-nopages' => 'Именскиот простор „$1“ нема страници.',
@@ -725,7 +725,7 @@ $messages['roa-tara'] = array(
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
-	'spl-desc' => 'Добавляет тег <code><nowiki><splist /></nowiki></code>, выводящий список подстраниц',
+	'spl-desc' => 'Позволяет вывести список и количество подстраниц',
 	'spl-nosubpages' => 'Страница «$1» не имеет подстраниц.',
 	'spl-noparentpage' => 'Страница «$1» не существует.',
 	'spl-nopages' => 'Пространство имён  «$1» не содержит страниц.',

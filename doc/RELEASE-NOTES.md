@@ -2,10 +2,10 @@ These are the release notes for the [SubPageList extension](../README.md).
 
 ## Version 1.1 (dev)
 
-* Removed support for non-Composer installation
-* Removed custom class autoloader
-* PHPUnit bootstrap now automatically updates dependencies on every run
-* Stable versions of the dependencies (ie ParserHooks) are now used
+* Removed support for non-Composer installation.
+* Removed custom class autoloader.
+* PHPUnit bootstrap now automatically updates dependencies on every run.
+* Stable versions of the dependencies (ie ParserHooks) are now used.
 
 ## Version 1.0 (2013-10-13)
 

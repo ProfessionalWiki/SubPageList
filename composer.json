@@ -25,16 +25,19 @@
 	},
 	"require": {
 		"php": ">=5.3.0",
-		"mediawiki/parser-hooks": ">=1.2",
-		"param-processor/param-processor": "dev-master"
+		"mediawiki/parser-hooks": "~1.2",
+		"param-processor/param-processor": "~1.0"
 	},
-	"require-dev": {
-		"satooshi/php-coveralls": "*"
-	},
-	"minimum-stability": "dev",
 	"autoload": {
 		"files" : [
 			"SubPageList.php"
+		],
+		"psr-0": {
+			"SubPageList\\": "src"
+		},
+		"classmap": [
+			"Tests/System/SubPageList/PageCreator.php",
+			"Tests/System/SubPageList/PageDeleter.php"
 		]
 	}
 }

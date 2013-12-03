@@ -595,7 +595,7 @@ $messages['nb'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
-	'spl-desc' => "Voegt het label <code><nowiki><splist /></nowiki></code> toe dat het mogelijk maakt een lijst met subpagina's weer te geven",
+	'spl-desc' => "Maakt het mogelijk subpagina's weer te geven en te tellen",
 	'spl-nosubpages' => 'Pagina "$1" heeft geen subpagina\'s.',
 	'spl-noparentpage' => 'Pagina "$1" bestaat niet.',
 	'spl-nopages' => 'Naamruimte "$1" heeft geen pagina\'s.',

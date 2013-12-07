@@ -17,7 +17,7 @@ if ( defined( 'SPL_VERSION' ) ) {
 	return 1;
 }
 
-define( 'SPL_VERSION', '1.1 rc' );
+define( 'SPL_VERSION', '1.1' );
 
 // Include the composer autoloader if it is present.
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
@@ -37,7 +37,7 @@ call_user_func( function() {
 		'author' => array(
 			'[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
 		),
-		'url' => 'https://www.mediawiki.org/wiki/Extension:SubPageList',
+		'url' => 'https://github.com/JeroenDeDauw/SubPageList/blob/master/README.md',
 		'descriptionmsg' => 'spl-desc'
 	);
 

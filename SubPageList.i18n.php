@@ -17,7 +17,7 @@ $messages = array();
  * @author Jeroen De Dauw
  */
 $messages['en'] = array(
-	'spl-desc' => 'Adds a <code><nowiki><splist /></nowiki></code> tag that enables you to list subpages',
+	'spl-desc' => 'Allows to list and count subpages',
 
 	'spl-nosubpages' => 'Page "$1" has no subpages to list.',
 	'spl-noparentpage' => 'Page "$1" does not exist.',
@@ -83,7 +83,7 @@ See also:
  * @author Xuacu
  */
 $messages['ast'] = array(
-	'spl-desc' => 'Amiesta una etiqueta <code><nowiki><splist /></nowiki></code> que permite facer una llista de subpáxines',
+	'spl-desc' => 'Amiesta una etiqueta <code><nowiki><splist /></nowiki></code> que permite facer una llista de subpáxines', # Fuzzy
 	'spl-nosubpages' => "La páxina «$1» nun tien páxines secundaries qu'amosar.",
 	'spl-noparentpage' => 'La páxina «$1» nun esiste.',
 	'spl-nopages' => "L'espaciu de nomes «$1» nun tien páxines.",
@@ -112,7 +112,7 @@ $messages['ast'] = array(
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
-	'spl-desc' => 'Дадае тэг <code><nowiki><splist /></nowiki></code>, які выводзіць сьпіс падстаронак',
+	'spl-desc' => 'Дадае тэг <code><nowiki><splist /></nowiki></code>, які выводзіць сьпіс падстаронак', # Fuzzy
 	'spl-nosubpages' => 'Старонка «$1» ня мае падстаронак для сьпісу.',
 	'spl-noparentpage' => 'Старонка «$1» не існуе.',
 	'spl-nopages' => 'Прастора назваў «$1» ня ўтрымлівае старонак.',
@@ -139,7 +139,7 @@ $messages['be-tarask'] = array(
  * @author Y-M D
  */
 $messages['br'] = array(
-	'spl-desc' => 'Ouzhpennañ a ra ur valizenn  <code><nowiki><splist /></nowiki></code> a dalvez da rollañ an ispajennoù',
+	'spl-desc' => 'Ouzhpennañ a ra ur valizenn  <code><nowiki><splist /></nowiki></code> a dalvez da rollañ an ispajennoù', # Fuzzy
 	'spl-nosubpages' => 'N\'eus ispajenn ebet da rollañ evit ar bajenn "$1".',
 	'spl-subpages-par-sort' => 'Tu an urzhiañ. Tu zo da lakaat an talvoudennoù : "krsk" ha "digrsk".',
 	'spl-subpages-par-sortby' => 'Penaos urzhiañ an ispajennoù dre. Talvoudennoù aotreet : "title\' pe "lastedit".',
@@ -155,16 +155,16 @@ $messages['br'] = array(
  * @author CERminator
  */
 $messages['bs'] = array(
-	'spl-desc' => 'Dodaje <code><nowiki><splist /></nowiki></code> oznaku koja vam omogućuje da pregledate podstranice',
+	'spl-desc' => 'Dodaje <code><nowiki><splist /></nowiki></code> oznaku koja vam omogućuje da pregledate podstranice', # Fuzzy
 	'spl-nosubpages' => '$1 nema podstranica za prikaz.', # Fuzzy
 	'spl-subpages-par-sort' => 'Smijer za redanje.', # Fuzzy
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Reaperman
  */
 $messages['cs'] = array(
-	'spl-desc' => 'Přidává značku <code><nowiki><splist /></nowiki></code>, která umožňuje zobrazit seznam podstránek',
+	'spl-desc' => 'Přidává značku <code><nowiki><splist /></nowiki></code>, která umožňuje zobrazit seznam podstránek', # Fuzzy
 	'spl-nosubpages' => 'Stránka „$1“ nemá žádné zobrazitelné podstránky.',
 	'spl-noparentpage' => 'Stránka „$1“ neexistuje.',
 	'spl-nopages' => 'Jmenný prostor „$1“ neobsahuje žádné stránky.',
@@ -173,10 +173,11 @@ $messages['cs'] = array(
 
 /** German (Deutsch)
  * @author Kghbln
+ * @author Metalhead64
  * @author Purodha
  */
 $messages['de'] = array(
-	'spl-desc' => 'Ergänzt das Tag <code><nowiki><splist /></nowiki></code> zur Anzeige einer Liste von Unterseiten',
+	'spl-desc' => 'Ermöglicht das Auflisten und Zählen von Unterseiten',
 	'spl-nosubpages' => 'Seite „$1“ verfügt über keine auflistbaren Unterseiten.',
 	'spl-noparentpage' => 'Seite „$1“ ist nicht vorhanden.',
 	'spl-nopages' => 'Im Namensraum „$1“ befinden sich keine Seiten.',
@@ -202,7 +203,7 @@ $messages['de'] = array(
  * @author Armando-Martin
  */
 $messages['es'] = array(
-	'spl-desc' => 'Añade una etiqueta <code><nowiki><splist /></nowiki></code> que le permite enumerar las subpáginas',
+	'spl-desc' => 'Añade una etiqueta <code><nowiki><splist /></nowiki></code> que le permite enumerar las subpáginas', # Fuzzy
 	'spl-nosubpages' => 'La página "$1" no tiene ninguna subpágina en la lista.',
 	'spl-noparentpage' => 'La página "$1" no existe.',
 	'spl-nopages' => 'El espacio de nombres "$1" no tiene páginas.',
@@ -241,7 +242,7 @@ $messages['fi'] = array(
  * @author Toliño
  */
 $messages['fr'] = array(
-	'spl-desc' => 'Ajoute une balise <nowiki><splist /></nowiki> qui permet de lister les sous-pages',
+	'spl-desc' => 'Permet de lister et compter les sous-pages',
 	'spl-nosubpages' => 'La page « $1 » n’a pas de sous-pages à lister.',
 	'spl-noparentpage' => 'La page « $1 » n’existe pas.',
 	'spl-nopages' => 'L’espace de nom « $1 » n’a pas de pages.',
@@ -277,7 +278,7 @@ $messages['frp'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
-	'spl-desc' => 'Engade unha etiqueta <code><nowiki><splist /></nowiki></code> que permite poñer as subpáxinas nunha lista',
+	'spl-desc' => 'Engade unha etiqueta <code><nowiki><splist /></nowiki></code> que permite poñer as subpáxinas nunha lista', # Fuzzy
 	'spl-nosubpages' => 'A páxina "$1" non ten subpáxinas que poñer nunha lista.',
 	'spl-noparentpage' => 'A páxina "$1" non existe.',
 	'spl-nopages' => 'O espazo de nomes "$1" non ten páxinas.',
@@ -304,7 +305,7 @@ $messages['gl'] = array(
  * @author חיים
  */
 $messages['he'] = array(
-	'spl-desc' => 'הוספת התג <code><nowiki><splist /></nowiki></code> ליצירת רשימת דפי־משנה',
+	'spl-desc' => 'הוספת התג <code><nowiki><splist /></nowiki></code> ליצירת רשימת דפי־משנה', # Fuzzy
 	'spl-nosubpages' => 'לדף "$1" אין דפי משנה שאפשר להציג ברשימה.',
 	'spl-subpages-par-sort' => 'לאיזה כיוון למיין. ערכים מותרים: "עולה", "יורד".',
 	'spl-subpages-par-sortby' => 'לפי מה למיין עמודי המשנה. ערכים מותרים: "כותרת" או "נערך לאחרונה".',
@@ -320,7 +321,7 @@ $messages['he'] = array(
  * @author Michawiki
  */
 $messages['hsb'] = array(
-	'spl-desc' => 'Přidawa element <code><nowiki><splist /></nowiki></code>, kotryž ći zmóžnja podstrony nalistować',
+	'spl-desc' => 'Přidawa element <code><nowiki><splist /></nowiki></code>, kotryž ći zmóžnja podstrony nalistować', # Fuzzy
 	'spl-nosubpages' => 'Strona "$1" nima podstrony za lisćinu.',
 	'spl-noparentpage' => 'Strona "$1" njeeksistuje',
 	'spl-nopages' => 'W mjenowym rumje "$1" strony njejsu.',
@@ -346,7 +347,7 @@ $messages['hsb'] = array(
  * @author McDutchie
  */
 $messages['ia'] = array(
-	'spl-desc' => 'Adde un etiquetta <code><nowiki><splist /></nowiki></code> que permitte listar subpaginas',
+	'spl-desc' => 'Adde un etiquetta <code><nowiki><splist /></nowiki></code> que permitte listar subpaginas', # Fuzzy
 	'spl-nosubpages' => 'Le pagina "$1" non ha subpaginas a listar.',
 	'spl-noparentpage' => 'Le pagina "$1" non existe.',
 	'spl-nopages' => 'Le spatio de nomines "$1" non ha paginas.',
@@ -372,7 +373,7 @@ $messages['ia'] = array(
  * @author IvanLanin
  */
 $messages['id'] = array(
-	'spl-desc' => 'Memberikan tag <code><nowiki><splist /></nowiki></code> yang memungkinkan Anda untuk melihat daftar subhalaman',
+	'spl-desc' => 'Memberikan tag <code><nowiki><splist /></nowiki></code> yang memungkinkan Anda untuk melihat daftar subhalaman', # Fuzzy
 	'spl-nosubpages' => '$1 tidak memiliki subhalaman untuk ditampilkan.', # Fuzzy
 	'spl-subpages-par-sort' => 'Arah urutan.', # Fuzzy
 	'spl-subpages-par-sortby' => 'Cara pengurutan subhalaman.', # Fuzzy
@@ -389,7 +390,7 @@ $messages['id'] = array(
  * @author F. Cosoleto
  */
 $messages['it'] = array(
-	'spl-desc' => 'Aggiunge un tag <code><nowiki><splist /></nowiki></code> che consente di elencare le sottopagine',
+	'spl-desc' => 'Aggiunge un tag <code><nowiki><splist /></nowiki></code> che consente di elencare le sottopagine', # Fuzzy
 	'spl-nosubpages' => 'La pagina "$1" non ha alcuna sottopagina da elencare.',
 	'spl-noparentpage' => 'La pagina "$1" non esiste.',
 	'spl-nopages' => 'Il namespace "$1" non ha pagine.',
@@ -401,7 +402,7 @@ $messages['it'] = array(
  * @author Shirayuki
  */
 $messages['ja'] = array(
-	'spl-desc' => '下位ページの一覧を表示できるようにする <code><nowiki><splist /></nowiki></code> タグを追加する',
+	'spl-desc' => '下位ページを列挙してその件数を表示できるようにする',
 	'spl-nosubpages' => 'ページ「$1」には列挙できる下位ページがありません。',
 	'spl-noparentpage' => 'ページ「$1」は存在しません。',
 	'spl-nopages' => '名前空間「$1」にはページはありません。',
@@ -435,7 +436,7 @@ $messages['ka'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'spl-desc' => '하위 문서를 나타내도록 하는 <code><nowiki><splist /></nowiki></code> 태그를 추가합니다',
+	'spl-desc' => '하위 문서를 나타내도록 하는 <code><nowiki><splist /></nowiki></code> 태그를 추가합니다', # Fuzzy
 	'spl-nosubpages' => '"$1" 문서는 목록에 하위 문서가 없습니다.',
 	'spl-noparentpage' => '"$1" 문서가 존재하지 않습니다.',
 	'spl-nopages' => '"$1" 이름공간에 문서가 없습니다.',
@@ -461,7 +462,7 @@ $messages['ko'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'spl-desc' => 'Deiht dä Befähl <code><nowiki><splist /></nowiki></code> en et Wiki, för Ongersigge aanzezeije.',
+	'spl-desc' => 'Deiht dä Befähl <code><nowiki><splist /></nowiki></code> en et Wiki, för Ongersigge aanzezeije.', # Fuzzy
 	'spl-nosubpages' => 'Di Sigg „$1“ hät kein Ongersigge zom Opleßte.',
 	'spl-noparentpage' => 'En Sigg „$1“ jidd_et nit.',
 	'spl-nopages' => 'Dat Appachtemang „$1“ hät kein Sigge.',
@@ -490,7 +491,7 @@ Zohjelohße es:
  * @author Soued031
  */
 $messages['lb'] = array(
-	'spl-desc' => 'Setzt den <code><nowiki><splist /></nowiki></code>-Tag fir Ënnersäiten ze weisen derbäi',
+	'spl-desc' => 'Erlaabt et Ënnersäiten ze weisen an ze zielen',
 	'spl-nosubpages' => 'D\'Säit "$1" huet keng Ënnersäite fir ze weisen.',
 	'spl-noparentpage' => 'D\'Säit "$1" gëtt et net.',
 	'spl-nopages' => 'Am Nummraum "$1" gëtt et keng Säiten.',
@@ -504,7 +505,7 @@ $messages['lb'] = array(
 	'spl-subpages-par-limit' => "D'Maximalzuel vu Säiten déi gewise ginn.",
 	'spl-subpages-par-intro' => 'Den Text virun der Lëscht, wann se net eidel ass.',
 	'spl-subpages-par-outro' => 'Den Text hanner der Lëscht, wa se net eidel ass.',
-	'spl-subpages-par-default' => 'Den Text deen gewise amplaz vun der Lëscht gëtt, wann d\'Lëscht eidel ass. Wann se eidel ass, gëtt e Feeler-Message generéiert (esou wéi "D\'Säit huet keng Ënnersäiten"). Wann et e bindestrich ass ("-"), ass d\'Resultat komplett eidel.',
+	'spl-subpages-par-default' => 'Den Text deen gewise amplaz vun der Lëscht gëtt, wann d\'Lëscht eidel ass. Wa s\'eidel ass, gëtt e Feelermessage generéiert (sou wéi "D\'Säit huet keng Ënnersäiten"). Wann et e bindestrich ass ("-"), ass d\'Resultat komplett eidel.',
 	'spl-subpages-par-template' => 'Den Numm vun der Schabloun. D\'Schabloun gëtt fir all Element vun der Lëscht benotzt. Een Element gëtt als éischt (ongenannt) Argument un D\'Schabloun viruginn. Denkt drun datt d\'Schabloun de Format vun der Lëscht net ännert. D\'Formatéierung ("ul", "ol", "list") gëtt op d\'Resultat vun der Schabloun applizéiert.',
 	'spl-subpages-par-links' => "Wann et aktivéiert ass ginn d'Elementer vun der Lëscht als Linken duergestallt. Wann et net aktivéiert ass ginn d'Elementer vun der Lëscht als normalen Text duergestallt. Déi lescht Optioun ass besonnesch nëtzlech fir Elementer a Schablounen anzebannen an duerno weider ze verschaffen.",
 );
@@ -513,7 +514,7 @@ $messages['lb'] = array(
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
-	'spl-desc' => 'Додава ознака <code><nowiki><splist /></nowiki></code> што овозможува наведување на потстраници во список',
+	'spl-desc' => 'Овозможува испишување и броење на страници',
 	'spl-nosubpages' => 'Страницата „$1“ нема потстраници за наведување.',
 	'spl-noparentpage' => 'Страницата „$1“ не постои.',
 	'spl-nopages' => 'Именскиот простор „$1“ нема страници.',
@@ -539,7 +540,7 @@ $messages['mk'] = array(
  * @author Anakmalaysia
  */
 $messages['ms'] = array(
-	'spl-desc' => 'Membubuh teg <code><nowiki><splist /></nowiki></code> yang membolehkan anda untuk melihat senarai sublaman',
+	'spl-desc' => 'Membubuh teg <code><nowiki><splist /></nowiki></code> yang membolehkan anda untuk melihat senarai sublaman', # Fuzzy
 	'spl-nosubpages' => 'Halaman "$1" tidak menyenaraikan sebarang subhalaman.',
 	'spl-noparentpage' => 'Halaman "$1" tidak wujud.',
 	'spl-nopages' => 'Ruang nama "$1" tiada halaman.',
@@ -565,7 +566,7 @@ $messages['ms'] = array(
  * @author Chrisportelli
  */
 $messages['mt'] = array(
-	'spl-desc' => 'Iżżid <code><nowiki><splist /></nowiki></code> li tippermetti l-elenkar tas-sottopaġni',
+	'spl-desc' => 'Iżżid <code><nowiki><splist /></nowiki></code> li tippermetti l-elenkar tas-sottopaġni', # Fuzzy
 	'spl-nosubpages' => 'Il-paġna "$1" m\'għandha l-ebda sottokategorija għal-lista.',
 	'spl-noparentpage' => 'Il-paġna "$1" ma teżistix.',
 	'spl-nopages' => 'L-ispazju tal-isem "$1" m\'għandux paġni.',
@@ -576,7 +577,7 @@ $messages['mt'] = array(
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
-	'spl-desc' => 'Legger til et <code><nowiki><splist /></nowiki></code>-element som lar deg liste opp undersider',
+	'spl-desc' => 'Legger til et <code><nowiki><splist /></nowiki></code>-element som lar deg liste opp undersider', # Fuzzy
 	'spl-nosubpages' => '$1 har ingen undersider å liste opp.', # Fuzzy
 	'spl-subpages-par-sort' => 'Retningen du vil sortere i.', # Fuzzy
 	'spl-subpages-par-sortby' => 'Hva du vil sortere undersidene etter.', # Fuzzy
@@ -594,7 +595,7 @@ $messages['nb'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
-	'spl-desc' => "Voegt het label <code><nowiki><splist /></nowiki></code> toe dat het mogelijk maakt een lijst met subpagina's weer te geven",
+	'spl-desc' => "Maakt het mogelijk subpagina's weer te geven en te tellen",
 	'spl-nosubpages' => 'Pagina "$1" heeft geen subpagina\'s.',
 	'spl-noparentpage' => 'Pagina "$1" bestaat niet.',
 	'spl-nopages' => 'Naamruimte "$1" heeft geen pagina\'s.',
@@ -620,7 +621,7 @@ $messages['nl'] = array(
  * @author Cedric31
  */
 $messages['oc'] = array(
-	'spl-desc' => 'Apond una balisa <nowiki><splist /></nowiki> que permet de far la lista de las sospaginas',
+	'spl-desc' => 'Apond una balisa <nowiki><splist /></nowiki> que permet de far la lista de las sospaginas', # Fuzzy
 	'spl-nosubpages' => 'La pagina « $1 » a pas cap de sospaginas de listar.',
 	'spl-noparentpage' => 'La pagina « $1 » existís pas.',
 	'spl-nopages' => 'L’espaci de nom « $1 » a pas cap de paginas.',
@@ -631,7 +632,7 @@ $messages['oc'] = array(
  * @author Woytecr
  */
 $messages['pl'] = array(
-	'spl-desc' => 'Dodaje tag <code><nowiki><splist /></nowiki></code> pozwalający na wstawienie listy podstron',
+	'spl-desc' => 'Dodaje tag <code><nowiki><splist /></nowiki></code> pozwalający na wstawienie listy podstron', # Fuzzy
 	'spl-nosubpages' => 'Strona " $1 " nie ma podstron do wyświetlenia.',
 	'spl-noparentpage' => 'Strona "$1" nie istnieje.',
 	'spl-nopages' => 'Przestrzeń nazw "$1" nie zawiera stron.',
@@ -658,7 +659,7 @@ $messages['pl'] = array(
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'spl-desc' => 'A gionta un sìmbol <code><nowiki><splist /></nowiki></code> che at abìlita a listé le sot-pagine',
+	'spl-desc' => 'A gionta un sìmbol <code><nowiki><splist /></nowiki></code> che at abìlita a listé le sot-pagine', # Fuzzy
 	'spl-nosubpages' => "La pàgina $1 a l'ha gnun-e sot-pàgine da listé.",
 	'spl-noparentpage' => 'La pàgina "$1" a esist pa.',
 	'spl-nopages' => "Lë spassi nominal «$1» a l'ha gnun-e pàgine.",
@@ -685,7 +686,7 @@ $messages['pms'] = array(
  * @author Luckas
  */
 $messages['pt'] = array(
-	'spl-desc' => 'Acrescenta um elemento <code><nowiki><splist /></nowiki></code> que permite listar subpáginas',
+	'spl-desc' => 'Acrescenta um elemento <code><nowiki><splist /></nowiki></code> que permite listar subpáginas', # Fuzzy
 	'spl-nosubpages' => 'A página $1 não tem subpáginas para listar.',
 	'spl-noparentpage' => 'A página "$1" não existe.',
 	'spl-nopages' => 'O espaço nominal "$1" não tem páginas.',
@@ -724,7 +725,7 @@ $messages['roa-tara'] = array(
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
-	'spl-desc' => 'Добавляет тег <code><nowiki><splist /></nowiki></code>, выводящий список подстраниц',
+	'spl-desc' => 'Позволяет вывести список и количество подстраниц',
 	'spl-nosubpages' => 'Страница «$1» не имеет подстраниц.',
 	'spl-noparentpage' => 'Страница «$1» не существует.',
 	'spl-nopages' => 'Пространство имён  «$1» не содержит страниц.',
@@ -750,7 +751,7 @@ $messages['ru'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
-	'spl-desc' => 'උපපිටු ලැයිස්තුගත කිරීමට සක්‍රිය වන <code><nowiki><splist /></nowiki></code> ටැගය එක් කරයි',
+	'spl-desc' => 'උපපිටු ලැයිස්තුගත කිරීමට සක්‍රිය වන <code><nowiki><splist /></nowiki></code> ටැගය එක් කරයි', # Fuzzy
 	'spl-nosubpages' => '"$1" සතුව ලැයිස්තුගත කිරීමට උපපිටු නැත.',
 	'spl-noparentpage' => '"$1" පිටුව නොපවතී.',
 	'spl-nopages' => '"$1" නාමඅවකාශය සතුව පිටු නොමැත.',
@@ -772,6 +773,16 @@ $messages['sr-el'] = array(
 	'spl-subpages-par-limit' => 'Najveći broj stranica za prikazivanje.',
 );
 
+/** Swedish (svenska)
+ * @author Jopparn
+ */
+$messages['sv'] = array(
+	'spl-nosubpages' => 'Sidan " $1 " saknar undersidor att lista.',
+	'spl-noparentpage' => 'Sidan "$1" finns inte.',
+	'spl-nopages' => 'Namnrymden "$1" har inga sidor.',
+	'spl-subpages-par-limit' => 'Det maximala antalet sidor att lista.',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
@@ -783,7 +794,7 @@ $messages['te'] = array(
  * @author AnakngAraw
  */
 $messages['tl'] = array(
-	'spl-desc' => 'Nagdaragdag ng isang tatak na <code><nowiki><splist /></nowiki></code> na nagbibigay ng kakayahan sa iyo na magtala ng kabahaging mga pahina',
+	'spl-desc' => 'Nagdaragdag ng isang tatak na <code><nowiki><splist /></nowiki></code> na nagbibigay ng kakayahan sa iyo na magtala ng kabahaging mga pahina', # Fuzzy
 	'spl-nosubpages' => 'Walang maitatala na kabahaging mga pahina ang pahinang "$1".',
 	'spl-noparentpage' => 'Hindi umiiral ang pahinang "$1".',
 	'spl-nopages' => 'Walang mga pahina ang puwang ng pangalan na "$1".',
@@ -806,13 +817,14 @@ $messages['tl'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Andriykopanytsia
  * @author Base
  * @author Renessaince
  * @author Ата
  * @author Тест
  */
 $messages['uk'] = array(
-	'spl-desc' => 'Додає тег <code><nowiki><splist /></nowiki></code>, який виводить список підсторінок',
+	'spl-desc' => 'Дозволяє заносити у список та рахувати підсторінки',
 	'spl-nosubpages' => 'Сторінка "$1" не має підсторінок для складання списку.',
 	'spl-noparentpage' => 'Сторінка «$1» не існує.',
 	'spl-nopages' => 'У просторі назв «$1» немає сторінок.',
@@ -838,7 +850,7 @@ $messages['uk'] = array(
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
-	'spl-desc' => '添加 <code><nowiki><splist /></nowiki></code> 标签，让您能列出子页面',
+	'spl-desc' => '添加 <code><nowiki><splist /></nowiki></code> 标签，让您能列出子页面', # Fuzzy
 	'spl-nosubpages' => '页面“$1”没有子页面可列出。',
 	'spl-noparentpage' => '页面“$1”不存在。',
 	'spl-nopages' => '命名空间“$1”没有页面。',

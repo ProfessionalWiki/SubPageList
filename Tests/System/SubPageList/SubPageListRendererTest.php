@@ -39,6 +39,8 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	protected static $titles;
 
 	public static function setUpBeforeClass() {
+		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
+
 		foreach ( self::$pages as $pageName ) {
 			self::createPage( $pageName );
 		}

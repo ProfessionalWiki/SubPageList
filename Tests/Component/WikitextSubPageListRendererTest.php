@@ -26,6 +26,8 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	protected static $pages;
 
 	public static function setUpBeforeClass() {
+		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
+
 		self::$pages = array(
 			// A page with no sub pages
 			'AAA' => new Page(

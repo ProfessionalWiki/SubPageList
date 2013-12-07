@@ -21,6 +21,8 @@ class TemplatePageRendererTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider renderProvider
 	 */
 	public function testRenderPage( Page $page, $templateName, $expected ) {
+		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
+
 		$basicRenderer = $this->getMock( 'SubPageList\UI\PageRenderer\PageRenderer' );
 
 		$basicRenderer->expects( $this->once() )

@@ -18,13 +18,13 @@ matrix:
   exclude:
     - env: THENEEDFORTHIS=FAIL
 
+before_script: bash ./build/travis/before_script.sh
+
+script: bash ./build/travis/script.sh
+
+after_success: bash ./build/travis/after_success.sh
+
 before_script: bash .travis.sh
-
-script:
-  - cd ../phase3/extensions/SubPageList ; phpunit --coverage-clover build/logs/clover.xml
-
-after_success:
-  - php vendor/bin/coveralls -v
 
 notifications:
   email:

@@ -21,7 +21,7 @@ class PlainPageRendererTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testRenderPage( Page $page, $pathStyle, $expected ) {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
-		
+
 		$renderer = new PlainPageRenderer( $pathStyle );
 
 		$actual = $renderer->renderPage( $page );

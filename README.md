@@ -22,7 +22,7 @@ View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList
 
 [![Build Status](https://secure.travis-ci.org/JeroenDeDauw/SubPageList.png?branch=master)](http://travis-ci.org/JeroenDeDauw/SubPageList)
 [![Coverage Status](https://coveralls.io/repos/JeroenDeDauw/SubPageList/badge.png?branch=master)](https://coveralls.io/r/JeroenDeDauw/SubPageList?branch=master)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/badges/quality-score.png?s=0f3771f631a554ae32994ece2c0094c4520b267b)](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/badges/quality-score.png?s=1a8e0586f15cd4f3aac116e204a2d266a054540c)](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/)
 [![Dependency Status](https://www.versioneye.com/package/php--mediawiki--sub-page-list/badge.png)](https://www.versioneye.com/package/php--mediawiki--sub-page-list)
 
 On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-page-list/version.png)](https://packagist.org/packages/mediawiki/sub-page-list)

@@ -13,6 +13,8 @@ matrix:
       php: 5.5
     - env: DBTYPE=sqlite; MW=1.21.0
       php: 5.3
+    - env: DBTYPE=mysql; MW=1.22.0
+      php: 5.4
   exclude:
     - env: THENEEDFORTHIS=FAIL
 

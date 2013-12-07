@@ -25,11 +25,6 @@ if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 }
 
 // Only initialize the extension when all dependencies are present.
-if ( !defined( 'Validator_VERSION' ) ) {
-	throw new Exception( 'You need to have Validator installed in order to use SubPageList' );
-}
-
-// Only initialize the extension when all dependencies are present.
 if ( !defined( 'ParserHooks_VERSION' ) ) {
 	throw new Exception( 'You need to have ParserHooks installed in order to use SubPageList' );
 }

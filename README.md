@@ -20,26 +20,26 @@ View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList
 
 ## Project status
 
-[![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-SubPageList.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList)
-[![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-SubPageList/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-SubPageList?branch=master)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/badges/quality-score.png?s=0f3771f631a554ae32994ece2c0094c4520b267b)](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/)
+[![Build Status](https://secure.travis-ci.org/JeroenDeDauw/SubPageList.png?branch=master)](http://travis-ci.org/JeroenDeDauw/SubPageList)
+[![Coverage Status](https://coveralls.io/repos/JeroenDeDauw/SubPageList/badge.png?branch=master)](https://coveralls.io/r/JeroenDeDauw/SubPageList?branch=master)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/badges/quality-score.png?s=0f3771f631a554ae32994ece2c0094c4520b267b)](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/)
 [![Dependency Status](https://www.versioneye.com/package/php--mediawiki--sub-page-list/badge.png)](https://www.versioneye.com/package/php--mediawiki--sub-page-list)
 
 On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-page-list/version.png)](https://packagist.org/packages/mediawiki/sub-page-list)
 [![Download count](https://poser.pugx.org/mediawiki/sub-page-list/d/total.png)](https://packagist.org/packages/mediawiki/sub-page-list)
 
-* [Latest merged code changes](https://git.wikimedia.org/log/mediawiki%2Fextensions%2FSubPageList.git)
-* [Proposed code changes](https://gerrit.wikimedia.org/r/#/q/status:open+project:mediawiki/extensions/SubPageList,n,z)
+* [Open issues](https://github.com/JeroenDeDauw/SubPageList/issues)
+* [Latest merged code changes](https://github.com/JeroenDeDauw/SubPageList/commits/master)
+* [Proposed code changes](https://github.com/JeroenDeDauw/SubPageList/pulls)
 * [SubPageList posts on Jeroens blog](http://www.bn2vs.com/blog/tag/subpagelist/)
 
 ## Further links
 
 * [SubPageList on Packagist](https://packagist.org/packages/mediawiki/sub-page-list)
 * [SubPageList on Ohloh](https://www.ohloh.net/p/subpagelist)
-* [SubPageList on TravisCI](https://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList/builds)
-* [SubPageList on Scrutinizer CI](https://scrutinizer-ci.com/g/wikimedia/mediawiki-extensions-SubPageList/)
+* [SubPageList on TravisCI](https://travis-ci.org/JeroenDeDauw/SubPageList/builds)
+* [SubPageList on Scrutinizer CI](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/)
 * [SubPageList on WikiApiary](http://wikiapiary.com/wiki/Extension:SubPageList)
 * [Open issues](https://bugzilla.wikimedia.org/buglist.cgi?list_id=237423&query_format=advanced&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=PATCH_TO_REVIEW&bug_status=REOPENED&component=SubPageList&product=MediaWiki%20extensions)
-* [Canonical git repo](https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SubPageList.git)
 
 <img src="doc/subpagelist.png" />

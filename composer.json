@@ -7,7 +7,7 @@
 		"SubPage",
 		"SubPageList"
 	],
-	"homepage": "https://www.mediawiki.org/wiki/Extension:SubPageList",
+	"homepage": "https://github.com/JeroenDeDauw/SubPageList/blob/master/README.md",
 	"license": "GPL-2.0+",
 	"authors": [
 		{
@@ -18,10 +18,8 @@
 		}
 	],
 	"support": {
-		"issues": "https://bugzilla.wikimedia.org/",
-		"irc": "irc://irc.freenode.net/mediawiki",
-		"forum": "https://www.mediawiki.org/wiki/Extension_talk:SubPageList",
-		"wiki": "https://www.mediawiki.org/wiki/Extension:SubPageList"
+		"issues": "https://github.com/JeroenDeDauw/SubPageList/issues",
+		"irc": "irc://irc.freenode.net/mediawiki"
 	},
 	"require": {
 		"php": ">=5.3.0",

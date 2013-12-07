@@ -43,7 +43,7 @@ and use PSR-0 based autoloading.
 
 * Extension now be installed using [Composer](http://getcomposer.org).
 * Unit tests can now be run using phpunit.xml.dist.
-* Tests now run [on TravisCI](https://travis-ci.org/wikimedia/mediawiki-extensions-SubPageList).
+* Tests now run [on TravisCI](https://travis-ci.org/JeroenDeDauw/SubPageList).
 using different PHP versions, different MediaWiki versions and both MySQL and SQLite.
 * Code coverage reports are generated on coveralls.io.
 * Code quality reports are generated on Scrutinizer CI.

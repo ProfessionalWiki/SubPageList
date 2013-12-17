@@ -850,7 +850,7 @@ $messages['uk'] = array(
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
-	'spl-desc' => '添加 <code><nowiki><splist /></nowiki></code> 标签，让您能列出子页面', # Fuzzy
+	'spl-desc' => '允许列出和计算子页面',
 	'spl-nosubpages' => '页面“$1”没有子页面可列出。',
 	'spl-noparentpage' => '页面“$1”不存在。',
 	'spl-nopages' => '命名空间“$1”没有页面。',

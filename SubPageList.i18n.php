@@ -390,7 +390,7 @@ $messages['id'] = array(
  * @author F. Cosoleto
  */
 $messages['it'] = array(
-	'spl-desc' => 'Aggiunge un tag <code><nowiki><splist /></nowiki></code> che consente di elencare le sottopagine', # Fuzzy
+	'spl-desc' => 'Consente di elencare e contare le sottopagine',
 	'spl-nosubpages' => 'La pagina "$1" non ha alcuna sottopagina da elencare.',
 	'spl-noparentpage' => 'La pagina "$1" non esiste.',
 	'spl-nopages' => 'Il namespace "$1" non ha pagine.',

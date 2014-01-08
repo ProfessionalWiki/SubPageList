@@ -83,7 +83,7 @@ See also:
  * @author Xuacu
  */
 $messages['ast'] = array(
-	'spl-desc' => 'Amiesta una etiqueta <code><nowiki><splist /></nowiki></code> que permite facer una llista de subpáxines', # Fuzzy
+	'spl-desc' => 'Permite facer una llista y contar subpáxines',
 	'spl-nosubpages' => "La páxina «$1» nun tien páxines secundaries qu'amosar.",
 	'spl-noparentpage' => 'La páxina «$1» nun esiste.',
 	'spl-nopages' => "L'espaciu de nomes «$1» nun tien páxines.",

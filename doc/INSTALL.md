@@ -148,10 +148,17 @@ do not suffice.
 
 ### Automatic refresh
 
-You can choose to automatically refresh subpage lists
-that are on the base page of subpages you add, move or delete, or on one
-of the subpages of the base page. This behaviour is off by default as it
-can produce extra load on your server, but can be turned on with this code:
+MediaWiki by default caches the content of pages. This means that when you have
+a sub page list, and one of the pages in this list gets moved or deleted, or a
+new page is created that should show up in this list, the list will not be updated
+automatically right away. You will need to wait for the cache to expire, or manually
+purge the cache.
+
+SubPageList comes with an option to automatically invalidate the cache of all pages
+in a page tree when one of its pages gets modified. A page tree is a root page and
+all of its children.
+
+This option is off by default and can be turned on with:
 
 $GLOBALS['egSPLAutorefresh'] = true;
 

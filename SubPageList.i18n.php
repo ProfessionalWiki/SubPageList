@@ -241,6 +241,14 @@ $messages['es'] = array(
 	'spl-subpages-par-links' => 'Si el valor fuese verdadero (true), los elementos de la lista se representan como enlaces. Si es falso (false), los elementos de la lista se procesan como texto sin formato. Este último caso es especialmente útil para pasar elementos a las plantillas para su posterior procesamiento.',
 );
 
+/** Persian (فارسی)
+ * @author Armin1392
+ */
+$messages['fa'] = array(
+	'spl-noparentpage' => 'صفحهٔ "$1" وجود ندارد.',
+	'spl-nopages' => 'فضای نام "$1" صفحه‌ای ندارد.',
+);
+
 /** Finnish (suomi)
  * @author Nedergard
  * @author Nike

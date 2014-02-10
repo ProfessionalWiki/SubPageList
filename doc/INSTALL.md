@@ -129,6 +129,16 @@ Now using Composer, install SubPageList
 
     php composer.phar require mediawiki/sub-page-list ~1.1
 
+#### Step 4
+
+Verify your LocalSettings.php has $GLOBALS['wgNamespacesWithSubpages'] set for each namespace you intend to use SubPageList.
+
+For example:
+
+    $GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
+    $GLOBALS['wgNamespacesWithSubpages'][NS_USER] = true;
+
+
 #### Verify installation success
 
 As final step, you can verify SubPageList got installed by looking at the Special:Version page on your wiki and verifying the

@@ -137,6 +137,7 @@ $magicWords['ur'] = array(
 $magicWords['zh-hans'] = array(
 	'subpages' => array( 0, '子页面' ),
 	'subpagelist' => array( 0, '子页面列表' ),
+	'subpagecount' => array( 0, '子页面计数' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */

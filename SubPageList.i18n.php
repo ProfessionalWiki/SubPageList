@@ -83,7 +83,7 @@ See also:
  * @author Xuacu
  */
 $messages['ast'] = array(
-	'spl-desc' => 'Amiesta una etiqueta <code><nowiki><splist /></nowiki></code> que permite facer una llista de subpáxines', # Fuzzy
+	'spl-desc' => 'Permite facer una llista y contar subpáxines',
 	'spl-nosubpages' => "La páxina «$1» nun tien páxines secundaries qu'amosar.",
 	'spl-noparentpage' => 'La páxina «$1» nun esiste.',
 	'spl-nopages' => "L'espaciu de nomes «$1» nun tien páxines.",
@@ -161,14 +161,30 @@ $messages['bs'] = array(
 );
 
 /** Czech (čeština)
+ * @author Mormegil
  * @author Reaperman
  */
 $messages['cs'] = array(
-	'spl-desc' => 'Přidává značku <code><nowiki><splist /></nowiki></code>, která umožňuje zobrazit seznam podstránek', # Fuzzy
+	'spl-desc' => 'Umožňuje vypisovat a počítat podstránky',
 	'spl-nosubpages' => 'Stránka „$1“ nemá žádné zobrazitelné podstránky.',
 	'spl-noparentpage' => 'Stránka „$1“ neexistuje.',
 	'spl-nopages' => 'Jmenný prostor „$1“ neobsahuje žádné stránky.',
+	'spl-subpages-par-sort' => 'Směr řazení. Dovolené hodnoty: „asc“ a „desc“.',
+	'spl-subpages-par-sortby' => 'Podle čeho řadit podstránky. Dovolené hodnoty: „title“ nebo „lastedit“.',
+	'spl-subpages-par-format' => 'Seznam podstránky lze zobrazit v několika formátech. Dovolené hodnoty: „ol“ – číslovaný seznam, „ul“ – odrážkový seznam, „list“ – prostý seznam (např. seznam oddělený čárkami).',
+	'spl-subpages-par-page' => 'Stránka, pro kterou se mají zobrazit podstránky, nebo název jmenného prostoru (včetně koncové dvojtečky), ve kterém se mají zobrazit stránky. Implicitní hodnotou je aktuální stránka.',
+	'spl-subpages-par-showpage' => 'Volí, zda má být v seznamu uvedena i samotná stránka.',
+	'spl-subpages-par-pathstyle' => 'Styl pro cesty k podstránkám v seznamu. Dovolené hodnoty: „fullpagename“ – plný název stránky (včetně jmenného prostoru), „pagename“ – název stránky (bez jmenného prostoru), „subpagename“ – relativní název stránky začínající od stránky, pro kterou podstránky uvádíme, „none“ – jen koncová část názvu za posledním lomítkem.',
+	'spl-subpages-par-kidsonly' => 'Umožňuje zobrazení jen přímých podstránek.',
 	'spl-subpages-par-limit' => 'Maximální počet zobrazovaných stránek.',
+	'spl-subpages-par-element' => 'HTML element, do kterého se má seznam obalit (včetně textů „intro“, „outro“ nebo „default“). Dovolené hodnoty: „div“, „p“, „span“.',
+	'spl-subpages-par-class' => 'Hodnota atributu „class“ HTML elementu, do kterého je seznam obalen.',
+	'spl-subpages-par-intro' => 'Text, který se má vypsat před seznamem, pokud není seznam prázdný.',
+	'spl-subpages-par-outro' => 'Text, který se má vypsat za seznamem, pokud není seznam prázdný.',
+	'spl-subpages-par-default' => 'Text, který se má místo seznamu, pokud je seznam prázdný. Pokud je ponechán prázdný, zobrazí se chybové hlášení (např. „Stránka nemá žádné podstránky“). Pokud je zde mínus („-“), bude výsledek zcela prázdný.',
+	'spl-subpages-par-separator' => 'Text, který se má zobrazit mezi dvěma položkami v případě formátu „list“ (a jeho aliasu „bar“). V ostatních formátech nemá žádný účinek.',
+	'spl-subpages-par-template' => 'Název šablony. Tato šablona se aplikuje na každou položku seznamu. Položka se předává jako první (nepojmenovaný) argument. Uvědomte si, že šablona neruší formátování seznamu. Formátování („ul“, „ol“, „list“) se aplikuje na výsledek šablony.',
+	'spl-subpages-par-links' => 'Pokud je aktivováno, vykreslují se položky seznamu jako odkazy. V opačném případě se zobrazují jako čistý text. Druhá možnost je užitečná zejména pro předávání položek do šablon k dalšímu zpracování.',
 );
 
 /** German (Deutsch)
@@ -223,6 +239,14 @@ $messages['es'] = array(
 	'spl-subpages-par-separator' => 'El texto a mostrar entre dos elementos de la lista en caso de que el formato fuese "list" (y su alias "bar"). No tiene ningún efecto en los otros formatos de lista.',
 	'spl-subpages-par-template' => 'El nombre de la plantilla. La plantilla se aplica a cada elemento de la lista. Un elemento es tratatdo como primer argumento (sin nombre). Tenga en cuenta que la plantilla no anula el formato de lista. El formato ("ul", "ol", "list") se aplica al resultado de la plantilla.',
 	'spl-subpages-par-links' => 'Si el valor fuese verdadero (true), los elementos de la lista se representan como enlaces. Si es falso (false), los elementos de la lista se procesan como texto sin formato. Este último caso es especialmente útil para pasar elementos a las plantillas para su posterior procesamiento.',
+);
+
+/** Persian (فارسی)
+ * @author Armin1392
+ */
+$messages['fa'] = array(
+	'spl-noparentpage' => 'صفحهٔ "$1" وجود ندارد.',
+	'spl-nopages' => 'فضای نام "$1" صفحه‌ای ندارد.',
 );
 
 /** Finnish (suomi)
@@ -390,7 +414,7 @@ $messages['id'] = array(
  * @author F. Cosoleto
  */
 $messages['it'] = array(
-	'spl-desc' => 'Aggiunge un tag <code><nowiki><splist /></nowiki></code> che consente di elencare le sottopagine', # Fuzzy
+	'spl-desc' => 'Consente di elencare e contare le sottopagine',
 	'spl-nosubpages' => 'La pagina "$1" non ha alcuna sottopagina da elencare.',
 	'spl-noparentpage' => 'La pagina "$1" non esiste.',
 	'spl-nopages' => 'Il namespace "$1" non ha pagine.',
@@ -433,10 +457,11 @@ $messages['ka'] = array(
 );
 
 /** Korean (한국어)
+ * @author Priviet
  * @author 아라
  */
 $messages['ko'] = array(
-	'spl-desc' => '하위 문서를 나타내도록 하는 <code><nowiki><splist /></nowiki></code> 태그를 추가합니다', # Fuzzy
+	'spl-desc' => '하위 문서를 목록화하고 개수를 세는 것을 허용',
 	'spl-nosubpages' => '"$1" 문서는 목록에 하위 문서가 없습니다.',
 	'spl-noparentpage' => '"$1" 문서가 존재하지 않습니다.',
 	'spl-nopages' => '"$1" 이름공간에 문서가 없습니다.',
@@ -850,7 +875,7 @@ $messages['uk'] = array(
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
-	'spl-desc' => '添加 <code><nowiki><splist /></nowiki></code> 标签，让您能列出子页面', # Fuzzy
+	'spl-desc' => '允许列出和计算子页面',
 	'spl-nosubpages' => '页面“$1”没有子页面可列出。',
 	'spl-noparentpage' => '页面“$1”不存在。',
 	'spl-nopages' => '命名空间“$1”没有页面。',

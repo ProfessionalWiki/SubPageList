@@ -28,6 +28,14 @@ $magicWords['ar'] = array(
 	'subpagecount' => array( 0, 'عداد_صفحة_فرعية' ),
 );
 
+/** Egyptian Spoken Arabic (مصرى) */
+$magicWords['arz'] = array(
+	'splist' => array( 0, 'قايمه_صف' ),
+	'subpages' => array( 0, 'صفحات_فرعيه' ),
+	'subpagelist' => array( 0, 'قايمه_صفحات_فرعيه' ),
+	'subpagecount' => array( 0, 'عداد_صفحه_فرعيه' ),
+);
+
 /** Bulgarian (български) */
 $magicWords['bg'] = array(
 	'subpages' => array( 0, 'подстраници' ),
@@ -135,6 +143,7 @@ $magicWords['ur'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $magicWords['zh-hans'] = array(
+	'splist' => array( 0, '子列表' ),
 	'subpages' => array( 0, '子页面' ),
 	'subpagelist' => array( 0, '子页面列表' ),
 	'subpagecount' => array( 0, '子页面计数' ),

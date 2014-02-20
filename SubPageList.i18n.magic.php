@@ -152,4 +152,6 @@ $magicWords['zh-hans'] = array(
 /** Traditional Chinese (中文（繁體）‎) */
 $magicWords['zh-hant'] = array(
 	'subpages' => array( 0, '子頁面' ),
+	'subpagelist' => array( 0, '子頁面列表' ),
+	'subpagecount' => array( 0, '子頁面數位' ),
 );

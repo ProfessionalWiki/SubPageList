@@ -365,7 +365,7 @@ $messages['he'] = array(
  * @author Michawiki
  */
 $messages['hsb'] = array(
-	'spl-desc' => 'Přidawa element <code><nowiki><splist /></nowiki></code>, kotryž ći zmóžnja podstrony nalistować', # Fuzzy
+	'spl-desc' => 'Zmóžnja nalistowanje a ličenje podstronow',
 	'spl-nosubpages' => 'Strona "$1" nima podstrony za lisćinu.',
 	'spl-noparentpage' => 'Strona "$1" njeeksistuje',
 	'spl-nopages' => 'W mjenowym rumje "$1" strony njejsu.',

@@ -321,7 +321,7 @@ $messages['frp'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
-	'spl-desc' => 'Engade unha etiqueta <code><nowiki><splist /></nowiki></code> que permite poñer as subpáxinas nunha lista', # Fuzzy
+	'spl-desc' => 'Permite listar e contar subpáxinas',
 	'spl-nosubpages' => 'A páxina "$1" non ten subpáxinas que poñer nunha lista.',
 	'spl-noparentpage' => 'A páxina "$1" non existe.',
 	'spl-nopages' => 'O espazo de nomes "$1" non ten páxinas.',

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Initialization file for the SubPageList extension.
  *
@@ -17,7 +16,7 @@ if ( defined( 'SPL_VERSION' ) ) {
 	return 1;
 }
 
-define( 'SPL_VERSION', '1.1' );
+define( 'SPL_VERSION', '1.2.0' );
 
 // Include the composer autoloader if it is present.
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
@@ -41,6 +40,7 @@ call_user_func( function() {
 		'descriptionmsg' => 'spl-desc'
 	);
 
+	$GLOBALS['wgMessagesDirs']['SubPageList'] = __DIR__ . '/i18n';
 	$GLOBALS['wgExtensionMessagesFiles']['SubPageList'] = __DIR__ . '/SubPageList.i18n.php';
 	$GLOBALS['wgExtensionMessagesFiles']['SubPageListMagic'] = __DIR__ . '/SubPageList.i18n.magic.php';
 

@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Yfdyh000"
+        ]
+    },
+    "spl-desc": "允许列出和计算子页面",
+    "spl-nosubpages": "页面“$1”没有子页面可列出。",
+    "spl-noparentpage": "页面“$1”不存在。",
+    "spl-nopages": "命名空间“$1”没有页面。",
+    "spl-subpages-par-sort": "要排序的方向。允许的值：“asc”和“desc”。",
+    "spl-subpages-par-sortby": "要按什么排序子页面。允许的值：“title”或“lastedit”。",
+    "spl-subpages-par-kidsonly": "允许显示仅直接的子页面。",
+    "spl-subpages-par-limit": "列出页面的最大数量。"
+}

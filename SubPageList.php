@@ -12,7 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 if ( defined( 'SPL_VERSION' ) ) {
-	// Do not initialize more then once.
+	// Do not initialize more than once.
 	return 1;
 }
 

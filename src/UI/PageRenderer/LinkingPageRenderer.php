@@ -29,7 +29,7 @@ class LinkingPageRenderer extends PageRenderer {
 		return '[[' . $page->getTitle()->getFullText() . '|' . $this->getLinkText( $page ) . ']]';
 	}
 
-	protected function getLinkText( Page $page ) {
+	private function getLinkText( Page $page ) {
 		return $this->textRenderer->renderPage( $page );
 	}
 

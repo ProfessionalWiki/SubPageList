@@ -25,7 +25,7 @@ class Extension {
 	 *
 	 * @var Settings
 	 */
-	protected $settings;
+	private $settings;
 
 	public function __construct( Settings $settings ) {
 		$this->settings = $settings;

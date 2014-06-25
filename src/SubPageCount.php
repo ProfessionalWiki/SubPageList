@@ -16,8 +16,8 @@ use ParserHooks\HookHandler;
  */
 class SubPageCount implements HookHandler {
 
-	protected $counter;
-	protected $titleFactory;
+	private $counter;
+	private $titleFactory;
 
 	public function __construct( SubPageCounter $counter, TitleFactory $titleFactory ) {
 		$this->counter = $counter;
@@ -45,7 +45,7 @@ class SubPageCount implements HookHandler {
 		return $parser->getTargetLanguage()->formatNum( $count );
 	}
 
-	protected function getSubPageCount( Parser $parser, ProcessingResult $result ) {
+	private function getSubPageCount( Parser $parser, ProcessingResult $result ) {
 		$parameters = $result->getParameters();
 		$title = $this->getTitle( $parser, $parameters['page']->getValue() );
 
@@ -56,7 +56,7 @@ class SubPageCount implements HookHandler {
 		return $this->counter->countSubPages( $title );
 	}
 
-	protected function getTitle( Parser $parser, $pageName ) {
+	private function getTitle( Parser $parser, $pageName ) {
 		if ( $pageName === '' ) {
 			return $parser->getTitle();
 		}

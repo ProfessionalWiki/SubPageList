@@ -30,11 +30,9 @@ class Settings {
 	const AUTO_REFRESH = 'autorefresh';
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var array
 	 */
-	protected $settings;
+	private $settings;
 
 	/**
 	 * Constructor.

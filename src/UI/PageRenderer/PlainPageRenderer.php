@@ -49,11 +49,11 @@ class PlainPageRenderer extends PageRenderer {
 		return $title->getFullText();
 	}
 
-	protected function getBaseText( Title $title ) {
+	private function getBaseText( Title $title ) {
 		return $this->stripNs( $title->getSubpageText() );
 	}
 
-	protected function stripNs( $text ) {
+	private function stripNs( $text ) {
 		$namespacePosition = strpos( $text, ':' );
 
 		if ( $namespacePosition !== false ) {

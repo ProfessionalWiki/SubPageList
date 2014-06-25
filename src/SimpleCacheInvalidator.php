@@ -15,11 +15,9 @@ use Title;
 class SimpleCacheInvalidator implements CacheInvalidator {
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var SubPageFinder
 	 */
-	protected $subPageFinder;
+	private $subPageFinder;
 
 	/**
 	 * Constructor.

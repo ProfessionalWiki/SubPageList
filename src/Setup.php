@@ -22,25 +22,19 @@ use WikiPage;
 class Setup {
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var Extension
 	 */
-	protected $extension;
+	private $extension;
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var array[]
 	 */
-	protected $hooks;
+	private $hooks;
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var string
 	 */
-	protected $rootDirectory;
+	private $rootDirectory;
 
 	/**
 	 * @param Extension $extension
@@ -64,7 +58,7 @@ class Setup {
 		$this->registerUnitTests();
 	}
 
-	protected function registerParserHooks() {
+	private function registerParserHooks() {
 		$extension = $this->extension;
 
 		/**
@@ -98,7 +92,7 @@ class Setup {
 		};
 	}
 
-	protected function registerCacheInvalidator() {
+	private function registerCacheInvalidator() {
 		$extension = $this->extension;
 
 		/**
@@ -144,7 +138,7 @@ class Setup {
 		};
 	}
 
-	protected function registerUnitTests() {
+	private function registerUnitTests() {
 		$rootDirectory = $this->rootDirectory;
 
 		/**

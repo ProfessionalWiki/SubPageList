@@ -18,8 +18,8 @@ use SubPageList\UI\PageRenderer\TemplatePageRenderer;
  */
 class WikitextSubPageListRenderer implements SubPageListRenderer {
 
-	protected $options;
-	protected $text;
+	private $options;
+	private $text;
 
 	/**
 	 * @see SubPageListRenderer::render
@@ -40,24 +40,24 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		return $this->wrapInElement( $this->text );
 	}
 
-	protected function addHeader() {
+	private function addHeader() {
 		if ( $this->options['intro'] !== '' ) {
 			$this->text .= $this->options['intro'] . "\n";
 		}
 	}
 
-	protected function addFooter() {
+	private function addFooter() {
 		if ( $this->options['outro'] !== '' ) {
 			$this->text .= "\n". $this->options['outro'];
 		}
 	}
 
-	protected function addPageHierarchy( Page $page ) {
+	private function addPageHierarchy( Page $page ) {
 		$this->text .= $this->newTreeListRenderer()->renderHierarchy( $page, $this->options );
 	}
 
 	// TODO: this construction logic does not really fit into this class, split off
-	protected function newTreeListRenderer() {
+	private function newTreeListRenderer() {
 		$options = array(
 			TreeListRenderer::OPT_SHOW_TOP_PAGE => $this->options['showpage'],
 		);
@@ -77,7 +77,7 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		);
 	}
 
-	protected function newPageRenderer() {
+	private function newPageRenderer() {
 		$renderer = new PlainPageRenderer( $this->getPathStyle() );
 
 		if ( $this->options['template'] !== '' ) {
@@ -90,7 +90,7 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		return $renderer;
 	}
 
-	protected function getPathStyle() {
+	private function getPathStyle() {
 		$styles = array(
 			'none' => PlainPageRenderer::PATH_NONE,
 			'no' => PlainPageRenderer::PATH_NONE,
@@ -108,11 +108,11 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		return $styles[$this->options['pathstyle']];
 	}
 
-	protected function newPageSorter() {
+	private function newPageSorter() {
 		return new AlphabeticPageSorter( $this->options['sort'] );
 	}
 
-	protected function wrapInElement( $text ) {
+	private function wrapInElement( $text ) {
 		$this->assertElementIsAllowed();
 
 		return Html::element(
@@ -124,7 +124,7 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		);
 	}
 
-	protected function assertElementIsAllowed() {
+	private function assertElementIsAllowed() {
 		$allowedElements = array(
 			'p',
 			'div',

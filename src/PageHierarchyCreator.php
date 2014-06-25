@@ -20,19 +20,19 @@ class PageHierarchyCreator {
 	 *
 	 * @var Page[]
 	 */
-	protected $pages;
+	private $pages;
 
 	/**
 	 * All pages, indexed by title text.
 	 *
 	 * @var Page[]
 	 */
-	protected $allPages;
+	private $allPages;
 
 	/**
 	 * @var TitleFactory
 	 */
-	protected $titleFactory;
+	private $titleFactory;
 
 	public function __construct( TitleFactory $titleFactory ) {
 		$this->titleFactory = $titleFactory;
@@ -56,7 +56,7 @@ class PageHierarchyCreator {
 		return $this->pages;
 	}
 
-	protected function addTitle( Title $title ) {
+	private function addTitle( Title $title ) {
 		$page = new Page( $title, array() );
 		$titleText = $this->getTextForTitle( $title );
 
@@ -71,7 +71,7 @@ class PageHierarchyCreator {
 		}
 	}
 
-	protected function getTextForTitle( Title $title ) {
+	private function getTextForTitle( Title $title ) {
 		return $title->getFullText();
 	}
 
@@ -79,7 +79,7 @@ class PageHierarchyCreator {
 	 * @param string $titleText
 	 * @param Page $page Page is expected to not have any subpages
 	 */
-	protected function addTopLevelPage( $titleText, Page $page ) {
+	private function addTopLevelPage( $titleText, Page $page ) {
 		if ( !array_key_exists( $titleText, $this->allPages ) ) {
 			$this->pages[] = $page;
 			$this->allPages[$titleText] = $page;
@@ -91,18 +91,18 @@ class PageHierarchyCreator {
 	 * @param string $pageTitle
 	 * @param Page $page Page is expected to not have any subpages
 	 */
-	protected function addSubPage( $parentTitle, $pageTitle, Page $page ) {
+	private function addSubPage( $parentTitle, $pageTitle, Page $page ) {
 		if ( !array_key_exists( $pageTitle, $this->allPages ) ) {
 			$this->allPages[$parentTitle]->addSubPage( $page );
 			$this->allPages[$pageTitle] = $page;
 		}
 	}
 
-	protected function addToPageIndex( $titleText, Page $page ) {
+	private function addToPageIndex( $titleText, Page $page ) {
 		$this->allPages[$titleText] = $page;
 	}
 
-	protected function createParents( $pageTitle ) {
+	private function createParents( $pageTitle ) {
 		$titleParts = $this->getTitleParts( $pageTitle );
 		array_pop( $titleParts );
 
@@ -127,25 +127,25 @@ class PageHierarchyCreator {
 		}
 	}
 
-	protected function newPageFromText( $titleText ) {
+	private function newPageFromText( $titleText ) {
 		return new Page( $this->titleFactory->newFromText( $titleText ) );
 	}
 
-	protected function getTitleParts( $titleText ) {
+	private function getTitleParts( $titleText ) {
 		return explode( '/', $titleText );
 	}
 
-	protected function titleTextFromParts( array $titleParts ) {
+	private function titleTextFromParts( array $titleParts ) {
 		return implode( '/', $titleParts );
 	}
 
-	protected function getParentTitle( $titleText ) {
+	private function getParentTitle( $titleText ) {
 		$titleParts = $this->getTitleParts($titleText );
 		array_pop( $titleParts );
 		return $this->titleTextFromParts( $titleParts );
 	}
 
-	protected function assertAreTitles( array $titles ) {
+	private function assertAreTitles( array $titles ) {
 		foreach ( $titles as $title ) {
 			if ( !( $title instanceof Title ) ) {
 				throw new InvalidArgumentException( 'All elements must be of instance Title' );

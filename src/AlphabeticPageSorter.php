@@ -58,7 +58,7 @@ class AlphabeticPageSorter implements PageSorter {
 		return $pages;
 	}
 
-	protected function assertArePages( array $pages ) {
+	private function assertArePages( array $pages ) {
 		foreach ( $pages as $page ) {
 			if ( !( $page instanceof Page ) ) {
 				throw new InvalidArgumentException( '$pages can only contain instance of Page' );

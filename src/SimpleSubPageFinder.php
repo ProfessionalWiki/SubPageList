@@ -22,18 +22,14 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	const OPT_OFFSET = 'offset';
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var DBConnectionProvider
 	 */
-	protected $connectionProvider;
+	private $connectionProvider;
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var array
 	 */
-	protected $options;
+	private $options;
 
 	/**
 	 * @since 1.0
@@ -54,7 +50,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	 * @param string $option
 	 * @param mixed $value
 	 */
-	protected function setOption( $option, $value ) {
+	private function setOption( $option, $value ) {
 		$this->options[$option] = $value;
 	}
 
@@ -158,7 +154,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	 *
 	 * @return array
 	 */
-	protected function getConditions( Title $title ) {
+	private function getConditions( Title $title ) {
 		/**
 		 * @var \DatabaseBase $dbr
 		 */
@@ -181,7 +177,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	 *
 	 * @return array
 	 */
-	protected function getOptions() {
+	private function getOptions() {
 		$options = array();
 
 		$options['LIMIT'] = (int)$this->options[self::OPT_LIMIT];

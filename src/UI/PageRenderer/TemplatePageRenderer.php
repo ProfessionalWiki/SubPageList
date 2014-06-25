@@ -31,7 +31,7 @@ class TemplatePageRenderer extends PageRenderer {
 		return '{{' . $this-> templateName . '|' . $this->getTitleText( $page ) . '}}';
 	}
 
-	protected function getTitleText( Page $page ) {
+	private function getTitleText( Page $page ) {
 		return $this->textRenderer->renderPage( $page );
 	}
 

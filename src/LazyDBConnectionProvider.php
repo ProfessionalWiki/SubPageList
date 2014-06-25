@@ -16,32 +16,24 @@ use DatabaseBase;
 class LazyDBConnectionProvider implements DBConnectionProvider {
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var DatabaseBase|null
 	 */
-	protected $connection = null;
+	private $connection = null;
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var int|null
 	 */
-	protected $connectionId = null;
+	private $connectionId = null;
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var string|array
 	 */
-	protected $groups;
+	private $groups;
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var string|boolean $wiki
 	 */
-	protected $wiki;
+	private $wiki;
 
 	/**
 	 * Constructor.

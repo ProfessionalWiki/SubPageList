@@ -20,10 +20,10 @@ use Title;
  */
 class SubPageList implements HookHandler {
 
-	protected $subPageFinder;
-	protected $pageHierarchyCreator;
-	protected $subPageListRenderer;
-	protected $titleFactory;
+	private $subPageFinder;
+	private $pageHierarchyCreator;
+	private $subPageListRenderer;
+	private $titleFactory;
 
 	public function __construct( SubPageFinder $finder, PageHierarchyCreator $hierarchyCreator,
 		SubPageListRenderer $renderer, TitleFactory $titleFactory ) {
@@ -61,7 +61,7 @@ class SubPageList implements HookHandler {
 		return 'Error: invalid title provided'; // TODO (might want to use a title param...)
 	}
 
-	protected function getTitle( Parser $parser, $pageName ) {
+	private function getTitle( Parser $parser, $pageName ) {
 		if ( $pageName === '' ) {
 			return $parser->getTitle();
 		}
@@ -76,7 +76,7 @@ class SubPageList implements HookHandler {
 	 *
 	 * @return string
 	 */
-	protected function renderForTitle( Title $title, array $parameters ) {
+	private function renderForTitle( Title $title, array $parameters ) {
 		$topLevelPage = $this->getPageHierarchy( $title, $parameters['limit'] );
 
 		if ( $this->shouldUseDefault( $topLevelPage, $parameters['showpage'] ) ) {
@@ -94,7 +94,7 @@ class SubPageList implements HookHandler {
 	 * @return Page
 	 * @throws LogicException
 	 */
-	protected function getPageHierarchy( Title $title, $limit ) {
+	private function getPageHierarchy( Title $title, $limit ) {
 		$this->subPageFinder->setLimit( $limit );
 
 		$subPageTitles = $this->subPageFinder->getSubPagesFor( $title );
@@ -110,13 +110,13 @@ class SubPageList implements HookHandler {
 		return $topLevelPage;
 	}
 
-	protected function shouldUseDefault( Page $topLevelPage, $showTopLevelPage ) {
+	private function shouldUseDefault( Page $topLevelPage, $showTopLevelPage ) {
 		// Note: this behaviour is not fully correct.
 		// Other parameters that omit results need to be held into account as well.
 		return !$showTopLevelPage && $topLevelPage->getSubPages() === array();
 	}
 
-	protected function getRenderedList( Page $topLevelPage, $parameters ) {
+	private function getRenderedList( Page $topLevelPage, $parameters ) {
 		return $this->subPageListRenderer->render(
 			$topLevelPage,
 			$parameters
@@ -129,7 +129,7 @@ class SubPageList implements HookHandler {
 	 *
 	 * @return string
 	 */
-	protected function getDefault( $titleText, $default ) {
+	private function getDefault( $titleText, $default ) {
 		if ( $default === '' ) {
 			return "\"$titleText\" has no sub pages."; // TODO
 		}
@@ -146,7 +146,7 @@ class SubPageList implements HookHandler {
 	 *
 	 * @return array
 	 */
-	protected function paramsToOptions( array $parameters ) {
+	private function paramsToOptions( array $parameters ) {
 		$options = array();
 
 		foreach ( $parameters as $parameter ) {

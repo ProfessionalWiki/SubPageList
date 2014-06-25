@@ -15,18 +15,14 @@ use Title;
 class Page {
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var Title
 	 */
-	protected $title;
+	private $title;
 
 	/**
-	 * @since 1.0
-	 *
 	 * @var Page[]
 	 */
-	protected $subPages = array();
+	private $subPages = array();
 
 	/**
 	 * @since 1.0

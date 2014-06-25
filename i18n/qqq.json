@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu",
+			"Purodha",
+			"Shirayuki",
+			"아라"
+		]
+	},
+	"spl-desc": "{{desc|name=Sub Page List|url=http://www.mediawiki.org/wiki/Extension:SubPageList}}",
+	"spl-nosubpages": "Parameters:\n* $1 - page title (with link)\nSee also:\n* {{msg-mw|Spl-noparentpage}}\n* {{msg-mw|Spl-nopages}}",
+	"spl-noparentpage": "Parameters:\n* $1 - page title\nSee also:\n* {{msg-mw|Spl-nosubpages}}\n* {{msg-mw|Spl-nopages}}",
+	"spl-nopages": "Parameters:\n* $1 - namespace name\nSee also:\n* {{msg-mw|Spl-noparentpage}}\n* {{msg-mw|Spl-nosubpages}}",
+	"spl-subpages-par-sort": "{{doc-important|Do not translate \"asc\" and \"desc\".}}",
+	"spl-subpages-par-sortby": "{{doc-important|Do not translate \"title\" and \"lastedit\".}}",
+	"spl-subpages-par-format": "{{doc-important|Do not translate \"ol\", \"ul\" and \"list\".}}",
+	"spl-subpages-par-pathstyle": "{{doc-important|The parameters \"fullpagename\", \"pagename\", \"subpagename\" and \"none\" should not be translated!}}",
+	"spl-subpages-par-kidsonly": "Used as description for a boolean parameter.",
+	"spl-subpages-par-element": "{{doc-important|Do not translate \"intro\", \"outro\", \"default\", \"div\", \"p\", and \"span\".}}",
+	"spl-subpages-par-class": "{{doc-important|Do not translate \"class\".}}",
+	"spl-subpages-par-intro": "See also:\n* {{msg-mw|Spl-subpages-par-outro}}",
+	"spl-subpages-par-outro": "See also:\n* {{msg-mw|Spl-subpages-par-intro}}",
+	"spl-subpages-par-separator": "{{doc-important|Do not translate \"list\" and \"bar\".}}",
+	"spl-subpages-par-template": "{{doc-important|Do not translate \"ul\", \"ol\", and \"list\".}}"
+}

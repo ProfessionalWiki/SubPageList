@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"BeginaFelicysym",
+			"Woytecr"
+		]
+	},
+	"spl-desc": "Dodaje tag <code><nowiki><splist /></nowiki></code> pozwalający na wstawienie listy podstron",
+	"spl-nosubpages": "Strona \" $1 \" nie ma podstron do wyświetlenia.",
+	"spl-noparentpage": "Strona \"$1\" nie istnieje.",
+	"spl-nopages": "Przestrzeń nazw \"$1\" nie zawiera stron.",
+	"spl-subpages-par-sort": "Kierunek porządkowania. Dopuszczalne wartości: \"asc\" rosnąco i \"desc\" malejąco.",
+	"spl-subpages-par-sortby": "Według czego uporządkować podstrony. Dopuszczalne wartości: \"tytuł\" lub \"ostatniaedycja\".",
+	"spl-subpages-par-format": "Lista podstron może być wyświetlana w różnych formatach. Dopuszczalne wartości: \"ol\" — uporządkowana (numerowana) lista, \"ul\" — lista nieuporządkowana (wypunktowanie), \"list\" — zwykła lista (na przykład lista rozdzielana przecinkami).",
+	"spl-subpages-par-page": "Strona, której podstrony mają być pokazane, lub przestrzeń nazw (włączając końcowy dwukropek), którejstrony wyświetlić. Domyślnie bieżąca strona.",
+	"spl-subpages-par-showpage": "Wskazuje, czy sama strony powinna być wyświetlona na liście, czy też nie.",
+	"spl-subpages-par-pathstyle": "Styl ścieżki dla podstron na liście. Dopuszczalne wartości: \"fullpagename\" — pełna nazwa strony (w tym obszar nazw), \"pagename\" — nazwa strony (bez przestrzeni nazw), \"subpagename\" — względna nazwa strony począwszy od strony podstawowej, \"none\" — tylko końcowa część nazwy po ostatnim ukośniku.",
+	"spl-subpages-par-kidsonly": "Umożliwia pokazywanie tylko bezpośrednich podstron.",
+	"spl-subpages-par-limit": "Maksymalna liczba stron do wyświetlenia.",
+	"spl-subpages-par-element": "Element HTML, w którym zawarta będzie lista (w tym teksty \"intro\" i \"outro\" oraz \"domyślny\"). Dopuszczalne wartości: \"div\", \"p\", \"span\".",
+	"spl-subpages-par-class": "Wartość atrybutu\"class\" elementu HTML otaczającego listę.",
+	"spl-subpages-par-intro": "Tekst wyświetlany przed listą, gdy lista nie jest pusta.",
+	"spl-subpages-par-outro": "Tekst wyświetlany po liście, gdy lista nie jest pusta.",
+	"spl-subpages-par-default": "Tekst wyświetlany zamiast z listy, jeśli lista jest pusta. Jeśli pusty, będzie renderowany komunikat o błędzie (na przykład \"Strona ma nie podstron do wyświetlenia\"). Jeśli kreska (\"-\"), wynik będzie całkowicie pusty.",
+	"spl-subpages-par-separator": "Tekst do wyświetlania między dwiema pozycjami listy w przypadku \"list\" (i jej aliasu \"bar\"). Nie ma zastosowania w innych formatach.",
+	"spl-subpages-par-template": "Nazwa szablonu. Szablon zostanie zastosowany do każdego elementu listy. Element jest przekazywany jako pierwszy argument (bez nazwy). Należy zauważyć, że ten szablon nie anuluje formatowania listy. Formatowanie (\"ul\", \"ol\", \"list\") jest stosowane w wyniku tego szablonu.",
+	"spl-subpages-par-links": "Jeśli true, elementy listy są renderowane jako łącza. Jeśli ma wartość false, elementy listy są renderowane jako zwykły tekst. To ostatnie jest szczególnie przydatne w przypadku przekazywania elementów do szablonów i dalszego przetwarzania."
+}

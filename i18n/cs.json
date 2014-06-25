@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mormegil",
+			"Reaperman"
+		]
+	},
+	"spl-desc": "Umožňuje vypisovat a počítat podstránky",
+	"spl-nosubpages": "Stránka „$1“ nemá žádné zobrazitelné podstránky.",
+	"spl-noparentpage": "Stránka „$1“ neexistuje.",
+	"spl-nopages": "Jmenný prostor „$1“ neobsahuje žádné stránky.",
+	"spl-subpages-par-sort": "Směr řazení. Dovolené hodnoty: „asc“ a „desc“.",
+	"spl-subpages-par-sortby": "Podle čeho řadit podstránky. Dovolené hodnoty: „title“ nebo „lastedit“.",
+	"spl-subpages-par-format": "Seznam podstránky lze zobrazit v několika formátech. Dovolené hodnoty: „ol“ – číslovaný seznam, „ul“ – odrážkový seznam, „list“ – prostý seznam (např. seznam oddělený čárkami).",
+	"spl-subpages-par-page": "Stránka, pro kterou se mají zobrazit podstránky, nebo název jmenného prostoru (včetně koncové dvojtečky), ve kterém se mají zobrazit stránky. Implicitní hodnotou je aktuální stránka.",
+	"spl-subpages-par-showpage": "Volí, zda má být v seznamu uvedena i samotná stránka.",
+	"spl-subpages-par-pathstyle": "Styl pro cesty k podstránkám v seznamu. Dovolené hodnoty: „fullpagename“ – plný název stránky (včetně jmenného prostoru), „pagename“ – název stránky (bez jmenného prostoru), „subpagename“ – relativní název stránky začínající od stránky, pro kterou podstránky uvádíme, „none“ – jen koncová část názvu za posledním lomítkem.",
+	"spl-subpages-par-kidsonly": "Umožňuje zobrazení jen přímých podstránek.",
+	"spl-subpages-par-limit": "Maximální počet zobrazovaných stránek.",
+	"spl-subpages-par-element": "HTML element, do kterého se má seznam obalit (včetně textů „intro“, „outro“ nebo „default“). Dovolené hodnoty: „div“, „p“, „span“.",
+	"spl-subpages-par-class": "Hodnota atributu „class“ HTML elementu, do kterého je seznam obalen.",
+	"spl-subpages-par-intro": "Text, který se má vypsat před seznamem, pokud není seznam prázdný.",
+	"spl-subpages-par-outro": "Text, který se má vypsat za seznamem, pokud není seznam prázdný.",
+	"spl-subpages-par-default": "Text, který se má místo seznamu, pokud je seznam prázdný. Pokud je ponechán prázdný, zobrazí se chybové hlášení (např. „Stránka nemá žádné podstránky“). Pokud je zde mínus („-“), bude výsledek zcela prázdný.",
+	"spl-subpages-par-separator": "Text, který se má zobrazit mezi dvěma položkami v případě formátu „list“ (a jeho aliasu „bar“). V ostatních formátech nemá žádný účinek.",
+	"spl-subpages-par-template": "Název šablony. Tato šablona se aplikuje na každou položku seznamu. Položka se předává jako první (nepojmenovaný) argument. Uvědomte si, že šablona neruší formátování seznamu. Formátování („ul“, „ol“, „list“) se aplikuje na výsledek šablony.",
+	"spl-subpages-par-links": "Pokud je aktivováno, vykreslují se položky seznamu jako odkazy. V opačném případě se zobrazují jako čistý text. Druhá možnost je užitečná zejména pro předávání položek do šablon k dalšímu zpracování."
+}

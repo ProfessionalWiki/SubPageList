@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kghbln",
+			"Metalhead64",
+			"Purodha"
+		]
+	},
+	"spl-desc": "Ermöglicht das Auflisten und Zählen von Unterseiten",
+	"spl-nosubpages": "Seite „$1“ verfügt über keine auflistbaren Unterseiten.",
+	"spl-noparentpage": "Seite „$1“ ist nicht vorhanden.",
+	"spl-nopages": "Im Namensraum „$1“ befinden sich keine Seiten.",
+	"spl-subpages-par-sort": "Sortierreihenfolge für die Unterseiten. Mögliche Werte: „asc“ (aufsteigend) und „desc“ (absteigend)",
+	"spl-subpages-par-sortby": "Sortierkriterium für die Unterseiten. Mögliche Werte: „titel“ (Titel) und „lastedit“ (letzte Bearbeitung)",
+	"spl-subpages-par-format": "Die Liste der Unterseiten kann in verschiedenen Formaten angezeigt werden. Mögliche Werte: „ol“ (sortierte nummerierte Liste), „ul“ (unsortierte Aufzählung) oder „list“ (einfache Liste, bspw. eine kommagetrennte Liste).",
+	"spl-subpages-par-page": "Die Seite für welche die Unterseiten oder der Namensraum (einschließlich eines anschließenden Doppelpunkts) für den die enthaltenen Seiten angezeigt werden sollen. Standardmäßig ist dies die aktuelle Seite.",
+	"spl-subpages-par-showpage": "Gibt an, ob die Seite selbst in der Liste ihrer Unterseiten angezeigt werden soll oder nicht.",
+	"spl-subpages-par-pathstyle": "Anzeigestil für die Pfade in der Liste angezeigten Unterseiten. Mögliche Werte: „fullpagename“ (Seitenname einschließlich des Namensraums),  „pagename“ (Seitenname ausschließlich des Namensraums),  „subpagename“ (Seitenname der Unterseiten der aktuellen Seite) und „none“ (lediglich der auf den letzten Schrägstrich folgende Teil des Seitennamens).",
+	"spl-subpages-par-kidsonly": "Ermöglicht ausschließlich die Anzeige der direkten Unterseiten.",
+	"spl-subpages-par-limit": "Die Höchstzahl der aufzulistenden Unterseiten.",
+	"spl-subpages-par-element": "Das HTML-Element, das die Liste umschließen soll (einschließlich der Texte „intro“, „outro“ oder „standard“). Mögliche Werte: „div“, „p“, „span“.",
+	"spl-subpages-par-class": "Der Wert für das Attribut „class“ des HTML-Elements, das die Liste umschließt.",
+	"spl-subpages-par-intro": "Der vor der Liste auszugebende Text („intro“), sofern sie nicht leer ist.",
+	"spl-subpages-par-outro": "Der nach der Liste auszugebende Text („outro“), sofern sie nicht leer ist.",
+	"spl-subpages-par-default": "Der anstatt einer Liste auszugebende Text („standard“), sofern sie leer ist. Sofern sie leer ist, wird also eine Fehlermeldung, wie bspw. „Zu dieser Seite gibt es keine Unterseiten.“ ausgegeben. Wenn ein Bindestrich („-“) angegeben wird, wird die Ergebnisausgabe vollkommen leer sein.",
+	"spl-subpages-par-separator": "Der zwischen den Listenelementen auszugebende Text, sofern die Anzeigeformate „list“ oder „bar“ genutzt wird. Er wird nicht bei anderen Formaten ausgegeben.",
+	"spl-subpages-par-template": "Der Name der Vorlage. Die Vorlage wird auf jedes Listenelement angewendet. Ein Listenelement wird als erstes (unbezeichnetes) Argument an die Vorlage übergeben. Es ist zu beachten, dass die Vorlage nicht die Listenformatierung verändert. Die Formatierungsmöglichkeiten „ul“, „ol“ und „list“ werden also auf das in der Vorlage ausgegebene Ergebnis angewendet.",
+	"spl-subpages-par-links": "Sofern aktiviert werden die Listenelemente als Links dargestellt. Sofern deaktiviert, werden die Listenelement im Textformat ausgegeben. Letztere Einstellung ist besonders dann hilfreich, wenn man die Ausgabeergebnisse an die Vorlage zur weiteren Verarbeitung weitergibt."
+}

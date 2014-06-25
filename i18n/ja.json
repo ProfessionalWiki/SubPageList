@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Schu",
+			"Shirayuki"
+		]
+	},
+	"spl-desc": "下位ページを列挙してその件数を表示できるようにする",
+	"spl-nosubpages": "ページ「$1」には列挙できる下位ページがありません。",
+	"spl-noparentpage": "ページ「$1」は存在しません。",
+	"spl-nopages": "名前空間「$1」にはページはありません。",
+	"spl-subpages-par-sort": "並べ替えの順序です。使用できる値:「asc」、「desc」",
+	"spl-subpages-par-sortby": "下位ページの並べ替えの基準です。使用できる値:「title」「lastedit」",
+	"spl-subpages-par-format": "下位ページは複数の形式で出力できます。使用できる値:「ol」(番号付きリスト)、「ul」(番号なしリスト)、「list」(プレーンなリスト (例: カンマ区切り))",
+	"spl-subpages-par-page": "下位ページを表示するページ、またはページを表示する名前空間名 (末尾のコロンを含む) です。既定は現在のページです。",
+	"spl-subpages-par-showpage": "そのページ自身を一覧に含めるかどうかを指定します。",
+	"spl-subpages-par-pathstyle": "一覧での下位ページのパスのスタイルです。使用できる値:「fullpagename」(完全なページ名 (名前空間を含む))、「pagename」(ページ名 (名前空間を含まない))、「subpagename」(列挙を開始したページからの相対ページ名)、「none」(最後のスラッシュの後の部分のみ)",
+	"spl-subpages-par-kidsonly": "直接の下位ページのみを表示できるようにします。",
+	"spl-subpages-par-limit": "ページを列挙する件数の最大値です。",
+	"spl-subpages-par-element": "一覧を囲む HTML 要素 (「intro」「outro」「default」のテキストを含む) です。使用できる値:「div」「p」「span」",
+	"spl-subpages-par-class": "一覧を囲む HTML 要素の「class」属性の値です。",
+	"spl-subpages-par-intro": "一覧が空ではない場合に、一覧の前に出力するテキストです。",
+	"spl-subpages-par-outro": "一覧が空ではない場合に、一覧の後に出力するテキストです。",
+	"spl-subpages-par-default": "一覧が空の場合にその代わりに出力するテキストです。空にした場合は、エラーメッセージ (例:「ページには列挙できる下位ページがありません」) を出力します。ダッシュ (-) を指定した場合は、まったく何も出力しません。",
+	"spl-subpages-par-separator": "「list」形式 (およびその別名「bar」形式) の場合に、一覧の各項目の間に出力するテキストです。他の形式の場合には影響しません。",
+	"spl-subpages-par-template": "テンプレート名です。指定したテンプレートは一覧の各項目に適用されます。テンプレートの最初の (無名の) 引数として、項目が渡されます。テンプレートは一覧の形式をキャンセルしない、ということにご注意ください。テンプレートの出力に対して、一覧の形式 (「ol」「ol」「list」) が適用されます。",
+	"spl-subpages-par-links": "true にすると一覧の項目はリンクとして出力され、false にするとテキスト形式で出力されます。後者は特に、出力した項目をさらにテンプレートに渡す際に役立ちます。"
+}

@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Priviet",
+			"아라"
+		]
+	},
+	"spl-desc": "하위 문서를 목록화하고 개수를 세는 것을 허용",
+	"spl-nosubpages": "\"$1\" 문서는 목록에 하위 문서가 없습니다.",
+	"spl-noparentpage": "\"$1\" 문서가 존재하지 않습니다.",
+	"spl-nopages": "\"$1\" 이름공간에 문서가 없습니다.",
+	"spl-subpages-par-sort": "정렬할 방향입니다. 허용하는 값: \"asc\"와 \"desc\"입니다.",
+	"spl-subpages-par-sortby": "하위 문서를 정렬할 기준입니다. 허용하는 값: \"title\"이나 \"lastedit\"입니다.",
+	"spl-subpages-par-format": "하위 문서 목록은 여러 가지 형식으로 보여줄 수 있습니다. 허용하는 값: \"ol\" — 순서 있는(번호를 매긴) 목록, \"ul\" — 순서 없는(불릿으로 된) 목록, \"list\" — 일반 목록 (예를 들어 쉼표로 구분한 목록)입니다.",
+	"spl-subpages-par-page": "문서를 보여줄 하위 문서나 이름공간 이름(뒤에 콜론 포함)을 보여줄 문서입니다. 현재 문서는 기본값입니다.",
+	"spl-subpages-par-showpage": "문서 자체가 목록에 여부를 보여줘야 하는지 여부를 나타냅니다.",
+	"spl-subpages-par-pathstyle": "목록에서 하위 문서에 대한 경로의 스타일입니다. 허용하는 값: \"fullpagename\" — (이름공간을 포함한) 전체 문서 이름, \"pagename\" — (이름공간 없는) 문서 이름, \"subpagename\" — 하위 문서를 나타낼 문서에서 시작하는 관련된 문서 이름, \"none\" — 그냥 마지막 슬래시 뒤에 이름의 일부의 끝입니다.",
+	"spl-subpages-par-kidsonly": "직접 하위 문서만 보여줄 수 있습니다.",
+	"spl-subpages-par-limit": "나타낼 문서의 최대 수입니다.",
+	"spl-subpages-par-element": "목록을 둘러싼 (\"intro\"와 \"outro\" 또는 \"default\" 텍스트를 포함하는) HTML 요소입니다. 허용하는 값: \"div\", \"p\", \"span\"입니다.",
+	"spl-subpages-par-class": "목록을 둘러싼 HTML 요소의 \"class\" 특성에 대한 값입니다.",
+	"spl-subpages-par-intro": "목록이 비어 있지 않다면 목록 앞에 출력할 텍스트입니다.",
+	"spl-subpages-par-outro": "목록이 비어 있지 않다면 목록 뒤에 출력할 텍스트입니다.",
+	"spl-subpages-par-default": "목록이 비어 있다면 목록 대신 출력할 텍스트입니다. 비어 있다면 (\"문서는 나타낼 하위 문서가 없습니다\"와 같이) 오류 메시지가 나타납니다. 대시(\"-\")로 입력하면 결과는 완전히 비어있게 됩니다.",
+	"spl-subpages-par-separator": "\"list\"(별명 \"bar\") 형식일 때 목록 항목 두 개 사이에 출력할 텍스트입니다. 다른 형식에는 영향이 없습니다.",
+	"spl-subpages-par-template": "틀 이름입니다. 틀은 목록의 모든 항목에 적용됩니다. 항목은 (이름 없는) 첫 인수로 전달합니다. 해당 틀은 목록 형식을 취소하지 않음을 참고하세요. 형식(\"ul\", \"ol\", \"list\")은 틀의 결과에 적용됩니다.",
+	"spl-subpages-par-links": "사실(true)이면 목록 항목은 링크로 표시합니다. 거짓(false)이면 목록 항목은 일반 텍스트로 표시합니다. 후자는 더 많이 처리하기 위해 틀에 항목을 건너 뛰는 데 특히 도움이 됩니다."
+}

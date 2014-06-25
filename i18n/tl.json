@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"AnakngAraw"
+		]
+	},
+	"spl-desc": "Nagdaragdag ng isang tatak na <code><nowiki><splist /></nowiki></code> na nagbibigay ng kakayahan sa iyo na magtala ng kabahaging mga pahina",
+	"spl-nosubpages": "Walang maitatala na kabahaging mga pahina ang pahinang \"$1\".",
+	"spl-noparentpage": "Hindi umiiral ang pahinang \"$1\".",
+	"spl-nopages": "Walang mga pahina ang puwang ng pangalan na \"$1\".",
+	"spl-subpages-par-sort": "Ang patutunguhan kung saan gagawa ng paghihiwa-hiwalay. Pinapayagang mga halaga: \"pataas\" at \"pababa\".",
+	"spl-subpages-par-sortby": "Kung ano ang pagbabatayan ng paghihiwa-hiwalay ng kabahaging mga pahina. Pinapayagang mga halaga: \"pamagat\" o \"huling pagbabago\".",
+	"spl-subpages-par-format": "Ang talaan ng kabahaging pahina ay maaaring ipakita sa ilang mga kaanyuhan. Pinpayagang mga halaga: \"ol\" — ordered (numbered) list o listahang magkakasunud-sunod (mayroong bilang) o, \"ul\" — unordered (bulleted) list o listahang walang pagkakasunud-sunod (napungluan), \"list\" — payak na listahan lamang (halimbawa na ang listahan na pinaghihiwalay-hiwalay ng kuwit).",
+	"spl-subpages-par-page": "Ang pahinang pagpapakitaan ng kabahaging mga pahina, pangalan ng puwang na pampangalan (kabilang na ang trailing colon o bumabakas na tutuldok) na pagpapakitaan ng mga pahina. Likas na nakatakdang pumupunta sa pangkasalukuyang pahina.",
+	"spl-subpages-par-showpage": "Nagpapahiwatig kung ang pahina mismo ay dapat na ipakita sa loob ng talaan o hindi.",
+	"spl-subpages-par-pathstyle": "Ang estilo ng landas para sa kabahaging mga pahina na nasa loob ng talaan. Pinapayagang mga halaga: \"fullpagename\" — buong pangalan ng pahina (kabilang na ang puwang na pampangalan), \"pagename\" — pangalan ng pahina (walang puwang na pampangalan), \"subpagename\" — kaukol na pangalan ng pahina na nagsisimula mula sa pahina na pinaglilistahan namin ng kabahaging mga pahina, \"none\" o wala — ang bumubuntot na bahagi ng pangalan pagkaraan ng huling bantas na laslas.",
+	"spl-subpages-par-kidsonly": "Nagpapahintulot na magpakita lamang ng tuwirang kabahaging mga pahina.",
+	"spl-subpages-par-limit": "Ang pinakamataas na bilang ng mga pahinang itatala.",
+	"spl-subpages-par-element": "Ang elemento ng HTML na nagkukulong sa listahan (kasama ang mga tekstong \"intro\" at \"outro\" o \"default\"). Pinapayagang mga halaga: \"div\", \"p\", \"span\".",
+	"spl-subpages-par-class": "Ang halaga para sa katutubong katangian na \"class\" ng elemento ng HTML na kumukulong sa listahan.",
+	"spl-subpages-par-intro": "Ang tekstong ilalabas bago ang listahan, kung mayroong laman ang talaan.",
+	"spl-subpages-par-outro": "Ang tekstong ilalabas pagkaraan ng listahan, kung mayroong laman ang talaan.",
+	"spl-subpages-par-default": "Ang ilalabas na teksto sa halip na ang listahan, kung mayroong laman ang talaan. Kapag walang laman, ihaharap ang mensahe ng kamalian (katulad ng \"Ang pahina ay walang maililistang kabahaging mga pahina\"). Kung gatla (\"-\"), ang resulta ay talagang walang laman.",
+	"spl-subpages-par-separator": "Ang tekstong ilalabas sa pagitan ng dalawang mga bagay na panglistahan sa pagkakaton ng kaanyuang \"list\" (at ang bansag nitong \"bar\"). Walang epekto sa ibang mga kaanyuan.",
+	"spl-subpages-par-template": "Ang pangalan ng suleras. Ang suleras ay inilalapat sa bawat isang bagay ng listahan. Ang bagay ay ipinapasa bilang ang unang (hindi napapangalanang) pangangatwiran. Unawain na ang suleras ay hindi nagpapawalang-bisa sa kaanyuan ng listahan. Ang pagkakaanyo o formatting (\"ul\", \"ol\", \"list\") ay inilalapat sa resulta ng suleras.",
+	"spl-subpages-par-links": "Kung totoo, ang mga bagay na panglistahan ay inihaharap bilang mga kawing. Kapag hindi totoo, ang mga bagay na panglistahan ay inihaharap bilang mga teksto lamang talaga. Ang panghuli ay sadyang nakakatulong sa pagpapasa ng mga bagay papasok sa mga suleras para sa karagdagan pang pagpuproseso."
+}

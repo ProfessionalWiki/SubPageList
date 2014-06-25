@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrisportelli"
+		]
+	},
+	"spl-desc": "Iżżid <code><nowiki><splist /></nowiki></code> li tippermetti l-elenkar tas-sottopaġni",
+	"spl-nosubpages": "Il-paġna \"$1\" m'għandha l-ebda sottokategorija għal-lista.",
+	"spl-noparentpage": "Il-paġna \"$1\" ma teżistix.",
+	"spl-nopages": "L-ispazju tal-isem \"$1\" m'għandux paġni.",
+	"spl-subpages-par-sort": "Id-direzzjoni kif tirranġahom. Valuri permessi: \"asc\" u \"desc\"."
+}

@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16",
+			"F. Cosoleto"
+		]
+	},
+	"spl-desc": "Consente di elencare e contare le sottopagine",
+	"spl-nosubpages": "La pagina \"$1\" non ha alcuna sottopagina da elencare.",
+	"spl-noparentpage": "La pagina \"$1\" non esiste.",
+	"spl-nopages": "Il namespace \"$1\" non ha pagine.",
+	"spl-subpages-par-limit": "Il numero massimo di pagine da elencare."
+}

@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"spl-desc": "Permite facer una llista y contar subpáxines",
+	"spl-nosubpages": "La páxina «$1» nun tien páxines secundaries qu'amosar.",
+	"spl-noparentpage": "La páxina «$1» nun esiste.",
+	"spl-nopages": "L'espaciu de nomes «$1» nun tien páxines.",
+	"spl-subpages-par-sort": "La direición d'ordenación. Valores permitíos: \"asc\" y \"desc\".",
+	"spl-subpages-par-sortby": "Criteriu pa ordenar les subpáxines. Valores permitíos: \"title\" o \"lastedit\".",
+	"spl-subpages-par-format": "La llista de subpáxines pue amosase'n dellos formatos. Valores permitíos: \"ol\" — llista ordenada (numberada), \"ul\" — llistes desordenaes (con viñetes), \"list\" — llistes simples (por exemplu llista separada por comas).",
+	"spl-subpages-par-page": "La páxina de la qu'amosar les subpáxines o'l nome del espaciu de nomes (incluyendo los dos puntos finales) del qu'amosar les páxines. La predeterminada ye la páxina actual.",
+	"spl-subpages-par-showpage": "Indica si la propia páxina tien d'apaecer na llista o non.",
+	"spl-subpages-par-pathstyle": "L'estilu del camín de les subpáxines de la llista. Valores permitíos: \"fullpagename\": nome completu de la páxina (incluyendo espaciu de nomes), \"pagename\" — nome de la páxina (ensin espaciu de nomes), \"subpagename\" — nome relativu de la páxina comenzando dende la páxina pa la que vamos a facer la llista de subpáxines, \"none\" — sólo la parte final del nome dempués de la última barra.",
+	"spl-subpages-par-kidsonly": "Permite ver sólo les subpáxines direutes.",
+	"spl-subpages-par-limit": "El númberu máximu de páxines a poner na llista.",
+	"spl-subpages-par-element": "L'elementu HTML que rodea la llista (incluyendo los testos \"intro\" y \"outro\" o \"default\"). Valores permitíos: \"div\", \"p\", \"span\".",
+	"spl-subpages-par-class": "El valor pal atributu \"class\" del elementu HTML que rodea la llista.",
+	"spl-subpages-par-intro": "El testu a poner antes de la llista, si la llista nun ta balera.",
+	"spl-subpages-par-outro": "El testu a poner dempués de la llista, si la llista nun ta balera.",
+	"spl-subpages-par-default": "El testu a poner en llugar de la llista, si la llista ta balera. Si ta balera, apaecerá esti mensaxe d'error (como \"La páxina nun tien nenguna subpáxina que poner na llista\"). Si ye un guión (\"-\"), el resultáu tará en blanco dafechu.",
+	"spl-subpages-par-separator": "El testu a amosar ente dos elementos de la llista nel casu del formatu \"list\" (ya'l so alcuñu \"bar\"). Nun tien efeutu colos demás formatos.",
+	"spl-subpages-par-template": "El nome de la plantía. La plantía aplicase a cada elementu de la llista. Un elementu pasase como primer argumentu (ensin nome). Tenga en cuenta que la plantía nun anula'l formatu de la llista. El formatu (\"ul\", \"ol\", \"list\") aplicase al resultáu de la plantía.",
+	"spl-subpages-par-links": "Si ye verdadero, los elementos de la llista veránse como enllaces. Si ye falso, los elementos de la llista veránse como testu planu. Lo último ye especialmente útil para pasar los elementos a les plantíes pa procesalos posteriormente."
+}

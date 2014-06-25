@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"IvanLanin"
+		]
+	},
+	"spl-desc": "Memberikan tag <code><nowiki><splist /></nowiki></code> yang memungkinkan Anda untuk melihat daftar subhalaman",
+	"spl-nosubpages": "$1 tidak memiliki subhalaman untuk ditampilkan.",
+	"spl-subpages-par-sort": "Arah urutan.",
+	"spl-subpages-par-sortby": "Cara pengurutan subhalaman.",
+	"spl-subpages-par-format": "Daftar subhalaman dapat ditampilkan dalam berbagai format, yaitu daftar bernomor (ol), daftar butir (ul), dan daftar dipisahkan koma (list).",
+	"spl-subpages-par-page": "Halaman yang akan ditampilkan subhalamannya. Setelan bawaan: halaman saat ini.",
+	"spl-subpages-par-showpage": "Menunjukkan apakah halaman itu sendiri harus ditampilkan atau tidak dalam daftar.",
+	"spl-subpages-par-pathstyle": "Gaya jalur subhalaman dalam daftar.",
+	"spl-subpages-par-kidsonly": "Hanya tampilkan subhalaman langsung.",
+	"spl-subpages-par-limit": "Jumlah halaman maks. yang ditampilkan."
+}

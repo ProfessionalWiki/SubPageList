@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nedergard",
+			"Nike"
+		]
+	},
+	"spl-noparentpage": "Sivua ”$1” ei ole.",
+	"spl-nopages": "Nimiavaruudessa $1 ei ole sivuja."
+}

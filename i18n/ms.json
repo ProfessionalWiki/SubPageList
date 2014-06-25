@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Anakmalaysia"
+		]
+	},
+	"spl-desc": "Membubuh teg <code><nowiki><splist /></nowiki></code> yang membolehkan anda untuk melihat senarai sublaman",
+	"spl-nosubpages": "Halaman \"$1\" tidak menyenaraikan sebarang subhalaman.",
+	"spl-noparentpage": "Halaman \"$1\" tidak wujud.",
+	"spl-nopages": "Ruang nama \"$1\" tiada halaman.",
+	"spl-subpages-par-sort": "Arah isihan. Nilai-nilai yang dibenarkan: \"asc\" (menaik) dan \"desc\" (menurun).",
+	"spl-subpages-par-sortby": "Apa yang diikut untuk mengisih sublaman. Nilai-nilai yang dibenarkan: \"title\" (tajuk) atau \"lastedit\" (suntingan terakhir).",
+	"spl-subpages-par-format": "Senarai sublaman boleh dipaparkan dalam beberapa format. Nilai-nilai yang dibenarkan: \"ol\" — senarai tertib (bernombor), \"ul\" — senarai tak tertib (berbunga), \"list\" — senarai biasa (cth: senarai yang diasingkan dengan koma).",
+	"spl-subpages-par-page": "Halaman untuk memaparkan subhalaman, atau ruang nama (diikuti oleh tanda titik bertindih) untuk memaparkan halaman. Yang azali adalah halaman semasa.",
+	"spl-subpages-par-showpage": "Menandakan sama ada halaman itu harus dipaparkan dalam senarai atau tidak.",
+	"spl-subpages-par-pathstyle": "Gaya laluan untuk subhalaman-subhalaman dalam senarai. Nilai-nilai yang dibenarkan: \"fullpagename\" — nama penuh halaman (termasuk ruang nama), \"pagename\" — nama halaman (tanpa ruang nama), \"subpagename\" — nama halaman relatif yang bermula dari halaman untuk kita senaraikan subhalaman, \"none\" — hanya ekor nama selepas tanda condong terakhir.",
+	"spl-subpages-par-kidsonly": "Membenarkan paparan subhalaman langsung sahaja.",
+	"spl-subpages-par-limit": "Bilangan halaman maksimum yang hendak disenaraikan.",
+	"spl-subpages-par-element": "Elemen HTML yang memagari senarai (termasuk \"intro\" dan \"outro\" atau \"default\"). Nilai-nilai yang dibenarkan: \"div\", \"p\", \"span\".",
+	"spl-subpages-par-class": "Nilai untuk atribut \"class\" pada elemen-elemen HTML yang memagari senarai.",
+	"spl-subpages-par-intro": "Teks yang hendak disiarkan sebelum senarai, jika senarai tidak kosong.",
+	"spl-subpages-par-outro": "Teks yang hendak disiarkan selepas senarai, jika senarai tidak kosong.",
+	"spl-subpages-par-default": "Teks yang hendak disiarkan sebagai ganti senarai jika senarai itu kosong. Jika kosong, maka terpaparnya mesej ralat (seperti \"Halaman ini tidak menyenaraikan sebarang subhalaman.\") Jika tanda sengkang (\"-\"), hasilnya kosong sama sekali.",
+	"spl-subpages-par-separator": "Teks yang hendak disiarkan di antara dua perkara senarai seandainya terdapat format \"list\" (atau \"bar\"). Tiada kesan pada format-format lain.",
+	"spl-subpages-par-template": "Nama templat. Templat diterapkan pada setiap perkara dalam senarai. Satu perkara diserahkan sebagai hujah pertama (yang tanpa nama). Ingat, templat ini tidak membatalkan formatan senarai. Formatan (\"ul\", \"ol\", \"list\") diterapkan pada hasil templat.",
+	"spl-subpages-par-links": "Jika benar, perkara-perkara dalam senarai dipaparkan sebagai pautan. Jika palsu, perkara-perkara dalam senarai dipaparkan sebagai teks biasa. Yang palsu berguna khususnya untuk menyerahkan perkara-perkara ke dalam templat untuk pemprosesan selanjutnya."
+}

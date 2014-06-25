@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie",
+			"SPQRobin",
+			"Siebrand"
+		]
+	},
+	"spl-desc": "Maakt het mogelijk subpagina's weer te geven en te tellen",
+	"spl-nosubpages": "Pagina \"$1\" heeft geen subpagina's.",
+	"spl-noparentpage": "Pagina \"$1\" bestaat niet.",
+	"spl-nopages": "Naamruimte \"$1\" heeft geen pagina's.",
+	"spl-subpages-par-sort": "De richting voor de sorteervolgorde. Toegestande waarden: \"asc\" (oplopend\") en \"desc\" (aflopend).",
+	"spl-subpages-par-sortby": "Hoe de subpagina's te sorteren. Toegestane waarden: \"title\" (paginanaam) en \"lastedit\" (laatste bewerking).",
+	"spl-subpages-par-format": "De lijst met subpagina's kan op verschillende manieren weergegeven worden. Als genummerde lijst (\"ol\"), ongenummerde lijst (\"ul\") en als door komma's gescheiden lijst (\"list\"), bijvoorbeeld een door komma's gescheiden lijst.",
+	"spl-subpages-par-page": "De pagina waarvoor subpagina's weergegeven moeten worden of een naamruimtenaam (inclusief de dubbele punt als achtervoegsel). Dit is standaard de huidige pagina.",
+	"spl-subpages-par-showpage": "Geeft aan of de pagina zelf weergegeven moet worden in de lijst of niet.",
+	"spl-subpages-par-pathstyle": "De stijl van het pad voor subpagina's in de lijst. Toegestane waarden: \"fullpagename\": volledige paginanaam, inclusief naamruimte, \"pagename\": paginanaam zonder naamruimte, \"subpagename\": relatieve paginanaam vanaf de pagina waarvoor subpagina's worden weergegeven, \"none\": alleen het achtervoegsel van de naam na de laatste slash.",
+	"spl-subpages-par-kidsonly": "Maakt het mogelijk om alleen subpagina's van het eerste niveau weer te geven.",
+	"spl-subpages-par-limit": "Het maximale aantal weer te geven pagina's.",
+	"spl-subpages-par-element": "Het HTML-element dat de lijst omsluit (inclusief \"intro\"- en \"outro\"- of \"default\"-teksten). Toegestane waarden: \"div\", \"p\", \"span\".",
+	"spl-subpages-par-class": "De waarde voor het \"class\"-attribuut van het HTML-element waarin de lijst is omsloten.",
+	"spl-subpages-par-intro": "De uit te voeren tekst vóór de lijst als de lijst niet leeg is.",
+	"spl-subpages-par-outro": "De uit te voeren tekst na de lijst, als de lijst niet leeg is.",
+	"spl-subpages-par-default": "De weer te geven tekst in plaats van de lijst als de lijst leeg is. Als dit leeg is, wordt een foutmelding gegeven, zoals \"Er zijn geen weer te geven subpagina's\". Bij gebruik van het teken \"-\" is het resultaat volledig leeg.",
+	"spl-subpages-par-separator": "De uit te voeren tekst tussen twee lijstelementen voor een \"list\" (lijstweergave) of \"bar\" (balkweergave). Dit heeft geen effect op andere weergaven.",
+	"spl-subpages-par-template": "De naam van de sjabloon. De sjabloon wordt toegepast op ieder element in de lijst. Een element wordt doorgegeven als het eerste (onbenoemde) argument. Let op dat de sjabloon de lijstopmaak niet verwijdert; de opmaak (\"ul\", \"ol\" of \"list\") wordt toegepast op het resultaat van de sjabloon.",
+	"spl-subpages-par-links": "Lijstelementen worden opgemaakt als koppelingen als waar. Lijstelementen zijn platte tekst als onwaar. De laatste optie is handig bij het doorgeven van elementen aan sjablonen voor verdere verwerking."
+}

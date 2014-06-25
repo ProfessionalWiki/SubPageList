@@ -27,7 +27,7 @@ cd extensions
 cp -r $originalDirectory SubPageList
 
 cd SubPageList
-composer install
+composer install --prefer-source
 
 cd ../..
 

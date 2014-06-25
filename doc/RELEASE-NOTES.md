@@ -2,7 +2,7 @@ These are the release notes for the [SubPageList extension](../README.md).
 
 ## Version 1.2 (dev)
 
-* 
+*
 
 ## Version 1.1 (2013-12-07)
 

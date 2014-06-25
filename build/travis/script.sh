@@ -2,11 +2,13 @@
 
 set -x
 
-cd ../phase3/extensions/SubPageList
+originalDirectory=$(pwd)
 
-if [ "$MW-$DBTYPE" == "master-mysql" ]
+cd ../phase3/tests/phpunit
+
+if [ "$TYPE" == "coverage" ]
 then
-	phpunit --coverage-clover ../../extensions/SubPageList/build/coverage.clover
+	php phpunit.php --group SubPageList -c ../../extensions/SubPageList/phpunit.xml.dist --coverage-clover $originalDirectory/build/coverage.clover
 else
-	phpunit
+	php phpunit.php --group SubPageList -c ../../extensions/SubPageList/phpunit.xml.dist
 fi

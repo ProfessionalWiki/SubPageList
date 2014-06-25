@@ -28,6 +28,7 @@ cp -r $originalDirectory SubPageList
 
 cd SubPageList
 composer install --prefer-source
+composer require 'phpunit/phpunit=3.7.*' --prefer-source
 
 cd ../..
 

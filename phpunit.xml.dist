@@ -1,6 +1,6 @@
 <phpunit backupGlobals="false"
          backupStaticAttributes="false"
-         bootstrap="Tests/bootstrap.php"
+         bootstrap="tests/bootstrap.php"
          cacheTokens="false"
          colors="true"
          convertErrorsToExceptions="true"
@@ -10,15 +10,14 @@
          stopOnFailure="false"
          stopOnIncomplete="false"
          stopOnSkipped="false"
-         strict="true"
          verbose="true">
     <testsuites>
         <testsuite name="SubPageListFast">
-            <directory>Tests/Unit</directory>
-            <directory>Tests/Component</directory>
+            <directory>tests/Unit</directory>
+            <directory>tests/Component</directory>
         </testsuite>
         <testsuite name="SubPageListSlow">
-            <directory>Tests/System</directory>
+            <directory>tests/System</directory>
         </testsuite>
     </testsuites>
     <filter>

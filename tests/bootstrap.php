@@ -25,3 +25,5 @@ if ( !is_readable( __DIR__ . '/../vendor/autoload.php' ) ) {
 }
 
 $autoLoader = require_once( __DIR__ . '/../vendor/autoload.php' );
+
+$autoLoader->addPsr4( 'Tests\\System\\SubPageList\\', __DIR__ . '/System/SubPageList/' );

@@ -33,11 +33,7 @@
 		],
 		"psr-4": {
 			"SubPageList\\": "src/"
-		},
-		"classmap": [
-			"Tests/System/SubPageList/PageCreator.php",
-			"Tests/System/SubPageList/PageDeleter.php"
-		]
+		}
 	},
 	"extra": {
 		"branch-alias": {

@@ -152,7 +152,7 @@ class Setup {
 		 * @return boolean
 		 */
 		$this->hooks['UnitTestsList'][]	= function( array &$files ) use ( $rootDirectory ) {
-			$directoryIterator = new RecursiveDirectoryIterator( $rootDirectory . '/Tests/' );
+			$directoryIterator = new RecursiveDirectoryIterator( $rootDirectory . '/tests/' );
 
 			/**
 			 * @var SplFileInfo $fileInfo

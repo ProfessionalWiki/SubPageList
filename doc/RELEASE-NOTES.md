@@ -1,8 +1,9 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
-## Version 1.2 (dev)
+## Version 1.1.1 (2014-06-26)
 
-*
+* Updated the versions of the used libraries.
+* Made various minor improvements to code style.
 
 ## Version 1.1 (2013-12-07)
 

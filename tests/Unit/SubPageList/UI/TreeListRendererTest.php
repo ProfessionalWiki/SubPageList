@@ -48,7 +48,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	protected function assertRendersHierarchy( Page $page, $expected, array $options = array() ) {
+	private function assertRendersHierarchy( Page $page, $expected, array $options = array() ) {
 		$listRender = $this->newListRenderer( $options );
 
 		$actual = $listRender->renderHierarchy( $page );
@@ -56,7 +56,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
-	protected function newListRenderer( array $options ) {
+	private function newListRenderer( array $options ) {
 		$pageRenderer = $this->getMock( 'SubPageList\UI\PageRenderer\PageRenderer' );
 
 		$pageRenderer->expects( $this->any() )

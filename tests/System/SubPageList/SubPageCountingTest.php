@@ -17,7 +17,7 @@ class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @var Title[]
 	 */
-	protected static $titles = array();
+	private static $titles = array();
 
 	public static function createPage( $titleText ) {
 		$title = Title::newFromText( $titleText );
@@ -78,14 +78,14 @@ class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	protected function assertSubPageCountFor( $pageName, $expectedCount ) {
+	private function assertSubPageCountFor( $pageName, $expectedCount ) {
 		$this->assertEquals(
 			$expectedCount,
 			(int)$this->getSubPageCountFor( $pageName )
 		);
 	}
 
-	protected function getSubPageCountFor( $pageName ) {
+	private function getSubPageCountFor( $pageName ) {
 		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
 
 		$functionRunner = new FunctionRunner(

@@ -14,7 +14,7 @@ use Title;
  */
 class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
-	protected static $pages = array(
+	private static $pages = array(
 		// A page with no sub pages
 		'TempSPLTest:AAA',
 
@@ -36,7 +36,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @var Title[]
 	 */
-	protected static $titles;
+	private static $titles;
 
 	public static function setUpBeforeClass() {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
@@ -62,21 +62,21 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		}
 	}
 
-	protected function assertCreatesList( array $params, $listText ) {
+	private function assertCreatesList( array $params, $listText ) {
 		$this->assertEquals(
 			$listText,
 			$this->getListForParams( $params )
 		);
 	}
 
-	protected function assertCreatesListWithWrap( array $params, $listText ) {
+	private function assertCreatesListWithWrap( array $params, $listText ) {
 		$this->assertCreatesList(
 			$params,
 			'<div class="subpagelist">' . "\n" . $listText . "\n" . '</div>'
 		);
 	}
 
-	protected function getListForParams( array $params ) {
+	private function getListForParams( array $params ) {
 		$functionParams = array();
 
 		foreach ( $params as $name => $value ) {
@@ -86,7 +86,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		return $this->getListForRawParams( $functionParams );
 	}
 
-	protected function getListForRawParams( array $params ) {
+	private function getListForRawParams( array $params ) {
 		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
 
 		$functionRunner = new FunctionRunner(

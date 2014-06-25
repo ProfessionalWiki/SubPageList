@@ -21,7 +21,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$this->assertTrue( true );
 	}
 
-	protected function newPageHierarchyCreator() {
+	private function newPageHierarchyCreator() {
 		$factory = $this->getMock( 'SubPageList\TitleFactory' );
 
 		$titleBuilder = array( $this, 'newMockTitle' );
@@ -82,7 +82,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals( array(), $page->getSubPages() );
 	}
 
-	protected function assertPageCount( $expectedCount, $hierarchy ) {
+	private function assertPageCount( $expectedCount, $hierarchy ) {
 		$this->assertInternalType( 'array', $hierarchy );
 		$this->assertCount( $expectedCount, $hierarchy );
 		$this->assertContainsOnlyInstancesOf( 'SubPageList\Page', $hierarchy );
@@ -105,7 +105,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	 * @param Title[] $expectedTitles
 	 * @param Page[] $actualPages
 	 */
-	protected function assertTopLevelTitlesEqual( array $expectedTitles, array $actualPages ) {
+	private function assertTopLevelTitlesEqual( array $expectedTitles, array $actualPages ) {
 		$actualTitles = array();
 
 		foreach ( $actualPages as $actualPage ) {
@@ -130,7 +130,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$this->assertHasParentAndChild( $topLevelPage, $childPage, $hierarchy );
 	}
 
-	protected function assertHasParentAndChild( $topLevelPage, $childPage, array $hierarchy ) {
+	private function assertHasParentAndChild( $topLevelPage, $childPage, array $hierarchy ) {
 		$this->assertPageCount( 1, $hierarchy );
 
 		/**

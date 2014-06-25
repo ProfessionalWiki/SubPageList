@@ -42,7 +42,7 @@ class SetupTest extends \PHPUnit_Framework_TestCase {
 		}
 	}
 
-	protected function newExtension() {
+	private function newExtension() {
 		return new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
 	}
 

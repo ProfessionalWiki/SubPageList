@@ -28,7 +28,7 @@ class SubPageCountTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals( (string)$numberOfSubPages . '.0', $countResult );
 	}
 
-	protected function newSubPageCount( $titleText, $numberOfSubPages ) {
+	private function newSubPageCount( $titleText, $numberOfSubPages ) {
 		$titleFactory = new TitleFactory();
 
 		$counter = $this->getMock( 'SubPageList\SubPageCounter' );
@@ -41,7 +41,7 @@ class SubPageCountTest extends \PHPUnit_Framework_TestCase {
 		return new SubPageCount( $counter, $titleFactory );
 	}
 
-	protected function getCountResult( SubPageCount $subPageCount, $titleText ) {
+	private function getCountResult( SubPageCount $subPageCount, $titleText ) {
 		$language = $this->getMock( 'Language' );
 
 		$language->expects( $this->once() )

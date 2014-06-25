@@ -30,7 +30,7 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals( $renderResult, $renderedList );
 	}
 
-	protected function newSubPageList( $titleText, $renderResult ) {
+	private function newSubPageList( $titleText, $renderResult ) {
 		$title = \Title::newFromText( $titleText );
 		$page = new Page( $title );
 
@@ -64,7 +64,7 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	protected function getRenderedList( SubPageList $subPageList, $titleText ) {
+	private function getRenderedList( SubPageList $subPageList, $titleText ) {
 		$parser = $this->getMock( 'Parser' );
 
 		$processingResult = new ProcessingResult(

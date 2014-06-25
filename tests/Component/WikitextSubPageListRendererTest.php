@@ -23,7 +23,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @var Page[]
 	 */
-	protected static $pages;
+	private static $pages;
 
 	public static function setUpBeforeClass() {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
@@ -46,14 +46,14 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	protected function assertCreatesList( array $params, $listText ) {
+	private function assertCreatesList( array $params, $listText ) {
 		$this->assertEquals(
 			$listText,
 			$this->getListForParams( $params )
 		);
 	}
 
-	protected function getListForParams( array $rawParams ) {
+	private function getListForParams( array $rawParams ) {
 		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
 
 		$definition = $extension->getListHookDefinition();
@@ -66,7 +66,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	protected function getProcessedParams( HookDefinition $definition, array $rawParams ) {
+	private function getProcessedParams( HookDefinition $definition, array $rawParams ) {
 		$processor = Processor::newDefault();
 
 		$processor->setParameters(

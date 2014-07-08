@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Armando-Martin"
+			"Armando-Martin",
+			"Macofe"
 		]
 	},
-	"spl-desc": "Añade una etiqueta <code><nowiki><splist /></nowiki></code> que le permite enumerar las subpáginas",
+	"spl-desc": "Permite listar y contar las subpáginas",
 	"spl-nosubpages": "La página \"$1\" no tiene ninguna subpágina en la lista.",
 	"spl-noparentpage": "La página \"$1\" no existe.",
 	"spl-nopages": "El espacio de nombres \"$1\" no tiene páginas.",

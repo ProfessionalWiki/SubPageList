@@ -3,7 +3,6 @@
 namespace SubPageList;
 
 use Parser;
-use ParserHooks\FunctionRunner;
 use ParserHooks\HookDefinition;
 use ParserHooks\HookHandler;
 use ParserHooks\HookRegistrant;

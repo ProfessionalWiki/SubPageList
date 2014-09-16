@@ -4,7 +4,6 @@ namespace SubPageList;
 
 use InvalidArgumentException;
 use Title;
-use TitleArray;
 
 /**
  * Interface for subpage finders.

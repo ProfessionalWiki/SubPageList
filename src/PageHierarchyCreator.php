@@ -98,10 +98,6 @@ class PageHierarchyCreator {
 		}
 	}
 
-	private function addToPageIndex( $titleText, Page $page ) {
-		$this->allPages[$titleText] = $page;
-	}
-
 	private function createParents( $pageTitle ) {
 		$titleParts = $this->getTitleParts( $pageTitle );
 		array_pop( $titleParts );

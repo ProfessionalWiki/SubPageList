@@ -117,10 +117,37 @@ class SubPageList implements HookHandler {
 	}
 
 	private function getRenderedList( Page $topLevelPage, $parameters ) {
+		if ( $topLevelPage->getTitle()->getFullText() !== $parameters['page'] ) {
+			$actualPage = $this->getActualPage( $topLevelPage, $parameters );
+
+			if ( $actualPage !== null ) {
+				$topLevelPage = $actualPage;
+			}
+		}
+
+
 		return $this->subPageListRenderer->render(
 			$topLevelPage,
 			$parameters
 		);
+	}
+
+	private function getActualPage( Page $topLevelPage, $parameters ) {
+		foreach ( $topLevelPage->getSubPages() as $page ) {
+			if ( $page->getTitle()->getFullText() === $parameters['page'] ) {
+				return $page;
+			}
+		}
+
+		foreach ( $topLevelPage->getSubPages() as $page ) {
+			$fromSubPages = $this->getActualPage( $page, $parameters );
+
+			if ( $fromSubPages !== null ) {
+				return $fromSubPages;
+			}
+		}
+
+		return null;
 	}
 
 	/**

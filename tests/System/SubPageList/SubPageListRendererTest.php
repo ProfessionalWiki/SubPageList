@@ -301,4 +301,15 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	// https://github.com/JeroenDeDauw/SubPageList/issues/3
+	public function testIssueKidsOnlyForSubPage() {
+		$this->assertCreatesListWithWrap(
+			array(
+				'page' => 'TempSPLTest:DDD/Sub2',
+				'kidsonly' => 'yes',
+			),
+			'* [[TempSPLTest:DDD/Sub2/Sub|Sub]]'
+		);
+	}
+
 }

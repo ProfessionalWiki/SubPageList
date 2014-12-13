@@ -4,10 +4,11 @@
 			"EugeneZelenko",
 			"Jim-by",
 			"Renessaince",
-			"Wizardist"
+			"Wizardist",
+			"Red Winged Duck"
 		]
 	},
-	"spl-desc": "Дадае тэг <code><nowiki><splist /></nowiki></code>, які выводзіць сьпіс падстаронак",
+	"spl-desc": "Дазваляе выводзіць сьпіс і лічыць колькасьць падстаронак",
 	"spl-nosubpages": "Старонка «$1» ня мае падстаронак для сьпісу.",
 	"spl-noparentpage": "Старонка «$1» не існуе.",
 	"spl-nopages": "Прастора назваў «$1» ня ўтрымлівае старонак.",

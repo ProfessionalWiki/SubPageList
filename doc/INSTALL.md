@@ -48,8 +48,8 @@ These are the installation and configuration instructions for the [SubPageList e
 	</tr>
 	<tr>
 		<th>SPL 1.1.x</th>
-		<td>5.3.0 - 5.6.x</td>
-		<td>1.19 - 1.24</td>
+		<td>5.3.0 - 5.6.x & HHVM</td>
+		<td>1.19 - 1.25</td>
 		<td>Required</td>
 	</tr>
 	<tr>

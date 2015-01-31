@@ -12,8 +12,14 @@ These are the installation and configuration instructions for the [SubPageList e
 		<th>Git branch</th>
 	</tr>
 	<tr>
-		<th>SPL 1.1.1</th>
+		<th>SPL 1.1.2</th>
 		<td>Stable release</td>
+		<td>2015-01-31</td>
+		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.1.2">1.1.2</a></td>
+	</tr>
+	<tr>
+		<th>SPL 1.1.1</th>
+		<td>Legacy release</td>
 		<td>2014-06-26</td>
 		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.1.1">1.1.1</a></td>
 	</tr>

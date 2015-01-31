@@ -147,9 +147,10 @@ Verify your LocalSettings.php has $GLOBALS['wgNamespacesWithSubpages'] set for e
 
 For example:
 
-    $GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
-    $GLOBALS['wgNamespacesWithSubpages'][NS_USER] = true;
-
+```php
+$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
+$GLOBALS['wgNamespacesWithSubpages'][NS_USER] = true;
+```
 
 #### Verify installation success
 

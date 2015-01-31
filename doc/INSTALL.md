@@ -183,7 +183,9 @@ all of its children.
 
 This option is off by default and can be turned on with:
 
+```php
 $GLOBALS['egSPLAutorefresh'] = true;
+```
 
 ### General subpage settings
 
@@ -192,4 +194,6 @@ to be displayed on subpages to their parent pages. To enable this you
 need to set [$wgNamespacesWithSubpages](https://www.mediawiki.org/wiki/Manual:$wgNamespacesWithSubpages),
 which is a per namespace setting, like shown below:
 
+```php
 $GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = 1;
+```

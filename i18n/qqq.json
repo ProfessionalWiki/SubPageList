@@ -4,10 +4,11 @@
 			"Hamilton Abreu",
 			"Purodha",
 			"Shirayuki",
-			"아라"
+			"아라",
+			"Umherirrender"
 		]
 	},
-	"spl-desc": "{{desc|name=Sub Page List|url=http://www.mediawiki.org/wiki/Extension:SubPageList}}",
+	"spl-desc": "{{desc|name=Sub Page List|url=https://www.mediawiki.org/wiki/Extension:SubPageList}}",
 	"spl-nosubpages": "Parameters:\n* $1 - page title (with link)\nSee also:\n* {{msg-mw|Spl-noparentpage}}\n* {{msg-mw|Spl-nopages}}",
 	"spl-noparentpage": "Parameters:\n* $1 - page title\nSee also:\n* {{msg-mw|Spl-nosubpages}}\n* {{msg-mw|Spl-nopages}}",
 	"spl-nopages": "Parameters:\n* $1 - namespace name\nSee also:\n* {{msg-mw|Spl-noparentpage}}\n* {{msg-mw|Spl-nosubpages}}",

@@ -28,7 +28,7 @@ $magicWords['ar'] = array(
 	'subpagecount' => array( 0, 'عداد_صفحة_فرعية' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $magicWords['arz'] = array(
 	'splist' => array( 0, 'قايمه_صف' ),
 	'subpages' => array( 0, 'صفحات_فرعيه' ),

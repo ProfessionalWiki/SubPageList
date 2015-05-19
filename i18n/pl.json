@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"BeginaFelicysym",
-			"Woytecr"
+			"Woytecr",
+			"Chrumps"
 		]
 	},
 	"spl-desc": "Dodaje tag <code><nowiki><splist /></nowiki></code> pozwalający na wstawienie listy podstron",
 	"spl-nosubpages": "Strona \" $1 \" nie ma podstron do wyświetlenia.",
 	"spl-noparentpage": "Strona \"$1\" nie istnieje.",
-	"spl-nopages": "Przestrzeń nazw \"$1\" nie zawiera stron.",
+	"spl-nopages": "Przestrzeń nazw „$1” nie zawiera stron.",
 	"spl-subpages-par-sort": "Kierunek porządkowania. Dopuszczalne wartości: \"asc\" rosnąco i \"desc\" malejąco.",
 	"spl-subpages-par-sortby": "Według czego uporządkować podstrony. Dopuszczalne wartości: \"tytuł\" lub \"ostatniaedycja\".",
 	"spl-subpages-par-format": "Lista podstron może być wyświetlana w różnych formatach. Dopuszczalne wartości: \"ol\" — uporządkowana (numerowana) lista, \"ul\" — lista nieuporządkowana (wypunktowanie), \"list\" — zwykła lista (na przykład lista rozdzielana przecinkami).",

@@ -66,13 +66,6 @@ The below table demonstrates how two different titles are formatted for each of 
 	</tr>
 </table>
 
-#### Sort
-
-Parameter name: sort
-
-Alphabetic sorting order of the pages. The allowed values are <code>asc</code> for ascending (A first)
-and <code>desc</code> for descending (Z first). The default is <code>asc</code>.
-
 #### Header and footer
 
 Header parameter name: intro
@@ -150,6 +143,15 @@ The size of the actual list might be a bit above the upper bound, as non-existin
 pages in the subpage tree get added to it. It might also be lower then the upper
 bound even when there are more pages then the specified limit, as certain parameters
 (ie "kidsonly") omit pages from the result set.
+
+#### Sort
+
+Parameter name: sort
+
+Alphabetic sorting order of the pages. The allowed values are <code>asc</code> for ascending (A first)
+and <code>desc</code> for descending (Z first). The default is <code>asc</code>.
+
+This sort is applied after the limit to the resdult set. So this is not a global sort.
 
 ### Default parameters
 

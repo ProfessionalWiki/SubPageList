@@ -1,6 +1,6 @@
 <?php
 
-namespace SubPageList;
+namespace SubPageList\Lister;
 
 use InvalidArgumentException;
 use Title;

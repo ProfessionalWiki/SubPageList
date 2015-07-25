@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\Unit\SubPageList;
+namespace Tests\Unit\SubPageList\Lister;
 
-use SubPageList\Page;
-use SubPageList\PageHierarchyCreator;
+use SubPageList\Lister\Page;
+use SubPageList\Lister\PageHierarchyCreator;
 use Title;
 
 /**
- * @covers SubPageList\PageHierarchyCreator
+ * @covers SubPageList\Lister\PageHierarchyCreator
  *
  * @group SubPageList
  *
@@ -85,7 +85,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	private function assertPageCount( $expectedCount, $hierarchy ) {
 		$this->assertInternalType( 'array', $hierarchy );
 		$this->assertCount( $expectedCount, $hierarchy );
-		$this->assertContainsOnlyInstancesOf( 'SubPageList\Page', $hierarchy );
+		$this->assertContainsOnlyInstancesOf( 'SubPageList\Lister\Page', $hierarchy );
 	}
 
 	public function testMultipleTopLevelTitlesStayOnTopLevel() {

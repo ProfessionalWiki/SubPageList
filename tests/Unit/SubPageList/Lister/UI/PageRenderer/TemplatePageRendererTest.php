@@ -2,35 +2,37 @@
 
 namespace Tests\Unit\SubPageList\UI\PageRenderer;
 
-use SubPageList\Page;
-use SubPageList\UI\PageRenderer\LinkingPageRenderer;
-use SubPageList\UI\PageRenderer\PlainPageRenderer;
+use SubPageList\Lister\Page;
+use SubPageList\Lister\UI\PageRenderer\TemplatePageRenderer;
 use Title;
 
 /**
- * @covers SubPageList\UI\PageRenderer\LinkingPageRenderer
+ * @covers SubPageList\Lister\UI\PageRenderer\TemplatePageRenderer
  *
  * @group SubPageList
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
+class TemplatePageRendererTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @dataProvider renderProvider
 	 */
-	public function testRenderPage( Page $page, $expected ) {
+	public function testRenderPage( Page $page, $templateName, $expected ) {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
 
-		$basicRenderer = $this->getMock( 'SubPageList\UI\PageRenderer\PageRenderer' );
+		$basicRenderer = $this->getMock( 'SubPageList\Lister\UI\PageRenderer\PageRenderer' );
 
 		$basicRenderer->expects( $this->once() )
 			->method( 'renderPage' )
 			->with( $this->equalTo( $page ) )
 			->will( $this->returnValue( 'Ohi' ) );
 
-		$renderer = new LinkingPageRenderer( $basicRenderer );
+		$renderer = new TemplatePageRenderer(
+			$basicRenderer,
+			$templateName
+		);
 
 		$actual = $renderer->renderPage( $page );
 
@@ -41,19 +43,23 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 		return array(
 			array(
 				new Page( Title::newFromText( 'AAA' ) ),
-				'[[AAA|Ohi]]',
+				'MyTemplate',
+				'{{MyTemplate|Ohi}}',
 			),
 			array(
 				new Page( Title::newFromText( 'AAA/BBB' ) ),
-				'[[AAA/BBB|Ohi]]',
+				'MyTemplate',
+				'{{MyTemplate|Ohi}}',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar' ) ),
-				'[[Foo:Bar|Ohi]]',
+				'MyTemplate',
+				'{{MyTemplate|Ohi}}',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
-				'[[Foo:Bar/Baz|Ohi]]',
+				'MyTemplate',
+				'{{MyTemplate|Ohi}}',
 			),
 		);
 	}

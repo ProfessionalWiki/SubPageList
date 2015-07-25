@@ -1,39 +1,35 @@
 <?php
 
-namespace Tests\Unit\SubPageList\UI\PageRenderer;
+namespace Tests\Unit\SubPageList\Lister\UI\PageRenderer;
 
-use SubPageList\Page;
-use SubPageList\UI\PageRenderer\TemplatePageRenderer;
-use SubPageList\UI\PageRenderer\PlainPageRenderer;
+use SubPageList\Lister\Page;
+use SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer;
 use Title;
 
 /**
- * @covers SubPageList\UI\PageRenderer\TemplatePageRenderer
+ * @covers SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer
  *
  * @group SubPageList
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class TemplatePageRendererTest extends \PHPUnit_Framework_TestCase {
+class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @dataProvider renderProvider
 	 */
-	public function testRenderPage( Page $page, $templateName, $expected ) {
+	public function testRenderPage( Page $page, $expected ) {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
 
-		$basicRenderer = $this->getMock( 'SubPageList\UI\PageRenderer\PageRenderer' );
+		$basicRenderer = $this->getMock( 'SubPageList\Lister\UI\PageRenderer\PageRenderer' );
 
 		$basicRenderer->expects( $this->once() )
 			->method( 'renderPage' )
 			->with( $this->equalTo( $page ) )
 			->will( $this->returnValue( 'Ohi' ) );
 
-		$renderer = new TemplatePageRenderer(
-			$basicRenderer,
-			$templateName
-		);
+		$renderer = new LinkingPageRenderer( $basicRenderer );
 
 		$actual = $renderer->renderPage( $page );
 
@@ -44,23 +40,19 @@ class TemplatePageRendererTest extends \PHPUnit_Framework_TestCase {
 		return array(
 			array(
 				new Page( Title::newFromText( 'AAA' ) ),
-				'MyTemplate',
-				'{{MyTemplate|Ohi}}',
+				'[[AAA|Ohi]]',
 			),
 			array(
 				new Page( Title::newFromText( 'AAA/BBB' ) ),
-				'MyTemplate',
-				'{{MyTemplate|Ohi}}',
+				'[[AAA/BBB|Ohi]]',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar' ) ),
-				'MyTemplate',
-				'{{MyTemplate|Ohi}}',
+				'[[Foo:Bar|Ohi]]',
 			),
 			array(
 				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
-				'MyTemplate',
-				'{{MyTemplate|Ohi}}',
+				'[[Foo:Bar/Baz|Ohi]]',
 			),
 		);
 	}

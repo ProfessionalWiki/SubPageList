@@ -2,6 +2,7 @@
 
 namespace SubPageList;
 
+use SubPageList\Lister\SubPageFinder;
 use Title;
 
 /**

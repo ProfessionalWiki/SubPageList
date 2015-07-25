@@ -8,8 +8,11 @@ use ParserHooks\HookHandler;
 use ParserHooks\HookRegistrant;
 use SubPageList\Counter\SubPageCount;
 use SubPageList\Counter\SubPageCounter;
-use SubPageList\UI\SubPageListRenderer;
-use SubPageList\UI\WikitextSubPageListRenderer;
+use SubPageList\Lister\PageHierarchyCreator;
+use SubPageList\Lister\SimpleSubPageFinder;
+use SubPageList\Lister\SubPageList;
+use SubPageList\Lister\UI\SubPageListRenderer;
+use SubPageList\Lister\UI\WikitextSubPageListRenderer;
 
 /**
  * Top level factory for the SubPageList extension.

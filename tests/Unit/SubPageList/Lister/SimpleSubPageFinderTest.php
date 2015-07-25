@@ -1,14 +1,14 @@
 <?php
 
-namespace Tests\Unit\SubPageList;
+namespace Tests\Unit\SubPageList\Lister;
 
 use SubPageList\LazyDBConnectionProvider;
-use SubPageList\SimpleSubPageFinder;
-use SubPageList\SubPageFinder;
+use SubPageList\Lister\SimpleSubPageFinder;
+use SubPageList\Lister\SubPageFinder;
 use Title;
 
 /**
- * @covers SubPageList\SimpleSubPageFinder
+ * @covers SubPageList\Lister\SimpleSubPageFinder
  *
  * @group SubPageList
  * @group Database

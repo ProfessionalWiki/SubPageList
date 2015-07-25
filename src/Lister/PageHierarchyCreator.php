@@ -1,8 +1,9 @@
 <?php
 
-namespace SubPageList;
+namespace SubPageList\Lister;
 
 use InvalidArgumentException;
+use SubPageList\TitleFactory;
 use Title;
 
 /**

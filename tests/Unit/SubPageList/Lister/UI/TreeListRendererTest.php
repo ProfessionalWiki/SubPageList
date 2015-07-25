@@ -1,14 +1,14 @@
 <?php
 
-namespace Tests\Unit\SubPageList\UI;
+namespace Tests\Unit\SubPageList\Lister\UI;
 
-use SubPageList\AlphabeticPageSorter;
-use SubPageList\Page;
-use SubPageList\UI\TreeListRenderer;
+use SubPageList\Lister\AlphabeticPageSorter;
+use SubPageList\Lister\Page;
+use SubPageList\Lister\UI\TreeListRenderer;
 use Title;
 
 /**
- * @covers SubPageList\UI\TreeListRenderer
+ * @covers SubPageList\Lister\UI\TreeListRenderer
  *
  * @group SubPageList
  *
@@ -57,7 +57,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	private function newListRenderer( array $options ) {
-		$pageRenderer = $this->getMock( 'SubPageList\UI\PageRenderer\PageRenderer' );
+		$pageRenderer = $this->getMock( 'SubPageList\Lister\UI\PageRenderer\PageRenderer' );
 
 		$pageRenderer->expects( $this->any() )
 			->method( 'renderPage' )

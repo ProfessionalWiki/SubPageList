@@ -1,9 +1,10 @@
 <?php
 
-namespace SubPageList;
+namespace SubPageList\Lister;
 
 use InvalidArgumentException;
 use SubPageList\Counter\SubPageCounter;
+use SubPageList\DBConnectionProvider;
 use Title;
 use TitleArray;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Unit\SubPageList;
+namespace Tests\Unit\SubPageList\Lister;
 
-use SubPageList\Page;
+use SubPageList\Lister\Page;
 
 /**
- * @covers SubPageList\Page
+ * @covers SubPageList\Lister\Page
  *
  * @group SubPageList
  *

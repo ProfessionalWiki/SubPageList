@@ -1,8 +1,8 @@
 <?php
 
-namespace SubPageList\UI;
+namespace SubPageList\Lister\UI;
 
-use SubPageList\Page;
+use SubPageList\Lister\Page;
 
 /**
  * @since 1.0

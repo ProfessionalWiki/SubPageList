@@ -1,10 +1,10 @@
 <?php
 
-namespace SubPageList\UI;
+namespace SubPageList\Lister\UI;
 
-use SubPageList\Page;
-use SubPageList\PageSorter;
-use SubPageList\UI\PageRenderer\PageRenderer;
+use SubPageList\Lister\Page;
+use SubPageList\Lister\PageSorter;
+use SubPageList\Lister\UI\PageRenderer\PageRenderer;
 
 /**
  * @since 1.0

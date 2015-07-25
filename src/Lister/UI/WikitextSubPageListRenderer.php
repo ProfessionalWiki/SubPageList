@@ -1,14 +1,14 @@
 <?php
 
-namespace SubPageList\UI;
+namespace SubPageList\Lister\UI;
 
 use Html;
 use RuntimeException;
-use SubPageList\AlphabeticPageSorter;
-use SubPageList\Page;
-use SubPageList\UI\PageRenderer\LinkingPageRenderer;
-use SubPageList\UI\PageRenderer\PlainPageRenderer;
-use SubPageList\UI\PageRenderer\TemplatePageRenderer;
+use SubPageList\Lister\AlphabeticPageSorter;
+use SubPageList\Lister\Page;
+use SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer;
+use SubPageList\Lister\UI\PageRenderer\PlainPageRenderer;
+use SubPageList\Lister\UI\PageRenderer\TemplatePageRenderer;
 
 /**
  * @since 1.0

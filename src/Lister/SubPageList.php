@@ -1,13 +1,14 @@
 <?php 
 
-namespace SubPageList;
+namespace SubPageList\Lister;
 
 use LogicException;
 use ParamProcessor\ProcessedParam;
 use ParamProcessor\ProcessingResult;
 use Parser;
 use ParserHooks\HookHandler;
-use SubPageList\UI\SubPageListRenderer;
+use SubPageList\TitleFactory;
+use SubPageList\Lister\UI\SubPageListRenderer;
 use Title;
 
 /**

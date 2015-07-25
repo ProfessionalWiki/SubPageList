@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\SubPageList\UI\PageRenderer;
 
-use SubPageList\Page;
-use SubPageList\UI\PageRenderer\PlainPageRenderer;
+use SubPageList\Lister\Page;
+use SubPageList\Lister\UI\PageRenderer\PlainPageRenderer;
 use Title;
 
 /**
- * @covers SubPageList\UI\PageRenderer\PlainPageRenderer
+ * @covers SubPageList\Lister\UI\PageRenderer\PlainPageRenderer
  *
  * @group SubPageList
  *

@@ -1,10 +1,11 @@
 <?php 
 
-namespace SubPageList;
+namespace SubPageList\Counter;
 
 use ParamProcessor\ProcessingResult;
 use Parser;
 use ParserHooks\HookHandler;
+use SubPageList\TitleFactory;
 
 /**
  * Handler for the subpagecount parser hook.

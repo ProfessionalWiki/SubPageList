@@ -1,6 +1,6 @@
 <?php
 
-namespace SubPageList;
+namespace SubPageList\Counter;
 
 use Title;
 

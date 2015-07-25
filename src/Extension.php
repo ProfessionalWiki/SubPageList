@@ -6,6 +6,8 @@ use Parser;
 use ParserHooks\HookDefinition;
 use ParserHooks\HookHandler;
 use ParserHooks\HookRegistrant;
+use SubPageList\Counter\SubPageCount;
+use SubPageList\Counter\SubPageCounter;
 use SubPageList\UI\SubPageListRenderer;
 use SubPageList\UI\WikitextSubPageListRenderer;
 

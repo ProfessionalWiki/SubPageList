@@ -3,6 +3,7 @@
 namespace SubPageList;
 
 use InvalidArgumentException;
+use SubPageList\Counter\SubPageCounter;
 use Title;
 use TitleArray;
 

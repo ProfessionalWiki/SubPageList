@@ -1,14 +1,14 @@
 <?php
 
-namespace Tests\Unit\SubPageList;
+namespace Tests\Unit\SubPageList\Counter;
 
 use ParamProcessor\ProcessedParam;
 use ParamProcessor\ProcessingResult;
-use SubPageList\SubPageCount;
+use SubPageList\Counter\SubPageCount;
 use SubPageList\TitleFactory;
 
 /**
- * @covers SubPageList\SubPageCount
+ * @covers SubPageList\Counter\SubPageCount
  *
  * @group SubPageList
  *
@@ -31,7 +31,7 @@ class SubPageCountTest extends \PHPUnit_Framework_TestCase {
 	private function newSubPageCount( $titleText, $numberOfSubPages ) {
 		$titleFactory = new TitleFactory();
 
-		$counter = $this->getMock( 'SubPageList\SubPageCounter' );
+		$counter = $this->getMock( 'SubPageList\Counter\SubPageCounter' );
 
 		$counter->expects( $this->once() )
 			->method( 'countSubPages' )

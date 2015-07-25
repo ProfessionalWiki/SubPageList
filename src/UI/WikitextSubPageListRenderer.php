@@ -56,7 +56,11 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		$this->text .= $this->newTreeListRenderer()->renderHierarchy( $page, $this->options );
 	}
 
-	// TODO: this construction logic does not really fit into this class, split off
+	/**
+	 * TODO: this construction logic does not really fit into this class, split off
+	 *
+	 * @return HierarchyRenderingBehaviour
+	 */
 	private function newTreeListRenderer() {
 		$options = array(
 			TreeListRenderer::OPT_SHOW_TOP_PAGE => $this->options['showpage'],

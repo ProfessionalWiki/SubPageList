@@ -5,13 +5,12 @@ namespace Tests\Component\SubPageList;
 use ParamProcessor\Processor;
 use ParserHooks\HookDefinition;
 use SubPageList\Extension;
-use SubPageList\Page;
+use SubPageList\Lister\Page;
 use SubPageList\Settings;
-use SubPageList\UI\WikitextSubPageListRenderer;
 use Title;
 
 /**
- * @covers SubPageList\UI\WikitextSubPageListRenderer
+ * @covers SubPageList\Lister\UI\WikitextSubPageListRenderer
  *
  * @group SubPageList
  *

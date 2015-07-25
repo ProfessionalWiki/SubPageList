@@ -14,7 +14,7 @@ use Title;
 /**
  * Handler for the subpagelist parser hook.
  *
- * @since 1.0
+ * @since 1.2
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -38,7 +38,7 @@ class SubPageList implements HookHandler {
 	/**
 	 * @see HookHandler::handle
 	 *
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param Parser $parser
 	 * @param ProcessingResult $result

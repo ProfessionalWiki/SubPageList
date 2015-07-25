@@ -5,7 +5,7 @@ namespace SubPageList\Lister\UI\PageRenderer;
 use SubPageList\Lister\Page;
 
 /**
- * @since 1.0
+ * @since 1.2
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

@@ -9,7 +9,7 @@ use Title;
 /**
  * Turns a flat list of Title objects into a sub page hierarchy of Page objects.
  *
- * @since 1.0
+ * @since 1.2
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

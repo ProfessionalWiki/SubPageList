@@ -7,7 +7,7 @@ use Title;
 /**
  * Represents a node in a sub page hierarchy.
  *
- * @since 1.0
+ * @since 1.2
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -25,7 +25,7 @@ class Page {
 	private $subPages = array();
 
 	/**
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param Title $title
 	 * @param Page[] $subPages
@@ -39,7 +39,7 @@ class Page {
 	}
 
 	/**
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @return Title
 	 */
@@ -48,7 +48,7 @@ class Page {
 	}
 
 	/**
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @return Page[]
 	 */

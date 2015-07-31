@@ -22,6 +22,8 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	const FORMAT_UL = 'ul';
 
 	const NO_LIMIT = 'noLimit';
+	
+	const ADDLEVEL = 'addlevel';
 
 	private $pageRenderer;
 	private $pageSorter;
@@ -97,7 +99,7 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	private function getIndentedLine( $lineContent, $indentationLevel ) {
 		if ( $indentationLevel > 0 ) {
 			$char = $this->getIndentCharacter();
-			$lineContent = str_repeat( $char, $indentationLevel ) . ' ' . $lineContent;
+			$lineContent = str_repeat( $char, $indentationLevel + ($this->options['addlevel'])) . $lineContent;
 		}
 
 		return $lineContent;

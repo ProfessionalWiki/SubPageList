@@ -17,13 +17,12 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	const OPT_SHOW_TOP_PAGE = 'topPage';
 	const OPT_FORMAT = 'format';
 	const OPT_MAX_DEPTH = 'maxIndent';
+	const OPT_ADDLEVEL = 'addlevel';
 
 	const FORMAT_OL = 'ol';
 	const FORMAT_UL = 'ul';
 
 	const NO_LIMIT = 'noLimit';
-	
-	const ADDLEVEL = 'addlevel';
 
 	private $pageRenderer;
 	private $pageSorter;
@@ -37,6 +36,7 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 				self::OPT_SHOW_TOP_PAGE => true,
 				self::OPT_FORMAT => self::FORMAT_UL,
 				self::OPT_MAX_DEPTH => self::NO_LIMIT,
+				self::OPT_ADDLEVEL => 0,
 			),
 			$options
 		);
@@ -99,7 +99,7 @@ class TreeListRenderer extends HierarchyRenderingBehaviour {
 	private function getIndentedLine( $lineContent, $indentationLevel ) {
 		if ( $indentationLevel > 0 ) {
 			$char = $this->getIndentCharacter();
-			$lineContent = str_repeat( $char, $indentationLevel + ($this->options['addlevel'])) . $lineContent;
+			$lineContent = str_repeat( $char, $indentationLevel + ($this->options[self::OPT_ADDLEVEL])) . ' ' . $lineContent;
 		}
 
 		return $lineContent;

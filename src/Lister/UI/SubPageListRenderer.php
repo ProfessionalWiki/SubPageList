@@ -13,9 +13,8 @@ use SubPageList\Lister\Page;
 interface SubPageListRenderer {
 
 	/**
-	 * Render a representation of the page and its sub pages.
+	 * Render a representation of the pages and their sub pages.
 	 *
-	 * This might or might not include the top level page.
 	 * This might or might not include additional things
 	 * such as headers and footers.
 	 *
@@ -24,11 +23,11 @@ interface SubPageListRenderer {
 	 * The interface does not define which options can be,
 	 * or should be, supported by the implementing class.
 	 *
-	 * @param Page $page
+	 * @param Page[] $pages
 	 * @param array $options
 	 *
 	 * @return string
 	 */
-	public function render( Page $page, array $options );
+	public function render( array $pages, array $options );
 
 }

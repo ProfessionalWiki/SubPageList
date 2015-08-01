@@ -60,7 +60,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		$params = $this->getProcessedParams( $definition, $rawParams );
 
 		return $extension->newSubPageListRenderer()->render(
-			self::$pages[$params['page']],
+			array( self::$pages[$params['page']] ),
 			$params
 		);
 	}
@@ -86,7 +86,6 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		$this->assertCreatesList(
 			array(
 				'page' => 'AAA',
-				'showpage' => 'yes',
 			),
 			'<div class="subpagelist">' . "\n[[AAA|AAA]]\n</div>"
 		);
@@ -96,7 +95,6 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		$this->assertCreatesList(
 			array(
 				'page' => 'BBB',
-				'showpage' => 'yes',
 			),
 			'<div class="subpagelist">
 [[BBB|BBB]]
@@ -113,7 +111,6 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			array(
 				'page' => 'AAA',
 				'intro' => $introText,
-				'showpage' => 'yes',
 			),
 			'<div class="subpagelist">' . "\n" .$introText . "\n[[AAA|AAA]]\n</div>"
 		);
@@ -135,7 +132,6 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			array(
 				'page' => 'AAA',
 				'outro' => $outroText,
-				'showpage' => 'yes',
 			),
 			'<div class="subpagelist">' ."\n[[AAA|AAA]]\n" . $outroText . "\n</div>"
 		);
@@ -147,7 +143,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'page' => 'BBB',
 				'links' => 'no',
 			),
-			'<div class="subpagelist">' ."\n* Sub\n</div>"
+			'<div class="subpagelist">' ."\nBBB\n* Sub\n</div>"
 		);
 	}
 
@@ -155,7 +151,6 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		$this->assertCreatesList(
 			array(
 				'page' => 'BBB',
-				'showpage' => 'yes',
 				'format' => 'ol',
 			),
 			'<div class="subpagelist">
@@ -169,7 +164,6 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		$this->assertCreatesList(
 			array(
 				'page' => 'BBB',
-				'showpage' => 'yes',
 				'format' => 'ol',
 				'template' => 'foo',
 			),

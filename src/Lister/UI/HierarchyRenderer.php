@@ -13,12 +13,12 @@ use SubPageList\Lister\Page;
 abstract class HierarchyRenderer {
 
 	/**
-	 * Render a page and its sub pages.
+	 * Render a list of top level pages and their sub pages.
 	 *
-	 * @param Page $page
+	 * @param Page[] $pages
 	 *
 	 * @return string
 	 */
-	public abstract function renderHierarchy( Page $page );
+	public abstract function renderHierarchy( array $pages );
 
 }

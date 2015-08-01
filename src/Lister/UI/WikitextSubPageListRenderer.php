@@ -29,17 +29,17 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	/**
 	 * @see SubPageListRenderer::render
 	 *
-	 * @param Page $page
+	 * @param Page[] $pages
 	 * @param array $options
 	 *
 	 * @return string
 	 */
-	public function render( Page $page, array $options ) {
+	public function render( array $pages, array $options ) {
 		$this->options = $options;
 		$this->text = '';
 
 		$this->addHeader();
-		$this->addPageHierarchy( $page );
+		$this->addPageHierarchy( $pages );
 		$this->addFooter();
 
 		return $this->wrapInElement( $this->text );
@@ -57,8 +57,8 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 		}
 	}
 
-	private function addPageHierarchy( Page $page ) {
-		$this->text .= $this->hierarchyRendererFactory->newTreeListRenderer( $this->options )->renderHierarchy( $page );
+	private function addPageHierarchy( array $pages ) {
+		$this->text .= $this->hierarchyRendererFactory->newTreeListRenderer( $this->options )->renderHierarchy( $pages );
 	}
 
 	private function wrapInElement( $text ) {

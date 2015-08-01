@@ -21,22 +21,10 @@ class HierarchyRendererFactory {
 	 * @return HierarchyRenderer
 	 */
 	public function newTreeListRenderer( array $options ) {
-		$treeListOptions = array(
-			TreeListRenderer::OPT_SHOW_TOP_PAGE => $options['showpage'],
-		);
-
-		if ( $options['kidsonly'] ) {
-			$treeListOptions[TreeListRenderer::OPT_MAX_DEPTH] = 1;
-		}
-
-		if ( $options['format'] === 'ol' ) {
-			$treeListOptions[TreeListRenderer::OPT_FORMAT] = TreeListRenderer::FORMAT_OL;
-		}
-
 		return new TreeListRenderer(
 			$this->newPageRenderer( $options ),
 			$this->newPageSorter( $options['sort'] ),
-			$treeListOptions
+			$options['format'] === 'ol' ? TreeListRenderer::FORMAT_OL : TreeListRenderer::FORMAT_UL
 		);
 	}
 

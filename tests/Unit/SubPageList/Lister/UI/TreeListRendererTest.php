@@ -23,10 +23,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 	public function testRenderHierarchyWithNoSubPages( $titleText ) {
 		$this->assertRendersHierarchy(
 			new Page( Title::newFromText( $titleText ) ),
-			'',
-			array(
-				TreeListRenderer::OPT_SHOW_TOP_PAGE => false
-			)
+			$titleText
 		);
 	}
 
@@ -48,10 +45,10 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	private function assertRendersHierarchy( Page $page, $expected, array $options = array() ) {
+	private function assertRendersHierarchy( $pageOrPages, $expected, array $options = array() ) {
 		$listRender = $this->newListRenderer( $options );
 
-		$actual = $listRender->renderHierarchy( $page );
+		$actual = $listRender->renderHierarchy( is_array( $pageOrPages ) ? $pageOrPages : array( $pageOrPages ) );
 
 		$this->assertEquals( $expected, $actual );
 	}
@@ -70,7 +67,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 		 return new TreeListRenderer(
 			 $pageRenderer,
 			 new AlphabeticPageSorter( $sort ),
-			 $options
+			 array_key_exists( 'format', $options ) ? $options['format'] : TreeListRenderer::FORMAT_UL
 		 );
 	}
 
@@ -120,7 +117,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 # BBB
 # CCC',
 			array(
-				TreeListRenderer::OPT_FORMAT => TreeListRenderer::FORMAT_OL
+				'format' => TreeListRenderer::FORMAT_OL
 			)
 		);
 	}
@@ -159,37 +156,31 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	public function testRenderHierarchyWithDepthLimit() {
+	public function testRenderMultipleTopLevelPages() {
 		$this->assertRendersHierarchy(
-			new Page(
-				Title::newFromText( 'AAA' ),
-				array(
-					new Page(
-						Title::newFromText( 'BBB' ),
-						array(
-							new Page( Title::newFromText( '111' ) ),
-							new Page( Title::newFromText( '222' ) ),
+			array(
+				new Page(
+					Title::newFromText( 'AAA' ),
+					array()
+				),
+				new Page(
+					Title::newFromText( 'BBB' ),
+					array(
+						new Page(
+							Title::newFromText( 'Sub' ),
+							array()
 						)
-					),
-					new Page(
-						Title::newFromText( 'CCC' ),
-						array()
-					),
-					new Page(
-						Title::newFromText( 'DDD' ),
-						array(
-							new Page( Title::newFromText( '333' ) ),
-						)
-					),
+					)
+				),
+				new Page(
+					Title::newFromText( 'CCC' ),
+					array()
 				)
 			),
-			'AAA
+			'* AAA
 * BBB
-* CCC
-* DDD',
-			array(
-				TreeListRenderer::OPT_MAX_DEPTH => 1
-			)
+** Sub
+* CCC'
 		);
 	}
 

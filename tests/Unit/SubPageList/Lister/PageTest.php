@@ -14,17 +14,33 @@ use SubPageList\Lister\Page;
  */
 class PageTest extends \PHPUnit_Framework_TestCase {
 
-	public function testConstructSetsFields() {
+	public function testConstructorSetsFields() {
 		$title = $this->getMock( 'Title' );
 		$children = array(
 			new Page( $this->getMock( 'Title' ) ),
-			new Page( $this->getMock( 'Title' ) )
 		);
 
 		$page = new Page( $title, $children );
 
 		$this->assertEquals( $title, $page->getTitle() );
 		$this->assertEquals( $children, $page->getSubPages() );
+	}
+
+	public function testDuplicatesAreOmitted() {
+		$sub0 = new Page( \Title::newFromText( 'sub0' ), array() );
+		$sub1 = new Page( \Title::newFromText( 'sub1' ), array() );
+
+		$page = new Page( $this->getMock( 'Title' ), array() );
+		$page->addSubPage( $sub0 );
+		$page->addSubPage( $sub1 );
+
+		$this->assertSame(
+			array(
+				$sub0,
+				$sub1
+			),
+			$page->getSubPages()
+		);
 	}
 
 }

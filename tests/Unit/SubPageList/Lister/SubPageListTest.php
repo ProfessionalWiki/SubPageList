@@ -53,7 +53,7 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 
 		$renderer->expects( $this->once() )
 			->method( 'render' )
-			->with( $this->equalTo( $page ) )
+			->with( $this->equalTo( array( $page ) ) )
 			->will( $this->returnValue( $renderResult ) );
 
 		return new SubPageList(

@@ -201,17 +201,22 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testMultipleChildrenForSameTopLevelPage() {
-		$pages[] = $this->newMockTitle( 'SomePage/Child0/GrandChild00' );
+		$titles[] = $this->newMockTitle( 'SomePage/Child0/GrandChild00' );
 
-		$pages[] = $this->newMockTitle( 'SomePage/Child1/GrandChild10' );
-		$pages[] = $this->newMockTitle( 'SomePage/Child1/GrandChild11' );
+		$grandChild10 = $this->newMockTitle( 'SomePage/Child1/GrandChild10' );
+		$grandChild11 = $this->newMockTitle( 'SomePage/Child1/GrandChild11' );
+		$grandChild20 = $this->newMockTitle( 'SomePage/Child2/GrandChild20' );
+		$grandChild21 = $this->newMockTitle( 'SomePage/Child2/GrandChild21' );
 
-		$pages[] = $this->newMockTitle( 'SomePage/Child2/GrandChild20' );
-		$pages[] = $this->newMockTitle( 'SomePage/Child2' );
-		$pages[] = $this->newMockTitle( 'SomePage/Child2/GrandChild21' );
+		$titles[] = $grandChild10;
+		$titles[] = $grandChild11;
+
+		$titles[] = $grandChild20;
+		$titles[] = $this->newMockTitle( 'SomePage/Child2' );
+		$titles[] = $grandChild21;
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( $pages );
+		$hierarchy = $hierarchyCreator->createHierarchy( $titles );
 
 		$this->assertEquals(
 			array(
@@ -230,10 +235,10 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 							$this->newMockTitle( 'SomePage/Child1' ),
 							array(
 								new Page(
-									$this->newMockTitle( 'SomePage/Child0/GrandChild10' )
+									$grandChild10
 								),
 								new Page(
-									$this->newMockTitle( 'SomePage/Child0/GrandChild11' )
+									$grandChild11
 								)
 							)
 						),
@@ -241,10 +246,10 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 							$this->newMockTitle( 'SomePage/Child2' ),
 							array(
 								new Page(
-									$this->newMockTitle( 'SomePage/Child0/GrandChild20' )
+									$grandChild20
 								),
 								new Page(
-									$this->newMockTitle( 'SomePage/Child0/GrandChild21' )
+									$grandChild21
 								)
 							)
 						)

@@ -78,21 +78,20 @@ class SubPageList implements HookHandler {
 	 * @return string
 	 */
 	private function renderForTitle( Title $title, array $parameters ) {
-		$topLevelPage = $this->getPageHierarchy( $title, $parameters['limit'] );
+		$topLevelPages = $this->getPageHierarchy( $title, $parameters['limit'] );
 
-		if ( $this->shouldUseDefault( $topLevelPage, $parameters['showpage'] ) ) {
+		if ( empty( $topLevelPages ) ) {
 			return $this->getDefault( $parameters['page'], $parameters['default'] );
 		}
-		else {
-			return $this->getRenderedList( $topLevelPage, $parameters );
-		}
+
+		return $this->getRenderedList( $topLevelPages, $parameters );
 	}
 
 	/**
 	 * @param Title $title
 	 * @param int $limit
 	 *
-	 * @return Page
+	 * @return Page[]
 	 * @throws LogicException
 	 */
 	private function getPageHierarchy( Title $title, $limit ) {
@@ -107,19 +106,12 @@ class SubPageList implements HookHandler {
 			throw new LogicException( 'Expected exactly one top level page' );
 		}
 
-		$topLevelPage = reset( $pageHierarchy );
-		return $topLevelPage;
+		return $pageHierarchy;
 	}
 
-	private function shouldUseDefault( Page $topLevelPage, $showTopLevelPage ) {
-		// Note: this behaviour is not fully correct.
-		// Other parameters that omit results need to be held into account as well.
-		return !$showTopLevelPage && $topLevelPage->getSubPages() === array();
-	}
-
-	private function getRenderedList( Page $topLevelPage, $parameters ) {
+	private function getRenderedList( array $topLevelPages, $parameters ) {
 		return $this->subPageListRenderer->render(
-			$topLevelPage,
+			$topLevelPages,
 			$parameters
 		);
 	}

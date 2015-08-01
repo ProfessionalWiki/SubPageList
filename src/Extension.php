@@ -197,9 +197,15 @@ class Extension {
 			'range' => array( 1, 500 ),
 		);
 
+		$params['addlevel'] = array(
+			'type' => 'integer',
+			'default' => 0,
+			'range' => array( 0, 10 ),
+		);
+		
 		$params['element'] = array(
 			'default' => 'div',
-			'aliases' => array( 'div', 'p', 'span' ),
+			'aliases' => array( 'div', 'p', 'span', 'none' ),
 		);
 
 		$params['class'] = array(

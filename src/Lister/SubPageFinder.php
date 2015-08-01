@@ -8,7 +8,7 @@ use Title;
 /**
  * Interface for subpage finders.
  *
- * @since 1.0
+ * @since 1.2
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -20,7 +20,7 @@ interface SubPageFinder {
 	 * The result is not ordered, is a flat list (rather then a hierarchy)
 	 * and does not contain the provided page itself.
 	 *
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param Title $title
 	 *
@@ -29,7 +29,7 @@ interface SubPageFinder {
 	public function getSubPagesFor( Title $title );
 
 	/**
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param int $limit
 	 *
@@ -38,7 +38,7 @@ interface SubPageFinder {
 	public function setLimit( $limit );
 
 	/**
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param int $offset
 	 *

@@ -7,7 +7,7 @@ use SubPageList\Lister\PageSorter;
 use SubPageList\Lister\UI\PageRenderer\PageRenderer;
 
 /**
- * @since 1.0
+ * @since 1.2
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

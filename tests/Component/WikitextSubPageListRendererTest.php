@@ -191,4 +191,13 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		) );
 	}
 
+	public function testElementNone() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'BBB',
+				'element' => 'none',
+			),
+			'* [[BBB/Sub|Sub]]'
+		);
+	}
 }

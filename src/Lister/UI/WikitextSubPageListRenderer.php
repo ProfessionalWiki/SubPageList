@@ -64,20 +64,24 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	private function wrapInElement( $text ) {
 		$this->assertElementIsAllowed();
 
-		return Html::element(
-			$this->options['element'],
-			array(
-				'class' => $this->options['class']
-			),
-			"\n" . $text . "\n"
-		);
+		if ($this->options['element']!='none')
+		{
+			return Html::element(
+				$this->options['element'],
+				array(
+					'class' => $this->options['class']
+				),
+				"\n" . $text . "\n"
+			);
+		} else return $text;
 	}
 
 	private function assertElementIsAllowed() {
 		$allowedElements = array(
 			'p',
 			'div',
-			'span'
+			'span',
+			'none'
 		);
 
 		if ( !in_array( $this->options['element'], $allowedElements ) ) {

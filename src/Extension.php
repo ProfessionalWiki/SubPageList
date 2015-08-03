@@ -199,7 +199,7 @@ class Extension {
 
 		$params['element'] = array(
 			'default' => 'div',
-			'aliases' => array( 'div', 'p', 'span' ),
+			'aliases' => array( 'div', 'p', 'span', 'none' ),
 		);
 
 		$params['class'] = array(

@@ -7,7 +7,7 @@ use SubPageList\Lister\PageSorter;
 use SubPageList\Lister\UI\PageRenderer\PageRenderer;
 
 /**
- * @since 1.2
+ * @since 1.0
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -17,6 +17,7 @@ class TreeListRenderer extends HierarchyRenderer {
 	const OPT_SHOW_TOP_PAGE = 'topPage';
 	const OPT_FORMAT = 'format';
 	const OPT_MAX_DEPTH = 'maxIndent';
+	const OPT_ADDLEVEL = 'addlevel';
 
 	const FORMAT_OL = 'ol';
 	const FORMAT_UL = 'ul';
@@ -35,6 +36,7 @@ class TreeListRenderer extends HierarchyRenderer {
 				self::OPT_SHOW_TOP_PAGE => true,
 				self::OPT_FORMAT => self::FORMAT_UL,
 				self::OPT_MAX_DEPTH => self::NO_LIMIT,
+				self::OPT_ADDLEVEL => 0,
 			),
 			$options
 		);
@@ -97,7 +99,7 @@ class TreeListRenderer extends HierarchyRenderer {
 	private function getIndentedLine( $lineContent, $indentationLevel ) {
 		if ( $indentationLevel > 0 ) {
 			$char = $this->getIndentCharacter();
-			$lineContent = str_repeat( $char, $indentationLevel ) . ' ' . $lineContent;
+			$lineContent = str_repeat( $char, $indentationLevel + ($this->options[self::OPT_ADDLEVEL])) . ' ' . $lineContent;
 		}
 
 		return $lineContent;

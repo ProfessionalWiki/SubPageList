@@ -15,5 +15,7 @@
 	"spl-subpages-par-kidsonly": "允许显示仅直接的子页面。",
 	"spl-subpages-par-limit": "列出页面的最大数量。",
 	"spl-subpages-par-intro": "在列表之前输出的文字，如果列表不是空的话。",
-	"spl-subpages-par-outro": "在列表之后输出的文字，如果列表不是空的话。"
+	"spl-subpages-par-outro": "在列表之后输出的文字，如果列表不是空的话。",
+	"spl-subpages-par-template": "模板名称。模板应用于列表的每项。一个项目会被传递为第一个（未命名的）参数。注意模板不会取消列表格式。格式（\"ul\", \"ol\", \"list\"）应用于模板的结果。",
+	"spl-subpages-par-links": "如果为真，列表项会以链接呈现。如果为假，列表项会以纯文本呈现。后者尤其在将项目传递进模板以便进一步处理时有用。"
 }

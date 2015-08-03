@@ -12,7 +12,7 @@ use TitleArray;
  * Simple subpage finder and counter that uses a like query
  * on the page table to find subpages.
  *
- * @since 1.0
+ * @since 1.2
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -34,7 +34,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	private $options;
 
 	/**
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param DBConnectionProvider $connectionProvider
 	 */
@@ -59,7 +59,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	/**
 	 * @see SubPageFinder::setLimit
 	 *
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param int $limit
 	 *
@@ -76,7 +76,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	/**
 	 * @see SubPageFinder::setOffset
 	 *
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param int $offset
 	 *
@@ -93,7 +93,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	/**
 	 * @see SubPageFinder::getSubPagesFor
 	 *
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param Title $title
 	 *
@@ -122,7 +122,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	/**
 	 * @see SubPageCounter::countSubPages
 	 *
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param Title $title
 	 *
@@ -150,7 +150,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	}
 
 	/**
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @param Title $title
 	 *
@@ -175,7 +175,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	}
 
 	/**
-	 * @since 1.0
+	 * @since 1.2
 	 *
 	 * @return array
 	 */

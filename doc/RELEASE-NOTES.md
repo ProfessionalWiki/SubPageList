@@ -1,5 +1,8 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 1.2 (2015-08-03)
+* Added HTML element option "none" to return raw wikitext.
+
 ## Version 1.1.2 (2015-01-31)
 
 * Translation updates

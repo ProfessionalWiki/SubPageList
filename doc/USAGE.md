@@ -113,6 +113,20 @@ Allows specifying a MediaWiki template to format the page names with. The templa
 single unnamed parameter which is the page name. The format of the page name depends on the
 <code>pathstyle</code> parameter.
 
+#### Increase level/indent
+
+Parameter name: addlevel
+
+Allows user to specify an integer number of levels (up to 10) to add to bullets/numbers 
+so resulting list can be appended to another list outside.  
+
+Example output for <code>addlevel=2</code>:
+    *** Parent
+		**** Child 1
+		**** Child 2
+
+Default: 0
+
 #### Wrapping HTML element
 
 Parameter name: element

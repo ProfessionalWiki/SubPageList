@@ -190,5 +190,17 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			'element'=> $badElement,
 		) );
 	}
+	
+		public function testListForOnePageWithOneSub() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'BBB',
+				'addlevel' => '2',
+			),
+			'<div class="subpagelist">
+*** [[BBB/Sub|Sub]]
+</div>'
+		);
+	}
 
 }

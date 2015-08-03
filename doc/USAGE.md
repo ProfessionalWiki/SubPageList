@@ -122,6 +122,7 @@ Allowed values:
 * div
 * p
 * span
+* none
  
 Default: div
 

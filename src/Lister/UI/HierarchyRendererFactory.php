@@ -33,7 +33,7 @@ class HierarchyRendererFactory {
 			$treeListOptions[TreeListRenderer::OPT_FORMAT] = TreeListRenderer::FORMAT_OL;
 		}
 		
-		$treeListOptions[TreeListRenderer::OPT_ADDLEVEL] = $options['addlevel']
+		$treeListOptions[TreeListRenderer::OPT_ADDLEVEL] = $options['addlevel'];
 
 		return new TreeListRenderer(
 			$this->newPageRenderer( $options ),

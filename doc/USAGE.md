@@ -119,11 +119,12 @@ Parameter name: element
 
 Allowed values:
 
-* div
-* p
-* span
+* `div`
+* `p`
+* `span`
+* `none` (since version 1.2)
  
-Default: div
+Default: `div`
 
 #### HTML element CSS class
 

@@ -3,6 +3,7 @@ These are the release notes for the [SubPageList extension](../README.md).
 ## Version 1.2 (dev)
 
 * Added HTML element option "none" to return raw wikitext.
+* Added "addlevel" parameter to increase indent level of entire list.
 
 ## Version 1.1.2 (2015-01-31)
 

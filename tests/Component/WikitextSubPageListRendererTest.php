@@ -191,7 +191,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		) );
 	}
 	
-		public function testAddlevel() {
+	public function testAddlevel() {
 		$this->assertCreatesList(
 			array(
 				'page' => 'BBB',

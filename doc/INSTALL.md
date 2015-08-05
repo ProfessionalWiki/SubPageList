@@ -157,7 +157,7 @@ To install Composer:
 
 Now using Composer, install SubPageList
 
-    php composer.phar require mediawiki/sub-page-list ~1.1
+    php composer.phar require mediawiki/sub-page-list ~1.2
 
 #### Step 4
 

@@ -190,8 +190,22 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			'element'=> $badElement,
 		) );
 	}
+
+	public function testOneLevelOfAdditionalIndent() {
+		$this->assertCreatesList(
+			array(
+				'page' => 'BBB',
+				'showpage' => 'yes',
+				'addlevel' => '1',
+			),
+			'<div class="subpagelist">
+* [[BBB|BBB]]
+** [[BBB/Sub|Sub]]
+</div>'
+		);
+	}
 	
-	public function testAddlevel() {
+	public function testTwoLevelsOfAdditionalIndent() {
 		$this->assertCreatesList(
 			array(
 				'page' => 'BBB',

@@ -97,9 +97,11 @@ class TreeListRenderer extends HierarchyRenderer {
 	}
 
 	private function getIndentedLine( $lineContent, $indentationLevel ) {
-		if ( $indentationLevel > 0 ) {
+		$totalIndentLevel = $indentationLevel + $this->options[self::OPT_ADDLEVEL];
+
+		if ( $totalIndentLevel > 0 ) {
 			$char = $this->getIndentCharacter();
-			$lineContent = str_repeat( $char, $indentationLevel + ($this->options[self::OPT_ADDLEVEL])) . ' ' . $lineContent;
+			$lineContent = str_repeat( $char, $totalIndentLevel ) . ' ' . $lineContent;
 		}
 
 		return $lineContent;

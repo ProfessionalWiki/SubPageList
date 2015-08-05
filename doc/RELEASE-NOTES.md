@@ -4,6 +4,7 @@ These are the release notes for the [SubPageList extension](../README.md).
 
 * The "element" parameter now supports "none" as value to not wrap the list in any HTML element.
 * Added "addlevel" parameter that allows increaing the indent level of the entire list.
+* Translation updates
 
 ## Version 1.1.2 (2015-01-31)
 

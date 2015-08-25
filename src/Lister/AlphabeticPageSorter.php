@@ -45,7 +45,7 @@ class AlphabeticPageSorter implements PageSorter {
 		usort(
 			$pages,
 			function( Page $a, Page $b ) use ( $sortDescending ) {
-				$returnValue = strcmp( $a->getTitle()->getFullText(), $b->getTitle()->getFullText() );
+				$returnValue = strnatcmp( $a->getTitle()->getFullText(), $b->getTitle()->getFullText() );
 
 				if ( $sortDescending ) {
 					$returnValue *= -1;

@@ -12,7 +12,7 @@
 	"spl-subpages-par-sort": "La dirección para la ordenación. Valores permitidos: \"asc\" y \"desc\".",
 	"spl-subpages-par-sortby": "Criterio de ordenación de las subpáginas. Valores permitidos: \"title\" o \"lastedit\"",
 	"spl-subpages-par-format": "La lista de subpáginas puede mostrarse en varios formatos. Valores permitidos: \"ol\" — lista ordenada (numerada), \"ul\" — listas desordenadas (con viñetas), \"list\" — listas simples (por ejemplo lista separada por comas).",
-	"spl-subpages-par-page": "La página en la que mostrar las subpáginas o el espacio de nombres (incluídos los dos puntos) en el que mostrar las páginas. La página actual es la predeterminada.",
+	"spl-subpages-par-page": "La página en la que mostrar las subpáginas o el espacio de nombres (incluidos los dos puntos) en el que mostrar las páginas. La página actual es la predeterminada.",
 	"spl-subpages-par-showpage": "Indica si la propia página debe mostrarse en la lista o no.",
 	"spl-subpages-par-pathstyle": "El estilo de la ruta de acceso a las subpáginas en la lista. Valores permitidos: \"fullpagename\": nombre de página completo (incluido el espacio de nombres), \"pagename\" — nombre de la página (sin espacio de nombres), \"subpagename\" — nombre relativo de la página comenzando desde la página de la que vamos a citar sus subpáginas, \"none\" — sólo la parte final del nombre después de la última barra.",
 	"spl-subpages-par-kidsonly": "Permite mostrar sólo las subpáginas directas.",

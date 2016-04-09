@@ -136,13 +136,13 @@ class Extension {
 	public function getCountHookDefinition() {
 		return new HookDefinition(
 			'subpagecount',
-			array(
-				'page' => array(
+			[
+				'page' => [
 					'default' => '',
 					'aliases' => 'parent',
 					'message' => 'spl-subpages-par-page',
-				),
-			),
+				],
+			],
 			'page'
 		);
 	}
@@ -153,97 +153,97 @@ class Extension {
 	 * @return HookDefinition
 	 */
 	public function getListHookDefinition() {
-		$params = array();
+		$params = [];
 
-		$params['page'] = array(
+		$params['page'] = [
 			'aliases' => 'parent',
 			'default' => '',
-		);
+		];
 
-		$params['showpage'] = array(
+		$params['showpage'] = [
 			'type' => 'boolean',
 			'aliases' => 'showparent',
 			'default' => false,
-		);
+		];
 
-		$params['sort'] = array(
+		$params['sort'] = [
 			'aliases' => 'order',
-			'values' => array( 'asc', 'desc' ),
+			'values' => [ 'asc', 'desc' ],
 			'tolower' => true,
 			'default' => 'asc',
-		);
+		];
 
-		$params['intro'] = array(
+		$params['intro'] = [
 			'default' => '',
-		);
+		];
 
-		$params['outro'] = array(
+		$params['outro'] = [
 			'default' => '',
-		);
+		];
 
-		$params['links'] = array(
+		$params['links'] = [
 			'type' => 'boolean',
 			'aliases' => 'link',
 			'default' => true,
-		);
+		];
 
-		$params['default'] = array(
+		$params['default'] = [
 			'default' => '',
-		);
+		];
 
-		$params['limit'] = array(
+		$params['limit'] = [
 			'type' => 'integer',
 			'default' => 200,
-			'range' => array( 1, 500 ),
-		);
+			'range' => [ 1, 500 ],
+		];
 
-		$params['addlevel'] = array(
+		$params['addlevel'] = [
 			'type' => 'integer',
 			'default' => 0,
-			'range' => array( 0, 10 ),
-		);
+			'range' => [ 0, 10 ],
+		];
 		
-		$params['element'] = array(
+		$params['element'] = [
 			'default' => 'div',
-			'aliases' => array( 'div', 'p', 'span', 'none' ),
-		);
+			'aliases' => [ 'div', 'p', 'span', 'none' ],
+		];
 
-		$params['class'] = array(
+		$params['class'] = [
 			'default' => 'subpagelist',
-		);
+		];
 
-		$params['format'] = array(
+		$params['format'] = [
 			'aliases' => 'liststyle',
-			'values' => array(
+			'values' => [
 				'ul', 'unordered',
 				'ol', 'ordered',
 //				'list', 'bar' // TODO: re-implement support for these two
-			),
+			],
 			'tolower' => true,
 			'default' => 'ul',
-		);
+		];
 
-		$params['pathstyle'] = array(
+		$params['pathstyle'] = [
 			'aliases' => 'showpath',
-			'values' => array(
+			'values' => [
 				'none', 'no',
 				'subpagename', 'children', 'notparent',
 				'pagename',
 				'full',
 				'fullpagename'
-			),
+			],
 			'tolower' => true,
 			'default' => 'subpagename',
-		);
+		];
 
-		$params['kidsonly'] = array(
+		$params['kidsonly'] = [
 			'type' => 'boolean',
 			'default' => false,
-		);
+		];
 
-		$params['template'] = array(
+		$params['template'] = [
 			'default' => '',
-		);
+		];
 
 		// TODO: re-implement support
 //		$params['separator'] = array(
@@ -261,9 +261,9 @@ class Extension {
 		}
 
 		return new HookDefinition(
-			array( 'subpagelist', 'splist', 'subpages' ),
+			[ 'subpagelist', 'splist', 'subpages' ],
 			$params,
-			array( 'page', 'format', 'pathstyle', 'sort' )
+			[ 'page', 'format', 'pathstyle', 'sort' ]
 		);
 	}
 

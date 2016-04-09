@@ -41,11 +41,11 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	public function __construct( DBConnectionProvider $connectionProvider ) {
 		$this->connectionProvider = $connectionProvider;
 
-		$this->options = array(
+		$this->options = [
 			self::OPT_INCLUDE_REDIRECTS => false,
 			self::OPT_LIMIT => 500,
 			self::OPT_OFFSET => 0,
-		);
+		];
 	}
 
 	/**
@@ -107,7 +107,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 
 		$titleArray = TitleArray::newFromResult(
 			$dbr->select( 'page',
-				array( 'page_id', 'page_namespace', 'page_title', 'page_is_redirect' ),
+				[ 'page_id', 'page_namespace', 'page_title', 'page_is_redirect' ],
 				$this->getConditions( $title ),
 				__METHOD__,
 				$this->getOptions()
@@ -162,10 +162,10 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 		 */
 		$dbr = $this->connectionProvider->getConnection();
 
-		$conditions = array(
+		$conditions = [
 			'page_namespace' => $title->getNamespace(),
 			'page_title'  . $dbr->buildLike( $title->getDBkey() . '/', $dbr->anyString() )
-		);
+		];
 
 		if ( !$this->options[self::OPT_INCLUDE_REDIRECTS] ) {
 			$conditions['page_is_redirect'] = 0;
@@ -180,7 +180,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	 * @return array
 	 */
 	private function getOptions() {
-		$options = array();
+		$options = [];
 
 		$options['LIMIT'] = (int)$this->options[self::OPT_LIMIT];
 

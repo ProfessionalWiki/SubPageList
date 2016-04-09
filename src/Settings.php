@@ -22,9 +22,9 @@ class Settings {
 	 * @return Settings
 	 */
 	public static function newFromGlobals( array $globalVariables ) {
-		return new self( array(
+		return new self( [
 			self::AUTO_REFRESH => $globalVariables['egSPLAutorefresh'],
-		) );
+		] );
 	}
 
 	const AUTO_REFRESH = 'autorefresh';

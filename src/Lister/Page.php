@@ -22,7 +22,7 @@ class Page {
 	/**
 	 * @var Page[]
 	 */
-	private $subPages = array();
+	private $subPages = [];
 
 	/**
 	 * @since 1.2
@@ -30,7 +30,7 @@ class Page {
 	 * @param Title $title
 	 * @param Page[] $subPages
 	 */
-	public function __construct( Title $title, array $subPages = array() ) {
+	public function __construct( Title $title, array $subPages = [] ) {
 		$this->title = $title;
 
 		foreach ( $subPages as $subPage ) {

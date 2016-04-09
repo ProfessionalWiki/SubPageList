@@ -17,13 +17,13 @@ class SetupTest extends \PHPUnit_Framework_TestCase {
 	public function testRun() {
 		$extension = $this->newExtension();
 
-		$hookLists = array(
-			'ParserFirstCallInit' => array(),
-			'ArticleInsertComplete' => array(),
-			'ArticleDeleteComplete' => array(),
-			'TitleMoveComplete' => array(),
-			'UnitTestsList' => array(),
-		);
+		$hookLists = [
+			'ParserFirstCallInit' => [],
+			'ArticleInsertComplete' => [],
+			'ArticleDeleteComplete' => [],
+			'TitleMoveComplete' => [],
+			'UnitTestsList' => [],
+		];
 
 		$setup = new Setup(
 			$extension,

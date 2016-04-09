@@ -12,6 +12,12 @@ These are the installation and configuration instructions for the [SubPageList e
 		<th>Git branch</th>
 	</tr>
 	<tr>
+		<th>SPL 1.3.0</th>
+		<td>Under development</td>
+		<td>Future</td>
+		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/master">master</a></td>
+	</tr>
+	<tr>
 		<th>SPL 1.2.0</th>
 		<td>Stable release</td>
 		<td>2015-08-05</td>
@@ -60,8 +66,14 @@ These are the installation and configuration instructions for the [SubPageList e
 	</tr>
 	<tr>
 		<th>SPL 1.2.x</th>
-		<td>5.3.0 - 5.6.x & HHVM</td>
-		<td>1.19 - 1.26</td>
+		<td><strong>5.5.0</strong> - 7.x & HHVM</td>
+		<td><strong>1.23</strong> - 1.27</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<th>SPL 1.2.x</th>
+		<td>5.3.0 - 7.x & HHVM</td>
+		<td>1.19 - 1.27</td>
 		<td>Required</td>
 	</tr>
 	<tr>
@@ -72,8 +84,8 @@ These are the installation and configuration instructions for the [SubPageList e
 	</tr>
 	<tr>
 		<th>SPL 1.0.0</th>
-		<td>5.3.0 - 5.5.x</td>
-		<td>1.19 - 1.23</td>
+		<td><strong>5.3.0</strong> - 5.5.x</td>
+		<td><strong>1.19</strong> - 1.23</td>
 		<td>Supported</td>
 	</tr>
 	<tr>

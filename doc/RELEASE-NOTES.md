@@ -1,5 +1,10 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 1.3.0 (dev)
+
+* Dropped support for MediaWiki older than 1.23
+* Dropped support for PHP older than 5.5
+
 ## Version 1.2.0 (2015-08-05)
 
 * The "element" parameter now supports "none" as value to not wrap the list in any HTML element.

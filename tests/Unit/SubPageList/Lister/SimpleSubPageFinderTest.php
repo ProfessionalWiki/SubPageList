@@ -26,10 +26,10 @@ class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function titleProvider() {
-		$argLists = array();
+		$argLists = [];
 
-		$argLists[] = array( Title::newMainPage() );
-		$argLists[] = array( Title::newFromText( 'ohi there i do not exist nyan nyan nyan' ) );
+		$argLists[] = [ Title::newMainPage() ];
+		$argLists[] = [ Title::newFromText( 'ohi there i do not exist nyan nyan nyan' ) ];
 
 		return $argLists;
 	}

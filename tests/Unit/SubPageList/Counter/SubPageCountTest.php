@@ -57,10 +57,10 @@ class SubPageCountTest extends \PHPUnit_Framework_TestCase {
 			->will( $this->returnValue( $language ) );
 
 		$processingResult = new ProcessingResult(
-			array(
+			[
 				'page' => new ProcessedParam( 'page', $titleText, false )
-			),
-			array()
+			],
+			[]
 		);
 
 		return $subPageCount->handle( $parser, $processingResult );

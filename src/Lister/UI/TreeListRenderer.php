@@ -27,17 +27,17 @@ class TreeListRenderer extends HierarchyRenderer {
 	private $pageRenderer;
 	private $pageSorter;
 
-	public function __construct( PageRenderer $pageRenderer, PageSorter $pageSorter, array $options = array() ) {
+	public function __construct( PageRenderer $pageRenderer, PageSorter $pageSorter, array $options = [] ) {
 		$this->pageRenderer = $pageRenderer;
 		$this->pageSorter = $pageSorter;
 
 		$this->options = array_merge(
-			array(
+			[
 				self::OPT_SHOW_TOP_PAGE => true,
 				self::OPT_FORMAT => self::FORMAT_UL,
 				self::OPT_MAX_DEPTH => self::NO_LIMIT,
 				self::OPT_ADDLEVEL => 0,
-			),
+			],
 			$options
 		);
 	}
@@ -54,7 +54,7 @@ class TreeListRenderer extends HierarchyRenderer {
 	}
 
 	private function renderPage( Page $page, $indentationLevel ) {
-		$wikiText = array();
+		$wikiText = [];
 
 		$wikiText[] = $this->getTextForPageItself( $page, $indentationLevel );
 		$wikiText[] = $this->getTextForSubPages( $page, $indentationLevel );
@@ -108,16 +108,16 @@ class TreeListRenderer extends HierarchyRenderer {
 	}
 
 	private function getIndentCharacter() {
-		$chars = array(
+		$chars = [
 			self::FORMAT_OL => '#',
 			self::FORMAT_UL => '*',
-		);
+		];
 
 		return $chars[$this->options[self::OPT_FORMAT]];
 	}
 
 	private function renderSubPages( Page $page, $indentationLevel ) {
-		$texts = array();
+		$texts = [];
 
 		foreach ( $this->pageSorter->getSortedPages( $page->getSubPages() ) as $subPage ) {
 			$texts[] = $this->renderPage( $subPage, $indentationLevel );

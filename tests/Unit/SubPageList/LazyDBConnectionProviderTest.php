@@ -27,10 +27,10 @@ class LazyDBConnectionProviderTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function constructorProvider() {
-		$argLists = array(
-			array( DB_MASTER ),
-			array( DB_SLAVE ),
-		);
+		$argLists = [
+			[ DB_MASTER ],
+			[ DB_SLAVE ],
+		];
 
 		return $argLists;
 	}
@@ -53,10 +53,10 @@ class LazyDBConnectionProviderTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function instanceProvider() {
-		$argLists = array();
+		$argLists = [];
 
-		$argLists[] = array( new LazyDBConnectionProvider( DB_MASTER ) );
-		$argLists[] = array( new LazyDBConnectionProvider( DB_SLAVE ) );
+		$argLists[] = [ new LazyDBConnectionProvider( DB_MASTER ) ];
+		$argLists[] = [ new LazyDBConnectionProvider( DB_SLAVE ) ];
 
 		return $argLists;
 	}

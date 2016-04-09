@@ -24,7 +24,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	private function newPageHierarchyCreator() {
 		$factory = $this->getMock( 'SubPageList\TitleFactory' );
 
-		$titleBuilder = array( $this, 'newMockTitle' );
+		$titleBuilder = [ $this, 'newMockTitle' ];
 
 		$factory->expects( $this->any() )
 			->method( 'newFromText' )
@@ -37,7 +37,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 
 	public function testEmptyListResultsInEmptyList() {
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( array() );
+		$hierarchy = $hierarchyCreator->createHierarchy( [] );
 
 		$this->assertInternalType( 'array', $hierarchy );
 		$this->assertEmpty( $hierarchy );
@@ -48,11 +48,11 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 
 		$this->setExpectedException( 'InvalidArgumentException' );
 
-		$hierarchyCreator->createHierarchy( array(
+		$hierarchyCreator->createHierarchy( [
 			$this->newMockTitle( 'SomePage' ),
 			42,
 			$this->newMockTitle( 'OtherPage' )
-		) );
+		] );
 	}
 
 	public function newMockTitle( $pageName ) {
@@ -69,7 +69,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$title = $this->newMockTitle( 'SomePage' );
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( array( $title ) );
+		$hierarchy = $hierarchyCreator->createHierarchy( [ $title ] );
 
 		$this->assertPageCount( 1, $hierarchy );
 
@@ -79,7 +79,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$page = reset( $hierarchy );
 
 		$this->assertEquals( $title, $page->getTitle() );
-		$this->assertEquals( array(), $page->getSubPages() );
+		$this->assertEquals( [], $page->getSubPages() );
 	}
 
 	private function assertPageCount( $expectedCount, $hierarchy ) {
@@ -89,11 +89,11 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testMultipleTopLevelTitlesStayOnTopLevel() {
-		$titles = array(
+		$titles = [
 			$this->newMockTitle( 'SomePage' ),
 			$this->newMockTitle( 'OtherPage' ),
 			$this->newMockTitle( 'OhiThere' ),
-		);
+		];
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
 		$hierarchy = $hierarchyCreator->createHierarchy( $titles );
@@ -106,7 +106,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	 * @param Page[] $actualPages
 	 */
 	private function assertTopLevelTitlesEqual( array $expectedTitles, array $actualPages ) {
-		$actualTitles = array();
+		$actualTitles = [];
 
 		foreach ( $actualPages as $actualPage ) {
 			$actualTitles[] = $actualPage->getTitle();
@@ -121,11 +121,11 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
 
-		$hierarchy = $hierarchyCreator->createHierarchy( array( $topLevelPage, $childPage ) );
+		$hierarchy = $hierarchyCreator->createHierarchy( [ $topLevelPage, $childPage ] );
 
 		$this->assertHasParentAndChild( $topLevelPage, $childPage, $hierarchy );
 
-		$hierarchy = $hierarchyCreator->createHierarchy( array( $childPage, $topLevelPage ) );
+		$hierarchy = $hierarchyCreator->createHierarchy( [ $childPage, $topLevelPage ] );
 
 		$this->assertHasParentAndChild( $topLevelPage, $childPage, $hierarchy );
 	}
@@ -139,7 +139,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$page = reset( $hierarchy );
 
 		$this->assertEquals( $topLevelPage, $page->getTitle() );
-		$this->assertEquals( array( new Page( $childPage ) ), $page->getSubPages() );
+		$this->assertEquals( [ new Page( $childPage ) ], $page->getSubPages() );
 	}
 
 	public function testInBetweenPagesAreCreated() {
@@ -147,29 +147,29 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$grandGrandChildPage = $this->newMockTitle( 'SomePage/ChildPage/GrandChildPage/HipsterPage' );
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( array( $topLevelPage, $grandGrandChildPage ) );
+		$hierarchy = $hierarchyCreator->createHierarchy( [ $topLevelPage, $grandGrandChildPage ] );
 
 		$this->assertEquals(
-			array(
+			[
 				new Page(
 					$this->newMockTitle( 'SomePage' ),
-					array(
+					[
 						new Page(
 							$this->newMockTitle( 'SomePage/ChildPage' ),
-							array(
+							[
 								new Page(
 									$this->newMockTitle( 'SomePage/ChildPage/GrandChildPage' ),
-									array(
+									[
 										new Page(
 											$this->newMockTitle( 'SomePage/ChildPage/GrandChildPage/HipsterPage' )
 										)
-									)
+									]
 								)
-							)
+							]
 						)
-					)
+					]
 				)
-			),
+			],
 			$hierarchy
 		);
 	}
@@ -178,24 +178,24 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$grandChildPage = $this->newMockTitle( 'SomePage/ChildPage/GrandChildPage' );
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( array( $grandChildPage ) );
+		$hierarchy = $hierarchyCreator->createHierarchy( [ $grandChildPage ] );
 
 		$this->assertEquals(
-			array(
+			[
 				new Page(
 					$this->newMockTitle( 'SomePage' ),
-					array(
+					[
 						new Page(
 							$this->newMockTitle( 'SomePage/ChildPage' ),
-							array(
+							[
 								new Page(
 									$this->newMockTitle( 'SomePage/ChildPage/GrandChildPage' )
 								)
-							)
+							]
 						)
-					)
+					]
 				)
-			),
+			],
 			$hierarchy
 		);
 	}
@@ -214,43 +214,43 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 		$hierarchy = $hierarchyCreator->createHierarchy( $pages );
 
 		$this->assertEquals(
-			array(
+			[
 				new Page(
 					$this->newMockTitle( 'SomePage' ),
-					array(
+					[
 						new Page(
 							$this->newMockTitle( 'SomePage/Child0' ),
-							array(
+							[
 								new Page(
 									$this->newMockTitle( 'SomePage/Child0/GrandChild00' )
 								)
-							)
+							]
 						),
 						new Page(
 							$this->newMockTitle( 'SomePage/Child1' ),
-							array(
+							[
 								new Page(
 									$this->newMockTitle( 'SomePage/Child0/GrandChild10' )
 								),
 								new Page(
 									$this->newMockTitle( 'SomePage/Child0/GrandChild11' )
 								)
-							)
+							]
 						),
 						new Page(
 							$this->newMockTitle( 'SomePage/Child2' ),
-							array(
+							[
 								new Page(
 									$this->newMockTitle( 'SomePage/Child0/GrandChild20' )
 								),
 								new Page(
 									$this->newMockTitle( 'SomePage/Child0/GrandChild21' )
 								)
-							)
+							]
 						)
-					)
+					]
 				)
-			),
+			],
 			$hierarchy
 		);
 	}

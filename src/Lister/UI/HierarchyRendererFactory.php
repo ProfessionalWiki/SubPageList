@@ -21,9 +21,9 @@ class HierarchyRendererFactory {
 	 * @return HierarchyRenderer
 	 */
 	public function newTreeListRenderer( array $options ) {
-		$treeListOptions = array(
+		$treeListOptions = [
 			TreeListRenderer::OPT_SHOW_TOP_PAGE => $options['showpage'],
-		);
+		];
 
 		if ( $options['kidsonly'] ) {
 			$treeListOptions[TreeListRenderer::OPT_MAX_DEPTH] = 1;
@@ -56,7 +56,7 @@ class HierarchyRendererFactory {
 	}
 
 	private function getPathStyle( $pathStyle ) {
-		$styles = array(
+		$styles = [
 			'none' => PlainPageRenderer::PATH_NONE,
 			'no' => PlainPageRenderer::PATH_NONE,
 
@@ -68,7 +68,7 @@ class HierarchyRendererFactory {
 			'fullpagename' => PlainPageRenderer::PATH_FULL,
 
 			'pagename' => PlainPageRenderer::PATH_NO_NS,
-		);
+		];
 
 		return $styles[$pathStyle];
 	}

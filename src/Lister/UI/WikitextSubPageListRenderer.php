@@ -71,19 +71,19 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 
 		return Html::element(
 			$this->options['element'],
-			array(
+			[
 				'class' => $this->options['class']
-			),
+			],
 			"\n" . $text . "\n"
 		);
 	}
 
 	private function assertElementIsAllowed() {
-		$allowedElements = array(
+		$allowedElements = [
 			'p',
 			'div',
 			'span'
-		);
+		];
 
 		if ( !in_array( $this->options['element'], $allowedElements ) ) {
 			throw new RuntimeException(

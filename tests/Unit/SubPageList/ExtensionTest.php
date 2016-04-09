@@ -27,9 +27,9 @@ class ExtensionTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function constructorProvider() {
-		$argLists = array(
-			array( Settings::newFromGlobals( $GLOBALS ) )
-		);
+		$argLists = [
+			[ Settings::newFromGlobals( $GLOBALS ) ]
+		];
 
 		return $argLists;
 	}
@@ -44,9 +44,9 @@ class ExtensionTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function instanceProvider() {
-		$argLists = array();
+		$argLists = [];
 
-		$argLists[] = array( new Extension( Settings::newFromGlobals( $GLOBALS ) ) );
+		$argLists[] = [ new Extension( Settings::newFromGlobals( $GLOBALS ) ) ];
 
 		return $argLists;
 	}

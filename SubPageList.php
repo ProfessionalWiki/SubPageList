@@ -41,7 +41,6 @@ call_user_func( function() {
 	);
 
 	$GLOBALS['wgMessagesDirs']['SubPageList'] = __DIR__ . '/i18n';
-	$GLOBALS['wgExtensionMessagesFiles']['SubPageList'] = __DIR__ . '/SubPageList.i18n.php';
 	$GLOBALS['wgExtensionMessagesFiles']['SubPageListMagic'] = __DIR__ . '/SubPageList.i18n.magic.php';
 
 	$GLOBALS['wgExtensionFunctions'][] = function() {

@@ -30,17 +30,17 @@ class SettingsTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function constructorProvider() {
-		$settingArrays = array(
-			array(),
-			array( 'foo' => 'bar' ),
-			array( 'foo' => 'bar', 'baz' => 'BAH' ),
-			array( '~[,,_,,]:3' => array( 9001, 4.2 ) ),
-		);
+		$settingArrays = [
+			[],
+			[ 'foo' => 'bar' ],
+			[ 'foo' => 'bar', 'baz' => 'BAH' ],
+			[ '~[,,_,,]:3' => [ 9001, 4.2 ] ],
+		];
 
-		$argLists = array();
+		$argLists = [];
 
 		foreach ( $settingArrays as $settingArray ) {
-			$argLists[] = array( $settingArray );
+			$argLists[] = [ $settingArray ];
 		}
 
 		return $argLists;

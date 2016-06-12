@@ -47,8 +47,8 @@ class PageHierarchyCreator {
 	public function createHierarchy( array $titles ) {
 		$this->assertAreTitles( $titles );
 
-		$this->pages = array();
-		$this->allPages = array();
+		$this->pages = [];
+		$this->allPages = [];
 
 		foreach ( $titles as $title ) {
 			$this->addTitle( $title );
@@ -58,7 +58,7 @@ class PageHierarchyCreator {
 	}
 
 	private function addTitle( Title $title ) {
-		$page = new Page( $title, array() );
+		$page = new Page( $title, [] );
 		$titleText = $this->getTextForTitle( $title );
 
 		$parentTitle = $this->getParentTitle( $titleText );
@@ -111,7 +111,7 @@ class PageHierarchyCreator {
 
 		$this->addTopLevelPage( $topLevelPage, $this->newPageFromText( $topLevelPage ) );
 
-		$previousParts = array( $topLevelPage );
+		$previousParts = [ $topLevelPage ];
 
 		foreach ( $titleParts as $titlePart ) {
 			$parentTitle = $this->titleTextFromParts( $previousParts );

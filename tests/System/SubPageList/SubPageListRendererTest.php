@@ -14,7 +14,7 @@ use Title;
  */
 class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
-	private static $pages = array(
+	private static $pages = [
 		// A page with no sub pages
 		'TempSPLTest:AAA',
 
@@ -31,7 +31,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		'TempSPLTest:DDD/Sub1',
 		'TempSPLTest:DDD/Sub2',
 		'TempSPLTest:DDD/Sub2/Sub',
-	);
+	];
 
 	/**
 	 * @var Title[]
@@ -77,7 +77,7 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	private function getListForParams( array $params ) {
-		$functionParams = array();
+		$functionParams = [];
 
 		foreach ( $params as $name => $value ) {
 			$functionParams[] = $name . '=' . $value;
@@ -107,30 +107,30 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public function testListForNonExistingPage() {
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'page' => 'TempSPLTest:ZZZ',
 				'showpage' => 'yes',
-			),
+			],
 			"[[TempSPLTest:ZZZ|TempSPLTest:ZZZ]]"
 		);
 	}
 
 	public function testListForExistingPage() {
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'page' => 'TempSPLTest:AAA',
 				'showpage' => 'yes',
-			),
+			],
 			"[[TempSPLTest:AAA|TempSPLTest:AAA]]"
 		);
 	}
 
 	public function testListSubPagePageWithParent() {
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'page' => 'TempSPLTest:CCC/Sub',
 				'showpage' => 'yes',
-			),
+			],
 			'[[TempSPLTest:CCC|TempSPLTest:CCC]]
 * [[TempSPLTest:CCC/Sub|Sub]]'
 		);
@@ -138,10 +138,10 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public function testListPageWithSub() {
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'page' => 'TempSPLTest:CCC',
 				'showpage' => 'yes',
-			),
+			],
 			'[[TempSPLTest:CCC|TempSPLTest:CCC]]
 * [[TempSPLTest:CCC/Sub|Sub]]'
 		);
@@ -151,11 +151,11 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		$introText = '~=[,,_,,]:3';
 
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'page' => 'TempSPLTest:AAA',
 				'intro' => $introText,
 				'showpage' => 'yes',
-			),
+			],
 			$introText . "\n[[TempSPLTest:AAA|TempSPLTest:AAA]]"
 		);
 	}
@@ -165,59 +165,59 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		$outroText = 'in your test';
 
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'page' => 'TempSPLTest:AAA',
 				'intro' => $introText,
 				'outro' => $outroText,
 				'showpage' => 'yes',
-			),
+			],
 			$introText . "\n[[TempSPLTest:AAA|TempSPLTest:AAA]]\n" . $outroText
 		);
 	}
 
 	public function testListInvalidPageName() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'TempSPLTest:Invalid|Title',
-			),
+			],
 			'Error: invalid title provided'
 		);
 	}
 
 	public function testDefaultDefaultingBehaviour() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'TempSPLTest:DoesNotExist',
-			),
+			],
 			'"TempSPLTest:DoesNotExist" has no sub pages.'
 		);
 	}
 
 	public function testSpecifiedDefaultingBehaviour() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'TempSPLTest:DoesNotExist',
 				'default' => '~=[,,_,,]:3'
-			),
+			],
 			'~=[,,_,,]:3'
 		);
 	}
 
 	public function testNullDefaultingBehaviour() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'TempSPLTest:DoesNotExist',
 				'default' => '-'
-			),
+			],
 			''
 		);
 	}
 
 	public function testListWithMultipleSubPages() {
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'page' => 'TempSPLTest:DDD',
-			),
+			],
 			'* [[TempSPLTest:DDD/Sub0|Sub0]]
 * [[TempSPLTest:DDD/Sub1|Sub1]]
 * [[TempSPLTest:DDD/Sub2|Sub2]]
@@ -230,10 +230,10 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testLimitIsApplied( $limit ) {
 		$list = $this->getListForParams(
-			array(
+			[
 				'page' => 'TempSPLTest:DDD',
 				'limit' => (string)$limit,
-			)
+			]
 		);
 
 		$this->assertEquals(
@@ -243,19 +243,19 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function limitProvider() {
-		return array(
-			array( 1 ),
-			array( 2 ),
-			array( 3 ),
-		);
+		return [
+			[ 1 ],
+			[ 2 ],
+			[ 3 ],
+		];
 	}
 
 	public function testKidsOnly() {
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'page' => 'TempSPLTest:DDD',
 				'kidsonly' => 'yes',
-			),
+			],
 			'* [[TempSPLTest:DDD/Sub0|Sub0]]
 * [[TempSPLTest:DDD/Sub1|Sub1]]
 * [[TempSPLTest:DDD/Sub2|Sub2]]'
@@ -264,11 +264,11 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public function testListWithoutLinks() {
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'page' => 'TempSPLTest:CCC',
 				'showpage' => 'yes',
 				'links' => 'no',
-			),
+			],
 			'TempSPLTest:CCC
 * Sub'
 		);
@@ -276,12 +276,12 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public function testListWithTemplate() {
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'page' => 'TempSPLTest:CCC',
 				'pathstyle' => 'full',
 				'showpage' => 'yes',
 				'template' => 'MyTemplate',
-			),
+			],
 			'{{MyTemplate|TempSPLTest:CCC}}
 * {{MyTemplate|TempSPLTest:CCC/Sub}}'
 		);
@@ -292,10 +292,10 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		self::createPage( 'TempSPLTest:ZZZ' );
 
 		$this->assertCreatesListWithWrap(
-			array(
+			[
 				'showpage' => 'yes',
 				'pathstyle' => 'full',
-			),
+			],
 			'[[TempSPLTest:ZZZ|TempSPLTest:ZZZ]]
 * [[TempSPLTest:ZZZ/ABC|TempSPLTest:ZZZ/ABC]]'
 		);

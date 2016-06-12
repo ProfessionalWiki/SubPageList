@@ -1,9 +1,15 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
-## Version 1.2 (dev)
+## Version 1.3.0 (dev)
 
-* Added HTML element option "none" to return raw wikitext.
-* Added "addlevel" parameter to increase indent level of entire list.
+* Dropped support for MediaWiki older than 1.23
+* Dropped support for PHP older than 5.5
+
+## Version 1.2.0 (2015-08-05)
+
+* The "element" parameter now supports "none" as value to not wrap the list in any HTML element.
+* Added "addlevel" parameter that allows increaing the indent level of the entire list.
+* Translation updates
 
 ## Version 1.1.2 (2015-01-31)
 

@@ -40,28 +40,28 @@ class TemplatePageRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function renderProvider() {
-		return array(
-			array(
+		return [
+			[
 				new Page( Title::newFromText( 'AAA' ) ),
 				'MyTemplate',
 				'{{MyTemplate|Ohi}}',
-			),
-			array(
+			],
+			[
 				new Page( Title::newFromText( 'AAA/BBB' ) ),
 				'MyTemplate',
 				'{{MyTemplate|Ohi}}',
-			),
-			array(
+			],
+			[
 				new Page( Title::newFromText( 'Foo:Bar' ) ),
 				'MyTemplate',
 				'{{MyTemplate|Ohi}}',
-			),
-			array(
+			],
+			[
 				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
 				'MyTemplate',
 				'{{MyTemplate|Ohi}}',
-			),
-		);
+			],
+		];
 	}
 
 }

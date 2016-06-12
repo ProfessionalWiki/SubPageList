@@ -27,7 +27,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	public static function setUpBeforeClass() {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
 
-		self::$pages = array(
+		self::$pages = [
 			// A page with no sub pages
 			'AAA' => new Page(
 				Title::newFromText( 'AAA' )
@@ -36,13 +36,13 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			// A page with one sub page
 			'BBB' => new Page(
 				Title::newFromText( 'BBB' ),
-				array(
+				[
 					new Page(
 						Title::newFromText( 'BBB/Sub' )
 					)
-				)
+				]
 			),
-		);
+		];
 	}
 
 	private function assertCreatesList( array $params, $listText ) {
@@ -73,7 +73,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			$definition->getParameters()
 		);
 
-		$params = array();
+		$params = [];
 
 		foreach ( $processor->processParameters()->getParameters() as $param ) {
 			$params[$param->getName()] = $param->getValue();
@@ -84,20 +84,20 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public function testListForOnePage() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'AAA',
 				'showpage' => 'yes',
-			),
+			],
 			'<div class="subpagelist">' . "\n[[AAA|AAA]]\n</div>"
 		);
 	}
 
 	public function testListForOnePageWithOneSub() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'BBB',
 				'showpage' => 'yes',
-			),
+			],
 			'<div class="subpagelist">
 [[BBB|BBB]]
 * [[BBB/Sub|Sub]]
@@ -110,21 +110,21 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testListWithHeader( $introText ) {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'AAA',
 				'intro' => $introText,
 				'showpage' => 'yes',
-			),
+			],
 			'<div class="subpagelist">' . "\n" .$introText . "\n[[AAA|AAA]]\n</div>"
 		);
 	}
 
 	public function textProvider() {
-		return array(
-			array( 'a' ),
-			array( '0' ),
-			array( '~=[,,_,,]:3' ),
-		);
+		return [
+			[ 'a' ],
+			[ '0' ],
+			[ '~=[,,_,,]:3' ],
+		];
 	}
 
 	/**
@@ -132,32 +132,32 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testListWithFooter( $outroText ) {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'AAA',
 				'outro' => $outroText,
 				'showpage' => 'yes',
-			),
+			],
 			'<div class="subpagelist">' ."\n[[AAA|AAA]]\n" . $outroText . "\n</div>"
 		);
 	}
 
 	public function testListWithoutLinks() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'BBB',
 				'links' => 'no',
-			),
+			],
 			'<div class="subpagelist">' ."\n* Sub\n</div>"
 		);
 	}
 
 	public function testListWithOlFormat() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'BBB',
 				'showpage' => 'yes',
 				'format' => 'ol',
-			),
+			],
 			'<div class="subpagelist">
 [[BBB|BBB]]
 # [[BBB/Sub|Sub]]
@@ -167,12 +167,12 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public function testListWithTemplate() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'BBB',
 				'showpage' => 'yes',
 				'format' => 'ol',
 				'template' => 'foo',
-			),
+			],
 			'<div class="subpagelist">
 {{foo|BBB}}
 # {{foo|Sub}}
@@ -185,18 +185,32 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 		$this->setExpectedException( 'RuntimeException' );
 
-		$this->getListForParams( array(
+		$this->getListForParams( [
 			'page' => 'BBB',
 			'element'=> $badElement,
-		) );
+		] );
+	}
+
+	public function testOneLevelOfAdditionalIndent() {
+		$this->assertCreatesList(
+			[
+				'page' => 'BBB',
+				'showpage' => 'yes',
+				'addlevel' => '1',
+			],
+			'<div class="subpagelist">
+* [[BBB|BBB]]
+** [[BBB/Sub|Sub]]
+</div>'
+		);
 	}
 	
-	public function testAddlevel() {
+	public function testTwoLevelsOfAdditionalIndent() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'BBB',
 				'addlevel' => '2',
-			),
+			],
 			'<div class="subpagelist">
 *** [[BBB/Sub|Sub]]
 </div>'
@@ -205,10 +219,10 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 
 	public function testElementNone() {
 		$this->assertCreatesList(
-			array(
+			[
 				'page' => 'BBB',
 				'element' => 'none',
-			),
+			],
 			'* [[BBB/Sub|Sub]]'
 		);
 	}

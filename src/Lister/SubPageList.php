@@ -114,7 +114,7 @@ class SubPageList implements HookHandler {
 	private function shouldUseDefault( Page $topLevelPage, $showTopLevelPage ) {
 		// Note: this behaviour is not fully correct.
 		// Other parameters that omit results need to be held into account as well.
-		return !$showTopLevelPage && $topLevelPage->getSubPages() === array();
+		return !$showTopLevelPage && $topLevelPage->getSubPages() === [];
 	}
 
 	private function getRenderedList( Page $topLevelPage, $parameters ) {
@@ -148,7 +148,7 @@ class SubPageList implements HookHandler {
 	 * @return array
 	 */
 	private function paramsToOptions( array $parameters ) {
-		$options = array();
+		$options = [];
 
 		foreach ( $parameters as $parameter ) {
 			$options[$parameter->getName()] = $parameter->getValue();

@@ -16,7 +16,7 @@ if ( defined( 'SPL_VERSION' ) ) {
 	return 1;
 }
 
-define( 'SPL_VERSION', '1.2 alpha' );
+define( 'SPL_VERSION', '1.3.0-alpha' );
 
 // Include the composer autoloader if it is present.
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
@@ -37,11 +37,11 @@ call_user_func( function() {
 			'[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
 		),
 		'url' => 'https://github.com/JeroenDeDauw/SubPageList/blob/master/README.md',
-		'descriptionmsg' => 'spl-desc'
+		'descriptionmsg' => 'spl-desc',
+		'license-name' => 'GPL-2.0+'
 	);
 
 	$GLOBALS['wgMessagesDirs']['SubPageList'] = __DIR__ . '/i18n';
-	$GLOBALS['wgExtensionMessagesFiles']['SubPageList'] = __DIR__ . '/SubPageList.i18n.php';
 	$GLOBALS['wgExtensionMessagesFiles']['SubPageListMagic'] = __DIR__ . '/SubPageList.i18n.magic.php';
 
 	$GLOBALS['wgExtensionFunctions'][] = function() {

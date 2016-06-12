@@ -62,27 +62,28 @@ class WikitextSubPageListRenderer implements SubPageListRenderer {
 	}
 
 	private function wrapInElement( $text ) {
+		if ( $this->options['element'] === 'none' ) {
+			return $text;
+		}
+
+		// This whitelist checking is done because the first parameter of Html::element is not escaped.
 		$this->assertElementIsAllowed();
 
-		if ($this->options['element']!='none')
-		{
-			return Html::element(
-				$this->options['element'],
-				array(
-					'class' => $this->options['class']
-				),
-				"\n" . $text . "\n"
-			);
-		} else return $text;
+		return Html::element(
+			$this->options['element'],
+			[
+				'class' => $this->options['class']
+			],
+			"\n" . $text . "\n"
+		);
 	}
 
 	private function assertElementIsAllowed() {
-		$allowedElements = array(
+		$allowedElements = [
 			'p',
 			'div',
-			'span',
-			'none'
-		);
+			'span'
+		];
 
 		if ( !in_array( $this->options['element'], $allowedElements ) ) {
 			throw new RuntimeException(

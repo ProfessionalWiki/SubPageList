@@ -37,24 +37,24 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function renderProvider() {
-		return array(
-			array(
+		return [
+			[
 				new Page( Title::newFromText( 'AAA' ) ),
 				'[[AAA|Ohi]]',
-			),
-			array(
+			],
+			[
 				new Page( Title::newFromText( 'AAA/BBB' ) ),
 				'[[AAA/BBB|Ohi]]',
-			),
-			array(
+			],
+			[
 				new Page( Title::newFromText( 'Foo:Bar' ) ),
 				'[[Foo:Bar|Ohi]]',
-			),
-			array(
+			],
+			[
 				new Page( Title::newFromText( 'Foo:Bar/Baz' ) ),
 				'[[Foo:Bar/Baz|Ohi]]',
-			),
-		);
+			],
+		];
 	}
 
 }

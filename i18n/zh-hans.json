@@ -12,10 +12,17 @@
 	"spl-subpages-par-sort": "要排序的方向。允许的值：“asc”和“desc”。",
 	"spl-subpages-par-sortby": "要按什么排序子页面。允许的值：“title”或“lastedit”。",
 	"spl-subpages-par-format": "子页面列表可以多种格式显示。允许的值：\"ol\"——有序列表（编码）、\"ul\"——无序列表（项目符号）、\"list\"——无格式列表（例如逗号分隔列表）。",
+	"spl-subpages-par-page": "要显示子页面的页面，或要显示页面的名字空间（包括后置冒号）。默认为当前页面。",
+	"spl-subpages-par-showpage": "表明页面本身是否应显示在列表中。",
+	"spl-subpages-par-pathstyle": "用于列表中子页面的路径样式。允许的值：“fullpagename”——完整页面名称（包括名字空间）、“pagename”——页面名称（不包括名字空间）、“subpagename”——相对页面名称，从我们列出子页面的页面开始、“none”——最后一个斜线之后部分的名称。",
 	"spl-subpages-par-kidsonly": "允许显示仅直接的子页面。",
 	"spl-subpages-par-limit": "列出页面的最大数量。",
+	"spl-subpages-par-element": "封闭列表的HTML元素（包括“intro”和“outro”或“default”文本）。允许的值：“div”、“p”、“span”。",
+	"spl-subpages-par-class": "用于封闭列表的HTML元素中“class”属性的值。",
 	"spl-subpages-par-intro": "在列表之前输出的文字，如果列表不是空的话。",
 	"spl-subpages-par-outro": "在列表之后输出的文字，如果列表不是空的话。",
+	"spl-subpages-par-default": "要代替列表输出的文本，如果列表为空的话。如果为空，将渲染错误消息（例如“页面没有至列表的子页面”）。如果为连字符（“-”），结果将完全为空。",
+	"spl-subpages-par-separator": "假如是“list”（及其别名“bar”）格式，要在两个列表项之间输出的文本。在其他格式中没有影响。",
 	"spl-subpages-par-template": "模板名称。模板应用于列表的每项。一个项目会被传递为第一个（未命名的）参数。注意模板不会取消列表格式。格式（\"ul\", \"ol\", \"list\"）应用于模板的结果。",
 	"spl-subpages-par-links": "如果为真，列表项会以链接呈现。如果为假，列表项会以纯文本呈现。后者尤其在将项目传递进模板以便进一步处理时有用。"
 }

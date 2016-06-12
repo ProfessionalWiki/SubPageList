@@ -17,7 +17,7 @@ class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @var Title[]
 	 */
-	private static $titles = array();
+	private static $titles = [];
 
 	public static function createPage( $titleText ) {
 		$title = Title::newFromText( $titleText );
@@ -101,9 +101,9 @@ class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
 
 		$result = $functionRunner->run(
 			$GLOBALS['wgParser'],
-			array(
+			[
 				'page' => $pageName
-			),
+			],
 			$frame
 		);
 

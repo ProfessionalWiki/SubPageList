@@ -39,15 +39,15 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 		$finder->expects( $this->once() )
 			->method( 'getSubPagesFor' )
 			->with( $this->equalTo( $titleText ) )
-			->will( $this->returnValue( array() ) );
+			->will( $this->returnValue( [] ) );
 
 		$hierarchyCreator = $this->getMockBuilder( 'SubPageList\Lister\PageHierarchyCreator' )
 			->disableOriginalConstructor()->getMock();
 
 		$hierarchyCreator->expects( $this->once() )
 			->method( 'createHierarchy' )
-			->with( $this->equalTo( array( $title ) ) )
-			->will( $this->returnValue( array( $page ) ) );
+			->with( $this->equalTo( [ $title ] ) )
+			->will( $this->returnValue( [ $page ] ) );
 
 		$renderer = $this->getMock( 'SubPageList\Lister\UI\SubPageListRenderer' );
 
@@ -68,13 +68,13 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 		$parser = $this->getMock( 'Parser' );
 
 		$processingResult = new ProcessingResult(
-			array(
+			[
 				'page' => new ProcessedParam( 'page', $titleText, false ),
 				'showpage' => new ProcessedParam( 'showpage', true, false ),
 				'default' => new ProcessedParam( 'default', '', true ),
 				'limit' => new ProcessedParam( 'limit', 200, true ),
-			),
-			array()
+			],
+			[]
 		);
 
 		return $subPageList->handle( $parser, $processingResult );

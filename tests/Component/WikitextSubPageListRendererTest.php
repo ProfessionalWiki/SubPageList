@@ -106,6 +106,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			[
 				'page' => 'BBB',
 				'showpage' => 'yes',
+				'redirects' => 'no'
 			],
 			'<div class="subpagelist">
 [[BBB|BBB]]
@@ -121,7 +122,6 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 				'redirects' => 'yes',
 			],
 			'<div class="subpagelist">
-[[BBB|BBB]]
 * [[BBB/Redirect|Redirect]]
 * [[BBB/Sub|Sub]]
 </div>'

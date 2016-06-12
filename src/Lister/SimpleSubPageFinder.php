@@ -72,7 +72,24 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 
 		$this->setOption( self::OPT_LIMIT, $limit );
 	}
+	
+	/**
+	 * @see SubPageFinder::setLimit
+	 *
+	 * @since 1.3.1
+	 *
+	 * @param bool $redirects
+	 *
+	 * @throws InvalidArgumentException
+	 */
+	public function setRedirects( $redirects ) {
+		if ( !is_bool( $redirects ) ) {
+			throw new InvalidArgumentException( '$redirects needs to be boolean' );
+		}
 
+		$this->setOption( self::OPT_INCLUDE_REDIRECTS, $redirects );
+	}
+	
 	/**
 	 * @see SubPageFinder::setOffset
 	 *

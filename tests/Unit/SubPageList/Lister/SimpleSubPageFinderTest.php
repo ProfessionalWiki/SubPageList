@@ -33,6 +33,21 @@ class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
 
 		return $argLists;
 	}
+	
+	public function redirectProvider() {
+		$argLists = [];
+
+		Title::newFromText( 'hello world' );
+		
+		$argLists[] = [ Title::newFromText( 'Redirect Test' ) ];
+		$rc = new RedirectCreator();
+		$rc->createRedirect( 
+			Title::newFromText( 'Redirect Test/Sub' ), 
+			'hello world' 
+		);
+
+		return $argLists;
+	}
 
 	/**
 	 * @dataProvider titleProvider
@@ -46,6 +61,27 @@ class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertInternalType( 'array', $pages );
 		$this->assertContainsOnlyInstancesOf( 'Title', $pages );
+	}
+	
+	/**
+	 * @dataProvider redirectProvider
+	 *
+	 * @param Title $title
+	 */
+	public function testGetSubPagesForRedirect( Title $title ) {
+		$finder = $this->newInstance();
+
+		$pages = $finder->getSubPagesFor( $title );
+
+		$this->assertInternalType( 'array', $pages );
+		$this->assertContainsOnlyInstancesOf( 'Title', $pages );
+		
+		foreach ( $subPages as $subPage ) {
+			$this->assertEquals( 
+				$subPage->getFullText(),
+				'Redirect Test/Sub'
+			);
+		}
 	}
 
 }

@@ -27,27 +27,18 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	public static function setUpBeforeClass() {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
 
-		$aaa = Title::newFromText( 'AAA' );
-		$redirCreator = new RedirectCreator();
-		
 		self::$pages = [
 			// A page with no sub pages
 			'AAA' => new Page(
-				$aaa
+				Title::newFromText( 'AAA' )
 			),
 
-			// A page with one sub page and one redirect
+			// A page with one sub page
 			'BBB' => new Page(
 				Title::newFromText( 'BBB' ),
 				[
 					new Page(
 						Title::newFromText( 'BBB/Sub' )
-					),
-					new Page( 
-						$redirCreator->createRedirect( 
-							Title::newFromText( 'BBB/Redirect' ), 
-							$aaa 
-						) 
 					)
 				]
 			),
@@ -106,23 +97,9 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			[
 				'page' => 'BBB',
 				'showpage' => 'yes',
-				'redirects' => 'no'
 			],
 			'<div class="subpagelist">
 [[BBB|BBB]]
-* [[BBB/Sub|Sub]]
-</div>'
-		);
-	}
-	
-	public function testListWithRedirect() {
-		$this->assertCreatesList(
-			[
-				'page' => 'BBB',
-				'redirects' => 'yes',
-			],
-			'<div class="subpagelist">
-* [[BBB/Redirect|Redirect]]
 * [[BBB/Sub|Sub]]
 </div>'
 		);

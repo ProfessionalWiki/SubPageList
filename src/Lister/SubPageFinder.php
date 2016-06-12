@@ -36,6 +36,15 @@ interface SubPageFinder {
 	 * @throws InvalidArgumentException
 	 */
 	public function setLimit( $limit );
+	
+	/**
+	 * @since 1.3.1
+	 *
+	 * @param bool $redirects
+	 *
+	 * @throws InvalidArgumentException
+	 */
+	public function setRedirects( $redirects );
 
 	/**
 	 * @since 1.2

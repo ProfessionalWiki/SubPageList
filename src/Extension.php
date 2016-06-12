@@ -145,6 +145,7 @@ class Extension {
 				
 				'redirects' => [
 					'type' => 'boolean',
+					'aliases' => 'redirect',
 					'default' => false,
 				]
 			],
@@ -194,6 +195,7 @@ class Extension {
 		
 		$params['redirects'] = [
 			'type' => 'boolean',
+			'aliases' => 'redirect',
 			'default' => false,
 		];
 

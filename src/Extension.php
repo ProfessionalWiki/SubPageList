@@ -142,6 +142,11 @@ class Extension {
 					'aliases' => 'parent',
 					'message' => 'spl-subpages-par-page',
 				],
+				
+				'redirects' => [
+					'type' => 'boolean',
+					'default' => false,
+				]
 			],
 			'page'
 		);
@@ -185,6 +190,11 @@ class Extension {
 			'type' => 'boolean',
 			'aliases' => 'link',
 			'default' => true,
+		];
+		
+		$params['redirects'] = [
+			'type' => 'boolean',
+			'default' => false,
 		];
 
 		$params['default'] = [

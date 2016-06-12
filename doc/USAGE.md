@@ -91,6 +91,13 @@ Parameter name: links
 This parameter specifies if the pages in the list should be links. The allowed values
 are <code>yes</code> and <code>no</code>. The default is <code>yes</code>.
 
+#### Including redirects
+
+Parameter name: redirects
+
+This parameter specifies if subpages which are redirects should be included in the list.  
+The allowed values are <code>yes</code> and <code>no</code>. The default is <code>no</code>.
+
 #### Displaying the page itself
 
 Parameter name: showpage

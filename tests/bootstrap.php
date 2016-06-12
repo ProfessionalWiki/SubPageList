@@ -36,5 +36,6 @@ function registerAutoloader( $identifier, $path ) {
 }
 
 $autoLoader->addPsr4( 'Tests\\System\\SubPageList\\', __DIR__ . '/System/SubPageList/' );
+$autoLoader->addPsr4( 'Tests\\Component\\SubPageList\\', __DIR__ . '/Component/' );
 
 unset( $autoLoader );

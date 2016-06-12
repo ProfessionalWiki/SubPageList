@@ -122,8 +122,8 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			],
 			'<div class="subpagelist">
 [[BBB|BBB]]
-* [[BBB/Sub|Sub]]
 * [[BBB/Redirect|Redirect]]
+* [[BBB/Sub|Sub]]
 </div>'
 		);
 	}

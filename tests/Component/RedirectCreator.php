@@ -9,7 +9,7 @@ class RedirectCreator {
 	public function createRedirect( Title $title, Title $dest ) {
 		$page = new \WikiPage( $title );
 
-		$pageContent = '#redirecc [[' . $dest->getFullText() . ']]';
+		$pageContent = '#redirect [[' . $dest->getFullText() . ']]';
 		$editMessage = 'SPL system test: create redirect';
 
 		if ( class_exists( 'WikitextContent' ) ) {

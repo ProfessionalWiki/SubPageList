@@ -74,7 +74,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	}
 	
 	/**
-	 * @see SubPageFinder::setLimit
+	 * @see SubPageFinder::setRedirects
 	 *
 	 * @since 1.3.1
 	 *

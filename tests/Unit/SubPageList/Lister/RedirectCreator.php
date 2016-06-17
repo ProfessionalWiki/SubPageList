@@ -6,10 +6,16 @@ use Title;
 
 class RedirectCreator {
 
-	public function createRedirect( Title $title, $dest ) {
+	/**
+	 *
+	 * @param Title $title
+	 * @param string $destination
+	 *
+	 */
+	public function createRedirect( Title $title, $destination ) {
 		$page = new \WikiPage( $title );
 
-		$pageContent = '#redirect [[' . $dest . ']]';
+		$pageContent = '#redirect [[' . $destination . ']]';
 		$editMessage = 'SPL system test: create redirect';
 
 		if ( class_exists( 'WikitextContent' ) ) {

@@ -91,14 +91,14 @@ class SubPageList implements HookHandler {
 	/**
 	 * @param Title $title
 	 * @param int $limit
-	 * @param bool $redirects
+	 * @param bool $includeRedirects
 	 *
 	 * @return Page
 	 * @throws LogicException
 	 */
-	private function getPageHierarchy( Title $title, $limit, $redirects ) {
+	private function getPageHierarchy( Title $title, $limit, $includeRedirects ) {
 		$this->subPageFinder->setLimit( $limit );
-		$this->subPageFinder->setRedirects( $redirects );
+		$this->subPageFinder->setIncludeRedirects( $includeRedirects );
 
 		$subPageTitles = $this->subPageFinder->getSubPagesFor( $title );
 		$subPageTitles[] = $title;

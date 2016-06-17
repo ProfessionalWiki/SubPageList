@@ -60,7 +60,7 @@ class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
 		$pages = $finder->getSubPagesFor( $title );
 
 		$this->assertInternalType( 'array', $pages );
-		$this->assertContainsOnlyInstancesOf( 'Title', $pages );
+		$this->assertContainsOnlyInstancesOf( Title::class, $pages );
 	}
 	
 	/**
@@ -74,10 +74,10 @@ class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
 		$pages = $finder->getSubPagesFor( $title );
 
 		$this->assertInternalType( 'array', $pages );
-		$this->assertContainsOnlyInstancesOf( 'Title', $pages );
+		$this->assertContainsOnlyInstancesOf( Title::class, $pages );
 		
 		foreach ( $pages as $subPage ) {
-			$this->assertEquals( 
+			$this->assertSame( 
 				$subPage->getFullText(),
 				'Redirect Test/Sub'
 			);

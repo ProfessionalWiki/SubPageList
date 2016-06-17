@@ -74,20 +74,20 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	}
 	
 	/**
-	 * @see SubPageFinder::setRedirects
+	 * @see SubPageFinder::setIncludeRedirects
 	 *
-	 * @since 1.3.1
+	 * @since 1.4.0
 	 *
-	 * @param bool $redirects
+	 * @param bool $includeRedirects
 	 *
 	 * @throws InvalidArgumentException
 	 */
-	public function setRedirects( $redirects ) {
-		if ( !is_bool( $redirects ) ) {
-			throw new InvalidArgumentException( '$redirects needs to be boolean' );
+	public function setIncludeRedirects( $includeRedirects ) {
+		if ( !is_bool( $includeRedirects ) ) {
+			throw new InvalidArgumentException( '$includeRedirects needs to be boolean' );
 		}
 
-		$this->setOption( self::OPT_INCLUDE_REDIRECTS, $redirects );
+		$this->setOption( self::OPT_INCLUDE_REDIRECTS, $includeRedirects );
 	}
 	
 	/**

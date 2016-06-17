@@ -38,13 +38,13 @@ interface SubPageFinder {
 	public function setLimit( $limit );
 	
 	/**
-	 * @since 1.3.1
+	 * @since 1.4.0
 	 *
-	 * @param bool $redirects
+	 * @param bool $includeRedirects
 	 *
 	 * @throws InvalidArgumentException
 	 */
-	public function setRedirects( $redirects );
+	public function setIncludeRedirects( $includeRedirects );
 
 	/**
 	 * @since 1.2

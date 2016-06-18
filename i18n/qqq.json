@@ -27,5 +27,6 @@
 	"spl-subpages-par-default": "Used as description",
 	"spl-subpages-par-separator": "{{doc-important|Do not translate \"list\" and \"bar\".}}",
 	"spl-subpages-par-template": "{{doc-important|Do not translate \"ul\", \"ol\", and \"list\".}}",
-	"spl-subpages-par-links": "Used as description"
+	"spl-subpages-par-links": "Used as description",
+	"spl-subpages-par-redirects": "Used as description"
 }

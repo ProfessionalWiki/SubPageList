@@ -186,6 +186,12 @@ class Extension {
 			'aliases' => 'link',
 			'default' => true,
 		];
+		
+		$params['redirects'] = [
+			'type' => 'boolean',
+			'aliases' => 'redirect',
+			'default' => false,
+		];
 
 		$params['default'] = [
 			'default' => '',
@@ -255,7 +261,7 @@ class Extension {
 		// spl-subpages-par-sort, spl-subpages-par-sortby, spl-subpages-par-format, spl-subpages-par-page,
 		// spl-subpages-par-showpage, spl-subpages-par-pathstyle, spl-subpages-par-kidsonly, spl-subpages-par-limit,
 		// spl-subpages-par-element, spl-subpages-par-class, spl-subpages-par-intro, spl-subpages-par-outro,
-		// spl-subpages-par-default, spl-subpages-par-separator, spl-subpages-par-template, spl-subpages-par-links
+		// spl-subpages-par-default, spl-subpages-par-separator, spl-subpages-par-template, spl-subpages-par-links, spl-subpages-par-redirects
 		foreach ( $params as $name => &$param ) {
 			$param['message'] = 'spl-subpages-par-' . $name;
 		}

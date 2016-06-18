@@ -1,5 +1,8 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 1.4.0 (dev)
+* Added "redirects" parameter to include redirects in lists
+
 ## Version 1.3.0 (dev)
 
 * Dropped support for MediaWiki older than 1.23

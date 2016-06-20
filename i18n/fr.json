@@ -5,7 +5,8 @@
 			"Hashar",
 			"Seb35",
 			"Sherbrooke",
-			"Toliño"
+			"Toliño",
+			"Wladek92"
 		]
 	},
 	"spl-desc": "Permet de lister et compter les sous-pages",
@@ -27,5 +28,6 @@
 	"spl-subpages-par-default": "La texte à renvoyer à la place de la liste, si celle-ci est vide. S'il est vide, un message d'erreur sera renvoyé (comme \"La page n'a aucune sous-page à lister\"). S'il est mis à un tiret (\"-\"), le résultat sera complètement vide.",
 	"spl-subpages-par-separator": "Le texte à renvoyer entre deux éléments de la liste, dans le cas d'un format \"list\" (et son alias \"bar\"). N'a pas d'effet dans les autres formats.",
 	"spl-subpages-par-template": "Le nom du modèle. Le modèle est appliqué à chaque élément de la liste. Un élément est passé comme premier argument (non nommé). Remarquez que le modèle n'annule pas le formatage de la liste. Le formatage (\"ul\", \"ol\", \"list\") est appliqué au résultat du modèle.",
-	"spl-subpages-par-links": "S'il est vrai, les éléments de liste sont rendus comme des liens. S'il est faux, les éléments de liste sont rendus comme du texte simple. Ce dernier est particulièrement utile pour passer des éléments dans les modèles pour un traitement ultérieur."
+	"spl-subpages-par-links": "S'il est vrai, les éléments de liste sont rendus comme des liens. S'il est faux, les éléments de liste sont rendus comme du texte simple. Ce dernier est particulièrement utile pour passer des éléments dans les modèles pour un traitement ultérieur.",
+	"spl-subpages-par-redirects": "Si la valeur est  true, les redirections sont incluses dans la liste. Si la valeur est false, les redirections ne sont pas incluses."
 }

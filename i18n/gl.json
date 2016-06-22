@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"spl-desc": "Permite listar e contar subpáxinas",
@@ -23,5 +24,6 @@
 	"spl-subpages-par-default": "O texto que mostrar no canto da lista, se esta está baleira. Nesta caso, aparecerá unha mensaxe de erro (como \"A páxina non ten subpáxinas que poñer nunha lista\"). Se o valor fose un guión (\"-\"), o resultado sería completamente baleiro.",
 	"spl-subpages-par-separator": "O texto que mostrar entre dous elementos da lista en caso dun formato \"list\" (e o seu idéntico \"bar\"). Non ten efecto sobre outros formatos.",
 	"spl-subpages-par-template": "O nome do modelo. O modelo aplícase a cada elemento da lista. Un elemento é tratado como o primeiro argumento (sen nome). Nótese que o modelo non cancelar o formato da lista. O formato (\"ul\", \"ol\", \"list\") aplícase ao resultado do modelo.",
-	"spl-subpages-par-links": "Se fose verdadeiro, os elementos da lista preséntanse como ligazóns. En caso de ser falso, os elementos da lista móstranse como texto simple. Isto último é especialmente útil para presentar elementos nos modelos para procesalos posteriormente."
+	"spl-subpages-par-links": "Se fose verdadeiro, os elementos da lista preséntanse como ligazóns. En caso de ser falso, os elementos da lista móstranse como texto simple. Isto último é especialmente útil para presentar elementos nos modelos para procesalos posteriormente.",
+	"spl-subpages-par-redirects": "Se o valor é certo, as redireccións son incluídas na lista. Se o valor é falso, as redireccións non se inclúen na lista."
 }

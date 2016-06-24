@@ -12,10 +12,16 @@ These are the installation and configuration instructions for the [SubPageList e
 		<th>Git branch</th>
 	</tr>
 	<tr>
-		<th>SPL 1.3.0</th>
+		<th>SPL 1.5.0</th>
 		<td>Under development</td>
 		<td>Future</td>
 		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/master">master</a></td>
+	</tr>
+	<tr>
+		<th>SPL 1.4.0</th>
+		<td>Stable release</td>
+		<td>2016-06-24</td>
+		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.4.0">1.4.0</a></td>
 	</tr>
 	<tr>
 		<th>SPL 1.2.0</th>
@@ -65,9 +71,9 @@ These are the installation and configuration instructions for the [SubPageList e
 		<th>Composer</th>
 	</tr>
 	<tr>
-		<th>SPL 1.2.x</th>
+		<th>SPL 1.4.x</th>
 		<td><strong>5.5.0</strong> - 7.x & HHVM</td>
-		<td><strong>1.23</strong> - 1.27</td>
+		<td><strong>1.23</strong> - 1.28</td>
 		<td>Required</td>
 	</tr>
 	<tr>
@@ -107,6 +113,12 @@ work with more recent versions of PHP and MediaWiki, though this is not guarante
 		<th>MySQL</th>
 		<th>SQLite</th>
 		<th>PostgreSQL</th>
+	</tr>
+	<tr>
+		<th>SPL 1.4.x</th>
+		<td>Full support</td>
+		<td>Full support</td>
+		<td>Unknown</td>
 	</tr>
 	<tr>
 		<th>SPL 1.2.x</th>

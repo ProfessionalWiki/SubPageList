@@ -1,10 +1,9 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
-## Version 1.4.0 (dev)
-* Added "redirects" parameter to include redirects in lists
+## Version 1.4.0 (2016-06-24)
 
-## Version 1.3.0 (dev)
-
+* Added "redirects" parameter that allows for inclusion of redirects in lists (by Randy Eckman)
+* Improved alphabetic sorting: it now uses natural sort (by k8n)
 * Dropped support for MediaWiki older than 1.23
 * Dropped support for PHP older than 5.5
 

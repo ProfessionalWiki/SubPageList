@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mormegil",
-			"Reaperman"
+			"Reaperman",
+			"Dvorapa"
 		]
 	},
 	"spl-desc": "Umožňuje vypisovat a počítat podstránky",
@@ -24,5 +25,6 @@
 	"spl-subpages-par-default": "Text, který se má místo seznamu, pokud je seznam prázdný. Pokud je ponechán prázdný, zobrazí se chybové hlášení (např. „Stránka nemá žádné podstránky“). Pokud je zde mínus („-“), bude výsledek zcela prázdný.",
 	"spl-subpages-par-separator": "Text, který se má zobrazit mezi dvěma položkami v případě formátu „list“ (a jeho aliasu „bar“). V ostatních formátech nemá žádný účinek.",
 	"spl-subpages-par-template": "Název šablony. Tato šablona se aplikuje na každou položku seznamu. Položka se předává jako první (nepojmenovaný) argument. Uvědomte si, že šablona neruší formátování seznamu. Formátování („ul“, „ol“, „list“) se aplikuje na výsledek šablony.",
-	"spl-subpages-par-links": "Pokud je aktivováno, vykreslují se položky seznamu jako odkazy. V opačném případě se zobrazují jako čistý text. Druhá možnost je užitečná zejména pro předávání položek do šablon k dalšímu zpracování."
+	"spl-subpages-par-links": "Pokud je aktivováno, vykreslují se položky seznamu jako odkazy. V opačném případě se zobrazují jako čistý text. Druhá možnost je užitečná zejména pro předávání položek do šablon k dalšímu zpracování.",
+	"spl-subpages-par-redirects": "Pokud ano, přesměrování jsou v seznamu zahrnuta. Pokud ne, přesměrování zahrnuta nejsou."
 }

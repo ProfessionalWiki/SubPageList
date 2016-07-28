@@ -23,5 +23,6 @@
 	"spl-subpages-par-default": "El testu a poner en llugar de la llista, si la llista ta balera. Si ta balera, apaecerá esti mensaxe d'error (como \"La páxina nun tien nenguna subpáxina que poner na llista\"). Si ye un guión (\"-\"), el resultáu tará en blanco dafechu.",
 	"spl-subpages-par-separator": "El testu a amosar ente dos elementos de la llista nel casu del formatu \"list\" (ya'l so alcuñu \"bar\"). Nun tien efeutu colos demás formatos.",
 	"spl-subpages-par-template": "El nome de la plantía. La plantía aplicase a cada elementu de la llista. Un elementu pasase como primer argumentu (ensin nome). Tenga en cuenta que la plantía nun anula'l formatu de la llista. El formatu (\"ul\", \"ol\", \"list\") aplicase al resultáu de la plantía.",
-	"spl-subpages-par-links": "Si ye verdadero, los elementos de la llista veránse como enllaces. Si ye falso, los elementos de la llista veránse como testu planu. Lo último ye especialmente útil para pasar los elementos a les plantíes pa procesalos posteriormente."
+	"spl-subpages-par-links": "Si ye verdadero, los elementos de la llista veránse como enllaces. Si ye falso, los elementos de la llista veránse como testu planu. Lo último ye especialmente útil para pasar los elementos a les plantíes pa procesalos posteriormente.",
+	"spl-subpages-par-redirects": "Si ye verdadero, les redireiciones inclúyense na llista. Si ye falso, les redireiciones nun s'incluyen."
 }

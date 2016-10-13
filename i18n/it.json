@@ -2,12 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"F. Cosoleto"
+			"F. Cosoleto",
+			"Selven"
 		]
 	},
 	"spl-desc": "Consente di elencare e contare le sottopagine",
 	"spl-nosubpages": "La pagina \"$1\" non ha alcuna sottopagina da elencare.",
 	"spl-noparentpage": "La pagina \"$1\" non esiste.",
 	"spl-nopages": "Il namespace \"$1\" non ha pagine.",
-	"spl-subpages-par-limit": "Il numero massimo di pagine da elencare."
+	"spl-subpages-par-sort": "La direzione dell'ordinamento. Valori ammessi: \"asc\" e \"desc\".",
+	"spl-subpages-par-limit": "Il numero massimo di pagine da elencare.",
+	"spl-subpages-par-intro": "Il testo da mostrare prima dell'elenco, se non è vuoto.",
+	"spl-subpages-par-outro": "Il testo da mostrare dopo l'elenco, se non è vuoto.",
+	"spl-subpages-par-redirects": "Se true, i reindirizzamenti vengono inclusi nella lista. Se è false, i reindirizzamenti non sono inclusi."
 }

@@ -6,7 +6,7 @@
 			"Chrumps"
 		]
 	},
-	"spl-desc": "Dodaje tag <code><nowiki><splist /></nowiki></code> pozwalający na wstawienie listy podstron",
+	"spl-desc": "Pozwala wyświetlić listę i liczbę podstron",
 	"spl-nosubpages": "Strona \" $1 \" nie ma podstron do wyświetlenia.",
 	"spl-noparentpage": "Strona \"$1\" nie istnieje.",
 	"spl-nopages": "Przestrzeń nazw „$1” nie zawiera stron.",

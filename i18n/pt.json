@@ -5,7 +5,7 @@
 			"Luckas"
 		]
 	},
-	"spl-desc": "Acrescenta um elemento <code><nowiki><splist /></nowiki></code> que permite listar subpáginas",
+	"spl-desc": "Permite a listagem e contagem de subpáginas",
 	"spl-nosubpages": "A página $1 não tem subpáginas para listar.",
 	"spl-noparentpage": "A página \"$1\" não existe.",
 	"spl-nopages": "O espaço nominal \"$1\" não tem páginas.",

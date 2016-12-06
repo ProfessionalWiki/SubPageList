@@ -4,7 +4,7 @@
 			"McDutchie"
 		]
 	},
-	"spl-desc": "Adde un etiquetta <code><nowiki><splist /></nowiki></code> que permitte listar subpaginas",
+	"spl-desc": "Permitte listar e contar subpaginas",
 	"spl-nosubpages": "Le pagina \"$1\" non ha subpaginas a listar.",
 	"spl-noparentpage": "Le pagina \"$1\" non existe.",
 	"spl-nopages": "Le spatio de nomines \"$1\" non ha paginas.",

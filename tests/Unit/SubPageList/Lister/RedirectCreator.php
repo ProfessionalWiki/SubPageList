@@ -18,16 +18,7 @@ class RedirectCreator {
 		$pageContent = '#redirect [[' . $destination . ']]';
 		$editMessage = 'SPL system test: create redirect';
 
-		if ( class_exists( 'WikitextContent' ) ) {
-			$page->doEditContent(
-				new \WikitextContent( $pageContent ),
-				$editMessage
-			);
-		}
-		else {
-			$page->doEdit( $pageContent, $editMessage );
-		}
-
+		$page->doEditContent( new \WikitextContent( $pageContent ), $editMessage );
 	}
-	
+
 }

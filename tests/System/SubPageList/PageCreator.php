@@ -12,15 +12,7 @@ class PageCreator {
 		$pageContent = 'Content of ' . $title->getFullText();
 		$editMessage = 'SPL system test: create page';
 
-		if ( class_exists( 'WikitextContent' ) ) {
-			$page->doEditContent(
-				new \WikitextContent( $pageContent ),
-				$editMessage
-			);
-		}
-		else {
-			$page->doEdit( $pageContent, $editMessage );
-		}
+		$page->doEditContent( new \WikitextContent( $pageContent ), $editMessage );
 	}
 
 }

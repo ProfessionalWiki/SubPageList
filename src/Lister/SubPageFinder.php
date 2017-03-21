@@ -38,6 +38,13 @@ interface SubPageFinder {
 	public function setLimit( $limit );
 	
 	/**
+	 * @param string $sortOrder
+	 *
+	 * @throws InvalidArgumentException
+	 */
+	public function setSortOrder( $sortOrder );
+
+	/**
 	 * @since 1.4.0
 	 *
 	 * @param bool $includeRedirects

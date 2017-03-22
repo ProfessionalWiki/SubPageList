@@ -155,8 +155,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 			'page',
 			'COUNT(*) AS rowcount',
 			$this->getConditions( $title ),
-			__METHOD__,
-			$this->getOptions()
+			__METHOD__
 		);
 
 		if ( is_object( $res ) ) {

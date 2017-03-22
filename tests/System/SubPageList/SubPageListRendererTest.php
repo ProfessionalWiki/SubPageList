@@ -31,6 +31,14 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 		'TempSPLTest:DDD/Sub1',
 		'TempSPLTest:DDD/Sub2',
 		'TempSPLTest:DDD/Sub2/Sub',
+
+		// A page with several sub pages unsorted
+		'TempSPLTest:Releases',
+		'TempSPLTest:Releases/1.10',
+		'TempSPLTest:Releases/1.5',
+		'TempSPLTest:Releases/1.2',
+		'TempSPLTest:Releases/1.15',
+		'TempSPLTest:Releases/2.1',
 	];
 
 	/**
@@ -240,6 +248,32 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			$limit,
 			substr_count( $list, '*' )
 		);
+	}
+
+	public function testLimitAndDescOrderIsApplied() {
+        $this->assertCreatesListWithWrap(
+            [
+                'page' => 'TempSPLTest:Releases',
+                'sort' => 'desc',
+                'limit' => '3',
+            ],
+            '* [[TempSPLTest:Releases/2.1|2.1]]
+* [[TempSPLTest:Releases/1.5|1.5]]
+* [[TempSPLTest:Releases/1.2|1.2]]'
+        );
+	}
+
+	public function testLimitAndAscOrderIsApplied() {
+        $this->assertCreatesListWithWrap(
+            [
+                'page' => 'TempSPLTest:Releases',
+                'sort' => 'asc',
+                'limit' => '3',
+            ],
+            '* [[TempSPLTest:Releases/1.10|1.10]]
+* [[TempSPLTest:Releases/1.15|1.15]]
+* [[TempSPLTest:Releases/1.2|1.2]]'
+        );
 	}
 
 	public function limitProvider() {

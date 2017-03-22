@@ -2,7 +2,6 @@
 
 namespace SubPageList\Lister\UI;
 
-use SubPageList\Lister\AlphabeticPageSorter;
 use SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer;
 use SubPageList\Lister\UI\PageRenderer\PlainPageRenderer;
 use SubPageList\Lister\UI\PageRenderer\TemplatePageRenderer;
@@ -37,7 +36,6 @@ class HierarchyRendererFactory {
 
 		return new TreeListRenderer(
 			$this->newPageRenderer( $options ),
-			$this->newPageSorter( $options['sort'] ),
 			$treeListOptions
 		);
 	}
@@ -72,9 +70,4 @@ class HierarchyRendererFactory {
 
 		return $styles[$pathStyle];
 	}
-
-	private function newPageSorter( $sortOrder ) {
-		return new AlphabeticPageSorter( $sortOrder );
-	}
-
 }

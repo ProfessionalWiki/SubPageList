@@ -3,7 +3,6 @@
 namespace SubPageList\Lister\UI;
 
 use SubPageList\Lister\Page;
-use SubPageList\Lister\PageSorter;
 use SubPageList\Lister\UI\PageRenderer\PageRenderer;
 
 /**
@@ -25,11 +24,9 @@ class TreeListRenderer extends HierarchyRenderer {
 	const NO_LIMIT = 'noLimit';
 
 	private $pageRenderer;
-	private $pageSorter;
 
-	public function __construct( PageRenderer $pageRenderer, PageSorter $pageSorter, array $options = [] ) {
+	public function __construct( PageRenderer $pageRenderer, array $options = [] ) {
 		$this->pageRenderer = $pageRenderer;
-		$this->pageSorter = $pageSorter;
 
 		$this->options = array_merge(
 			[
@@ -119,7 +116,7 @@ class TreeListRenderer extends HierarchyRenderer {
 	private function renderSubPages( Page $page, $indentationLevel ) {
 		$texts = [];
 
-		foreach ( $this->pageSorter->getSortedPages( $page->getSubPages() ) as $subPage ) {
+		foreach ( $page->getSubPages() as $subPage ) {
 			$texts[] = $this->renderPage( $subPage, $indentationLevel );
 		}
 

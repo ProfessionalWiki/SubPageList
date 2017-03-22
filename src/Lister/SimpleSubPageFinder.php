@@ -23,9 +23,9 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	const OPT_LIMIT = 'limit';
 	const OPT_OFFSET = 'offset';
 	const OPT_SORT_ORDER = 'sort';
-	const ASCENDING = 'asc';
-	const DESCENDING = 'desc';
-	const NONE = '';
+	const SORT_ASCENDING = 'asc';
+	const SORT_DESCENDING = 'desc';
+	const SORT_NONE = '';
 
 	/**
 	 * @var DBConnectionProvider
@@ -49,7 +49,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 			self::OPT_INCLUDE_REDIRECTS => false,
 			self::OPT_LIMIT => 500,
 			self::OPT_OFFSET => 0,
-            self::OPT_SORT_ORDER => 'asc',
+			self::OPT_SORT_ORDER => 'asc',
 		];
 	}
 
@@ -84,8 +84,8 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
      * @throws InvalidArgumentException
      */
 	public function setSortOrder( $sortOrder ) {
-		if ( $sortOrder != self::DESCENDING && $sortOrder != self::ASCENDING && $sortOrder != self::NONE ) {
-            throw new InvalidArgumentException( 'Invalid $sortOrder specified' );
+		if ( $sortOrder != self::SORT_DESCENDING && $sortOrder != self::SORT_ASCENDING && $sortOrder != self::SORT_NONE ) {
+			throw new InvalidArgumentException( 'Invalid $sortOrder specified' );
 		}
 
 		$this->setOption( self::OPT_SORT_ORDER, $sortOrder );
@@ -220,8 +220,9 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 		$options['LIMIT'] = (int)$this->options[self::OPT_LIMIT];
 
 		$sort_oder = $this->options[self::OPT_SORT_ORDER];
-		if ($sort_oder != self::NONE) {
-            $options['ORDER BY'] = "LENGTH(page_title) $sort_oder, page_title $sort_oder";
+		if ($sort_oder != self::SORT_NONE) {
+//            $options['ORDER BY'] = "LENGTH(page_title) $sort_oder, page_title $sort_oder";
+            $options['ORDER BY'] = "page_title $sort_oder";
         }
 
 		if ( $this->options[self::OPT_OFFSET] > 0 ) {

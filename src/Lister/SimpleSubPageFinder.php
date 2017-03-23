@@ -77,11 +77,11 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 		$this->setOption( self::OPT_LIMIT, $limit );
 	}
 
-    /**
-     * @param string $sortOrder
-     *
-     * @throws InvalidArgumentException
-     */
+	/**
+	 * @param string $sortOrder
+	 *
+	 * @throws InvalidArgumentException
+	 */
 	public function setSortOrder( $sortOrder ) {
 		if ( strtolower($sortOrder) != self::SORT_DESCENDING && strtolower($sortOrder) != self::SORT_ASCENDING ) {
 			throw new InvalidArgumentException( 'Invalid $sortOrder specified' );
@@ -106,7 +106,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 
 		$this->setOption( self::OPT_INCLUDE_REDIRECTS, $includeRedirects );
 	}
-	
+
 	/**
 	 * @see SubPageFinder::setOffset
 	 *
@@ -217,7 +217,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 		$options = [];
 
 		$options['LIMIT'] = (int)$this->options[self::OPT_LIMIT];
-        $options['ORDER BY'] = "page_title {$this->options[self::OPT_SORT_ORDER]}";
+		$options['ORDER BY'] = "page_title {$this->options[self::OPT_SORT_ORDER]}";
 
 		if ( $this->options[self::OPT_OFFSET] > 0 ) {
 			$options['OFFSET'] = (int)$this->options[self::OPT_OFFSET];

@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\SubPageList\Lister\UI;
 
-use SubPageList\Lister\AlphabeticPageSorter;
 use SubPageList\Lister\Page;
 use SubPageList\Lister\UI\TreeListRenderer;
 use Title;
@@ -65,11 +64,8 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 				return $page->getTitle()->getFullText();
 			} ) );
 
-		$sort = array_key_exists( 'sort', $options ) ? $options['sort'] : 'asc';
-
 		 return new TreeListRenderer(
 			 $pageRenderer,
-			 new AlphabeticPageSorter( $sort ),
 			 $options
 		 );
 	}
@@ -79,49 +75,13 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 			new Page(
 				Title::newFromText( 'AAA' ),
 				[
-					new Page( Title::newFromText( 'CCC' ) ),
 					new Page( Title::newFromText( 'BBB' ) ),
+                    new Page( Title::newFromText( 'CCC' ) ),
 				]
 			),
 			'AAA
 * BBB
 * CCC'
-		);
-	}
-
-	public function testRenderHierarchyWithDescSort() {
-		$this->assertRendersHierarchy(
-			new Page(
-				Title::newFromText( 'AAA' ),
-				[
-					new Page( Title::newFromText( 'CCC' ) ),
-					new Page( Title::newFromText( 'BBB' ) ),
-					new Page( Title::newFromText( 'DDD' ) ),
-				]
-			),
-			'AAA
-* DDD
-* CCC
-* BBB',
-			[ 'sort' => 'desc' ]
-		);
-	}
-
-	public function testRenderAsOrderedList() {
-		$this->assertRendersHierarchy(
-			new Page(
-				Title::newFromText( 'AAA' ),
-				[
-					new Page( Title::newFromText( 'CCC' ) ),
-					new Page( Title::newFromText( 'BBB' ) ),
-				]
-			),
-			'AAA
-# BBB
-# CCC',
-			[
-				TreeListRenderer::OPT_FORMAT => TreeListRenderer::FORMAT_OL
-			]
 		);
 	}
 

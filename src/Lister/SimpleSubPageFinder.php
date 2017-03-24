@@ -22,6 +22,9 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	const OPT_INCLUDE_REDIRECTS = 'redirects';
 	const OPT_LIMIT = 'limit';
 	const OPT_OFFSET = 'offset';
+	const OPT_SORT_ORDER = 'sort';
+	const SORT_ASCENDING = 'asc';
+	const SORT_DESCENDING = 'desc';
 
 	/**
 	 * @var DBConnectionProvider
@@ -45,6 +48,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 			self::OPT_INCLUDE_REDIRECTS => false,
 			self::OPT_LIMIT => 500,
 			self::OPT_OFFSET => 0,
+			self::OPT_SORT_ORDER => self::SORT_ASCENDING,
 		];
 	}
 
@@ -72,7 +76,20 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 
 		$this->setOption( self::OPT_LIMIT, $limit );
 	}
-	
+
+	/**
+	 * @param string $sortOrder
+	 *
+	 * @throws InvalidArgumentException
+	 */
+	public function setSortOrder( $sortOrder ) {
+		if ( strtolower($sortOrder) != self::SORT_DESCENDING && strtolower($sortOrder) != self::SORT_ASCENDING ) {
+			throw new InvalidArgumentException( 'Invalid $sortOrder specified' );
+		}
+
+		$this->setOption( self::OPT_SORT_ORDER, $sortOrder );
+	}
+
 	/**
 	 * @see SubPageFinder::setIncludeRedirects
 	 *
@@ -89,7 +106,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 
 		$this->setOption( self::OPT_INCLUDE_REDIRECTS, $includeRedirects );
 	}
-	
+
 	/**
 	 * @see SubPageFinder::setOffset
 	 *
@@ -200,6 +217,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 		$options = [];
 
 		$options['LIMIT'] = (int)$this->options[self::OPT_LIMIT];
+		$options['ORDER BY'] = "page_title {$this->options[self::OPT_SORT_ORDER]}";
 
 		if ( $this->options[self::OPT_OFFSET] > 0 ) {
 			$options['OFFSET'] = (int)$this->options[self::OPT_OFFSET];

@@ -5,7 +5,7 @@
 			"아라"
 		]
 	},
-	"spl-desc": "하위 문서를 목록화하고 개수를 세는 것을 허용",
+	"spl-desc": "하위 문서를 목록화하고 개수를 셀 수 있게 합니다",
 	"spl-nosubpages": "\"$1\" 문서는 목록에 하위 문서가 없습니다.",
 	"spl-noparentpage": "\"$1\" 문서가 존재하지 않습니다.",
 	"spl-nopages": "\"$1\" 이름공간에 문서가 없습니다.",
@@ -15,7 +15,7 @@
 	"spl-subpages-par-page": "문서를 보여줄 하위 문서나 이름공간 이름(뒤에 콜론 포함)을 보여줄 문서입니다. 현재 문서는 기본값입니다.",
 	"spl-subpages-par-showpage": "문서 자체가 목록에 여부를 보여줘야 하는지 여부를 나타냅니다.",
 	"spl-subpages-par-pathstyle": "목록에서 하위 문서에 대한 경로의 스타일입니다. 허용하는 값: \"fullpagename\" — (이름공간을 포함한) 전체 문서 이름, \"pagename\" — (이름공간 없는) 문서 이름, \"subpagename\" — 하위 문서를 나타낼 문서에서 시작하는 관련된 문서 이름, \"none\" — 그냥 마지막 슬래시 뒤에 이름의 일부의 끝입니다.",
-	"spl-subpages-par-kidsonly": "직접 하위 문서만 보여줄 수 있습니다.",
+	"spl-subpages-par-kidsonly": "직접 하위 문서만 보여줄 수 있게 합니다.",
 	"spl-subpages-par-limit": "나타낼 문서의 최대 수입니다.",
 	"spl-subpages-par-element": "목록을 둘러싼 (\"intro\"와 \"outro\" 또는 \"default\" 텍스트를 포함하는) HTML 요소입니다. 허용하는 값: \"div\", \"p\", \"span\"입니다.",
 	"spl-subpages-par-class": "목록을 둘러싼 HTML 요소의 \"class\" 특성에 대한 값입니다.",

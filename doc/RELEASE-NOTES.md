@@ -1,5 +1,10 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 1.5.0 (2017-04-14)
+
+* Sorting of pages now includes all pages, even those not included due to the limit parameter (by Dmitriy Lutsko)
+* Made internal changes that improve compatibility with future MediaWiki versions (by LukBukkit)
+
 ## Version 1.4.0 (2016-06-24)
 
 * Added "redirects" parameter that allows for inclusion of redirects in lists (by Randy Eckman)

@@ -12,10 +12,16 @@ These are the installation and configuration instructions for the [SubPageList e
 		<th>Git branch</th>
 	</tr>
 	<tr>
-		<th>SPL 1.5.0</th>
+		<th>SPL 1.5.x</th>
 		<td>Under development</td>
 		<td>Future</td>
 		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/master">master</a></td>
+	</tr>
+	<tr>
+		<th>SPL 1.5.0</th>
+		<td>Stable release</td>
+		<td>2016-04-14</td>
+		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.5.0">1.5.0</a></td>
 	</tr>
 	<tr>
 		<th>SPL 1.4.0</th>
@@ -71,6 +77,12 @@ These are the installation and configuration instructions for the [SubPageList e
 		<th>Composer</th>
 	</tr>
 	<tr>
+		<th>SPL 1.5.x</th>
+		<td>5.5.0 - 7.x & HHVM</td>
+		<td>1.23 - 1.29</td>
+		<td>Required</td>
+	</tr>
+	<tr>
 		<th>SPL 1.4.x</th>
 		<td><strong>5.5.0</strong> - 7.x & HHVM</td>
 		<td><strong>1.23</strong> - 1.28</td>
@@ -115,25 +127,7 @@ work with more recent versions of PHP and MediaWiki, though this is not guarante
 		<th>PostgreSQL</th>
 	</tr>
 	<tr>
-		<th>SPL 1.4.x</th>
-		<td>Full support</td>
-		<td>Full support</td>
-		<td>Unknown</td>
-	</tr>
-	<tr>
-		<th>SPL 1.2.x</th>
-		<td>Full support</td>
-		<td>Full support</td>
-		<td>Unknown</td>
-	</tr>
-	<tr>
-		<th>SPL 1.1.x</th>
-		<td>Full support</td>
-		<td>Full support</td>
-		<td>Unknown</td>
-	</tr>
-	<tr>
-		<th>SPL 1.0.0</th>
+		<th>SPL 1.0.x - 1.5.x</th>
 		<td>Full support</td>
 		<td>Full support</td>
 		<td>Unknown</td>
@@ -148,53 +142,20 @@ work with more recent versions of PHP and MediaWiki, though this is not guarante
 
 Other databases supported by MediaWiki might work as well, though this is not guaranteed.
 
-## Download and installation
 
-The recommended way to download and install SubPageList is with [Composer](http://getcomposer.org) using
-[MediaWiki 1.22 built-in support for Composer](https://www.mediawiki.org/wiki/Composer). MediaWiki
-versions prior to 1.22 can use Composer via the
-[Extension Installer](https://github.com/JeroenDeDauw/ExtensionInstaller/blob/master/README.md)
-extension.
+## Installation
 
-#### Step 1
+The recommended way to install the SubPageList extension is with [Composer](http://getcomposer.org) using
+[MediaWikis built-in Composer support](https://www.mediawiki.org/wiki/Composer).
 
-If you have MediaWiki 1.22 or later, go to the root directory of your MediaWiki installation,
-and go to step 2. You do not need to install any extensions to support composer.
+In your MediaWiki root directory, you can execute:
 
-For MediaWiki 1.21.x and earlier you need to install the
-[Extension Installer](https://github.com/JeroenDeDauw/ExtensionInstaller/blob/master/README.md) extension.
+    composer require mediawiki/sub-page-list "~1.5"
+    
+For more details on extension installation via Composer, see the documentation on MediaWiki.org.
 
-Once you are done installing the Extension Installer, go to its directory so composer.phar
-is installed in the right place.
+### Verify installation success
 
-    cd extensions/ExtensionInstaller
-
-#### Step 2
-
-If you have previously installed Composer skip to step 3.
-
-To install Composer:
-
-    wget http://getcomposer.org/composer.phar
-
-#### Step 3
-
-Now using Composer, install SubPageList
-
-    php composer.phar require mediawiki/sub-page-list ~1.2
-
-#### Step 4
-
-Verify your LocalSettings.php has $GLOBALS['wgNamespacesWithSubpages'] set for each namespace you intend to use SubPageList.
-
-For example:
-
-```php
-$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
-$GLOBALS['wgNamespacesWithSubpages'][NS_USER] = true;
-```
-
-#### Verify installation success
 
 As final step, you can verify SubPageList got installed by looking at the Special:Version page on your wiki and verifying the
 SubPageList extension is listed.
@@ -210,6 +171,17 @@ The options are listed below and their default is set in the SubPageList
 settings file. You should NOT modify the settings file, but can have a look
 at it to get an idea of how to use the settings, in case the below descriptions
 do not suffice.
+
+### Required subpage settings
+
+MediaWiki itself has some support for subpages, which causes back links
+to be displayed on subpages to their parent pages. To enable this you
+need to set [$wgNamespacesWithSubpages](https://www.mediawiki.org/wiki/Manual:$wgNamespacesWithSubpages),
+which is a per namespace setting, like shown below:
+
+```php
+$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = 1;
+```
 
 ### Automatic refresh
 
@@ -227,15 +199,4 @@ This option is off by default and can be turned on with:
 
 ```php
 $GLOBALS['egSPLAutorefresh'] = true;
-```
-
-### General subpage settings
-
-MediaWiki itself has some support for subpages, which causes back links
-to be displayed on subpages to their parent pages. To enable this you
-need to set [$wgNamespacesWithSubpages](https://www.mediawiki.org/wiki/Manual:$wgNamespacesWithSubpages),
-which is a per namespace setting, like shown below:
-
-```php
-$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = 1;
 ```

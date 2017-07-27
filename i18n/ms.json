@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anakmalaysia"
+			"Anakmalaysia",
+			"Jeluang Terluang"
 		]
 	},
 	"spl-desc": "Membubuh teg <code><nowiki><splist /></nowiki></code> yang membolehkan anda untuk melihat senarai sublaman",
@@ -11,7 +12,7 @@
 	"spl-subpages-par-sort": "Arah isihan. Nilai-nilai yang dibenarkan: \"asc\" (menaik) dan \"desc\" (menurun).",
 	"spl-subpages-par-sortby": "Apa yang diikut untuk mengisih sublaman. Nilai-nilai yang dibenarkan: \"title\" (tajuk) atau \"lastedit\" (suntingan terakhir).",
 	"spl-subpages-par-format": "Senarai sublaman boleh dipaparkan dalam beberapa format. Nilai-nilai yang dibenarkan: \"ol\" — senarai tertib (bernombor), \"ul\" — senarai tak tertib (berbunga), \"list\" — senarai biasa (cth: senarai yang diasingkan dengan koma).",
-	"spl-subpages-par-page": "Halaman untuk memaparkan subhalaman, atau ruang nama (diikuti oleh tanda titik bertindih) untuk memaparkan halaman. Yang azali adalah halaman semasa.",
+	"spl-subpages-par-page": "Halaman untuk memaparkan subhalaman, atau ruang nama (diikuti oleh tanda titik bertindih) untuk memaparkan halaman. Yang asali ialah halaman semasa.",
 	"spl-subpages-par-showpage": "Menandakan sama ada halaman itu harus dipaparkan dalam senarai atau tidak.",
 	"spl-subpages-par-pathstyle": "Gaya laluan untuk subhalaman-subhalaman dalam senarai. Nilai-nilai yang dibenarkan: \"fullpagename\" — nama penuh halaman (termasuk ruang nama), \"pagename\" — nama halaman (tanpa ruang nama), \"subpagename\" — nama halaman relatif yang bermula dari halaman untuk kita senaraikan subhalaman, \"none\" — hanya ekor nama selepas tanda condong terakhir.",
 	"spl-subpages-par-kidsonly": "Membenarkan paparan subhalaman langsung sahaja.",

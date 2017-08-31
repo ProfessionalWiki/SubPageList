@@ -3,7 +3,8 @@
 		"authors": [
 			"Armando-Martin",
 			"Macofe",
-			"Dgstranz"
+			"Dgstranz",
+			"Fitoschido"
 		]
 	},
 	"spl-desc": "Permite listar y contar las subpáginas",
@@ -16,7 +17,7 @@
 	"spl-subpages-par-page": "La página en la que mostrar las subpáginas o el espacio de nombres (incluidos los dos puntos) en el que mostrar las páginas. La página actual es la predeterminada.",
 	"spl-subpages-par-showpage": "Indica si la propia página debe mostrarse en la lista o no.",
 	"spl-subpages-par-pathstyle": "El estilo de la ruta de acceso a las subpáginas en la lista. Valores permitidos: \"fullpagename\": nombre de página completo (incluido el espacio de nombres), \"pagename\" — nombre de la página (sin espacio de nombres), \"subpagename\" — nombre relativo de la página comenzando desde la página de la que vamos a citar sus subpáginas, \"none\" — sólo la parte final del nombre después de la última barra.",
-	"spl-subpages-par-kidsonly": "Permite mostrar sólo las subpáginas directas.",
+	"spl-subpages-par-kidsonly": "Permite mostrar solo las subpáginas directas.",
 	"spl-subpages-par-limit": "El número máximo de páginas para enumerar.",
 	"spl-subpages-par-element": "El elemento HTML que engloba la lista (incluidos los textos \"Intro\" y \"outro\" o \"default\"). Valores permitidos: \"div\", \"p\", \"span\".",
 	"spl-subpages-par-class": "El valor del atributo \"class\" del elemento HTML que engloba la lista.",

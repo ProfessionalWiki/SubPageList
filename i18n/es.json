@@ -23,7 +23,7 @@
 	"spl-subpages-par-class": "El valor del atributo \"class\" del elemento HTML que engloba la lista.",
 	"spl-subpages-par-intro": "El texto a mostrar antes de la lista, si la lista no está vacía.",
 	"spl-subpages-par-outro": "El texto a mostrar después de la lista, si la lista no está vacía.",
-	"spl-subpages-par-default": "El texto a mostrar en lugar de la lista, si la lista está vacía. Si está vacía, se procesará un mensaje de error (como \"La página no tiene ninguna subpágina que enumerar\"). Si el valor fuese un guión (\"-\"), el resultado estará completamente vacío.",
+	"spl-subpages-par-default": "El texto que se mostrará en lugar de la lista, si esta estuviere vacía. En este caso, se mostrará un mensaje de error (como «La página no tiene ninguna subpágina que enumerar»). Si el valor fuese un guion («-»), el resultado estará completamente vacío.",
 	"spl-subpages-par-separator": "El texto a mostrar entre dos elementos de la lista en caso de que el formato fuese \"list\" (y su alias \"bar\"). No tiene ningún efecto en los otros formatos de lista.",
 	"spl-subpages-par-template": "El nombre de la plantilla. La plantilla se aplica a cada elemento de la lista. Un elemento es tratatdo como primer argumento (sin nombre). Tenga en cuenta que la plantilla no anula el formato de lista. El formato (\"ul\", \"ol\", \"list\") se aplica al resultado de la plantilla.",
 	"spl-subpages-par-links": "Si el valor es verdadero (true), los elementos de la lista se representan como enlaces. Si es falso (false), los elementos de la lista se procesan como texto sin formato. Este último caso es especialmente útil para pasar elementos a las plantillas para su posterior procesamiento.",

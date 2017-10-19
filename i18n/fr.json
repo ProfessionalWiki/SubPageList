@@ -22,7 +22,7 @@
 	"spl-subpages-par-kidsonly": "Permet de n'afficher que les sous-pages immédiates.",
 	"spl-subpages-par-limit": "La quantité maximale de pages à lister.",
 	"spl-subpages-par-element": "L'élément HTML englobant la liste (y compris les textes \"intro\" et \"outro\" ou \"default\"). Valeurs permises: \"div\", \"p\", \"span\".",
-	"spl-subpages-par-class": "La valeur pour l'attribut HTML « class » encadrant la liste.",
+	"spl-subpages-par-class": "La valeur pour l'attribut « class » de l'élément HTML encadrant la liste.",
 	"spl-subpages-par-intro": "Le texte à renvoyer avant la liste, si celle-ci n'est pas vide.",
 	"spl-subpages-par-outro": "Le texte à renvoyer après la liste, si celle-ci n'est pas vide.",
 	"spl-subpages-par-default": "La texte à renvoyer à la place de la liste, si celle-ci est vide. S'il est vide, un message d'erreur sera renvoyé (comme \"La page n'a aucune sous-page à lister\"). S'il est mis à un tiret (\"-\"), le résultat sera complètement vide.",

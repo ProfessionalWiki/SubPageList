@@ -11,7 +11,7 @@
 	"spl-nopages": "Navnerommet «$1» har ingen sider.",
 	"spl-subpages-par-sort": "Retningen du vil sortere i. Tillatte verdier: «asc» (stigende) og «desc» (synkende).",
 	"spl-subpages-par-sortby": "Hvordan undersidene skal sorteres. Tillatte verdier: «title» (tittel) eller «lastedit» (siste redigering).",
-	"spl-subpages-par-format": "Undersidelisten kan vises i flere format. Nummererte lister (ol), punktlister (ul) og kommaseparerte lister (list).",
+	"spl-subpages-par-format": "Undersidelisten kan vises i flere format. Tillatte verdier: «ol» – ordnede (nummererte) lister, «ul» – uordnede lister (punktlister), «list» – vanlige lister (for eksempel kommaseparert liste).",
 	"spl-subpages-par-page": "Siden undersidene skal vises for. Standard er den gjeldende siden.",
 	"spl-subpages-par-showpage": "Indikerer om selve siden skal vises i listen eller ikke.",
 	"spl-subpages-par-pathstyle": "Stilen på banen for undersidene i listen.",

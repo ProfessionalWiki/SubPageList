@@ -38,7 +38,7 @@ call_user_func( function() {
 		),
 		'url' => 'https://github.com/JeroenDeDauw/SubPageList/blob/master/README.md',
 		'descriptionmsg' => 'spl-desc',
-		'license-name' => 'GPL-2.0+'
+		'license-name' => 'GPL-2.0-or-later'
 	);
 
 	$GLOBALS['wgMessagesDirs']['SubPageList'] = __DIR__ . '/i18n';

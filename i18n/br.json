@@ -7,6 +7,7 @@
 	},
 	"spl-desc": "Ouzhpennañ a ra ur valizenn  <code><nowiki><splist /></nowiki></code> a dalvez da rollañ an ispajennoù",
 	"spl-nosubpages": "N'eus ispajenn ebet da rollañ evit ar bajenn \"$1\".",
+	"spl-noparentpage": "Ar bajenn \"$1\" n'eus ket anezhi.",
 	"spl-subpages-par-sort": "Tu an urzhiañ. Tu zo da lakaat an talvoudennoù : \"krsk\" ha \"digrsk\".",
 	"spl-subpages-par-sortby": "Penaos urzhiañ an ispajennoù dre. Talvoudennoù aotreet : \"title' pe \"lastedit\".",
 	"spl-subpages-par-format": "Gallout a ra ar roll ispajennoù bezañ diskwelet dre furmadoù disheñvel : rolloù niverennet (ol), rolloù padennek (ul) pe rolloù dispartiet dre skejoù (roll).",

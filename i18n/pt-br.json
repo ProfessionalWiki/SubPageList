@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"spl-desc": "Permite a listagem e contagem de subpáginas",
+	"spl-nosubpages": "A página $1 não tem subpáginas para listar.",
+	"spl-noparentpage": "A página \"$1\" não existe.",
+	"spl-nopages": "O espaço nominal \"$1\" não tem páginas.",
+	"spl-subpages-par-sort": "A direção da ordenação. Valores permitidos: \"asc\" e \"desc\".",
+	"spl-subpages-par-sortby": "O critério de ordenação. Valores permitidos: \"title\" (titulo) ou \"lastedit\" (última edição).",
+	"spl-subpages-par-format": "A lista de subpáginas pode ser apresentada em vários formatos. Valores permitidos: \"ol\" — listas ordenadas (numeradas), \"ul\" — listas não ordenadas (com marcadores) e \"list\" — listas simples (por exemplo, lista separada por vírgulas).",
+	"spl-subpages-par-page": "A página cujas subpáginas serão mostradas, ou o nome do espaço nominal (incluindo o sinal de dois pontos) do qual mostrar as páginas. Por omissão, será a página corrente.",
+	"spl-subpages-par-showpage": "Indica se a própria página deve ser mostrada na lista ou não.",
+	"spl-subpages-par-pathstyle": "O estilo do caminho para as subpáginas na lista. Valores permitidos: \"fullpagename\" — nome completo da página (incluindo o espaço nominal), \"pagename\" — nome da página (sem o espaço nominal), \"subpagename\" — nome relativo da página, começando a partir da página cujas subpáginas vão ser mostradas e \"none\" — somente a parte do nome após a última barra \"/\".",
+	"spl-subpages-par-kidsonly": "Permite mostrar só subpáginas diretas.",
+	"spl-subpages-par-limit": "O número máximo de páginas listadas.",
+	"spl-subpages-par-element": "O elemento HTML que encapsula a lista (incluindo os textos \"intro\" e \"outro\" ou \"default\"). Valores permitidos: \"div\", \"p\" e \"span\".",
+	"spl-subpages-par-class": "O valor do atributo \"class\" do elemento HTML que encapsula a lista.",
+	"spl-subpages-par-intro": "O texto a apresentar antes da lista, se a lista não estiver vazia.",
+	"spl-subpages-par-outro": "O texto a apresentar após a lista, se a lista não estiver vazia.",
+	"spl-subpages-par-default": "O texto a apresentar em vez da lista, se a lista não estiver vazia. Se vazio, será apresentada uma mensagem de erro (como \"A página não tem nenhuma subpágina para listar\"). Se o valor for (\"-\"), o resultado estará completamente vazio.",
+	"spl-subpages-par-separator": "O texto a apresentar entre duas entradas da lista no caso dos formatos \"list\" ou \"bar\". Não tem efeito nos outros formatos.",
+	"spl-subpages-par-template": "O nome da predefinição. A predefinição é aplicada a cada entrada da lista. Uma entrada é passada como o primeiro argumento (anónimo). Note que a predefinição não cancela a formatação da lista. A formatação (\"ul\", \"ol\", ou \"list\") é aplicada ao resultado da predefinição.",
+	"spl-subpages-par-links": "Se verdadeiro, as entradas da lista são apresentadas na forma de hiperligações. Se falso, as entradas da lista são apresentadas como texto simples. Esta última opção é especialmente útil para passar entradas a uma predefinição, para processamento posterior.",
+	"spl-subpages-par-redirects": "Se verdadeiro, os redirecionamentos são incluídos na lista. Se falso, os redirecionamentos não são incluídos."
+}

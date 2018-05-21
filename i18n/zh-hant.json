@@ -1,8 +1,29 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki"
+			"Shirayuki",
+			"Kly"
 		]
 	},
-	"spl-noparentpage": "頁面\"$1\"不存在。"
+	"spl-desc": "允許列出並計算子頁面",
+	"spl-nosubpages": "頁面「$1」沒有子頁面可列出。",
+	"spl-noparentpage": "頁面「$1」不存在。",
+	"spl-nopages": "命名空間「$1」未包含頁面。",
+	"spl-subpages-par-sort": "排序的方向。允許的值為：「asc」與「desc」。",
+	"spl-subpages-par-sortby": "子頁面排序的依據。允許的值為：「title」或「lastedit」。",
+	"spl-subpages-par-format": "子頁面清單能以多種格式顯示。允許的值為：「ol」 — 序號（數字號碼）清單、「ul」 — 無序（項目符號）清單、「list」 — 純清單（例如以逗號分隔的清單）。",
+	"spl-subpages-par-page": "要顯示子頁面的頁面，或是要顯示頁面的命名空間（包含後置冒號）。預設為目前的頁面。",
+	"spl-subpages-par-showpage": "指示頁面本身是否應顯示在清單裡。",
+	"spl-subpages-par-pathstyle": "用於清單的子頁面路徑樣式。允許的值為：「fullpagename」 — 完整頁面名稱（包含命名空間）、「pagename」 — 頁面名稱（不包含命名空間）、「subpagename」 — 來自從我們所列出子頁面之頁面的相對頁面名稱、「none」 — 在最後斜線後的名稱後置部份。",
+	"spl-subpages-par-kidsonly": "允許僅顯示導向子頁面。",
+	"spl-subpages-par-limit": "能列出頁面的最大數量。",
+	"spl-subpages-par-element": "附加在清單的 HTML 元素（包含「intro」和「outro」或「default」文字）。允許的值為：「div」、「p」、「span」。",
+	"spl-subpages-par-class": "附加在清單中 HTML 元素裡「class」屬性的值。",
+	"spl-subpages-par-intro": "若清單內容不為空的情況下，在清單之前的輸出文字。",
+	"spl-subpages-par-outro": "若清單內容不為空的情況下，在清單之後的輸出文字。",
+	"spl-subpages-par-default": "若清單內容為空的情況下，替代清單的輸出文字。在內容為空時會呈現錯誤訊息（例如像是「頁面沒有子頁面可列出」）。若為連結號（-），結果會完全為空。",
+	"spl-subpages-par-separator": "在格式為「list」（該別名為「bar」）情況下兩個清單項目間所輸出的文字。在其它格式下不影響。",
+	"spl-subpages-par-template": "模板名稱。套用在清單裡任一項目的模板。項目會被傳遞為第一個（未命名）參數。 請注意模板並不會取消掉清單格式。格式（ul、ol、list）會套用在模板的結果。",
+	"spl-subpages-par-links": "若為真，清單項目會呈現成連結；若為假，清單項目會呈現成純文字。其中後者在傳遞項目至模板做後續處理時很有用。",
+	"spl-subpages-par-redirects": "若為真，重新導向會包含在清單；若為假，重新導向則不包含。"
 }

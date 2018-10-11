@@ -3,7 +3,8 @@
 		"authors": [
 			"BeginaFelicysym",
 			"Woytecr",
-			"Chrumps"
+			"Chrumps",
+			"Railfail536"
 		]
 	},
 	"spl-desc": "Pozwala wyświetlić listę i liczbę podstron",
@@ -25,5 +26,6 @@
 	"spl-subpages-par-default": "Tekst wyświetlany zamiast z listy, jeśli lista jest pusta. Jeśli pusty, będzie renderowany komunikat o błędzie (na przykład \"Strona ma nie podstron do wyświetlenia\"). Jeśli kreska (\"-\"), wynik będzie całkowicie pusty.",
 	"spl-subpages-par-separator": "Tekst do wyświetlania między dwiema pozycjami listy w przypadku \"list\" (i jej aliasu \"bar\"). Nie ma zastosowania w innych formatach.",
 	"spl-subpages-par-template": "Nazwa szablonu. Szablon zostanie zastosowany do każdego elementu listy. Element jest przekazywany jako pierwszy argument (bez nazwy). Należy zauważyć, że ten szablon nie anuluje formatowania listy. Formatowanie (\"ul\", \"ol\", \"list\") jest stosowane w wyniku tego szablonu.",
-	"spl-subpages-par-links": "Jeśli true, elementy listy są renderowane jako łącza. Jeśli ma wartość false, elementy listy są renderowane jako zwykły tekst. To ostatnie jest szczególnie przydatne w przypadku przekazywania elementów do szablonów i dalszego przetwarzania."
+	"spl-subpages-par-links": "Jeśli true, elementy listy są renderowane jako łącza. Jeśli ma wartość false, elementy listy są renderowane jako zwykły tekst. To ostatnie jest szczególnie przydatne w przypadku przekazywania elementów do szablonów i dalszego przetwarzania.",
+	"spl-subpages-par-redirects": "Jeżeli wartość jest ustawiona jako true, przekierowania są wyświetlane na liście. Jeżeli false, wszystkie przekierowania są pomijane."
 }

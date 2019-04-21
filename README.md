@@ -18,6 +18,8 @@ View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList
 * [Installation and configuration](doc/INSTALL.md)
 * [Usage instructions and examples](doc/USAGE.md)
 
+Professional support and custom development is available via [Professional.Wiki](https://professional.wiki/).
+
 ## Project status
 
 [![Build Status](https://travis-ci.org/JeroenDeDauw/SubPageList.svg?branch=master)](https://travis-ci.org/JeroenDeDauw/SubPageList)

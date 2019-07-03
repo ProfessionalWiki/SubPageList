@@ -22,7 +22,7 @@ class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
 	 * @return SubPageFinder
 	 */
 	public function newInstance() {
-		return new SimpleSubPageFinder( new LazyDBConnectionProvider( DB_SLAVE ) );
+		return new SimpleSubPageFinder( new LazyDBConnectionProvider( DB_REPLICA ) );
 	}
 
 	public function titleProvider() {

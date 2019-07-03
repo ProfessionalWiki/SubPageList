@@ -50,7 +50,7 @@ class Extension {
 	 * @return DBConnectionProvider
 	 */
 	public function getSlaveConnectionProvider() {
-		return new LazyDBConnectionProvider( DB_SLAVE );
+		return new LazyDBConnectionProvider( DB_REPLICA );
 	}
 
 	/**

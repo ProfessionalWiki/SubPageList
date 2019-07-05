@@ -4,8 +4,12 @@
 			"Joetaras"
 		]
 	},
+	"spl-desc": "Permette de elengà e cundà le sottepaggène",
 	"spl-nosubpages": "'A pàgene \"$1\" non ge tène sottopàggene da elengà.",
 	"spl-noparentpage": "'A pàgene \"$1\" non g'esiste.",
 	"spl-nopages": "'U namespace \"$1\" non ge tène pàggene.",
+	"spl-subpages-par-sort": "'A direzione de l'ordenamende. Valore ammesse: \"asc\" e \"desc\".",
+	"spl-subpages-par-sortby": "Accumme agghia ordenà le sottopàggene. Valore permesse: \"title\" o \"lastedit\".",
+	"spl-subpages-par-kidsonly": "Permette de fà 'ndrucà sulamende le sottopàggene dirette.",
 	"spl-subpages-par-limit": "'U massime numere de pàggene da elengà."
 }

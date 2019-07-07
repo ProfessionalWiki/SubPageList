@@ -4,6 +4,7 @@ namespace Tests\Unit\SubPageList\Lister;
 
 use ParamProcessor\ProcessedParam;
 use ParamProcessor\ProcessingResult;
+use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;
 use SubPageList\Lister\SubPageList;
 use SubPageList\TitleFactory;
@@ -16,7 +17,7 @@ use SubPageList\TitleFactory;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SubPageListTest extends \PHPUnit_Framework_TestCase {
+class SubPageListTest extends TestCase {
 
 	public function testSubPageListHook() {
 		$titleText = 'FooBarPage';
@@ -34,7 +35,7 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 		$title = \Title::newFromText( $titleText );
 		$page = new Page( $title );
 
-		$finder = $this->getMock( 'SubPageList\Lister\SubPageFinder' );
+		$finder = $this->createMock( 'SubPageList\Lister\SubPageFinder' );
 
 		$finder->expects( $this->once() )
 			->method( 'getSubPagesFor' )
@@ -49,7 +50,7 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 			->with( $this->equalTo( [ $title ] ) )
 			->will( $this->returnValue( [ $page ] ) );
 
-		$renderer = $this->getMock( 'SubPageList\Lister\UI\SubPageListRenderer' );
+		$renderer = $this->createMock( 'SubPageList\Lister\UI\SubPageListRenderer' );
 
 		$renderer->expects( $this->once() )
 			->method( 'render' )
@@ -65,7 +66,7 @@ class SubPageListTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	private function getRenderedList( SubPageList $subPageList, $titleText ) {
-		$parser = $this->getMock( 'Parser' );
+		$parser = $this->createMock( 'Parser' );
 
 		$processingResult = new ProcessingResult(
 			[

@@ -3,6 +3,7 @@
 namespace Tests\System\SubPageList;
 
 use ParserHooks\FunctionRunner;
+use PHPUnit\Framework\TestCase;
 use SubPageList\Extension;
 use SubPageList\Settings;
 use Title;
@@ -12,7 +13,9 @@ use Title;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
+class SubPageListRendererTest extends TestCase {
+
+	const CURRENT_PAGE_NAME = 'TempSPLTest:CurrentPage';
 
 	private static $pages = [
 		// A page with no sub pages
@@ -102,15 +105,26 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 			$extension->getListHookHandler()
 		);
 
-		$frame = $this->getMock( 'PPFrame' );
+		$frame = $this->createMock( 'PPFrame' );
 
 		$frame->expects( $this->exactly( count( $params ) ) )
 			->method( 'expand' )
 			->will( $this->returnArgument( 0 ) );
 
-		$result = $functionRunner->run( $GLOBALS['wgParser'], $params, $frame );
+		$parser = $this->newParser();
+		$result = $functionRunner->run( $parser, $params, $frame );
 
 		return reset( $result );
+	}
+
+	private function newParser() {
+		$parser = new \Parser();
+
+		$parser->mOptions = new \ParserOptions();
+		$parser->clearState();
+		$parser->setTitle( \Title::newFromText( self::CURRENT_PAGE_NAME ) );
+
+		return $parser;
 	}
 
 	public function testListForNonExistingPage() {
@@ -322,16 +336,15 @@ class SubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testPageDefaulting() {
-		self::createPage( 'TempSPLTest:ZZZ/ABC' );
-		self::createPage( 'TempSPLTest:ZZZ' );
+		self::createPage( self::CURRENT_PAGE_NAME );
+		self::createPage( self::CURRENT_PAGE_NAME . '/SubPage' );
 
 		$this->assertCreatesListWithWrap(
 			[
 				'showpage' => 'yes',
 				'pathstyle' => 'full',
 			],
-			'[[TempSPLTest:ZZZ|TempSPLTest:ZZZ]]
-* [[TempSPLTest:ZZZ/ABC|TempSPLTest:ZZZ/ABC]]'
+			str_replace( '-', self::CURRENT_PAGE_NAME, "[[-|-]]\n* [[-/SubPage|-/SubPage]]" )
 		);
 	}
 

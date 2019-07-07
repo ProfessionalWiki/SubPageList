@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\SubPageList;
 
+use PHPUnit\Framework\TestCase;
 use SubPageList\Settings;
 
 /**
@@ -12,7 +13,7 @@ use SubPageList\Settings;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SettingsTest extends \PHPUnit_Framework_TestCase {
+class SettingsTest extends TestCase {
 
 	/**
 	 * @dataProvider constructorProvider

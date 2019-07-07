@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\SubPageList\Lister;
 
+use PHPUnit\Framework\TestCase;
 use SubPageList\LazyDBConnectionProvider;
 use SubPageList\Lister\SimpleSubPageFinder;
 use SubPageList\Lister\SubPageFinder;
@@ -16,7 +17,7 @@ use Title;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SimpleSubPageFinderTest extends \PHPUnit_Framework_TestCase {
+class SimpleSubPageFinderTest extends TestCase {
 
 	/**
 	 * @return SubPageFinder

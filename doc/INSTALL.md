@@ -12,10 +12,16 @@ These are the installation and configuration instructions for the [SubPageList e
 		<th>Git branch</th>
 	</tr>
 	<tr>
-		<th>SPL 1.5.x</th>
+		<th>SPL 1.6.x</th>
 		<td>Under development</td>
 		<td>Future</td>
 		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/master">master</a></td>
+	</tr>
+	<tr>
+		<th>SPL 1.6.0</th>
+		<td>Under development</td>
+		<td>TBD 2019</td>
+		<td></td>
 	</tr>
 	<tr>
 		<th>SPL 1.5.0</th>

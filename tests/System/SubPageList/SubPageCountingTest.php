@@ -3,6 +3,7 @@
 namespace Tests\System\SubPageList;
 
 use ParserHooks\FunctionRunner;
+use PHPUnit\Framework\TestCase;
 use SubPageList\Extension;
 use SubPageList\Settings;
 use Title;
@@ -12,32 +13,36 @@ use Title;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
+class SubPageCountingTest extends TestCase {
+
+	const CURRENT_PAGE_NAME = 'TempSPLTest:CurrentPage';
 
 	/**
 	 * @var Title[]
 	 */
-	private static $titles = [];
+	private $titles = [];
 
-	public static function createPage( $titleText ) {
+	public function createPage( $titleText ) {
 		$title = Title::newFromText( $titleText );
-		self::$titles[] = $title;
+		$this->titles[] = $title;
 
 		$pageCreator = new PageCreator();
 		$pageCreator->createPage( $title );
 	}
 
-	public static function tearDownAfterClass() {
+	public function tearDown() {
 		$pageDeleter = new PageDeleter();
 
-		foreach ( self::$titles as $title ) {
+		foreach ( $this->titles as $title ) {
 			$pageDeleter->deletePage( $title );
 		}
+
+		$this->titles = [];
 	}
 
 	public function testPageDefaulting() {
-		self::createPage( 'TempSPLTest:CountZZZ/ABC' );
-		self::createPage( 'TempSPLTest:CountZZZ' );
+		$this->createPage( self::CURRENT_PAGE_NAME );
+		$this->createPage( self::CURRENT_PAGE_NAME . '/SubPage' );
 
 		$this->assertSubPageCountFor(
 			'',
@@ -46,10 +51,10 @@ class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCountsIndirectChildren() {
-		self::createPage( 'TempSPLTest:CountAAA' );
-		self::createPage( 'TempSPLTest:CountAAA/AAA' );
-		self::createPage( 'TempSPLTest:CountAAA/AAA/AAA' );
-		self::createPage( 'TempSPLTest:CountAAA/AAA/BBB' );
+		$this->createPage( 'TempSPLTest:CountAAA' );
+		$this->createPage( 'TempSPLTest:CountAAA/AAA' );
+		$this->createPage( 'TempSPLTest:CountAAA/AAA/AAA' );
+		$this->createPage( 'TempSPLTest:CountAAA/AAA/BBB' );
 
 		$this->assertSubPageCountFor(
 			'TempSPLTest:CountAAA',
@@ -57,10 +62,12 @@ class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
-	/**
-	 * @depends testCountsIndirectChildren
-	 */
 	public function testDoesNotCountParents() {
+		$this->createPage( 'TempSPLTest:CountAAA' );
+		$this->createPage( 'TempSPLTest:CountAAA/AAA' );
+		$this->createPage( 'TempSPLTest:CountAAA/AAA/AAA' );
+		$this->createPage( 'TempSPLTest:CountAAA/AAA/BBB' );
+
 		$this->assertSubPageCountFor(
 			'TempSPLTest:CountAAA/AAA',
 			2
@@ -68,9 +75,9 @@ class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCountsIndirectChildrenWithoutParent() {
-		self::createPage( 'TempSPLTest:CountBBB' );
-		self::createPage( 'TempSPLTest:CountBBB/AAA/AAA' );
-		self::createPage( 'TempSPLTest:CountBBB/AAA/BBB' );
+		$this->createPage( 'TempSPLTest:CountBBB' );
+		$this->createPage( 'TempSPLTest:CountBBB/AAA/AAA' );
+		$this->createPage( 'TempSPLTest:CountBBB/AAA/BBB' );
 
 		$this->assertSubPageCountFor(
 			'TempSPLTest:CountBBB',
@@ -93,14 +100,16 @@ class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
 			$extension->getCountHookHandler()
 		);
 
-		$frame = $this->getMock( 'PPFrame' );
+		$frame = $this->createMock( 'PPFrame' );
 
 		$frame->expects( $this->once() )
 			->method( 'expand' )
 			->will( $this->returnArgument( 0 ) );
 
+
+		$parser = $this->newParser();
 		$result = $functionRunner->run(
-			$GLOBALS['wgParser'],
+			$parser,
 			[
 				'page' => $pageName
 			],
@@ -108,6 +117,16 @@ class SubPageCountingTest extends \PHPUnit_Framework_TestCase {
 		);
 
 		return reset( $result );
+	}
+
+	private function newParser() {
+		$parser = new \Parser();
+
+		$parser->mOptions = new \ParserOptions();
+		$parser->clearState();
+		$parser->setTitle( \Title::newFromText( self::CURRENT_PAGE_NAME ) );
+
+		return $parser;
 	}
 
 }

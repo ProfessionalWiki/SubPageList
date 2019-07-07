@@ -4,6 +4,7 @@ namespace Tests\Component\SubPageList;
 
 use ParamProcessor\Processor;
 use ParserHooks\HookDefinition;
+use PHPUnit\Framework\TestCase;
 use SubPageList\Extension;
 use SubPageList\Lister\Page;
 use SubPageList\Settings;
@@ -17,7 +18,7 @@ use Title;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
+class WikitextSubPageListRendererTest extends TestCase {
 
 	/**
 	 * @var Page[]
@@ -183,7 +184,7 @@ class WikitextSubPageListRendererTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotUseScriptElement() {
 		$badElement = 'script';
 
-		$this->setExpectedException( 'RuntimeException' );
+		$this->expectException( 'RuntimeException' );
 
 		$this->getListForParams( [
 			'page' => 'BBB',

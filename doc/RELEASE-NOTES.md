@@ -1,5 +1,11 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+
+## Version 1.6.0 (dev)
+
+* Dropped support for MediaWiki older than 1.31
+* Dropped support for PHP older than 7.1
+
 ## Version 1.5.0 (2017-04-14)
 
 * Sorting of pages now includes all pages, even those not included due to the limit parameter (by Dmitriy Lutsko)
@@ -15,7 +21,7 @@ These are the release notes for the [SubPageList extension](../README.md).
 ## Version 1.2.0 (2015-08-05)
 
 * The "element" parameter now supports "none" as value to not wrap the list in any HTML element.
-* Added "addlevel" parameter that allows increaing the indent level of the entire list.
+* Added "addlevel" parameter that allows increasing the indent level of the entire list.
 * Translation updates
 
 ## Version 1.1.2 (2015-01-31)

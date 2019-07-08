@@ -10,6 +10,19 @@
 	"spl-nopages": "'U namespace \"$1\" non ge tène pàggene.",
 	"spl-subpages-par-sort": "'A direzione de l'ordenamende. Valore ammesse: \"asc\" e \"desc\".",
 	"spl-subpages-par-sortby": "Accumme agghia ordenà le sottopàggene. Valore permesse: \"title\" o \"lastedit\".",
+	"spl-subpages-par-format": "L'elenghe de le sotto-pàggene pò essere 'ndrucate jndr'à diverse formate. Valore permesse: \"ol\" — elenghe ordinate (numerate), \"ul\" — elenghe non ordinate (cu le pundine), \"list\" — elenghe semblice (pe esembie elenghe separate da 'a virgole).",
+	"spl-subpages-par-page": "'A pàgene ca face 'ndrucà le sottopàggene, o 'u nome d'u namespace ('ngludenne ledoje punde finale) pe fà 'ndrucà pàggene jndre. Valore predefinite 'a pàgene de mò.",
+	"spl-subpages-par-showpage": "Indiche ce 'a pàgene avessa essere fatte 'ndrucà jndr'à l'elenghe o none.",
+	"spl-subpages-par-pathstyle": "'U stile d'u percorse de le sottopàggene jndr'à l'elenghe. Valore permesse: \"fullpagename\" — nome comblete d'a pàgene ('ngludenne pure 'u namespace), \"pagename\" — nome d'a pàgene (senze namespace), \"subpagename\" — nome d'a pàgene relative accumenzanne da 'a pàgene d'a quale se volene 'ndrucà le sottopàggene, \"none\" — sulamende 'a vanne finale d'u nome ca ste apprisse a l'urteme slash.",
 	"spl-subpages-par-kidsonly": "Permette de fà 'ndrucà sulamende le sottopàggene dirette.",
-	"spl-subpages-par-limit": "'U massime numere de pàggene da elengà."
+	"spl-subpages-par-limit": "'U massime numere de pàggene da elengà.",
+	"spl-subpages-par-element": "L'elemende HTML ca tène l'elenghe ('ngludenne teste de \"intro\" e \"outro\" o \"default\"). Valore permesse: \"div\", \"p\", \"span\".",
+	"spl-subpages-par-class": "'U valore pe l'attribbute \"class\" de l'elemende HTML ca tène l'elenghe.",
+	"spl-subpages-par-intro": "'U teste d'u resultate apprime de l'elenghe, ce l'elenghe non g'è vacande.",
+	"spl-subpages-par-outro": "'U teste d'u resultate apprisse a l'elenghe, ce l'elenghe non g'è vacande.",
+	"spl-subpages-par-default": "'U teste d'u resultate invece de l'elenghe, ce l'elenghe jè vacande. Ce vacande, 'u messàgge de errore avène renderizzate (cumme \"Pàgene ca non ge tène sottopàggene da elengà\"). Ce ste 'u trattine (\"-\"), 'u resultate iesse combletamende vacande.",
+	"spl-subpages-par-separator": "'U teste resultande 'mbrà doje elenghe in case de formate de \"list\" (e l'alias sue \"bar\"). Non ge tène effette sus a l'otre formate.",
+	"spl-subpages-par-template": "'U nome d'u template. 'U template jè applecate sus a ogne vôsce de l'elenghe. Cumme vôsce avène passate 'u prime argomende (senza nome). Attenziò ca 'u template non ge annulle 'a formattazzione de l'elenghe. 'A formattazzione (\"ul\", \"ol\", \"list\") jè applecate a 'u resultate d'u template.",
+	"spl-subpages-par-links": "Ce vere, le vôsce de l'elenghe avènene renderizzate cumme collegaminde. Ce fause, le vôsce de l'elenghe avènene renderizzate cumme teste semblice. L'urteme jè assaije utile soprattutte quanne passe le côsce jndr'à le template pe processe successive.",
+	"spl-subpages-par-redirects": "Ce vere, le redirezionaminde sò 'ngluse jndr'à l'elenghe. Ce fause, le redirezionaminde non ge sò 'ngluse."
 }

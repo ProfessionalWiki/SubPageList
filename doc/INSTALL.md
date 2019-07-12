@@ -2,126 +2,62 @@
 
 These are the installation and configuration instructions for the [SubPageList extension](../README.md).
 
-## Versions
+## Platform compatibility and release status
+
+The PHP and MediaWiki version ranges listed are those in which SubPageList is known to work. SubPageList might also
+work with more recent versions of PHP and MediaWiki, though this is not guaranteed. Increases of
+minimum requirements are indicated in bold. For a detailed list of changes, see the [release notes](RELEASE-NOTES.md).
 
 <table>
 	<tr>
-		<th></th>
-		<th>Status</th>
-		<th>Release date</th>
-		<th>Git branch</th>
-	</tr>
-	<tr>
-		<th>SPL 1.6.x</th>
-		<td>Under development</td>
-		<td>Future</td>
-		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/master">master</a></td>
-	</tr>
-	<tr>
-		<th>SPL 1.6.0</th>
-		<td>Under development</td>
-		<td>TBD 2019</td>
-		<td></td>
-	</tr>
-	<tr>
-		<th>SPL 1.5.0</th>
-		<td>Stable release</td>
-		<td>2016-04-14</td>
-		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.5.0">1.5.0</a></td>
-	</tr>
-	<tr>
-		<th>SPL 1.4.0</th>
-		<td>Stable release</td>
-		<td>2016-06-24</td>
-		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.4.0">1.4.0</a></td>
-	</tr>
-	<tr>
-		<th>SPL 1.2.0</th>
-		<td>Stable release</td>
-		<td>2015-08-05</td>
-		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.2.0">1.2.0</a></td>
-	</tr>
-	<tr>
-		<th>SPL 1.1.2</th>
-		<td>Legacy release</td>
-		<td>2015-01-31</td>
-		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.1.2">1.1.2</a></td>
-	</tr>
-	<tr>
-		<th>SPL 1.1.1</th>
-		<td>Legacy release</td>
-		<td>2014-06-26</td>
-		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.1.1">1.1.1</a></td>
-	</tr>
-	<tr>
-		<th>SPL 1.1.0</th>
-		<td>Legacy release</td>
-		<td>2013-12-07</td>
-		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.1">1.1</a></td>
-	</tr>
-	<tr>
-		<th>SPL 1.0.0</th>
-		<td>Legacy release</td>
-		<td>2013-10-13</td>
-		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/1.0">1.0</a></td>
-	</tr>
-	<tr>
-		<th>SPL 0.5.0</th>
-		<td>Legacy release</td>
-		<td>2011-12-27</td>
-		<td><a href="https://github.com/JeroenDeDauw/SubPageList/tree/0.5">0.5</a></td>
-	</tr>
-</table>
-
-### Platform compatibility
-
-<table>
-	<tr>
-		<th></th>
+		<th>SubPageList</th>
 		<th>PHP</th>
 		<th>MediaWiki</th>
-		<th>Composer</th>
+		<th>Release status</th>
 	</tr>
 	<tr>
-		<th>SPL 1.5.x</th>
+		<th>1.6.x</th>
+		<td><strong>7.1</strong> - 7.4</td>
+		<td><strong>1.31</strong> - 1.33</td>
+		<td>Planned</td>
+	</tr>
+	<tr>
+		<th>1.5.x</th>
 		<td>5.5.0 - 7.x & HHVM</td>
 		<td>1.23 - 1.29</td>
-		<td>Required</td>
+		<td><strong>Stable release</strong></td>
 	</tr>
 	<tr>
-		<th>SPL 1.4.x</th>
+		<th>1.4.x</th>
 		<td><strong>5.5.0</strong> - 7.x & HHVM</td>
 		<td><strong>1.23</strong> - 1.28</td>
-		<td>Required</td>
+		<td>Obsolete release, no support</td>
 	</tr>
 	<tr>
-		<th>SPL 1.2.x</th>
+		<th>1.2.x</th>
 		<td>5.3.0 - 7.x & HHVM</td>
 		<td>1.19 - 1.27</td>
-		<td>Required</td>
+		<td>Obsolete release, no support</td>
 	</tr>
 	<tr>
-		<th>SPL 1.1.x</th>
+		<th>1.1.x</th>
 		<td>5.3.0 - 5.6.x & HHVM</td>
 		<td>1.19 - 1.25</td>
-		<td>Required</td>
+		<td>Obsolete release, no support</td>
 	</tr>
 	<tr>
-		<th>SPL 1.0.0</th>
+		<th>1.0.0</th>
 		<td><strong>5.3.0</strong> - 5.5.x</td>
 		<td><strong>1.19</strong> - 1.23</td>
-		<td>Supported</td>
+		<td>Obsolete release, no support</td>
 	</tr>
 	<tr>
-		<th>SPL 0.5.0</th>
+		<th>0.5.0</th>
 		<td>5.2.0 - 5.5.x</td>
 		<td>1.16 - 1.19</td>
-		<td>Not supported</td>
+		<td>Obsolete release, no support</td>
 	</tr>
 </table>
-
-The PHP and MediaWiki version ranges listed are those in which SPL is known to work. It might also
-work with more recent versions of PHP and MediaWiki, though this is not guaranteed.
 
 ### Database support
 
@@ -133,7 +69,7 @@ work with more recent versions of PHP and MediaWiki, though this is not guarante
 		<th>PostgreSQL</th>
 	</tr>
 	<tr>
-		<th>SPL 1.0.x - 1.5.x</th>
+		<th>SPL 1.x</th>
 		<td>Full support</td>
 		<td>Full support</td>
 		<td>Unknown</td>

@@ -23,19 +23,19 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 	</tr>
 	<tr>
 		<th>1.5.x</th>
-		<td>5.5.0 - 7.x & HHVM</td>
+		<td>5.5.0 - 7.1 & HHVM</td>
 		<td>1.23 - 1.29</td>
 		<td><strong>Stable release</strong></td>
 	</tr>
 	<tr>
 		<th>1.4.x</th>
-		<td><strong>5.5.0</strong> - 7.x & HHVM</td>
+		<td><strong>5.5.0</strong> - 7.0 & HHVM</td>
 		<td><strong>1.23</strong> - 1.28</td>
 		<td>Obsolete release, no support</td>
 	</tr>
 	<tr>
 		<th>1.2.x</th>
-		<td>5.3.0 - 7.x & HHVM</td>
+		<td>5.3.0 - 7.0 & HHVM</td>
 		<td>1.19 - 1.27</td>
 		<td>Obsolete release, no support</td>
 	</tr>
@@ -63,19 +63,19 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 
 <table>
 	<tr>
-		<th></th>
+		<th>SubPageList</th>
 		<th>MySQL</th>
 		<th>SQLite</th>
 		<th>PostgreSQL</th>
 	</tr>
 	<tr>
-		<th>SPL 1.x</th>
+		<th>1.x</th>
 		<td>Full support</td>
 		<td>Full support</td>
 		<td>Unknown</td>
 	</tr>
 	<tr>
-		<th>SPL 0.5.0</th>
+		<th>0.5.0</th>
 		<td>Full support</td>
 		<td>Unknown</td>
 		<td>Unknown</td>

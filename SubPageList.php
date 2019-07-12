@@ -16,7 +16,7 @@ if ( defined( 'SPL_VERSION' ) ) {
 	return 1;
 }
 
-define( 'SPL_VERSION', '1.5.6 alpha' );
+define( 'SPL_VERSION', '1.6.0' );
 
 // Include the composer autoloader if it is present.
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {

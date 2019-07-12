@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\SubPageList\Lister;
 
+use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;
 use SubPageList\Lister\PageHierarchyCreator;
 use Title;
@@ -14,7 +15,7 @@ use Title;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
+class PageHierarchyCreatorTest extends TestCase {
 
 	public function testCanConstruct() {
 		$this->newPageHierarchyCreator();
@@ -22,7 +23,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	private function newPageHierarchyCreator() {
-		$factory = $this->getMock( 'SubPageList\TitleFactory' );
+		$factory = $this->createMock( 'SubPageList\TitleFactory' );
 
 		$titleBuilder = [ $this, 'newMockTitle' ];
 
@@ -46,7 +47,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	public function testCanOnlyPassInTitleObjects() {
 		$hierarchyCreator = $this->newPageHierarchyCreator();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 
 		$hierarchyCreator->createHierarchy( [
 			$this->newMockTitle( 'SomePage' ),
@@ -56,7 +57,7 @@ class PageHierarchyCreatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function newMockTitle( $pageName ) {
-		$title = $this->getMock( 'Title' );
+		$title = $this->createMock( 'Title' );
 
 		$title->expects( $this->any() )
 			->method( 'getFullText' )

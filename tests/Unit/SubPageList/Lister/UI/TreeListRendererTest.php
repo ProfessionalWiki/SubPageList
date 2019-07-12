@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\SubPageList\Lister\UI;
 
+use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;
 use SubPageList\Lister\UI\TreeListRenderer;
 use Title;
@@ -14,7 +15,7 @@ use Title;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
+class TreeListRendererTest extends TestCase {
 
 	/**
 	 * @dataProvider titleTextProvider
@@ -56,7 +57,7 @@ class TreeListRendererTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	private function newListRenderer( array $options ) {
-		$pageRenderer = $this->getMock( 'SubPageList\Lister\UI\PageRenderer\PageRenderer' );
+		$pageRenderer = $this->createMock( 'SubPageList\Lister\UI\PageRenderer\PageRenderer' );
 
 		$pageRenderer->expects( $this->any() )
 			->method( 'renderPage' )

@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\SubPageList;
 
+use PHPUnit\Framework\TestCase;
 use SubPageList\DBConnectionProvider;
 use SubPageList\LazyDBConnectionProvider;
 
@@ -13,7 +14,7 @@ use SubPageList\LazyDBConnectionProvider;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class LazyDBConnectionProviderTest extends \PHPUnit_Framework_TestCase {
+class LazyDBConnectionProviderTest extends TestCase {
 
 	/**
 	 * @dataProvider constructorProvider

@@ -4,6 +4,7 @@ namespace Tests\Unit\SubPageList\Counter;
 
 use ParamProcessor\ProcessedParam;
 use ParamProcessor\ProcessingResult;
+use PHPUnit\Framework\TestCase;
 use SubPageList\Counter\SubPageCount;
 use SubPageList\TitleFactory;
 
@@ -15,7 +16,7 @@ use SubPageList\TitleFactory;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SubPageCountTest extends \PHPUnit_Framework_TestCase {
+class SubPageCountTest extends TestCase {
 
 	public function testSubPageCountHook() {
 		$titleText = 'FooBarPage';
@@ -31,7 +32,7 @@ class SubPageCountTest extends \PHPUnit_Framework_TestCase {
 	private function newSubPageCount( $titleText, $numberOfSubPages ) {
 		$titleFactory = new TitleFactory();
 
-		$counter = $this->getMock( 'SubPageList\Counter\SubPageCounter' );
+		$counter = $this->createMock( 'SubPageList\Counter\SubPageCounter' );
 
 		$counter->expects( $this->once() )
 			->method( 'countSubPages' )
@@ -42,7 +43,7 @@ class SubPageCountTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	private function getCountResult( SubPageCount $subPageCount, $titleText ) {
-		$language = $this->getMock( 'Language' );
+		$language = $this->createMock( 'Language' );
 
 		$language->expects( $this->once() )
 			->method( 'formatNum' )
@@ -50,7 +51,7 @@ class SubPageCountTest extends \PHPUnit_Framework_TestCase {
 				return (string)$number . '.0';
 			} ) );
 
-		$parser = $this->getMock( 'Parser' );
+		$parser = $this->createMock( 'Parser' );
 
 		$parser->expects( $this->once() )
 			->method( 'getTargetLanguage' )

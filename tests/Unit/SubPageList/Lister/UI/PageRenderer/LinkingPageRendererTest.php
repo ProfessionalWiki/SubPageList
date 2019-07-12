@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\SubPageList\Lister\UI\PageRenderer;
 
+use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;
 use SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer;
 use Title;
@@ -14,7 +15,7 @@ use Title;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
+class LinkingPageRendererTest extends TestCase {
 
 	/**
 	 * @dataProvider renderProvider
@@ -22,7 +23,7 @@ class LinkingPageRendererTest extends \PHPUnit_Framework_TestCase {
 	public function testRenderPage( Page $page, $expected ) {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
 
-		$basicRenderer = $this->getMock( 'SubPageList\Lister\UI\PageRenderer\PageRenderer' );
+		$basicRenderer = $this->createMock( 'SubPageList\Lister\UI\PageRenderer\PageRenderer' );
 
 		$basicRenderer->expects( $this->once() )
 			->method( 'renderPage' )

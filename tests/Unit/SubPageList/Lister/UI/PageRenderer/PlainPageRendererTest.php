@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\SubPageList\UI\PageRenderer;
 
+use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;
 use SubPageList\Lister\UI\PageRenderer\PlainPageRenderer;
 use Title;
@@ -14,7 +15,7 @@ use Title;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PlainPageRendererTest extends \PHPUnit_Framework_TestCase {
+class PlainPageRendererTest extends TestCase {
 
 	/**
 	 * @dataProvider renderProvider

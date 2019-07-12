@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\SubPageList;
 
+use PHPUnit\Framework\TestCase;
 use SubPageList\Setup;
 
 /**
@@ -12,7 +13,7 @@ use SubPageList\Setup;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SetupTest extends \PHPUnit_Framework_TestCase {
+class SetupTest extends TestCase {
 
 	public function testRun() {
 		$extension = $this->newExtension();

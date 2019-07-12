@@ -5,8 +5,8 @@ SubPageList is a [MediaWiki](https://www.mediawiki.org) extension to display lis
 Features:
 
 * Adds a <code>subpages</code> parser hook that you can use to list subpages.
-* Backward compatible with the [SubPageList3 extension](https://www.mediawiki.org/wiki/Extension:SubPageList3).
 * Supports various parameters that enable you to customize the subpage list both in content and in layout.
+* Backward compatible with the [SubPageList3 extension](https://www.mediawiki.org/wiki/Extension:SubPageList3).
 * Adds a <code>subpagecount</code> parser hook for counting the number of subpages.
 * Fully tested codebase (which minimizes the chance of regressions in the future).
 * Flexible internal API that allows developers to easily add in new behavior.

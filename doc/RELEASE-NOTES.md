@@ -3,7 +3,7 @@ These are the release notes for the [SubPageList extension](../README.md).
 
 ## Version 1.6.0 (2019-07-12)
 
-* Changed supported MediaWiki and PHP versions. See doc/INSTALL.md.
+* Changed supported MediaWiki and PHP versions. See [doc/INSTALL.md](INSTALL.md).
 	* Added support for MediaWiki 1.31, 1.32 and 1.33
 	* Added support for PHP 7.1, 7.2, 7.3 and 7.4
 	* Dropped support for MediaWiki older than 1.31

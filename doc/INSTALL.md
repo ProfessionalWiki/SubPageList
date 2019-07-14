@@ -19,13 +19,13 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 		<th>1.6.x</th>
 		<td><strong>7.1</strong> - 7.4</td>
 		<td><strong>1.31</strong> - 1.33</td>
-		<td>Planned</td>
+		<td><strong>Stable release</strong></td>
 	</tr>
 	<tr>
 		<th>1.5.x</th>
 		<td>5.5.0 - 7.1 & HHVM</td>
 		<td>1.23 - 1.29</td>
-		<td><strong>Stable release</strong></td>
+		<td>Obsolete release</td>
 	</tr>
 	<tr>
 		<th>1.4.x</th>

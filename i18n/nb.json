@@ -12,9 +12,18 @@
 	"spl-subpages-par-sort": "Retningen du vil sortere i. Tillatte verdier: «asc» (stigende) og «desc» (synkende).",
 	"spl-subpages-par-sortby": "Hvordan undersidene skal sorteres. Tillatte verdier: «title» (tittel) eller «lastedit» (siste redigering).",
 	"spl-subpages-par-format": "Undersidelisten kan vises i flere format. Tillatte verdier: «ol» – ordnede (nummererte) lister, «ul» – uordnede lister (punktlister), «list» – vanlige lister (for eksempel kommaseparert liste).",
-	"spl-subpages-par-page": "Siden undersidene skal vises for. Standard er den gjeldende siden.",
+	"spl-subpages-par-page": "Siden undersidene skal vises for, eller navneromsnavn (inkludert etterfølgende kolon). Standard er den gjeldende siden.",
 	"spl-subpages-par-showpage": "Indikerer om selve siden skal vises i listen eller ikke.",
-	"spl-subpages-par-pathstyle": "Stilen på banen for undersidene i listen.",
+	"spl-subpages-par-pathstyle": "Stilen til stien for undersider i listen. Tillatte verdier: «fullpagename» – fullt sidenavn (inkludert navnerom), «pagename» – sidenavn (uten navnerom), «subpagename» – relativt sidenavn med utgangspunkt i siden vi lister opp undersider for, «none» – bare den etterfølgende delen av navnet etter siste skråstrek.",
 	"spl-subpages-par-kidsonly": "Tillater kun å vise direkte undersider.",
-	"spl-subpages-par-limit": "Maksimum antall sider å liste opp."
+	"spl-subpages-par-limit": "Maksimum antall sider å liste opp.",
+	"spl-subpages-par-element": "HTML-elementet som omringer lista (inkludert «intro» og «outro»- eller «default»-tekster). Tillatte verdier: «div», «p», «span».",
+	"spl-subpages-par-class": "Verdien for «class»-attributtet til HTML-elementet som omringer lista.",
+	"spl-subpages-par-intro": "Teksten som skal settes foran lista hvis lista ikke er tom.",
+	"spl-subpages-par-outro": "Teksten som skal settes etter lista hvis lista ikke er tom.",
+	"spl-subpages-par-default": "Teksten som skal settes i stedet for lista hvis lista er tom. Hvis denne er tom vil feilbeskjeden vises (som «Siden har ingen undersider å liste opp»). Hvis den er bindestrek («-») vil resultatet være helt tomt.",
+	"spl-subpages-par-separator": "Teksten som skal settes mellom to listeelementer hvis formatet er «list» (eller aliaset «bar»). Har ingen funksjon i andre formater.",
+	"spl-subpages-par-template": "Navnet på malen. Malen brukes for hvert element i lista. Et element sendes som første parameter (uten navn). Merk at malen ikke omgår listeformateringen. Formateringen («ul», «ol», «list») brukes for malens resultat.",
+	"spl-subpages-par-links": "Hvis denne er true listes elementer opp som lenker. Hvis den er false listes elementer som ren tekst. Den siste er spesielt nyttig for å tolke elementer i maler for videre prosessering.",
+	"spl-subpages-par-redirects": "Hvis denne er true inkluderes omdirigeringer i lista. Hvis den er false inkluderes ikke omdirigeringer."
 }

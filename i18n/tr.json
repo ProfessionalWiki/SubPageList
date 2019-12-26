@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK",
+			"Sadrettin"
+		]
+	},
+	"spl-desc": "Alt sayfa sayısı ve listesine izin verir",
+	"spl-nosubpages": "\"$1\" sayfasında listelenecek alt sayfa yok.",
+	"spl-noparentpage": "\"$1\" sayfası mevcut değil.",
+	"spl-nopages": "\"$1\" ad alanında sayfa yok.",
+	"spl-subpages-par-sort": "Sıralama şekli. İzin verilen değerler: \"asc\" ve \"desc\".",
+	"spl-subpages-par-sortby": "Alt sayfalar ne sıralanır. İzin verilen değerler: \"title\" veya \"lastedit\".",
+	"spl-subpages-par-format": "Alt sayfa listesi çeşitli formatlarda görüntülenebilir. İzin verilen değerler: \"ol\" - sıralı (numaralı) liste, \"ul\" - sırasız (madde işaretli) listeler, \"list\" - düz listeler (örneğin virgülle ayrılmış liste).",
+	"spl-subpages-par-page": "Sayfaların gösterileceği alt sayfaları veya ad alanı adını (arkadaki iki nokta dahil) gösteren sayfa. Geçerli sayfanın varsayılan değerleri.",
+	"spl-subpages-par-showpage": "Sayfanın kendisinin listede gösterilip gösterilmeyeceğini belirtir.",
+	"spl-subpages-par-pathstyle": "Listedeki alt sayfaların yolunun stili. İzin verilen değerler: \"fullpagename\" - tam sayfa adı (ad alanı dahil), \"pagename\" - sayfa adı (ad alanı olmadan), \"subpagename\" - alt sayfalarını listelediğimiz sayfadan başlayarak göreli sayfa adı, \"none\" - sadece arka kısım Son eğik çizgiden sonra adın",
+	"spl-subpages-par-kidsonly": "Yalnızca doğrudan alt sayfaların gösterilmesine izin verir.",
+	"spl-subpages-par-limit": "Listelenecek maksimum sayfa sayısı.",
+	"spl-subpages-par-element": "Listeyi çevreleyen HTML öğesi (\"intro\" and \"outro\" veya \"default\" metinler dahil). İzin verilen değerler: \"div\", \"p\", \"span\".",
+	"spl-subpages-par-class": "Listeyi çevreleyen HTML öğesinin \"class\" özelliğinin değeri.",
+	"spl-subpages-par-intro": "Liste boş değilse, listeden önce çıkacak metin.",
+	"spl-subpages-par-outro": "Liste boş değilse, listeden sonra çıkacak metin.",
+	"spl-subpages-par-default": "Liste boşsa, liste yerine verilecek metin. Boşsa, hata mesajı görüntülenir (\"Listede alt sayfa yok\" gibi). Kısa çizgi (\"-\") ise sonuç tamamen boş olur.",
+	"spl-subpages-par-separator": "\"list\" (ve diğer adı \"bar\") biçiminde iki liste öğesi arasında çıktı alınacak metin. Diğer formatlarda hiçbir etkisi yoktur.",
+	"spl-subpages-par-template": "Şablonun adı. Şablon, listenin her öğesine uygulanır. Bir öğe ilk (isimsiz) argüman olarak iletilir. Şablonun liste biçimlendirmesini iptal etmediğini unutmayın. Biçimlendirme (\"ul\", \"ol\", \"list\") şablonun sonucuna uygulanır.",
+	"spl-subpages-par-links": "Değer doğruysa, liste öğeleri bağlantı olarak oluşturulur. Yanlışsa, liste öğeleri düz metin olarak işlenir. İkincisi, daha sonraki işlemler için öğeleri şablonlara geçirmek için özellikle yararlıdır.",
+	"spl-subpages-par-redirects": "Değer doğruysa, yönlendirmeler listeye dahil edilir. Yanlışsa, yönlendirmeler dahil edilmez."
+}

@@ -1,17 +1,20 @@
 language: php
 
+services:
+  - mysql
+
 sudo: false
 
 matrix:
   fast_finish: true
   include:
     - env: DBTYPE=mysql; MW=master
+      php: 7.4
+    - env: DBTYPE=mysql; MW=1.33.2; TYPE=coverage
       php: 7.3
-    - env: DBTYPE=mysql; MW=1.33.0; TYPE=coverage
+    - env: DBTYPE=sqlite; MW=1.32.6
       php: 7.2
-    - env: DBTYPE=sqlite; MW=1.32.3
-      php: 7.2
-    - env: DBTYPE=mysql; MW=1.31.3
+    - env: DBTYPE=mysql; MW=1.31.4
       php: 7.1
 
 install:

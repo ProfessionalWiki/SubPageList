@@ -7,7 +7,7 @@ use SubPageList\DBConnectionProvider;
 use SubPageList\LazyDBConnectionProvider;
 
 /**
- * @covers SubPageList\LazyDBConnectionProvider
+ * @covers \SubPageList\LazyDBConnectionProvider
  *
  * @group SubPageList
  *

@@ -9,7 +9,7 @@ use SubPageList\Counter\SubPageCount;
 use SubPageList\TitleFactory;
 
 /**
- * @covers SubPageList\Counter\SubPageCount
+ * @covers \SubPageList\Counter\SubPageCount
  *
  * @group SubPageList
  *

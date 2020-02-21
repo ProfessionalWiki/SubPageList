@@ -8,7 +8,7 @@ use SubPageList\Lister\PageHierarchyCreator;
 use Title;
 
 /**
- * @covers SubPageList\Lister\PageHierarchyCreator
+ * @covers \SubPageList\Lister\PageHierarchyCreator
  *
  * @group SubPageList
  *

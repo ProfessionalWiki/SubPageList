@@ -8,7 +8,7 @@ use SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer;
 use Title;
 
 /**
- * @covers SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer
+ * @covers \SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer
  *
  * @group SubPageList
  *

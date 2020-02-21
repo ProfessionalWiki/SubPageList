@@ -10,7 +10,7 @@ use SubPageList\Lister\SubPageList;
 use SubPageList\TitleFactory;
 
 /**
- * @covers SubPageList\Lister\SubPageList
+ * @covers \SubPageList\Lister\SubPageList
  *
  * @group SubPageList
  *

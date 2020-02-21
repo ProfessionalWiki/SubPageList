@@ -9,7 +9,7 @@ use SubPageList\Lister\SubPageFinder;
 use Title;
 
 /**
- * @covers SubPageList\Lister\SimpleSubPageFinder
+ * @covers \SubPageList\Lister\SimpleSubPageFinder
  *
  * @group SubPageList
  * @group Database
@@ -34,17 +34,17 @@ class SimpleSubPageFinderTest extends TestCase {
 
 		return $argLists;
 	}
-	
+
 	public function redirectProvider() {
 		$argLists = [];
 
 		Title::newFromText( 'hello world' );
-		
+
 		$argLists[] = [ Title::newFromText( 'Redirect Test' ) ];
 		$rc = new RedirectCreator();
-		$rc->createRedirect( 
-			Title::newFromText( 'Redirect Test/Sub' ), 
-			'hello world' 
+		$rc->createRedirect(
+			Title::newFromText( 'Redirect Test/Sub' ),
+			'hello world'
 		);
 
 		return $argLists;
@@ -63,7 +63,7 @@ class SimpleSubPageFinderTest extends TestCase {
 		$this->assertInternalType( 'array', $pages );
 		$this->assertContainsOnlyInstancesOf( Title::class, $pages );
 	}
-	
+
 	/**
 	 * @dataProvider redirectProvider
 	 *
@@ -76,9 +76,9 @@ class SimpleSubPageFinderTest extends TestCase {
 
 		$this->assertInternalType( 'array', $pages );
 		$this->assertContainsOnlyInstancesOf( Title::class, $pages );
-		
+
 		foreach ( $pages as $subPage ) {
-			$this->assertSame( 
+			$this->assertSame(
 				$subPage->getFullText(),
 				'Redirect Test/Sub'
 			);

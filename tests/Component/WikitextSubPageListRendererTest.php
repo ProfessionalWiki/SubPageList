@@ -11,7 +11,7 @@ use SubPageList\Settings;
 use Title;
 
 /**
- * @covers SubPageList\Lister\UI\WikitextSubPageListRenderer
+ * @covers \SubPageList\Lister\UI\WikitextSubPageListRenderer
  *
  * @group SubPageList
  *
@@ -205,7 +205,7 @@ class WikitextSubPageListRendererTest extends TestCase {
 </div>'
 		);
 	}
-	
+
 	public function testTwoLevelsOfAdditionalIndent() {
 		$this->assertCreatesList(
 			[

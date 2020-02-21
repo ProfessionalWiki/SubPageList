@@ -7,7 +7,7 @@ use SubPageList\Extension;
 use SubPageList\Settings;
 
 /**
- * @covers SubPageList\Extension
+ * @covers \SubPageList\Extension
  *
  * @group SubPageList
  *

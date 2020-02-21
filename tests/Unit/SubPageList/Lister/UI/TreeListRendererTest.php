@@ -8,7 +8,7 @@ use SubPageList\Lister\UI\TreeListRenderer;
 use Title;
 
 /**
- * @covers SubPageList\Lister\UI\TreeListRenderer
+ * @covers \SubPageList\Lister\UI\TreeListRenderer
  *
  * @group SubPageList
  *

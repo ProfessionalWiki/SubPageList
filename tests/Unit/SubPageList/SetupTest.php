@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use SubPageList\Setup;
 
 /**
- * @covers SubPageList\Setup
+ * @covers \SubPageList\Setup
  *
  * @group SubPageList
  *

@@ -49,7 +49,7 @@ class SubPageListRendererTest extends TestCase {
 	 */
 	private static $titles;
 
-	public static function setUpBeforeClass() {
+	public static function setUpBeforeClass(): void {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
 
 		foreach ( self::$pages as $pageName ) {

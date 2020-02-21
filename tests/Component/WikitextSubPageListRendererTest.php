@@ -25,7 +25,7 @@ class WikitextSubPageListRendererTest extends TestCase {
 	 */
 	private static $pages;
 
-	public static function setUpBeforeClass() {
+	public static function setUpBeforeClass(): void {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
 
 		self::$pages = [

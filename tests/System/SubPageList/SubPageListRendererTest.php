@@ -65,7 +65,7 @@ class SubPageListRendererTest extends TestCase {
 		$pageCreator->createPage( $title );
 	}
 
-	public static function tearDownAfterClass() {
+	public static function tearDownAfterClass(): void {
 		$pageDeleter = new PageDeleter();
 
 		foreach ( self::$titles as $title ) {

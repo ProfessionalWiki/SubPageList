@@ -30,7 +30,7 @@ class SubPageCountingTest extends TestCase {
 		$pageCreator->createPage( $title );
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		$pageDeleter = new PageDeleter();
 
 		foreach ( $this->titles as $title ) {

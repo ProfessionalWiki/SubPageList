@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Facenapalm",
 			"Okras",
 			"Renessaince",
 			"Van de Bugger",
-			"Александр Сигачёв",
-			"Facenapalm"
+			"Александр Сигачёв"
 		]
 	},
 	"spl-desc": "Позволяет вывести список и количество подстраниц",

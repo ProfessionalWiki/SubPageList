@@ -2,9 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Armando-Martin",
-			"Macofe",
 			"Dgstranz",
-			"Fitoschido"
+			"Fitoschido",
+			"Macofe"
 		]
 	},
 	"spl-desc": "Permite listar y contar las subpáginas",

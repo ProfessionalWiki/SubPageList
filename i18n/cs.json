@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Dvorapa",
 			"Mormegil",
-			"Reaperman",
-			"Dvorapa"
+			"Reaperman"
 		]
 	},
 	"spl-desc": "Umožňuje vypisovat a počítat podstránky",

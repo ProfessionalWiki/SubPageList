@@ -12,6 +12,7 @@ mv mediawiki-$MW phase3
 
 cd phase3
 
+composer self-update --1
 composer install --prefer-source
 
 if [ "$DB" == "postgres" ]

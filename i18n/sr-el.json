@@ -1,4 +1,6 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"spl-subpages-par-limit": "Najveći broj stranica za prikazivanje."
 }

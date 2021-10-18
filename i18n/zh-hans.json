@@ -2,19 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
+			"Xiplus",
 			"Yfdyh000"
 		]
 	},
 	"spl-desc": "允许列出和计算子页面",
 	"spl-nosubpages": "页面“$1”没有子页面可列出。",
 	"spl-noparentpage": "页面“$1”不存在。",
-	"spl-nopages": "名字空间“$1”没有页面。",
+	"spl-nopages": "命名空间“$1”没有页面。",
 	"spl-subpages-par-sort": "要排序的方向。允许的值：“asc”和“desc”。",
 	"spl-subpages-par-sortby": "要按什么排序子页面。允许的值：“title”或“lastedit”。",
 	"spl-subpages-par-format": "子页面列表可以多种格式显示。允许的值：\"ol\"——有序列表（编码）、\"ul\"——无序列表（项目符号）、\"list\"——无格式列表（例如逗号分隔列表）。",
-	"spl-subpages-par-page": "要显示子页面的页面，或要显示页面的名字空间（包括后置冒号）。默认为当前页面。",
+	"spl-subpages-par-page": "要显示子页面的页面，或要显示页面的命名空间（包括后置冒号）。默认为当前页面。",
 	"spl-subpages-par-showpage": "表明页面本身是否应显示在列表中。",
-	"spl-subpages-par-pathstyle": "用于列表中子页面的路径样式。允许的值：“fullpagename”——完整页面名称（包括名字空间）、“pagename”——页面名称（不包括名字空间）、“subpagename”——相对页面名称，从我们列出子页面的页面开始、“none”——最后一个斜线之后部分的名称。",
+	"spl-subpages-par-pathstyle": "用于列表中子页面的路径样式。允许的值：“fullpagename”——完整页面名称（包括命名空间）、“pagename”——页面名称（不包括命名空间）、“subpagename”——相对页面名称，从我们列出子页面的页面开始、“none”——最后一个斜线之后部分的名称。",
 	"spl-subpages-par-kidsonly": "允许显示仅直接的子页面。",
 	"spl-subpages-par-limit": "列出页面的最大数量。",
 	"spl-subpages-par-element": "封闭列表的HTML元素（包括“intro”和“outro”或“default”文本）。允许的值：“div”、“p”、“span”。",

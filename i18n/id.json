@@ -1,17 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
+			"Daud I.F. Argana",
 			"IvanLanin"
 		]
 	},
-	"spl-desc": "Memberikan tag <code><nowiki><splist /></nowiki></code> yang memungkinkan Anda untuk melihat daftar subhalaman",
-	"spl-nosubpages": "$1 tidak memiliki subhalaman untuk ditampilkan.",
-	"spl-subpages-par-sort": "Arah urutan.",
-	"spl-subpages-par-sortby": "Cara pengurutan subhalaman.",
-	"spl-subpages-par-format": "Daftar subhalaman dapat ditampilkan dalam berbagai format, yaitu daftar bernomor (ol), daftar butir (ul), dan daftar dipisahkan koma (list).",
-	"spl-subpages-par-page": "Halaman yang akan ditampilkan subhalamannya. Setelan bawaan: halaman saat ini.",
+	"spl-desc": "Memungkinkan menampilkan daftar dan hitungan subhalaman",
+	"spl-nosubpages": "Halaman \"$1\" tidak memiliki subhalaman untuk ditampilkan.",
+	"spl-noparentpage": "Halaman \"$1\" tidak ada.",
+	"spl-nopages": "Ruang nama \"$1\" tidak punya halaman.",
+	"spl-subpages-par-sort": "Arah urutan. Nilai-nilai yang dibolehkan: \"asc\" (meningkatkan) dan \"desc\" (menurunkan).",
+	"spl-subpages-par-sortby": "Cara pengurutan subhalaman. Nilai-nilai yang dibolehkan: \"title\" atau \"lastedit\".",
+	"spl-subpages-par-format": "Daftar subhalaman dapat ditampilkan dalam berbagai format. Nilai-nilai yang dibolehkan: \"ol\" — daftar bernomor (terurut), \"ul\" — daftar tidak berurut (bertitik), \"list\" — daftar polos (contohnya daftar yang dipisahkan oleh tanda koma).",
+	"spl-subpages-par-page": "Halaman yang akan ditampilkan subhalamannya, atau nama ruang namanya ({{termasuk tanda baca yang tertinggal})}. Setelan bawaan: halaman saat ini.",
 	"spl-subpages-par-showpage": "Menunjukkan apakah halaman itu sendiri harus ditampilkan atau tidak dalam daftar.",
-	"spl-subpages-par-pathstyle": "Gaya jalur subhalaman dalam daftar.",
+	"spl-subpages-par-pathstyle": "Gaya jalur subhalaman dalam daftar. Nilai dibolehkan: \"fullpagename\" — nama halaman lengkap (termasuk ruang nama), \"pagename\" — nama halaman (tanpa ruang nama), \"subpagename\" — nama halaman relatif dimulai dari halaman yang kita cari subhalaman-ubhalamannya, \"none\" — hanya bagian akhir dari nama setelah garis miring terakhir.",
 	"spl-subpages-par-kidsonly": "Hanya tampilkan subhalaman langsung.",
 	"spl-subpages-par-limit": "Jumlah halaman maks. yang ditampilkan."
 }

@@ -15,7 +15,7 @@
 	"spl-subpages-par-sort": "Kierunek porządkowania. Dopuszczalne wartości: \"asc\" rosnąco i \"desc\" malejąco.",
 	"spl-subpages-par-sortby": "Według czego uporządkować podstrony. Dopuszczalne wartości: \"tytuł\" lub \"ostatniaedycja\".",
 	"spl-subpages-par-format": "Lista podstron może być wyświetlana w różnych formatach. Dopuszczalne wartości: \"ol\" — uporządkowana (numerowana) lista, \"ul\" — lista nieuporządkowana (wypunktowanie), \"list\" — zwykła lista (na przykład lista rozdzielana przecinkami).",
-	"spl-subpages-par-page": "Strona, której podstrony mają być pokazane, lub przestrzeń nazw (włączając końcowy dwukropek), którejstrony wyświetlić. Domyślnie bieżąca strona.",
+	"spl-subpages-par-page": "Strona, której podstrony mają być pokazane, lub przestrzeń nazw (włączając końcowy dwukropek), której strony wyświetlić. Domyślnie jest to bieżąca strona.",
 	"spl-subpages-par-showpage": "Wskazuje, czy sama strony powinna być wyświetlona na liście, czy też nie.",
 	"spl-subpages-par-pathstyle": "Styl ścieżki dla podstron na liście. Dopuszczalne wartości: \"fullpagename\" — pełna nazwa strony (w tym obszar nazw), \"pagename\" — nazwa strony (bez przestrzeni nazw), \"subpagename\" — względna nazwa strony począwszy od strony podstawowej, \"none\" — tylko końcowa część nazwy po ostatnim ukośniku.",
 	"spl-subpages-par-kidsonly": "Umożliwia pokazywanie tylko bezpośrednich podstron.",

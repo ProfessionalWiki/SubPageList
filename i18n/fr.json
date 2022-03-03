@@ -6,12 +6,13 @@
 			"Seb35",
 			"Sherbrooke",
 			"Toliño",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
 	"spl-desc": "Permet de lister et compter les sous-pages",
 	"spl-nosubpages": "La page « $1 » n’a pas de sous-pages à lister.",
-	"spl-noparentpage": "La page « $1 » n’existe pas.",
+	"spl-noparentpage": "La page « $1 » n’existe pas.",
 	"spl-nopages": "L’espace de nom « $1 » n’a pas de pages.",
 	"spl-subpages-par-sort": "Le sens de tri. Valeurs permises: \"asc\" et \"desc\".",
 	"spl-subpages-par-sortby": "Selon quoi trier les sous-pages. Valeurs permises: \"title\" ou \"lastedit\".",

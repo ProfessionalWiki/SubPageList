@@ -26,14 +26,6 @@
 		"composer/installers": "^1.0.1",
 		"mediawiki/parser-hooks": "~1.3"
 	},
-	"autoload": {
-		"files" : [
-			"SubPageList.php"
-		],
-		"psr-4": {
-			"SubPageList\\": "src/"
-		}
-	},
 	"extra": {
 		"branch-alias": {
 			"dev-master": "1.x-dev"

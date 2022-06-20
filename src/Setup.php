@@ -48,6 +48,18 @@ class Setup {
 	}
 
 	/**
+	 * Initializes the extension during MediaWiki boot up
+	 * @global array $wgHooks
+	 * @return void
+	 */
+	public static function onExtensionFunctions() {
+		$extension = new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
+		$extensionSetup = new \SubPageList\Setup( $extension, $GLOBALS['wgHooks'], dirname( __DIR__ ) );
+
+		$extensionSetup->run();
+	}
+
+	/**
 	 * Sets up the SubPageList extension.
 	 *
 	 * @since 1.0

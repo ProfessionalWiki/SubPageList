@@ -1,0 +1,41 @@
+{
+	"name": "SubPageList",
+	"version": "2.0.0",
+	"author": [
+		"[https://www.entropywins.wtf/mediawiki Jeroen De Dauw]",
+		"[https://professional.wiki/ Professional.Wiki]"
+	],
+	"url": "https://github.com/JeroenDeDauw/SubPageList/blob/master/README.md",
+	"descriptionmsg": "spl-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "parserhook",
+	"requires": {
+		"MediaWiki": ">= 1.35.0",
+		"extensions": {
+			"ParserHooks": ">= 1.6"
+		}
+	},
+	"AutoloadNamespaces": {
+		"SubPageList\\": "src/"
+	},
+	"MessagesDirs": {
+		"SubPageList": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"SubPageListMagic": "SubPageList.i18n.magic.php"
+
+	},
+	"ExtensionFunctions": [
+		"\\SubPageList\\Setup::onExtensionFunctions"
+	],
+	"config_prefix": "egSPL",
+	"config": {
+		"Autorefresh": {
+			"value": false,
+			"desc": "Automatically invalidate the cache of 'base pages' when creating, moving or deleting a subpage? This covers most cases where people expect automatic refresh of the sub page list. However note that this will not update lists displaying subpages from pages different then themselves."
+		}
+	},
+	"manifest_version": 2
+}

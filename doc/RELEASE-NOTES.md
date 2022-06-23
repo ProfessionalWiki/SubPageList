@@ -1,9 +1,19 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
 
+## Version 2.0.0 (2022-06-23)
+
+* Changed supported MediaWiki and PHP versions. See [doc/INSTALL.md](INSTALL.md).
+    * Added support for MediaWiki 1.35+
+    * Dropped support for MediaWiki older than 1.35
+    * Dropped support for PHP older than 7.3
+* Added support for extension registration via "extension.json" (by Osnard)
+  → Now you have to use `wfLoadExtension( 'SubPageList' );` in the "LocalSettings.php" file to invoke the extension
+* Localization updates from https://translatewiki.net
+
 ## Version 1.6.1 (2020-02-23)
 
-* Translation updates
+* Localization updates from https://translatewiki.net
 
 ## Version 1.6.0 (2019-07-12)
 

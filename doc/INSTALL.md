@@ -101,6 +101,9 @@ Other databases supported by MediaWiki might work as well, though this is not gu
 
 To install the SubPageList extension use [Composer] with [MediaWikis built-in Composer support].
 
+On the command line, go to the base directory of your MediaWiki installation and run the
+following two commands:
+
 ```shell script
 COMPOSER=composer.local.json composer require --no-update mediawiki/sub-page-list:~2.0
 ```
@@ -116,10 +119,9 @@ Then enable the extension by adding the following to the bottom of your wikis
 wfLoadExtension( 'SubPageList' );
 ```
 
-### Verify installation success
+You can verify the extension was enabled successfully by opening your wikis Special:Version
+page in your browser.
 
-As final step, you can verify SubPageList got installed by looking at the Special:Version
-page on your wiki and verifying the SubPageList extension is listed.
 
 ## Configuration
 

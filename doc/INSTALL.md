@@ -16,10 +16,16 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 		<th>Release status</th>
 	</tr>
 	<tr>
+		<th>2.0.x</th>
+		<td>7.3 - 7.4</td>
+		<td><strong>1.35</strong> - 1.39</td>
+		<td><strong>Stable release</strong></td>
+	</tr>
+	<tr>
 		<th>1.6.x</th>
 		<td><strong>7.1</strong> - 7.4</td>
-		<td><strong>1.31</strong> - 1.33</td>
-		<td><strong>Stable release</strong></td>
+		<td><strong>1.31</strong> - 1.35</td>
+		<td>Obsolete release</td>
 	</tr>
 	<tr>
 		<th>1.5.x</th>
@@ -69,6 +75,12 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 		<th>PostgreSQL</th>
 	</tr>
 	<tr>
+		<th>2.x</th>
+		<td>Full support</td>
+		<td>Full support</td>
+		<td>Unknown</td>
+	</tr>
+	<tr>
 		<th>1.x</th>
 		<td>Full support</td>
 		<td>Full support</td>
@@ -87,29 +99,35 @@ Other databases supported by MediaWiki might work as well, though this is not gu
 
 ## Installation
 
-The recommended way to install the SubPageList extension is with [Composer](http://getcomposer.org) using
-[MediaWikis built-in Composer support](https://www.mediawiki.org/wiki/Composer).
+To install the SubPageList extension use [Composer] with [MediaWikis built-in Composer support].
 
-In your MediaWiki root directory, you can execute:
+```shell script
+COMPOSER=composer.local.json composer require --no-update mediawiki/sub-page-list:~2.0
+```
 
-    composer require mediawiki/sub-page-list "~1.5"
-    
-For more details on extension installation via Composer, see the documentation on MediaWiki.org.
+```shell script
+composer update mediawiki/sub-page-list --no-dev -o
+```
+
+Then enable the extension by adding the following to the bottom of your wikis
+[LocalSettings.php] file:
+
+```php
+wfLoadExtension( 'SubPageList' );
+```
 
 ### Verify installation success
 
-
-As final step, you can verify SubPageList got installed by looking at the Special:Version page on your wiki and verifying the
-SubPageList extension is listed.
+As final step, you can verify SubPageList got installed by looking at the Special:Version
+page on your wiki and verifying the SubPageList extension is listed.
 
 ## Configuration
 
 After you are done with installing, it is time to update your configuration.
 
 Configuration of SubPageList is done by adding simple PHP statements to your
-[LocalSettings.php](https://www.mediawiki.org/wiki/Manual:LocalSettings.php)
-file. These statements need to be placed AFTER the inclusion of SubPageList.
-The options are listed below and their default is set in the SubPageList
+[LocalSettings.php] file. These statements need to be placed AFTER the inclusion
+of SubPageList. The options are listed below and their default is set in the SubPageList
 settings file. You should NOT modify the settings file, but can have a look
 at it to get an idea of how to use the settings, in case the below descriptions
 do not suffice.
@@ -118,14 +136,14 @@ do not suffice.
 
 MediaWiki itself has some support for subpages, which causes back links
 to be displayed on subpages to their parent pages. To enable this you
-need to set [$wgNamespacesWithSubpages](https://www.mediawiki.org/wiki/Manual:$wgNamespacesWithSubpages),
-which is a per namespace setting, like shown below:
+need to set [$wgNamespacesWithSubpages], which is a per namespace setting,
+like shown below:
 
 ```php
-$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = 1;
+$wgNamespacesWithSubpages[NS_MAIN] = true;
 ```
 
-### Automatic refresh
+### Optional subpage setting - Automatic refresh
 
 MediaWiki by default caches the content of pages. This means that when you have
 a sub page list, and one of the pages in this list gets moved or deleted, or a
@@ -140,5 +158,10 @@ all of its children.
 This option is off by default and can be turned on with:
 
 ```php
-$GLOBALS['egSPLAutorefresh'] = true;
+$egSPLAutorefresh = true;
 ```
+
+[Composer]: https://getcomposer.org
+[MediaWikis built-in Composer support]: https://www.mediawiki.org/wiki/Composer
+[LocalSettings.php]: https://www.mediawiki.org/wiki/Manual:LocalSettings.php
+[$wgNamespacesWithSubpages]: https://www.mediawiki.org/wiki/Manual:$wgNamespacesWithSubpages

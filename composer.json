@@ -22,7 +22,7 @@
 		"irc": "irc://irc.freenode.net/mediawiki"
 	},
 	"require": {
-		"php": ">=7.1",
+		"php": ">=7.3",
 		"composer/installers": "^1.0.1",
 		"mediawiki/parser-hooks": "~1.3"
 	},

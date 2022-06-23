@@ -22,10 +22,6 @@ Professional support and custom development is available via [Professional.Wiki]
 
 ## Project status
 
-[![Build Status](https://travis-ci.org/JeroenDeDauw/SubPageList.svg?branch=master)](https://travis-ci.org/JeroenDeDauw/SubPageList)
-[![Code Coverage](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/?branch=master)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/badges/quality-score.png?s=1a8e0586f15cd4f3aac116e204a2d266a054540c)](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/)
-
 On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-page-list/version.png)](https://packagist.org/packages/mediawiki/sub-page-list)
 [![Download count](https://poser.pugx.org/mediawiki/sub-page-list/d/total.png)](https://packagist.org/packages/mediawiki/sub-page-list)
 
@@ -37,9 +33,6 @@ On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-pag
 ## Further links
 
 * [SubPageList on Packagist](https://packagist.org/packages/mediawiki/sub-page-list)
-* [SubPageList on Ohloh](https://www.ohloh.net/p/subpagelist)
-* [SubPageList on TravisCI](https://travis-ci.org/JeroenDeDauw/SubPageList/builds)
-* [SubPageList on Scrutinizer CI](https://scrutinizer-ci.com/g/JeroenDeDauw/SubPageList/)
-* [SubPageList on WikiApiary](http://wikiapiary.com/wiki/Extension:SubPageList)
+* [SubPageList on WikiApiary](https://wikiapiary.com/wiki/Extension:SubPageList)
 
 <img src="doc/subpagelist.png" />

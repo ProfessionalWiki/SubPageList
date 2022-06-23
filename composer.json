@@ -19,7 +19,7 @@
 	],
 	"support": {
 		"issues": "https://github.com/JeroenDeDauw/SubPageList/issues",
-		"irc": "irc://irc.freenode.net/mediawiki"
+		"irc": "irc://irc.libera.chat/mediawiki"
 	},
 	"require": {
 		"php": ">=7.3",

@@ -12,7 +12,7 @@
 	"requires": {
 		"MediaWiki": ">= 1.35.0",
 		"extensions": {
-			"ParserHooks": ">= 1.6"
+			"ParserHooks": ">= 2.0"
 		}
 	},
 	"AutoloadNamespaces": {

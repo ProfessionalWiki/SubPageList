@@ -10,10 +10,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "parserhook",
 	"requires": {
-		"MediaWiki": ">= 1.35.0",
-		"extensions": {
-			"ParserHooks": ">= 1.6"
-		}
+		"MediaWiki": ">= 1.35.0"
 	},
 	"AutoloadNamespaces": {
 		"SubPageList\\": "src/"

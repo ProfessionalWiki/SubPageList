@@ -1,5 +1,8 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 2.0.1 (2022-07-14)
+
+* Fixed an installation issue
 
 ## Version 2.0.0 (2022-06-23)
 

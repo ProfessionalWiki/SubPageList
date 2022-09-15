@@ -10,7 +10,7 @@
 	"spl-noparentpage": "A página \"$1\" não existe.",
 	"spl-nopages": "O espaço nominal \"$1\" não tem páginas.",
 	"spl-subpages-par-sort": "A direção da ordenação. Valores permitidos: \"asc\" e \"desc\".",
-	"spl-subpages-par-sortby": "O critério de ordenação. Valores permitidos: \"title\" (titulo) ou \"lastedit\" (última edição).",
+	"spl-subpages-par-sortby": "O critério de ordenação. Valores permitidos: \"title\" (título) ou \"lastedit\" (última edição).",
 	"spl-subpages-par-format": "A lista de subpáginas pode ser apresentada em vários formatos. Valores permitidos: \"ol\" — listas ordenadas (numeradas), \"ul\" — listas não ordenadas (com marcadores) e \"list\" — listas simples (por exemplo, lista separada por vírgulas).",
 	"spl-subpages-par-page": "A página cujas subpáginas serão mostradas, ou o nome do espaço nominal (incluindo o sinal de dois pontos) do qual mostrar as páginas. Por omissão, será a página corrente.",
 	"spl-subpages-par-showpage": "Indica se a própria página deve ser mostrada na lista ou não.",

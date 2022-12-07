@@ -2,7 +2,9 @@
 
 namespace SubPageList;
 
-use DatabaseBase;
+use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Lazy database connection provider.
@@ -16,9 +18,14 @@ use DatabaseBase;
 class LazyDBConnectionProvider implements DBConnectionProvider {
 
 	/**
-	 * @var DatabaseBase|null
+	 * @var IDatabase|null
 	 */
 	private $connection = null;
+
+	/**
+	 * @var ILoadBalancer|null
+	 */
+	private $lb = null;
 
 	/**
 	 * @var int|null
@@ -59,10 +66,19 @@ class LazyDBConnectionProvider implements DBConnectionProvider {
 	 */
 	public function getConnection() {
 		if ( $this->connection === null ) {
-			$this->connection = wfGetLB( $this->wiki )->getConnection( $this->connectionId, $this->groups, $this->wiki );
+			if ( $this->wiki === false ) {
+				$this->lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
+			} else {
+				$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+				$this->lb = $factory->getMainLB( $wiki );
+			}
+
+			assert( $this->lb instanceof ILoadBalancer );
+
+			$this->connection = $this->lb->getConnectionRef( $this->connectionId, $this->groups, $this->wiki );
 		}
 
-		assert( $this->connection instanceof DatabaseBase );
+		assert( $this->connection instanceof IDatabase );
 
 		return $this->connection;
 	}
@@ -74,7 +90,7 @@ class LazyDBConnectionProvider implements DBConnectionProvider {
 	 */
 	public function releaseConnection() {
 		if ( $this->wiki !== false && $this->connection !== null ) {
-			wfGetLB( $this->wiki )->reuseConnection( $this->connection );
+			$this->lb->reuseConnection( $this->connection );
 		}
 	}
 

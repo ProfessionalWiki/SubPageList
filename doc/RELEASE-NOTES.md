@@ -1,5 +1,9 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 2.0.2 (2022-12-07)
+
+* Added support for MediaWiki 1.39 (by Chris Boot)
+
 ## Version 2.0.1 (2022-07-14)
 
 * Fixed an installation issue

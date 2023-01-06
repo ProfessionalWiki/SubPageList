@@ -12,13 +12,13 @@ same parameters and behave identically.
 
 #### Page
 
-Parameter name: page
+Parameter name: <code>page</code>
 
 The page to show the subpages for. Defaults to the current page.
 
 #### List format
 
-Parameter name: format
+Parameter name: <code>format</code>
 
 Supported values:
 
@@ -29,7 +29,7 @@ Default: <code>ul</code>
 
 #### Page name format
 
-Parameter name: pathstyle
+Parameter name: <code>pathstyle</code>
 
 This parameter controls how page titles are displayed in the list. The default is <code>subpagename</code>.
 
@@ -45,22 +45,22 @@ The below table demonstrates how two different titles are formatted for each of 
 		<th>Namespace:Title</th>
 	</tr>
 	<tr>
-		<th>full</th>
+		<th><code>full</code></th>
 		<td>Namespace:Foo/Bar/Baz</td>
 		<td>Namespace:Title</td>
 	</tr>
 	<tr>
-		<th>pagename</th>
+		<th><code>pagename</code></th>
 		<td>Foo/Bar/Baz</td>
 		<td>Title</td>
 	</tr>
 	<tr>
-		<th>subpagename</th>
+		<th><code>subpagename</code></th>
 		<td>Baz</td>
 		<td>Namespace:Title</td>
 	</tr>
 	<tr>
-		<th>none</th>
+		<th><code>none</code></th>
 		<td>Baz</td>
 		<td>Title</td>
 	</tr>
@@ -68,9 +68,9 @@ The below table demonstrates how two different titles are formatted for each of 
 
 #### Header and footer
 
-Header parameter name: intro
+Header parameter name: <code>intro</code>
 
-Footer parameter name: outro
+Footer parameter name: <code>outro</code>
 
 These parameters allow you to specify content to be placed before and after the list of sub pages.
 This context can be simple wikitext. Footer and header are displayed within the same HTML element
@@ -79,42 +79,42 @@ This means header and footer will not be displayed if the list is empty.
 
 #### Fallback value (default)
 
-Parameter name: default
+Parameter name: <code>default</code>
 
 This parameter allows you to specify contents to display when the sub page list is empty. This could
 be a message such as "There are no sub pages to list".
 
 #### Link pages
 
-Parameter name: links
+Parameter name: <code>links</code>
 
 This parameter specifies if the pages in the list should be links. The allowed values
 are <code>yes</code> and <code>no</code>. The default is <code>yes</code>.
 
 #### Including redirects
 
-Parameter name: redirects
+Parameter name: <code>redirects</code>
 
 This parameter specifies if subpages which are redirects should be included in the list.  
 The allowed values are <code>yes</code> and <code>no</code>. The default is <code>no</code>.
 
 #### Displaying the page itself
 
-Parameter name: showpage
+Parameter name: <code>showpage</code>
 
 This parameter indicates if the page itself should be displayed as part of the list.
 The allowed values are <code>yes</code> and <code>no</code>. The default is <code>no</code>.
 
 #### Only direct subpages
 
-Parameter name: kidsonly
+Parameter name: <code>kidsonly</code>
 
 This parameter indicates if only direct children of the page should be included in the list.
 The allowed values are <code>yes</code> and <code>no</code>. The default is <code>no</code>.
 
 #### Template
 
-Parameter name: template
+Parameter name: <code>template</code>
 
 Allows specifying a MediaWiki template to format the page names with. The template gets a
 single unnamed parameter which is the page name. The format of the page name depends on the
@@ -122,12 +122,13 @@ single unnamed parameter which is the page name. The format of the page name dep
 
 #### Increase level/indent
 
-Parameter name: addlevel
+Parameter name: <code>addlevel</code>
 
 Allows user to specify an integer number of levels (up to 10) to add to bullets/numbers 
 so resulting list can be appended to another list outside.  
 
 Example output for <code>addlevel=2</code>:
+
     *** Parent
 		**** Child 1
 		**** Child 2
@@ -136,7 +137,7 @@ Default: 0
 
 #### Wrapping HTML element
 
-Parameter name: element
+Parameter name: <code>element</code>
 
 Allowed values:
 
@@ -149,13 +150,13 @@ Default: `div`
 
 #### HTML element CSS class
 
-Parameter name: class
+Parameter name: <code>class</code>
 
 Class of the wrapping HTML element. Default: <code>subpagelist</code>
 
 #### Limiting the result set
 
-Parameter name: limit
+Parameter name: <code>limit</code>
 
 This parameter specifies the limit used by the query that finds the subpages.
 It should be a whole number between 1 and 500, bounds included. The default
@@ -164,11 +165,11 @@ is 200.
 The size of the actual list might be a bit above the upper bound, as non-existing
 pages in the subpage tree get added to it. It might also be lower then the upper
 bound even when there are more pages then the specified limit, as certain parameters
-(ie "kidsonly") omit pages from the result set.
+(i.e., <code>kidsonly</code>) omit pages from the result set.
 
 #### Sort
 
-Parameter name: sort
+Parameter name: <code>sort</code>
 
 Alphabetic sorting order of the pages. The allowed values are <code>asc</code> for ascending (A first)
 and <code>desc</code> for descending (Z first). The default is <code>asc</code>.
@@ -178,12 +179,12 @@ This sort is applied after the limit to the resdult set. So this is not a global
 ### Default parameters
 
 When using the parser function, a number of parameters can be provided without
-specying their name. Those parameters are listed below, in order:
+specifying their name. Those parameters are listed below, in order:
 
-* page
-* format
-* pathstyle
-* sort
+* `page`
+* `format`
+* `pathstyle`
+* `sort`
  
 This means you can do <code>{{#subpages:YourPageName|ol}}</code>
 instead of <code>{{#subpages:page=YourPageName|format=ol}}</code>.

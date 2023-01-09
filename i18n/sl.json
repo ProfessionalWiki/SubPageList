@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"spl-desc": "Omogoča navedbo seznama in števila podstrani",
+	"spl-nosubpages": "Stran »$1« nima podstrani za navedbo.",
+	"spl-noparentpage": "Stran »$1« ne obstaja.",
+	"spl-nopages": "Imenski prostor »$1« nima strani.",
+	"spl-subpages-par-sort": "Smer razvrstitve. Dovoljene vrednosti: »asc« (naraščajoče) in »desc« (padajoče).",
+	"spl-subpages-par-sortby": "Po čem naj se razvrstijo podstrani. Dovoljeni vrednosti: »title« (naslov) in »lastedit« (zadnje urejanje).",
+	"spl-subpages-par-format": "Seznam podstrani je lahko prikazan v več oblikah. Dovoljene vrednosti: »ol« — urejen (oštevilčen) seznam, »ul« — neurejeni (označen) seznam, »list« — preprost seznam (na primer seznam, ločen z vejicami).",
+	"spl-subpages-par-page": "Stran, katere podstrani naj se navedejo, ali ime imenskega prostora (vključno s končnim dvopičjem), katerega strani naj se navedejo. Privzeto je nastavljena trenutna stran.",
+	"spl-subpages-par-showpage": "Označuje, ali naj bo v seznamu navedena sama stran.",
+	"spl-subpages-par-pathstyle": "Slog poti za podstrani na seznamu. Dovoljene vrednosti: »fullpagename« — celotno ime strani (vključno z imenskim prostorom), »pagename« — ime strani (brez imenskega prostora), »subpagename« — relativno ime strani, ki se začne s stranjo, za katero navajamo podstrani, »none« — samo končni del imena za zadnjo poševnico.",
+	"spl-subpages-par-kidsonly": "Omogoča navedbo samo neposrednih podstrani.",
+	"spl-subpages-par-limit": "Največje število strani za navedbo.",
+	"spl-subpages-par-element": "HTML-element, ki obdaja seznam (vključno z besedili »intro« in »outro« ali »default«). Dovoljene vrednosti: »div«, »p«, »span«.",
+	"spl-subpages-par-class": "Vrednost atributa »class« HTML-elementa, ki obdaja seznam.",
+	"spl-subpages-par-intro": "Besedilo za izpis pred seznamom, če seznam ni prazen.",
+	"spl-subpages-par-outro": "Besedilo za izpis po seznamu, če seznam ni prazen.",
+	"spl-subpages-par-default": "Besedilo za izpis namesto seznama, če je seznam prazen. Če je prazen, bo prikazano sporočilo o napaki (npr. »Stran nima podstrani za navedbo«). Če boste predložili vezaj (»-«), bo rezultat popolnoma prazen.",
+	"spl-subpages-par-separator": "Besedilo za izpis med dvema elementoma seznama v primeru oblike »list« (in sopomenke »bar«). Pri drugih oblikah nima učinka.",
+	"spl-subpages-par-template": "Ime predloge. Predloga se uporabi za vsak element seznama. Element se posreduje kot prvi (nepoimenovani) argument. Upoštevajte, da predloga ne prekliče oblike seznama. Oblikovanje (»ul«, »ol«, »list«) se uporabi za rezultat predloge.",
+	"spl-subpages-par-links": "Če je »true« (res), se elementi seznama upodobijo kot povezave. Če je »false« (ni res), se elementi seznama upodobijo kot golo besedilo. To je zlasti uporabno pri posredovanju elementov v predloge za nadaljnjo obdelavo.",
+	"spl-subpages-par-redirects": "Če je »true« (res), so v seznam vključene preusmeritve. Če je »false« (ni res), preusmeritve niso vključene."
+}

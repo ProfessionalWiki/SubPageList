@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Hamilton Abreu",
 			"Purodha",
 			"Shirayuki",
@@ -24,7 +25,7 @@
 	"spl-subpages-par-class": "{{doc-important|Do not translate \"class\".}}",
 	"spl-subpages-par-intro": "See also:\n* {{msg-mw|Spl-subpages-par-outro}}",
 	"spl-subpages-par-outro": "See also:\n* {{msg-mw|Spl-subpages-par-intro}}",
-	"spl-subpages-par-default": "Used as description",
+	"spl-subpages-par-default": "Used as description.\n\nPossible error message: {{msg-mw|Movenosubpage}}",
 	"spl-subpages-par-separator": "{{doc-important|Do not translate \"list\" and \"bar\".}}",
 	"spl-subpages-par-template": "{{doc-important|Do not translate \"ul\", \"ol\", and \"list\".}}",
 	"spl-subpages-par-links": "Used as description",

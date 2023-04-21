@@ -38,7 +38,7 @@ class PageHierarchyCreatorTest extends TestCase {
 
 	public function testEmptyListResultsInEmptyList() {
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( [] );
+		$hierarchy = $hierarchyCreator->createHierarchy( [], $this->newMockTitle( 'SomePage' ) );
 
 		$this->assertInternalType( 'array', $hierarchy );
 		$this->assertEmpty( $hierarchy );
@@ -53,7 +53,7 @@ class PageHierarchyCreatorTest extends TestCase {
 			$this->newMockTitle( 'SomePage' ),
 			42,
 			$this->newMockTitle( 'OtherPage' )
-		] );
+		], $this->newMockTitle( 'SomePage' ) );
 	}
 
 	public function newMockTitle( $pageName ) {
@@ -70,7 +70,7 @@ class PageHierarchyCreatorTest extends TestCase {
 		$title = $this->newMockTitle( 'SomePage' );
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( [ $title ] );
+		$hierarchy = $hierarchyCreator->createHierarchy( [ $title ], $title );
 
 		$this->assertPageCount( 1, $hierarchy );
 
@@ -89,7 +89,8 @@ class PageHierarchyCreatorTest extends TestCase {
 		$this->assertContainsOnlyInstancesOf( 'SubPageList\Lister\Page', $hierarchy );
 	}
 
-	public function testMultipleTopLevelTitlesStayOnTopLevel() {
+	public function testMultipleRootsException() {
+		$this->expectException( \InvalidArgumentException::class );
 		$titles = [
 			$this->newMockTitle( 'SomePage' ),
 			$this->newMockTitle( 'OtherPage' ),
@@ -97,7 +98,7 @@ class PageHierarchyCreatorTest extends TestCase {
 		];
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( $titles );
+		$hierarchy = $hierarchyCreator->createHierarchy( $titles, $this->newMockTitle( 'SomePage' ) );
 
 		$this->assertTopLevelTitlesEqual( $titles, $hierarchy );
 	}
@@ -122,11 +123,11 @@ class PageHierarchyCreatorTest extends TestCase {
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
 
-		$hierarchy = $hierarchyCreator->createHierarchy( [ $topLevelPage, $childPage ] );
+		$hierarchy = $hierarchyCreator->createHierarchy( [ $topLevelPage, $childPage ], $topLevelPage );
 
 		$this->assertHasParentAndChild( $topLevelPage, $childPage, $hierarchy );
 
-		$hierarchy = $hierarchyCreator->createHierarchy( [ $childPage, $topLevelPage ] );
+		$hierarchy = $hierarchyCreator->createHierarchy( [ $childPage, $topLevelPage ], $topLevelPage );
 
 		$this->assertHasParentAndChild( $topLevelPage, $childPage, $hierarchy );
 	}
@@ -148,7 +149,7 @@ class PageHierarchyCreatorTest extends TestCase {
 		$grandGrandChildPage = $this->newMockTitle( 'SomePage/ChildPage/GrandChildPage/HipsterPage' );
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( [ $topLevelPage, $grandGrandChildPage ] );
+		$hierarchy = $hierarchyCreator->createHierarchy( [ $grandGrandChildPage, $topLevelPage ], $topLevelPage );
 
 		$this->assertEquals(
 			[
@@ -179,7 +180,7 @@ class PageHierarchyCreatorTest extends TestCase {
 		$grandChildPage = $this->newMockTitle( 'SomePage/ChildPage/GrandChildPage' );
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( [ $grandChildPage ] );
+		$hierarchy = $hierarchyCreator->createHierarchy( [ $grandChildPage ], $this->newMockTitle( 'SomePage' ) );
 
 		$this->assertEquals(
 			[
@@ -212,7 +213,7 @@ class PageHierarchyCreatorTest extends TestCase {
 		$pages[] = $this->newMockTitle( 'SomePage/Child2/GrandChild21' );
 
 		$hierarchyCreator = $this->newPageHierarchyCreator();
-		$hierarchy = $hierarchyCreator->createHierarchy( $pages );
+		$hierarchy = $hierarchyCreator->createHierarchy( $pages, $this->newMockTitle( 'SomePage' ) );
 
 		$this->assertEquals(
 			[

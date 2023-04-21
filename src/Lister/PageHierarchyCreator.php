@@ -35,43 +35,55 @@ class PageHierarchyCreator {
 	 */
 	private $titleFactory;
 
+	/**
+	 * @param TitleFactory $titleFactory
+	 */
 	public function __construct( TitleFactory $titleFactory ) {
 		$this->titleFactory = $titleFactory;
 	}
 
 	/**
-	 * @param Title[] $titles
+	 * @param Title $titles
+	 * @param Title $rootTitle
 	 *
 	 * @return Page[]
 	 */
-	public function createHierarchy( array $titles ) {
+	public function createHierarchy( array $titles, Title $rootTitle ) {
 		$this->assertAreTitles( $titles );
 
 		$this->pages = [];
 		$this->allPages = [];
 
 		foreach ( $titles as $title ) {
-			$this->addTitle( $title );
+			$this->addTitle( $title, $rootTitle );
 		}
 
 		return $this->pages;
 	}
 
-	private function addTitle( Title $title ) {
+	/**
+	 * @param Title $title
+	 * @param Title $rootTitle
+	 *
+	 * @return void
+	 */
+	private function addTitle( Title $title, Title $rootTitle ) {
 		$page = new Page( $title, [] );
 		$titleText = $this->getTextForTitle( $title );
-
-		$parentTitle = $this->getParentTitle( $titleText );
-
-		if ( $parentTitle === '' ) {
+		if ( $titleText === $this->getTextForTitle( $rootTitle ) ) {
 			$this->addTopLevelPage( $titleText, $page );
-		}
-		else {
-			$this->createParents( $titleText );
+		} else {
+			$parentTitle = $this->getParentTitle( $titleText );
+			$this->createParents( $titleText, $rootTitle );
 			$this->addSubPage( $parentTitle, $titleText, $page );
 		}
 	}
 
+	/**
+	 * @param Title $title
+	 *
+	 * @return string|null
+	 */
 	private function getTextForTitle( Title $title ) {
 		return $title->getFullText();
 	}
@@ -99,17 +111,25 @@ class PageHierarchyCreator {
 		}
 	}
 
-	private function createParents( $pageTitle ) {
+	/**
+	 * @param string $pageTitle
+	 * @param Title $rootTitle
+	 *
+	 * @return void
+	 */
+	private function createParents( $pageTitle, Title $rootTitle ) {
+		$topLevelPage = $this->getTextForTitle( $rootTitle );
+		if ( strpos( $pageTitle, $topLevelPage ) !== 0 ) {
+			throw new InvalidArgumentException( 'The root title is not a parent of the page title' );
+		}
+		// Remove root page from page title being evaluated
+		$pageTitle = substr( $pageTitle, strlen( $topLevelPage . '/' ) );
 		$titleParts = $this->getTitleParts( $pageTitle );
-		array_pop( $titleParts );
-
+		// Make sure top-level-page is added before trying to add subpages
+		$this->addTopLevelPage( $topLevelPage, $this->newPageFromText( $topLevelPage ) );
 		if ( empty( $titleParts ) ) {
 			return;
 		}
-
-		$topLevelPage =  array_shift( $titleParts );
-
-		$this->addTopLevelPage( $topLevelPage, $this->newPageFromText( $topLevelPage ) );
 
 		$previousParts = [ $topLevelPage ];
 
@@ -124,24 +144,49 @@ class PageHierarchyCreator {
 		}
 	}
 
+	/**
+	 * @param string $titleText
+	 *
+	 * @return Page
+	 */
 	private function newPageFromText( $titleText ) {
 		return new Page( $this->titleFactory->newFromText( $titleText ) );
 	}
 
+	/**
+	 * @param string $titleText
+	 *
+	 * @return false|string[]
+	 */
 	private function getTitleParts( $titleText ) {
 		return explode( '/', $titleText );
 	}
 
+	/**
+	 * @param array $titleParts
+	 *
+	 * @return string
+	 */
 	private function titleTextFromParts( array $titleParts ) {
 		return implode( '/', $titleParts );
 	}
 
+	/**
+	 * @param string $titleText
+	 *
+	 * @return string
+	 */
 	private function getParentTitle( $titleText ) {
 		$titleParts = $this->getTitleParts($titleText );
 		array_pop( $titleParts );
 		return $this->titleTextFromParts( $titleParts );
 	}
 
+	/**
+	 * @param array $titles
+	 *
+	 * @return void
+	 */
 	private function assertAreTitles( array $titles ) {
 		foreach ( $titles as $title ) {
 			if ( !( $title instanceof Title ) ) {

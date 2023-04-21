@@ -2,6 +2,7 @@
 
 namespace SubPageList\Lister\UI;
 
+use MediaWiki\MediaWikiServices;
 use SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer;
 use SubPageList\Lister\UI\PageRenderer\PlainPageRenderer;
 use SubPageList\Lister\UI\PageRenderer\TemplatePageRenderer;
@@ -31,7 +32,7 @@ class HierarchyRendererFactory {
 		if ( $options['format'] === 'ol' ) {
 			$treeListOptions[TreeListRenderer::OPT_FORMAT] = TreeListRenderer::FORMAT_OL;
 		}
-		
+
 		$treeListOptions[TreeListRenderer::OPT_ADDLEVEL] = $options['addlevel'];
 
 		return new TreeListRenderer(
@@ -41,7 +42,9 @@ class HierarchyRendererFactory {
 	}
 
 	private function newPageRenderer( array $options ) {
-		$renderer = new PlainPageRenderer( $this->getPathStyle( $options['pathstyle'] ) );
+		$renderer = new PlainPageRenderer(
+			MediaWikiServices::getInstance()->getPageProps(), $this->getPathStyle( $options['pathstyle'] )
+		);
 
 		if ( $options['template'] !== '' ) {
 			$renderer = new TemplatePageRenderer( $renderer, $options['template'] );
@@ -66,6 +69,8 @@ class HierarchyRendererFactory {
 			'fullpagename' => PlainPageRenderer::PATH_FULL,
 
 			'pagename' => PlainPageRenderer::PATH_NO_NS,
+
+			'displaytitle' => PlainPageRenderer::PATH_DISPLAYTITLE,
 		];
 
 		return $styles[$pathStyle];

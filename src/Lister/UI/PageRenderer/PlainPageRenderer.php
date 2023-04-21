@@ -2,6 +2,7 @@
 
 namespace SubPageList\Lister\UI\PageRenderer;
 
+use PageProps;
 use SubPageList\Lister\Page;
 use Title;
 
@@ -17,11 +18,16 @@ class PlainPageRenderer extends PageRenderer {
 	const PATH_NO_NS = 'noNs'; // Foo/Bar/Baz
 	const PATH_NONE = 'none'; // Baz
 	const PATH_SUB_PAGE = 'subPage'; // Baz (for full page Foo:Bar it is Foo:Bar)
+	const PATH_DISPLAYTITLE = 'displayTitle';
+
+	/** @var PageProps */
+	private $pageProps;
 
 	private $pathStyle;
 
-	public function __construct( $pathStyle = self::PATH_FULL ) {
+	public function __construct( PageProps $pageProps, $pathStyle = self::PATH_FULL ) {
 		$this->pathStyle = $pathStyle;
+		$this->pageProps = $pageProps;
 	}
 
 	/**
@@ -33,6 +39,10 @@ class PlainPageRenderer extends PageRenderer {
 	 */
 	public function renderPage( Page $page ) {
 		$title = $page->getTitle();
+
+		if ( $this->pathStyle === self::PATH_DISPLAYTITLE ) {
+			return $this->getPageDisplayTitle( $title );
+		}
 
 		if ( $this->pathStyle === self::PATH_NONE ) {
 			return $this->getBaseText( $title );
@@ -61,6 +71,20 @@ class PlainPageRenderer extends PageRenderer {
 		}
 
 		return $text;
+	}
+
+	/**
+	 * @param Title $title
+	 *
+	 * @return string
+	 */
+	private function getPageDisplayTitle( Title $title ) {
+		$props = $this->pageProps->getProperties( $title, [ 'displaytitle' ] );
+		if ( isset( $props[$title->getArticleID()] ) && isset( $props[$title->getArticleID()]['displaytitle'] ) ) {
+			return (string) $props[$title->getArticleID()]['displaytitle'];
+		}
+
+		return $title->getSubpageText();
 	}
 
 }

@@ -23,7 +23,7 @@ class PlainPageRendererTest extends TestCase {
 	public function testRenderPage( Page $page, $pathStyle, $expected ) {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
 
-		$renderer = new PlainPageRenderer( $pathStyle );
+		$renderer = new PlainPageRenderer( $this->createMock( \PageProps::class ), $pathStyle );
 
 		$actual = $renderer->renderPage( $page );
 

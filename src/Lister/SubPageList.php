@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace SubPageList\Lister;
 
@@ -103,16 +103,15 @@ class SubPageList implements HookHandler {
 		$this->subPageFinder->setIncludeRedirects( $includeRedirects );
 
 		$subPageTitles = $this->subPageFinder->getSubPagesFor( $title );
+
 		$subPageTitles[] = $title;
 
-		$pageHierarchy = $this->pageHierarchyCreator->createHierarchy( $subPageTitles );
+		$pageHierarchy = $this->pageHierarchyCreator->createHierarchy( $subPageTitles, $title );
 
 		if ( count( $pageHierarchy ) !== 1 ) {
 			throw new LogicException( 'Expected exactly one top level page' );
 		}
-
-		$topLevelPage = reset( $pageHierarchy );
-		return $topLevelPage;
+		return reset( $pageHierarchy );
 	}
 
 	private function shouldUseDefault( Page $topLevelPage, $showTopLevelPage ) {

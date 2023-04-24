@@ -186,7 +186,6 @@ class Extension {
 			'aliases' => 'link',
 			'default' => true,
 		];
-		
 		$params['redirects'] = [
 			'type' => 'boolean',
 			'aliases' => 'redirect',
@@ -208,7 +207,6 @@ class Extension {
 			'default' => 0,
 			'range' => [ 0, 10 ],
 		];
-		
 		$params['element'] = [
 			'default' => 'div',
 			'aliases' => [ 'div', 'p', 'span', 'none' ],
@@ -236,10 +234,10 @@ class Extension {
 				'subpagename', 'children', 'notparent',
 				'pagename',
 				'full',
-				'fullpagename'
+				'fullpagename', 'displaytitle'
 			],
 			'tolower' => true,
-			'default' => 'subpagename',
+			'default' => 'displaytitle',
 		];
 
 		$params['kidsonly'] = [

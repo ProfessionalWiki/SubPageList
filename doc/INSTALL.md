@@ -111,7 +111,7 @@ On the command line, go to the base directory of your MediaWiki installation and
 following two commands:
 
 ```shell script
-COMPOSER=composer.local.json composer require --no-update mediawiki/sub-page-list:~2.0
+COMPOSER=composer.local.json composer require --no-update mediawiki/sub-page-list:~2.1
 ```
 
 ```shell script

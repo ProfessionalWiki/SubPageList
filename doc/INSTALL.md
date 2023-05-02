@@ -16,10 +16,16 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 		<th>Release status</th>
 	</tr>
 	<tr>
-		<th>2.0.x</th>
+		<th>2.1.x</th>
 		<td>7.3 - 7.4</td>
-		<td><strong>1.35</strong> - 1.39</td>
+		<td>1.35 - 1.39</td>
 		<td><strong>Stable release</strong></td>
+	</tr>
+	<tr>
+		<th>2.0.x</th>
+		<td><strong>7.3</strong> - 7.4</td>
+		<td><strong>1.35</strong> - 1.39</td>
+		<td>Obsolete release</td>
 	</tr>
 	<tr>
 		<th>1.6.x</th>

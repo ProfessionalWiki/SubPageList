@@ -1,5 +1,11 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 2.1.0 (2023-05-02)
+
+* Fixed `showpage` and `kidsonly` parameters when requested page is a subpage. (by Dejan Savuljesku)
+* Shows the display title of the subpage if available (by Dejan Savuljesku)
+* Localization updates from https://translatewiki.net
+
 ## Version 2.0.2 (2022-12-07)
 
 * Added support for MediaWiki 1.39 (by Chris Boot)

@@ -3,7 +3,6 @@ These are the release notes for the [SubPageList extension](../README.md).
 ## Version 3.0.0 (2023-06-15)
 
 * Fixed semantic versioning issue caused by backward incompatible changes already done with version 2.1.0
-* Fixed support for Composer 2.2.1+ (by Karsten Hoffmeyer @Professional Wiki)
 
 ## Version 2.1.0 (2023-05-02)
 

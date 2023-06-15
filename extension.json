@@ -1,6 +1,6 @@
 {
 	"name": "SubPageList",
-	"version": "2.1.0",
+	"version": "3.0.0",
 	"author": [
 		"[https://www.entropywins.wtf/mediawiki Jeroen De Dauw]",
 		"[https://professional.wiki/ Professional.Wiki]"
@@ -10,7 +10,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "parserhook",
 	"requires": {
-		"MediaWiki": ">= 1.35.0"
+		"MediaWiki": ">= 1.36.0"
 	},
 	"AutoloadNamespaces": {
 		"SubPageList\\": "src/"

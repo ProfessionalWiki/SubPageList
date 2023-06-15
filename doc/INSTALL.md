@@ -16,9 +16,15 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 		<th>Release status</th>
 	</tr>
 	<tr>
+		<th>3.0.x</th>
+		<td>7.3 - 7.4</td>
+		<td>1.36 - 1.39</td>
+		<td><strong>Stable release</strong></td>
+	</tr>
+	<tr>
 		<th>2.1.x</th>
 		<td>7.3 - 7.4</td>
-		<td>1.35 - 1.39</td>
+		<td><strong>1.36</strong> - 1.39</td>
 		<td><strong>Stable release</strong></td>
 	</tr>
 	<tr>
@@ -81,6 +87,12 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 		<th>PostgreSQL</th>
 	</tr>
 	<tr>
+		<th>3.x</th>
+		<td>Full support</td>
+		<td>Full support</td>
+		<td>Unknown</td>
+	</tr>
+	<tr>
 		<th>2.x</th>
 		<td>Full support</td>
 		<td>Full support</td>
@@ -111,7 +123,7 @@ On the command line, go to the base directory of your MediaWiki installation and
 following two commands:
 
 ```shell script
-COMPOSER=composer.local.json composer require --no-update mediawiki/sub-page-list:~2.1
+COMPOSER=composer.local.json composer require --no-update mediawiki/sub-page-list:~3.0
 ```
 
 ```shell script

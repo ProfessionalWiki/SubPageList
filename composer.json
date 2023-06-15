@@ -29,6 +29,7 @@
 	"config": {
 		"allow-plugins": {
 			"composer/installers": true
+		}
 	},
 	"extra": {
 		"branch-alias": {

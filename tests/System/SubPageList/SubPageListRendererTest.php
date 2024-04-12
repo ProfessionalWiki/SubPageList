@@ -120,7 +120,7 @@ class SubPageListRendererTest extends TestCase {
 	private function newParser() {
 		$parser = new \Parser();
 
-		$parser->mOptions = new \ParserOptions();
+		$parser->setOptions( new \ParserOptions() );
 		$parser->clearState();
 		$parser->setTitle( \Title::newFromText( self::CURRENT_PAGE_NAME ) );
 

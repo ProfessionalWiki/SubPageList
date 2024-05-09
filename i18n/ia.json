@@ -13,7 +13,7 @@
 	"spl-subpages-par-format": "Le lista de subpaginas pote esser presentate in plure formatos. Valores permittite: \"ol\" — lista ordinate (con numeros), \"ul\" — lista non ordinate (con punctos), \"list\" — lista simple (p.ex. un lista separate per commas).",
 	"spl-subpages-par-page": "Le pagina del qual presentar le subpaginas, o le nomine del spatio de nomines (incluse le duo punctos final) del qual presentar le paginas. Le predefinition es le pagina actual.",
 	"spl-subpages-par-showpage": "Indica si le pagina mesme debe figurar in le lista o non.",
-	"spl-subpages-par-pathstyle": "Le stilo del cammino pro subpaginas in le lista. Valores permittite: \"fullpagename\" — nomine complete del pagina (incluse le spatio de nomines), \"pagename\" — nomine del pagina (sin spatio de nomines), \"subpagename\" — nomine relative del pagina, comenciante al pagina del qual nos lista le subpaginas, \"none\" — solmente le parte final del nomine post le ultime barra oblique.",
+	"spl-subpages-par-pathstyle": "Le stilo del percurso pro le subpaginas in le lista. Valores permittite: “fullpagename” — nomine complete del pagina (incluse le spatio de nomines), “pagename” — nomine del pagina (sin spatio de nomines), “subpagename” — nomine relative del pagina, comenciante al pagina del qual nos lista le subpaginas, “none” — solmente le parte final del nomine post le ultime barra oblique.",
 	"spl-subpages-par-kidsonly": "Permitte monstrar solmente subpaginas directe.",
 	"spl-subpages-par-limit": "Le numero maxime de paginas a listar.",
 	"spl-subpages-par-element": "Le elemento HTML que circumfere le lista (incluse le textos \"intro\" e \"outro\" o \"default\"). Valores permittite: \"div\", \"p\", \"span\".",

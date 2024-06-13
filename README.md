@@ -18,7 +18,8 @@ View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList
 * [Installation and configuration](doc/INSTALL.md)
 * [Usage instructions and examples](doc/USAGE.md)
 
-Professional support and custom development is available via [Professional.Wiki](https://professional.wiki/).
+[Professional.Wiki](https://professional.wiki/) provides 
+[Professional Support](https://professional.wiki/en/professional-mediawiki-support) and [Software Development](https://professional.wiki/en/mediawiki-development).
 
 ## Project status
 

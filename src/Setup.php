@@ -2,6 +2,8 @@
 
 namespace SubPageList;
 
+use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\MediaWikiServices;
 use Parser;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -27,9 +29,9 @@ class Setup {
 	private $extension;
 
 	/**
-	 * @var array[]
+	 * @var HookContainer
 	 */
-	private $hooks;
+	private $hookContainer;
 
 	/**
 	 * @var string
@@ -38,11 +40,11 @@ class Setup {
 
 	/**
 	 * @param Extension $extension
-	 * @param array $hooks
+	 * @param HookContainer $hookContainer
 	 * @param string $rootDirectory
 	 */
-	public function __construct( Extension $extension, array &$hooks, $rootDirectory ) {
-		$this->hooks =& $hooks;
+	public function __construct( Extension $extension, HookContainer &$hookContainer, $rootDirectory ) {
+		$this->hookContainer =& $hookContainer;
 		$this->extension = $extension;
 		$this->rootDirectory = $rootDirectory;
 	}
@@ -54,7 +56,8 @@ class Setup {
 	 */
 	public static function onExtensionFunctions() {
 		$extension = new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
-		$extensionSetup = new \SubPageList\Setup( $extension, $GLOBALS['wgHooks'], dirname( __DIR__ ) );
+		$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
+		$extensionSetup = new \SubPageList\Setup( $extension, $hookContainer, dirname( __DIR__ ) );
 
 		$extensionSetup->run();
 	}
@@ -77,7 +80,7 @@ class Setup {
 		 * Called when the parser initialises for the first time.
 		 * https://www.mediawiki.org/wiki/Manual:Hooks/ParserFirstCallInit
 		 */
-		$this->hooks['ParserFirstCallInit'][] = function( Parser &$parser ) use ( $extension ) {
+		$this->hookContainer->register( 'ParserFirstCallInit', function( Parser &$parser ) use ( $extension ) {
 			$hookRegistrant = $extension->getHookRegistrant( $parser );
 
 			$hookRegistrant->registerFunctionHandler(
@@ -101,7 +104,7 @@ class Setup {
 			);
 
 			return true;
-		};
+		} );
 	}
 
 	private function registerCacheInvalidator() {
@@ -111,8 +114,7 @@ class Setup {
 		 * Occurs after a new article has been created.
 		 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleInsertComplete
 		 */
-		$this->hooks['ArticleInsertComplete'][]
-			= function( WikiPage $article, User &$user, $text, $summary, $minorEdit,
+		$this->hookContainer->register( 'ArticleInsertComplete', function( WikiPage $article, User &$user, $text, $summary, $minorEdit,
 			$watchThis, $sectionAnchor, &$flags, Revision $revision ) use ( $extension ) {
 
 			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
@@ -120,25 +122,25 @@ class Setup {
 			}
 
 			return true;
-		};
+		} );
 
 		/**
 		 * Occurs after the delete article request has been processed.
 		 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDeleteComplete
 		 */
-		$this->hooks['ArticleDeleteComplete'][] = function( &$article, User &$user, $reason, $id ) use ( $extension ) {
+		$this->hookContainer->register( 'ArticleDeleteComplete', function( &$article, User &$user, $reason, $id ) use ( $extension ) {
 			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
 				$extension->getCacheInvalidator()->invalidateCaches( $article->getTitle() );
 			}
 
 			return true;
-		};
+		} );
 
 		/**
 		 * Occurs whenever a request to move an article is completed.
 		 * https://www.mediawiki.org/wiki/Manual:Hooks/TitleMoveComplete
 		 */
-		$this->hooks['TitleMoveComplete'][] = function( Title &$title, Title &$newTitle, User &$user, $oldId, $newId ) use ( $extension ) {
+		$this->hookContainer->register( 'TitleMoveComplete', function( Title &$title, Title &$newTitle, User &$user, $oldId, $newId ) use ( $extension ) {
 			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
 				$invalidator = $extension->getCacheInvalidator();
 
@@ -147,7 +149,7 @@ class Setup {
 			}
 
 			return true;
-		};
+		} );
 	}
 
 	private function registerUnitTests() {
@@ -163,7 +165,7 @@ class Setup {
 		 *
 		 * @return boolean
 		 */
-		$this->hooks['UnitTestsList'][]	= function( array &$files ) use ( $rootDirectory ) {
+		$this->hookContainer->register( 'UnitTestsList', function( array &$files ) use ( $rootDirectory ) {
 			$directoryIterator = new RecursiveDirectoryIterator( $rootDirectory . '/tests/' );
 
 			/**
@@ -176,7 +178,7 @@ class Setup {
 			}
 
 			return true;
-		};
+		} );
 	}
 
 }

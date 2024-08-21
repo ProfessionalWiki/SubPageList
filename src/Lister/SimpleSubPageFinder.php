@@ -5,8 +5,8 @@ namespace SubPageList\Lister;
 use InvalidArgumentException;
 use SubPageList\Counter\SubPageCounter;
 use SubPageList\DBConnectionProvider;
+use SubPageList\TitleFactory;
 use Title;
-use TitleArray;
 
 /**
  * Simple subpage finder and counter that uses a like query
@@ -32,6 +32,11 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	private $connectionProvider;
 
 	/**
+	 * @var TitleFactory
+	 */
+	private $titleFactory;
+
+	/**
 	 * @var array
 	 */
 	private $options;
@@ -40,9 +45,11 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	 * @since 1.2
 	 *
 	 * @param DBConnectionProvider $connectionProvider
+	 * @param TitleFactory $titleFactory
 	 */
-	public function __construct( DBConnectionProvider $connectionProvider ) {
+	public function __construct( DBConnectionProvider $connectionProvider, TitleFactory $titleFactory ) {
 		$this->connectionProvider = $connectionProvider;
+		$this->titleFactory = $titleFactory;
 
 		$this->options = [
 			self::OPT_INCLUDE_REDIRECTS => false,
@@ -138,19 +145,23 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 		 * @var \DatabaseBase $dbr
 		 */
 		$dbr = $this->connectionProvider->getConnection();
-
-		$titleArray = TitleArray::newFromResult(
-			$dbr->select( 'page',
-				[ 'page_id', 'page_namespace', 'page_title', 'page_is_redirect' ],
-				$this->getConditions( $title ),
-				__METHOD__,
-				$this->getOptions()
-			)
+		$res = $dbr->select( 'page',
+			[ 'page_id', 'page_namespace', 'page_title', 'page_is_redirect' ],
+			$this->getConditions( $title ),
+			__METHOD__,
+			$this->getOptions()
 		);
+		$titleArray = [];
+		foreach ( $res as $row ) {
+			$titleArray [] = $this->titleFactory->newFromText(
+				$row->page_title,
+				$row->page_namespace
+			);
+		}
 
 		$this->connectionProvider->releaseConnection();
 
-		return iterator_to_array( $titleArray );
+		return $titleArray;
 	}
 
 	/**

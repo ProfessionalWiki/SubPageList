@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 use SubPageList\LazyDBConnectionProvider;
 use SubPageList\Lister\SimpleSubPageFinder;
 use SubPageList\Lister\SubPageFinder;
+use SubPageList\TitleFactory;
 use Title;
 
 /**
@@ -23,7 +24,8 @@ class SimpleSubPageFinderTest extends TestCase {
 	 * @return SubPageFinder
 	 */
 	public function newInstance() {
-		return new SimpleSubPageFinder( new LazyDBConnectionProvider( DB_REPLICA ) );
+		$titleFactory = new TitleFactory();
+		return new SimpleSubPageFinder( new LazyDBConnectionProvider( DB_REPLICA ), $titleFactory );
 	}
 
 	public function titleProvider() {

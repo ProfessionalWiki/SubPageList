@@ -66,7 +66,7 @@ class Extension {
 	 * @return SimpleSubPageFinder
 	 */
 	public function getSubPageFinder() {
-		return new SimpleSubPageFinder( $this->getSlaveConnectionProvider() );
+		return new SimpleSubPageFinder( $this->getSlaveConnectionProvider(), $this->getTitleFactory() );
 	}
 
 	/**
@@ -75,7 +75,7 @@ class Extension {
 	 * @return SubPageCounter
 	 */
 	public function getSubPageCounter() {
-		return new SimpleSubPageFinder( $this->getSlaveConnectionProvider() );
+		return new SimpleSubPageFinder( $this->getSlaveConnectionProvider(), $this->getTitleFactory() );
 	}
 
 	/**

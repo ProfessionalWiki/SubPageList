@@ -29,7 +29,7 @@ class LazyDBConnectionProviderTest extends TestCase {
 
 	public function constructorProvider() {
 		$argLists = [
-			[ DB_MASTER ],
+			[ DB_PRIMARY ],
 			[ DB_REPLICA ],
 		];
 
@@ -56,7 +56,7 @@ class LazyDBConnectionProviderTest extends TestCase {
 	public function instanceProvider() {
 		$argLists = [];
 
-		$argLists[] = [ new LazyDBConnectionProvider( DB_MASTER ) ];
+		$argLists[] = [ new LazyDBConnectionProvider( DB_PRIMARY ) ];
 		$argLists[] = [ new LazyDBConnectionProvider( DB_REPLICA ) ];
 
 		return $argLists;

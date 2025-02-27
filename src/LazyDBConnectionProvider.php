@@ -75,7 +75,7 @@ class LazyDBConnectionProvider implements DBConnectionProvider {
 
 			assert( $this->lb instanceof ILoadBalancer );
 
-			$this->connection = $this->lb->getConnectionRef( $this->connectionId, $this->groups, $this->wiki );
+			$this->connection = $this->lb->getConnection( $this->connectionId, $this->groups, $this->wiki );
 		}
 
 		assert( $this->connection instanceof IDatabase );

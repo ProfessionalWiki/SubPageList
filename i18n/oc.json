@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cedric31"
+			"Cedric31",
+			"Lhanars"
 		]
 	},
 	"spl-desc": "Permet de listar e comptar las sospaginas",
 	"spl-nosubpages": "La pagina « $1 » a pas cap de sospaginas de listar.",
-	"spl-noparentpage": "La pagina « $1 » existís pas.",
+	"spl-noparentpage": "La pagina «$1» non existís pas.",
 	"spl-nopages": "L’espaci de nom « $1 » a pas cap de paginas."
 }

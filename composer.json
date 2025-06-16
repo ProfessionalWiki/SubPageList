@@ -7,18 +7,22 @@
 		"SubPage",
 		"SubPageList"
 	],
-	"homepage": "https://github.com/JeroenDeDauw/SubPageList/blob/master/README.md",
+	"homepage": "https://github.com/ProfessionalWiki/SubPageList#readme",
 	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "Jeroen De Dauw",
 			"email": "jeroendedauw@gmail.com",
-			"homepage": "https://www.entropywins.wtf",
-			"role": "Developer"
+			"homepage": "https://EntropyWins.wtf"
+		},
+		{
+			"name": "Professional.Wiki",
+			"email": "info@Professional.Wiki",
+			"homepage": "https://Professional.Wiki"
 		}
 	],
 	"support": {
-		"issues": "https://github.com/JeroenDeDauw/SubPageList/issues",
+		"issues": "https://github.com/ProfessionalWiki/SubPageList/issues",
 		"irc": "irc://irc.libera.chat/mediawiki"
 	},
 	"require": {

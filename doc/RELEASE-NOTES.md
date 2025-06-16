@@ -1,5 +1,10 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 3.0.1 (2025-06-16)
+
+* Added support for MediaWiki up to at least 1.43
+* Added support for PHP up to at least 8.4
+
 ## Version 3.0.0 (2023-06-15)
 
 * Fixed semantic versioning issue caused by backward incompatible changes already done with version 2.1.0

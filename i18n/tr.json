@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
+			"Joseph",
 			"MuratTheTurkish",
 			"Sadrettin"
 		]
@@ -17,7 +18,7 @@
 	"spl-subpages-par-showpage": "Sayfanın kendisinin listede gösterilip gösterilmeyeceğini belirtir.",
 	"spl-subpages-par-pathstyle": "Listedeki alt sayfaların yolunun stili. İzin verilen değerler: \"fullpagename\" - tam sayfa adı (ad alanı dahil), \"pagename\" - sayfa adı (ad alanı olmadan), \"subpagename\" - alt sayfalarını listelediğimiz sayfadan başlayarak göreli sayfa adı, \"none\" - sadece arka kısım Son eğik çizgiden sonra adın",
 	"spl-subpages-par-kidsonly": "Yalnızca doğrudan alt sayfaların gösterilmesine izin verir.",
-	"spl-subpages-par-limit": "Listelenecek maksimum sayfa sayısı.",
+	"spl-subpages-par-limit": "Listelenecek en fazla sayfa sayısı.",
 	"spl-subpages-par-element": "Listeyi çevreleyen HTML öğesi (\"intro\" ve \"outro\" veya \"default\" metinler dahil). İzin verilen değerler: \"div\", \"p\", \"span\".",
 	"spl-subpages-par-class": "Listeyi çevreleyen HTML öğesinin \"class\" özelliğinin değeri.",
 	"spl-subpages-par-intro": "Liste boş değilse, listeden önce çıkacak metin.",

@@ -10,7 +10,7 @@
 	"spl-nopages": "Imenski prostor »$1« nima strani.",
 	"spl-subpages-par-sort": "Smer razvrstitve. Dovoljene vrednosti: »asc« (naraščajoče) in »desc« (padajoče).",
 	"spl-subpages-par-sortby": "Po čem naj se razvrstijo podstrani. Dovoljeni vrednosti: »title« (naslov) in »lastedit« (zadnje urejanje).",
-	"spl-subpages-par-format": "Seznam podstrani je lahko prikazan v več oblikah. Dovoljene vrednosti: »ol« — urejen (oštevilčen) seznam, »ul« — neurejeni (označen) seznam, »list« — preprost seznam (na primer seznam, ločen z vejicami).",
+	"spl-subpages-par-format": "Seznam podstrani je lahko prikazan v več oblikah. Dovoljene vrednosti: »ol« — urejeni (oštevilčeni) seznam, »ul« — neurejeni (označeni) seznam, »list« — preprost seznam (na primer seznam, ločen z vejicami).",
 	"spl-subpages-par-page": "Stran, katere podstrani naj se navedejo, ali ime imenskega prostora (vključno s končnim dvopičjem), katerega strani naj se navedejo. Privzeto je nastavljena trenutna stran.",
 	"spl-subpages-par-showpage": "Označuje, ali naj bo v seznamu navedena sama stran.",
 	"spl-subpages-par-pathstyle": "Slog poti za podstrani na seznamu. Dovoljene vrednosti: »fullpagename« — celotno ime strani (vključno z imenskim prostorom), »pagename« — ime strani (brez imenskega prostora), »subpagename« — relativno ime strani, ki se začne s stranjo, za katero navajamo podstrani, »none« — samo končni del imena za zadnjo poševnico.",

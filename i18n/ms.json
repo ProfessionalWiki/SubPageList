@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Anakmalaysia",
-			"Jeluang Terluang"
+			"Jeluang Terluang",
+			"SNN95"
 		]
 	},
-	"spl-desc": "Membubuh teg <code><nowiki><splist /></nowiki></code> yang membolehkan anda untuk melihat senarai sublaman",
+	"spl-desc": "Membenarkan untuk menyenaraikan dan mengira subhalaman",
 	"spl-nosubpages": "Halaman \"$1\" tidak menyenaraikan sebarang subhalaman.",
 	"spl-noparentpage": "Halaman \"$1\" tidak wujud.",
 	"spl-nopages": "Ruang nama \"$1\" tiada halaman.",

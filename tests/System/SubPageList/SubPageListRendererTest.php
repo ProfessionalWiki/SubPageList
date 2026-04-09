@@ -6,7 +6,7 @@ use ParserHooks\FunctionRunner;
 use PHPUnit\Framework\TestCase;
 use SubPageList\Extension;
 use SubPageList\Settings;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @group SubPageList
@@ -122,7 +122,7 @@ class SubPageListRendererTest extends TestCase {
 
 		$parser->setOptions( new \ParserOptions() );
 		$parser->clearState();
-		$parser->setTitle( \Title::newFromText( self::CURRENT_PAGE_NAME ) );
+		$parser->setTitle( Title::newFromText( self::CURRENT_PAGE_NAME ) );
 
 		return $parser;
 	}

@@ -2,7 +2,7 @@
 
 namespace Tests\System\SubPageList;
 
-use Title;
+use MediaWiki\Title\Title;
 
 class PageDeleter {
 

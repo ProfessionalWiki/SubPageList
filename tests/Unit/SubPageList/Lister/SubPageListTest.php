@@ -7,6 +7,7 @@ use ParamProcessor\ProcessingResult;
 use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;
 use SubPageList\Lister\SubPageList;
+use MediaWiki\Title\Title;
 use SubPageList\TitleFactory;
 
 /**
@@ -32,7 +33,7 @@ class SubPageListTest extends TestCase {
 	}
 
 	private function newSubPageList( $titleText, $renderResult ) {
-		$title = \Title::newFromText( $titleText );
+		$title = Title::newFromText( $titleText );
 		$page = new Page( $title );
 
 		$finder = $this->createMock( 'SubPageList\Lister\SubPageFinder' );

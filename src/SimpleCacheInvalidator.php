@@ -3,7 +3,7 @@
 namespace SubPageList;
 
 use SubPageList\Lister\SubPageFinder;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Naive cache invalidator that invalidates subpages and the top parent page.

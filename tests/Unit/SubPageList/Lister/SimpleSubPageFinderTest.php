@@ -7,7 +7,7 @@ use SubPageList\LazyDBConnectionProvider;
 use SubPageList\Lister\SimpleSubPageFinder;
 use SubPageList\Lister\SubPageFinder;
 use SubPageList\TitleFactory;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @covers \SubPageList\Lister\SimpleSubPageFinder

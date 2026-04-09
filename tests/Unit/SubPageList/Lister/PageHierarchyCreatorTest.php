@@ -5,7 +5,7 @@ namespace Tests\Unit\SubPageList\Lister;
 use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;
 use SubPageList\Lister\PageHierarchyCreator;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @covers \SubPageList\Lister\PageHierarchyCreator

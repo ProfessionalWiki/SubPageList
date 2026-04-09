@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\SubPageList\Lister;
 
-use Title;
+use MediaWiki\Title\Title;
 
 class RedirectCreator {
 

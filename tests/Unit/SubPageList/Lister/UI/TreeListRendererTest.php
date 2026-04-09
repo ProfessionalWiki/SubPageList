@@ -5,7 +5,7 @@ namespace Tests\Unit\SubPageList\Lister\UI;
 use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;
 use SubPageList\Lister\UI\TreeListRenderer;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @covers \SubPageList\Lister\UI\TreeListRenderer

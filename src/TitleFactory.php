@@ -2,7 +2,7 @@
 
 namespace SubPageList;
 
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Factory to construct Title objects.

@@ -3,7 +3,7 @@
 namespace SubPageList\Lister;
 
 use InvalidArgumentException;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Interface for subpage finders.

@@ -1,0 +1,183 @@
+!! options
+version=2
+!! end
+
+
+!! article
+SubPageListTest
+!! text
+Top-level page for SubPageList parser tests.
+!! endarticle
+
+!! article
+SubPageListTest/Alpha
+!! text
+First subpage.
+!! endarticle
+
+!! article
+SubPageListTest/Beta
+!! text
+Second subpage.
+!! endarticle
+
+!! article
+SubPageListTest/Beta/Deep
+!! text
+Nested subpage under Beta.
+!! endarticle
+
+!! article
+SubPageListTest/Gamma
+!! text
+Third subpage.
+!! endarticle
+
+
+!! test
+subpages: basic list with default options
+!! config
+wgNamespacesWithSubpages={"0":true}
+!! wikitext
+{{#subpages: page=SubPageListTest}}
+!! html
+<div class="subpagelist">
+<ul><li><a href="/wiki/SubPageListTest/Alpha" title="SubPageListTest/Alpha">Alpha</a></li>
+<li><a href="/wiki/SubPageListTest/Beta" title="SubPageListTest/Beta">Beta</a>
+<ul><li><a href="/wiki/SubPageListTest/Beta/Deep" title="SubPageListTest/Beta/Deep">Deep</a></li></ul></li>
+<li><a href="/wiki/SubPageListTest/Gamma" title="SubPageListTest/Gamma">Gamma</a></li></ul>
+</div>
+!! end
+
+
+!! test
+subpages: showpage includes the parent page
+!! config
+wgNamespacesWithSubpages={"0":true}
+!! wikitext
+{{#subpages: page=SubPageListTest | showpage=yes}}
+!! html
+<div class="subpagelist">
+<p><a href="/wiki/SubPageListTest" title="SubPageListTest">SubPageListTest</a>
+</p>
+<ul><li><a href="/wiki/SubPageListTest/Alpha" title="SubPageListTest/Alpha">Alpha</a></li>
+<li><a href="/wiki/SubPageListTest/Beta" title="SubPageListTest/Beta">Beta</a>
+<ul><li><a href="/wiki/SubPageListTest/Beta/Deep" title="SubPageListTest/Beta/Deep">Deep</a></li></ul></li>
+<li><a href="/wiki/SubPageListTest/Gamma" title="SubPageListTest/Gamma">Gamma</a></li></ul>
+</div>
+!! end
+
+
+!! test
+subpages: ordered list format
+!! config
+wgNamespacesWithSubpages={"0":true}
+!! wikitext
+{{#subpages: page=SubPageListTest | format=ol}}
+!! html
+<div class="subpagelist">
+<ol><li><a href="/wiki/SubPageListTest/Alpha" title="SubPageListTest/Alpha">Alpha</a></li>
+<li><a href="/wiki/SubPageListTest/Beta" title="SubPageListTest/Beta">Beta</a>
+<ol><li><a href="/wiki/SubPageListTest/Beta/Deep" title="SubPageListTest/Beta/Deep">Deep</a></li></ol></li>
+<li><a href="/wiki/SubPageListTest/Gamma" title="SubPageListTest/Gamma">Gamma</a></li></ol>
+</div>
+!! end
+
+
+!! test
+subpages: without links
+!! config
+wgNamespacesWithSubpages={"0":true}
+!! wikitext
+{{#subpages: page=SubPageListTest | links=no}}
+!! html
+<div class="subpagelist">
+<ul><li>Alpha</li>
+<li>Beta
+<ul><li>Deep</li></ul></li>
+<li>Gamma</li></ul>
+</div>
+!! end
+
+
+!! test
+subpages: kidsonly limits to direct children
+!! config
+wgNamespacesWithSubpages={"0":true}
+!! wikitext
+{{#subpages: page=SubPageListTest | kidsonly=yes}}
+!! html
+<div class="subpagelist">
+<ul><li><a href="/wiki/SubPageListTest/Alpha" title="SubPageListTest/Alpha">Alpha</a></li>
+<li><a href="/wiki/SubPageListTest/Beta" title="SubPageListTest/Beta">Beta</a></li>
+<li><a href="/wiki/SubPageListTest/Gamma" title="SubPageListTest/Gamma">Gamma</a></li></ul>
+</div>
+!! end
+
+
+!! test
+subpages: limit restricts number of results
+!! config
+wgNamespacesWithSubpages={"0":true}
+!! wikitext
+{{#subpages: page=SubPageListTest | limit=2}}
+!! html
+<div class="subpagelist">
+<ul><li><a href="/wiki/SubPageListTest/Alpha" title="SubPageListTest/Alpha">Alpha</a></li>
+<li><a href="/wiki/SubPageListTest/Beta" title="SubPageListTest/Beta">Beta</a></li></ul>
+</div>
+!! end
+
+
+!! test
+subpages: page with no subpages shows default message
+!! config
+!! wikitext
+{{#subpages: page=SubPageListTest/Alpha}}
+!! html
+<p>"SubPageListTest/Alpha" has no sub pages.
+</p>
+!! end
+
+
+!! test
+subpages: custom default message
+!! config
+!! wikitext
+{{#subpages: page=SubPageListTest/Alpha | default=No children found}}
+!! html
+<p>No children found
+</p>
+!! end
+
+
+!! test
+subpages: suppress default with dash
+!! config
+!! wikitext
+{{#subpages: page=SubPageListTest/Alpha | default=-}}
+!! html
+
+!! end
+
+
+!! test
+subpagecount: counts subpages
+!! config
+!! wikitext
+{{#subpagecount: SubPageListTest}}
+!! html
+<p>4
+</p>
+!! end
+
+
+!! test
+subpagecount: page with no subpages returns zero
+!! config
+!! wikitext
+{{#subpagecount: SubPageListTest/Alpha}}
+!! html
+<p>0
+</p>
+!! end

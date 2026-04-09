@@ -2,7 +2,7 @@
 
 namespace SubPageList\Lister\UI\PageRenderer;
 
-use PageProps;
+use MediaWiki\Page\PageProps;
 use SubPageList\Lister\Page;
 use MediaWiki\Title\Title;
 

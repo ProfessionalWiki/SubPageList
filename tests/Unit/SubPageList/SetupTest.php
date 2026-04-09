@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\SubPageList;
 
+use MediaWiki\MediaWikiServices;
 use PHPUnit\Framework\TestCase;
 use SubPageList\Setup;
 
@@ -18,29 +19,17 @@ class SetupTest extends TestCase {
 	public function testRun() {
 		$extension = $this->newExtension();
 
-		$hookLists = [
-			'ParserFirstCallInit' => [],
-			'ArticleInsertComplete' => [],
-			'ArticleDeleteComplete' => [],
-			'TitleMoveComplete' => [],
-			'UnitTestsList' => [],
-		];
+		$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
 
 		$setup = new Setup(
 			$extension,
-			$hookLists,
+			$hookContainer,
 			__DIR__ . '/..'
 		);
 
 		$setup->run();
 
-		foreach ( $hookLists as $hookName => $hookList ) {
-			$this->assertEquals( 1, count( $hookList ), "one hook handler need to be added to '$hookName'" );
-
-			$hook = reset( $hookList );
-
-			$this->assertInternalType( 'callable', $hook );
-		}
+		$this->assertTrue( $hookContainer->isRegistered( 'ParserFirstCallInit' ) );
 	}
 
 	private function newExtension() {

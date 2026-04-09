@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\SubPageList\UI\PageRenderer;
+namespace Tests\Unit\SubPageList\Lister\UI\PageRenderer;
 
 use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;

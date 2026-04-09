@@ -100,7 +100,7 @@ class SubPageCountingTest extends TestCase {
 			$extension->getCountHookHandler()
 		);
 
-		$frame = $this->createMock( 'PPFrame' );
+		$frame = $this->createMock( \MediaWiki\Parser\PPFrame::class );
 
 		$frame->expects( $this->once() )
 			->method( 'expand' )
@@ -120,9 +120,9 @@ class SubPageCountingTest extends TestCase {
 	}
 
 	private function newParser() {
-		$parser = new \Parser();
+		$parser = \MediaWiki\MediaWikiServices::getInstance()->getParserFactory()->create();
 
-		$parser->setOptions( new \ParserOptions() );
+		$parser->setOptions( \MediaWiki\Parser\ParserOptions::newFromAnon() );
 		$parser->clearState();
 		$parser->setTitle( Title::newFromText( self::CURRENT_PAGE_NAME ) );
 

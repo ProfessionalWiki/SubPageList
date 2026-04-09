@@ -13,12 +13,14 @@ class RedirectCreator {
 	 *
 	 */
 	public function createRedirect( Title $title, $destination ) {
-		$page = new \WikiPage( $title );
+		$page = \MediaWiki\MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 
 		$pageContent = '#redirect [[' . $destination . ']]';
 		$editMessage = 'SPL system test: create redirect';
 
-		$page->doEditContent( new \WikitextContent( $pageContent ), $editMessage );
+		$page->newPageUpdater( \MediaWiki\User\User::newSystemUser( 'SPLTestUser' ) )
+			->setContent( \MediaWiki\Revision\SlotRecord::MAIN, new \WikitextContent( $pageContent ) )
+			->saveRevision( \MediaWiki\CommentStore\CommentStoreComment::newUnsavedComment( $editMessage ) );
 	}
 
 }

@@ -62,7 +62,7 @@ class LazyDBConnectionProvider implements DBConnectionProvider {
 	 *
 	 * @since 1.0
 	 *
-	 * @return DatabaseBase
+	 * @return IDatabase
 	 */
 	public function getConnection() {
 		if ( $this->connection === null ) {

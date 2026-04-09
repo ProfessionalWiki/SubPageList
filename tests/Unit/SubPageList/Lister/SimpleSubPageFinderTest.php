@@ -62,7 +62,7 @@ class SimpleSubPageFinderTest extends TestCase {
 
 		$pages = $finder->getSubPagesFor( $title );
 
-		$this->assertInternalType( 'array', $pages );
+		$this->assertIsArray( $pages );
 		$this->assertContainsOnlyInstancesOf( Title::class, $pages );
 	}
 
@@ -76,7 +76,7 @@ class SimpleSubPageFinderTest extends TestCase {
 
 		$pages = $finder->getSubPagesFor( $title );
 
-		$this->assertInternalType( 'array', $pages );
+		$this->assertIsArray( $pages );
 		$this->assertContainsOnlyInstancesOf( Title::class, $pages );
 
 		foreach ( $pages as $subPage ) {

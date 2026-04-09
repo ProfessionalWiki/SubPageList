@@ -142,7 +142,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	 */
 	public function getSubPagesFor( Title $title ) {
 		/**
-		 * @var \DatabaseBase $dbr
+		 * @var \Wikimedia\Rdbms\IDatabase $dbr
 		 */
 		$dbr = $this->connectionProvider->getConnection();
 		$res = $dbr->select( 'page',
@@ -175,7 +175,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	 */
 	public function countSubPages( Title $title ) {
 		/**
-		 * @var \DatabaseBase $dbr
+		 * @var \Wikimedia\Rdbms\IDatabase $dbr
 		 */
 		$dbr = $this->connectionProvider->getConnection();
 
@@ -202,7 +202,7 @@ class SimpleSubPageFinder implements SubPageFinder, SubPageCounter {
 	 */
 	private function getConditions( Title $title ) {
 		/**
-		 * @var \DatabaseBase $dbr
+		 * @var \Wikimedia\Rdbms\IDatabase $dbr
 		 */
 		$dbr = $this->connectionProvider->getConnection();
 

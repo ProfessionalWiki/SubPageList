@@ -25,7 +25,7 @@ class SubPageCountTest extends TestCase {
 		$subPageCount = $this->newSubPageCount( $titleText, $numberOfSubPages );
 		$countResult = $this->getCountResult( $subPageCount, $titleText );
 
-		$this->assertInternalType( 'string', $countResult );
+		$this->assertIsString( $countResult );
 		$this->assertEquals( (string)$numberOfSubPages . '.0', $countResult );
 	}
 
@@ -43,7 +43,7 @@ class SubPageCountTest extends TestCase {
 	}
 
 	private function getCountResult( SubPageCount $subPageCount, $titleText ) {
-		$language = $this->createMock( 'Language' );
+		$language = $this->createMock( \MediaWiki\Language\Language::class );
 
 		$language->expects( $this->once() )
 			->method( 'formatNum' )
@@ -51,7 +51,7 @@ class SubPageCountTest extends TestCase {
 				return (string)$number . '.0';
 			} ) );
 
-		$parser = $this->createMock( 'Parser' );
+		$parser = $this->createMock( \MediaWiki\Parser\Parser::class );
 
 		$parser->expects( $this->once() )
 			->method( 'getTargetLanguage' )

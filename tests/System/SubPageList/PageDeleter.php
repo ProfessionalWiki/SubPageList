@@ -7,8 +7,8 @@ use MediaWiki\Title\Title;
 class PageDeleter {
 
 	public function deletePage( Title $title ) {
-		$page = new \WikiPage( $title );
-		$page->doDeleteArticle( 'SPL system test: delete page' );
+		$page = \MediaWiki\MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
+		$page->doDeleteArticleReal( 'SPL system test: delete page', \MediaWiki\User\User::newSystemUser( 'SPLTestUser' ) );
 	}
 
 }

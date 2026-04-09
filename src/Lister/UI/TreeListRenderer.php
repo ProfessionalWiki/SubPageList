@@ -24,6 +24,7 @@ class TreeListRenderer extends HierarchyRenderer {
 	const NO_LIMIT = 'noLimit';
 
 	private $pageRenderer;
+	private $options;
 
 	public function __construct( PageRenderer $pageRenderer, array $options = [] ) {
 		$this->pageRenderer = $pageRenderer;

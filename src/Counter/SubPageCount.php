@@ -3,7 +3,7 @@
 namespace SubPageList\Counter;
 
 use ParamProcessor\ProcessingResult;
-use Parser;
+use MediaWiki\Parser\Parser;
 use ParserHooks\HookHandler;
 use SubPageList\TitleFactory;
 

@@ -2,7 +2,7 @@
 
 namespace SubPageList\Lister\UI;
 
-use Html;
+use MediaWiki\Html\Html;
 use RuntimeException;
 use SubPageList\Lister\Page;
 

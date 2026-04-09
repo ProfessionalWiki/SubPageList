@@ -48,15 +48,42 @@ class Setup {
 
 	/**
 	 * Initializes the extension during MediaWiki boot up
-	 * @global array $wgHooks
-	 * @return void
 	 */
 	public static function onExtensionFunctions() {
-		$extension = new \SubPageList\Extension( \SubPageList\Settings::newFromGlobals( $GLOBALS ) );
+		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
 		$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
-		$extensionSetup = new \SubPageList\Setup( $extension, $hookContainer, dirname( __DIR__ ) );
+		$extensionSetup = new Setup( $extension, $hookContainer, dirname( __DIR__ ) );
 
 		$extensionSetup->run();
+	}
+
+	/**
+	 * Called when the parser initialises for the first time.
+	 * Registered declaratively via extension.json so it works in parser tests.
+	 */
+	public static function onParserFirstCallInit( Parser &$parser ) {
+		$extension = new Extension( Settings::newFromGlobals( $GLOBALS ) );
+		$hookRegistrant = $extension->getHookRegistrant( $parser );
+
+		$hookRegistrant->registerFunctionHandler(
+			$extension->getCountHookDefinition(),
+			$extension->getCountHookHandler()
+		);
+
+		$hookRegistrant->registerFunctionHandler(
+			$extension->getListHookDefinition(),
+			$extension->getListHookHandler()
+		);
+
+		$hookRegistrant->registerHookHandler(
+			$extension->getCountHookDefinition(),
+			$extension->getCountHookHandler()
+		);
+
+		$hookRegistrant->registerHookHandler(
+			$extension->getListHookDefinition(),
+			$extension->getListHookHandler()
+		);
 	}
 
 	/**
@@ -65,43 +92,8 @@ class Setup {
 	 * @since 1.0
 	 */
 	public function run() {
-		$this->registerParserHooks();
 		$this->registerCacheInvalidator();
 		$this->registerUnitTests();
-	}
-
-	private function registerParserHooks() {
-		$extension = $this->extension;
-
-		/**
-		 * Called when the parser initialises for the first time.
-		 * https://www.mediawiki.org/wiki/Manual:Hooks/ParserFirstCallInit
-		 */
-		$this->hookContainer->register( 'ParserFirstCallInit', function( Parser &$parser ) use ( $extension ) {
-			$hookRegistrant = $extension->getHookRegistrant( $parser );
-
-			$hookRegistrant->registerFunctionHandler(
-				$extension->getCountHookDefinition(),
-				$extension->getCountHookHandler()
-			);
-
-			$hookRegistrant->registerFunctionHandler(
-				$extension->getListHookDefinition(),
-				$extension->getListHookHandler()
-			);
-
-			$hookRegistrant->registerHookHandler(
-				$extension->getCountHookDefinition(),
-				$extension->getCountHookHandler()
-			);
-
-			$hookRegistrant->registerHookHandler(
-				$extension->getListHookDefinition(),
-				$extension->getListHookHandler()
-			);
-
-			return true;
-		} );
 	}
 
 	private function registerCacheInvalidator() {

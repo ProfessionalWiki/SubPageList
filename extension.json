@@ -29,8 +29,14 @@
 		"SubPageListMagic": "SubPageList.i18n.magic.php"
 
 	},
+	"Hooks": {
+		"ParserFirstCallInit": "\\SubPageList\\Setup::onParserFirstCallInit"
+	},
 	"ExtensionFunctions": [
 		"\\SubPageList\\Setup::onExtensionFunctions"
+	],
+	"ParserTestFiles": [
+		"tests/parser/subpagelist.txt"
 	],
 	"config_prefix": "egSPL",
 	"config": {

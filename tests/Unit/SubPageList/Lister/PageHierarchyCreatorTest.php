@@ -40,7 +40,7 @@ class PageHierarchyCreatorTest extends TestCase {
 		$hierarchyCreator = $this->newPageHierarchyCreator();
 		$hierarchy = $hierarchyCreator->createHierarchy( [], $this->newMockTitle( 'SomePage' ) );
 
-		$this->assertInternalType( 'array', $hierarchy );
+		$this->assertIsArray( $hierarchy );
 		$this->assertEmpty( $hierarchy );
 	}
 
@@ -57,7 +57,7 @@ class PageHierarchyCreatorTest extends TestCase {
 	}
 
 	public function newMockTitle( $pageName ) {
-		$title = $this->createMock( 'Title' );
+		$title = $this->createMock( \MediaWiki\Title\Title::class );
 
 		$title->expects( $this->any() )
 			->method( 'getFullText' )
@@ -84,7 +84,7 @@ class PageHierarchyCreatorTest extends TestCase {
 	}
 
 	private function assertPageCount( $expectedCount, $hierarchy ) {
-		$this->assertInternalType( 'array', $hierarchy );
+		$this->assertIsArray( $hierarchy );
 		$this->assertCount( $expectedCount, $hierarchy );
 		$this->assertContainsOnlyInstancesOf( 'SubPageList\Lister\Page', $hierarchy );
 	}

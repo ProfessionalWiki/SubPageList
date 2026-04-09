@@ -2,7 +2,7 @@
 
 namespace SubPageList;
 
-use Parser;
+use MediaWiki\Parser\Parser;
 use ParserHooks\HookDefinition;
 use ParserHooks\HookHandler;
 use ParserHooks\HookRegistrant;

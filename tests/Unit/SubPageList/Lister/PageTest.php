@@ -16,10 +16,10 @@ use SubPageList\Lister\Page;
 class PageTest extends TestCase {
 
 	public function testConstructSetsFields() {
-		$title = $this->createMock( 'Title' );
+		$title = $this->createMock( \MediaWiki\Title\Title::class );
 		$children = [
-			new Page( $this->createMock( 'Title' ) ),
-			new Page( $this->createMock( 'Title' ) )
+			new Page( $this->createMock( \MediaWiki\Title\Title::class ) ),
+			new Page( $this->createMock( \MediaWiki\Title\Title::class ) )
 		];
 
 		$page = new Page( $title, $children );

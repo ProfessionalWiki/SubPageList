@@ -28,7 +28,7 @@ class SubPageListTest extends TestCase {
 
 		$renderedList = $this->getRenderedList( $subPageList, $titleText );
 
-		$this->assertInternalType( 'string', $renderedList );
+		$this->assertIsString( $renderedList );
 		$this->assertEquals( $renderResult, $renderedList );
 	}
 
@@ -67,7 +67,7 @@ class SubPageListTest extends TestCase {
 	}
 
 	private function getRenderedList( SubPageList $subPageList, $titleText ) {
-		$parser = $this->createMock( 'Parser' );
+		$parser = $this->createMock( \MediaWiki\Parser\Parser::class );
 
 		$processingResult = new ProcessingResult(
 			[

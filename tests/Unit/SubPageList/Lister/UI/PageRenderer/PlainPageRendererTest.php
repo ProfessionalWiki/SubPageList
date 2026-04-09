@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\SubPageList\UI\PageRenderer;
+namespace Tests\Unit\SubPageList\Lister\UI\PageRenderer;
 
 use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;
@@ -23,7 +23,7 @@ class PlainPageRendererTest extends TestCase {
 	public function testRenderPage( Page $page, $pathStyle, $expected ) {
 		$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
 
-		$renderer = new PlainPageRenderer( $this->createMock( \PageProps::class ), $pathStyle );
+		$renderer = new PlainPageRenderer( $this->createMock( \MediaWiki\Page\PageProps::class ), $pathStyle );
 
 		$actual = $renderer->renderPage( $page );
 

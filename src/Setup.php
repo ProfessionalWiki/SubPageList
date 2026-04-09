@@ -4,14 +4,11 @@ namespace SubPageList;
 
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\MediaWikiServices;
-use Parser;
+use MediaWiki\Parser\Parser;
+use MediaWiki\Title\Title;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
-use Revision;
 use SplFileInfo;
-use MediaWiki\Title\Title;
-use User;
-use WikiPage;
 
 /**
  * Object containing the logic to set up the SupPageList extension.
@@ -111,44 +108,36 @@ class Setup {
 		$extension = $this->extension;
 
 		/**
-		 * Occurs after a new article has been created.
-		 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleInsertComplete
+		 * Occurs after a page has been saved.
+		 * https://www.mediawiki.org/wiki/Manual:Hooks/PageSaveComplete
 		 */
-		$this->hookContainer->register( 'ArticleInsertComplete', function( WikiPage $article, User &$user, $text, $summary, $minorEdit,
-			$watchThis, $sectionAnchor, &$flags, Revision $revision ) use ( $extension ) {
-
+		$this->hookContainer->register( 'PageSaveComplete', function( $wikiPage ) use ( $extension ) {
 			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
-				$extension->getCacheInvalidator()->invalidateCaches( $article->getTitle() );
+				$extension->getCacheInvalidator()->invalidateCaches( $wikiPage->getTitle() );
 			}
-
-			return true;
 		} );
 
 		/**
-		 * Occurs after the delete article request has been processed.
-		 * https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDeleteComplete
+		 * Occurs after a page has been deleted.
+		 * https://www.mediawiki.org/wiki/Manual:Hooks/PageDeleteComplete
 		 */
-		$this->hookContainer->register( 'ArticleDeleteComplete', function( &$article, User &$user, $reason, $id ) use ( $extension ) {
+		$this->hookContainer->register( 'PageDeleteComplete', function( $page ) use ( $extension ) {
 			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
-				$extension->getCacheInvalidator()->invalidateCaches( $article->getTitle() );
+				$extension->getCacheInvalidator()->invalidateCaches( $page->getTitle() );
 			}
-
-			return true;
 		} );
 
 		/**
 		 * Occurs whenever a request to move an article is completed.
-		 * https://www.mediawiki.org/wiki/Manual:Hooks/TitleMoveComplete
+		 * https://www.mediawiki.org/wiki/Manual:Hooks/PageMoveComplete
 		 */
-		$this->hookContainer->register( 'TitleMoveComplete', function( Title &$title, Title &$newTitle, User &$user, $oldId, $newId ) use ( $extension ) {
+		$this->hookContainer->register( 'PageMoveComplete', function( Title $title, Title $newTitle ) use ( $extension ) {
 			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
 				$invalidator = $extension->getCacheInvalidator();
 
 				$invalidator->invalidateCaches( $title );
 				$invalidator->invalidateCaches( $newTitle );
 			}
-
-			return true;
 		} );
 	}
 

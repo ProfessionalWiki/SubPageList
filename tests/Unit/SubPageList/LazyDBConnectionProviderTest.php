@@ -44,13 +44,13 @@ class LazyDBConnectionProviderTest extends TestCase {
 	public function testGetConnection( DBConnectionProvider $connProvider ) {
 		$connection = $connProvider->getConnection();
 
-		$this->assertInstanceOf( 'DatabaseBase', $connection );
+		$this->assertInstanceOf( \Wikimedia\Rdbms\IDatabase::class, $connection );
 
 		$this->assertTrue( $connection === $connProvider->getConnection() );
 
 		$connProvider->releaseConnection();
 
-		$this->assertInstanceOf( 'DatabaseBase', $connProvider->getConnection() );
+		$this->assertInstanceOf( \Wikimedia\Rdbms\IDatabase::class, $connProvider->getConnection() );
 	}
 
 	public function instanceProvider() {

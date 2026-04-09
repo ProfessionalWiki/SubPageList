@@ -15,6 +15,11 @@
 	"AutoloadNamespaces": {
 		"SubPageList\\": "src/"
 	},
+	"TestAutoloadNamespaces": {
+		"Tests\\Unit\\SubPageList\\": "tests/Unit/SubPageList/",
+		"Tests\\System\\SubPageList\\": "tests/System/SubPageList/",
+		"Tests\\Component\\SubPageList\\": "tests/Component/"
+	},
 	"MessagesDirs": {
 		"SubPageList": [
 			"i18n"

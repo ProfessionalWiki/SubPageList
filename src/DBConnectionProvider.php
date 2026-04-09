@@ -2,7 +2,7 @@
 
 namespace SubPageList;
 
-use DatabaseBase;
+use Wikimedia\Rdbms\IDatabase;
 
 /**
  * Interface for database connection providers.
@@ -20,7 +20,7 @@ interface DBConnectionProvider {
 	 *
 	 * @since 1.0
 	 *
-	 * @return DatabaseBase
+	 * @return IDatabase
 	 */
 	public function getConnection();
 

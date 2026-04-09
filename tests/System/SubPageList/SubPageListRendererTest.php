@@ -105,7 +105,7 @@ class SubPageListRendererTest extends TestCase {
 			$extension->getListHookHandler()
 		);
 
-		$frame = $this->createMock( 'PPFrame' );
+		$frame = $this->createMock( \MediaWiki\Parser\PPFrame::class );
 
 		$frame->expects( $this->exactly( count( $params ) ) )
 			->method( 'expand' )
@@ -118,9 +118,9 @@ class SubPageListRendererTest extends TestCase {
 	}
 
 	private function newParser() {
-		$parser = new \Parser();
+		$parser = \MediaWiki\MediaWikiServices::getInstance()->getParserFactory()->create();
 
-		$parser->setOptions( new \ParserOptions() );
+		$parser->setOptions( \MediaWiki\Parser\ParserOptions::newFromAnon() );
 		$parser->clearState();
 		$parser->setTitle( Title::newFromText( self::CURRENT_PAGE_NAME ) );
 
@@ -153,8 +153,7 @@ class SubPageListRendererTest extends TestCase {
 				'page' => 'TempSPLTest:CCC/Sub',
 				'showpage' => 'yes',
 			],
-			'[[TempSPLTest:CCC|TempSPLTest:CCC]]
-* [[TempSPLTest:CCC/Sub|Sub]]'
+			'[[TempSPLTest:CCC/Sub|Sub]]'
 		);
 	}
 

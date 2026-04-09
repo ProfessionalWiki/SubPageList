@@ -2,7 +2,7 @@
 
 namespace SubPageList;
 
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Interface for objects that can invalidate the caches affected by a

@@ -4,7 +4,7 @@ namespace SubPageList\Lister;
 
 use InvalidArgumentException;
 use SubPageList\TitleFactory;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Turns a flat list of Title objects into a sub page hierarchy of Page objects.

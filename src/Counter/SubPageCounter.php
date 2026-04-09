@@ -2,7 +2,7 @@
 
 namespace SubPageList\Counter;
 
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Interface for subpage counters.

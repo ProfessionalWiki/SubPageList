@@ -9,7 +9,7 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Revision;
 use SplFileInfo;
-use Title;
+use MediaWiki\Title\Title;
 use User;
 use WikiPage;
 

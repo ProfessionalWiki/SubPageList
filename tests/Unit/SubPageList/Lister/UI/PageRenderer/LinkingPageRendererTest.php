@@ -5,7 +5,7 @@ namespace Tests\Unit\SubPageList\Lister\UI\PageRenderer;
 use PHPUnit\Framework\TestCase;
 use SubPageList\Lister\Page;
 use SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @covers \SubPageList\Lister\UI\PageRenderer\LinkingPageRenderer

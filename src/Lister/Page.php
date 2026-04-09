@@ -2,7 +2,7 @@
 
 namespace SubPageList\Lister;
 
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Represents a node in a sub page hierarchy.

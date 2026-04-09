@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use SubPageList\Extension;
 use SubPageList\Lister\Page;
 use SubPageList\Settings;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @covers \SubPageList\Lister\UI\WikitextSubPageListRenderer

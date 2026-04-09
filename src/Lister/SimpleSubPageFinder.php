@@ -6,7 +6,7 @@ use InvalidArgumentException;
 use SubPageList\Counter\SubPageCounter;
 use SubPageList\DBConnectionProvider;
 use SubPageList\TitleFactory;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Simple subpage finder and counter that uses a like query

@@ -9,7 +9,7 @@ use Parser;
 use ParserHooks\HookHandler;
 use SubPageList\TitleFactory;
 use SubPageList\Lister\UI\SubPageListRenderer;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Handler for the subpagelist parser hook.

@@ -4,7 +4,7 @@ namespace SubPageList\Lister\UI\PageRenderer;
 
 use PageProps;
 use SubPageList\Lister\Page;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @since 1.2

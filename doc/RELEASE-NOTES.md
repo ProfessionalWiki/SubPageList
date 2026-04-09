@@ -1,5 +1,14 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 4.0.0 (2026-04-10)
+
+* Added support for MediaWiki 1.44
+* Dropped support for MediaWiki older than 1.43
+* Dropped support for PHP older than 8.1
+* Replaced deprecated hooks (`ArticleInsertComplete`, `ArticleDeleteComplete`, `TitleMoveComplete`)
+  with modern equivalents (`PageSaveComplete`, `PageDeleteComplete`, `PageMoveComplete`)
+* Localization updates from https://translatewiki.net
+
 ## Version 3.0.1 (2025-06-16)
 
 * Added support for MediaWiki up to at least 1.43

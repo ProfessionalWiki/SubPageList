@@ -18,7 +18,7 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 	<tr>
 		<th>4.0.x</th>
 		<td><strong>8.1</strong> - 8.4</td>
-		<td><strong>1.43</strong - 1.45</td>
+		<td><strong>1.43</strong> - 1.45</td>
 		<td><strong>Stable release</strong></td>
 	</tr>
 	<tr>

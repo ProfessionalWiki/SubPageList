@@ -16,16 +16,22 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 		<th>Release status</th>
 	</tr>
 	<tr>
+		<th>4.0.x</th>
+		<td>7.3 - 8.4</td>
+		<td>1.43 - 1.45</td>
+		<td><strong>Stable release</strong></td>
+	</tr>
+	<tr>
 		<th>3.0.x</th>
 		<td>7.3 - 8.4</td>
 		<td>1.36 - 1.43</td>
-		<td><strong>Stable release</strong></td>
+		<td>Obsolete release</td>
 	</tr>
 	<tr>
 		<th>2.1.x</th>
 		<td>7.3 - 7.4</td>
 		<td><strong>1.36</strong> - 1.39</td>
-		<td><strong>Stable release</strong></td>
+		<td>Obsolete release</td>
 	</tr>
 	<tr>
 		<th>2.0.x</th>
@@ -85,6 +91,12 @@ minimum requirements are indicated in bold. For a detailed list of changes, see 
 		<th>MySQL</th>
 		<th>SQLite</th>
 		<th>PostgreSQL</th>
+	</tr>
+	<tr>
+		<th>4.x</th>
+		<td>Full support</td>
+		<td>Full support</td>
+		<td>Unknown</td>
 	</tr>
 	<tr>
 		<th>3.x</th>

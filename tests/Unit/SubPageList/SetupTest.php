@@ -47,12 +47,13 @@ class SetupTest extends TestCase {
 				$registeredCallbacks[$name] = $callback;
 			} );
 
-		$cacheInvalidator = $this->createMock( CacheInvalidator::class );
-		$cacheInvalidator->expects( $this->once() )
-			->method( 'invalidateCaches' )
-			->with( $this->callback( function ( Title $title ) {
-				return $title->getDBkey() === 'TestPage' && $title->getNamespace() === NS_MAIN;
-			} ) );
+		$cacheInvalidator = new class implements CacheInvalidator {
+			public ?Title $invalidatedTitle = null;
+
+			public function invalidateCaches( Title $title ): void {
+				$this->invalidatedTitle = $title;
+			}
+		};
 
 		$extension = $this->createMock( Extension::class );
 		$extension->method( 'getSettings' )
@@ -69,6 +70,9 @@ class SetupTest extends TestCase {
 
 		$this->assertArrayHasKey( 'PageDeleteComplete', $registeredCallbacks );
 		$registeredCallbacks['PageDeleteComplete']( $page );
+
+		$this->assertSame( 'TestPage', $cacheInvalidator->invalidatedTitle->getDBkey() );
+		$this->assertSame( NS_MAIN, $cacheInvalidator->invalidatedTitle->getNamespace() );
 	}
 
 	private function newExtension() {

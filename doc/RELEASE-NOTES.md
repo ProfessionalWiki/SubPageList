@@ -1,5 +1,10 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 4.0.1 (2026-04-14)
+
+* Fixed fatal error when deleting pages due to `PageDeleteComplete` hook receiving
+  a `ProperPageIdentity` instead of a `WikiPage` ([#85](https://github.com/ProfessionalWiki/SubPageList/issues/85))
+
 ## Version 4.0.0 (2026-04-10)
 
 * Added support for MediaWiki 1.44

@@ -39,21 +39,79 @@ class SetupTest extends TestCase {
 	}
 
 	public function testDeletedPageInvalidatesCache() {
-		$registeredCallbacks = [];
+		$callbacks = [];
+		$spy = $this->newSpyCacheInvalidator();
 
-		$hookContainer = $this->createMock( HookContainer::class );
-		$hookContainer->method( 'register' )
-			->willReturnCallback( function ( $name, $callback ) use ( &$registeredCallbacks ) {
-				$registeredCallbacks[$name] = $callback;
-			} );
+		$this->runSetupWithAutoRefresh( $spy, $callbacks );
 
-		$cacheInvalidator = new class implements CacheInvalidator {
-			public ?Title $invalidatedTitle = null;
+		$page = $this->createMock( ProperPageIdentity::class );
+		$page->method( 'getNamespace' )->willReturn( NS_MAIN );
+		$page->method( 'getDBkey' )->willReturn( 'DeletedPage' );
 
-			public function invalidateCaches( Title $title ): void {
-				$this->invalidatedTitle = $title;
-			}
-		};
+		$callbacks['PageDeleteComplete']( $page );
+
+		$this->assertCount( 1, $spy->invalidatedTitles );
+		$this->assertSame( 'DeletedPage', $spy->invalidatedTitles[0]->getDBkey() );
+		$this->assertSame( NS_MAIN, $spy->invalidatedTitles[0]->getNamespace() );
+	}
+
+	public function testSavedPageInvalidatesCache() {
+		$callbacks = [];
+		$spy = $this->newSpyCacheInvalidator();
+
+		$this->runSetupWithAutoRefresh( $spy, $callbacks );
+
+		$wikiPage = $this->createMock( \WikiPage::class );
+		$wikiPage->method( 'getTitle' )->willReturn( Title::makeTitle( NS_TALK, 'SavedPage' ) );
+
+		$callbacks['PageSaveComplete']( $wikiPage );
+
+		$this->assertCount( 1, $spy->invalidatedTitles );
+		$this->assertSame( 'SavedPage', $spy->invalidatedTitles[0]->getDBkey() );
+		$this->assertSame( NS_TALK, $spy->invalidatedTitles[0]->getNamespace() );
+	}
+
+	public function testMovedPageInvalidatesCacheForBothTitles() {
+		$callbacks = [];
+		$spy = $this->newSpyCacheInvalidator();
+
+		$this->runSetupWithAutoRefresh( $spy, $callbacks );
+
+		$callbacks['PageMoveComplete'](
+			Title::makeTitle( NS_MAIN, 'OldPage' ),
+			Title::makeTitle( NS_MAIN, 'NewPage' )
+		);
+
+		$this->assertCount( 2, $spy->invalidatedTitles );
+		$this->assertSame( 'OldPage', $spy->invalidatedTitles[0]->getDBkey() );
+		$this->assertSame( 'NewPage', $spy->invalidatedTitles[1]->getDBkey() );
+	}
+
+	public function testAutoRefreshDisabledDoesNotInvalidateCache() {
+		$callbacks = [];
+		$hookContainer = $this->newCapturingHookContainer( $callbacks );
+		$spy = $this->newSpyCacheInvalidator();
+
+		$extension = $this->createMock( Extension::class );
+		$extension->method( 'getSettings' )
+			->willReturn( new Settings( [ Settings::AUTO_REFRESH => false ] ) );
+		$extension->method( 'getCacheInvalidator' )
+			->willReturn( $spy );
+
+		$setup = new Setup( $extension, $hookContainer, __DIR__ . '/..' );
+		$setup->run();
+
+		$page = $this->createMock( ProperPageIdentity::class );
+		$page->method( 'getNamespace' )->willReturn( NS_MAIN );
+		$page->method( 'getDBkey' )->willReturn( 'SomePage' );
+
+		$callbacks['PageDeleteComplete']( $page );
+
+		$this->assertEmpty( $spy->invalidatedTitles );
+	}
+
+	private function runSetupWithAutoRefresh( CacheInvalidator $cacheInvalidator, array &$callbacks ): void {
+		$hookContainer = $this->newCapturingHookContainer( $callbacks );
 
 		$extension = $this->createMock( Extension::class );
 		$extension->method( 'getSettings' )
@@ -63,16 +121,26 @@ class SetupTest extends TestCase {
 
 		$setup = new Setup( $extension, $hookContainer, __DIR__ . '/..' );
 		$setup->run();
+	}
 
-		$page = $this->createMock( ProperPageIdentity::class );
-		$page->method( 'getNamespace' )->willReturn( NS_MAIN );
-		$page->method( 'getDBkey' )->willReturn( 'TestPage' );
+	private function newCapturingHookContainer( array &$callbacks ): HookContainer {
+		$hookContainer = $this->createMock( HookContainer::class );
+		$hookContainer->method( 'register' )
+			->willReturnCallback( function ( $name, $callback ) use ( &$callbacks ) {
+				$callbacks[$name] = $callback;
+			} );
+		return $hookContainer;
+	}
 
-		$this->assertArrayHasKey( 'PageDeleteComplete', $registeredCallbacks );
-		$registeredCallbacks['PageDeleteComplete']( $page );
+	private function newSpyCacheInvalidator() {
+		return new class implements CacheInvalidator {
+			/** @var Title[] */
+			public array $invalidatedTitles = [];
 
-		$this->assertSame( 'TestPage', $cacheInvalidator->invalidatedTitle->getDBkey() );
-		$this->assertSame( NS_MAIN, $cacheInvalidator->invalidatedTitle->getNamespace() );
+			public function invalidateCaches( Title $title ): void {
+				$this->invalidatedTitles[] = $title;
+			}
+		};
 	}
 
 	private function newExtension() {

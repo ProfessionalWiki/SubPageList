@@ -115,7 +115,7 @@ class Setup {
 		 */
 		$this->hookContainer->register( 'PageDeleteComplete', function( $page ) use ( $extension ) {
 			if ( $extension->getSettings()->get( Settings::AUTO_REFRESH ) ) {
-				$extension->getCacheInvalidator()->invalidateCaches( $page->getTitle() );
+				$extension->getCacheInvalidator()->invalidateCaches( Title::newFromPageIdentity( $page ) );
 			}
 		} );
 

@@ -3,7 +3,12 @@
 namespace Tests\Unit\SubPageList;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\ProperPageIdentity;
+use MediaWiki\Title\Title;
 use PHPUnit\Framework\TestCase;
+use SubPageList\CacheInvalidator;
+use SubPageList\Extension;
+use SubPageList\Settings;
 use SubPageList\Setup;
 
 /**
@@ -30,6 +35,32 @@ class SetupTest extends TestCase {
 		$setup->run();
 
 		$this->assertTrue( $hookContainer->isRegistered( 'ParserFirstCallInit' ) );
+	}
+
+	public function testDeletedPageInvalidatesCache() {
+		$cacheInvalidator = $this->createMock( CacheInvalidator::class );
+		$cacheInvalidator->expects( $this->once() )
+			->method( 'invalidateCaches' )
+			->with( $this->callback( function ( Title $title ) {
+				return $title->getDBkey() === 'TestPage' && $title->getNamespace() === NS_MAIN;
+			} ) );
+
+		$extension = $this->createMock( Extension::class );
+		$extension->method( 'getSettings' )
+			->willReturn( new Settings( [ Settings::AUTO_REFRESH => true ] ) );
+		$extension->method( 'getCacheInvalidator' )
+			->willReturn( $cacheInvalidator );
+
+		$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
+
+		$setup = new Setup( $extension, $hookContainer, __DIR__ . '/..' );
+		$setup->run();
+
+		$page = $this->createMock( ProperPageIdentity::class );
+		$page->method( 'getNamespace' )->willReturn( NS_MAIN );
+		$page->method( 'getDBkey' )->willReturn( 'TestPage' );
+
+		$hookContainer->run( 'PageDeleteComplete', [ $page, null, null, 0, null, null, 0 ] );
 	}
 
 	private function newExtension() {

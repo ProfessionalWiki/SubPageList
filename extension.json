@@ -3,9 +3,9 @@
 	"version": "4.0.1",
 	"author": [
 		"[https://www.entropywins.wtf/mediawiki Jeroen De Dauw]",
-		"[https://professional.wiki/ Professional.Wiki]"
+		"[https://professional.wiki/ Professional Wiki]"
 	],
-	"url": "https://github.com/JeroenDeDauw/SubPageList/blob/master/README.md",
+	"url": "https://professional.wiki/en/extension/subpagelist",
 	"descriptionmsg": "spl-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "parserhook",

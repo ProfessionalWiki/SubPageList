@@ -26,10 +26,10 @@ View the [release notes](doc/RELEASE-NOTES.md) for recent changes to SubPageList
 On Packagist: [![Latest Stable Version](https://poser.pugx.org/mediawiki/sub-page-list/version.png)](https://packagist.org/packages/mediawiki/sub-page-list)
 [![Download count](https://poser.pugx.org/mediawiki/sub-page-list/d/total.png)](https://packagist.org/packages/mediawiki/sub-page-list)
 
-* [Open issues](https://github.com/JeroenDeDauw/SubPageList/issues)
-* [Latest merged code changes](https://github.com/JeroenDeDauw/SubPageList/commits/master)
-* [Proposed code changes](https://github.com/JeroenDeDauw/SubPageList/pulls)
-* [SubPageList posts on Jeroens blog](http://www.bn2vs.com/blog/tag/subpagelist/)
+* [Open issues](https://github.com/ProfessionalWiki/SubPageList/issues)
+* [Latest merged code changes](https://github.com/ProfessionalWiki/SubPageList/commits/master)
+* [Proposed code changes](https://github.com/ProfessionalWiki/SubPageList/pulls)
+* [SubPageList posts on Jeroens blog](https://www.entropywins.wtf/blog/tag/subpagelist/)
 
 ## Further links
 

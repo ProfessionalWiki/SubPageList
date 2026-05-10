@@ -1,5 +1,10 @@
 These are the release notes for the [SubPageList extension](../README.md).
 
+## Version 4.0.2 (2026-05-10)
+
+* Added support for installation with ParserHooks 3.x
+* Localization updates from https://translatewiki.net
+
 ## Version 4.0.1 (2026-04-14)
 
 * Fixed fatal error when deleting pages due to `PageDeleteComplete` hook receiving

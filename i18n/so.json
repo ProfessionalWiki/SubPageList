@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"spl-desc": "Waxay kuu oggolaanaysaa inaad taxdo oo tiriso bogagga-hoosaadka.",
+	"spl-nosubpages": "Bogga \"$1\" ma laha bogag-hoosaadyo la taxo.",
+	"spl-noparentpage": "Bogga \"$1\" ma jiro.",
+	"spl-nopages": "Meel magaca \"$1\" kuma jiraan bogag.",
+	"spl-subpages-par-sort": "Jihada loo kala saarayo. Qiimayaasha la oggol yahay: \"asc\" iyo \"desc\".",
+	"spl-subpages-par-sortby": "Waxa lagu kala saarayo bogagga-hoosaadka. Qiimayaasha la oggol yahay: \"title\" ama \"lastedit\".",
+	"spl-subpages-par-format": "Liiska bogagga-hoosaadka waxaa lagu soo bandhigi karaa qaabab kala duwan. Qiimayaasha la oggol yahay: \"ol\" — liis nidaamsan (lambaraysan), \"ul\" — liis aan nidaamsanayn (calaamado leh), \"list\" — liis caadi ah (tusaale ahaan, liis ay kala saaraan hakadyo).",
+	"spl-subpages-par-page": "Bogga lagu soo bandhigayo bogaggiisa-hoosaad, ama magaca meel magaca (oo ay ku jirto laba-dhibcoodka dhammaadka) ee lagu soo bandhigayo bogagga ku jira. Sida caadiga ah, waa bogga hadda jira.",
+	"spl-subpages-par-showpage": "Waxay tilmaamaysaa in bogga laftiisa lagu soo bandhigayo liiska iyo in kale.",
+	"spl-subpages-par-pathstyle": "Qaabka jidka bogagga-hoosaadka ee liiska. Qiimayaasha la oggol yahay: \"fullpagename\" — magaca bogga oo buuxa (oo ay ku jirto meel-magaca), \"pagename\" — magaca bogga (iyada oo aan meel-magaca lagu darin), \"subpagename\" — magaca bogga ee qaraabada ah oo ka bilaabmaya bogga aan u taxayno bogaggiisa-hoosaad, \"none\" — qaybta magaca ee ka dambaysa xarriiqda ugu dambaysa oo keliya.",
+	"spl-subpages-par-kidsonly": "Waxay kuu oggolaanaysaa inaad muujiso oo keliya bogagga-hoosaadka tooska ah.",
+	"spl-subpages-par-limit": "Tirada ugu badan ee bogagga la taxayo.",
+	"spl-subpages-par-element": "Curiyaha HTML ee ku wareegsan liiska (oo ay ku jiraan qoraallada \"intro\" iyo \"outro\" ama \"default\"). Qiimayaasha la oggol yahay: \"div\", \"p\", \"span\".",
+	"spl-subpages-par-class": "Qiimaha astaanta \"class\" ee curiyaha HTML ee ku wareegsan liiska.",
+	"spl-subpages-par-intro": "Qoraalka la soo saarayo ka hor liiska, haddii liisku aanu madhnayn.",
+	"spl-subpages-par-outro": "Qoraalka la soo saarayo ka dib liiska, haddii liisku aanu madhnayn.",
+	"spl-subpages-par-default": "Qoraalka la soo saarayo halkii liiska, haddii liisku madhan yahay. Haddii uu madhan yahay, fariin khalad ah ayaa la soo bandhigi doonaa (sida \"Boggu ma laha bogag-hoosaadyo la taxo\"). Haddii uu yahay xarriiq (\"-\"), natiijadu gebi ahaanba way madhnaan doontaa.",
+	"spl-subpages-par-separator": "Qoraalka la soo saarayo inta u dhexaysa laba shay oo liiska ah marka la isticmaalo qaabka \"list\" (iyo magaciisa kale ee \"bar\"). Saamayntaas kuma laha qaababka kale.",
+	"spl-subpages-par-template": "Magaca shaxda. Shaxda waxaa lagu dabaqayaa shay kasta oo liiska ku jira. Shayga waxaa loo gudbiyaa doodda koowaad ee aan magac lahayn. Ogow in shaxdu aysan baajinayn qaabaynta liiska. Qaabaynta (\"ul\", \"ol\", \"list\") waxaa lagu dabaqayaa natiijada shaxda.",
+	"spl-subpages-par-links": "Haddii ay run tahay, shayada liiska waxaa loo soo bandhigayaa xiriiriyeyaal. Haddii ay been tahay, shayada liiska waxaa loo soo bandhigayaa qoraal caadi ah. Tan dambe waxay si gaar ah waxtar ugu leedahay gudbinta shayada shaxyo si loo sii farsameeyo.",
+	"spl-subpages-par-redirects": "Haddii ay run tahay, jiheeyayaasha waxaa lagu darayaa liiska. Haddii ay been tahay, jiheeyayaasha laguma darayo."
+}
